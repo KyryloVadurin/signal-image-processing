@@ -1,0 +1,122 @@
+site_name: Прикладні алгоритми кіберфізичних систем
+site_description: Навчальний портал з дисципліни "Прикладні алгоритми КФС"
+
+theme:
+  name: material
+  language: uk
+  
+  # Правильне підключення іконки логотипу
+  icon:
+    logo: material/chip
+    favicon: material/chip
+
+  palette:
+    # Світла тема
+    - scheme: default
+      primary: indigo
+      accent: cyan
+      toggle:
+        icon: material/brightness-7
+        name: Переключити на темну тему
+
+    # Темна тема (Slate)
+    - scheme: slate
+      primary: blue        # Яскравіший синій для кращого контрасту
+      accent: cyan
+      toggle:
+        icon: material/brightness-4
+        name: Переключити на світлу тему
+
+
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - navigation.tracking
+    - header.autohide
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+
+font:
+  text: Roboto
+  code: JetBrains Mono
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  # Підтримка Mermaid діаграм
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+        - name: math
+          class: arithmatex
+          format: !!python/name:pymdownx.arithmatex.fence_mathjax_format
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  # Формули LaTeX
+  - pymdownx.arithmatex:
+      generic: true
+  - tables
+  - attr_list
+
+hooks:
+  - hooks/gfm_fixer.py
+
+# Підключення MathJax для рендерингу формул
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+
+extra_css:
+  - stylesheets/extra.css
+
+copyright: 'Copyright &copy; 2026 Kyrylo Vadurin &bull; <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a>'
+
+nav:
+  - Робоча навчальна програма: index.md
+  
+  - Лекції:
+      - "Тема 1. Теоретичні засади алгоритмізації": lectures/topic-1.md
+      - "Тема 2. Керуючі конструкції в алгоритмах реального часу": lectures/topic-2.md
+      - "Тема 3. Архітектура та обмін даними": lectures/topic-3.md
+      - "Тема 4. Алгоритми обробки структурованих даних": lectures/topic-4.md
+      - "Тема 5. Нечітка логіка та евристики": lectures/topic-5.md
+      - "Тема 6. Пошук, сортування та графи в мережах": lectures/topic-6.md
+      - "Тема 7. Хмарні та граничні обчислення": lectures/topic-7.md
+
+  - Лабораторні роботи:
+      - "ЛБ 1. Моделювання логіки керування низького рівня": labs/lab-1.md
+      - "ЛБ 2. Розробка алгоритмів обробки даних з давачів": labs/lab-2.md
+      - "ЛБ 3. Оркестрування потоків даних у середовищі Node-RED": labs/lab-3.md
+      - "ЛБ 4. Обробка матриць сигналів у розподілених системах": labs/lab-4.md
+      - "ЛБ 5. Побудова нечіткого контролера для автоматизації": labs/lab-5.md
+      - "ЛБ 6. Оптимізація маршрутів у сенсорних мережах": labs/lab-6.md
+      - "ЛБ 7. Віртуалізація сервісів за допомогою Docker": labs/lab-7.md
+
+  - Практичні заняття:
+      - "ПЗ 1. Графічна формалізація алгоритмів": practicals/pz-1.md
+      - "ПЗ 2. Оцінювання трудомісткості обчислювальних процесів": practicals/pz-2.md
+      - "ПЗ 3. Проєктивання ієрархії тем MQTT": practicals/pz-3.md
+      - "ПЗ 4. Реалізація черги повідомлень для керування завданнями": practicals/pz-4.md
+      - "ПЗ 5. Вирішення задач маршрутизації евристичними методами": practicals/pz-5.md
+      - "ПЗ 6. Порівняльний аналіз методів сортування даних": practicals/pz-6.md
+      - "ПЗ 7. Аналіз архітектурних рішень для Big Data": practicals/pz-7.md
+
+  - Самостійна робота: self-study/index.md
+  - Розрахунково-графічна робота: rg/index.md
+  - Перелік тестових та практичних завдань для самопідготовки: self-study/quest.md
