@@ -2,11 +2,6 @@ theme:
   name: material
   language: uk
   
-  # Правильне підключення іконки логотипу
-  icon:
-    logo: material/chip
-    favicon: material/chip
-
   palette:
     # Світла тема
     - scheme: default
@@ -42,6 +37,7 @@ font:
   code: JetBrains Mono
 
 markdown_extensions:
+  - md_in_html # <Підключення формул
   - admonition
   - pymdownx.details
   # Підтримка Mermaid діаграм
