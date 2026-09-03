@@ -1,0 +1,2989 @@
+
+<!doctype html>
+<html lang="uk" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Навчальний портал з дисципліни "Обробка сигналів та зображень"">
+      
+      
+      
+      
+        <link rel="prev" href="../..">
+      
+      
+        <link rel="next" href="../lk2/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Тема 1. Математичне представлення, дискретизація та квантування - Обробка сигналів та зображень</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#1-" class="md-skip">
+          Перейти до змісту
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Хедер">
+    <a href="../.." title="Обробка сигналів та зображень" class="md-header__button md-logo" aria-label="Обробка сигналів та зображень" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Обробка сигналів та зображень
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Тема 1. Математичне представлення, дискретизація та квантування
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="cyan"  aria-label="Переключити на темну тему"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Переключити на темну тему" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="cyan"  aria-label="Переключити на світлу тему"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Переключити на світлу тему" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Пошук" placeholder="Пошук" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Шукати">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистити" aria-label="Очистити" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Пошук розпочато
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Вкладки" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Робоча програма
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  
+  Лекції
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../lb/lb1/" class="md-tabs__link">
+          
+  
+  
+  Лабораторні роботи
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../sr/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Самостійна робота
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../rg/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Розрахунково-графічна робота
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Навігація" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Обробка сигналів та зображень" class="md-nav__button md-logo" aria-label="Обробка сигналів та зображень" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Обробка сигналів та зображень
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Робоча програма
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лекції
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Лекції
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 1. Математичне представлення, дискретизація та квантування
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 1. Математичне представлення, дискретизація та квантування
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Зміст">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Зміст
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Мета лекції
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Очікувані результати навчання
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Детальний покроковий план лекції
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Детальний покроковий план лекції">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Теоретичний модуль. Фізико-математичні основи представлення та класифікації сигналів у комп'ютерних системах
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Аналітичний модуль. Спектральна теорія вибірки, критерії Найквіста та стохастичні моделі квантування
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Практично-розрахунковий кейс. Комплексне проєктування тракту аналого-цифрового перетворення для комп'ютерної системи збору даних
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Фундаментальний теоретичний базис та концептуальні засади
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Фундаментальний теоретичний базис та концептуальні засади">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1. Фізична та інформаційна природа сигналів, просторово-часові залежності та класифікація вимірювальних процесів
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2. Сингулярні тестові сигнали неперервного та дискретного часу: функції Хевісайда, дельта-функція Дірака та імпульс Кронекера
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3. Математична формалізація часової дискретизації як стробування неперервного сигналу періодичною дельта-решіткою та аналіз періодичності спектрального відгуку
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.4. Простір станів і топологія амплітудного квантування за рівнем: аналітичний опис рівномірної дискретизації шкали вимірювань і природа незворотної інформаційної ентропії
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Вказівки для самостійного осмислення теоретичного базису
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Аналітичні процеси, математичний апарат та моделювання
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Аналітичні процеси, математичний апарат та моделювання">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-textsinc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1. Строге аналітичне виведення теореми відліків Котельникова-Шеннона-Найквіста та синтез інтерполяційного ряду відновлення за ортогональним базисом функцій \(\text{sinc}\)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2. Енергетичний критерій обмеження спектра реальних фінітних сигналів за формулою Парсеваля та вибір практичної граничної частоти
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3. Математична модель інтерференції спектральних реплік (аліасинг), аналітичний розрахунок хибних дзеркальних частот та схемотехнічні вимоги до антиаліасингової фільтрації
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-sigma_q2-delta2-12-textsnr-602n-176text" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4. Стохастична модель похибки квантування: аналітичне виведення потужності рівномірного білого шуму \(\sigma_q^2 = \Delta^2 / 12\) та логарифмічного правила Беннета \(\text{SNR} = 6.02N + 1.76\text{ дБ}\)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25-dithering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.5. Математичне обґрунтування процедури дизеризації (dithering): механізми декореляції шуму квантування, порівняльний аналіз невіднімальних та субтрактивних алгоритмів лінеаризації перетворювачів
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Практично-прикладний блок
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Практично-прикладний блок">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1. Комплексний інженерний кейс. Параметричний розрахунок тракту аналого-цифрового перетворення для сенсорного вузла комп'ютерної системи
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.1. Комплексний інженерний кейс. Параметричний розрахунок тракту аналого-цифрового перетворення для сенсорного вузла комп&#39;ютерної системи">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Постановка інженерної задачі
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Покроковий аналітичний розрахунок
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Покроковий аналітичний розрахунок">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Крок 1. Вибір тактової частоти дискретизації та розрахунок частоти Найквіста
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Крок 2. Моделювання ефекту аліасингу для інверторної завади
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Крок 3. Синтез параметрів антиаліасингового фільтра Баттерворта
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Крок 4. Розрахунок мінімальної розрядності АЦП та параметрів квантування
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Крок 5. Стохастичне моделювання субтрактивного дизерингу
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Інтерпретація результатів
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2. Зведена довідкова система лекції
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3. Контрольні питання та завдання
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.3. Контрольні питання та завдання">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Концептуальні тестові завдання
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Завдання для самостійної роботи
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Завдання для самостійної роботи">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Постановка задачі
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Завдання для виконання
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lk2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 2. Лінійні стаціонарні дискретні системи
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lk3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 3. Спектральний аналіз дискретних сигналів
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lk4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 4. Z-перетворення та проєктування цифрових фільтрів
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lk5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 5. Цифрове представлення зображень та колориметричні моделі
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lk6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 6. Поелементні амплітудні перетворення
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lk7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 7. Просторова фільтрація зображень
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lk8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 8. Геометричні трансформації та математична морфологія
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lk9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 9. Двовимірна Фур'є-обробка та детектори контурів
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лабораторні роботи
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Лабораторні роботи
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lb/lb1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 1. Дискретизація, квантування сигналів та ефект аліасингу
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lb/lb2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 2. Лінійні стаціонарні системи та дискретна згортка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lb/lb3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 3. Спектральний аналіз за допомогою ДПФ/ШПФ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lb/lb4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 4. Синтез цифрових КІХ та НІХ фільтрів
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lb/lb5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 5. Статистичний та кореляційний аналіз
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lb/lb6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 6. Базові операції з цифровими зображеннями
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lb/lb7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 7. Амплітудні перетворення та бінаризація
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lb/lb8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 8. Просторова фільтрація зображень
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lb/lb9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 9. Геометричні перетворення зображень
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lb/lb10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 10. Математична морфологія зображень
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lb/lb11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 11. 2D перетворення Фур'є та детектування контурів
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Самостійна робота
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Розрахунково-графічна робота
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Зміст">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Зміст
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Мета лекції
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Очікувані результати навчання
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Детальний покроковий план лекції
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Детальний покроковий план лекції">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Теоретичний модуль. Фізико-математичні основи представлення та класифікації сигналів у комп'ютерних системах
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Аналітичний модуль. Спектральна теорія вибірки, критерії Найквіста та стохастичні моделі квантування
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Практично-розрахунковий кейс. Комплексне проєктування тракту аналого-цифрового перетворення для комп'ютерної системи збору даних
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Фундаментальний теоретичний базис та концептуальні засади
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Фундаментальний теоретичний базис та концептуальні засади">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1. Фізична та інформаційна природа сигналів, просторово-часові залежності та класифікація вимірювальних процесів
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2. Сингулярні тестові сигнали неперервного та дискретного часу: функції Хевісайда, дельта-функція Дірака та імпульс Кронекера
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3. Математична формалізація часової дискретизації як стробування неперервного сигналу періодичною дельта-решіткою та аналіз періодичності спектрального відгуку
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.4. Простір станів і топологія амплітудного квантування за рівнем: аналітичний опис рівномірної дискретизації шкали вимірювань і природа незворотної інформаційної ентропії
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Вказівки для самостійного осмислення теоретичного базису
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Аналітичні процеси, математичний апарат та моделювання
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Аналітичні процеси, математичний апарат та моделювання">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-textsinc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1. Строге аналітичне виведення теореми відліків Котельникова-Шеннона-Найквіста та синтез інтерполяційного ряду відновлення за ортогональним базисом функцій \(\text{sinc}\)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2. Енергетичний критерій обмеження спектра реальних фінітних сигналів за формулою Парсеваля та вибір практичної граничної частоти
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3. Математична модель інтерференції спектральних реплік (аліасинг), аналітичний розрахунок хибних дзеркальних частот та схемотехнічні вимоги до антиаліасингової фільтрації
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-sigma_q2-delta2-12-textsnr-602n-176text" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4. Стохастична модель похибки квантування: аналітичне виведення потужності рівномірного білого шуму \(\sigma_q^2 = \Delta^2 / 12\) та логарифмічного правила Беннета \(\text{SNR} = 6.02N + 1.76\text{ дБ}\)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25-dithering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.5. Математичне обґрунтування процедури дизеризації (dithering): механізми декореляції шуму квантування, порівняльний аналіз невіднімальних та субтрактивних алгоритмів лінеаризації перетворювачів
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Практично-прикладний блок
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Практично-прикладний блок">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1. Комплексний інженерний кейс. Параметричний розрахунок тракту аналого-цифрового перетворення для сенсорного вузла комп'ютерної системи
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.1. Комплексний інженерний кейс. Параметричний розрахунок тракту аналого-цифрового перетворення для сенсорного вузла комп&#39;ютерної системи">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Постановка інженерної задачі
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Покроковий аналітичний розрахунок
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Покроковий аналітичний розрахунок">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Крок 1. Вибір тактової частоти дискретизації та розрахунок частоти Найквіста
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Крок 2. Моделювання ефекту аліасингу для інверторної завади
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Крок 3. Синтез параметрів антиаліасингового фільтра Баттерворта
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Крок 4. Розрахунок мінімальної розрядності АЦП та параметрів квантування
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Крок 5. Стохастичне моделювання субтрактивного дизерингу
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Інтерпретація результатів
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2. Зведена довідкова система лекції
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3. Контрольні питання та завдання
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.3. Контрольні питання та завдання">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Концептуальні тестові завдання
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Завдання для самостійної роботи
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Завдання для самостійної роботи">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Постановка задачі
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Завдання для виконання
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="1-">Тема 1. Математичне представлення, дискретизація та квантування сигналів. Теорема Котельникова-Шеннона-Найквіста</h1>
+<h2 id="_1">Мета лекції</h2>
+<p>Метою лекції є формування у майбутніх інженерів з комп'ютерних систем фундаментального теоретичного базису та практичних компетентностей щодо математичного моделювання й аналізу процесів перетворення неперервних фізичних сигналів у дискретну цифрову форму. У межах заняття розглядаються топологія просторів неперервних та квантованих сигналів, аналітичний апарат стробування континууму решіткою Дірака, граничні умови теореми відліків Котельникова-Шеннона-Найквіста, а також фізична природа спектрального еліасингу. Особлива увага приділяється метрологічним аспектам квантування за рівнем, аналітичному виведенню енергетичних співвідношень сигналу й шуму та методам стохастичної лінеаризації аналого-цифрових трактів засобами дизерингу.</p>
+<h2 id="_2">Очікувані результати навчання</h2>
+<ol>
+<li>
+<p><strong>Знання та розуміння.</strong> Студенти повинні демонструвати ґрунтовне розуміння фізичної та математичної природи аналогових, дискретних, квантованих і цифрових сигналів, знати властивості сингулярних тестових функцій, а також володіти аналітичним формулюванням теореми відліків Котельникова-Шеннона-Найквіста у часовій та частотній областях.</p>
+</li>
+<li>
+<p><strong>Застосування.</strong> Студенти повинні вміти розраховувати мінімально необхідну частоту дискретизації для детермінованих процесів, визначати параметри кроку квантування й розрядності АЦП для забезпечення заданого динамічного діапазону, а також розраховувати частоти зрізу аналогових антиаліасингових фільтрів.</p>
+</li>
+<li>
+<p><strong>Аналіз.</strong> Студенти повинні вміти аналізувати механізми виникнення паразитних стробоскопічних ефектів і спектрального накладання при порушенні критерію Найквіста, досліджувати спектральну щільність енергії похибки за теоремою Парсеваля та виявляти нелінійні кореляційні спотворення при квантуванні слабозмінних сигналів.</p>
+</li>
+<li>
+<p><strong>Оцінювання та синтез.</strong> Студенти повинні набути здатності критично оцінювати енергетичні втрати при дискретизації фінітних сигналів, аргументувати вибір параметрів надлишкової дискретизації (oversampling) та обґрунтовувати доцільність застосування адитивного або субтрактивного дизерингу для усунення ефекту псевдоконтурування на цифрових зображеннях.</p>
+</li>
+</ol>
+<hr />
+<h2 id="_3">Детальний покроковий план лекції</h2>
+<h3 id="1-_1">1. Теоретичний модуль. Фізико-математичні основи представлення та класифікації сигналів у комп'ютерних системах</h3>
+<ul>
+<li>
+<p>1.1. Фізична та інформаційна природа сигналів, взаємозв'язок просторово-часових континуумів і фундаментальна класифікація вимірювальних процесів на аналогові, дискретні, квантовані та цифрові.</p>
+</li>
+<li>
+<p>1.2. Сингулярні тестові сигнали неперервного та дискретного часу: динамічне представлення процесів через функцію Хевісайда, розподіл Дірака та дискретний імпульс Кронекера.</p>
+</li>
+<li>
+<p>1.3. Математична формалізація часової дискретизації як стробування неперервного сигналу періодичною дельта-решіткою та аналіз періодичності спектрального відгуку.</p>
+</li>
+<li>
+<p>1.4. Простір станів і топологія амплітудного квантування за рівнем: аналітичний опис рівномірної дискретизації шкали вимірювань і природа незворотної інформаційної ентропії.</p>
+</li>
+</ul>
+<h3 id="2">2. Аналітичний модуль. Спектральна теорія вибірки, критерії Найквіста та стохастичні моделі квантування</h3>
+<ul>
+<li>
+<p>2.1. Строге аналітичне виведення теореми відліків Котельникова-Шеннона-Найквіста та синтез інтерполяційного ряду відновлення за ортогональним базисом функцій <span class="arithmatex">\(\text{sinc}\)</span>.</p>
+</li>
+<li>
+<p>2.2. Енергетичний критерій скінченності тривалості реальних сигналів, теорема Парсеваля та методика розрахунку практичної граничної частоти спектра.</p>
+</li>
+<li>
+<p>2.3. Математична модель інтерференції спектральних реплік (аліасинг), аналітичний розрахунок хибних дзеркальних частот та схемотехнічні вимоги до антиаліасингової фільтрації.</p>
+</li>
+<li>
+<p>2.4. Стохастична модель похибки квантування: аналітичне виведення потужності рівномірного білого шуму <span class="arithmatex">\(\sigma_q^2 = \Delta^2 / 12\)</span> та логарифмічного правила Беннета <span class="arithmatex">\(\text{SNR} = 6.02N + 1.76\text{ дБ}\)</span>.</p>
+</li>
+<li>
+<p>2.5. Математичне обґрунтування процедури дизеризації (dithering): механізми декореляції шуму квантування, порівняльний аналіз невіднімальних та субтрактивних алгоритмів лінеаризації перетворювачів.</p>
+</li>
+</ul>
+<h3 id="3-">3. Практично-розрахунковий кейс. Комплексне проєктування тракту аналого-цифрового перетворення для комп'ютерної системи збору даних</h3>
+<p><strong>Тема наскрізної задачі.</strong> «Параметричний розрахунок частоти дискретизації, синтез антиаліасингового фільтра та визначення розрядності АЦП з оцінкою ефективності субтрактивного дизерингу для сенсорного вузла комп'ютерної вимірювальної системи»</p>
+<h2 id="1">1. Фундаментальний теоретичний базис та концептуальні засади</h2>
+<h3 id="11-">1.1. Фізична та інформаційна природа сигналів, просторово-часові залежності та класифікація вимірювальних процесів</h3>
+<p>У теорії комп'ютерних систем, приладобудуванні та інформаційно-вимірювальних технологіях <strong>сигнал</strong> розглядається як матеріальне втілення інформаційного повідомлення, представлене фізичним процесом, параметри якого функціонально змінюються залежно від стану досліджуваного об'єкта, фізичного поля або середовища поширення. Будь-який вимірювальний сигнал за своєю первинною сутністю є наслідком взаємодії матеріального носія із чутливим елементом первинного перетворювача (давача). У процесі цієї взаємодії просторово-часовий розподіл фізичної величини (механічного тиску, електромагнітної напруженості, температури чи оптичної густини) трансформується в еквівалентний інформативний параметр.</p>
+<p>З позицій математичного моделювання сигнал абстрагується від конкретної фізичної субстанції та описується як функціональна залежність між інформативним параметром і множиною незалежних аргументів. У найпростішому випадку одномірного сигналу незалежною змінною є неперервний фізичний час <span class="arithmatex">\(t \in \mathbb{R}\)</span>. Якщо об'єктом комп'ютерного аналізу є статичне монохромне зображення, фізична природа сигналу виражається просторовим розподілом яскравості чи оптичної щільності на площині, де аргументами виступають дві просторові координати <span class="arithmatex">\((x, y) \in \mathbb{R}^2\)</span>. У складніших радіолокаційних, томографічних або відеоінформаційних системах обробці підлягають багатовимірні просторово-часові поля <span class="arithmatex">\(s(x, y, z, t)\)</span>, у яких інформативний параметр одночасно залежить від тривимірної просторової конфігурації та часової динаміки.</p>
+<p>Узагальнена математична модель детермінованого вимірювального процесу довільної розмірності задається у формі багатопараметричного функціонального відображення:</p>
+<div class="arithmatex">\[s(\mathbf{r}, t) = F(\mathbf{r}, t, \omega; \mathbf{P})\]</div>
+<p>де <span class="arithmatex">\(s(\mathbf{r}, t)\)</span> позначає спостережуваний інформативний параметр фізичного сигналу, виражений у відповідних одиницях вимірювання системи SI (вольтах, амперах чи паскалях).</p>
+<p>Вектор <span class="arithmatex">\(\mathbf{r} = (x, y, z)^T\)</span> визначає просторові координати точки спостереження у тривимірному евклідовому просторі, які вимірюються в метрах (<span class="arithmatex">\(\text{м}\)</span>).</p>
+<p>Змінна <span class="arithmatex">\(t\)</span> задає абсолютний фізичний час протікання процесу, який вимірюється в секундах (<span class="arithmatex">\(\text{с}\)</span>).</p>
+<p>Параметр <span class="arithmatex">\(\omega\)</span> позначає просторову або часову кругову частоту коливань, що виражається в радіанах за секунду (<span class="arithmatex">\(\text{рад/с}\)</span>).</p>
+<p>Вектор <span class="arithmatex">\(\mathbf{P} = (A, B, C, \dots)^T\)</span> формує скінченну множину інваріантних параметрів аналітичної моделі сигналу (амплітудних масштабів, фазових зсувів, постійних часу), які визначають просторово-часову конфігурацію конкретного процесу.</p>
+<p>За ознаками неперервності та дискретності просторово-часової області визначення, а також області допустимих значень інформативного параметра, усі фізичні процеси поділяються на чотири фундаментальні класи: аналогові, дискретні за часом, квантовані за рівнем та цифрові.</p>
+<pre class="mermaid"><code>flowchart TD
+    A["Вимірювальні сигнали"] --&gt; B["Аналогові сигнали (Неперервний час / Неперервний рівень)"]
+    A --&gt; C["Дискретні за часом сигнали (Дискретний час / Неперервний рівень)"]
+    A --&gt; D["Квантовані за рівнем сигнали (Неперервний час / Квантований рівень)"]
+    A --&gt; E["Цифрові сигнали (Дискретний час / Квантований рівень)"]
+
+    B --&gt; B1["Детерміновані: аналітичні функції континууму"]
+    B --&gt; B2["Випадкові: неперервні стохастичні процеси"]
+
+    C --&gt; C1["Відлікові моделі: вибірки миттєвих значень x(nT)"]
+
+    D --&gt; D1["Кусково-постійні моделі: квантовані стани h_i"]
+
+    E --&gt; E1["Двійкові кодові послідовності фіксованої розрядності"]</code></pre>
+<p><strong>Аналоговий сигнал</strong> <span class="arithmatex">\(y_a(t)\)</span> є базовою фізичною формою існування матеріальних процесів макросвіту. Він описується неперервною або кусково-неперервною функцією, визначеною на незліченному континуумі часу <span class="arithmatex">\(t\)</span>, де функція та її аргумент можуть набувати будь-яких значень у межах заданих неперервних інтервалів:</p>
+<div class="arithmatex">\[y_a(t) \in (y_{\min}, y_{\max}), \quad t \in (t_{\min}, t_{\max})\]</div>
+<p>де <span class="arithmatex">\(y_a(t)\)</span> позначає миттєве значення аналогового сигналу у довільний момент часу <span class="arithmatex">\(t\)</span>, виражене у вольтах (<span class="arithmatex">\(\text{В}\)</span>).</p>
+<p>Величини <span class="arithmatex">\(y_{\min}\)</span> та <span class="arithmatex">\(y_{\max}\)</span> задають нижню та верхню межі динамічного діапазону амплітуди сигналу, виражені у вольтах (<span class="arithmatex">\(\text{В}\)</span>).</p>
+<p>Величини <span class="arithmatex">\(t_{\min}\)</span> та <span class="arithmatex">\(t_{\max}\)</span> визначають часовий інтервал фізичного існування сигналу, виражений у секундах (<span class="arithmatex">\(\text{с}\)</span>).</p>
+<p><strong>Дискретний сигнал</strong> <span class="arithmatex">\(x[n]\)</span> виникає шляхом фіксації значень первинного аналогового сигналу виключно в дискретні моменти часу <span class="arithmatex">\(t_n = nT\)</span>, де <span class="arithmatex">\(T\)</span> виступає сталим інтервалом (періодом) дискретизації, а <span class="arithmatex">\(n \in \mathbb{Z}\)</span> є порядковим номером відліку. Значення кожного відліку <span class="arithmatex">\(x[n] = y_a(nT)\)</span> залишається неперервною фізичною величиною, що набуває значень із незліченної континуальної множини.</p>
+<p><strong>Квантований за рівнем сигнал</strong> <span class="arithmatex">\(y_q(t)\)</span> залишається неперервним за часовим аргументом <span class="arithmatex">\(t\)</span>, проте його миттєва амплітуда набуває значень виключно зі скінченної або зліченної множини дозволених рівнів <span class="arithmatex">\(\{h_1, h_2, \dots, h_K\}\)</span>. Кожен дозволений рівень відокремлений від сусіднього величиною кроку квантування <span class="arithmatex">\(q\)</span>.</p>
+<p><strong>Цифровий сигнал</strong> <span class="arithmatex">\(Y[n]\)</span> формується внаслідок одночасного застосування операцій часової дискретизації та амплітудного квантування. Він являє собою квантовану решітчасту послідовність, кожен член якої визначений у дискретний момент <span class="arithmatex">\(nT\)</span>, належить дискретній множині дозволених рівнів і кодується двійковим числовим словом певної розрядності. Саме цифрові сигнали є єдиною формою подання даних, придатною для безпосередньої машинної обробки у мікропроцесорах, спеціалізованих цифрових сигнальних процесорах (ЦСП) та електронно-обчислювальних машинах загального призначення.</p>
+<p>За ступенем апріорної невизначеності інформаційного параметра сигнали поділяють на <strong>детерміновані</strong> (невипадкові) та <strong>випадкові</strong> (стохастичні). Якщо для будь-якого моменту часу значення процесу можна абсолютно точно обчислити за допомогою математичного виразу чи детермінованого алгоритму, сигнал вважається детермінованим. Якщо ж миттєве значення сигналу в момент часу <span class="arithmatex">\(t_0\)</span> являє собою випадкову величину, яка підпорядковується певній функції густини розподілу ймовірностей <span class="arithmatex">\(p(x, t_0)\)</span>, то такий процес є випадковим. Реальні фізичні сигнали в радіотехніці та комп'ютерній інженерії завжди є випадковими або квазідетермінованими через неминучу присутність внутрішніх шумів напівпровідникових структур, атмосферних електромагнітних завад і термодинамічних флуктуацій.</p>
+<h3 id="12-">1.2. Сингулярні тестові сигнали неперервного та дискретного часу: функції Хевісайда, дельта-функція Дірака та імпульс Кронекера</h3>
+<p>Теоретичний аналіз лінійних стаціонарних систем базується на використанні спеціальних тестових функцій, що мають особливі граничні або сингулярні властивості. Фундаментальними базисними функціями теорії сигналів є одинична ступінчаста функція Хевісайда та одинична імпульсна функція Дірака.</p>
+<p><strong>Функція Хевісайда</strong> <span class="arithmatex">\(\sigma(t - t_0)\)</span> (функція одиничного стрибка, або функція включення) моделює миттєвий перехід системи зі стану спокою в стан із постійним рівнем збудження під дією зовнішнього впливу, прикладеного в момент часу <span class="arithmatex">\(t_0\)</span>. Формальне математичне визначення функції Хевісайда має вигляд:</p>
+<div class="arithmatex">\[\sigma(t - t_0) = \begin{cases} 0, &amp; t \lt  t_0 \\ \frac{1}{2}, &amp; t = t_0 \\ 1, &amp; t &gt; t_0 \end{cases}\]</div>
+<p>де <span class="arithmatex">\(\sigma(t - t_0)\)</span> є безрозмірною функцією одиничного стрибка, значення якої змінюється від <span class="arithmatex">\(0\)</span> до <span class="arithmatex">\(1\)</span>.</p>
+<p>Параметр <span class="arithmatex">\(t_0\)</span> позначає часовий момент прикладання стрибкоподібного збудження на осі часу, виражений у секундах (<span class="arithmatex">\(\text{с}\)</span>).</p>
+<p>Значення функції в точці розриву першого роду, що дорівнює <span class="arithmatex">\(1/2\)</span>, визначається відповідно до класичної умови збіжності ряду Фур'є за критерієм Діріхле як напівсума правосторонньої та лівосторонньої границь. Функція Хевісайда дозволяє синтезувати довільний складний сигнал <span class="arithmatex">\(s(t)\)</span> за допомогою кусково-постійної апроксимації. При спрямуванні елементарного часового кроку <span class="arithmatex">\(\Delta t \to 0\)</span> така сума вироджується в інтегральне <strong>динамічне представлення сигналу в часі</strong>:</p>
+<div class="arithmatex">\[s(t) = s(0)\sigma(t) + \int_{0}^{\infty} \frac{ds(t')}{dt'} \sigma(t - t') \, dt'\]</div>
+<p>де <span class="arithmatex">\(s(0)\)</span> позначає початкове значення аналогового сигналу в нульовий момент часу <span class="arithmatex">\(t = 0\)</span>, виражене у вольтах (<span class="arithmatex">\(\text{В}\)</span>).</p>
+<p>Змінна <span class="arithmatex">\(t'\)</span> є змінною інтегрування вздовж координати часу, вираженою в секундах (<span class="arithmatex">\(\text{с}\)</span>).</p>
+<p>Похідна <span class="arithmatex">\(\frac{ds(t')}{dt'}\)</span> визначає миттєву швидкість зміни сигналу у фіксований момент <span class="arithmatex">\(t'\)</span>, виражену у вольтах за секунду (<span class="arithmatex">\(\text{В/с}\)</span>).</p>
+<p><strong>Дельта-функція Дірака</strong> <span class="arithmatex">\(\delta(t - t_0)\)</span> являє собою сингулярну узагальнену функцію (розподіл), яка формалізує фізичне поняття надкороткого імпульсного впливу нескінченно великої інтенсивності з кінцевою площею збудження, рівною одиниці. У рамках класичного математичного аналізу функція Дірака визначається співвідношеннями:</p>
+<div class="arithmatex">\[\delta(t - t_0) = \begin{cases} 0, &amp; t \neq t_0 \\ \infty, &amp; t = t_0 \end{cases}, \quad \int_{-\infty}^{\infty} \delta(t - t_0) \, dt = 1\]</div>
+<p>де <span class="arithmatex">\(\delta(t - t_0)\)</span> позначає сингулярну узагальнену функцію Дірака, яка має розмірність <span class="arithmatex">\(\text{с}^{-1}\)</span>.</p>
+<p>Фізично дельта-функцію коректно інтерпретувати як границю прямокутного імпульсу <span class="arithmatex">\(\text{rect}(t / \tau)\)</span> одиничної площі за умови нескінченного звуження його тривалості <span class="arithmatex">\(\tau\)</span>:</p>
+<div class="arithmatex">\[\delta(t) = \lim_{\tau \to 0} \frac{1}{\tau} \text{rect}\left(\frac{t}{\tau}\right)\]</div>
+<p>де <span class="arithmatex">\(\tau\)</span> позначає тривалість прямокутного стробуючого імпульсу, яка вимірюється в секундах (<span class="arithmatex">\(\text{с}\)</span>).</p>
+<p>Функція <span class="arithmatex">\(\text{rect}(\xi)\)</span> є прямокутною селекторною функцією, що дорівнює одиниці при <span class="arithmatex">\(|\xi| \le 1/2\)</span> та набуває нульового значення при <span class="arithmatex">\(|\xi| &gt; 1/2\)</span>.</p>
+<p>Між узагальненою дельта-функцією та функцією стрибка Хевісайда існує строгий взаємний інтегро-диференціальний зв'язок у сенсі теорії узагальнених функцій:</p>
+<div class="arithmatex">\[\delta(t - t_0) = \frac{d\sigma(t - t_0)}{dt}, \quad \sigma(t - t_0) = \int_{-\infty}^{t} \delta(\tau - t_0) \, d\tau\]</div>
+<p>Ключовою математичною властивістю дельта-функції, покладеною в основу теорії дискретизації та спектрального аналізу, є її <strong>фільтрувальна властивість</strong> (sifting property):</p>
+<div class="arithmatex">\[\int_{-\infty}^{\infty} s(t) \delta(t - t_0) \, dt = s(t_0)\]</div>
+<p>Даний інтегральний вираз демонструє, що скалярний добуток довільної неперервної функції <span class="arithmatex">\(s(t)\)</span> на зсунуту дельта-функцію Дірака дозволяє селективно вилучити (відфільтрувати) дискретне значення сигналу безпосередньо в точці сингулярності <span class="arithmatex">\(t = t_0\)</span>.</p>
+<p>У дискретній часовій області точним математичним еквівалентом дельта-функції виступає <strong>одиничний імпульс Кронекера</strong> <span class="arithmatex">\(\delta[n]\)</span>, який на відміну від континуального розподілу Дірака є звичайною, несингулярною числовою послідовністю:</p>
+<div class="arithmatex">\[\delta[n] = \begin{cases} 1, &amp; n = 0 \\ 0, &amp; n \neq 0 \end{cases}\]</div>
+<p>де <span class="arithmatex">\(\delta[n]\)</span> є безрозмірним числовим дискретним імпульсом, аргумент якого <span class="arithmatex">\(n \in \mathbb{Z}\)</span> є цілим числом.</p>
+<p>Аналогом неперервної функції Хевісайда у дискретному часі є дискретний одиничний стрибок <span class="arithmatex">\(u[n]\)</span>, який визначається співвідношенням:</p>
+<div class="arithmatex">\[u[n] = \begin{cases} 1, &amp; n \ge 0 \\ 0, &amp; n \lt  0 \end{cases}\]</div>
+<p>Дискретний імпульс Кронекера пов'язаний із дискретним стрибком через першу різницеву похідну:</p>
+<div class="arithmatex">\[\delta[n] = u[n] - u[n - 1]\]</div>
+<p>Будь-яка числова послідовність <span class="arithmatex">\(x[n]\)</span>, що надходить у тракт цифрового сигнального процесора, може бути розкладена за ортонормованим базисом зсунутих імпульсів Кронекера:</p>
+<div class="arithmatex">\[x[n] = \sum_{k=-\infty}^{\infty} x[k]\delta[n - k]\]</div>
+<p>де <span class="arithmatex">\(x[n]\)</span> позначає загальну числову послідовність дискретного сигналу, виражену в умовних одиницях або квантованих числових еквівалентах.</p>
+<p>Числові коефіцієнти <span class="arithmatex">\(x[k]\)</span> визначають конкретне амплітудне значення сигналу в дискретний момент часу з індексом <span class="arithmatex">\(k\)</span>.</p>
+<p>Функція <span class="arithmatex">\(\delta[n - k]\)</span> забезпечує позиціювання відповідного відліку сигналу на цілочисловій осі часових індексів.</p>
+<h3 id="13-">1.3. Математична формалізація часової дискретизації як стробування неперервного сигналу періодичною дельта-решіткою та аналіз періодичності спектрального відгуку</h3>
+<p><strong>Дискретизація неперервного сигналу за часом</strong> являє собою процес перетворення неперервної функції континууму <span class="arithmatex">\(s(t)\)</span> у решітчасту дискретну послідовність числових значень. Формальною математичною моделлю ідеальної дискретизації (стробування) є операція множення неперервної функції <span class="arithmatex">\(s(t)\)</span> на періодичну імпульсну послідовність дельта-функцій Дірака, яка в літературі має назву гребеня або решітки Дірака <span class="arithmatex">\(\eta_T(t)\)</span>:</p>
+<div class="arithmatex">\[\eta_T(t) = \sum_{n=-\infty}^{\infty} \delta(t - nT)\]</div>
+<p>де <span class="arithmatex">\(\eta_T(t)\)</span> позначає періодичну гребінчасту функцію дискретизації, виражену в одиницях <span class="arithmatex">\(\text{с}^{-1}\)</span>.</p>
+<p>Параметр <span class="arithmatex">\(T\)</span> визначає крок (період) квантування часу між двома сусідніми актами зняття вибірок, який вимірюється в секундах (<span class="arithmatex">\(\text{с}\)</span>).</p>
+<p>Індекс <span class="arithmatex">\(n \in \mathbb{Z}\)</span> задає цілочисловий номер відповідного часового відліку.</p>
+<p>Результат ідеальної дискретизації <span class="arithmatex">\(s_\delta(t)\)</span> у часовій області описується функціональним рядом амплітудно-модульованих сингулярних імпульсів:</p>
+<div class="arithmatex">\[s_\delta(t) = s(t) \cdot \eta_T(t) = s(t) \sum_{n=-\infty}^{\infty} \delta(t - nT) = \sum_{n=-\infty}^{\infty} s(nT) \delta(t - nT)\]</div>
+<p>де <span class="arithmatex">\(s_\delta(t)\)</span> позначає математичну модель дискретизованого сигналу у вигляді модульованої послідовності імпульсів із неперервною амплітудою, виражену у вольтах на секунду (<span class="arithmatex">\(\text{В/с}\)</span>).</p>
+<p>Величина <span class="arithmatex">\(s(nT)\)</span> визначає істинне значення первинного неперервного сигналу в дискретний момент стробування <span class="arithmatex">\(t = nT\)</span>, виражене у вольтах (<span class="arithmatex">\(\text{В}\)</span>).</p>
+<p>Функція <span class="arithmatex">\(\delta(t - nT)\)</span> позначає сингулярну дельта-функцію Дірака, зсунуту в часову точку взяття <span class="arithmatex">\(n\)</span>-го відліку.</p>
+<p>Для дослідження спектрального складу дискретизованого процесу <span class="arithmatex">\(s_\delta(t)\)</span> необхідно виконати пряме інтегральне перетворення Фур'є. Оскільки операції множення двох сигналів у часовій області відповідає згортка їхніх спектральних образів у частотній області, спектральна густина дискретизованого сигналу <span class="arithmatex">\(S_\delta(\omega)\)</span> набуває вигляду:</p>
+<div class="arithmatex">\[S_\delta(\omega) = \frac{1}{2\pi} \left[ S(\omega) * \mathcal{F}\{\eta_T(t)\} \right]\]</div>
+<p>Оскільки функція <span class="arithmatex">\(\eta_T(t)\)</span> є строго періодичною з періодом <span class="arithmatex">\(T\)</span>, її можна розкласти в комплексний тригонометричний ряд Фур'є:</p>
+<div class="arithmatex">\[\eta_T(t) = \sum_{k=-\infty}^{\infty} C_k e^{j k \omega_s t}, \quad C_k = \frac{1}{T} \int_{-T/2}^{T/2} \delta(t) e^{-j k \omega_s t} \, dt = \frac{1}{T}\]</div>
+<p>де <span class="arithmatex">\(\omega_s = \frac{2\pi}{T} = 2\pi f_s\)</span> є круговою частотою дискретизації, що вимірюється в радіанах за секунду (<span class="arithmatex">\(\text{рад/с}\)</span>).</p>
+<p>Параметр <span class="arithmatex">\(f_s = \frac{1}{T}\)</span> позначає циклічну частоту зняття відліків, яка вимірюється в герцах (<span class="arithmatex">\(\text{Гц}\)</span>).</p>
+<p>Комплексні коефіцієнти ряду Фур'є <span class="arithmatex">\(C_k\)</span> є константами і чисельно дорівнюють величині <span class="arithmatex">\(1/T\)</span> для всіх гармонійних компонентів <span class="arithmatex">\(k \in \mathbb{Z}\)</span>.</p>
+<p>Виконуючи почленне перетворення Фур'є для ряду <span class="arithmatex">\(\eta_T(t)\)</span>, отримуємо спектральне представлення гребеня Дірака у вигляді нескінченної періодичної послідовності імпульсів на осі частот:</p>
+<div class="arithmatex">\[\mathcal{F}\{\eta_T(t)\} = \frac{2\pi}{T} \sum_{k=-\infty}^{\infty} \delta\left(\omega - k\omega_s\right)\]</div>
+<p>Обчислюючи інтеграл згортки неперервного спектра <span class="arithmatex">\(S(\omega)\)</span> з отриманим частотним гребенем за допомогою фільтрувальної властивості дельта-функції, отримуємо фундаментальне співвідношення Пуассона для спектральної густини дискретизованого сигналу:</p>
+<div class="arithmatex">\[S_\delta(\omega) = \frac{1}{2\pi} \int_{-\infty}^{\infty} S(\theta) \cdot \frac{2\pi}{T} \sum_{k=-\infty}^{\infty} \delta\left(\omega - \theta - k\omega_s\right) \, d\theta = \frac{1}{T} \sum_{k=-\infty}^{\infty} S(\omega - k\omega_s)\]</div>
+<p>де <span class="arithmatex">\(S_\delta(\omega)\)</span> позначає спектральну густину дискретизованого сигналу, виражену у вольт-секундах (<span class="arithmatex">\(\text{В}\cdot\text{с}\)</span>).</p>
+<p>Функція <span class="arithmatex">\(S(\omega - k\omega_s)\)</span> визначає базовий спектр початкового неперервного сигналу, циклічно зміщений уздовж осі частот на величину <span class="arithmatex">\(k\omega_s\)</span>, кратну частоті дискретизації.</p>
+<p>Множник <span class="arithmatex">\(\frac{1}{T}\)</span> виступає амплітудним масштабним коефіцієнтом, що нормує спектральну густину відповідно до періоду стробування.</p>
+<p>Аналітичний висновок із формули спектра дискретизованого сигналу доводить: спектр сигналу після процедури часової дискретизації трансформується у строго періодичну функцію частоти з періодом повторення, що чисельно дорівнює частоті дискретизації <span class="arithmatex">\(\omega_s\)</span>. Цей спектр формується нескінченною сумою спектральних реплік (копій) оригінального спектра <span class="arithmatex">\(S(\omega)\)</span>. Для запобігання взаємного накладання цих реплік необхідно забезпечити розділення суміжних спектральних зон на осі частот, що становить основу фізичної реалізації апаратури цифрового перетворення.</p>
+<pre class="mermaid"><code>flowchart LR
+    A["Аналоговий сигнал s(t)"] --&gt; B["Антиаліасинговий ФНЧ (AAF)"]
+    B --&gt; C["Пристрій вибірки-зберігання (ПВЗ)"]
+    C --&gt; D["Амплітудний квантувач (Квантування)"]
+    D --&gt; E["Цифровий кодер АЦП"]
+    E --&gt; F["Цифровий потік Y[n] у шину ЦСП"]</code></pre>
+<p>Наведена структурна схема відображає типовий шлях перетворення сигналу в апаратному тракті комп'ютерної системи. Первинний аналоговий сигнал очищується від високочастотних складових за допомогою аналогового антиаліасингового фільтра (AAF), надходить до пристрою вибірки-зберігання (ПВЗ), де здійснюється фіксація миттєвого рівня на час перетворення, після чого квантується за амплітудою та кодується паралельним числовим двійковим кодом.</p>
+<h3 id="14">1.4. Простір станів і топологія амплітудного квантування за рівнем: аналітичний опис рівномірної дискретизації шкали вимірювань і природа незворотної інформаційної ентропії</h3>
+<p>Фізичні відліки <span class="arithmatex">\(s(nT)\)</span>, отримані на виході ідеального дискретизатора часу, продовжують залишатися континуальними величинами з незліченної множини амплітуд. Для представлення цих значень у скінченній розрядній сітці обчислювального пристрою необхідно здійснити <strong>квантування за рівнем</strong> — відображення неперервної осі амплітуд на дискретну множину цілочислових індексів.</p>
+<p>Повний динамічний діапазон вхідної напруги <span class="arithmatex">\(V_{\text{range}} = [V_{\min}, V_{\max}]\)</span> розбивається системою з <span class="arithmatex">\(K+1\)</span> порогових рівнів <span class="arithmatex">\(\{d_0, d_1, \dots, d_K\}\)</span> на <span class="arithmatex">\(K\)</span> неперетинних підінтервалів квантування <span class="arithmatex">\(I_j = (d_{j-1}, d_j]\)</span>. Кожному інтервалу <span class="arithmatex">\(I_j\)</span> ставиться у відповідність дискретний рівень квантування <span class="arithmatex">\(r_j \in \{h_1, h_2, \dots, h_K\}\)</span>, який найчастіше обирається як геометричний центр відповідного сегмента.</p>
+<p>Оператор рівномірного амплітудного квантування <span class="arithmatex">\(Q(\cdot)\)</span> формалізується кусково-постійною передавальною функцією сходинкового типу:</p>
+<div class="arithmatex">\[x_q = Q(x) = r_j, \quad \text{якщо } x \in (d_{j-1}, d_j]\]</div>
+<p>де <span class="arithmatex">\(x\)</span> позначає вхідне неперервне амплітудне значення відліку, виражене у вольтах (<span class="arithmatex">\(\text{В}\)</span>).</p>
+<p>Величина <span class="arithmatex">\(x_q\)</span> позначає дискретне квантоване значення амплітуди сигналу, виражене у вольтах (<span class="arithmatex">\(\text{В}\)</span>).</p>
+<p>Символ <span class="arithmatex">\(r_j\)</span> задає фіксований номінальний рівень відновлення, закріплений за <span class="arithmatex">\(j\)</span>-м діапазоном квантування.</p>
+<p>Параметри <span class="arithmatex">\(d_{j-1}\)</span> та <span class="arithmatex">\(d_j\)</span> визначають нижню та верхню межі (пороги спрацьовування компараторів) <span class="arithmatex">\(j\)</span>-го інтервалу квантування.</p>
+<p>У разі <strong>рівномірного квантування</strong> ширина всіх квантових інтервалів є строго константною та визначає величину кроку квантування <span class="arithmatex">\(\Delta\)</span> (квант за напругою, ціна найменшого значущого розряду — LSB, Least Significant Bit). Для лінійного аналого-цифрового перетворювача з розрядністю <span class="arithmatex">\(N\)</span> бітів загальна кількість формуваних рівнів становить <span class="arithmatex">\(K = 2^N\)</span>, а величина кроку квантування розраховується за аналітичною залежністю:</p>
+<div class="arithmatex">\[\Delta = \frac{V_{\max} - V_{\min}}{2^N - 1} \approx \frac{V_{\text{range}}}{2^N}\]</div>
+<p>де <span class="arithmatex">\(\Delta\)</span> визначає крок квантування за рівнем напруги, виражений у вольтах (<span class="arithmatex">\(\text{В}\)</span>).</p>
+<p>Параметри <span class="arithmatex">\(V_{\max}\)</span> та <span class="arithmatex">\(V_{\min}\)</span> задають граничні межі вхідної аналогової шкали перетворювача, виражені у вольтах (<span class="arithmatex">\(\text{В}\)</span>).</p>
+<p>Змінна <span class="arithmatex">\(N\)</span> позначає розрядність аналого-цифрового перетворювача, виражену в цілих бітах.</p>
+<p>Величина <span class="arithmatex">\(V_{\text{range}}\)</span> визначає повний діапазон перетворення шкали квантувача у вольтах (<span class="arithmatex">\(\text{В}\)</span>).</p>
+<p>Квантування за рівнем є принципово нелінійною, неін'єктивною операцією, за якої безліч незліченних континуальних значень вхідного сигналу відображається в одне єдине дискретне число. Це породжує непереборну інформаційну ентропію — незворотну втрату первинної інформації про точну амплітуду відліку. Різниця між істинним значенням сигналу <span class="arithmatex">\(x(t)\)</span> та його дискретним наближенням <span class="arithmatex">\(x_q(t)\)</span> утворює <strong>похибку (шум) квантування</strong> <span class="arithmatex">\(\varepsilon(t)\)</span>:</p>
+<div class="arithmatex">\[\varepsilon(t) = x(t) - Q[x(t)] = x(t) - x_q(t)\]</div>
+<p>де <span class="arithmatex">\(\varepsilon(t)\)</span> позначає абсолютну миттєву похибку амплітудного квантування, виражену у вольтах (<span class="arithmatex">\(\text{В}\)</span>).</p>
+<p>Функція <span class="arithmatex">\(x(t)\)</span> позначає точне аналогове значення амплітуди первинного сигналу в момент вимірювання, виражене у вольтах (<span class="arithmatex">\(\text{В}\)</span>).</p>
+<p>Величина <span class="arithmatex">\(x_q(t)\)</span> позначає дискретне квантоване наближення сигналу на виході перетворювача, виражене у вольтах (<span class="arithmatex">\(\text{В}\)</span>).</p>
+<p>При застосуванні симетричного правила заокруглення до найближчого дозволеного рівня максимальна абсолютна похибка квантування строго обмежена половиною кроку квантування:</p>
+<div class="arithmatex">\[-\frac{\Delta}{2} \le \varepsilon(t) \le \frac{\Delta}{2}\]</div>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Клас сигналу</th>
+<th style="text-align: left;">Часовий аргумент</th>
+<th style="text-align: left;">Амплітудний рівень</th>
+<th style="text-align: left;">Математичний опис</th>
+<th style="text-align: left;">Апаратна реалізація</th>
+<th style="text-align: left;">Основне джерело похибок</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Аналоговий</strong></td>
+<td style="text-align: left;">Неперервний (<span class="arithmatex">\(t \in \mathbb{R}\)</span>)</td>
+<td style="text-align: left;">Неперервний (<span class="arithmatex">\(y \in \mathbb{R}\)</span>)</td>
+<td style="text-align: left;">Диференціальні рівняння, інтеграли Фур'є</td>
+<td style="text-align: left;">Аналогові RC/LC-ланцюги, операційні підсилювачі</td>
+<td style="text-align: left;">Дрейф нуля, тепловий шум Джонсона, температурна нестабільність</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Дискретний</strong></td>
+<td style="text-align: left;">Дискретний (<span class="arithmatex">\(n \in \mathbb{Z}\)</span>)</td>
+<td style="text-align: left;">Неперервний (<span class="arithmatex">\(y \in \mathbb{R}\)</span>)</td>
+<td style="text-align: left;">Решітчасті функції, різницеві рівняння</td>
+<td style="text-align: left;">Пристрої вибірки-зберігання, комутовані конденсатори</td>
+<td style="text-align: left;">Джитер синхросигналу (апертурна невизначеність), витік заряду ПВЗ</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Квантований</strong></td>
+<td style="text-align: left;">Неперервний (<span class="arithmatex">\(t \in \mathbb{R}\)</span>)</td>
+<td style="text-align: left;">Дискретний (<span class="arithmatex">\(y \in \{h_1..h_K\}\)</span>)</td>
+<td style="text-align: left;">Кусково-постійні функції, релейні оператори</td>
+<td style="text-align: left;">Порогові тригери Шмітта, багатопорогові компаратори</td>
+<td style="text-align: left;">Статична нелінійність компаратора, гістерезисні затримки</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Цифровий</strong></td>
+<td style="text-align: left;">Дискретний (<span class="arithmatex">\(n \in \mathbb{Z}\)</span>)</td>
+<td style="text-align: left;">Дискретний (<span class="arithmatex">\(y \in \{h_1..h_K\}\)</span>)</td>
+<td style="text-align: left;">Алгебраїчні різницеві рівняння, z-перетворення</td>
+<td style="text-align: left;">Сигнальні процесори (DSP), мікроконтролери, ПЛІС (FPGA)</td>
+<td style="text-align: left;">Похибка квантування, шум скінченної розрядності регістрів обчислювача</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>ТИПОВА ПОМИЛКА:</strong>
+Поширеним є твердження, що дискретний за часом сигнал <span class="arithmatex">\(x[n]\)</span> дорівнює нулю у проміжках між послідовними моментами стробування, тобто коли часовий аргумент <span class="arithmatex">\(t \neq nT\)</span>. Це грубе методологічне порушення фізичної та математичної логіки. Операція дискретизації за своєю фундаментальною природою звужує область визначення функції з континууму дійсних чисел <span class="arithmatex">\(\mathbb{R}\)</span> до дискретної підмножини цілих чисел <span class="arithmatex">\(\mathbb{Z}\)</span>. У проміжках між відліками <span class="arithmatex">\(t \in (nT, (n+1)T)\)</span> дискретний сигнал взагалі не існує (його значення невизначене), а не набуває числового значення <span class="arithmatex">\(0\)</span>. Приписування сигналу нульових значень у міжвідліковому інтервалі еквівалентно штучному впровадженню додаткових нульових строб-імпульсів, що радикально модифікує спектральний склад процесу, збагачуючи його новими високочастотними паразитними гармоніками.</p>
+<p><strong>КОНТРОЛЬНЕ ПИТАННЯ.</strong>
+У чому полягає фундаментальна математична відмінність між розмірністю та спектральними властивостями континуальної дельта-функції Дірака <span class="arithmatex">\(\delta(t)\)</span> та дискретного імпульсу Кронекера <span class="arithmatex">\(\delta[n]\)</span>, і як ця відмінність впливає на операцію розкладання сигналів у відповідних часових областях?</p>
+</blockquote>
+<details class="note">
+<summary>Розгорнути відповідь</summary>
+<p><strong>Відповідь:</strong></p>
+<ol>
+<li>Функція Дірака <span class="arithmatex">\(\delta(t)\)</span> є узагальненою сингулярною функцією (розподілом) неперервного часу з нескінченною амплітудою в точці <span class="arithmatex">\(t=0\)</span>, скінченною одиничною площею та фізичною розмірністю оберненого часу (<span class="arithmatex">\(\text{с}^{-1}\)</span>). Її спектральна щільність Фур'є є неперервною константою у нескінченному діапазоні частот:</li>
+</ol>
+<div class="arithmatex">\[S_\delta(\omega) = \int_{-\infty}^{\infty} \delta(t) e^{-j\omega t} \, dt = 1, \quad \omega \in (-\infty; +\infty)\]</div>
+<ol>
+<li>Дискретний одиничний імпульс Кронекера <span class="arithmatex">\(\delta[n]\)</span> є безрозмірною числовою послідовністю дискретного часу, амплітуда якої строго дорівнює одиниці в точці <span class="arithmatex">\(n=0\)</span> і нулю при <span class="arithmatex">\(n \neq 0\)</span>. Його спектр є періодичною функцією частоти:</li>
+</ol>
+<div class="arithmatex">\[X_\delta(e^{j\omega}) = \sum_{n=-\infty}^{\infty} \delta[n] e^{-j\omega n} = 1, \quad \forall \omega\]</div>
+<ol>
+<li>
+<p>Аналіз дистракторів та наслідків:</p>
+<ul>
+<li>
+<p>Твердження про повну еквівалентність функцій Дірака і Кронекера є хибним, оскільки інтегрування сигналу з дельта-функцією вимагає використання неперервного інтеграла Рімана-Стілтьєса, тоді як дискретне розкладання спирається на дискретну операцію сумування згорток.</p>
+</li>
+<li>
+<p>Помилковим є ототожнення розмірностей: дельта-функція Дірака має фізичну розмірність, що компенсує диференціал часу <span class="arithmatex">\(dt\)</span> під інтегралом, тоді як імпульс Кронекера є строго нормованим абстрактним скалярним множником.</p>
+</li>
+</ul>
+</li>
+</ol>
+</details>
+<h3 id="_4">Вказівки для самостійного осмислення теоретичного базису</h3>
+<ol>
+<li>
+<p><strong>Порівняльний топологічний аналіз континуальних та решітчастих просторів.</strong> Необхідно самостійно довести, чому перетворення гільбертового простору неперервних функцій <span class="arithmatex">\(L_2(\mathbb{R})\)</span> у простір дискретних числових послідовностей <span class="arithmatex">\(l_2(\mathbb{Z})\)</span> зберігає ізоморфізм енергетичних параметрів виключно для сигналів з компактним спектральним носієм. Слід звернути увагу на геометричну інтерпретацію відстані між сигналами у функціональних просторах різної природи.</p>
+</li>
+<li>
+<p><strong>Аналіз ентропійних характеристик перетворювачів.</strong> Потрібно проаналізувати механізм зменшення інформаційної невизначеності сигналу при переході від аналогового представлення до квантованого цифрового потоку через призму ентропії Шеннона. Необхідно формалізувати аналітичну залежність між довжиною машинного слова розрядної сітки АЦП та теоретичною швидкістю генерації інформації джерелом дискретизованих повідомлень.</p>
+</li>
+</ol>
+<h2 id="2_1">2. Аналітичні процеси, математичний апарат та моделювання</h2>
+<h3 id="21-textsinc">2.1. Строге аналітичне виведення теореми відліків Котельникова-Шеннона-Найквіста та синтез інтерполяційного ряду відновлення за ортогональним базисом функцій <span class="arithmatex">\(\text{sinc}\)</span></h3>
+<p>Теорема відліків розглядає гільбертів простір функцій із квадратично інтегрованою амплітудою <span class="arithmatex">\(L_2(\mathbb{R})\)</span>, спектральний носій яких є компактною множиною, обмеженою граничною круговою частотою <span class="arithmatex">\(\omega_{\text{гр}} = 2\pi f_{\text{гр}}\)</span>. Такий підпростір у функціональному аналізі позначається як простір Пелі-Вінера <span class="arithmatex">\(PW_{\omega_{\text{гр}}}\)</span>. Нехай аналоговий сигнал <span class="arithmatex">\(s(t) \in PW_{\omega_{\text{гр}}}\)</span> є строго фінітним у частотній області, тобто його спектральна густина <span class="arithmatex">\(S(\omega) = \mathcal{F}\{s(t)\}\)</span> тотожно перетворюється на нуль за межами частотного інтервалу:</p>
+<div class="arithmatex">\[S(\omega) = 0 \quad \forall |\omega| &gt; \omega_{\text{гр}}\]</div>
+<p>Обернене перетворення Фур'є для зазначеного класу сигналів записується у вигляді інтеграла зі скінченними межами:</p>
+<div class="arithmatex">\[s(t) = \frac{1}{2\pi} \int_{-\omega_{\text{гр}}}^{\omega_{\text{гр}}} S(\omega) e^{j\omega t} \, d\omega\]</div>
+<p>де <span class="arithmatex">\(s(t)\)</span> позначає значення неперервного сигналу в довільний момент часу <span class="arithmatex">\(t\)</span>, виражене у вольтах (<span class="arithmatex">\(\text{В}\)</span>).</p>
+<p>Функція <span class="arithmatex">\(S(\omega)\)</span> позначає комплексну спектральну густину амплітуд первинного сигналу, виражену у вольт-секундах (<span class="arithmatex">\(\text{В}\cdot\text{с}\)</span>).</p>
+<p>Змінна <span class="arithmatex">\(\omega\)</span> задає поточну кругову частоту коливань континууму, яка вимірюється в радіанах за секунду (<span class="arithmatex">\(\text{рад/с}\)</span>).</p>
+<p>Параметр <span class="arithmatex">\(\omega_{\text{гр}}\)</span> визначає максимальну граничну кругову частоту спектра процесу, виражену в радіанах за секунду (<span class="arithmatex">\(\text{рад/с}\)</span>).</p>
+<p>Розглянемо періодичне продовження функції <span class="arithmatex">\(S(\omega)\)</span> із базового інтервалу <span class="arithmatex">\([-\omega_{\text{гр}}, \omega_{\text{гр}}]\)</span> на всю дійсну вісь частот із періодом повторення <span class="arithmatex">\(\omega_s \ge 2\omega_{\text{гр}}\)</span>. Періодизовану функцію спектра <span class="arithmatex">\(S_{\text{per}}(\omega)\)</span> можна розкласти у класичний комплексний ряд Фур'є за ортогональною системою гармонічних базисних функцій <span class="arithmatex">\(\{e^{-j n \frac{2\pi}{\omega_s} \omega}\}\)</span>:</p>
+<div class="arithmatex">\[S_{\text{per}}(\omega) = \sum_{n=-\infty}^{\infty} c_n e^{-j n T \omega}, \quad T = \frac{2\pi}{\omega_s}\]</div>
+<p>Комплексні коефіцієнти ряду <span class="arithmatex">\(c_n\)</span> обчислюються шляхом інтегрування спектральної функції в межах одного періоду:</p>
+<div class="arithmatex">\[c_n = \frac{1}{\omega_s} \int_{-\omega_s/2}^{\omega_s/2} S_{\text{per}}(\omega) e^{j n T \omega} \, d\omega\]</div>
+<p>За умови мінімальної частоти вибірки <span class="arithmatex">\(\omega_s = 2\omega_{\text{гр}}\)</span> період повторення становить <span class="arithmatex">\(T = \frac{\pi}{\omega_{\text{гр}}}\)</span>. У межах симетричного інтервалу <span class="arithmatex">\([-\omega_{\text{гр}}, \omega_{\text{гр}}]\)</span> періодизована функція <span class="arithmatex">\(S_{\text{per}}(\omega)\)</span> повністю збігається з вихідною спектральною густиною <span class="arithmatex">\(S(\omega)\)</span>. Порівнюючи інтеграл для коефіцієнта <span class="arithmatex">\(c_n\)</span> із загальним виразом оберненого перетворення Фур'є для моменту часу <span class="arithmatex">\(t = nT\)</span>, встановлюємо строгу рівність:</p>
+<div class="arithmatex">\[c_n = \frac{1}{2\omega_{\text{гр}}} \int_{-\omega_{\text{гр}}}^{\omega_{\text{гр}}} S(\omega) e^{j n T \omega} \, d\omega = \frac{2\pi}{2\omega_{\text{гр}}} \cdot \left[ \frac{1}{2\pi} \int_{-\omega_{\text{гр}}}^{\omega_{\text{гр}}} S(\omega) e^{j \omega (nT)} \, d\omega \right] = \frac{\pi}{\omega_{\text{гр}}} s(nT) = T \cdot s(nT)\]</div>
+<p>Підставляючи отримані вагові коефіцієнти <span class="arithmatex">\(c_n\)</span> у формулу ряду Фур'є для спектральної густини, а потім підставляючи вираз спектра в інтеграл оберненого перетворення Фур'є, отримуємо аналітичну процедуру відновлення континууму:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\text{Етап 1 (Підстановка спектрального ряду):} &amp; \quad s(t) = \frac{1}{2\pi} \int_{-\omega_{\text{гр}}}^{\omega_{\text{гр}}} \left[ \sum_{n=-\infty}^{\infty} T \cdot s(nT) e^{-j n T \omega} \right] e^{j\omega t} \, d\omega \\
+\text{Етап 2 (Зміна порядку операцій):} &amp; \quad s(t) = \sum_{n=-\infty}^{\infty} s(nT) \cdot \frac{T}{2\pi} \int_{-\omega_{\text{гр}}}^{\omega_{\text{гр}}} e^{j\omega (t - nT)} \, d\omega \\
+\text{Етап 3 (Аналітичне інтегрування ядер):} &amp; \quad \int_{-\omega_{\text{гр}}}^{\omega_{\text{гр}}} e^{j\omega (t - nT)} \, d\omega = \left[ \frac{e^{j\omega (t - nT)}}{j(t - nT)} \right]_{-\omega_{\text{гр}}}^{\omega_{\text{гр}}} = \frac{2\sin(\omega_{\text{гр}}(t - nT))}{t - nT} \\
+\text{Етап 4 (Формування кардинального ряду):} &amp; \quad s(t) = \sum_{n=-\infty}^{\infty} s(nT) \frac{\sin\left(\frac{\pi}{T}(t - nT)\right)}{\frac{\pi}{T}(t - nT)} = \sum_{n=-\infty}^{\infty} s(nT) \text{sinc}\left(\frac{\pi}{T}(t - nT)\right)
+\end{aligned}
+\]</div>
+<p>де <span class="arithmatex">\(s(nT)\)</span> позначає миттєве значення сигналу у вузлі дискретизації <span class="arithmatex">\(t_n = nT\)</span>, виражене у вольтах (<span class="arithmatex">\(\text{В}\)</span>).</p>
+<p>Функція <span class="arithmatex">\(\text{sinc}(\xi) = \frac{\sin \xi}{\xi}\)</span> визначає кардинальне інтерполяційне ядро Котельникова, аргумент якого є безрозмірним.</p>
+<p>Величина <span class="arithmatex">\(T = \frac{1}{2 f_{\text{гр}}}\)</span> є граничним кроком дискретизації за часом, що вимірюється в секундах (<span class="arithmatex">\(\text{с}\)</span>).</p>
+<p>Базисні функції <span class="arithmatex">\(\psi_n(t) = \text{sinc}\left(\frac{\pi}{T}(t - nT)\right)\)</span> володіють властивістю строгої взаємної ортогональності в гільбертовому просторі <span class="arithmatex">\(L_2(\mathbb{R})\)</span>:</p>
+<div class="arithmatex">\[\int_{-\infty}^{\infty} \text{sinc}\left(\frac{\pi}{T}(t - nT)\right) \text{sinc}\left(\frac{\pi}{T}(t - mT)\right) \, dt = T \cdot \delta_{nm}\]</div>
+<p>де <span class="arithmatex">\(\delta_{nm}\)</span> є символом Кронекера, який дорівнює одиниці при рівності цілочислових індексів <span class="arithmatex">\(n = m\)</span> та нулю при їх розбіжності <span class="arithmatex">\(n \neq m\)</span>.</p>
+<p>Асимптотична поведінка кардинального ядра при наближенні аргументу до вузлових точок відповідає фундаментальним граничним співвідношенням:</p>
+<div class="arithmatex">\[\lim_{t \to nT} \text{sinc}\left(\frac{\pi}{T}(t - nT)\right) = 1, \quad \lim_{t \to mT, \, m \neq n} \text{sinc}\left(\frac{\pi}{T}(t - nT)\right) = 0\]</div>
+<p>Це гарантує точну інтерполяцію: у моменти зняття відліків внесок усіх сусідніх членів ряду повністю обнуляється, а вихідний сигнал формується виключно поточним значенням <span class="arithmatex">\(s(nT)\)</span>.</p>
+<h3 id="22">2.2. Енергетичний критерій обмеження спектра реальних фінітних сигналів за формулою Парсеваля та вибір практичної граничної частоти</h3>
+<p>У реальних інформаційно-вимірювальних каналах будь-який спостережуваний процес <span class="arithmatex">\(s(t)\)</span> має скінченну тривалість <span class="arithmatex">\(T_{\text{сиг}}\)</span>, тобто є строго фінітною функцією на інтервалі <span class="arithmatex">\(t \in [0, T_{\text{сиг}}]\)</span>. Згідно з фундаментальною теоремою Пелі-Вінера, функція, скінченна в часовій області, не може мати строго обмеженого носія у частотній області. Спектральна густина <span class="arithmatex">\(S(\omega)\)</span> фінітного сигналу тягнеться вздовж осі частот до нескінченності, спадаючи за асимптотичним степеневим законом <span class="arithmatex">\(\mathcal{O}(\omega^{-k})\)</span>, де показник <span class="arithmatex">\(k\)</span> визначається порядком гладкості найгрубшого розриву функції або її похідних.</p>
+<p>Для коректного визначення частоти вибірки використовують енергетичну метрику. Повна фізична енергія сигналу <span class="arithmatex">\(E_s\)</span> встановлюється рівністю Парсеваля:</p>
+<div class="arithmatex">\[E_s = \int_{0}^{T_{\text{сиг}}} |s(t)|^2 \, dt = \frac{1}{2\pi} \int_{-\infty}^{\infty} |S(\omega)|^2 \, d\omega = \frac{1}{\pi} \int_{0}^{\infty} |S(\omega)|^2 \, d\omega\]</div>
+<p>де <span class="arithmatex">\(E_s\)</span> позначає повну енергію процесу, виражену в джоулях (<span class="arithmatex">\(\text{Дж}\)</span>).</p>
+<p>Величина <span class="arithmatex">\(|S(\omega)|^2\)</span> задає спектральну густину енергії процесу, виражену в джоулях на герц (<span class="arithmatex">\(\text{Дж/Гц}\)</span> або <span class="arithmatex">\(\text{В}^2\cdot\text{с}^2\)</span>).</p>
+<p>Практична гранична кругова частота <span class="arithmatex">\(\omega_{\text{гр}}\)</span> знаходиться із трансцендентного інтегрального рівняння, що фіксує частку корисної збереженої енергії <span class="arithmatex">\(\eta\)</span>:</p>
+<div class="arithmatex">\[\frac{1}{\pi} \int_{0}^{\omega_{\text{гр}}} |S(\omega)|^2 \, d\omega = \eta \cdot E_s\]</div>
+<p>де <span class="arithmatex">\(\eta\)</span> є нормативним коефіцієнтом збереження енергії, який в інженерних розрахунках обирається в діапазоні <span class="arithmatex">\(\eta \in [0.950; 0.999]\)</span>.</p>
+<p>Енергетична похибка апроксимації <span class="arithmatex">\(\Delta E\)</span>, зумовлена відкиданням нескінченного спектрального хвоста вище розрахункової частоти <span class="arithmatex">\(\omega_{\text{гр}}\)</span>, дорівнює:</p>
+<div class="arithmatex">\[\Delta E = \frac{1}{\pi} \int_{\omega_{\text{гр}}}^{\infty} |S(\omega)|^2 \, d\omega = (1 - \eta) E_s\]</div>
+<p>Абсолютна та відносна похибки відновлення сигналу за нормою простору <span class="arithmatex">\(L_2\)</span> зв'язані співвідношенням:</p>
+<div class="arithmatex">\[\gamma = \frac{\Delta E}{E_s} = 1 - \eta = \frac{\int_{-\infty}^{\infty} \left|s(t) - \sum_{n} s(nT)\text{sinc}\left(\frac{\pi}{T}(t - nT)\right)\right|^2 dt}{\int_{-\infty}^{\infty} |s(t)|^2 dt}\]</div>
+<p>Розглянемо як модельний приклад поодинокий прямокутний відеоімпульс амплітудою <span class="arithmatex">\(A\)</span> і тривалістю <span class="arithmatex">\(\tau\)</span>. Його спектральна густина описується виразом:</p>
+<div class="arithmatex">\[S(\omega) = A\tau \frac{\sin\left(\frac{\omega\tau}{2}\right)}{\frac{\omega\tau}{2}}\]</div>
+<p>Повна енергія сигналу становить <span class="arithmatex">\(E_s = A^2 \tau\)</span>. Інтеграл спектральної щільності зводиться до інтеграла Діріхле:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\text{Етап 1 (Запис інтеграла енергії хвоста):} &amp; \quad \Delta E = \frac{A^2 \tau^2}{\pi} \int_{\omega_{\text{гр}}}^{\infty} \frac{\sin^2\left(\frac{\omega\tau}{2}\right)}{\left(\frac{\omega\tau}{2}\right)^2} \, d\omega \\
+\text{Етап 2 (Заміна змінної $\xi = \frac{\omega\tau}{2}$):} &amp; \quad \Delta E = \frac{2 A^2 \tau}{\pi} \int_{\frac{\omega_{\text{гр}}\tau}{2}}^{\infty} \frac{\sin^2 \xi}{\xi^2} \, d\xi \\
+\text{Етап 3 (Асимптотична оцінка при $\omega_{\text{гр}}\tau \gg 1$):} &amp; \quad \Delta E \approx \frac{2 A^2 \tau}{\pi} \cdot \frac{1}{2} \int_{\frac{\omega_{\text{гр}}\tau}{2}}^{\infty} \xi^{-2} \, d\xi = \frac{2 E_s}{\pi \omega_{\text{гр}} \tau}
+\end{aligned}
+\]</div>
+<p>З отриманої асимптотики випливає, що відносна похибка <span class="arithmatex">\(\gamma = \frac{2}{\pi \omega_{\text{гр}} \tau}\)</span> спадає гіперболічно повільно, що вимагає багаторазового розширення смуги частот антиаліасингового тракту для імпульсних процесів.</p>
+<h3 id="23">2.3. Математична модель інтерференції спектральних реплік (аліасинг), аналітичний розрахунок хибних дзеркальних частот та схемотехнічні вимоги до антиаліасингової фільтрації</h3>
+<p>Якщо частота дискретизації <span class="arithmatex">\(\omega_s\)</span> не задовольняє умову Найквіста і становить величину <span class="arithmatex">\(\omega_s &lt; 2\omega_{\text{гр}}\)</span>, періодичні репліки спектра <span class="arithmatex">\(S(\omega - k\omega_s)\)</span> у формулі Пуассона взаємно перекриваються. Процес суперпозиції високочастотних спектральних компонентів на область базових низьких частот описується сумарною спектральною густиною дискретизованого сигналу:</p>
+<div class="arithmatex">\[S_\delta(\omega) = \frac{1}{T} S(\omega) + \frac{1}{T} \sum_{k \neq 0} S(\omega - k\omega_s)\]</div>
+<p>В інтервалі спостереження <span class="arithmatex">\(|\omega| \le \frac{\omega_s}{2}\)</span> другий доданок перестає дорівнювати нулю і створює незворотну аліасингову деформацію.</p>
+<p>Для аналітичного розрахунку хибної частоти (псевдоніма) розглянемо високочастотне гармонічне коливання з частотою <span class="arithmatex">\(f_0\)</span>, що перевищує частоту Найквіста <span class="arithmatex">\(f_N = f_s / 2\)</span>. Послідовність відліків такого сигналу має вигляд:</p>
+<div class="arithmatex">\[x[n] = \cos(2\pi f_0 n T + \varphi_0) = \cos\left(2\pi \frac{f_0}{f_s} n + \varphi_0\right)\]</div>
+<p>Користуючись властивістю парності тригонометричного косинуса <span class="arithmatex">\(\cos(\alpha) = \cos(-\alpha)\)</span> та періодичністю відносно додавання цілого числа періодів <span class="arithmatex">\(2\pi k\)</span>, ми можемо перетворити аргумент до еквівалентного значення, що потрапляє в першу зону Найквіста <span class="arithmatex">\([0; f_s/2]\)</span>:</p>
+<div class="arithmatex">\[x[n] = \cos\left(2\pi \left| f_0 - k f_s \right| n T \pm \varphi_0\right)\]</div>
+<p>Ціле число <span class="arithmatex">\(k\)</span> визначається за формулою округлення до найближчого цілого:</p>
+<div class="arithmatex">\[k = \left\lfloor \frac{f_0}{f_s} + \frac{1}{2} \right\rfloor\]</div>
+<p>Таким чином, розрахункова позірна (аліасингова) циклічна частота <span class="arithmatex">\(f_{\text{app}}\)</span>, що спостерігається на виході ідеального демодулятора, визначається формулою:</p>
+<div class="arithmatex">\[f_{\text{app}} = \left| f_0 - f_s \cdot \left\lfloor \frac{f_0}{f_s} + \frac{1}{2} \right\rfloor \right|\]</div>
+<p>де <span class="arithmatex">\(f_{\text{app}}\)</span> позначає результуючу частоту помилкової низькочастотної гармоніки в герцах (<span class="arithmatex">\(\text{Гц}\)</span>), причому гарантовано <span class="arithmatex">\(0 \le f_{\text{app}} \le \frac{f_s}{2}\)</span>.</p>
+<p>Параметр <span class="arithmatex">\(f_0\)</span> задає дійсну фізичну частоту вхідного сигналу, виражену в герцах (<span class="arithmatex">\(\text{Гц}\)</span>).</p>
+<p>Величина <span class="arithmatex">\(f_s\)</span> позначає циклічну частоту дискретизації вимірювального перетворювача в герцах (<span class="arithmatex">\(\text{Гц}\)</span>).</p>
+<pre class="mermaid"><code>sequenceDiagram
+    autonumber
+    participant Sensor as Сенсор (Джерело)
+    participant AAF as Аналоговий ФНЧ (AAF)
+    participant ADC as АЦП (Дискретизатор + Квантувач)
+    participant DSP as Процесор ЦОС
+
+    Note over Sensor, AAF: Неперервний часовий процес s(t)
+    Sensor-&gt;&gt;AAF: Сигнал s(t) зі спектром S(ω), що містить високочастотні шуми
+    Note over AAF: Придушення частот вище f_s/2 на рівень не менше заданого SNR
+    AAF-&gt;&gt;ADC: Очищений сигнал s_filt(t) зі смугою f ≤ f_c
+    par Процес перетворення в АЦП
+        ADC-&gt;&gt;ADC: 1. Фіксація вибірки блоком ПВЗ на інтервалі T
+        ADC-&gt;&gt;ADC: 2. Амплітудне порівняння матрицею компараторів
+        ADC-&gt;&gt;ADC: 3. Кодування дискретних станів у двійковий код
+    end
+    ADC-&gt;&gt;DSP: Цифрове машинне слово Y[n] через паралельну шину</code></pre>
+<p>Для виключення проникнення завад із вищих зон Найквіста в тракт впроваджують аналоговий фільтр низьких частот (Anti-Aliasing Filter — AAF). Якщо корисний сигнал займає смугу частот <span class="arithmatex">\([0; f_{\text{pass}}]\)</span>, а частота дискретизації системи зафіксована на рівні <span class="arithmatex">\(f_s\)</span>, то найнижча частота, здатна створити аліасинг у корисній смузі, становить:</p>
+<div class="arithmatex">\[f_{\text{stop}} = f_s - f_{\text{pass}}\]</div>
+<p>Отже, антиаліасинговий фільтр повинен мати перехідну смугу шириною <span class="arithmatex">\(\Delta f = f_{\text{stop}} - f_{\text{pass}} = f_s - 2f_{\text{pass}}\)</span>. Мінімально необхідний порядок фільтра Баттерворта <span class="arithmatex">\(N_{\text{filt}}\)</span> для забезпечення ослаблення <span class="arithmatex">\(A_{\text{stop}}\)</span> (дБ) у смузі затримання при нерівномірності <span class="arithmatex">\(A_{\text{pass}}\)</span> (дБ) у смузі пропускання розраховується за формулою:</p>
+<div class="arithmatex">\[N_{\text{filt}} \ge \frac{\log_{10}\left( \frac{10^{0.1 A_{\text{stop}}} - 1}{10^{0.1 A_{\text{pass}}} - 1} \right)}{2 \log_{10}\left( \frac{f_{\text{stop}}}{f_{\text{pass}}} \right)}\]</div>
+<h3 id="24-sigma_q2-delta2-12-textsnr-602n-176text">2.4. Стохастична модель похибки квантування: аналітичне виведення потужності рівномірного білого шуму <span class="arithmatex">\(\sigma_q^2 = \Delta^2 / 12\)</span> та логарифмічного правила Беннета <span class="arithmatex">\(\text{SNR} = 6.02N + 1.76\text{ дБ}\)</span></h3>
+<p>Математичний опис процесу квантування як детермінованої нелінійності сходинкового типу є надзвичайно громіздким для спектрального аналізу. Відповідно до стохастичної моделі Відроу, похибка квантування <span class="arithmatex">\(\varepsilon = x - x_q\)</span> моделюється як стаціонарний випадковий процес типу «білий шум», що має нульове математичне очікування та рівномірну одновимірну густину розподілу ймовірностей <span class="arithmatex">\(p(\varepsilon)\)</span> на інтервалі симетричного заокруглення:</p>
+<div class="arithmatex">\[p(\varepsilon) = \begin{cases} \frac{1}{\Delta}, &amp; -\frac{\Delta}{2} \le \varepsilon \le \frac{\Delta}{2} \\ 0, &amp; |\varepsilon| &gt; \frac{\Delta}{2} \end{cases}\]</div>
+<p>де <span class="arithmatex">\(\Delta\)</span> позначає величину кванта напруги (крок квантування), виражену у вольтах (<span class="arithmatex">\(\text{В}\)</span>).</p>
+<p>Потужність шуму квантування дорівнює дисперсії випадкової величини <span class="arithmatex">\(\sigma_q^2 = D[\varepsilon]\)</span>. Оскільки математичне очікування помилки <span class="arithmatex">\(M[\varepsilon] = 0\)</span> через симетрію розподілу, дисперсія обчислюється як інтеграл другого початкового моменту:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\text{Етап 1 (Формулювання інтеграла):} &amp; \quad \sigma_q^2 = \int_{-\infty}^{\infty} \varepsilon^2 p(\varepsilon) \, d\varepsilon = \int_{-\Delta/2}^{\Delta/2} \varepsilon^2 \frac{1}{\Delta} \, d\varepsilon \\
+\text{Етап 2 (Інтегрування степеневої функції):} &amp; \quad \sigma_q^2 = \frac{1}{\Delta} \left[ \frac{\varepsilon^3}{3} \right]_{-\Delta/2}^{\Delta/2} \\
+\text{Етап 3 (Підстановка границь інтегрування):} &amp; \quad \sigma_q^2 = \frac{1}{3\Delta} \left( \left(\frac{\Delta}{2}\right)^3 - \left(-\frac{\Delta}{2}\right)^3 \right) = \frac{1}{3\Delta} \left( \frac{\Delta^3}{8} + \frac{\Delta^3}{8} \right) \\
+\text{Етап 4 (Остаточне спрощення виразу):} &amp; \quad \sigma_q^2 = \frac{1}{3\Delta} \cdot \frac{2\Delta^3}{8} = \frac{\Delta^2}{12}
+\end{aligned}
+\]</div>
+<p>Середньоквадратичне відхилення (ефективна напруга шуму квантування) становить:</p>
+<div class="arithmatex">\[\sigma_q = \frac{\Delta}{\sqrt{12}} = \frac{\Delta}{2\sqrt{3}} \approx 0.2887 \cdot \Delta\]</div>
+<p>Для отримання енергетичного відношення сигнал/шум (<span class="arithmatex">\(\text{SNR}\)</span>) розглянемо тестове детерміноване гармонічне коливання повної шкали <span class="arithmatex">\(x(t) = A \sin(\omega_0 t)\)</span>, де амплітуда <span class="arithmatex">\(A\)</span> збігається з половиною повного динамічного діапазону перетворення <span class="arithmatex">\(N\)</span>-розрядного АЦП:</p>
+<div class="arithmatex">\[A = \frac{V_{\text{range}}}{2} = \frac{2^N \Delta}{2} = 2^{N-1} \Delta\]</div>
+<p>Середня потужність гармонічного коливання на одиничному опорі обчислюється через інтеграл за періодом:</p>
+<div class="arithmatex">\[P_s = \frac{1}{T_0} \int_{0}^{T_0} A^2 \sin^2(\omega_0 t) \, dt = \frac{A^2}{2} = \frac{\left(2^{N-1} \Delta\right)^2}{2} = \frac{2^{2N-2} \Delta^2}{2} = \frac{2^{2N} \Delta^2}{8}\]</div>
+<p>Співвідношення сигнал/шум у децибелах визначається як логарифм відношення потужностей:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\text{Етап 1 (Складання дробу потужностей):} &amp; \quad \text{SNR} = 10 \log_{10}\left( \frac{P_s}{\sigma_q^2} \right) = 10 \log_{10}\left( \frac{\frac{2^{2N} \Delta^2}{8}}{\frac{\Delta^2}{12}} \right) \\
+\text{Етап 2 (Спрощення масштабних факторів):} &amp; \quad \text{SNR} = 10 \log_{10}\left( \frac{12}{8} \cdot 2^{2N} \right) = 10 \log_{10}\left( \frac{3}{2} \cdot 2^{2N} \right) \\
+\text{Етап 3 (Розклад логарифма добутку):} &amp; \quad \text{SNR} = 10 \log_{10}(1.5) + 10 \log_{10}\left(2^{2N}\right) \\
+\text{Етап 4 (Винесення показника степеня):} &amp; \quad \text{SNR} = 10 \log_{10}(1.5) + 20 N \log_{10}(2)
+\end{aligned}
+\]</div>
+<p>Обчислюючи константи з високою точністю:</p>
+<div class="arithmatex">\[10 \log_{10}(1.5) \approx 1.76091259\dots \text{ дБ}, \quad 20 \log_{10}(2) \approx 6.0205999\dots \text{ дБ}\]</div>
+<p>Отримуємо класичну формулу Беннета для граничного теоретичного відношення сигнал/шум ідеального квантувача:</p>
+<div class="arithmatex">\[\text{SNR}_{\text{dB}} = 6.0206 \cdot N + 1.7609 \approx 6.02 \cdot N + 1.76 \quad [\text{дБ}]\]</div>
+<p>де <span class="arithmatex">\(N\)</span> позначає кількість розрядів АЦП (біт).</p>
+<p>Дослідження граничної поведінки співвідношення при прямуванні розрядності до нескінченності:</p>
+<div class="arithmatex">\[\lim_{N \to \infty} \text{SNR}(N) = \infty, \quad \lim_{N \to \infty} \sigma_q^2(N) = \lim_{N \to \infty} \frac{V_{\text{range}}^2}{12 \cdot 2^{2N}} = 0\]</div>
+<p>Це свідчить про повну лінеаризацію тракту перетворення при експоненційному зростанні апаратної складності.</p>
+<pre class="mermaid"><code>stateDiagram-v2
+    [*] --&gt; Idle: Очікування команди вибірки (Start of Conversion)
+    Idle --&gt; Tracking: Команда вибірки активна (ПВЗ переходить у режим стеження)
+    Tracking --&gt; Holding: Строб фіксації (Апертурна затримка t_a, збереження рівня)
+    Holding --&gt; Quantizing: Запуск тактового генератора SAR / Flash компараторів
+    Quantizing --&gt; Encoding: Зведення похибки: |ε| ≤ Δ/2
+    Encoding --&gt; DataReady: Формування вихідного N-бітного регістрового слова
+    DataReady --&gt; Idle: Скидання прапорця зайнятості (End of Conversion)</code></pre>
+<h3 id="25-dithering">2.5. Математичне обґрунтування процедури дизеризації (dithering): механізми декореляції шуму квантування, порівняльний аналіз невіднімальних та субтрактивних алгоритмів лінеаризації перетворювачів</h3>
+<p>Якщо квантований процес має амплітуду, співрозмірну з кроком квантування <span class="arithmatex">\(\Delta\)</span>, або змінюється строго періодично із частотами, кратними частоті вибірки, припущення Відроу про білий шум порушується. Похибка квантування стає детермінованою нелінійною функцією сигналу:</p>
+<div class="arithmatex">\[\varepsilon[n] = x[n] - Q(x[n])\]</div>
+<p>Це призводить до появи паразитних гармонік у спектрі (Cross-modulation distortion), виникнення стійких граничних циклів і візуального ефекту «псевдоконтурування» (ізоліній) на цифрових зображеннях.</p>
+<p>Для усунення кореляції між сигналом і шумом застосовують <strong>дизеризацію</strong> — підмішування псевдовипадкового допоміжного некорельованого сигналу <span class="arithmatex">\(d[n]\)</span> перед процедурою квантування.</p>
+<pre class="mermaid"><code>stateDiagram-v2
+    direction LR
+    state "Субтрактивна схема (Subtractive)" as Sub {
+        [*] --&gt; GenSub: Генерація d[n]
+        GenSub --&gt; AddSub: Додавання: u = x + d
+        AddSub --&gt; QuantSub: Квантування: Q(u)
+        QuantSub --&gt; SubtrSub: Віднімання d[n]
+        SubtrSub --&gt; [*]: Вихід y = Q(x+d) - d
+    }
+    state "Невіднімальна схема (Non-Subtractive)" as NonSub {
+        [*] --&gt; GenNon: Генерація d[n]
+        GenNon --&gt; AddNon: Додавання: u = x + d
+        AddNon --&gt; QuantNon: Квантування: Q(u)
+        QuantNon --&gt; [*]: Вихід y = Q(x+d)
+    }</code></pre>
+<p>У разі невіднімального дизерингу результуючий вихідний сигнал <span class="arithmatex">\(y[n]\)</span> формується як:</p>
+<div class="arithmatex">\[y[n] = Q(x[n] + d[n])\]</div>
+<p>За Шухманом, для того, щоб математичне очікування сумарної похибки <span class="arithmatex">\(\varepsilon_t = y - x\)</span> не залежало від значення вхідного сигналу <span class="arithmatex">\(x\)</span>, характеристична функція шуму дизерингу <span class="arithmatex">\(\Phi_d(u) = M[e^{j u d}]\)</span> повинна набувати нульових значень у дискретних точках:</p>
+<div class="arithmatex">\[\Phi_d\left(\frac{2\pi k}{\Delta}\right) = 0 \quad \forall k \in \mathbb{Z} \setminus \{0\}\]</div>
+<p>Цій умові відповідає генератор випадкового шуму з прямокутною густиною розподілу ймовірностей (RPDF) шириною <span class="arithmatex">\(\Delta\)</span>. Проте для повної незалежності дисперсії (другого моменту похибки) від вхідного процесу необхідно застосовувати шум із трикутною густиною розподілу (TPDF) шириною <span class="arithmatex">\(2\Delta\)</span>, що формується сумою двох незалежних рівномірних випадкових величин. При цьому дисперсія шуму на виході зростає до величини:</p>
+<div class="arithmatex">\[\sigma_{\text{non-sub}}^2 = \sigma_q^2 + \sigma_{\text{dither}}^2 = \frac{\Delta^2}{12} + \frac{\Delta^2}{6} = \frac{\Delta^2}{4}\]</div>
+<p>У <strong>субтрактивному дизерингу</strong> той самий сигнал <span class="arithmatex">\(d[n]\)</span>, сформований цифровим генератором псевдовипадкових чисел (PRNG), віднімається від квантованої суміші в цифровій області:</p>
+<div class="arithmatex">\[y_{\text{sub}}[n] = Q(x[n] + d[n]) - d[n]\]</div>
+<p>Аналітичне обчислення умовного математичного очікування відновленого сигналу демонструє строгу лінійність перетворення:</p>
+<div class="arithmatex">\[M[y_{\text{sub}}[n] \mid x[n]] = M[Q(x[n] + d[n]) - d[n] \mid x[n]] = x[n]\]</div>
+<p>При цьому сумарна похибка квантування <span class="arithmatex">\(\varepsilon_{\text{sub}}[n] = y_{\text{sub}}[n] - x[n]\)</span> стає повністю незалежним строго білим стаціонарним процесом із чистою дисперсією класичного рівня:</p>
+<div class="arithmatex">\[\sigma_{\text{sub}}^2 = \frac{\Delta^2}{12}\]</div>
+<p>Субтрактивний дизеринг забезпечує ідеальну лінеаризацію квантувача без збільшення потужності вихідного фонового шуму.</p>
+<blockquote>
+<p><strong>ВАЖЛИВО:</strong>
+Відповідно до теореми Котельникова-Шеннона-Найквіста, точне відновлення неперервного сигналу без виникнення спектрального аліасингу можливе тоді і тільки тоді, коли частота вибірки <span class="arithmatex">\(f_s\)</span> строго перевищує подвоєну граничну частоту спектра <span class="arithmatex">\(2f_{\text{гр}}\)</span>, а інтерполяційний фільтр відновлення має прямокутну частотну характеристику зі смугою пропускання, рівною частоті Найквіста <span class="arithmatex">\(f_N = f_s / 2\)</span>. При цьому базис розкладу формується нескінченною за часом системою ортогональних функцій <span class="arithmatex">\(\text{sinc}\left(\frac{\pi}{T}(t - nT)\right)\)</span>. Будь-яке обмеження тривалості або заниження частоти вибірки призводить до незворотної втрати ортогональності та перенесення потужності високочастотних складових у робочий частотний діапазон.</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Модель перетворення</th>
+<th style="text-align: left;">Необхідна апріорна інформація</th>
+<th style="text-align: left;">Апаратна складність реалізації</th>
+<th style="text-align: left;">Рівень внесеного шуму / похибки</th>
+<th style="text-align: left;">Динамічний діапазон (SNR)</th>
+<th style="text-align: left;">Сфера інженерного застосування</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Класичний Найквіст (Рівномірна вибірка)</strong></td>
+<td style="text-align: left;">Гранична частота спектра <span class="arithmatex">\(f_{\text{гр}}\)</span></td>
+<td style="text-align: left;">Середня: аналоговий AAF високого порядку + лінійний АЦП</td>
+<td style="text-align: left;"><span class="arithmatex">\(\sigma_q^2 = \frac{\Delta^2}{12}\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(\approx 6.02N + 1.76\text{ дБ}\)</span></td>
+<td style="text-align: left;">Прецизійні системи збору даних, сейсмометрія, спектрометрія</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Надлишкова дискретизація (Oversampling)</strong></td>
+<td style="text-align: left;">Наближена межа смуги пропускання <span class="arithmatex">\(f_{\text{pass}}\)</span></td>
+<td style="text-align: left;">Низька аналогова частина, але висока цифрова (цифровий дециматор)</td>
+<td style="text-align: left;">Знижений у <span class="arithmatex">\(M\)</span> разів у корисній смузі: <span class="arithmatex">\(\frac{\Delta^2}{12 M}\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(6.02N + 1.76 + 10\log_{10}(M)\text{ дБ}\)</span></td>
+<td style="text-align: left;">Сигма-дельта (<span class="arithmatex">\(\Sigma\Delta\)</span>) АЦП високої точності (аудіо, біомедицина)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Невіднімальний дизеринг (TPDF Dither)</strong></td>
+<td style="text-align: left;">Діапазон зміни амплітуди сигналу</td>
+<td style="text-align: left;">Низька: додавання некорельованого аналогового генератора шуму</td>
+<td style="text-align: left;">Збільшений шум: <span class="arithmatex">\(\sigma^2 = \frac{\Delta^2}{4}\)</span></td>
+<td style="text-align: left;">Зменшується приблизно на <span class="arithmatex">\(4.77\text{ дБ}\)</span>, але придушує гармоніки</td>
+<td style="text-align: left;">Системи обробки звуку, рендеринг графіки (усунення постеризації)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Субтрактивний дизеринг (Subtractive)</strong></td>
+<td style="text-align: left;">Повна синхронізація генераторів шуму в АЦП і ЦОС</td>
+<td style="text-align: left;">Висока: прецизійний цифровий генератор PRNG з ЦАП компенсації</td>
+<td style="text-align: left;">Мінімальний шум: <span class="arithmatex">\(\sigma^2 = \frac{\Delta^2}{12}\)</span></td>
+<td style="text-align: left;">Повний динамічний діапазон <span class="arithmatex">\(6.02N + 1.76\text{ дБ}\)</span> без гармонік</td>
+<td style="text-align: left;">Військова локація, захищені канали зв'язку, надвисокоточні вимірювання</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>КОНТРОЛЬНЕ ПИТАННЯ.</strong>
+На вхід 12-розрядного АЦП із діапазоном напруги <span class="arithmatex">\(V_{\text{range}} = 0 \dots 4.096\text{ В}\)</span> і тактовою частотою <span class="arithmatex">\(f_s = 100\text{ кГц}\)</span> надходить адитивна суміш корисного гармонічного сигналу <span class="arithmatex">\(s(t) = 1.5 \sin(2\pi \cdot 20000 \cdot t)\)</span> та паразитної гармонійної завади <span class="arithmatex">\(n(t) = 0.5 \cos(2\pi \cdot 135000 \cdot t)\)</span>. Розрахуйте:
+1) Крок квантування перетворювача <span class="arithmatex">\(\Delta\)</span>.
+2) Теоретичне граничне співвідношення сигнал/шум квантування (<span class="arithmatex">\(\text{SNR}\)</span>) для повномасштабного корисного сигналу.
+3) Точну частоту <span class="arithmatex">\(f_{\text{alias}}\)</span>, на якій проявлятиметься паразитна завада всередині робочого діапазону Найквіста після оцифрування без антиаліасингового фільтра.</p>
+</blockquote>
+<details class="note">
+<summary>Розгорнути аналіз відповіді</summary>
+<p><strong>Правильні відповіді:</strong></p>
+<ol>
+<li>
+<p><span class="arithmatex">\(\Delta = 1.0\text{ мВ}\)</span>.</p>
+</li>
+<li>
+<p><span class="arithmatex">\(\text{SNR} = 74.00\text{ дБ}\)</span>.</p>
+</li>
+<li>
+<p><span class="arithmatex">\(f_{\text{alias}} = 35\text{ кГц}\)</span>.</p>
+</li>
+</ol>
+<p><strong>Аналітичне обґрунтування:</strong></p>
+<ol>
+<li>Розрахунок кроку квантування <span class="arithmatex">\(\Delta\)</span> здійснюється за співвідношенням розмаху шкали та кількості дискретних квантових інтервалів для розрядності <span class="arithmatex">\(N = 12\)</span>:</li>
+</ol>
+<div class="arithmatex">\[\Delta = \frac{V_{\text{range}}}{2^N} = \frac{4.096\text{ В}}{2^{12}} = \frac{4.096\text{ В}}{4096} = 0.001\text{ В} = 1.0\text{ мВ}\]</div>
+<ol>
+<li>Розрахунок теоретичного граничного співвідношення сигнал/шум квантування (<span class="arithmatex">\(\text{SNR}\)</span>) за формулою Беннета:</li>
+</ol>
+<div class="arithmatex">\[\text{SNR}_{\text{dB}} = 6.0206 \cdot N + 1.7609 = 6.0206 \cdot 12 + 1.7609 = 72.2472 + 1.7609 = 74.0081 \approx 74.00\text{ дБ}\]</div>
+<ol>
+<li>
+<p>Розрахунок явища аліасингу для паразитної складової <span class="arithmatex">\(f_0 = 135\text{ кГц}\)</span> при частоті стробування <span class="arithmatex">\(f_s = 100\text{ кГц}\)</span>:</p>
+<ul>
+<li>
+<p>Частота Найквіста вимірювальної системи становить <span class="arithmatex">\(f_N = \frac{f_s}{2} = \frac{100}{2} = 50\text{ кГц}\)</span>.</p>
+</li>
+<li>
+<p>Знаходимо цілочисловий параметр зсуву зон Найквіста <span class="arithmatex">\(k\)</span>:</p>
+</li>
+</ul>
+<p><span class="arithmatex">\(k = \left\lfloor \frac{f_0}{f_s} + \frac{1}{2} \right\rfloor = \left\lfloor \frac{135000}{100000} + 0.5 \right\rfloor = \lfloor 1.35 + 0.5 \rfloor = \lfloor 1.85 \rfloor = 1\)</span></p>
+<ul>
+<li>Обчислюємо видиму частоту псевдоніма <span class="arithmatex">\(f_{\text{alias}}\)</span> у першій зоні Найквіста:</li>
+</ul>
+</li>
+</ol>
+<div class="arithmatex">\[f_{\text{alias}} = |f_0 - k \cdot f_s| = |135\text{ кГц} - 1 \cdot 100\text{ кГц}| = 35\text{ кГц}\]</div>
+<p>Оскільки <span class="arithmatex">\(35\text{ кГц} \le 50\text{ кГц}\)</span>, компонента осяде на частоті 35 кГц. Якщо система обробки застосовуватиме цифровий ФНЧ із частотою зрізу вище 35 кГц, дана завада невідворотно спотворить спектральний аналіз корисного коливання 20 кГц.</p>
+</details>
+<h2 id="3-_1">3. Практично-прикладний блок</h2>
+<h3 id="31-">3.1. Комплексний інженерний кейс. Параметричний розрахунок тракту аналого-цифрового перетворення для сенсорного вузла комп'ютерної системи</h3>
+<h4 id="_5">Постановка інженерної задачі</h4>
+<p>У структурі вбудованого комп'ютерного комплексу вібромоніторингу газотурбінних установок необхідно спроєктувати тракт аналого-цифрового перетворення для сенсорного вузла на базі п'єзоелектричного акселерометра. Корисний інформаційний сигнал вібрації зосереджений у смузі частот від <span class="arithmatex">\(0\)</span> до <span class="arithmatex">\(f_{\text{pass}} = 24\text{ кГц}\)</span>. </p>
+<p>У процесі експлуатації на вхід вимірювального тракту діє потужна гармонічна електромагнітна завада від широтно-імпульсного модулятора силового інвертора на частоті <span class="arithmatex">\(f_{\text{noise}} = 110\text{ кГц}\)</span> з амплітудою <span class="arithmatex">\(V_{\text{noise}} = 0.5\text{ В}\)</span>. Перетворювач має забезпечувати динамічний діапазон за шумом квантування не менше ніж <span class="arithmatex">\(\text{SNR}_{\text{req}} = 85\text{ дБ}\)</span> для запобігання маскуванню мікровібрацій підшипників. Максимальна нерівномірність амплітудно-частотної характеристики (АЧХ) у смузі пропускання не повинна перевищувати <span class="arithmatex">\(A_{\text{pass}} = 0.5\text{ дБ}\)</span>, а рівень придушення високочастотної завади на частоті її дзеркального накладання має складати щонайменше <span class="arithmatex">\(A_{\text{stop}} = 60\text{ дБ}\)</span>.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Параметр системи</th>
+<th style="text-align: left;">Позначення</th>
+<th style="text-align: left;">Числове значення</th>
+<th style="text-align: left;">Одиниця вимірювання</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Верхня межа смуги пропускання корисного сигналу</td>
+<td style="text-align: left;"><span class="arithmatex">\(f_{\text{pass}}\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(24.0\)</span></td>
+<td style="text-align: left;">кГц</td>
+</tr>
+<tr>
+<td style="text-align: left;">Частота гармонічної електромагнітної завади</td>
+<td style="text-align: left;"><span class="arithmatex">\(f_{\text{noise}}\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(110.0\)</span></td>
+<td style="text-align: left;">кГц</td>
+</tr>
+<tr>
+<td style="text-align: left;">Амплітуда високочастотної завади</td>
+<td style="text-align: left;"><span class="arithmatex">\(V_{\text{noise}}\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(0.5\)</span></td>
+<td style="text-align: left;">В</td>
+</tr>
+<tr>
+<td style="text-align: left;">Повний динамічний діапазон вхідної напруги АЦП</td>
+<td style="text-align: left;"><span class="arithmatex">\(V_{\text{range}}\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(5.12\)</span> (від <span class="arithmatex">\(-2.56\)</span> до <span class="arithmatex">\(+2.56\)</span>)</td>
+<td style="text-align: left;">В</td>
+</tr>
+<tr>
+<td style="text-align: left;">Необхідне співвідношення сигнал/шум у смузі</td>
+<td style="text-align: left;"><span class="arithmatex">\(\text{SNR}_{\text{req}}\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(85.0\)</span></td>
+<td style="text-align: left;">дБ</td>
+</tr>
+<tr>
+<td style="text-align: left;">Допустима нерівномірність у смузі пропускання</td>
+<td style="text-align: left;"><span class="arithmatex">\(A_{\text{pass}}\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(0.5\)</span></td>
+<td style="text-align: left;">дБ</td>
+</tr>
+<tr>
+<td style="text-align: left;">Мінімально необхідне загасання в смузі затримки</td>
+<td style="text-align: left;"><span class="arithmatex">\(A_{\text{stop}}\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(60.0\)</span></td>
+<td style="text-align: left;">дБ</td>
+</tr>
+</tbody>
+</table>
+<pre class="mermaid"><code>flowchart TD
+    A["Вхідні технічні вимоги: f_pass, f_noise, SNR_req"] --&gt; B["Крок 1. Вибір частоти вибірки f_s та розрахунок частоти Найквіста f_N"]
+    B --&gt; C["Крок 2. Розрахунок частоти аліасингу f_alias для завади 110 кГц"]
+    C --&gt; D["Крок 3. Визначення границі смуги затримання f_stop та синтез порядку фільтра Баттерворта"]
+    D --&gt; E["Крок 4. Розрахунок мінімальної розрядності АЦП N та кроку квантування Δ"]
+    E --&gt; F["Крок 5. Стохастичне моделювання субтрактивного дизерингу"]
+    F --&gt; G["Вихідний верифікований апаратний профіль тракту"]</code></pre>
+<h4 id="_6">Покроковий аналітичний розрахунок</h4>
+<h5 id="1_1">Крок 1. Вибір тактової частоти дискретизації та розрахунок частоти Найквіста</h5>
+<p>Теоретична абсолютна межа Котельникова вимагає виконання умови <span class="arithmatex">\(f_s \ge 2 f_{\text{pass}} = 48\text{ кГц}\)</span>. Проте вибір мінімальної частоти призводить до нульової ширини перехідної смуги фільтра, що робить фізичну реалізацію аналогового AAF неможливою. Обираємо стандартну для промислових сигнальних процесорів частоту вибірки <span class="arithmatex">\(f_s = 96.0\text{ кГц}\)</span>.</p>
+<p>Розраховуємо частоту Найквіста <span class="arithmatex">\(f_N\)</span>:</p>
+<div class="arithmatex">\[f_N = \frac{f_s}{2} = \frac{96.0\text{ кГц}}{2} = 48.0\text{ кГц}\]</div>
+<p>де <span class="arithmatex">\(f_N\)</span> позначає граничну частоту згинання спектральної характеристики, виражену в кілогерцах (<span class="arithmatex">\(\text{кГц}\)</span>).</p>
+<p>Змінна <span class="arithmatex">\(f_s\)</span> визначає тактову частоту зняття відліків аналого-цифровим перетворювачем, виражену в кілогерцах (<span class="arithmatex">\(\text{кГц}\)</span>).</p>
+<h5 id="2_2">Крок 2. Моделювання ефекту аліасингу для інверторної завади</h5>
+<p>Оскільки частота інвертора <span class="arithmatex">\(f_{\text{noise}} = 110\text{ кГц}\)</span> суттєво перевищує частоту Найквіста <span class="arithmatex">\(f_N = 48\text{ кГц}\)</span>, за відсутності фільтрації відбудеться дзеркальне накладання спектральних реплік. Визначаємо цілочисловий індекс спектральної зони Найквіста <span class="arithmatex">\(k\)</span>:</p>
+<div class="arithmatex">\[k = \left\lfloor \frac{f_{\text{noise}}}{f_s} + \frac{1}{2} \right\rfloor = \left\lfloor \frac{110.0}{96.0} + 0.5 \right\rfloor = \lfloor 1.1458 + 0.5 \rfloor = \lfloor 1.6458 \rfloor = 1\]</div>
+<p>Обчислюємо видиму частоту псевдоніма <span class="arithmatex">\(f_{\text{alias}}\)</span>, під виглядом якої високочастотна завада потрапить у цифровий сигнал:</p>
+<div class="arithmatex">\[f_{\text{alias}} = |f_{\text{noise}} - k \cdot f_s| = |110.0\text{ кГц} - 1 \cdot 96.0\text{ кГц}| = 14.0\text{ кГц}\]</div>
+<p>де <span class="arithmatex">\(f_{\text{alias}}\)</span> визначає паразитну частоту, що формується в спектрі внаслідок еліасингу, виражену в кілогерцах (<span class="arithmatex">\(\text{кГц}\)</span>).</p>
+<p>Оскільки розрахована частота <span class="arithmatex">\(14.0\text{ кГц}\)</span> потрапляє безпосередньо всередину інформаційного діапазону <span class="arithmatex">\([0; 24\text{ кГц}]\)</span>, її подальше цифрове видалення без спотворення корисних вібраційних складових стає фізично неможливим. Це доводить критичну необхідність аналогового придушення сигналу на частоті <span class="arithmatex">\(110\text{ кГц}\)</span>.</p>
+<h5 id="3">Крок 3. Синтез параметрів антиаліасингового фільтра Баттерворта</h5>
+<p>Для гарантованого захисту всього корисного діапазону частот <span class="arithmatex">\([0; f_{\text{pass}}]\)</span> нижня межа смуги затримання антиаліасингового фільтра <span class="arithmatex">\(f_{\text{stop}}\)</span> повинна призначатися таким чином, щоб найнижча спектральна компонента, яка здатна дзеркально відбитися в корисну смугу, зазнала повного нормованого загасання:</p>
+<div class="arithmatex">\[f_{\text{stop}} = f_s - f_{\text{pass}} = 96.0\text{ кГц} - 24.0\text{ кГц} = 72.0\text{ кГц}\]</div>
+<p>де <span class="arithmatex">\(f_{\text{stop}}\)</span> визначає нижню межу смуги гарантованого затримання аналогового фільтра, виражену в кілогерцах (<span class="arithmatex">\(\text{кГц}\)</span>).</p>
+<p>Розраховуємо мінімально необхідний порядок фільтра Баттерворта <span class="arithmatex">\(N_{\text{filt}}\)</span> за логарифмічним критерієм:</p>
+<div class="arithmatex">\[N_{\text{filt}} \ge \frac{\log_{10}\left( \frac{10^{0.1 \cdot A_{\text{stop}}} - 1}{10^{0.1 \cdot A_{\text{pass}}} - 1} \right)}{2 \cdot \log_{10}\left( \frac{f_{\text{stop}}}{f_{\text{pass}}} \right)} = \frac{\log_{10}\left( \frac{10^{0.1 \cdot 60.0} - 1}{10^{0.1 \cdot 0.5} - 1} \right)}{2 \cdot \log_{10}\left( \frac{72.0}{24.0} \right)}\]</div>
+<div class="arithmatex">\[N_{\text{filt}} \ge \frac{\log_{10}\left( \frac{10^6 - 1}{10^{0.05} - 1} \right)}{2 \cdot \log_{10}(3.0)} = \frac{\log_{10}\left( \frac{999999}{1.122018 - 1} \right)}{2 \cdot 0.47712} = \frac{\log_{10}\left( \frac{999999}{0.122018} \right)}{0.95424} = \frac{\log_{10}(8195503.9)}{0.95424} = \frac{6.91357}{0.95424} \approx 7.245\]</div>
+<p>Округлюємо отримане значення до найближчого більшого цілого числа: обираємо аналоговий активний фільтр Баттерворта <span class="arithmatex">\(8\)</span>-го порядку (<span class="arithmatex">\(N_{\text{filt}} = 8\)</span>), що реалізується на чотирьох каскадах Саллена-Кея.</p>
+<h5 id="4">Крок 4. Розрахунок мінімальної розрядності АЦП та параметрів квантування</h5>
+<p>Використовуючи формулу Беннета для ідеального квантувача, визначаємо аналітичну залежність необхідної розрядності <span class="arithmatex">\(N\)</span> від вимог динамічного діапазону:</p>
+<div class="arithmatex">\[\text{SNR}_{\text{req}} \le 6.0206 \cdot N + 1.7609 \implies N \ge \frac{\text{SNR}_{\text{req}} - 1.7609}{6.0206} = \frac{85.0 - 1.7609}{6.0206} = \frac{83.2391}{6.0206} \approx 13.825\text{ біт}\]</div>
+<p>Найближчою стандартною розрядністю інтегральних прецизійних перетворювачів є <span class="arithmatex">\(N = 14\text{ бітів}\)</span> або <span class="arithmatex">\(N = 16\text{ бітів}\)</span>. Обираємо промисловий АЦП послідовного наближення (SAR) з розрядністю <span class="arithmatex">\(N = 16\text{ бітів}\)</span>.</p>
+<p>Розраховуємо теоретичний <span class="arithmatex">\(\text{SNR}\)</span> для 16-розрядного перетворення:</p>
+<div class="arithmatex">\[\text{SNR}_{\text{theor}} = 6.0206 \cdot 16 + 1.7609 = 96.3296 + 1.7609 \approx 98.09\text{ дБ}\]</div>
+<p>Визначаємо фізичний крок квантування за напругою <span class="arithmatex">\(\Delta\)</span>:</p>
+<div class="arithmatex">\[\Delta = \frac{V_{\text{range}}}{2^N} = \frac{5.12\text{ В}}{2^{16}} = \frac{5.12\text{ В}}{65536} \approx 7.8125 \cdot 10^{-5}\text{ В} = 78.125\text{ мкВ}\]</div>
+<p>де <span class="arithmatex">\(\Delta\)</span> позначає абсолютний крок квантування за рівнем напруги (LSB), виражений у мікровольтах (<span class="arithmatex">\(\text{мкВ}\)</span>).</p>
+<h5 id="5">Крок 5. Стохастичне моделювання субтрактивного дизерингу</h5>
+<p>Для запобігання появі паразитних граничних циклів і лінеаризації перетворювача на малих рівнях сигналів синтезуємо параметри субтрактивного дизерингу на базі трикутного розподілу ймовірностей (TPDF).</p>
+<p>Шум дизерингу формується додаванням двох незалежних рівномірно розподілених процесів шириною <span class="arithmatex">\(\Delta\)</span>. Розраховуємо середньоквадратичне відхилення (СКВ) шуму дизерингу <span class="arithmatex">\(\sigma_d\)</span>:</p>
+<div class="arithmatex">\[\sigma_d = \sqrt{\frac{\Delta^2}{6}} = \frac{\Delta}{\sqrt{6}} = \frac{78.125\text{ мкВ}}{2.4495} \approx 31.894\text{ мкВ}\]</div>
+<p>У цифровій області обчислювач віднімає згенеровані значення псевдовипадкового коду, забезпечуючи нульове зміщення та повертаючи вихідну потужність залишкового шуму квантування до класичного рівня:</p>
+<div class="arithmatex">\[\sigma_{\text{res}}^2 = \frac{\Delta^2}{12} = \frac{(78.125 \cdot 10^{-6}\text{ В})^2}{12} \approx 5.086 \cdot 10^{-10}\text{ В}^2\]</div>
+<h4 id="_7">Інтерпретація результатів</h4>
+<ol>
+<li>
+<p>Застосування частоти вибірки <span class="arithmatex">\(f_s = 96\text{ кГц}\)</span> формує захисний інтервал шириною <span class="arithmatex">\(48\text{ кГц}\)</span> між корисною смугою та першою дзеркальною реплікою спектра, що дозволяє замінити фізично нереалізовний прямокутний фільтр практичним аналоговим фільтром Баттерворта помірного <span class="arithmatex">\(8\)</span>-го порядку.</p>
+</li>
+<li>
+<p>Розраховане дзеркальне відображення інверторної завади з частоти <span class="arithmatex">\(110\text{ кГц}\)</span> на інформаційну частоту <span class="arithmatex">\(14\text{ кГц}\)</span> доводить, що без попереднього аналогового ослаблення на <span class="arithmatex">\(60\text{ дБ}\)</span> цифрова фільтрація виявилася б абсолютно безпорадною через незворотне накладання спектральних густин.</p>
+</li>
+<li>
+<p>Вибір 16-розрядного АЦП забезпечує запас за динамічним діапазоном у <span class="arithmatex">\(13.09\text{ дБ}\)</span> порівняно з вихідною вимогою (<span class="arithmatex">\(98.09\text{ дБ}\)</span> проти <span class="arithmatex">\(85.0\text{ дБ}\)</span>), що гарантує збереження метрологічної точності вимірювань навіть у присутності теплових шумів аналогового тракту.</p>
+</li>
+<li>
+<p>Впровадження субтрактивного дизерингу з трикутним законом розподілу повністю лінеаризує передавальну функцію квантувача на рівні мікропереміщень, гарантуючи рівномірну спектральну щільність шуму без паразитних спектральних піків.</p>
+</li>
+</ol>
+<hr />
+<h3 id="32">3.2. Зведена довідкова система лекції</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Термін / Поняття</th>
+<th style="text-align: left;">Формалізація / Формула</th>
+<th style="text-align: left;">Сфера інженерного застосування</th>
+<th style="text-align: left;">Граничні обмеження</th>
+<th style="text-align: left;">Типові помилки інтерпретації</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Дискретизація за часом</strong></td>
+<td style="text-align: left;"><span class="arithmatex">\(s_\delta(t) = \sum_{n=-\infty}^{\infty} s(nT)\delta(t-nT)\)</span></td>
+<td style="text-align: left;">Первинне перетворення сигналів у ПВЗ АЦП, стробоскопічні змішувачі</td>
+<td style="text-align: left;">Крок <span class="arithmatex">\(T\)</span> обмежений максимальною тривалістю апертурної невизначеності</td>
+<td style="text-align: left;">Ототожнення з нульовими значеннями сигналу у міжвідлікових інтервалах</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Теорема Котельникова</strong></td>
+<td style="text-align: left;"><span class="arithmatex">\(s(t) = \sum_{n} s(nT)\text{sinc}\left(\frac{\pi}{T}(t-nT)\right)\)</span></td>
+<td style="text-align: left;">Обґрунтування мінімальної частоти зняття вибірок <span class="arithmatex">\(f_s \ge 2f_{\text{гр}}\)</span></td>
+<td style="text-align: left;">Вимагає строго нескінченної тривалості сигналу та ідеального ФНЧ</td>
+<td style="text-align: left;">Спроба прямого відновлення фінітних сигналів без урахування розширення спектра</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Частота Найквіста</strong></td>
+<td style="text-align: left;"><span class="arithmatex">\(f_N = \frac{f_s}{2} = \frac{1}{2T}\)</span></td>
+<td style="text-align: left;">Базовий орієнтир для розрахунку частотних характеристик ЦОС</td>
+<td style="text-align: left;">Не залежить від форми сигналу, визначається виключно тактом <span class="arithmatex">\(T\)</span></td>
+<td style="text-align: left;">Плутанина між частотою дискретизації <span class="arithmatex">\(f_s\)</span> та граничною частотою <span class="arithmatex">\(f_N\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Спектральний аліасинг</strong></td>
+<td style="text-align: left;"><span class="arithmatex">\(f_{\text{alias}} = \vert f_0 - k \cdot f_s \vert \le f_N\)</span></td>
+<td style="text-align: left;">Аналіз паразитного накладання частот, радіоприймачі прямого оцифрування</td>
+<td style="text-align: left;">Виникає завжди, коли спектр сигналу на вході АЦП перевищує <span class="arithmatex">\(f_N\)</span></td>
+<td style="text-align: left;">Хибне уявлення про можливість усунення аліасингу засобами цифрової фільтрації після АЦП</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Рівномірне квантування</strong></td>
+<td style="text-align: left;"><span class="arithmatex">\(\Delta = \frac{V_{\max} - V_{\min}}{2^N - 1} \approx \frac{V_{\text{range}}}{2^N}\)</span></td>
+<td style="text-align: left;">Амплітудна дискретизація у Flash, SAR та Pipeline АЦП</td>
+<td style="text-align: left;">Вводить незворотну ентропійну похибку, обмежену діапазоном <span class="arithmatex">\(\pm \Delta/2\)</span></td>
+<td style="text-align: left;">Вважати, що зменшення кроку <span class="arithmatex">\(\Delta\)</span> повністю ліквідує шум квантування</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Шум квантування</strong></td>
+<td style="text-align: left;"><span class="arithmatex">\(\sigma_q^2 = \frac{\Delta^2}{12}, \quad \sigma_q = \frac{\Delta}{2\sqrt{3}}\)</span></td>
+<td style="text-align: left;">Розрахунок чутливості та порогових характеристик цифрових трактів</td>
+<td style="text-align: left;">Справедливо виключно за умови некорельованості сигналу та похибки</td>
+<td style="text-align: left;">Застосування формули до постійних сигналів або процесів з малою амплітудою</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Правило Беннета (SNR)</strong></td>
+<td style="text-align: left;"><span class="arithmatex">\(\text{SNR} \approx 6.02 \cdot N + 1.76\text{ [дБ]}\)</span></td>
+<td style="text-align: left;">Оцінка теоретичного динамічного діапазону лінійних АЦП</td>
+<td style="text-align: left;">Виведене строго для неперервного гармонічного сигналу повної шкали</td>
+<td style="text-align: left;">Застосування константи <span class="arithmatex">\(1.76\)</span> до шумоподібних, імпульсних або мовних сигналів</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Субтрактивний дизеринг</strong></td>
+<td style="text-align: left;"><span class="arithmatex">\(y[n] = Q(x[n] + d[n]) - d[n]\)</span></td>
+<td style="text-align: left;">Усунення хибних контурів у відеосигналах, лінеаризація звукових трактів</td>
+<td style="text-align: left;">Вимагає повної цифрової синхронізації генератора в приймачі</td>
+<td style="text-align: left;">Думка про те, що підмішування шуму дизерингу завжди знижує співвідношення сигнал/шум</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="33">3.3. Контрольні питання та завдання</h3>
+<h4 id="_8">Концептуальні тестові завдання</h4>
+<ol>
+<li>Неперервний гармонічний сигнал <span class="arithmatex">\(x(t) = \cos(2\pi \cdot 170 \cdot t)\)</span> дискретизується з частотою <span class="arithmatex">\(f_s = 100\text{ Гц}\)</span>. Яка частота коливання буде зареєстрована у результаті відновлення ідеальним інтерполяційним фільтром низьких частот?
+   A. <span class="arithmatex">\(170\text{ Гц}\)</span>
+   B. <span class="arithmatex">\(70\text{ Гц}\)</span>
+   C. <span class="arithmatex">\(30\text{ Гц}\)</span>
+   D. <span class="arithmatex">\(15\text{ Гц}\)</span></li>
+</ol>
+<details class="note">
+<summary>Пояснення правильної відповіді</summary>
+<p><strong>Правильний варіант: C.</strong></p>
+<ol>
+<li>Розрахунок базується на формулі пошуку позірної частоти в першій зоні Найквіста, де частота Найквіста дорівнює <span class="arithmatex">\(f_N = f_s / 2 = 50\text{ Гц}\)</span>. Визначаємо цілочисловий зсув зон <span class="arithmatex">\(k\)</span>:</li>
+</ol>
+<div class="arithmatex">\[k = \left\lfloor \frac{f_0}{f_s} + \frac{1}{2} \right\rfloor = \left\lfloor \frac{170}{100} + 0.5 \right\rfloor = \lfloor 2.2 \rfloor = 2\]</div>
+<p>Обчислюємо видиму частоту псевдоніма:</p>
+<div class="arithmatex">\[f_{\text{alias}} = |f_0 - k \cdot f_s| = |170 - 2 \cdot 100| = |-30| = 30\text{ Гц}\]</div>
+<ol>
+<li>
+<p>Аналіз дистракторів:</p>
+<ul>
+<li>
+<p><strong>Варіант A</strong> є хибним, оскільки частота <span class="arithmatex">\(170\text{ Гц}\)</span> лежить за межами смуги пропускання відновлювального фільтра (<span class="arithmatex">\(f_N = 50\text{ Гц}\)</span>) і не може бути відновлена безпосередньо.</p>
+</li>
+<li>
+<p><strong>Варіант B</strong> є некоректним, тому що частота <span class="arithmatex">\(70\text{ Гц}\)</span> є результатом прямого віднімання <span class="arithmatex">\(170 - 100\)</span>, проте вона все ще перевищує частоту Найквіста <span class="arithmatex">\(50\text{ Гц}\)</span> і зазнає вторинного дзеркального відбиття: <span class="arithmatex">\(100 - 70 = 30\text{ Гц}\)</span>.</p>
+</li>
+<li>
+<p><strong>Варіант D</strong> є арифметично безпідставним і не відповідає жодній комбінації зон дискретизації.</p>
+</li>
+</ul>
+</li>
+</ol>
+</details>
+<ol>
+<li>Як зміниться теоретичне співвідношення сигнал/шум ідеального квантувача, якщо розрядність АЦП збільшити з <span class="arithmatex">\(10\)</span> до <span class="arithmatex">\(14\)</span> бітів?
+   A. Збільшиться на <span class="arithmatex">\(4.0\text{ дБ}\)</span>
+   B. Збільшиться приблизно на <span class="arithmatex">\(24.08\text{ дБ}\)</span>
+   C. Збільшиться у <span class="arithmatex">\(4\)</span> рази за логарифмічною шкалою
+   D. Збільшиться рівно на <span class="arithmatex">\(16\text{ дБ}\)</span></li>
+</ol>
+<details class="note">
+<summary>Пояснення правильної відповіді</summary>
+<p><strong>Правильний варіант: B.</strong></p>
+<ol>
+<li>Відповідно до правила Беннета, збільшення розрядності на <span class="arithmatex">\(\Delta N\)</span> бітів дає приріст співвідношення сигнал/шум, що визначається формулою:</li>
+</ol>
+<div class="arithmatex">\[\Delta \text{SNR} = 6.0206 \cdot \Delta N = 6.0206 \cdot (14 - 10) = 6.0206 \cdot 4 \approx 24.0824\text{ дБ}\]</div>
+<ol>
+<li>
+<p>Аналіз дистракторів:</p>
+<ul>
+<li>
+<p><strong>Варіант A</strong> є помилковим, оскільки значення <span class="arithmatex">\(4\)</span> є просто різницею кількості бітів, а не енергетичним співвідношенням у децибелах.</p>
+</li>
+<li>
+<p><strong>Варіант C</strong> некоректно інтерпретує логарифмічні одиниці, оскільки додавання <span class="arithmatex">\(24\text{ дБ}\)</span> відповідає збільшенню відношення потужностей у <span class="arithmatex">\(256\)</span> разів, а не у <span class="arithmatex">\(4\)</span> рази.</p>
+</li>
+<li>
+<p><strong>Варіант D</strong> базується на спрощеному припущенні, що кожен біт додає <span class="arithmatex">\(4\text{ дБ}\)</span>, що суперечить аналітичному коефіцієнту <span class="arithmatex">\(20 \log_{10}(2) \approx 6.02\text{ дБ}\)</span>.</p>
+</li>
+</ul>
+</li>
+</ol>
+</details>
+<ol>
+<li>Яку математичну властивість має ядро відновлення <span class="arithmatex">\(\text{sinc}\left(\frac{\pi}{T}(t - nT)\right)\)</span> у точках часової осі <span class="arithmatex">\(t = mT\)</span>, де <span class="arithmatex">\(m \in \mathbb{Z}\)</span> та <span class="arithmatex">\(m \neq n\)</span>?
+   A. Набуває максимального значення, рівного одиниці
+   B. Набуває невизначеного значення типу <span class="arithmatex">\(0/0\)</span>
+   C. Строго дорівнює нулю
+   D. Прямує до нескінченності за асимптотичним законом</li>
+</ol>
+<details class="note">
+<summary>Пояснення правильної відповіді</summary>
+<p><strong>Правильний варіант: C.</strong></p>
+<ol>
+<li>Підставляючи <span class="arithmatex">\(t = mT\)</span> у формулу кардинального ядра при <span class="arithmatex">\(m \neq n\)</span>, отримуємо цілочислове значення аргументу синуса:</li>
+</ol>
+<div class="arithmatex">\[\text{sinc}\left(\frac{\pi}{T}(mT - nT)\right) = \frac{\sin(\pi(m - n))}{\pi(m - n)}\]</div>
+<p>Оскільки різниця <span class="arithmatex">\((m - n) = k \neq 0\)</span> є цілим ненульовим числом, чисельник <span class="arithmatex">\(\sin(\pi k) \equiv 0\)</span>, а знаменник <span class="arithmatex">\(\pi k \neq 0\)</span>. Отже, ядро тотожно дорівнює нулю.</p>
+<ol>
+<li>
+<p>Аналіз дистракторів:</p>
+<ul>
+<li>
+<p><strong>Варіант A</strong> є хибним, оскільки одиниці функція дорівнює виключно у власній вузловій точці при <span class="arithmatex">\(m = n\)</span>.</p>
+</li>
+<li>
+<p><strong>Варіант B</strong> є некоректним, оскільки невизначеність <span class="arithmatex">\(0/0\)</span> виникає лише в точці <span class="arithmatex">\(t = nT\)</span>, де вона розкривається за першою чудовою границею і дорівнює <span class="arithmatex">\(1\)</span>.</p>
+</li>
+<li>
+<p><strong>Варіант D</strong> є принципово невірним, оскільки функція <span class="arithmatex">\(\text{sinc}\)</span> обмежена на всій числовій осі: <span class="arithmatex">\(|\text{sinc}(x)| \le 1\)</span>.</p>
+</li>
+</ul>
+</li>
+</ol>
+</details>
+<ol>
+<li>Чому для повної декореляції другого моменту (дисперсії) похибки квантування від вхідного сигналу при невіднімальному дизерингу необхідно використовувати шум із трикутним (TPDF), а не прямокутним (RPDF) розподілом?
+   A. Оскільки RPDF-шум неможливо згенерувати апаратними засобами
+   B. Оскільки характеристична функція RPDF-шуму має лише один нуль на осі частот
+   C. Оскільки RPDF-шум забезпечує незалежність лише математичного очікування, тоді як TPDF-шум робить інваріантною також і дисперсію помилки
+   D. Оскільки TPDF-шум повністю усуває похибку квантування на виході</li>
+</ol>
+<details class="note">
+<summary>Пояснення правильної відповіді</summary>
+<p><strong>Правильний варіант: C.</strong></p>
+<ol>
+<li>
+<p>За теоремою Шухмана, для незалежності першого моменту (середнього) достатньо першого порядку нулів характеристичної функції шуму дизерингу (що забезпечує RPDF шириною <span class="arithmatex">\(\Delta\)</span>). Для того, щоб потужність шуму квантування (другий момент) також не модулювалася вхідним сигналом, характеристична функція повинна мати подвійні нулі у точках <span class="arithmatex">\(2\pi k / \Delta\)</span>, що досягається виключно згорткою двох прямокутних розподілів, тобто трикутним розподілом TPDF шириною <span class="arithmatex">\(2\Delta\)</span>.</p>
+</li>
+<li>
+<p>Аналіз дистракторів:</p>
+<ul>
+<li>
+<p><strong>Варіант A</strong> є хибним, оскільки рівномірний RPDF-шум генерується схемотехнічно найпростішим шляхом.</p>
+</li>
+<li>
+<p><strong>Варіант B</strong> є математично невірним, оскільки функція <span class="arithmatex">\(\text{sinc}(\pi u \Delta)\)</span> для RPDF має нескінченну кількість періодичних нулів.</p>
+</li>
+<li>
+<p><strong>Варіант D</strong> є неможливим, оскільки невіднімальний дизеринг не усуває шум, а навпаки збільшує його дисперсію до <span class="arithmatex">\(\Delta^2 / 4\)</span>, ліквідуючи лише його спектральну кореляцію.</p>
+</li>
+</ul>
+</li>
+</ol>
+</details>
+<hr />
+<h4 id="_9">Завдання для самостійної роботи</h4>
+<h5 id="_10">Постановка задачі</h5>
+<p>Для комп'ютерної системи реєстрації біопотенціалів головного мозку (електроенцефалографа — ЕЕГ) необхідно розрахувати параметри цифрового вимірювального каналу. ЕЕГ-сигнал має максимальну амплітуду <span class="arithmatex">\(V_{\text{peak}} = \pm 100\text{ мкВ}\)</span> (<span class="arithmatex">\(V_{\text{range}} = 200\text{ мкВ}\)</span>) та верхню межу фізіологічного спектра <span class="arithmatex">\(f_{\text{eeg}} = 125\text{ Гц}\)</span>. </p>
+<p>У приміщенні діє потужна мережева завада частотою <span class="arithmatex">\(f_{\text{grid}} = 50\text{ Гц}\)</span> та її вищі непарні гармоніки (<span class="arithmatex">\(150\text{ Гц}, 250\text{ Гц}, 350\text{ Гц}\)</span>). Канал повинен забезпечити роздільну здатність за напругою не гірше ніж <span class="arithmatex">\(0.05\text{ мкВ}\)</span> та співвідношення сигнал/шум квантування не менше ніж <span class="arithmatex">\(75\text{ дБ}\)</span>.</p>
+<h5 id="_11">Завдання для виконання</h5>
+<ol>
+<li>
+<p>Визначте мінімально допустиму частоту дискретизації <span class="arithmatex">\(f_s\)</span> за теоремою Котельникова та оберіть стандартну кратну інженерну частоту дискретизації <span class="arithmatex">\(f_{s,\text{eng}}\)</span>, що забезпечить формування захисної смуги для аналогового антиаліасингового фільтра.</p>
+</li>
+<li>
+<p>Розрахуйте спектральні позиції перших трьох вищих гармонік мережевої завади (<span class="arithmatex">\(150\text{ Гц}, 250\text{ Гц}, 350\text{ Гц}\)</span>) у першій зоні Найквіста за умови, що оцифрування виконується на обраній інженерній частоті без попередньої фільтрації.</p>
+</li>
+<li>
+<p>Розрахуйте мінімальну розрядність АЦП <span class="arithmatex">\(N\)</span>, яка одночасно задовольняє вимогу щодо співвідношення сигнал/шум <span class="arithmatex">\(\text{SNR} \ge 75\text{ дБ}\)</span> та забезпечує ціну одиниці молодшого розряду (LSB) <span class="arithmatex">\(\Delta \le 0.05\text{ мкВ}\)</span>.</p>
+</li>
+<li>
+<p>Складіть аналітичний вираз інтерполяційного ряду відновлення первинного ЕЕГ-сигналу в часовій області за його дискретними відліками, вказавши явний вигляд базисних ядер.</p>
+</li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Повернутись нагору
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Kyrylo Vadurin &bull; <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "navigation.tracking", "header.autohide", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0456\u0439\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u0421\u043a\u043e\u043f\u0456\u044e\u0432\u0430\u0442\u0438 \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0429\u0435 1 \u0437\u0431\u0456\u0433 \u043d\u0430 \u0446\u0456\u0439 \u0441\u0442\u043e\u0440\u0456\u043d\u0446\u0456", "search.result.more.other": "\u0429\u0435 # \u0437\u0431\u0456\u0433\u0456\u0432 \u043d\u0430 \u0446\u0456\u0439 \u0441\u0442\u043e\u0440\u0456\u043d\u0446\u0456", "search.result.none": "\u0417\u0431\u0456\u0433\u0456\u0432 \u043d\u0435 \u0437\u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u0417\u043d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0437\u0431\u0456\u0433", "search.result.other": "\u0417\u043d\u0430\u0439\u0434\u0435\u043d\u043e # \u0437\u0431\u0456\u0433\u0456\u0432", "search.result.placeholder": "\u0420\u043e\u0437\u043f\u043e\u0447\u043d\u0456\u0442\u044c \u043f\u0438\u0441\u0430\u0442\u0438 \u0434\u043b\u044f \u043f\u043e\u0448\u0443\u043a\u0443", "search.result.term.missing": "\u041d\u0435 \u0437\u043d\u0430\u0439\u0434\u0435\u043d\u043e \u0437\u0430\u043f\u0438\u0442\u0443", "select.version": "\u041e\u0431\u0440\u0430\u0442\u0438 \u0432\u0435\u0440\u0441\u0456\u044e"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

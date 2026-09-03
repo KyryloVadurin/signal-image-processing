@@ -1,0 +1,2312 @@
+
+<!doctype html>
+<html lang="uk" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Навчальний портал з дисципліни "Обробка сигналів та зображень"">
+      
+      
+      
+      
+        <link rel="prev" href="../lb5/">
+      
+      
+        <link rel="next" href="../lb7/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>ЛБ 6. Базові операції з цифровими зображеннями - Обробка сигналів та зображень</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#no-6" class="md-skip">
+          Перейти до змісту
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Хедер">
+    <a href="../.." title="Обробка сигналів та зображень" class="md-header__button md-logo" aria-label="Обробка сигналів та зображень" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Обробка сигналів та зображень
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              ЛБ 6. Базові операції з цифровими зображеннями
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="cyan"  aria-label="Переключити на темну тему"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Переключити на темну тему" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="cyan"  aria-label="Переключити на світлу тему"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Переключити на світлу тему" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Пошук" placeholder="Пошук" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Шукати">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистити" aria-label="Очистити" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Пошук розпочато
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Вкладки" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Робоча програма
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../lk/lk1/" class="md-tabs__link">
+          
+  
+  
+  Лекції
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../lb1/" class="md-tabs__link">
+          
+  
+  
+  Лабораторні роботи
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../sr/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Самостійна робота
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../rg/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Розрахунково-графічна робота
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Навігація" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Обробка сигналів та зображень" class="md-nav__button md-logo" aria-label="Обробка сигналів та зображень" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Обробка сигналів та зображень
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Робоча програма
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лекції
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Лекції
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lk/lk1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 1. Математичне представлення, дискретизація та квантування
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lk/lk2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 2. Лінійні стаціонарні дискретні системи
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lk/lk3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 3. Спектральний аналіз дискретних сигналів
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lk/lk4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 4. Z-перетворення та проєктування цифрових фільтрів
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lk/lk5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 5. Цифрове представлення зображень та колориметричні моделі
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lk/lk6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 6. Поелементні амплітудні перетворення
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lk/lk7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 7. Просторова фільтрація зображень
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lk/lk8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 8. Геометричні трансформації та математична морфологія
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lk/lk9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 9. Двовимірна Фур'є-обробка та детектори контурів
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лабораторні роботи
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Лабораторні роботи
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lb1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 1. Дискретизація, квантування сигналів та ефект аліасингу
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lb2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 2. Лінійні стаціонарні системи та дискретна згортка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lb3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 3. Спектральний аналіз за допомогою ДПФ/ШПФ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lb4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 4. Синтез цифрових КІХ та НІХ фільтрів
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lb5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 5. Статистичний та кореляційний аналіз
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 6. Базові операції з цифровими зображеннями
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 6. Базові операції з цифровими зображеннями
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Зміст">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Зміст
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1 Теоретичні відомості
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-0" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2 Підготовка середовища та розгортання проєкту (Крок 0)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2 Підготовка середовища та розгортання проєкту (Крок 0)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Налаштування віртуального оточення та встановлення пакетів
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Структура файлової системи проєкту
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3 Порядок виконання роботи
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3 Порядок виконання роботи">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Індивідуальні завдання
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 Покроковий алгоритм та розв'язок еталонного прикладу
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.2 Покроковий алгоритм та розв&#39;язок еталонного прикладу">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Блок 1. Підготовка бібліотек та програмна генерація тестового зображення
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-bgrrgb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Блок 2. Аналіз параметрів зображення, порівняння BGR/RGB та декомпозиція каналів
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-hsv-cielab" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Блок 3. Конвертація та спектральний аналіз просторів HSV та CIELab
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-hsv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Блок 4. Алгоритм порогової колірної сегментації у просторі HSV
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 Запуск, тестування та перевірка результатів
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.3 Запуск, тестування та перевірка результатів">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Таблиця верифікації та діагностики роботи з колірними просторами:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Вимоги до змісту звіту
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Контрольні запитання для захисту роботи
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lb7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 7. Амплітудні перетворення та бінаризація
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lb8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 8. Просторова фільтрація зображень
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lb9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 9. Геометричні перетворення зображень
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lb10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 10. Математична морфологія зображень
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lb11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 11. 2D перетворення Фур'є та детектування контурів
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Самостійна робота
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Розрахунково-графічна робота
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Зміст">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Зміст
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1 Теоретичні відомості
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-0" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2 Підготовка середовища та розгортання проєкту (Крок 0)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2 Підготовка середовища та розгортання проєкту (Крок 0)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Налаштування віртуального оточення та встановлення пакетів
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Структура файлової системи проєкту
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3 Порядок виконання роботи
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3 Порядок виконання роботи">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Індивідуальні завдання
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 Покроковий алгоритм та розв'язок еталонного прикладу
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.2 Покроковий алгоритм та розв&#39;язок еталонного прикладу">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Блок 1. Підготовка бібліотек та програмна генерація тестового зображення
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-bgrrgb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Блок 2. Аналіз параметрів зображення, порівняння BGR/RGB та декомпозиція каналів
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-hsv-cielab" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Блок 3. Конвертація та спектральний аналіз просторів HSV та CIELab
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-hsv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Блок 4. Алгоритм порогової колірної сегментації у просторі HSV
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 Запуск, тестування та перевірка результатів
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.3 Запуск, тестування та перевірка результатів">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Таблиця верифікації та діагностики роботи з колірними просторами:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Вимоги до змісту звіту
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Контрольні запитання для захисту роботи
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="no-6">Лабораторна робота № 6. Базові операції з цифровими зображеннями, аналіз каналів та колірні простори</h1>
+<p><strong>Мета:</strong> Опанувати практичні навички програмного представлення цифрових растрових зображень як багатовимірних масивів даних у середовищі Python, дослідити відмінності структур колірного кодування бібліотек OpenCV, Pillow та Matplotlib, вивчити математичні засади функціонування колірних просторів <span class="arithmatex">\(\text{RGB}\)</span>, <span class="arithmatex">\(\text{HSV}\)</span> та <span class="arithmatex">\(\text{CIELab}\)</span>, а також реалізувати алгоритми декомпозиції колірних каналів і порогової сегментації об'єктів за спектральними характеристиками.</p>
+<p><strong>Стек технологій та інструменти:</strong></p>
+<ul>
+<li>
+<p><strong>Мова програмування / Середовище:</strong> Python 3.10+</p>
+</li>
+<li>
+<p><strong>Платформа / Бібліотеки / Модулі:</strong> NumPy 1.24+, OpenCV 4.8+ (<code>cv2</code>), Pillow 9.5+ (<code>PIL.Image</code>), Matplotlib 3.7+</p>
+</li>
+<li>
+<p><strong>Інструменти розробки:</strong> VS Code / PyCharm / Jupyter Notebook / Google Colab, Термінал (CLI)</p>
+</li>
+</ul>
+<hr />
+<h2 id="1">1 Теоретичні відомості</h2>
+<p>Цифрове монохромне напівтонове зображення математично описується як двовимірна матриця дискретних значень яскравості <span class="arithmatex">\(I[y, x]\)</span>, де цілочисельні просторові координати <span class="arithmatex">\(y \in [0, H-1]\)</span> та <span class="arithmatex">\(x \in [0, W-1]\)</span> визначають відповідно номер рядка (висоту кадру) та номер стовпця (ширину кадру). Кольорове зображення є тривимірним тензором <span class="arithmatex">\(I[y, x, c]\)</span>, у якому третій вимір <span class="arithmatex">\(c \in \{0, 1, 2\}\)</span> задає індекс відповідної спектральної колірної складової. У стандартному 8-бітному представленні типу <code>uint8</code> кожен піксельний відлік набуває цілих значень у діапазоні <span class="arithmatex">\([0, 255]\)</span>, що забезпечує <span class="arithmatex">\(256\)</span> градацій квантування яскравості для кожного каналу.</p>
+<p><pre class="mermaid"><code>graph LR
+    subgraph Color_Spaces_Mapping [Взаємні перетворення колірних просторів]
+        RGB["Адитивний простір RGB&lt;br/&gt;Куб 1x1x1 (R, G, B)"] --&gt;|"ITU-R BT.601"| Gray["Монохромне Gray&lt;br/&gt;Y = 0.299R + 0.587G + 0.114B"]
+        RGB --&gt;|"Нелінійна геометрія"| HSV["Циліндричний простір HSV&lt;br/&gt;Тон H, Насиченість S, Яскравість V"]
+        RGB --&gt;|"Через проміжний CIE XYZ"| Lab["Рівноконтрастний CIELab&lt;br/&gt;Світлість L*, Хроматичні a*, b*"]
+    end</code></pre>
+<em>Рисунок 1 — Структурна схема взаємозв'язку та конвертації колірних просторів</em></p>
+<p>Адитивна колірна модель <span class="arithmatex">\(\text{RGB}\)</span> базується на трьохкомпонентній теорії зору та законах Грасмана, згідно з якими довільний оптичний колір отримується змішуванням трьох некорельованих базових монохроматичних випромінювань: червоного (<span class="arithmatex">\(R\)</span>), зеленого (<span class="arithmatex">\(G\)</span>) та синього (<span class="arithmatex">\(B\)</span>). Перетворення кольорового <span class="arithmatex">\(\text{RGB}\)</span>-зображення у напівтонове півтонове подання <span class="arithmatex">\(Y[y, x]\)</span> з урахуванням спектральної чутливості людського ока здійснюється за стандартною зваженою формулою <span class="arithmatex">\(\text{ITU-R BT.601}\)</span>:</p>
+<div class="arithmatex">\[Y[y, x] = 0.2989 \cdot R[y, x] + 0.5870 \cdot G[y, x] + 0.1140 \cdot B[y, x]\]</div>
+<p>де <span class="arithmatex">\(R[y, x]\)</span>, <span class="arithmatex">\(G[y, x]\)</span> та <span class="arithmatex">\(B[y, x]\)</span> позначають числові значення відповідних колірних складових пікселя з координатами <span class="arithmatex">\((y, x)\)</span>, а коефіцієнти відображають домінуючу чутливість сітківки до зеленої ділянки оптичного спектра.</p>
+<p>Важливою практичною особливістю бібліотеки комп'ютерного зору OpenCV є збереження кольорових зображень у зворотному порядку каналів <span class="arithmatex">\(\text{BGR}\)</span> (<span class="arithmatex">\(c=0 \to \text{Blue}\)</span>, <span class="arithmatex">\(c=1 \to \text{Green}\)</span>, <span class="arithmatex">\(c=2 \to \text{Red}\)</span>). На відміну від OpenCV, графічні бібліотеки Matplotlib та Pillow використовують прямий порядок <span class="arithmatex">\(\text{RGB}\)</span>. Пряма передача <span class="arithmatex">\(\text{BGR}\)</span>-масиву до функцій відображення Matplotlib призводить до хроматичної інверсії, за якої червоні об'єкти візуалізуються синіми, а сині — червоними.</p>
+<p>Колірна модель <span class="arithmatex">\(\text{HSV}\)</span> (Hue, Saturation, Value) є циліндричною системою координат, яка розділяє хроматичну інформацію (колірний тон і насиченість) від ахроматичної інтенсивності (яскравості). Математичне перетворення з простору <span class="arithmatex">\(\text{RGB}\)</span> (де значення каналів нормовані до проміжку <span class="arithmatex">\([0, 1]\)</span>) у простір <span class="arithmatex">\(\text{HSV}\)</span> здійснюється за співвідношеннями:</p>
+<div class="arithmatex">\[V = \max(R, G, B)\]</div>
+<div class="arithmatex">\[S = \begin{cases} 0, &amp; \text{якщо } V = 0 \\ 1 - \frac{\min(R, G, B)}{V}, &amp; \text{якщо } V \neq 0 \end{cases}\]</div>
+<div class="arithmatex">\[H = \begin{cases} 60^\circ \cdot \left(\frac{G - B}{V - \min(R, G, B)}\right) \pmod{360^\circ}, &amp; \text{якщо } V = R \\ 60^\circ \cdot \left(\frac{B - R}{V - \min(R, G, B)} + 2\right), &amp; \text{якщо } V = G \\ 60^\circ \cdot \left(\frac{R - G}{V - \min(R, G, B)} + 4\right), &amp; \text{якщо } V = B \end{cases}\]</div>
+<p>де <span class="arithmatex">\(H\)</span> є кутовим значенням колірного тону в градусах (<span class="arithmatex">\(H \in [0^\circ, 360^\circ]\)</span>), <span class="arithmatex">\(S\)</span> визначає радіальну насиченість кольору (<span class="arithmatex">\(S \in [0, 1]\)</span>), а <span class="arithmatex">\(V\)</span> позначає яскравість пікселя (<span class="arithmatex">\(V \in [0, 1]\)</span>). Для 8-бітного кодування в OpenCV кут <span class="arithmatex">\(H\)</span> ділиться навпіл, набуваючи значень <span class="arithmatex">\(H_{cv} \in [0, 180]\)</span>, а параметри <span class="arithmatex">\(S\)</span> та <span class="arithmatex">\(V\)</span> масштабуються до цілочисельного діапазону <span class="arithmatex">\([0, 255]\)</span>.</p>
+<p><pre class="mermaid"><code>flowchart TD
+    subgraph Color_Segmentation_Pipeline [Конвеєр порогової сегментації за кольором]
+        InputImg["Вхідне кольорове зображення BGR"] --&gt; BGR2HSV["Конвертація простору cv2.cvtColor(BGR -&gt; HSV)"]
+        BGR2HSV --&gt; Thresholding["Порогова фільтрація cv2.inRange(HSV, Lower, Upper)"]
+        Thresholding --&gt; Mask["Бінарна маска цільових пікселів M[y, x]"]
+        Mask --&gt; Bitwise["Побітове маскування cv2.bitwise_and(Img, Img, mask=M)"]
+        InputImg --&gt; Bitwise
+        Bitwise --&gt; Segmented["Виділений об'єкт на чорному тлі"]
+    end</code></pre>
+<em>Рисунок 2 — Послідовність етапів колірної сегментації об'єктів у просторі HSV</em></p>
+<p>Колориметрична система <span class="arithmatex">\(\text{CIELab}\)</span> (<span class="arithmatex">\(L^*a^*b^*\)</span>) є апаратно-незалежним рівноконтрастним колірним простором, де однаковим евклідовим відстаням між координатами відповідають однакові зорові відчуття відмінності кольорів. Координата <span class="arithmatex">\(L^*\)</span> відображає психофізіологічну світлість у межах <span class="arithmatex">\([0, 100]\)</span>, координата <span class="arithmatex">\(a^*\)</span> характеризує положення кольору на осі «зелений — червоний», а координата <span class="arithmatex">\(b^*\)</span> — на осі «синій — жовтий».</p>
+<p>Сегментація об'єктів за кольором у просторі <span class="arithmatex">\(\text{HSV}\)</span> здійснюється шляхом формування бінарної маски <span class="arithmatex">\(M[y, x]\)</span> методом подвійної порогової фільтрації:</p>
+<div class="arithmatex">\[M[y, x] = \begin{cases} 255, &amp; \text{якщо } H_{min} \le H[y, x] \le H_{max} \ \land \ S_{min} \le S[y, x] \le S_{max} \ \land \ V_{min} \le V[y, x] \le V_{max} \\ 0, &amp; \text{в іншому випадку} \end{cases}\]</div>
+<p>де <span class="arithmatex">\(H_{min}, H_{max}, S_{min}, S_{max}, V_{min}, V_{max}\)</span> задають граничні межі колірного діапазону. Застосування побітової кон'юнкції вихідного кадру з отриманою маскою дозволяє повністю ізолювати цільові об'єкти від неоднорідного навколишнього фону.</p>
+<hr />
+<h2 id="2-0">2 Підготовка середовища та розгортання проєкту (Крок 0)</h2>
+<p>Перед початком роботи необхідно перевірити наявність середовища Python, створити структуру каталогів проєкту та встановити бібліотеки комп'ютерного зору й матричної обробки.</p>
+<h3 id="21">2.1 Налаштування віртуального оточення та встановлення пакетів</h3>
+<p>Виконайте у системному терміналі команди для створення ізольованого оточення:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># Створення робочого каталогу лабораторної роботи № 6</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>mkdir<span class="w"> </span>dsp_lab6_color_spaces
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nb">cd</span><span class="w"> </span>dsp_lab6_color_spaces
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="c1"># Ініціалізація віртуального середовища Python</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>python3<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>venv
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="c1"># Активація середовища:</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="c1"># Для ОС Linux/macOS:</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="nb">source</span><span class="w"> </span>venv/bin/activate
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="c1"># Для ОС Windows (PowerShell):</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="c1"># venv\Scripts\Activate.ps1</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="c1"># Для ОС Windows (CMD):</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="c1"># venv\Scripts\activate.bat</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="c1"># Оновлення pip та встановлення залежностей</span>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>pip
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>pip<span class="w"> </span>install<span class="w"> </span>numpy<span class="w"> </span>opencv-python<span class="w"> </span>pillow<span class="w"> </span>matplotlib
+</span></code></pre></div>
+<h3 id="22">2.2 Структура файлової системи проєкту</h3>
+<p>Файлова структура робочої директорії повинна мати такий вигляд:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>dsp_lab6_color_spaces/
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>├── data/
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>│   └── test_image.png             # Згенероване або тестове вхідне зображення
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>├── figures/
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>│   ├── bgr_vs_rgb_channels.png    # Графіки порівняння BGR/RGB та декомпозиції каналів
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>│   ├── hsv_and_lab_spaces.png     # Графіки розкладу в просторах HSV та CIELab
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>│   └── hsv_color_segmentation.png # Результати бінарного маскування та сегментації
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>├── lab6_color_processing.py       # Головний виконуваний скрипт програми
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>├── requirements.txt               # Зафіксовані версії пакетів
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>└── venv/                          # Віртуальне оточення
+</span></code></pre></div>
+<hr />
+<h2 id="3">3 Порядок виконання роботи</h2>
+<h3 id="31">3.1 Індивідуальні завдання</h3>
+<p>Здобувач вищої освіти виконує лабораторну роботу відповідно до індивідуального варіанта. Усі розрахунки діапазонів наведені для 8-бітної шкали OpenCV (<span class="arithmatex">\(H \in [0, 180], S \in [0, 255], V \in [0, 255]\)</span>).</p>
+<p>У кожному варіанті необхідно:</p>
+<ol>
+<li>
+<p>Завантажити (або програмно згенерувати) тестове зображення з цільовими об'єктами, дослідити його тензорні розміри та продемонструвати хроматичну різницю між форматами <span class="arithmatex">\(\text{BGR}\)</span> і <span class="arithmatex">\(\text{RGB}\)</span>;</p>
+</li>
+<li>
+<p>Виконати розділення на окремі канали засобами <code>cv2.split()</code> та прямим зрізом NumPy;</p>
+</li>
+<li>
+<p>Здійснити перетворення у колірні простори <span class="arithmatex">\(\text{HSV}\)</span> та <span class="arithmatex">\(\text{CIELab}\)</span>, проаналізувавши властивості кожного каналу;</p>
+</li>
+<li>
+<p>Сформувати бінарну маску за допомогою <code>cv2.inRange()</code> та виділити цільовий кольоровий об'єкт на темному тлі за допомогою побітового маскування <code>cv2.bitwise_and()</code>.</p>
+</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Варіант</th>
+<th style="text-align: center;">Цільовий колірний об'єкт</th>
+<th style="text-align: center;">Нижній поріг <span class="arithmatex">\([H_{min}, S_{min}, V_{min}]\)</span></th>
+<th style="text-align: center;">Верхній поріг <span class="arithmatex">\([H_{max}, S_{max}, V_{max}]\)</span></th>
+<th style="text-align: left;">Сфера застосування сегментації</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><strong>1</strong></td>
+<td style="text-align: center;">Насичений червоний (Red Part 1)</td>
+<td style="text-align: center;"><code>[0, 120, 100]</code></td>
+<td style="text-align: center;"><code>[10, 255, 255]</code></td>
+<td style="text-align: left;">Виявлення дорожніх знаків «Стоп»</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>2</strong></td>
+<td style="text-align: center;">Темно-червоний (Red Part 2)</td>
+<td style="text-align: center;"><code>[170, 120, 100]</code></td>
+<td style="text-align: center;"><code>[180, 255, 255]</code></td>
+<td style="text-align: left;">Медичний аналіз крововиливів на знімках</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>3</strong></td>
+<td style="text-align: center;">Яскраво-зелений (Pure Green)</td>
+<td style="text-align: center;"><code>[40, 100, 80]</code></td>
+<td style="text-align: center;"><code>[75, 255, 255]</code></td>
+<td style="text-align: left;">Моніторинг рослинності в агросекторі</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>4</strong></td>
+<td style="text-align: center;">Смарагдово-темний (Dark Green)</td>
+<td style="text-align: center;"><code>[35, 60, 40]</code></td>
+<td style="text-align: center;"><code>[85, 255, 180]</code></td>
+<td style="text-align: left;">Супутникове детектування лісових масивів</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>5</strong></td>
+<td style="text-align: center;">Небесно-блакитний (Sky Blue)</td>
+<td style="text-align: center;"><code>[90, 70, 120]</code></td>
+<td style="text-align: center;"><code>[115, 255, 255]</code></td>
+<td style="text-align: left;">Сегментація лінії горизонту для БПЛА</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>6</strong></td>
+<td style="text-align: center;">Глибокий синій (Dark Blue)</td>
+<td style="text-align: center;"><code>[100, 150, 60]</code></td>
+<td style="text-align: center;"><code>[130, 255, 255]</code></td>
+<td style="text-align: left;">Виявлення водних поверхонь на аерофото</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>7</strong></td>
+<td style="text-align: center;">Яскраво-жовтий (Pure Yellow)</td>
+<td style="text-align: center;"><code>[22, 120, 130]</code></td>
+<td style="text-align: center;"><code>[35, 255, 255]</code></td>
+<td style="text-align: left;">Детектування тенісних м'ячів у спорті</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>8</strong></td>
+<td style="text-align: center;">Темно-жовтий / Гірчичний</td>
+<td style="text-align: center;"><code>[18, 80, 70]</code></td>
+<td style="text-align: center;"><code>[30, 255, 200]</code></td>
+<td style="text-align: left;">Сортування сільськогосподарського насіння</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>9</strong></td>
+<td style="text-align: center;">Соковитий помаранчевий (Orange)</td>
+<td style="text-align: center;"><code>[11, 140, 120]</code></td>
+<td style="text-align: center;"><code>[22, 255, 255]</code></td>
+<td style="text-align: left;">Виявлення конусів дорожнього огородження</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>10</strong></td>
+<td style="text-align: center;">Бірюзовий / Ціан (Cyan)</td>
+<td style="text-align: center;"><code>[80, 100, 100]</code></td>
+<td style="text-align: center;"><code>[95, 255, 255]</code></td>
+<td style="text-align: left;">Контроль дефектів охолоджувальної рідини</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>11</strong></td>
+<td style="text-align: center;">Фіолетовий / Пурпуровий (Purple)</td>
+<td style="text-align: center;"><code>[130, 80, 70]</code></td>
+<td style="text-align: center;"><code>[155, 255, 255]</code></td>
+<td style="text-align: left;">Лабораторна біохімічна діагностика</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>12</strong></td>
+<td style="text-align: center;">Маджента / Рожевий (Magenta)</td>
+<td style="text-align: center;"><code>[145, 100, 120]</code></td>
+<td style="text-align: center;"><code>[170, 255, 255]</code></td>
+<td style="text-align: left;">Сегментація штучних лазерних маркерів</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>13</strong></td>
+<td style="text-align: center;">Салатовий (Light Green)</td>
+<td style="text-align: center;"><code>[35, 50, 150]</code></td>
+<td style="text-align: center;"><code>[60, 255, 255]</code></td>
+<td style="text-align: left;">Аналіз дозрівання плодоовочевих культур</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>14</strong></td>
+<td style="text-align: center;">Морська хвиля (Teal)</td>
+<td style="text-align: center;"><code>[82, 80, 60]</code></td>
+<td style="text-align: center;"><code>[102, 255, 200]</code></td>
+<td style="text-align: left;">Моніторинг екологічного стану водойм</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>15</strong></td>
+<td style="text-align: center;">Бордовий / Малиновий</td>
+<td style="text-align: center;"><code>[165, 90, 60]</code></td>
+<td style="text-align: center;"><code>[179, 255, 180]</code></td>
+<td style="text-align: left;">Дефектоскопія анодованих металовиробів</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>16</strong></td>
+<td style="text-align: center;">Бурштиновий / Золотистий</td>
+<td style="text-align: center;"><code>[15, 110, 140]</code></td>
+<td style="text-align: center;"><code>[26, 255, 255]</code></td>
+<td style="text-align: left;">Контроль якості соняшникової олії</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>17</strong></td>
+<td style="text-align: center;">Ультрамариновий (Bright Blue)</td>
+<td style="text-align: center;"><code>[110, 130, 110]</code></td>
+<td style="text-align: center;"><code>[128, 255, 255]</code></td>
+<td style="text-align: left;">Роботизоване захоплення промислових деталей</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>18</strong></td>
+<td style="text-align: center;">Оливковий (Olive Green)</td>
+<td style="text-align: center;"><code>[30, 40, 40]</code></td>
+<td style="text-align: center;"><code>[50, 200, 140]</code></td>
+<td style="text-align: left;">Детектування камуфляжних об'єктів</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>19</strong></td>
+<td style="text-align: center;">Темно-помаранчевий (Dark Orange)</td>
+<td style="text-align: center;"><code>[8, 130, 80]</code></td>
+<td style="text-align: center;"><code>[18, 255, 220]</code></td>
+<td style="text-align: left;">Виявлення осередків пожеж на тепловізорах</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>20</strong></td>
+<td style="text-align: center;">Бузковий / Лавандовий (Lavender)</td>
+<td style="text-align: center;"><code>[125, 40, 120]</code></td>
+<td style="text-align: center;"><code>[148, 180, 255]</code></td>
+<td style="text-align: left;">Ідентифікація маркерів доповненої реальності</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="32">3.2 Покроковий алгоритм та розв'язок еталонного прикладу</h3>
+<p>Для забезпечення повної самодостатності лабораторного середовища у прикладі реалізовано алгоритм синтезу багатоколірного калібрувального тестового кадру розміром <span class="arithmatex">\(400 \times 600\)</span> пікселів, що містить геометричні фігури різного кольору на нейтральному сірому тлі.</p>
+<p>Еталонна задача містить виконання наступних кроків:</p>
+<ul>
+<li>
+<p>Дослідження матричних параметрів та демонстрація ефекту інверсії каналів при зміні <span class="arithmatex">\(\text{BGR} \leftrightarrow \text{RGB}\)</span>;</p>
+</li>
+<li>
+<p>Декомпозиція та візуалізація окремих колірних складових у градаціях сірого та в натуральних ізольованих спектрах;</p>
+</li>
+<li>
+<p>Перетворення кадру в простори <span class="arithmatex">\(\text{HSV}\)</span> та <span class="arithmatex">\(\text{CIELab}\)</span> з виведенням окремих площин <span class="arithmatex">\(H, S, V\)</span> та <span class="arithmatex">\(L^*, a^*, b^*\)</span>;</p>
+</li>
+<li>
+<p>Повна колірна сегментація яскраво-жовтого об'єкта (<span class="arithmatex">\(H \in [22, 38], S \in [120, 255], V \in [130, 255]\)</span>) та червоного об'єкта з врахуванням циклічного переходу кута <span class="arithmatex">\(H\)</span> через нульову відмітку (<span class="arithmatex">\([0, 10] \cup [170, 180]\)</span>).</p>
+</li>
+</ul>
+<p>Нижче наведено повний скрипт <code>lab6_color_processing.py</code>.</p>
+<h4 id="1_1">Блок 1. Підготовка бібліотек та програмна генерація тестового зображення</h4>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="ch">#!/usr/bin/env python3</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="c1"># -*- coding: utf-8 -*-</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="sd">"""</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="sd">Лабораторна робота №6: Базові операції з цифровими зображеннями та колірні простори</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="sd">Стек: Python 3.10+, NumPy, OpenCV (cv2), Pillow, Matplotlib</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="sd">"""</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="kn">import</span><span class="w"> </span><span class="nn">cv2</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="kn">from</span><span class="w"> </span><span class="nn">PIL</span><span class="w"> </span><span class="kn">import</span> <span class="n">Image</span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="c1"># Створення папок для збереження графіків та даних</span>
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="s2">"figures"</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="s2">"data"</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>
+</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="c1"># Налаштування стилю для графіків Matplotlib</span>
+</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">'font.sans-serif'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'DejaVu Sans'</span>
+</span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">'axes.edgecolor'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'#2b2b2b'</span>
+</span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a><span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">'axes.linewidth'</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.0</span>
+</span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a>
+</span><span id="__span-2-23"><a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a><span class="k">def</span><span class="w"> </span><span class="nf">generate_synthetic_scene</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">600</span><span class="p">):</span>
+</span><span id="__span-2-24"><a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a><span class="w">    </span><span class="sd">"""</span>
+</span><span id="__span-2-25"><a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a><span class="sd">    Генерація калібрувального тестового зображення у форматі BGR:</span>
+</span><span id="__span-2-26"><a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a><span class="sd">    містить червоний круг, зелений прямокутник, синій трикутник,</span>
+</span><span id="__span-2-27"><a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a><span class="sd">    жовтий диск та помаранчевий еліпс на нейтральному тлі.</span>
+</span><span id="__span-2-28"><a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a><span class="sd">    """</span>
+</span><span id="__span-2-29"><a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a>    <span class="c1"># Нейтральне сіре тло (інтенсивність 180)</span>
+</span><span id="__span-2-30"><a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a>    <span class="n">img_bgr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">((</span><span class="n">height</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="mi">180</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
+</span><span id="__span-2-31"><a id="__codelineno-2-31" name="__codelineno-2-31" href="#__codelineno-2-31"></a>
+</span><span id="__span-2-32"><a id="__codelineno-2-32" name="__codelineno-2-32" href="#__codelineno-2-32"></a>    <span class="c1"># 1. Червоний круг (B=30, G=30, R=230)</span>
+</span><span id="__span-2-33"><a id="__codelineno-2-33" name="__codelineno-2-33" href="#__codelineno-2-33"></a>    <span class="n">cv2</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">img_bgr</span><span class="p">,</span> <span class="p">(</span><span class="mi">120</span><span class="p">,</span> <span class="mi">120</span><span class="p">),</span> <span class="mi">65</span><span class="p">,</span> <span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">230</span><span class="p">),</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</span><span id="__span-2-34"><a id="__codelineno-2-34" name="__codelineno-2-34" href="#__codelineno-2-34"></a>
+</span><span id="__span-2-35"><a id="__codelineno-2-35" name="__codelineno-2-35" href="#__codelineno-2-35"></a>    <span class="c1"># 2. Зелений прямокутник (B=30, G=220, R=30)</span>
+</span><span id="__span-2-36"><a id="__codelineno-2-36" name="__codelineno-2-36" href="#__codelineno-2-36"></a>    <span class="n">cv2</span><span class="o">.</span><span class="n">rectangle</span><span class="p">(</span><span class="n">img_bgr</span><span class="p">,</span> <span class="p">(</span><span class="mi">250</span><span class="p">,</span> <span class="mi">55</span><span class="p">),</span> <span class="p">(</span><span class="mi">380</span><span class="p">,</span> <span class="mi">185</span><span class="p">),</span> <span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">220</span><span class="p">,</span> <span class="mi">30</span><span class="p">),</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</span><span id="__span-2-37"><a id="__codelineno-2-37" name="__codelineno-2-37" href="#__codelineno-2-37"></a>
+</span><span id="__span-2-38"><a id="__codelineno-2-38" name="__codelineno-2-38" href="#__codelineno-2-38"></a>    <span class="c1"># 3. Синій трикутник (B=230, G=40, R=40)</span>
+</span><span id="__span-2-39"><a id="__codelineno-2-39" name="__codelineno-2-39" href="#__codelineno-2-39"></a>    <span class="n">pts_triangle</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">480</span><span class="p">,</span> <span class="mi">185</span><span class="p">],</span> <span class="p">[</span><span class="mi">560</span><span class="p">,</span> <span class="mi">185</span><span class="p">],</span> <span class="p">[</span><span class="mi">520</span><span class="p">,</span> <span class="mi">60</span><span class="p">]],</span> <span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span>
+</span><span id="__span-2-40"><a id="__codelineno-2-40" name="__codelineno-2-40" href="#__codelineno-2-40"></a>    <span class="n">cv2</span><span class="o">.</span><span class="n">fillPoly</span><span class="p">(</span><span class="n">img_bgr</span><span class="p">,</span> <span class="p">[</span><span class="n">pts_triangle</span><span class="p">],</span> <span class="p">(</span><span class="mi">230</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">40</span><span class="p">))</span>
+</span><span id="__span-2-41"><a id="__codelineno-2-41" name="__codelineno-2-41" href="#__codelineno-2-41"></a>
+</span><span id="__span-2-42"><a id="__codelineno-2-42" name="__codelineno-2-42" href="#__codelineno-2-42"></a>    <span class="c1"># 4. Жовтий прямокутник (B=30, G=230, R=240)</span>
+</span><span id="__span-2-43"><a id="__codelineno-2-43" name="__codelineno-2-43" href="#__codelineno-2-43"></a>    <span class="n">cv2</span><span class="o">.</span><span class="n">rectangle</span><span class="p">(</span><span class="n">img_bgr</span><span class="p">,</span> <span class="p">(</span><span class="mi">80</span><span class="p">,</span> <span class="mi">240</span><span class="p">),</span> <span class="p">(</span><span class="mi">220</span><span class="p">,</span> <span class="mi">350</span><span class="p">),</span> <span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">230</span><span class="p">,</span> <span class="mi">240</span><span class="p">),</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</span><span id="__span-2-44"><a id="__codelineno-2-44" name="__codelineno-2-44" href="#__codelineno-2-44"></a>
+</span><span id="__span-2-45"><a id="__codelineno-2-45" name="__codelineno-2-45" href="#__codelineno-2-45"></a>    <span class="c1"># 5. Помаранчевий еліпс (B=20, G=130, R=245)</span>
+</span><span id="__span-2-46"><a id="__codelineno-2-46" name="__codelineno-2-46" href="#__codelineno-2-46"></a>    <span class="n">cv2</span><span class="o">.</span><span class="n">ellipse</span><span class="p">(</span><span class="n">img_bgr</span><span class="p">,</span> <span class="p">(</span><span class="mi">400</span><span class="p">,</span> <span class="mi">295</span><span class="p">),</span> <span class="p">(</span><span class="mi">80</span><span class="p">,</span> <span class="mi">50</span><span class="p">),</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">360</span><span class="p">,</span> <span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">130</span><span class="p">,</span> <span class="mi">245</span><span class="p">),</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</span><span id="__span-2-47"><a id="__codelineno-2-47" name="__codelineno-2-47" href="#__codelineno-2-47"></a>
+</span><span id="__span-2-48"><a id="__codelineno-2-48" name="__codelineno-2-48" href="#__codelineno-2-48"></a>    <span class="c1"># 6. Ціановий круг (B=230, G=230, R=20)</span>
+</span><span id="__span-2-49"><a id="__codelineno-2-49" name="__codelineno-2-49" href="#__codelineno-2-49"></a>    <span class="n">cv2</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">img_bgr</span><span class="p">,</span> <span class="p">(</span><span class="mi">520</span><span class="p">,</span> <span class="mi">300</span><span class="p">),</span> <span class="mi">45</span><span class="p">,</span> <span class="p">(</span><span class="mi">230</span><span class="p">,</span> <span class="mi">230</span><span class="p">,</span> <span class="mi">20</span><span class="p">),</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</span><span id="__span-2-50"><a id="__codelineno-2-50" name="__codelineno-2-50" href="#__codelineno-2-50"></a>
+</span><span id="__span-2-51"><a id="__codelineno-2-51" name="__codelineno-2-51" href="#__codelineno-2-51"></a>    <span class="k">return</span> <span class="n">img_bgr</span>
+</span><span id="__span-2-52"><a id="__codelineno-2-52" name="__codelineno-2-52" href="#__codelineno-2-52"></a>
+</span><span id="__span-2-53"><a id="__codelineno-2-53" name="__codelineno-2-53" href="#__codelineno-2-53"></a><span class="c1"># Створення тестового кадру та збереження на диск</span>
+</span><span id="__span-2-54"><a id="__codelineno-2-54" name="__codelineno-2-54" href="#__codelineno-2-54"></a><span class="n">test_image_bgr</span> <span class="o">=</span> <span class="n">generate_synthetic_scene</span><span class="p">()</span>
+</span><span id="__span-2-55"><a id="__codelineno-2-55" name="__codelineno-2-55" href="#__codelineno-2-55"></a><span class="n">cv2</span><span class="o">.</span><span class="n">imwrite</span><span class="p">(</span><span class="s2">"data/test_image.png"</span><span class="p">,</span> <span class="n">test_image_bgr</span><span class="p">)</span>
+</span></code></pre></div>
+<h4 id="2-bgrrgb">Блок 2. Аналіз параметрів зображення, порівняння BGR/RGB та декомпозиція каналів</h4>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># --- ЕТАП 1: Аналіз структури растру та декомпозиція каналів ---</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="c1"># Завантаження збереженого файлу через OpenCV та Pillow</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="n">img_cv</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s2">"data/test_image.png"</span><span class="p">)</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="n">img_pil</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">"data/test_image.png"</span><span class="p">)</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="c1"># Визначення тензорних розмірів та властивостей</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="n">height</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">channels</span> <span class="o">=</span> <span class="n">img_cv</span><span class="o">.</span><span class="n">shape</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="n">data_type</span> <span class="o">=</span> <span class="n">img_cv</span><span class="o">.</span><span class="n">dtype</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="n">total_pixels</span> <span class="o">=</span> <span class="n">height</span> <span class="o">*</span> <span class="n">width</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="n">memory_bytes</span> <span class="o">=</span> <span class="n">img_cv</span><span class="o">.</span><span class="n">nbytes</span>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"================================================================================="</span><span class="p">)</span>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"МЕТРИКИ ТА СТРУКТУРНІ ХАРАКТЕРИСТИКИ ТЕНЗОРА ЗОБРАЖЕННЯ"</span><span class="p">)</span>
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"================================================================================="</span><span class="p">)</span>
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Роздільна здатність (Shape):    Висота H=</span><span class="si">{</span><span class="n">height</span><span class="si">}</span><span class="s2"> px, Ширина W=</span><span class="si">{</span><span class="n">width</span><span class="si">}</span><span class="s2"> px"</span><span class="p">)</span>
+</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Кількість колірних каналів:     </span><span class="si">{</span><span class="n">channels</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Загальна кількість пікселів:    </span><span class="si">{</span><span class="n">total_pixels</span><span class="si">:</span><span class="s2">,</span><span class="si">}</span><span class="s2"> px"</span><span class="p">)</span>
+</span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Тип даних елементів матриці:    </span><span class="si">{</span><span class="n">data_type</span><span class="si">}</span><span class="s2"> (діапазон 0..255)"</span><span class="p">)</span>
+</span><span id="__span-3-19"><a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Обсяг оперативної пам'яті:      </span><span class="si">{</span><span class="n">memory_bytes</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">1024</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> Кбайт"</span><span class="p">)</span>
+</span><span id="__span-3-20"><a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Формат завантаження Pillow:     Mode=</span><span class="si">{</span><span class="n">img_pil</span><span class="o">.</span><span class="n">mode</span><span class="si">}</span><span class="s2">, Size=</span><span class="si">{</span><span class="n">img_pil</span><span class="o">.</span><span class="n">size</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</span><span id="__span-3-21"><a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"=================================================================================</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+</span><span id="__span-3-22"><a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a>
+</span><span id="__span-3-23"><a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a><span class="c1"># Конвертація BGR -&gt; RGB для коректної візуалізації через Matplotlib</span>
+</span><span id="__span-3-24"><a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a><span class="n">img_rgb</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">img_cv</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_BGR2RGB</span><span class="p">)</span>
+</span><span id="__span-3-25"><a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a>
+</span><span id="__span-3-26"><a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a><span class="c1"># Розділення каналів двома способами:</span>
+</span><span id="__span-3-27"><a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a><span class="c1"># 1. За допомогою функції cv2.split()</span>
+</span><span id="__span-3-28"><a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a><span class="n">b_chan</span><span class="p">,</span> <span class="n">g_chan</span><span class="p">,</span> <span class="n">r_chan</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">img_cv</span><span class="p">)</span>
+</span><span id="__span-3-29"><a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a>
+</span><span id="__span-3-30"><a id="__codelineno-3-30" name="__codelineno-3-30" href="#__codelineno-3-30"></a><span class="c1"># 2. За допомогою зрізів NumPy slicing</span>
+</span><span id="__span-3-31"><a id="__codelineno-3-31" name="__codelineno-3-31" href="#__codelineno-3-31"></a><span class="n">b_slice</span> <span class="o">=</span> <span class="n">img_cv</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">0</span><span class="p">]</span>
+</span><span id="__span-3-32"><a id="__codelineno-3-32" name="__codelineno-3-32" href="#__codelineno-3-32"></a><span class="n">g_slice</span> <span class="o">=</span> <span class="n">img_cv</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">1</span><span class="p">]</span>
+</span><span id="__span-3-33"><a id="__codelineno-3-33" name="__codelineno-3-33" href="#__codelineno-3-33"></a><span class="n">r_slice</span> <span class="o">=</span> <span class="n">img_cv</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">2</span><span class="p">]</span>
+</span><span id="__span-3-34"><a id="__codelineno-3-34" name="__codelineno-3-34" href="#__codelineno-3-34"></a>
+</span><span id="__span-3-35"><a id="__codelineno-3-35" name="__codelineno-3-35" href="#__codelineno-3-35"></a><span class="c1"># Формування ізольованих кольорових 3D-тензорів (для демонстрації внеску кольору)</span>
+</span><span id="__span-3-36"><a id="__codelineno-3-36" name="__codelineno-3-36" href="#__codelineno-3-36"></a><span class="n">zeros_plane</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">height</span><span class="p">,</span> <span class="n">width</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
+</span><span id="__span-3-37"><a id="__codelineno-3-37" name="__codelineno-3-37" href="#__codelineno-3-37"></a><span class="n">img_red_only</span>   <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">merge</span><span class="p">([</span><span class="n">zeros_plane</span><span class="p">,</span> <span class="n">zeros_plane</span><span class="p">,</span> <span class="n">r_chan</span><span class="p">])</span>  <span class="c1"># Лише червоний канал у BGR</span>
+</span><span id="__span-3-38"><a id="__codelineno-3-38" name="__codelineno-3-38" href="#__codelineno-3-38"></a><span class="n">img_green_only</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">merge</span><span class="p">([</span><span class="n">zeros_plane</span><span class="p">,</span> <span class="n">g_chan</span><span class="p">,</span> <span class="n">zeros_plane</span><span class="p">])</span>  <span class="c1"># Лише зелений канал у BGR</span>
+</span><span id="__span-3-39"><a id="__codelineno-3-39" name="__codelineno-3-39" href="#__codelineno-3-39"></a><span class="n">img_blue_only</span>  <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">merge</span><span class="p">([</span><span class="n">b_chan</span><span class="p">,</span> <span class="n">zeros_plane</span><span class="p">,</span> <span class="n">zeros_plane</span><span class="p">])</span>  <span class="c1"># Лише синій канал у BGR</span>
+</span><span id="__span-3-40"><a id="__codelineno-3-40" name="__codelineno-3-40" href="#__codelineno-3-40"></a>
+</span><span id="__span-3-41"><a id="__codelineno-3-41" name="__codelineno-3-41" href="#__codelineno-3-41"></a><span class="c1"># Візуалізація: порівняння BGR vs RGB та розкладу на колірні канали</span>
+</span><span id="__span-3-42"><a id="__codelineno-3-42" name="__codelineno-3-42" href="#__codelineno-3-42"></a><span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">9</span><span class="p">))</span>
+</span><span id="__span-3-43"><a id="__codelineno-3-43" name="__codelineno-3-43" href="#__codelineno-3-43"></a>
+</span><span id="__span-3-44"><a id="__codelineno-3-44" name="__codelineno-3-44" href="#__codelineno-3-44"></a><span class="c1"># Некоректне пряме відображення BGR через Matplotlib (артефакт колірної інверсії)</span>
+</span><span id="__span-3-45"><a id="__codelineno-3-45" name="__codelineno-3-45" href="#__codelineno-3-45"></a><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img_cv</span><span class="p">)</span>
+</span><span id="__span-3-46"><a id="__codelineno-3-46" name="__codelineno-3-46" href="#__codelineno-3-46"></a><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">"Помилка BGR у Matplotlib (Інверсія R &lt;-&gt; B)"</span><span class="p">)</span>
+</span><span id="__span-3-47"><a id="__codelineno-3-47" name="__codelineno-3-47" href="#__codelineno-3-47"></a><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">'off'</span><span class="p">)</span>
+</span><span id="__span-3-48"><a id="__codelineno-3-48" name="__codelineno-3-48" href="#__codelineno-3-48"></a>
+</span><span id="__span-3-49"><a id="__codelineno-3-49" name="__codelineno-3-49" href="#__codelineno-3-49"></a><span class="c1"># Коректне відображення RGB</span>
+</span><span id="__span-3-50"><a id="__codelineno-3-50" name="__codelineno-3-50" href="#__codelineno-3-50"></a><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img_rgb</span><span class="p">)</span>
+</span><span id="__span-3-51"><a id="__codelineno-3-51" name="__codelineno-3-51" href="#__codelineno-3-51"></a><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">"Коректне зображення у просторі RGB"</span><span class="p">)</span>
+</span><span id="__span-3-52"><a id="__codelineno-3-52" name="__codelineno-3-52" href="#__codelineno-3-52"></a><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">'off'</span><span class="p">)</span>
+</span><span id="__span-3-53"><a id="__codelineno-3-53" name="__codelineno-3-53" href="#__codelineno-3-53"></a>
+</span><span id="__span-3-54"><a id="__codelineno-3-54" name="__codelineno-3-54" href="#__codelineno-3-54"></a><span class="c1"># Монохромне напівтонове зображення (Grayscale)</span>
+</span><span id="__span-3-55"><a id="__codelineno-3-55" name="__codelineno-3-55" href="#__codelineno-3-55"></a><span class="n">img_gray</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">img_cv</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_BGR2GRAY</span><span class="p">)</span>
+</span><span id="__span-3-56"><a id="__codelineno-3-56" name="__codelineno-3-56" href="#__codelineno-3-56"></a><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img_gray</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">'gray'</span><span class="p">)</span>
+</span><span id="__span-3-57"><a id="__codelineno-3-57" name="__codelineno-3-57" href="#__codelineno-3-57"></a><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">"Напівтонове Grayscale (ITU-R BT.601)"</span><span class="p">)</span>
+</span><span id="__span-3-58"><a id="__codelineno-3-58" name="__codelineno-3-58" href="#__codelineno-3-58"></a><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">'off'</span><span class="p">)</span>
+</span><span id="__span-3-59"><a id="__codelineno-3-59" name="__codelineno-3-59" href="#__codelineno-3-59"></a>
+</span><span id="__span-3-60"><a id="__codelineno-3-60" name="__codelineno-3-60" href="#__codelineno-3-60"></a><span class="c1"># Ізольований червоний канал</span>
+</span><span id="__span-3-61"><a id="__codelineno-3-61" name="__codelineno-3-61" href="#__codelineno-3-61"></a><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">img_red_only</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_BGR2RGB</span><span class="p">))</span>
+</span><span id="__span-3-62"><a id="__codelineno-3-62" name="__codelineno-3-62" href="#__codelineno-3-62"></a><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">"Ізольований Червоний канал (Red)"</span><span class="p">)</span>
+</span><span id="__span-3-63"><a id="__codelineno-3-63" name="__codelineno-3-63" href="#__codelineno-3-63"></a><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">'off'</span><span class="p">)</span>
+</span><span id="__span-3-64"><a id="__codelineno-3-64" name="__codelineno-3-64" href="#__codelineno-3-64"></a>
+</span><span id="__span-3-65"><a id="__codelineno-3-65" name="__codelineno-3-65" href="#__codelineno-3-65"></a><span class="c1"># Ізольований зелений канал</span>
+</span><span id="__span-3-66"><a id="__codelineno-3-66" name="__codelineno-3-66" href="#__codelineno-3-66"></a><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">img_green_only</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_BGR2RGB</span><span class="p">))</span>
+</span><span id="__span-3-67"><a id="__codelineno-3-67" name="__codelineno-3-67" href="#__codelineno-3-67"></a><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">"Ізольований Зелений канал (Green)"</span><span class="p">)</span>
+</span><span id="__span-3-68"><a id="__codelineno-3-68" name="__codelineno-3-68" href="#__codelineno-3-68"></a><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">'off'</span><span class="p">)</span>
+</span><span id="__span-3-69"><a id="__codelineno-3-69" name="__codelineno-3-69" href="#__codelineno-3-69"></a>
+</span><span id="__span-3-70"><a id="__codelineno-3-70" name="__codelineno-3-70" href="#__codelineno-3-70"></a><span class="c1"># Ізольований синій канал</span>
+</span><span id="__span-3-71"><a id="__codelineno-3-71" name="__codelineno-3-71" href="#__codelineno-3-71"></a><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">img_blue_only</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_BGR2RGB</span><span class="p">))</span>
+</span><span id="__span-3-72"><a id="__codelineno-3-72" name="__codelineno-3-72" href="#__codelineno-3-72"></a><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">"Ізольований Синій канал (Blue)"</span><span class="p">)</span>
+</span><span id="__span-3-73"><a id="__codelineno-3-73" name="__codelineno-3-73" href="#__codelineno-3-73"></a><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">'off'</span><span class="p">)</span>
+</span><span id="__span-3-74"><a id="__codelineno-3-74" name="__codelineno-3-74" href="#__codelineno-3-74"></a>
+</span><span id="__span-3-75"><a id="__codelineno-3-75" name="__codelineno-3-75" href="#__codelineno-3-75"></a><span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+</span><span id="__span-3-76"><a id="__codelineno-3-76" name="__codelineno-3-76" href="#__codelineno-3-76"></a><span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">"figures/bgr_vs_rgb_channels.png"</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+</span><span id="__span-3-77"><a id="__codelineno-3-77" name="__codelineno-3-77" href="#__codelineno-3-77"></a><span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</span></code></pre></div>
+<h4 id="3-hsv-cielab">Блок 3. Конвертація та спектральний аналіз просторів HSV та CIELab</h4>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># --- ЕТАП 2: Перетворення у простори HSV та CIELab ---</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">img_hsv</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">img_cv</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_BGR2HSV</span><span class="p">)</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="n">h_chan</span><span class="p">,</span> <span class="n">s_chan</span><span class="p">,</span> <span class="n">v_chan</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">img_hsv</span><span class="p">)</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="n">img_lab</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">img_cv</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_BGR2Lab</span><span class="p">)</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="n">l_chan</span><span class="p">,</span> <span class="n">a_chan</span><span class="p">,</span> <span class="n">b_lab_chan</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">img_lab</span><span class="p">)</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="c1"># Візуалізація розкладу компонентів HSV та CIELab</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">9</span><span class="p">))</span>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="c1"># Канал тону H (Hue 0..180)</span>
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="n">im_h</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">h_chan</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">'hsv'</span><span class="p">)</span>
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">"Канал тону H (Hue 0..180°)"</span><span class="p">)</span>
+</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">'off'</span><span class="p">)</span>
+</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">im_h</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">fraction</span><span class="o">=</span><span class="mf">0.046</span><span class="p">,</span> <span class="n">pad</span><span class="o">=</span><span class="mf">0.04</span><span class="p">)</span>
+</span><span id="__span-4-16"><a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>
+</span><span id="__span-4-17"><a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a><span class="c1"># Канал насиченості S (Saturation 0..255)</span>
+</span><span id="__span-4-18"><a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a><span class="n">im_s</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">s_chan</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">'plasma'</span><span class="p">)</span>
+</span><span id="__span-4-19"><a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">"Канал насиченості S (0..255)"</span><span class="p">)</span>
+</span><span id="__span-4-20"><a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">'off'</span><span class="p">)</span>
+</span><span id="__span-4-21"><a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a><span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">im_s</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">fraction</span><span class="o">=</span><span class="mf">0.046</span><span class="p">,</span> <span class="n">pad</span><span class="o">=</span><span class="mf">0.04</span><span class="p">)</span>
+</span><span id="__span-4-22"><a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a>
+</span><span id="__span-4-23"><a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a><span class="c1"># Канал яскравості V (Value 0..255)</span>
+</span><span id="__span-4-24"><a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a><span class="n">im_v</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">v_chan</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">'gray'</span><span class="p">)</span>
+</span><span id="__span-4-25"><a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">"Канал яскравості V (0..255)"</span><span class="p">)</span>
+</span><span id="__span-4-26"><a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">'off'</span><span class="p">)</span>
+</span><span id="__span-4-27"><a id="__codelineno-4-27" name="__codelineno-4-27" href="#__codelineno-4-27"></a><span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">im_v</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="n">fraction</span><span class="o">=</span><span class="mf">0.046</span><span class="p">,</span> <span class="n">pad</span><span class="o">=</span><span class="mf">0.04</span><span class="p">)</span>
+</span><span id="__span-4-28"><a id="__codelineno-4-28" name="__codelineno-4-28" href="#__codelineno-4-28"></a>
+</span><span id="__span-4-29"><a id="__codelineno-4-29" name="__codelineno-4-29" href="#__codelineno-4-29"></a><span class="c1"># Канал світлості L* (Lightness 0..255)</span>
+</span><span id="__span-4-30"><a id="__codelineno-4-30" name="__codelineno-4-30" href="#__codelineno-4-30"></a><span class="n">im_l</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">l_chan</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">'gray'</span><span class="p">)</span>
+</span><span id="__span-4-31"><a id="__codelineno-4-31" name="__codelineno-4-31" href="#__codelineno-4-31"></a><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">"Канал світлості L* (CIELab)"</span><span class="p">)</span>
+</span><span id="__span-4-32"><a id="__codelineno-4-32" name="__codelineno-4-32" href="#__codelineno-4-32"></a><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">'off'</span><span class="p">)</span>
+</span><span id="__span-4-33"><a id="__codelineno-4-33" name="__codelineno-4-33" href="#__codelineno-4-33"></a><span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">im_l</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">fraction</span><span class="o">=</span><span class="mf">0.046</span><span class="p">,</span> <span class="n">pad</span><span class="o">=</span><span class="mf">0.04</span><span class="p">)</span>
+</span><span id="__span-4-34"><a id="__codelineno-4-34" name="__codelineno-4-34" href="#__codelineno-4-34"></a>
+</span><span id="__span-4-35"><a id="__codelineno-4-35" name="__codelineno-4-35" href="#__codelineno-4-35"></a><span class="c1"># Канал a* (Зелений - Червоний)</span>
+</span><span id="__span-4-36"><a id="__codelineno-4-36" name="__codelineno-4-36" href="#__codelineno-4-36"></a><span class="n">im_a</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">a_chan</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">'coolwarm'</span><span class="p">)</span>
+</span><span id="__span-4-37"><a id="__codelineno-4-37" name="__codelineno-4-37" href="#__codelineno-4-37"></a><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">"Канал a* (Зелений &lt;-&gt; Червоний)"</span><span class="p">)</span>
+</span><span id="__span-4-38"><a id="__codelineno-4-38" name="__codelineno-4-38" href="#__codelineno-4-38"></a><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">'off'</span><span class="p">)</span>
+</span><span id="__span-4-39"><a id="__codelineno-4-39" name="__codelineno-4-39" href="#__codelineno-4-39"></a><span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">im_a</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">fraction</span><span class="o">=</span><span class="mf">0.046</span><span class="p">,</span> <span class="n">pad</span><span class="o">=</span><span class="mf">0.04</span><span class="p">)</span>
+</span><span id="__span-4-40"><a id="__codelineno-4-40" name="__codelineno-4-40" href="#__codelineno-4-40"></a>
+</span><span id="__span-4-41"><a id="__codelineno-4-41" name="__codelineno-4-41" href="#__codelineno-4-41"></a><span class="c1"># Канал b* (Синій - Жовтий)</span>
+</span><span id="__span-4-42"><a id="__codelineno-4-42" name="__codelineno-4-42" href="#__codelineno-4-42"></a><span class="n">im_b</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">b_lab_chan</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">'coolwarm'</span><span class="p">)</span>
+</span><span id="__span-4-43"><a id="__codelineno-4-43" name="__codelineno-4-43" href="#__codelineno-4-43"></a><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">"Канал b* (Синій &lt;-&gt; Жовтий)"</span><span class="p">)</span>
+</span><span id="__span-4-44"><a id="__codelineno-4-44" name="__codelineno-4-44" href="#__codelineno-4-44"></a><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">'off'</span><span class="p">)</span>
+</span><span id="__span-4-45"><a id="__codelineno-4-45" name="__codelineno-4-45" href="#__codelineno-4-45"></a><span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">im_b</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="n">fraction</span><span class="o">=</span><span class="mf">0.046</span><span class="p">,</span> <span class="n">pad</span><span class="o">=</span><span class="mf">0.04</span><span class="p">)</span>
+</span><span id="__span-4-46"><a id="__codelineno-4-46" name="__codelineno-4-46" href="#__codelineno-4-46"></a>
+</span><span id="__span-4-47"><a id="__codelineno-4-47" name="__codelineno-4-47" href="#__codelineno-4-47"></a><span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+</span><span id="__span-4-48"><a id="__codelineno-4-48" name="__codelineno-4-48" href="#__codelineno-4-48"></a><span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">"figures/hsv_and_lab_spaces.png"</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+</span><span id="__span-4-49"><a id="__codelineno-4-49" name="__codelineno-4-49" href="#__codelineno-4-49"></a><span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</span></code></pre></div>
+<h4 id="4-hsv">Блок 4. Алгоритм порогової колірної сегментації у просторі HSV</h4>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># --- ЕТАП 3: Порогова сегментація цільових об'єктів у просторі HSV ---</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="c1"># 1. Сегментація яскраво-жовтого об'єкта (прямокутника)</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="c1"># Діапазон HSV для жовтого кольору</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="n">lower_yellow</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">22</span><span class="p">,</span> <span class="mi">120</span><span class="p">,</span> <span class="mi">130</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="n">upper_yellow</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">38</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="c1"># Створення бінарної маски</span>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="n">mask_yellow</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">inRange</span><span class="p">(</span><span class="n">img_hsv</span><span class="p">,</span> <span class="n">lower_yellow</span><span class="p">,</span> <span class="n">upper_yellow</span><span class="p">)</span>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="c1"># Побітове виділення кольорового об'єкта</span>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="n">res_yellow_bgr</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">bitwise_and</span><span class="p">(</span><span class="n">img_cv</span><span class="p">,</span> <span class="n">img_cv</span><span class="p">,</span> <span class="n">mask</span><span class="o">=</span><span class="n">mask_yellow</span><span class="p">)</span>
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="n">res_yellow_rgb</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">res_yellow_bgr</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_BGR2RGB</span><span class="p">)</span>
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>
+</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="c1"># 2. Сегментація червоного об'єкта (круга)</span>
+</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="c1"># Червоний колір у HSV охоплює два сектори на межі 0° та 180°: [0..10] та [170..180]</span>
+</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a><span class="n">lower_red1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">120</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
+</span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a><span class="n">upper_red1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">10</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
+</span><span id="__span-5-18"><a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>
+</span><span id="__span-5-19"><a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a><span class="n">lower_red2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">170</span><span class="p">,</span> <span class="mi">120</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
+</span><span id="__span-5-20"><a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a><span class="n">upper_red2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">180</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
+</span><span id="__span-5-21"><a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a>
+</span><span id="__span-5-22"><a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a><span class="c1"># Формування об'єднаної маски через побітове АБО (bitwise_or)</span>
+</span><span id="__span-5-23"><a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a><span class="n">mask_red1</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">inRange</span><span class="p">(</span><span class="n">img_hsv</span><span class="p">,</span> <span class="n">lower_red1</span><span class="p">,</span> <span class="n">upper_red1</span><span class="p">)</span>
+</span><span id="__span-5-24"><a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a><span class="n">mask_red2</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">inRange</span><span class="p">(</span><span class="n">img_hsv</span><span class="p">,</span> <span class="n">lower_red2</span><span class="p">,</span> <span class="n">upper_red2</span><span class="p">)</span>
+</span><span id="__span-5-25"><a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a><span class="n">mask_red_total</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">bitwise_or</span><span class="p">(</span><span class="n">mask_red1</span><span class="p">,</span> <span class="n">mask_red2</span><span class="p">)</span>
+</span><span id="__span-5-26"><a id="__codelineno-5-26" name="__codelineno-5-26" href="#__codelineno-5-26"></a>
+</span><span id="__span-5-27"><a id="__codelineno-5-27" name="__codelineno-5-27" href="#__codelineno-5-27"></a><span class="n">res_red_bgr</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">bitwise_and</span><span class="p">(</span><span class="n">img_cv</span><span class="p">,</span> <span class="n">img_cv</span><span class="p">,</span> <span class="n">mask</span><span class="o">=</span><span class="n">mask_red_total</span><span class="p">)</span>
+</span><span id="__span-5-28"><a id="__codelineno-5-28" name="__codelineno-5-28" href="#__codelineno-5-28"></a><span class="n">res_red_rgb</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">res_red_bgr</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_BGR2RGB</span><span class="p">)</span>
+</span><span id="__span-5-29"><a id="__codelineno-5-29" name="__codelineno-5-29" href="#__codelineno-5-29"></a>
+</span><span id="__span-5-30"><a id="__codelineno-5-30" name="__codelineno-5-30" href="#__codelineno-5-30"></a><span class="c1"># Розрахунок геометричних параметрів сегментованих масок (площа в пікселях)</span>
+</span><span id="__span-5-31"><a id="__codelineno-5-31" name="__codelineno-5-31" href="#__codelineno-5-31"></a><span class="n">area_yellow_px</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">countNonZero</span><span class="p">(</span><span class="n">mask_yellow</span><span class="p">)</span>
+</span><span id="__span-5-32"><a id="__codelineno-5-32" name="__codelineno-5-32" href="#__codelineno-5-32"></a><span class="n">area_red_px</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">countNonZero</span><span class="p">(</span><span class="n">mask_red_total</span><span class="p">)</span>
+</span><span id="__span-5-33"><a id="__codelineno-5-33" name="__codelineno-5-33" href="#__codelineno-5-33"></a>
+</span><span id="__span-5-34"><a id="__codelineno-5-34" name="__codelineno-5-34" href="#__codelineno-5-34"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"================================================================================="</span><span class="p">)</span>
+</span><span id="__span-5-35"><a id="__codelineno-5-35" name="__codelineno-5-35" href="#__codelineno-5-35"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"РЕЗУЛЬТАТИ КОЛІРНОЇ СЕГМЕНТАЦІЇ У ПРОСТОРІ HSV"</span><span class="p">)</span>
+</span><span id="__span-5-36"><a id="__codelineno-5-36" name="__codelineno-5-36" href="#__codelineno-5-36"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"================================================================================="</span><span class="p">)</span>
+</span><span id="__span-5-37"><a id="__codelineno-5-37" name="__codelineno-5-37" href="#__codelineno-5-37"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Жовтий об'єкт:   Площа = </span><span class="si">{</span><span class="n">area_yellow_px</span><span class="si">:</span><span class="s2">6d</span><span class="si">}</span><span class="s2"> пікселів (</span><span class="si">{</span><span class="n">area_yellow_px</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">total_pixels</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">100</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">% кадру)"</span><span class="p">)</span>
+</span><span id="__span-5-38"><a id="__codelineno-5-38" name="__codelineno-5-38" href="#__codelineno-5-38"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Червоний об'єкт: Площа = </span><span class="si">{</span><span class="n">area_red_px</span><span class="si">:</span><span class="s2">6d</span><span class="si">}</span><span class="s2"> пікселів (</span><span class="si">{</span><span class="n">area_red_px</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">total_pixels</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">100</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">% кадру)"</span><span class="p">)</span>
+</span><span id="__span-5-39"><a id="__codelineno-5-39" name="__codelineno-5-39" href="#__codelineno-5-39"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"=================================================================================</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+</span><span id="__span-5-40"><a id="__codelineno-5-40" name="__codelineno-5-40" href="#__codelineno-5-40"></a>
+</span><span id="__span-5-41"><a id="__codelineno-5-41" name="__codelineno-5-41" href="#__codelineno-5-41"></a><span class="c1"># Візуалізація масок та кінцевих результатів сегментації</span>
+</span><span id="__span-5-42"><a id="__codelineno-5-42" name="__codelineno-5-42" href="#__codelineno-5-42"></a><span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">13</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+</span><span id="__span-5-43"><a id="__codelineno-5-43" name="__codelineno-5-43" href="#__codelineno-5-43"></a>
+</span><span id="__span-5-44"><a id="__codelineno-5-44" name="__codelineno-5-44" href="#__codelineno-5-44"></a><span class="c1"># Маска жовтого кольору</span>
+</span><span id="__span-5-45"><a id="__codelineno-5-45" name="__codelineno-5-45" href="#__codelineno-5-45"></a><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">mask_yellow</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">'gray'</span><span class="p">)</span>
+</span><span id="__span-5-46"><a id="__codelineno-5-46" name="__codelineno-5-46" href="#__codelineno-5-46"></a><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Бінарна маска жовтого кольору (S = </span><span class="si">{</span><span class="n">area_yellow_px</span><span class="si">}</span><span class="s2"> px)"</span><span class="p">)</span>
+</span><span id="__span-5-47"><a id="__codelineno-5-47" name="__codelineno-5-47" href="#__codelineno-5-47"></a><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">'off'</span><span class="p">)</span>
+</span><span id="__span-5-48"><a id="__codelineno-5-48" name="__codelineno-5-48" href="#__codelineno-5-48"></a>
+</span><span id="__span-5-49"><a id="__codelineno-5-49" name="__codelineno-5-49" href="#__codelineno-5-49"></a><span class="c1"># Сегментований жовтий об'єкт</span>
+</span><span id="__span-5-50"><a id="__codelineno-5-50" name="__codelineno-5-50" href="#__codelineno-5-50"></a><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">res_yellow_rgb</span><span class="p">)</span>
+</span><span id="__span-5-51"><a id="__codelineno-5-51" name="__codelineno-5-51" href="#__codelineno-5-51"></a><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">"Виділений жовтий об'єкт (RGB)"</span><span class="p">)</span>
+</span><span id="__span-5-52"><a id="__codelineno-5-52" name="__codelineno-5-52" href="#__codelineno-5-52"></a><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">'off'</span><span class="p">)</span>
+</span><span id="__span-5-53"><a id="__codelineno-5-53" name="__codelineno-5-53" href="#__codelineno-5-53"></a>
+</span><span id="__span-5-54"><a id="__codelineno-5-54" name="__codelineno-5-54" href="#__codelineno-5-54"></a><span class="c1"># Маска червоного кольору</span>
+</span><span id="__span-5-55"><a id="__codelineno-5-55" name="__codelineno-5-55" href="#__codelineno-5-55"></a><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">mask_red_total</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">'gray'</span><span class="p">)</span>
+</span><span id="__span-5-56"><a id="__codelineno-5-56" name="__codelineno-5-56" href="#__codelineno-5-56"></a><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Бінарна маска червоного кольору (S = </span><span class="si">{</span><span class="n">area_red_px</span><span class="si">}</span><span class="s2"> px)"</span><span class="p">)</span>
+</span><span id="__span-5-57"><a id="__codelineno-5-57" name="__codelineno-5-57" href="#__codelineno-5-57"></a><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">'off'</span><span class="p">)</span>
+</span><span id="__span-5-58"><a id="__codelineno-5-58" name="__codelineno-5-58" href="#__codelineno-5-58"></a>
+</span><span id="__span-5-59"><a id="__codelineno-5-59" name="__codelineno-5-59" href="#__codelineno-5-59"></a><span class="c1"># Сегментований червоний об'єкт</span>
+</span><span id="__span-5-60"><a id="__codelineno-5-60" name="__codelineno-5-60" href="#__codelineno-5-60"></a><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">res_red_rgb</span><span class="p">)</span>
+</span><span id="__span-5-61"><a id="__codelineno-5-61" name="__codelineno-5-61" href="#__codelineno-5-61"></a><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">"Виділений червоний об'єкт (RGB)"</span><span class="p">)</span>
+</span><span id="__span-5-62"><a id="__codelineno-5-62" name="__codelineno-5-62" href="#__codelineno-5-62"></a><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">'off'</span><span class="p">)</span>
+</span><span id="__span-5-63"><a id="__codelineno-5-63" name="__codelineno-5-63" href="#__codelineno-5-63"></a>
+</span><span id="__span-5-64"><a id="__codelineno-5-64" name="__codelineno-5-64" href="#__codelineno-5-64"></a><span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+</span><span id="__span-5-65"><a id="__codelineno-5-65" name="__codelineno-5-65" href="#__codelineno-5-65"></a><span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">"figures/hsv_color_segmentation.png"</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+</span><span id="__span-5-66"><a id="__codelineno-5-66" name="__codelineno-5-66" href="#__codelineno-5-66"></a><span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</span><span id="__span-5-67"><a id="__codelineno-5-67" name="__codelineno-5-67" href="#__codelineno-5-67"></a>
+</span><span id="__span-5-68"><a id="__codelineno-5-68" name="__codelineno-5-68" href="#__codelineno-5-68"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"Програму успішно виконано. Усі графічні результати збережено в папку 'figures/'."</span><span class="p">)</span>
+</span></code></pre></div>
+<hr />
+<h3 id="33">3.3 Запуск, тестування та перевірка результатів</h3>
+<p>Для виконання скрипту та збереження результатів моделювання виконайте команду в консолі:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>python<span class="w"> </span>lab6_color_processing.py
+</span></code></pre></div>
+<p>У терміналі з'явиться детальний звіт про параметри тензора зображення та числові результати порогової сегментації:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>=================================================================================
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>МЕТРИКИ ТА СТРУКТУРНІ ХАРАКТЕРИСТИКИ ТЕНЗОРА ЗОБРАЖЕННЯ
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>=================================================================================
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>Роздільна здатність (Shape):    Висота H=400 px, Ширина W=600 px
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>Кількість колірних каналів:     3
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>Загальна кількість пікселів:    240,000 px
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>Тип даних елементів матриці:    uint8 (діапазон 0..255)
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>Обсяг оперативної пам'яті:      703.12 Кбайт
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>Формат завантаження Pillow:     Mode=RGB, Size=(600, 400)
+</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>=================================================================================
+</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>
+</span><span id="__span-7-12"><a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>=================================================================================
+</span><span id="__span-7-13"><a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>РЕЗУЛЬТАТИ КОЛІРНОЇ СЕГМЕНТАЦІЇ У ПРОСТОРІ HSV
+</span><span id="__span-7-14"><a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a>=================================================================================
+</span><span id="__span-7-15"><a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a>Жовтий об'єкт:   Площа =  15400 пікселів (6.42% кадру)
+</span><span id="__span-7-16"><a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a>Червоний об'єкт: Площа =  13273 пікселів (5.53% кадру)
+</span><span id="__span-7-17"><a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a>=================================================================================
+</span><span id="__span-7-18"><a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a>
+</span><span id="__span-7-19"><a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a>Програму успішно виконано. Усі графічні результати збережено в папку 'figures/'.
+</span></code></pre></div>
+<h4 id="_1">Таблиця верифікації та діагностики роботи з колірними просторами:</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Операція / Властивість</th>
+<th style="text-align: center;">Бібліотека OpenCV</th>
+<th style="text-align: center;">Бібліотека Matplotlib / Pillow</th>
+<th style="text-align: left;">Фізичний / Візуальний результат</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Порядок розміщення каналів</strong></td>
+<td style="text-align: center;"><span class="arithmatex">\(\text{BGR}\)</span> (<span class="arithmatex">\(c_0=B, c_1=G, c_2=R\)</span>)</td>
+<td style="text-align: center;"><span class="arithmatex">\(\text{RGB}\)</span> (<span class="arithmatex">\(c_0=R, c_1=G, c_2=B\)</span>)</td>
+<td style="text-align: left;">Без перетворення <code>cvtColor</code> червоний колір відображається синім</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Діапазон колірного тону (<span class="arithmatex">\(H\)</span>)</strong></td>
+<td style="text-align: center;"><span class="arithmatex">\([0, 180]\)</span> (<span class="arithmatex">\(H^\circ / 2\)</span>)</td>
+<td style="text-align: center;"><span class="arithmatex">\([0^\circ, 360^\circ]\)</span> або <span class="arithmatex">\([0.0, 1.0]\)</span></td>
+<td style="text-align: left;">Забезпечує збереження значення тону в 1 байті (<code>uint8</code>)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Діапазон насиченості (<span class="arithmatex">\(S\)</span>)</strong></td>
+<td style="text-align: center;"><span class="arithmatex">\([0, 255]\)</span> (<span class="arithmatex">\(S \cdot 255\)</span>)</td>
+<td style="text-align: center;"><span class="arithmatex">\([0\%, 100\%]\)</span> або <span class="arithmatex">\([0.0, 1.0]\)</span></td>
+<td style="text-align: left;">Нуль відповідає чистому сірому/ахроматичному кольору</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Колірний простір <span class="arithmatex">\(\text{CIELab}\)</span></strong></td>
+<td style="text-align: center;"><span class="arithmatex">\(L^* \in [0, 255], a^*, b^* \in [0, 255]\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(L^* \in [0, 100], a^*, b^* \in [-128, 127]\)</span></td>
+<td style="text-align: left;">Рівноконтрастне відображення, незалежне від монітора</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Якість виділення маски <span class="arithmatex">\(M[y, x]\)</span></strong></td>
+<td style="text-align: center;">Точна ізоляція фігури</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: left;">Повне придушення нейтрального фону та сусідніх фігур</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="4">4. Вимоги до змісту звіту</h2>
+<p>Звіт оформлюється відповідно до стандартів вищої школи та повинен містити такі обов'язкові компоненти:</p>
+<ol>
+<li>
+<p><strong>Титульна сторінка</strong> встановленого зразка із зазначенням назви міністерства, ЗВО, факультету, кафедри, дисципліни, номера й теми лабораторної роботи, номера індивідуального варіанта, академічної групи та ПІБ здобувача.</p>
+</li>
+<li>
+<p><strong>Мета роботи та стислий теоретичний вступ</strong>, що описує цифрову растрову модель, закони змішування кольорів Грасмана, формулу <span class="arithmatex">\(\text{ITU-R BT.601}\)</span>, геометричні властивості систем <span class="arithmatex">\(\text{RGB}\)</span>, <span class="arithmatex">\(\text{HSV}\)</span> та <span class="arithmatex">\(\text{CIELab}\)</span>.</p>
+</li>
+<li>
+<p><strong>Постановка індивідуального завдання</strong> для власного варіанта: опис цільового об'єкта, цільові межі порогової фільтрації у просторі <span class="arithmatex">\(\text{HSV}\)</span> (<span class="arithmatex">\(H_{min}, H_{max}, S_{min}, S_{max}, V_{min}, V_{max}\)</span>), сфера прикладного застосування.</p>
+</li>
+<li>
+<p><strong>Повний вихідний код програми на Python</strong> із вичерпними коментарями до кожного структурного блоку.</p>
+</li>
+<li>
+<p><strong>Графічні матеріали (скріншоти згенерованих ілюстрацій з папки <code>figures/</code>):</strong></p>
+</li>
+<li>
+<p>Порівняння прямого відображення <span class="arithmatex">\(\text{BGR}\)</span> у Matplotlib та скоригованого <span class="arithmatex">\(\text{RGB}\)</span>;</p>
+</li>
+<li>
+<p>Декомпозиція зображення на ізольовані колірні канали (<span class="arithmatex">\(R, G, B\)</span>);</p>
+</li>
+<li>
+<p>Візуалізація каналів просторів <span class="arithmatex">\(\text{HSV}\)</span> (<span class="arithmatex">\(H, S, V\)</span>) та <span class="arithmatex">\(\text{CIELab}\)</span> (<span class="arithmatex">\(L^*, a^*, b^*\)</span>);</p>
+</li>
+<li>
+<p>Згенерована бінарна маска <span class="arithmatex">\(M[y, x]\)</span> та результуючий виділений сегментований об'єкт.</p>
+</li>
+<li>
+<p><strong>Зведена таблиця розрахункових показників:</strong> розміри зображення, обсяг займаної пам'яті, площа виділеного об'єкта в пікселях та його відсоткова частка від загальної площі кадру.</p>
+</li>
+<li>
+<p><strong>Аналітичні висновки</strong>, де оцінено переваги використання колірного простору <span class="arithmatex">\(\text{HSV}\)</span> над <span class="arithmatex">\(\text{RGB}\)</span> при задачах сегментації, пояснено причини артефактів інверсії каналів та обґрунтовано вибір діапазонів для виявлення цільового об'єкта.</p>
+</li>
+</ol>
+<hr />
+<h2 id="5">5. Контрольні запитання для захисту роботи</h2>
+<ol>
+<li>
+<p>Як влаштоване представлення кольорового цифрового зображення у вигляді тривимірного тензора в бібліотеці NumPy, і що визначає кожен із трьох індексів <span class="arithmatex">\(I[y, x, c]\)</span>?</p>
+</li>
+<li>
+<p>Чому при читанні файлу зображення засобами OpenCV використовується порядок каналів <span class="arithmatex">\(\text{BGR}\)</span>, і які спотворення виникають при спробі його безпосереднього відображення бібліотекою Matplotlib?</p>
+</li>
+<li>
+<p>За якою математичною залежністю здійснюється перетворення кольорового <span class="arithmatex">\(\text{RGB}\)</span>-зображення у монохромне напівтонове (Grayscale) за стандартом <span class="arithmatex">\(\text{ITU-R BT.601}\)</span>, і чому вага зеленого каналу є найбільшою?</p>
+</li>
+<li>
+<p>У чому полягає геометрична структура та фізичний зміст компонентів циліндричного колірного простору <span class="arithmatex">\(\text{HSV}\)</span> (Hue, Saturation, Value)?</p>
+</li>
+<li>
+<p>Чому значення колірного тону <span class="arithmatex">\(H\)</span> в 8-бітній реалізації OpenCV обмежене діапазоном <span class="arithmatex">\([0, 180]\)</span>, і як правильно виконати сегментацію об'єктів червоного кольору, сектор яких розривається на межі <span class="arithmatex">\(0^\circ\)</span> та <span class="arithmatex">\(360^\circ\)</span>?</p>
+</li>
+<li>
+<p>Які переваги надає рівноконтрастний колірний простір <span class="arithmatex">\(\text{CIELab}\)</span> (<span class="arithmatex">\(L^*a^*b^*\)</span>) порівняно з простором <span class="arithmatex">\(\text{RGB}\)</span> при оцінці колірних відмінностей (<span class="arithmatex">\(\Delta E\)</span>)?</p>
+</li>
+<li>
+<p>Яким чином побітові логічні операції (<code>cv2.bitwise_and</code>) взаємодіють із бінарними масками для просторової фільтрації та вилучення цільових сегментів зображення?</p>
+</li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Повернутись нагору
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Kyrylo Vadurin &bull; <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "navigation.tracking", "header.autohide", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0456\u0439\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u0421\u043a\u043e\u043f\u0456\u044e\u0432\u0430\u0442\u0438 \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0429\u0435 1 \u0437\u0431\u0456\u0433 \u043d\u0430 \u0446\u0456\u0439 \u0441\u0442\u043e\u0440\u0456\u043d\u0446\u0456", "search.result.more.other": "\u0429\u0435 # \u0437\u0431\u0456\u0433\u0456\u0432 \u043d\u0430 \u0446\u0456\u0439 \u0441\u0442\u043e\u0440\u0456\u043d\u0446\u0456", "search.result.none": "\u0417\u0431\u0456\u0433\u0456\u0432 \u043d\u0435 \u0437\u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u0417\u043d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0437\u0431\u0456\u0433", "search.result.other": "\u0417\u043d\u0430\u0439\u0434\u0435\u043d\u043e # \u0437\u0431\u0456\u0433\u0456\u0432", "search.result.placeholder": "\u0420\u043e\u0437\u043f\u043e\u0447\u043d\u0456\u0442\u044c \u043f\u0438\u0441\u0430\u0442\u0438 \u0434\u043b\u044f \u043f\u043e\u0448\u0443\u043a\u0443", "search.result.term.missing": "\u041d\u0435 \u0437\u043d\u0430\u0439\u0434\u0435\u043d\u043e \u0437\u0430\u043f\u0438\u0442\u0443", "select.version": "\u041e\u0431\u0440\u0430\u0442\u0438 \u0432\u0435\u0440\u0441\u0456\u044e"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

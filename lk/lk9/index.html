@@ -1,0 +1,1939 @@
+
+<!doctype html>
+<html lang="uk" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Навчальний портал з дисципліни "Обробка сигналів та зображень"">
+      
+      
+      
+      
+        <link rel="prev" href="../lk8/">
+      
+      
+        <link rel="next" href="../../lb/lb1/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Тема 9. Двовимірна Фур'є-обробка та детектори контурів - Обробка сигналів та зображень</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#9-" class="md-skip">
+          Перейти до змісту
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Хедер">
+    <a href="../.." title="Обробка сигналів та зображень" class="md-header__button md-logo" aria-label="Обробка сигналів та зображень" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Обробка сигналів та зображень
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Тема 9. Двовимірна Фур'є-обробка та детектори контурів
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="cyan"  aria-label="Переключити на темну тему"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Переключити на темну тему" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="cyan"  aria-label="Переключити на світлу тему"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Переключити на світлу тему" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Пошук" placeholder="Пошук" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Шукати">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистити" aria-label="Очистити" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Пошук розпочато
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Вкладки" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Робоча програма
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../lk1/" class="md-tabs__link">
+          
+  
+  
+  Лекції
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../lb/lb1/" class="md-tabs__link">
+          
+  
+  
+  Лабораторні роботи
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../sr/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Самостійна робота
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../rg/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Розрахунково-графічна робота
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Навігація" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Обробка сигналів та зображень" class="md-nav__button md-logo" aria-label="Обробка сигналів та зображень" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Обробка сигналів та зображень
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Робоча програма
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лекції
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Лекції
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lk1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 1. Математичне представлення, дискретизація та квантування
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lk2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 2. Лінійні стаціонарні дискретні системи
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lk3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 3. Спектральний аналіз дискретних сигналів
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lk4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 4. Z-перетворення та проєктування цифрових фільтрів
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lk5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 5. Цифрове представлення зображень та колориметричні моделі
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lk6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 6. Поелементні амплітудні перетворення
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lk7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 7. Просторова фільтрація зображень
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lk8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 8. Геометричні трансформації та математична морфологія
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 9. Двовимірна Фур'є-обробка та детектори контурів
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 9. Двовимірна Фур'є-обробка та детектори контурів
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Зміст">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Зміст
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#91-2d-dft-2d-fft-fftshift" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.1. Двовимірне дискретне перетворення Фур'є (2D-DFT / 2D-FFT). Центрування спектра (fftshift), амплітудний та фазовий спектри зображення
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9.1. Двовимірне дискретне перетворення Фур&#39;є (2D-DFT / 2D-FFT). Центрування спектра (fftshift), амплітудний та фазовий спектри зображення">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Основний зміст та теоретичний базис
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#92-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.2. Частотна фільтрація зображень у Фур'є-просторі: ідеальні, баттервортівські та гаусові ФНЧ і ФВЧ. Відновлення розмитих зображень
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9.2. Частотна фільтрація зображень у Фур&#39;є-просторі: ідеальні, баттервортівські та гаусові ФНЧ і ФВЧ. Відновлення розмитих зображень">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Основний зміст та теоретичний базис
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Відновлення спотворених та розмитих зображень
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#93" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.3. Градієнтні детектори контурів першого порядку: оператори Робертса, Собеля, Шарра, Прюітта
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9.3. Градієнтні детектори контурів першого порядку: оператори Робертса, Собеля, Шарра, Прюітта">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Основний зміст та теоретичний базис
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#94-canny-edge-detector" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.4. Оптимальний детектор меж Кенні (Canny edge detector)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9.4. Оптимальний детектор меж Кенні (Canny edge detector)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Основний зміст та теоретичний базис
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#95-cnn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.5. Вступ до інтелектуального розпізнавання зображень: архітектура згорткових нейронних мереж (CNN)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9.5. Вступ до інтелектуального розпізнавання зображень: архітектура згорткових нейронних мереж (CNN)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Основний зміст та теоретичний базис
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-conv2d" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Згорткові шари (Conv2D) та активація
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-maxpooling2d" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Шари субдискретизації / пулінгу (MaxPooling2D)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-dense" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Повнозв'язні шари (Dense) та класифікація
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Питання для самоперевірки та аналітичного осмислення
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лабораторні роботи
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Лабораторні роботи
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lb/lb1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 1. Дискретизація, квантування сигналів та ефект аліасингу
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lb/lb2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 2. Лінійні стаціонарні системи та дискретна згортка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lb/lb3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 3. Спектральний аналіз за допомогою ДПФ/ШПФ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lb/lb4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 4. Синтез цифрових КІХ та НІХ фільтрів
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lb/lb5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 5. Статистичний та кореляційний аналіз
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lb/lb6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 6. Базові операції з цифровими зображеннями
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lb/lb7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 7. Амплітудні перетворення та бінаризація
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lb/lb8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 8. Просторова фільтрація зображень
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lb/lb9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 9. Геометричні перетворення зображень
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lb/lb10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 10. Математична морфологія зображень
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lb/lb11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 11. 2D перетворення Фур'є та детектування контурів
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Самостійна робота
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Розрахунково-графічна робота
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Зміст">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Зміст
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#91-2d-dft-2d-fft-fftshift" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.1. Двовимірне дискретне перетворення Фур'є (2D-DFT / 2D-FFT). Центрування спектра (fftshift), амплітудний та фазовий спектри зображення
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9.1. Двовимірне дискретне перетворення Фур&#39;є (2D-DFT / 2D-FFT). Центрування спектра (fftshift), амплітудний та фазовий спектри зображення">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Основний зміст та теоретичний базис
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#92-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.2. Частотна фільтрація зображень у Фур'є-просторі: ідеальні, баттервортівські та гаусові ФНЧ і ФВЧ. Відновлення розмитих зображень
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9.2. Частотна фільтрація зображень у Фур&#39;є-просторі: ідеальні, баттервортівські та гаусові ФНЧ і ФВЧ. Відновлення розмитих зображень">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Основний зміст та теоретичний базис
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Відновлення спотворених та розмитих зображень
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#93" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.3. Градієнтні детектори контурів першого порядку: оператори Робертса, Собеля, Шарра, Прюітта
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9.3. Градієнтні детектори контурів першого порядку: оператори Робертса, Собеля, Шарра, Прюітта">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Основний зміст та теоретичний базис
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#94-canny-edge-detector" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.4. Оптимальний детектор меж Кенні (Canny edge detector)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9.4. Оптимальний детектор меж Кенні (Canny edge detector)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Основний зміст та теоретичний базис
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#95-cnn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.5. Вступ до інтелектуального розпізнавання зображень: архітектура згорткових нейронних мереж (CNN)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9.5. Вступ до інтелектуального розпізнавання зображень: архітектура згорткових нейронних мереж (CNN)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Основний зміст та теоретичний базис
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-conv2d" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Згорткові шари (Conv2D) та активація
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-maxpooling2d" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Шари субдискретизації / пулінгу (MaxPooling2D)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-dense" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Повнозв'язні шари (Dense) та класифікація
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Питання для самоперевірки та аналітичного осмислення
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="9-">ТЕМА 9. ДВОВИМІРНА ФУР'Є-ОБРОБКА, ДЕТЕКТОРИ КОНТУРІВ ТА ОСНОВИ РОЗПІЗНАВАННЯ ОБ'ЄКТІВ</h1>
+<hr />
+<h2 id="91-2d-dft-2d-fft-fftshift">9.1. Двовимірне дискретне перетворення Фур'є (2D-DFT / 2D-FFT). Центрування спектра (fftshift), амплітудний та фазовий спектри зображення</h2>
+<h3 id="_1">Основний зміст та теоретичний базис</h3>
+<p>Спектральний аналіз двовимірних просторових сигналів становить математичний базис частотної фільтрації, деконволюції та стиснення цифрових зображень. <strong>Двовимірне дискретне перетворення Фур'є (2D-ДПФ)</strong> (в англомовній термінології — <em>Two-Dimensional Discrete Fourier Transform, 2D-DFT</em>) здійснює декомпозицію дискретного растра розмірністю <span class="arithmatex">\(M \times N\)</span> на систему ортогональних просторових гармонічних коливань із різними просторовими частотами та орієнтаціями.</p>
+<p>Математично пряме 2D-ДПФ цифрового зображення <span class="arithmatex">\(f(x, y)\)</span> визначається виразом:</p>
+<div class="arithmatex">\[F(u, v) = \sum_{x=0}^{M-1} \sum_{y=0}^{N-1} f(x, y) e^{-j 2\pi \left( \frac{ux}{M} + \frac{vy}{N} \right)} = \sum_{x=0}^{M-1} \sum_{y=0}^{N-1} f(x, y) W_M^{ux} W_N^{vy}\]</div>
+<p>де <span class="arithmatex">\(f(x, y)\)</span> — значення яскравості пікселя у просторових дискретних координатах <span class="arithmatex">\(x \in [0; M-1]\)</span> та <span class="arithmatex">\(y \in [0; N-1]\)</span>; <span class="arithmatex">\(u \in [0; M-1]\)</span> та <span class="arithmatex">\(v \in [0; N-1]\)</span> — цілочислові змінні просторових частот уздовж вертикальної та горизонтальної осей відповідно; <span class="arithmatex">\(W_M = e^{-j \frac{2\pi}{M}}\)</span> та <span class="arithmatex">\(W_N = e^{-j \frac{2\pi}{N}}\)</span> — комплексні поворотні множники; <span class="arithmatex">\(F(u, v)\)</span> — комплексний спектральний коефіцієнт просторової гармоніки.</p>
+<p>Відновлення вихідного просторового зображення здійснюється за допомогою <strong>двовимірного оберненого дискретного перетворення Фур'є (2D-ОДПФ)</strong> (<em>2D-IDFT</em>):</p>
+<div class="arithmatex">\[f(x, y) = \frac{1}{MN} \sum_{u=0}^{M-1} \sum_{v=0}^{N-1} F(u, v) e^{j 2\pi \left( \frac{ux}{M} + \frac{vy}{N} \right)}\]</div>
+<p>де масштабний нормуючий коефіцієнт <span class="arithmatex">\(\frac{1}{MN}\)</span> забезпечує збереження амплітудної енергії растра в просторовій області.</p>
+<p>Фундаментальною властивістю 2D-ДПФ є його <strong>сепарабельність</strong>. Ядро двовимірного перетворення розкладається на добуток двох незалежних одновимірних ядер: <span class="arithmatex">\(e^{-j 2\pi (\frac{ux}{M} + \frac{vy}{N})} = e^{-j 2\pi \frac{ux}{M}} \cdot e^{-j 2\pi \frac{vy}{N}}\)</span>. Завдяки цьому обчислення 2D-ДПФ здійснюється у два послідовні етапи: спочатку виконується одновимірне ДПФ для кожного рядка матриці, а потім — одновимірне ДПФ для кожного стовпця отриманого проміжного масиву:</p>
+<div class="arithmatex">\[F(u, v) = \sum_{x=0}^{M-1} \left[ \sum_{y=0}^{N-1} f(x, y) e^{-j 2\pi \frac{vy}{N}} \right] e^{-j 2\pi \frac{ux}{M}}\]</div>
+<p>Застосування алгоритму швидкого перетворення Фур'є (2D-ШПФ / 2D-FFT) за основою 2 скорочує кількість комплексних операцій із <span class="arithmatex">\(\mathcal{O}(M^2 N^2)\)</span> до <span class="arithmatex">\(\mathcal{O}(MN \log_2(MN))\)</span>, що уможливлює спектральну обробку зображень високої роздільної здатності у реальному часі.</p>
+<p><pre class="mermaid"><code>flowchart LR
+    A["Вхідний растр f(x, y)&lt;br&gt;Розмір: M × N"] --&gt; B["1D-FFT по рядках&lt;br&gt;(N операцій)"]
+    B --&gt; C["Транспонування / Проміжна матриця"]
+    C --&gt; D["1D-FFT по стовпцях&lt;br&gt;(M операцій)"]
+    D --&gt; E["Нецентрований комплексний спектр F(u, v)"]
+    E --&gt; F["Центрування спектра (fftshift)&lt;br&gt;Перестановка квадрантів"]
+    F --&gt; G["Центрований спектр (НЧ в центрі)"]</code></pre>
+<em>Рисунок 9.1 — Сепарабельний алгоритмічний конвеєр розрахунку 2D-FFT та просторового центрування частотних квадрантів</em></p>
+<p>Комплексний спектр <span class="arithmatex">\(F(u, v) = R(u, v) + j I(u, v)\)</span> подається у вигляді двох взаємодоповнюючих характеристик:</p>
+<ul>
+<li>
+<p><strong>Амплітудний спектр (модуль просторової частотної характеристики):</strong>
+   $<span class="arithmatex">\(|F(u, v)| = \sqrt{R^2(u, v) + I^2(u, v)}\)</span>$
+   Амплітудний спектр відображає розподіл енергії зображення за просторовими частотами та геометричними напрямками, залишаючись інваріантним до лінійного перенесення (зсуву) об'єктів у просторовій області.</p>
+</li>
+<li>
+<p><strong>Фазовий спектр (просторова фазова характеристика):</strong>
+   $<span class="arithmatex">\(\phi(u, v) = \arctan\left( \frac{I(u, v)}{R(u, v)} \right)\)</span>$
+   Фазовий спектр несе критично важливу просторово-структурну інформацію про розташування меж, ліній і контурів; спотворення фазового спектра призводить до повної втрати розпізнаваності геометричної форми об'єктів на зображенні.</p>
+</li>
+</ul>
+<p>У вихідному масиві 2D-ДПФ нульова просторова частота <span class="arithmatex">\(F(0, 0) = \sum \sum f(x, y)\)</span> (постійна складова, що дорівнює сумарній яскравості кадру) розташовується у лівому верхньому кутку матриці <span class="arithmatex">\([0, 0]\)</span>. Для коректної візуалізації та симетричної частотної фільтрації виконують процедуру <strong>центрування спектра (<em>fftshift</em>)</strong>, за якої квадранти матриці спектра діагонально міняються місцями (квадрант 1 міняється з 4, а 2 — з 3). Це переносить початок координат <span class="arithmatex">\((0, 0)\)</span> у геометричний центр матриці <span class="arithmatex">\((M/2, N/2)\)</span>.</p>
+<p>Через екстремально високий динамічний діапазон модуля спектра (значення постійної складової <span class="arithmatex">\(F(0,0)\)</span> на <span class="arithmatex">\(4 \dots 6\)</span> порядків перевищують високочастотні гармоніки) візуалізацію амплітудного спектра здійснюють за допомогою <strong>логарифмічного стиснення шкали</strong>:</p>
+<div class="arithmatex">\[D(u, v) = c \cdot \log\big( 1 + |F(u, v)| \big)\]</div>
+<p>де <span class="arithmatex">\(c\)</span> — масштабний коефіцієнт підсилення контрасту відображення.</p>
+<hr />
+<h2 id="92-">9.2. Частотна фільтрація зображень у Фур'є-просторі: ідеальні, баттервортівські та гаусові ФНЧ і ФВЧ. Відновлення розмитих зображень</h2>
+<h3 id="_2">Основний зміст та теоретичний базис</h3>
+<p><strong>Частотна фільтрація у просторі Фур'є</strong> базується на теоремі про згортку: просторовій згортці зображення з ядром фільтра <span class="arithmatex">\(f(x, y) * h(x, y)\)</span> у частотній області строго відповідає поелементний добуток їхніх спектральних представлень. Алгоритм частотної фільтрації включає обчислення прямого 2D-ДПФ вхідного зображення <span class="arithmatex">\(F(u, v)\)</span>, множення комплексного спектра на передавальну функцію частотного фільтра <span class="arithmatex">\(H(u, v)\)</span> та подальше застосування оберненого 2D-ОДПФ:</p>
+<div class="arithmatex">\[G(u, v) = H(u, v) \cdot F(u, v) \quad \Longrightarrow \quad g(x, y) = \text{Re}\Big( \mathcal{F}^{-1}\big\{ H(u, v) \cdot F(u, v) \big\} \Big)\]</div>
+<p>де <span class="arithmatex">\(H(u, v)\)</span> — просторово-частотна передавальна характеристика фільтра; <span class="arithmatex">\(D(u, v) = \sqrt{(u - M/2)^2 + (v - N/2)^2}\)</span> — евклідова відстань від поточної точки <span class="arithmatex">\((u, v)\)</span> до центру спектра <span class="arithmatex">\((M/2, N/2)\)</span>; <span class="arithmatex">\(D_0\)</span> — радіус частоти зрізу фільтра (<span class="arithmatex">\(\text{рад/відлік}\)</span>).</p>
+<p><pre class="mermaid"><code>flowchart TD
+    A["Вхідний спектр F(u, v)"] --&gt; B{"Тип частотного фільтра H(u, v)"}
+
+    B --&gt;|Низькі частоти D(u, v) ≤ D₀| C["Фільтри нижніх частот (ФНЧ)&lt;br&gt;(Розмиття, шумозаглушення)"]
+    B --&gt;|Високі частоти D(u, v) &gt; D₀| D["Фільтри верхніх частот (ФВЧ)&lt;br&gt;(Виділення контурів, різкість)"]
+
+    C --&gt; C1["Ідеальний ФНЧ: сходинка&lt;br&gt;(Сильний дзвін Гіббса)"]
+    C --&gt; C2["ФНЧ Баттерворта: гладкий схил&lt;br&gt;(Порядок n = 1..2, мінімум дзвону)"]
+    C --&gt; C3["ФНЧ Гаусса: нормальний дзвоноподібний&lt;br&gt;(Повна відсутність дзвону)"]
+
+    D --&gt; D1["H_HPF(u, v) = 1 - H_LPF(u, v)"]</code></pre>
+<em>Рисунок 9.2 — Класифікація частотних фільтрів у просторі Фур'є та їхній вплив на просторові артефакти</em></p>
+<p>За формою передавальної функції <span class="arithmatex">\(H(u, v)\)</span> виділяють три базові класи частотних фільтрів:</p>
+<ol>
+<li>
+<p><strong>Ідеальні частотні фільтри (Ideal Filters):</strong> володіють абсолютною прямокутною крутизною зрізу:
+   $<span class="arithmatex">\(H_{\text{ILPF}}(u, v) = \begin{cases} 1, &amp; D(u, v) \le D_0 \\ 0, &amp; D(u, v) &gt; D_0 \end{cases}\)</span>$
+   Через нескінченний спектральний розрив просторовий імпульсний відгук ідеального фільтра описується двовимірною функцією Бесселя (аналогом одновимірної функції <span class="arithmatex">\(\text{sinc}\)</span>), що викликає на результуючому зображенні важкі паразитні хвильові артефакти вздовж різких меж — <strong>ефект Гіббса (дзвін, <em>ringing artifacts</em>)</strong>.</p>
+</li>
+<li>
+<p><strong>Частотні фільтри Баттерворта (Butterworth Filters):</strong> забезпечують плавний монотонний перехід між смугою пропускання та смугою затримання:
+   $<span class="arithmatex">\(H_{\text{BLPF}}(u, v) = \frac{1}{1 + \left[ \frac{D(u, v)}{D_0} \right]^{2n}}\)</span>$
+   де <span class="arithmatex">\(n \ge 1\)</span> — порядок фільтра. При низьких порядках (<span class="arithmatex">\(n = 1, 2\)</span>) фільтр практично не створює паразитного кільцевого дзвону, поєднуючи ефективне шумозаглушення із збереженням просторової структури.</p>
+</li>
+<li>
+<p><strong>Гаусові частотні фільтри (Gaussian Filters):</strong> використовують експоненціальну функцію Гаусса:
+   $<span class="arithmatex">\(H_{\text{GLPF}}(u, v) = \exp\left( -\frac{D^2(u, v)}{2 D_0^2} \right)\)</span>$
+   Оскільки обернене перетворення Фур'є від функції Гаусса є також чистою функцією Гаусса без бічних пелюсток, гаусовий частотний фільтр <strong>принципово не створює просторового дзвону</strong>, забезпечуючи гладке ізотропне розмиття.</p>
+</li>
+</ol>
+<p>Фільтри верхніх частот (ФВЧ) синтезуються за правилом взаємного доповнення: <span class="arithmatex">\(H_{\text{HPF}}(u, v) = 1 - H_{\text{LPF}}(u, v)\)</span>.</p>
+<h3 id="_3">Відновлення спотворених та розмитих зображень</h3>
+<p>Процес просторової деградації зображення (розмиття рухом, дифракційна дефокусування оптичної системи) з адитивним шумом описується спектральним рівнянням:</p>
+<div class="arithmatex">\[G(u, v) = H_{\text{deg}}(u, v) \cdot F(u, v) + N(u, v)\]</div>
+<p>де <span class="arithmatex">\(H_{\text{deg}}(u, v)\)</span> — передавальна функція деградації (оптична передавальна функція, <em>Optical Transfer Function, OTF</em>); <span class="arithmatex">\(N(u, v)\)</span> — спектральна густина шуму; <span class="arithmatex">\(G(u, v)\)</span> — спостережуване розмите зображення.</p>
+<p><strong>Інверсна фільтрація (<em>Inverse Filtering</em>)</strong> здійснює пряму компенсацію деградації діленням на <span class="arithmatex">\(H_{\text{deg}}(u, v)\)</span>:</p>
+<div class="arithmatex">\[\hat{F}(u, v) = \frac{G(u, v)}{H_{\text{deg}}(u, v)} = F(u, v) + \frac{N(u, v)}{H_{\text{deg}}(u, v)}\]</div>
+<p>У високочастотних областях, де значення передавальної функції деградації прямують до нуля (<span class="arithmatex">\(H_{\text{deg}}(u, v) \to 0\)</span>), шумовий доданок <span class="arithmatex">\(\frac{N(u, v)}{H_{\text{deg}}(u, v)}\)</span> катастрофічно зростає до нескінченності, повністю руйнуючи відновлене зображення.</p>
+<p>Для оптимальної регуляризації розв'язку в умовах шуму застосовують <strong>вінерівську фільтрацію (фільтрацію за критерієм мінімуму середньоквадратичної похибки)</strong>:</p>
+<div class="arithmatex">\[\hat{F}(u, v) = \left[ \frac{H_{\text{deg}}^*(u, v)}{|H_{\text{deg}}(u, v)|^2 + \frac{S_\eta(u, v)}{S_f(u, v)}} \right] G(u, v) \approx \left[ \frac{1}{H_{\text{deg}}(u, v)} \frac{|H_{\text{deg}}(u, v)|^2}{|H_{\text{deg}}(u, v)|^2 + K} \right] G(u, v)\]</div>
+<p>де <span class="arithmatex">\(S_\eta(u, v)\)</span> та <span class="arithmatex">\(S_f(u, v)\)</span> — спектральні густини потужності шуму та істинного сигналу відповідно; <span class="arithmatex">\(K = \text{const}\)</span> — емпіричний параметр регуляризації (відношення шум/сигнал за потужністю). Вінерівський фільтр автоматично пригнічує частотні складові, де потужність шуму перевищує корисний сигнал, забезпечуючи стійку деконволюцію.</p>
+<hr />
+<h2 id="93">9.3. Градієнтні детектори контурів першого порядку: оператори Робертса, Собеля, Шарра, Прюітта</h2>
+<h3 id="_4">Основний зміст та теоретичний базис</h3>
+<p><strong>Контуром (межею об'єкта, <em>edge</em>)</strong> на цифровому зображенні називається локальна просторова ділянка растра, на якій спостерігається різкий стрибок (перепад) оптичної яскравості або колірної інтенсивності. Виділення контурів базується на математичному апараті векторного диференціального числення за допомогою обчислення просторового <strong>градієнта яскравості</strong> <span class="arithmatex">\(\nabla f\)</span>:</p>
+<div class="arithmatex">\[\nabla f(x, y) = \begin{bmatrix} G_x \\ G_y \end{bmatrix} = \begin{bmatrix} \frac{\partial f(x, y)}{\partial x} \\ \frac{\partial f(x, y)}{\partial y} \end{bmatrix}\]</div>
+<p>де <span class="arithmatex">\(G_x\)</span> — горизонтальна складова просторової похідної; <span class="arithmatex">\(G_y\)</span> — вертикальна складова просторової похідної.</p>
+<p>Вектор градієнта характеризується двома основними параметрами:</p>
+<ul>
+<li>
+<p><strong>Модуль (величина) градієнта <span class="arithmatex">\(G(x, y)\)</span>:</strong> визначає силу та вираженість перепаду яскравості:
+   $<span class="arithmatex">\(G(x, y) = |\nabla f| = \sqrt{G_x^2 + G_y^2} \approx |G_x| + |G_y|\)</span>$</p>
+</li>
+<li>
+<p><strong>Просторовий напрямок (фазовий кут) градієнта <span class="arithmatex">\(\theta(x, y)\)</span>:</strong> вказує напрямок максимального зростання яскравості (ортогонально до лінії контуру):
+   $<span class="arithmatex">\(\theta(x, y) = \arctan\left( \frac{G_y}{G_x} \right)\)</span>$</p>
+</li>
+</ul>
+<p>У дискретному просторі обчислення частинних похідних <span class="arithmatex">\(\frac{\partial f}{\partial x}\)</span> та <span class="arithmatex">\(\frac{\partial f}{\partial y}\)</span> реалізується за допомогою просторової 2D-згортки растра парою комплементарних спрямованих ядер (масок): горизонтальної <span class="arithmatex">\(\mathbf{K}_x\)</span> та вертикальної <span class="arithmatex">\(\mathbf{K}_y\)</span>:</p>
+<div class="arithmatex">\[G_x = f * \mathbf{K}_x, \quad G_y = f * \mathbf{K}_y\]</div>
+<p><pre class="mermaid"><code>flowchart TD
+    In["Вхідне зображення f(x, y)"] --&gt; Kx["Згортка з маскою K_x → G_x"]
+    In --&gt; Ky["Згортка з маскою K_y → G_y"]
+    Kx --&gt; M["Модуль градієнта: G = √(G_x² + G_y²)"]
+    Ky --&gt; M
+    Kx --&gt; D["Напрямок градієнта: θ = arctan(G_y / G_x)"]
+    Ky --&gt; D
+    M --&gt; Out["Бінаризація контурів за порогом G &gt; T"]</code></pre>
+<em>Рисунок 9.3 — Алгоритм формування векторного градієнтного поля та виділення контурів операторами першого порядку</em></p>
+<p>Основними класичними градієнтними операторами є:</p>
+<ol>
+<li>
+<p><strong>Оператор Робертса (Roberts Cross, <span class="arithmatex">\(2 \times 2\)</span>):</strong> обчислює діагональні різниці між сусідніми пікселями:
+   $<span class="arithmatex">\(\mathbf{K}_{x, \text{Rob}} = \begin{bmatrix} 1 &amp; 0 \\ 0 &amp; -1 \end{bmatrix}, \quad \mathbf{K}_{y, \text{Rob}} = \begin{bmatrix} 0 &amp; 1 \\ -1 &amp; 0 \end{bmatrix}\)</span>$
+   Оператор Робертса має високу чутливість до високочастотних шумів і формує тонкі, але розривні лінії контурів через малий розмір апертури.</p>
+</li>
+<li>
+<p><strong>Оператор Прюітта (Prewitt, <span class="arithmatex">\(3 \times 3\)</span>):</strong> поєднує центральні різниці другого порядку з лінійним усередненням вздовж перпендикулярної осі:
+   $<span class="arithmatex">\(\mathbf{K}_{x, \text{Prew}} = \begin{bmatrix} -1 &amp; 0 &amp; 1 \\ -1 &amp; 0 &amp; 1 \\ -1 &amp; 0 &amp; 1 \end{bmatrix}, \quad \mathbf{K}_{y, \text{Prew}} = \begin{bmatrix} -1 &amp; -1 &amp; -1 \\ 0 &amp; 0 &amp; 0 \\ 1 &amp; 1 &amp; 1 \end{bmatrix}\)</span>$</p>
+</li>
+<li>
+<p><strong>Оператор Собеля (Sobel, <span class="arithmatex">\(3 \times 3\)</span>):</strong> використовує зважене згладжування з трикутними коефіцієнтами <span class="arithmatex">\([1, 2, 1]^T\)</span>, що апроксимує одновимірний фільтр Гаусса:
+   $<span class="arithmatex">\(\mathbf{K}_{x, \text{Sob}} = \begin{bmatrix} -1 &amp; 0 &amp; 1 \\ -2 &amp; 0 &amp; 2 \\ -1 &amp; 0 &amp; 1 \end{bmatrix}, \quad \mathbf{K}_{y, \text{Sob}} = \begin{bmatrix} -1 &amp; -2 &amp; -1 \\ 0 &amp; 0 &amp; 0 \\ 1 &amp; 2 &amp; 1 \end{bmatrix}\)</span>$
+   Зважування центральних відліків вагою 2 істотно підвищує стійкість детектора до адитивного шуму та забезпечує високу якість виділення границь.</p>
+</li>
+<li>
+<p><strong>Оператор Шарра (Scharr, <span class="arithmatex">\(3 \times 3\)</span>):</strong> оптимізований градієнтний фільтр з підвищеними коефіцієнтами:
+   $<span class="arithmatex">\(\mathbf{K}_{x, \text{Scharr}} = \begin{bmatrix} -3 &amp; 0 &amp; 3 \\ -10 &amp; 0 &amp; 10 \\ -3 &amp; 0 &amp; 3 \end{bmatrix}, \quad \mathbf{K}_{y, \text{Scharr}} = \begin{bmatrix} -3 &amp; -10 &amp; -3 \\ 0 &amp; 0 &amp; 0 \\ 3 &amp; 10 &amp; 3 \end{bmatrix}\)</span>$
+   Оператор Шарра володіє практично ідеальною круговою ізотропією, мінімізуючи кутові похибки розрахунку градієнта вздовж ліній, нахилених під непрямими кутами.</p>
+</li>
+</ol>
+<hr />
+<h2 id="94-canny-edge-detector">9.4. Оптимальний детектор меж Кенні (Canny edge detector)</h2>
+<h3 id="_5">Основний зміст та теоретичний базис</h3>
+<p>У 1986 році Джон Кенні розробив строго оптимізований математичний алгоритм детектування контурів (<strong>Canny Edge Detector</strong>), який базується на трьох фундаментальних критеріях якості:</p>
+<ul>
+<li>
+<p><strong>Низька ймовірність помилки (Low error rate):</strong> алгоритм повинен виявляти всі істинні контури без пропусків та не генерувати хибних спрацьовувань від випадкового шуму.</p>
+</li>
+<li>
+<p><strong>Висока точність локалізації (Localization precision):</strong> відстань між відміченими пікселями контуру та істинним фізичним центром перепаду яскравості має бути мінімальною.</p>
+</li>
+<li>
+<p><strong>Єдиний відгук на одиничний контур (Single response constraint):</strong> лінія виділеної межі повинна мати товщину рівно в один піксель без роздвоєння та паразитних шлейфів.</p>
+</li>
+</ul>
+<p><pre class="mermaid"><code>flowchart TD
+    A["Вхідний растр I[m, n]"] --&gt; B["1. Гаусове згладжування (σ)&lt;br&gt;Придушення високочастотного шуму"]
+    B --&gt; C["2. Обчислення градієнта (Собель)&lt;br&gt;Розрахунок G(x, y) та кута θ(x, y)"]
+    C --&gt; D["3. Пригнічення немаксимумів (NMS)&lt;br&gt;Утоншення контурів до товщини 1 піксель"]
+    D --&gt; E["4. Подвійна порогова фільтрація&lt;br&gt;Поділ на сильні (T_high) та слабкі (T_low) межі"]
+    E --&gt; F["5. Трасування за гістерезисом&lt;br&gt;Збереження слабких пікселів, зв'язаних із сильними"]
+    F --&gt; G["Фінальна бінарна маска контурів (1-піксельні межі)"]</code></pre>
+<em>Рисунок 9.4 — П'ятиетапний функціональний конвеєр оптимального детектора контурів Кенні</em></p>
+<p>Алгоритм Кенні виконується за суворою п'ятиетапною обчислювальною послідовністю:</p>
+<ol>
+<li>
+<p><strong>Фільтрація та згладжування за Гауссом:</strong> для придушення шумів вихідне зображення згортається з двовимірним ядром Гаусса <span class="arithmatex">\(G_\sigma(x, y)\)</span> з просторовим радіусом розмиття <span class="arithmatex">\(\sigma\)</span>.</p>
+</li>
+<li>
+<p><strong>Розрахунок амплітуди та напрямку градієнта:</strong> за допомогою масок Собеля знаходяться компоненти <span class="arithmatex">\(G_x\)</span> та <span class="arithmatex">\(G_y\)</span>, після чого для кожного пікселя обчислюється амплітуда <span class="arithmatex">\(G = \sqrt{G_x^2 + G_y^2}\)</span> та кут <span class="arithmatex">\(\theta = \arctan(G_y / G_x)\)</span>. Неперервний кут <span class="arithmatex">\(\theta\)</span> квантується на чотири дискретні сектори орієнтації: горизонтальний (<span class="arithmatex">\(0^\circ\)</span>), перший діагональний (<span class="arithmatex">\(45^\circ\)</span>), вертикальний (<span class="arithmatex">\(90^\circ\)</span>) та другий діагональний (<span class="arithmatex">\(135^\circ\)</span>).</p>
+</li>
+<li>
+<p><strong>Пригнічення немаксимумів (<em>Non-Maximum Suppression, NMS</em>):</strong> процедура утоншення широких градієнтних гребенів до ліній товщиною в один піксель. Для поточного пікселя перевіряється умова: якщо його амплітуда <span class="arithmatex">\(G(x, y)\)</span> менша хоча б за одного з двох сусідів, розташованих уздовж квантованого напрямку вектора градієнта <span class="arithmatex">\(\theta(x, y)\)</span>, значення його амплітуди обнуляється (<span class="arithmatex">\(G(x, y) = 0\)</span>). Тільки локальні максимуми градієнтного профілю оголошуються кандидатами в контури.</p>
+</li>
+<li>
+<p><strong>Подвійна порогова фільтрація (<em>Double Thresholding</em>):</strong> відбір пікселів здійснюється за допомогою двох рівнів — верхнього <span class="arithmatex">\(T_{\text{high}}\)</span> та нижнього <span class="arithmatex">\(T_{\text{low}}\)</span> (зазвичай обирають співвідношення <span class="arithmatex">\(T_{\text{high}} : T_{\text{low}} \approx 2:1 \dots 3:1\)</span>):</p>
+</li>
+<li>
+<p>Пікселі з <span class="arithmatex">\(G(x, y) \ge T_{\text{high}}\)</span> маркуються як <strong>сильні пікселі контуру (<em>strong edges</em>)</strong> і безумовно додаються до вихідної маски.</p>
+</li>
+<li>
+<p>Пікселі з <span class="arithmatex">\(T_{\text{low}} \le G(x, y) &lt; T_{\text{high}}\)</span> класифікуються як <strong>слабкі пікселі контуру (<em>weak edges</em>)</strong> і підлягають додатковій перевірці.</p>
+</li>
+<li>
+<p>Пікселі з <span class="arithmatex">\(G(x, y) &lt; T_{\text{low}}\)</span> безумовно пригнічуються як фоновий шум (<span class="arithmatex">\(G(x, y) = 0\)</span>).</p>
+</li>
+<li>
+<p><strong>Трасування областей неоднозначності за гістерезисом (<em>Hysteresis Edge Tracking</em>):</strong> слабкий піксель визнається істинною межею і зберігається в кінцевій масці тоді й лише тоді, коли він має безпосередній 8-зв'язний просторовий контакт хоча б із одним сильним пікселем контуру. Якщо слабкий відлік є ізольованим або контактує лише з іншими слабкими пікселями, він видаляється. Це забезпечує нерозривність контурних ліній без просочування фонового шуму.</p>
+</li>
+</ol>
+<hr />
+<h2 id="95-cnn">9.5. Вступ до інтелектуального розпізнавання зображень: архітектура згорткових нейронних мереж (CNN)</h2>
+<h3 id="_6">Основний зміст та теоретичний базис</h3>
+<p>Класичні методи обробки зображень вимагають ручного інженерного проектування просторових ознак (<em>handcrafted features</em>), що обмежує їхню ефективність у складних задачах класифікації об'єктів в умовах змін ракурсу, масштабу та освітленості. Сучасним стандартом розпізнавання візуальних образів є <strong>згорткові нейронні мережі (ЗНМ)</strong> (в англомовній термінології — <em>Convolutional Neural Networks, CNN</em>).</p>
+<p>Фундаментальний зв'язок між класичною цифровою обробкою сигналів та нейромережевими архітектурами полягає в тому, що <strong>математична операція у згортковому шарі нейромережі (<code>Conv2D</code>) є прямою апаратною реалізацією двовимірної просторової згортки растра з набором ковзних ядер фільтрів</strong>. </p>
+<p>Якщо в класичній обробці коефіцієнти просторових масок (Собеля, Лапласа, Гаусса) жорстко зафіксовані розробником за аналітичними правилами, то в згорткових нейромережах <strong>вагові коефіцієнти фільтрів <span class="arithmatex">\(w_{i,j}\)</span> є адаптивними (навчальними) параметрами</strong>, значення яких автоматично оптимізуються у процесі навчання методом зворотного поширення помилки (<em>backpropagation</em>) за допомогою алгоритмів градієнтного спуску (Adam, SGD). </p>
+<p>У процесі оптимізації фільтри першого згорткового шару CNN самостійно сходяться до просторових конфігурацій, які математично еквівалентні градієнтним детекторам Собеля різної кутової орієнтації, смуговим фільтрам Габора та детекторам колірних контрастів.</p>
+<p><pre class="mermaid"><code>flowchart LR
+    A["Вхідний тензор зображення&lt;br&gt;[H × W × C]"] --&gt; B["Згортковий шар Conv2D + ReLU&lt;br&gt;(Виділення карт ознак)"]
+    B --&gt; C["Шар пулінгу MaxPooling2D&lt;br&gt;(Субдискретизація 2×2)"]
+    C --&gt; D["Глибокі шари Conv2D + Pool&lt;br&gt;(Високорівневі семантичні патерни)"]
+    D --&gt; E["Шар вирівнювання Flatten&lt;br&gt;(Розгортання у 1D-вектор)"]
+    E --&gt; F["Повнозв'язні шари Dense&lt;br&gt;(Класифікатор)"]
+    F --&gt; G["Вихідний шар Softmax&lt;br&gt;(Ймовірності класів)"]</code></pre>
+<em>Рисунок 9.5 — Скрізна топологічна архітектура згорткової нейронної мережі для класифікації багатовимірних візуальних даних</em></p>
+<p>Типова архітектура CNN складається з трьох основних функціональних шарів:</p>
+<h3 id="1-conv2d">1. Згорткові шари (<code>Conv2D</code>) та активація</h3>
+<p>Згортковий шар приймає вхідний тензор <span class="arithmatex">\(\mathbf{X} \in \mathbb{R}^{H \times W \times C_{\text{in}}}\)</span> і формує вихідний тензор карт ознак (<em>feature maps</em>) <span class="arithmatex">\(\mathbf{Y} \in \mathbb{R}^{H' \times W' \times C_{\text{out}}}\)</span> шляхом згортки з <span class="arithmatex">\(C_{\text{out}}\)</span> тривимірними ядрами розмірністю <span class="arithmatex">\(K_h \times K_w \times C_{\text{in}}\)</span>:</p>
+<div class="arithmatex">\[Y[m, n, k] = f_{\text{act}}\left( \sum_{c=0}^{C_{\text{in}}-1} \sum_{i=-a}^{a} \sum_{j=-b}^{b} X[m \cdot S_y + i, n \cdot S_x + j, c] \cdot W_k[i, j, c] + b_k \right)\]</div>
+<p>де <span class="arithmatex">\(W_k\)</span> — вагове ядро <span class="arithmatex">\(k\)</span>-го фільтра; <span class="arithmatex">\(b_k\)</span> — скалярне зміщення (<em>bias</em>); <span class="arithmatex">\(S_x, S_y\)</span> — крок зсуву ядра (<em>stride</em>); <span class="arithmatex">\(f_{\text{act}}(\cdot)\)</span> — нелінійна функція активації. Загальноприйнятим стандартом є функція <strong>ReLU (<em>Rectified Linear Unit</em>)</strong>:</p>
+<div class="arithmatex">\[f_{\text{ReLU}}(z) = \max(0, z)\]</div>
+<p>яка забезпечує швидку збіжність градієнтів та усуває проблему згасання градієнтів.</p>
+<h3 id="2-maxpooling2d">2. Шари субдискретизації / пулінгу (<code>MaxPooling2D</code>)</h3>
+<p>Шари пулінгу призначені для зменшення просторової розмірності карт ознак, зниження обчислювальної складності та забезпечення інваріантності виділених ознак до малих просторових зсувів і поворотів. Операція максимального пулінгу (<strong>MaxPooling</strong>) обирає максимальне значення у вікні розміром <span class="arithmatex">\(P \times P\)</span> (зазвичай <span class="arithmatex">\(2 \times 2\)</span> із кроком <span class="arithmatex">\(S = 2\)</span>):</p>
+<div class="arithmatex">\[Y_{\text{pool}}[m, n, k] = \max_{0 \le i, j \lt  P} X[m \cdot S + i, n \cdot S + j, k]\]</div>
+<p>Максимальний пулінг зберігає найбільш виражені текстурні та контурні активації, скорочуючи кількість просторових відліків у 4 рази без зміни кількості каналів глибини.</p>
+<h3 id="3-dense">3. Повнозв'язні шари (<code>Dense</code>) та класифікація</h3>
+<p>Після кількох каскадів <code>Conv2D</code> та <code>MaxPooling2D</code> тривимірний тензор високорівневих семантичних ознак розгортається у єдиний одновимірний вектор шаром <code>Flatten</code> і подається на повнозв'язний класифікатор (<code>Dense</code>). Для задачі мультикласової класифікації на <span class="arithmatex">\(K\)</span> класів вихідний шар використовує нормалізовану експоненціальну функцію <strong>Softmax</strong>:</p>
+<div class="arithmatex">\[P(y = k \mid \mathbf{x}) = \frac{\exp(z_k)}{\sum_{j=1}^{K} \exp(z_j)}\]</div>
+<p>де <span class="arithmatex">\(z_k\)</span> — лінійний вихідний потенціал <span class="arithmatex">\(k\)</span>-го нейрона; <span class="arithmatex">\(P(y = k \mid \mathbf{x})\)</span> — апостеріорна ймовірність належності вхідного зображення до цільового класу <span class="arithmatex">\(k\)</span>.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Парадигма аналізу</th>
+<th style="text-align: left;">Метод виділення ознак</th>
+<th style="text-align: left;">Стійкість до шумів та змін освітлення</th>
+<th style="text-align: center;">Обчислювальна складність</th>
+<th style="text-align: left;">Сфера застосування</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Оператор Собеля</strong></td>
+<td style="text-align: left;">Жорстке ядро <span class="arithmatex">\(3 \times 3\)</span> (перші похідні)</td>
+<td style="text-align: left;">Низька</td>
+<td style="text-align: center;"><strong>Мінімальна <span class="arithmatex">\(\mathcal{O}(MN)\)</span></strong></td>
+<td style="text-align: left;">Первинне оконтурювання, швидкі вбудовані системи</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Детектор Кенні</strong></td>
+<td style="text-align: left;">Багатокритеріальний 5-етапний конвеєр</td>
+<td style="text-align: left;"><strong>Висока</strong></td>
+<td style="text-align: center;">Середня <span class="arithmatex">\(\mathcal{O}(MN)\)</span></td>
+<td style="text-align: left;">Прецизійна сегментація меж, вимірювання геометрії</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Частотна 2D-FFT</strong></td>
+<td style="text-align: left;">Просторове маскування спектра</td>
+<td style="text-align: left;">Середня</td>
+<td style="text-align: center;"><span class="arithmatex">\(\mathcal{O}(MN \log(MN))\)</span></td>
+<td style="text-align: left;">Деконволюція розмиття, режекція періодичних растрових завад</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>CNN (ЗНМ)</strong></td>
+<td style="text-align: left;">Ієрархічні навчальні тензорні ядра</td>
+<td style="text-align: left;"><strong>Екстремально висока</strong></td>
+<td style="text-align: center;">Висока (GPU / NPU прискорення)</td>
+<td style="text-align: left;">Інтелектуальна класифікація, детекція об'єктів (YOLO, ResNet)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="_7">Питання для самоперевірки та аналітичного осмислення</h3>
+<ol>
+<li>
+<p>Виведіть математичний вираз двовимірного дискретного перетворення Фур'є (2D-DFT) та доведіть його властивість сепарабельності. Який виграш у швидкодії забезпечує сепарабельне обчислення 2D-FFT порівняно з прямим матричним розрахунком?</p>
+</li>
+<li>
+<p>Поясніть фізичний зміст амплітудного та фазового спектрів двовимірного зображення. Чому при збереженні амплітудного спектра та повній рандомізації фазового спектра зображення перетворюється на нерозпізнаваний шум?</p>
+</li>
+<li>
+<p>Опишіть фізичний механізм виникнення кільцевого дзвону Гіббса при фільтрації зображень ідеальним частотним ФНЧ. Чому гаусові частотні фільтри гарантують повну відсутність дзвону?</p>
+</li>
+<li>
+<p>У чому полягає математична нестабільність прямої інверсної фільтрації розмитих зображень, і яким чином вінерівська деконволюція регуляризує процес відновлення сигналу на фоні шуму?</p>
+</li>
+<li>
+<p>Детально опишіть п'ять послідовних етапів алгоритму виділення меж Кенні (Canny edge detector). Яку роль відіграє квантування напрямку градієнта в процедурі пригнічення немаксимумів (Non-Maximum Suppression)?</p>
+</li>
+<li>
+<p>Поясніть пряму математичну та концептуальну аналогію між класичною просторовою фільтрацією ядрами Собеля та функціонуванням згорткового шару <code>Conv2D</code> у нейронних мережах CNN. Чому перші шари навчених глибоких мереж самостійно формують просторові маски градієнтного типу?</p>
+</li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Повернутись нагору
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Kyrylo Vadurin &bull; <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "navigation.tracking", "header.autohide", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0456\u0439\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u0421\u043a\u043e\u043f\u0456\u044e\u0432\u0430\u0442\u0438 \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0429\u0435 1 \u0437\u0431\u0456\u0433 \u043d\u0430 \u0446\u0456\u0439 \u0441\u0442\u043e\u0440\u0456\u043d\u0446\u0456", "search.result.more.other": "\u0429\u0435 # \u0437\u0431\u0456\u0433\u0456\u0432 \u043d\u0430 \u0446\u0456\u0439 \u0441\u0442\u043e\u0440\u0456\u043d\u0446\u0456", "search.result.none": "\u0417\u0431\u0456\u0433\u0456\u0432 \u043d\u0435 \u0437\u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u0417\u043d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0437\u0431\u0456\u0433", "search.result.other": "\u0417\u043d\u0430\u0439\u0434\u0435\u043d\u043e # \u0437\u0431\u0456\u0433\u0456\u0432", "search.result.placeholder": "\u0420\u043e\u0437\u043f\u043e\u0447\u043d\u0456\u0442\u044c \u043f\u0438\u0441\u0430\u0442\u0438 \u0434\u043b\u044f \u043f\u043e\u0448\u0443\u043a\u0443", "search.result.term.missing": "\u041d\u0435 \u0437\u043d\u0430\u0439\u0434\u0435\u043d\u043e \u0437\u0430\u043f\u0438\u0442\u0443", "select.version": "\u041e\u0431\u0440\u0430\u0442\u0438 \u0432\u0435\u0440\u0441\u0456\u044e"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

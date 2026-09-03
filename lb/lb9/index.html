@@ -1,0 +1,2277 @@
+
+<!doctype html>
+<html lang="uk" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Навчальний портал з дисципліни "Обробка сигналів та зображень"">
+      
+      
+      
+      
+        <link rel="prev" href="../lb8/">
+      
+      
+        <link rel="next" href="../lb10/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>ЛБ 9. Геометричні перетворення зображень - Обробка сигналів та зображень</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#no-9" class="md-skip">
+          Перейти до змісту
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Хедер">
+    <a href="../.." title="Обробка сигналів та зображень" class="md-header__button md-logo" aria-label="Обробка сигналів та зображень" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Обробка сигналів та зображень
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              ЛБ 9. Геометричні перетворення зображень
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="cyan"  aria-label="Переключити на темну тему"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Переключити на темну тему" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="cyan"  aria-label="Переключити на світлу тему"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Переключити на світлу тему" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Пошук" placeholder="Пошук" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Шукати">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистити" aria-label="Очистити" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Пошук розпочато
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Вкладки" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Робоча програма
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../lk/lk1/" class="md-tabs__link">
+          
+  
+  
+  Лекції
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../lb1/" class="md-tabs__link">
+          
+  
+  
+  Лабораторні роботи
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../sr/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Самостійна робота
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../rg/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Розрахунково-графічна робота
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Навігація" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Обробка сигналів та зображень" class="md-nav__button md-logo" aria-label="Обробка сигналів та зображень" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Обробка сигналів та зображень
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Робоча програма
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лекції
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Лекції
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lk/lk1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 1. Математичне представлення, дискретизація та квантування
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lk/lk2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 2. Лінійні стаціонарні дискретні системи
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lk/lk3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 3. Спектральний аналіз дискретних сигналів
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lk/lk4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 4. Z-перетворення та проєктування цифрових фільтрів
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lk/lk5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 5. Цифрове представлення зображень та колориметричні моделі
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lk/lk6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 6. Поелементні амплітудні перетворення
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lk/lk7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 7. Просторова фільтрація зображень
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lk/lk8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 8. Геометричні трансформації та математична морфологія
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lk/lk9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 9. Двовимірна Фур'є-обробка та детектори контурів
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лабораторні роботи
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Лабораторні роботи
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lb1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 1. Дискретизація, квантування сигналів та ефект аліасингу
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lb2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 2. Лінійні стаціонарні системи та дискретна згортка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lb3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 3. Спектральний аналіз за допомогою ДПФ/ШПФ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lb4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 4. Синтез цифрових КІХ та НІХ фільтрів
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lb5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 5. Статистичний та кореляційний аналіз
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lb6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 6. Базові операції з цифровими зображеннями
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lb7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 7. Амплітудні перетворення та бінаризація
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lb8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 8. Просторова фільтрація зображень
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 9. Геометричні перетворення зображень
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 9. Геометричні перетворення зображень
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Зміст">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Зміст
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1 Теоретичні відомості
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-0" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2 Підготовка середовища та розгортання проєкту (Крок 0)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2 Підготовка середовища та розгортання проєкту (Крок 0)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Налаштування віртуального оточення та встановлення пакетів
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Структура файлової системи проєкту
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3 Порядок виконання роботи
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3 Порядок виконання роботи">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Індивідуальні завдання
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 Покроковий алгоритм та розв'язок еталонного прикладу
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.2 Покроковий алгоритм та розв&#39;язок еталонного прикладу">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Блок 1. Підготовка середовища, імпорт модулів та генерація сцени з перспективними спотвореннями
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Блок 2. Побудова афінної матриці та виконання комплексного перетворення
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Блок 3. Дослідження та порівняння методів просторової інтерполяції
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Блок 4. Перспективне випрямлення площини на основі матриці гомографії
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 Запуск, тестування та перевірка результатів
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.3 Запуск, тестування та перевірка результатів">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Таблиця аналізу та порівняння методів інтерполяції яскравості:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Вимоги до змісту звіту
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Контрольні запитання для захисту роботи
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lb10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 10. Математична морфологія зображень
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lb11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 11. 2D перетворення Фур'є та детектування контурів
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Самостійна робота
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Розрахунково-графічна робота
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Зміст">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Зміст
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1 Теоретичні відомості
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-0" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2 Підготовка середовища та розгортання проєкту (Крок 0)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2 Підготовка середовища та розгортання проєкту (Крок 0)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Налаштування віртуального оточення та встановлення пакетів
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Структура файлової системи проєкту
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3 Порядок виконання роботи
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3 Порядок виконання роботи">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Індивідуальні завдання
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 Покроковий алгоритм та розв'язок еталонного прикладу
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.2 Покроковий алгоритм та розв&#39;язок еталонного прикладу">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Блок 1. Підготовка середовища, імпорт модулів та генерація сцени з перспективними спотвореннями
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Блок 2. Побудова афінної матриці та виконання комплексного перетворення
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Блок 3. Дослідження та порівняння методів просторової інтерполяції
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Блок 4. Перспективне випрямлення площини на основі матриці гомографії
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 Запуск, тестування та перевірка результатів
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.3 Запуск, тестування та перевірка результатів">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Таблиця аналізу та порівняння методів інтерполяції яскравості:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Вимоги до змісту звіту
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Контрольні запитання для захисту роботи
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="no-9">Лабораторна робота № 9. Геометричні афінні та перспективні перетворення зображень</h1>
+<p><strong>Мета:</strong> Засвоїти теоретичні засади та матричний апарат просторових геометричних перетворень цифрових растрових зображень на основі однорідних координат, опанувати алгоритми афінних трансформацій (масштабування, перенесення, обертання та зсуву), дослідити вплив різних методів двовимірної інтерполяції яскравості на якість трансформованого кадру, а також реалізувати алгоритм усунення перспективних спотворень і проективного випрямлення об'єктів на основі матриці гомографії за чотирма опорними точками.</p>
+<p><strong>Стек технологій та інструменти:</strong></p>
+<ul>
+<li>
+<p><strong>Мова програмування / Середовище:</strong> Python 3.10+</p>
+</li>
+<li>
+<p><strong>Платформа / Бібліотеки / Модулі:</strong> OpenCV 4.8+ (<code>cv2</code>), Pillow 9.5+ (<code>PIL.Image</code>), SciPy 1.10+ (модуль <code>scipy.ndimage</code>), NumPy 1.24+, Matplotlib 3.7+</p>
+</li>
+<li>
+<p><strong>Інструменти розробки:</strong> VS Code / PyCharm / Jupyter Notebook / Google Colab, Термінал (CLI)</p>
+</li>
+</ul>
+<hr />
+<h2 id="1">1 Теоретичні відомості</h2>
+<p>Геометричні перетворення зображень змінюють просторові взаємозв'язки між пікселями, здійснюючи відображення початкових координат <span class="arithmatex">\((x, y)\)</span> вхідного кадру <span class="arithmatex">\(f(x, y)\)</span> у нові координати <span class="arithmatex">\((x', y')\)</span> вихідного кадру <span class="arithmatex">\(g(x', y')\)</span>. Повний процес геометричної трансформації складається з двох послідовних кроків: прямого або зворотного просторового перерахунку координат та інтерполяції значень яскравості для отриманих нецілочисельних точок дискретної сітки.</p>
+<p><pre class="mermaid"><code>graph LR
+    subgraph Geometric_Transforms_Mapping [Матричний простір геометричних перетворень]
+        InputCoord["Вхідні координати&lt;br/&gt;[x, y, 1]^T"] --&gt; Affine["Афінні перетворення (2x3)&lt;br/&gt;Збереження паралельності прямих"]
+        InputCoord --&gt; Perspective["Перспективні перетворення (3x3)&lt;br/&gt;Збіг прямих у точках сходу (Гомографія)"]
+
+        Affine --&gt; AffineOps["Масштабування (Scale)&lt;br/&gt;Поворот (Rotate)&lt;br/&gt;Зсув (Translate / Shear)"]
+        Perspective --&gt; HomographyOps["Випрямлення площин (Rectification)&lt;br/&gt;Вид зверху (Bird's Eye View)"]
+    end</code></pre>
+<em>Рисунок 1 — Структурна класифікація просторових геометричних перетворень</em></p>
+<p>Афінні перетворення (affine transformations) є відображеннями площини на себе, за яких зберігаються колінеарність точок, паралельність прямих ліній та відношення довжин відрізків на паралельних прямих. В однорідних координатах загальне афінне перетворення записується у матрично-векторній формі:</p>
+<div class="arithmatex">\[\begin{bmatrix} x' \\ y' \\ 1 \end{bmatrix} = \begin{bmatrix} a_{11} &amp; a_{12} &amp; t_x \\ a_{21} &amp; a_{22} &amp; t_y \\ 0 &amp; 0 &amp; 1 \end{bmatrix} \begin{bmatrix} x \\ y \\ 1 \end{bmatrix}\]</div>
+<p>де <span class="arithmatex">\(x, y\)</span> позначають просторові координати вихідного пікселя, <span class="arithmatex">\(x', y'\)</span> — розраховані координати трансформованого пікселя, коефіцієнти <span class="arithmatex">\(a_{11}, a_{12}, a_{21}, a_{22}\)</span> описують операції масштабування, обертання та скосу, а <span class="arithmatex">\(t_x, t_y\)</span> задають лінійне перенесення вздовж осей <span class="arithmatex">\(X\)</span> та <span class="arithmatex">\(Y\)</span> відповідно.</p>
+<p>У бібліотеці OpenCV афінна матриця подається у компактному вигляді розмірністю <span class="arithmatex">\(2 \times 3\)</span>. Для виконання одночасного масштабування з коефіцієнтом <span class="arithmatex">\(s\)</span>, повороту на кут <span class="arithmatex">\(\theta\)</span> навколо довільного центру <span class="arithmatex">\((x_c, y_c)\)</span> та наступного перенесення <span class="arithmatex">\((t_x, t_y)\)</span> матриця <span class="arithmatex">\(M_{2\times 3}\)</span> має вигляд:</p>
+<div class="arithmatex">\[M = \begin{bmatrix} \alpha &amp; \beta &amp; (1 - \alpha) x_c - \beta y_c + t_x \\ -\beta &amp; \alpha &amp; \beta x_c + (1 - \alpha) y_c + t_y \end{bmatrix}\]</div>
+<p>де <span class="arithmatex">\(\alpha = s \cdot \cos\theta\)</span> та <span class="arithmatex">\(\beta = s \cdot \sin\theta\)</span>.</p>
+<p><pre class="mermaid"><code>flowchart TD
+    subgraph Inverse_Mapping_Pipeline [Конвеєр зворотного координатного відображення з інтерполяцією]
+        OutPixel["Кожен цілий піксель виходу (x', y')"] --&gt; InvTransform["Зворотний перерахунок: (x, y) = T^-1(x', y')"]
+        InvTransform --&gt; SubPixel["Нецілочисельні координати джерела (x, y)"]
+        SubPixel --&gt; InterpMethod{"Метод інтерполяції"}
+
+        InterpMethod --&gt; Nearest["INTER_NEAREST: 1 сусід O(1)"]
+        InterpMethod --&gt; Linear["INTER_LINEAR: 2x2 пікселі (Білінійна)"]
+        InterpMethod --&gt; Cubic["INTER_CUBIC: 4x4 пікселі (Бікубічна)"]
+        InterpMethod --&gt; Lanczos["INTER_LANCZOS4: 8x8 пікселів (Ядро Ланцоша)"]
+
+        Nearest --&gt; OutputVal["Значення яскравості I_out(x', y')"]
+        Linear --&gt; OutputVal
+        Cubic --&gt; OutputVal
+        Lanczos --&gt; OutputVal
+    end</code></pre>
+<em>Рисунок 2 — Схема алгоритму зворотного координатного відображення з інтерполяцією яскравості</em></p>
+<p>При прямому відображенні пікселів на вихідній дискретній сітці виникають розриви (незаповнені пікселі) або накладання. Тому в комп'ютерному зорі застосовують зворотне відображення (inverse mapping), за якого для кожного цілочисельного вузла вихідного кадру <span class="arithmatex">\((x', y')\)</span> знаходиться відповідна дійсна точка <span class="arithmatex">\((x, y) = T^{-1}(x', y')\)</span> у вхідному кадрі з подальшим обчисленням яскравості методом двовимірної інтерполяції.</p>
+<p>Для обчислення яскравості застосовують такі базові методи інтерполяції:</p>
+<ol>
+<li>
+<p>Метод найближчого сусіда (<code>INTER_NEAREST</code>) обирає яскравість найближчого цілого пікселя, що забезпечує максимальну швидкодію, проте породжує сходинкові артефакти та розриви на похилих лініях;</p>
+</li>
+<li>
+<p>Білінійна інтерполяція (<code>INTER_LINEAR</code>) виконує зважене усереднення за чотирма сусідніми точками (<span class="arithmatex">\(2 \times 2\)</span>), гарантуючи гладкі тональні переходи при помірних обчислювальних витратах;</p>
+</li>
+<li>
+<p>Бікубічна інтерполяція (<code>INTER_CUBIC</code>) використовує кубічні сплайни для апроксимації за околицею <span class="arithmatex">\(4 \times 4\)</span> (<span class="arithmatex">\(16\)</span> точок), зберігаючи високу чіткість границь об'єктів;</p>
+</li>
+<li>
+<p>Інтерполяція Ланцоша (<code>INTER_LANCZOS4</code>) базується на зважуванні за допомогою віконної функції <span class="arithmatex">\(\text{sinc}\)</span> у вікні розміром <span class="arithmatex">\(8 \times 8\)</span> (<span class="arithmatex">\(64\)</span> точки), що забезпечує найвищу якість передачі високих просторових частот.</p>
+</li>
+</ol>
+<p>Перспективне перетворення (гомографія / projective transformation) моделює проектування пласкої сцени у тривимірному просторі на площину сенсора камери. На відміну від афінних трансформацій, паралельні лінії в перспективі перестають бути паралельними і сходяться у спільних точках сходу (vanishing points). Математичний зв'язок між координатами точок в однорідному просторі задається матрицею гомографії <span class="arithmatex">\(H_{3\times 3}\)</span>:</p>
+<div class="arithmatex">\[\begin{bmatrix} x'' \\ y'' \\ w \end{bmatrix} = \begin{bmatrix} h_{00} &amp; h_{01} &amp; h_{02} \\ h_{10} &amp; h_{11} &amp; h_{12} \\ h_{20} &amp; h_{21} &amp; h_{22} \end{bmatrix} \begin{bmatrix} x \\ y \\ 1 \end{bmatrix}\]</div>
+<p>Декартові координати проекції на вихідній площині отримуються діленням на масштабний фактор <span class="arithmatex">\(w\)</span>:</p>
+<div class="arithmatex">\[x' = \frac{x''}{w} = \frac{h_{00} x + h_{01} y + h_{02}}{h_{20} x + h_{21} y + h_{22}}, \quad y' = \frac{y''}{w} = \frac{h_{10} x + h_{11} y + h_{12}}{h_{20} x + h_{21} y + h_{22}}\]</div>
+<p>Оскільки матриця визначена з точністю до ненульового масштабного множника (<span class="arithmatex">\(h_{22} = 1\)</span>), вона має <span class="arithmatex">\(8\)</span> незалежних ступенів вільності. Для однозначного розрахунку всіх коефіцієнтів матриці гомографії необхідно задати мінімум <span class="arithmatex">\(4\)</span> пари відповідних опорних точок <span class="arithmatex">\((x_i, y_i) \leftrightarrow (x'_i, y'_i)\)</span> (<span class="arithmatex">\(i = 1, \dots, 4\)</span>), жодні три з яких не лежать на одній прямій.</p>
+<hr />
+<h2 id="2-0">2 Підготовка середовища та розгортання проєкту (Крок 0)</h2>
+<p>Перед початком виконання лабораторної роботи перевірте конфігурацію інтерпретатора Python, активуйте ізольоване віртуальне середовище та встановіть бібліотеки матричної алгебри та комп'ютерного зору.</p>
+<h3 id="21">2.1 Налаштування віртуального оточення та встановлення пакетів</h3>
+<p>Виконайте у терміналі команди створення та активації віртуального середовища:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># Створення робочого каталогу лабораторної роботи № 9</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>mkdir<span class="w"> </span>dsp_lab9_geometric_transforms
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nb">cd</span><span class="w"> </span>dsp_lab9_geometric_transforms
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="c1"># Створення та активація віртуального середовища</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>python3<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>venv
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="c1"># Активація для Linux/macOS:</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="nb">source</span><span class="w"> </span>venv/bin/activate
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="c1"># Активація для Windows (PowerShell):</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="c1"># venv\Scripts\Activate.ps1</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="c1"># Активація для Windows (CMD):</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="c1"># venv\Scripts\activate.bat</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="c1"># Оновлення pip та встановлення бібліотек</span>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>pip
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>pip<span class="w"> </span>install<span class="w"> </span>numpy<span class="w"> </span>opencv-python<span class="w"> </span>pillow<span class="w"> </span>scipy<span class="w"> </span>matplotlib
+</span></code></pre></div>
+<h3 id="22">2.2 Структура файлової системи проєкту</h3>
+<p>Файлова структура робочої директорії повинна мати такий вигляд:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>dsp_lab9_geometric_transforms/
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>├── data/
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>│   └── perspective_scene.png        # Згенероване тестове зображення з спотвореннями
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>├── figures/
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>│   ├── affine_transform_results.png # Результати обертання, масштабування та зсуву
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>│   ├── interpolation_comparison.png # Порівняння методів інтерполяції на фрагментах
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>│   └── perspective_rectified.png    # Результат перспективного випрямлення за 4 точками
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>├── lab9_geometric_transforms.py     # Головний виконуваний скрипт програми
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>├── requirements.txt                 # Зафіксовані версії пакетів
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>└── venv/                            # Віртуальне оточення
+</span></code></pre></div>
+<hr />
+<h2 id="3">3 Порядок виконання роботи</h2>
+<h3 id="31">3.1 Індивідуальні завдання</h3>
+<p>Здобувач вищої освіти виконує лабораторну роботу відповідно до індивідуального варіанта. Усі просторові координати задано в піксельній системі координат вихідного кадру розміром <span class="arithmatex">\(600 \times 800\)</span> пікселів.</p>
+<p>У кожному варіанті досліджуються:</p>
+<ol>
+<li>
+<p>Побудова афінної матриці <span class="arithmatex">\(M_{2\times 3}\)</span> та виконання комплексного перетворення (поворот на кут <span class="arithmatex">\(\theta\)</span>, масштабування з фактором <span class="arithmatex">\(s\)</span>, зміщення <span class="arithmatex">\(t_x, t_y\)</span>);</p>
+</li>
+<li>
+<p>Порівняння чотирьох методів інтерполяції (<code>NEAREST</code>, <code>LINEAR</code>, <code>CUBIC</code>, <code>LANCZOS4</code>) при двократному масштабуванні та оцінка розмиття країв;</p>
+</li>
+<li>
+<p>Перспективне випрямлення площини інтересу (<span class="arithmatex">\(\text{ROI}\)</span>) за чотирма заданими кутовими координатами <span class="arithmatex">\(src = [P_1, P_2, P_3, P_4]\)</span> у прямокутний вихідний кадр розміром <span class="arithmatex">\(W_{out} \times H_{out}\)</span>.</p>
+</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Варіант</th>
+<th style="text-align: left;">Тип досліджуваного об'єкта</th>
+<th style="text-align: center;">Параметри афінного перетворення (<span class="arithmatex">\(\theta^\circ, s, t_x, t_y\)</span>)</th>
+<th style="text-align: center;">Координати точок <span class="arithmatex">\(src\)</span> <span class="arithmatex">\([P_1, P_2, P_3, P_4]\)</span></th>
+<th style="text-align: center;">Цільовий розмір <span class="arithmatex">\(W_{out} \times H_{out}\)</span>, px</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><strong>1</strong></td>
+<td style="text-align: left;">Дорожня розмітка (Lane Detection)</td>
+<td style="text-align: center;"><span class="arithmatex">\(\theta=15^\circ, s=1.15, t_x=25, t_y=-15\)</span></td>
+<td style="text-align: center;"><code>[[140, 100], [660, 110], [780, 540], [20, 520]]</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(400 \times 600\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>2</strong></td>
+<td style="text-align: left;">Текстовий документ на столі</td>
+<td style="text-align: center;"><span class="arithmatex">\(\theta=-20^\circ, s=0.90, t_x=-30, t_y=40\)</span></td>
+<td style="text-align: center;"><code>[[180, 80], [620, 130], [710, 510], [70, 470]]</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(500 \times 350\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>3</strong></td>
+<td style="text-align: left;">Автомобільний номерний знак</td>
+<td style="text-align: center;"><span class="arithmatex">\(\theta=30^\circ, s=1.25, t_x=40, t_y=20\)</span></td>
+<td style="text-align: center;"><code>[[120, 160], [680, 140], [750, 480], [50, 500]]</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(520 \times 150\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>4</strong></td>
+<td style="text-align: left;">Рекламний білборд на фасаді</td>
+<td style="text-align: center;"><span class="arithmatex">\(\theta=-12^\circ, s=1.05, t_x=15, t_y=-25\)</span></td>
+<td style="text-align: center;"><code>[[160, 90], [640, 70], [720, 530], [90, 550]]</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(600 \times 400\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>5</strong></td>
+<td style="text-align: left;">QR-код на криволінійній поверхні</td>
+<td style="text-align: center;"><span class="arithmatex">\(\theta=45^\circ, s=0.85, t_x=-20, t_y=-30\)</span></td>
+<td style="text-align: center;"><code>[[200, 120], [600, 100], [680, 490], [110, 510]]</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(400 \times 400\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>6</strong></td>
+<td style="text-align: left;">Сільськогосподарське поле (БПЛА)</td>
+<td style="text-align: center;"><span class="arithmatex">\(\theta=-35^\circ, s=1.20, t_x=50, t_y=10\)</span></td>
+<td style="text-align: center;"><code>[[130, 70], [670, 120], [790, 560], [30, 530]]</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(500 \times 500\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>7</strong></td>
+<td style="text-align: left;">Друкована плата під кутом</td>
+<td style="text-align: center;"><span class="arithmatex">\(\theta=18^\circ, s=1.10, t_x=20, t_y=-20\)</span></td>
+<td style="text-align: center;"><code>[[150, 110], [650, 90], [740, 520], [60, 540]]</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(450 \times 300\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>8</strong></td>
+<td style="text-align: left;">Паспортний документ у сканері</td>
+<td style="text-align: center;"><span class="arithmatex">\(\theta=-25^\circ, s=0.95, t_x=-40, t_y=35\)</span></td>
+<td style="text-align: center;"><code>[[170, 60], [630, 140], [700, 500], [80, 460]]</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(480 \times 320\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>9</strong></td>
+<td style="text-align: left;">Фасад історичної будівлі</td>
+<td style="text-align: center;"><span class="arithmatex">\(\theta=10^\circ, s=1.30, t_x=30, t_y=-40\)</span></td>
+<td style="text-align: center;"><code>[[110, 130], [690, 100], [770, 550], [40, 510]]</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(550 \times 400\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>10</strong></td>
+<td style="text-align: left;">Штрих-код на упаковці товару</td>
+<td style="text-align: center;"><span class="arithmatex">\(\theta=-40^\circ, s=0.80, t_x=-15, t_y=25\)</span></td>
+<td style="text-align: center;"><code>[[190, 150], [610, 130], [690, 470], [100, 490]]</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(450 \times 200\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>11</strong></td>
+<td style="text-align: left;">Злітно-посадкова смуга (авіація)</td>
+<td style="text-align: center;"><span class="arithmatex">\(\theta=12^\circ, s=1.18, t_x=35, t_y=-10\)</span></td>
+<td style="text-align: center;"><code>[[140, 80], [660, 120], [760, 530], [35, 520]]</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(350 \times 700\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>12</strong></td>
+<td style="text-align: left;">Картина в музейній галереї</td>
+<td style="text-align: center;"><span class="arithmatex">\(\theta=-18^\circ, s=1.08, t_x=-25, t_y=20\)</span></td>
+<td style="text-align: center;"><code>[[160, 100], [640, 80], [730, 510], [75, 530]]</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(400 \times 500\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>13</strong></td>
+<td style="text-align: left;">Монітор комп'ютера під кутом</td>
+<td style="text-align: center;"><span class="arithmatex">\(\theta=22^\circ, s=1.12, t_x=10, t_y=-30\)</span></td>
+<td style="text-align: center;"><code>[[175, 70], [625, 130], [715, 490], [85, 470]]</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(500 \times 300\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>14</strong></td>
+<td style="text-align: left;">Дорожній знак обмеження швидкості</td>
+<td style="text-align: center;"><span class="arithmatex">\(\theta=-30^\circ, s=0.92, t_x=-35, t_y=15\)</span></td>
+<td style="text-align: center;"><code>[[130, 120], [670, 100], [750, 540], [50, 520]]</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(350 \times 350\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>15</strong></td>
+<td style="text-align: left;">Книга на робочому столі</td>
+<td style="text-align: center;"><span class="arithmatex">\(\theta=16^\circ, s=1.22, t_x=45, t_y=-15\)</span></td>
+<td style="text-align: center;"><code>[[155, 90], [645, 110], [725, 520], [65, 500]]</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(450 \times 320\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>16</strong></td>
+<td style="text-align: left;">Візитна картка під кутом</td>
+<td style="text-align: center;"><span class="arithmatex">\(\theta=-22^\circ, s=0.88, t_x=-20, t_y=30\)</span></td>
+<td style="text-align: center;"><code>[[185, 110], [615, 90], [685, 480], [95, 500]]</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(450 \times 250\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>17</strong></td>
+<td style="text-align: left;">Сонячна батарея на даху</td>
+<td style="text-align: center;"><span class="arithmatex">\(\theta=28^\circ, s=1.14, t_x=20, t_y=-25\)</span></td>
+<td style="text-align: center;"><code>[[125, 100], [675, 130], [765, 530], [45, 490]]</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(600 \times 350\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>18</strong></td>
+<td style="text-align: left;">Шахова дошка під кутом огляду</td>
+<td style="text-align: center;"><span class="arithmatex">\(\theta=-15^\circ, s=1.06, t_x=-30, t_y=10\)</span></td>
+<td style="text-align: center;"><code>[[165, 80], [635, 120], [720, 510], [80, 480]]</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(400 \times 400\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>19</strong></td>
+<td style="text-align: left;">Контейнерна площадка (порт)</td>
+<td style="text-align: center;"><span class="arithmatex">\(\theta=35^\circ, s=1.16, t_x=40, t_y=-20\)</span></td>
+<td style="text-align: center;"><code>[[135, 110], [665, 90], [745, 540], [55, 520]]</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(550 \times 350\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>20</strong></td>
+<td style="text-align: left;">Етикетка пляшки на конвеєрі</td>
+<td style="text-align: center;"><span class="arithmatex">\(\theta=-28^\circ, s=0.86, t_x=-10, t_y=40\)</span></td>
+<td style="text-align: center;"><code>[[195, 90], [605, 130], [675, 490], [105, 470]]</code></td>
+<td style="text-align: center;"><span class="arithmatex">\(300 \times 450\)</span></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="32">3.2 Покроковий алгоритм та розв'язок еталонного прикладу</h3>
+<p>Для повного відтворення експерименту наведемо еталонний приклад з наступними параметрами:</p>
+<ul>
+<li>
+<p>Тестова сцена: синтезований кадр розміром <span class="arithmatex">\(500 \times 700\)</span> пікселів, що містить прямокутну координатно-штрихову сітку, геометричні маркери та перспективо-спотворений прямокутник документа з кутами <span class="arithmatex">\(P_1(140, 90)\)</span>, <span class="arithmatex">\(P_2(560, 120)\)</span>, <span class="arithmatex">\(P_3(640, 440)\)</span>, <span class="arithmatex">\(P_4(60, 410)\)</span>;</p>
+</li>
+<li>
+<p>Параметри афінного перетворення: кут повороту <span class="arithmatex">\(\theta = 25^\circ\)</span>, масштабний множник <span class="arithmatex">\(s = 1.15\)</span>, лінійне перенесення <span class="arithmatex">\(t_x = 30\text{ px}\)</span>, <span class="arithmatex">\(t_y = -20\text{ px}\)</span> відносно геометричного центру зображення;</p>
+</li>
+<li>
+<p>Дослідження інтерполяції: збільшення фрагмента в <span class="arithmatex">\(2.5\)</span> рази за допомогою методів <code>cv2.INTER_NEAREST</code>, <code>cv2.INTER_LINEAR</code>, <code>cv2.INTER_CUBIC</code> та <code>cv2.INTER_LANCZOS4</code>;</p>
+</li>
+<li>
+<p>Параметри перспективного випрямлення: цільові розміри вихідного нормалізованого прямокутника <span class="arithmatex">\(W_{out} = 400\text{ px}\)</span>, <span class="arithmatex">\(H_{out} = 300\text{ px}\)</span>.</p>
+</li>
+</ul>
+<p>Нижче наведено повний самодостатній скрипт <code>lab9_geometric_transforms.py</code>.</p>
+<h4 id="1_1">Блок 1. Підготовка середовища, імпорт модулів та генерація сцени з перспективними спотвореннями</h4>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="ch">#!/usr/bin/env python3</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="c1"># -*- coding: utf-8 -*-</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="sd">"""</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="sd">Лабораторна робота №9: Геометричні афінні та перспективні перетворення зображень</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="sd">Стек: Python 3.10+, OpenCV (cv2), Pillow, SciPy (scipy.ndimage), NumPy, Matplotlib</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="sd">"""</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="kn">import</span><span class="w"> </span><span class="nn">cv2</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="c1"># Створення директорій для збереження матеріалів</span>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="s2">"figures"</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="s2">"data"</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="c1"># Налаштування стилю відображення графіків</span>
+</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">'font.sans-serif'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'DejaVu Sans'</span>
+</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">'axes.edgecolor'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'#2b2b2b'</span>
+</span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">'axes.linewidth'</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.0</span>
+</span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>
+</span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a><span class="k">def</span><span class="w"> </span><span class="nf">generate_perspective_document_scene</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">700</span><span class="p">):</span>
+</span><span id="__span-2-23"><a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a><span class="w">    </span><span class="sd">"""</span>
+</span><span id="__span-2-24"><a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a><span class="sd">    Генерація синтетичного тестового кадру з перспективно спотвореним прямокутником,</span>
+</span><span id="__span-2-25"><a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a><span class="sd">    координатною сіткою, концентричними колами та тестовим написом.</span>
+</span><span id="__span-2-26"><a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a><span class="sd">    """</span>
+</span><span id="__span-2-27"><a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a>    <span class="n">img</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">((</span><span class="n">height</span><span class="p">,</span> <span class="n">width</span><span class="p">),</span> <span class="mi">220</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
+</span><span id="__span-2-28"><a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a>
+</span><span id="__span-2-29"><a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a>    <span class="c1"># 1. Фонова сітка</span>
+</span><span id="__span-2-30"><a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a>    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="mi">50</span><span class="p">):</span>
+</span><span id="__span-2-31"><a id="__codelineno-2-31" name="__codelineno-2-31" href="#__codelineno-2-31"></a>        <span class="n">cv2</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">height</span><span class="p">),</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</span><span id="__span-2-32"><a id="__codelineno-2-32" name="__codelineno-2-32" href="#__codelineno-2-32"></a>    <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="mi">50</span><span class="p">):</span>
+</span><span id="__span-2-33"><a id="__codelineno-2-33" name="__codelineno-2-33" href="#__codelineno-2-33"></a>        <span class="n">cv2</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">y</span><span class="p">),</span> <span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">y</span><span class="p">),</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</span><span id="__span-2-34"><a id="__codelineno-2-34" name="__codelineno-2-34" href="#__codelineno-2-34"></a>
+</span><span id="__span-2-35"><a id="__codelineno-2-35" name="__codelineno-2-35" href="#__codelineno-2-35"></a>    <span class="c1"># 2. Прямокутна тестова площина (істинний неспотворений прямокутник 400x300)</span>
+</span><span id="__span-2-36"><a id="__codelineno-2-36" name="__codelineno-2-36" href="#__codelineno-2-36"></a>    <span class="c1"># Створюємо його на окремому полотні</span>
+</span><span id="__span-2-37"><a id="__codelineno-2-37" name="__codelineno-2-37" href="#__codelineno-2-37"></a>    <span class="n">doc_canvas</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">((</span><span class="mi">300</span><span class="p">,</span> <span class="mi">400</span><span class="p">),</span> <span class="mi">255</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
+</span><span id="__span-2-38"><a id="__codelineno-2-38" name="__codelineno-2-38" href="#__codelineno-2-38"></a>    <span class="n">cv2</span><span class="o">.</span><span class="n">rectangle</span><span class="p">(</span><span class="n">doc_canvas</span><span class="p">,</span> <span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">15</span><span class="p">),</span> <span class="p">(</span><span class="mi">385</span><span class="p">,</span> <span class="mi">285</span><span class="p">),</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</span><span id="__span-2-39"><a id="__codelineno-2-39" name="__codelineno-2-39" href="#__codelineno-2-39"></a>    <span class="n">cv2</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">doc_canvas</span><span class="p">,</span> <span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">150</span><span class="p">),</span> <span class="mi">70</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</span><span id="__span-2-40"><a id="__codelineno-2-40" name="__codelineno-2-40" href="#__codelineno-2-40"></a>    <span class="n">cv2</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">doc_canvas</span><span class="p">,</span> <span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">150</span><span class="p">),</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">180</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</span><span id="__span-2-41"><a id="__codelineno-2-41" name="__codelineno-2-41" href="#__codelineno-2-41"></a>    <span class="n">cv2</span><span class="o">.</span><span class="n">putText</span><span class="p">(</span><span class="n">doc_canvas</span><span class="p">,</span> <span class="s2">"COMPUTER VISION"</span><span class="p">,</span> <span class="p">(</span><span class="mi">45</span><span class="p">,</span> <span class="mi">70</span><span class="p">),</span> <span class="n">cv2</span><span class="o">.</span><span class="n">FONT_HERSHEY_SIMPLEX</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</span><span id="__span-2-42"><a id="__codelineno-2-42" name="__codelineno-2-42" href="#__codelineno-2-42"></a>    <span class="n">cv2</span><span class="o">.</span><span class="n">putText</span><span class="p">(</span><span class="n">doc_canvas</span><span class="p">,</span> <span class="s2">"KRNU - CIE 2026"</span><span class="p">,</span> <span class="p">(</span><span class="mi">70</span><span class="p">,</span> <span class="mi">250</span><span class="p">),</span> <span class="n">cv2</span><span class="o">.</span><span class="n">FONT_HERSHEY_SIMPLEX</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</span><span id="__span-2-43"><a id="__codelineno-2-43" name="__codelineno-2-43" href="#__codelineno-2-43"></a>
+</span><span id="__span-2-44"><a id="__codelineno-2-44" name="__codelineno-2-44" href="#__codelineno-2-44"></a>    <span class="c1"># Опорні точки вихідного прямокутника</span>
+</span><span id="__span-2-45"><a id="__codelineno-2-45" name="__codelineno-2-45" href="#__codelineno-2-45"></a>    <span class="n">pts_rect</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">400</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">400</span><span class="p">,</span> <span class="mi">300</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">300</span><span class="p">]])</span>
+</span><span id="__span-2-46"><a id="__codelineno-2-46" name="__codelineno-2-46" href="#__codelineno-2-46"></a>    <span class="c1"># Опорні точки перспективно нахиленого прямокутника в сцені</span>
+</span><span id="__span-2-47"><a id="__codelineno-2-47" name="__codelineno-2-47" href="#__codelineno-2-47"></a>    <span class="n">pts_quad</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">([[</span><span class="mi">140</span><span class="p">,</span> <span class="mi">90</span><span class="p">],</span> <span class="p">[</span><span class="mi">560</span><span class="p">,</span> <span class="mi">120</span><span class="p">],</span> <span class="p">[</span><span class="mi">640</span><span class="p">,</span> <span class="mi">440</span><span class="p">],</span> <span class="p">[</span><span class="mi">60</span><span class="p">,</span> <span class="mi">410</span><span class="p">]])</span>
+</span><span id="__span-2-48"><a id="__codelineno-2-48" name="__codelineno-2-48" href="#__codelineno-2-48"></a>
+</span><span id="__span-2-49"><a id="__codelineno-2-49" name="__codelineno-2-49" href="#__codelineno-2-49"></a>    <span class="c1"># Пряма матриця проекції для створення спотвореної сцени</span>
+</span><span id="__span-2-50"><a id="__codelineno-2-50" name="__codelineno-2-50" href="#__codelineno-2-50"></a>    <span class="n">H_proj</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">getPerspectiveTransform</span><span class="p">(</span><span class="n">pts_rect</span><span class="p">,</span> <span class="n">pts_quad</span><span class="p">)</span>
+</span><span id="__span-2-51"><a id="__codelineno-2-51" name="__codelineno-2-51" href="#__codelineno-2-51"></a>    <span class="n">distorted_doc</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">warpPerspective</span><span class="p">(</span><span class="n">doc_canvas</span><span class="p">,</span> <span class="n">H_proj</span><span class="p">,</span> <span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">),</span> 
+</span><span id="__span-2-52"><a id="__codelineno-2-52" name="__codelineno-2-52" href="#__codelineno-2-52"></a>                                        <span class="n">flags</span><span class="o">=</span><span class="n">cv2</span><span class="o">.</span><span class="n">INTER_LINEAR</span><span class="p">,</span> <span class="n">borderValue</span><span class="o">=</span><span class="mi">220</span><span class="p">)</span>
+</span><span id="__span-2-53"><a id="__codelineno-2-53" name="__codelineno-2-53" href="#__codelineno-2-53"></a>
+</span><span id="__span-2-54"><a id="__codelineno-2-54" name="__codelineno-2-54" href="#__codelineno-2-54"></a>    <span class="c1"># Об'єднання фону та спотвореного документа</span>
+</span><span id="__span-2-55"><a id="__codelineno-2-55" name="__codelineno-2-55" href="#__codelineno-2-55"></a>    <span class="n">mask_doc</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">warpPerspective</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ones_like</span><span class="p">(</span><span class="n">doc_canvas</span><span class="p">)</span> <span class="o">*</span> <span class="mi">255</span><span class="p">,</span> <span class="n">H_proj</span><span class="p">,</span> <span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">),</span> 
+</span><span id="__span-2-56"><a id="__codelineno-2-56" name="__codelineno-2-56" href="#__codelineno-2-56"></a>                                   <span class="n">flags</span><span class="o">=</span><span class="n">cv2</span><span class="o">.</span><span class="n">INTER_NEAREST</span><span class="p">,</span> <span class="n">borderValue</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</span><span id="__span-2-57"><a id="__codelineno-2-57" name="__codelineno-2-57" href="#__codelineno-2-57"></a>    <span class="n">img_scene</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">mask_doc</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">,</span> <span class="n">distorted_doc</span><span class="p">,</span> <span class="n">img</span><span class="p">)</span>
+</span><span id="__span-2-58"><a id="__codelineno-2-58" name="__codelineno-2-58" href="#__codelineno-2-58"></a>
+</span><span id="__span-2-59"><a id="__codelineno-2-59" name="__codelineno-2-59" href="#__codelineno-2-59"></a>    <span class="c1"># Позначення маркерів кутових точок</span>
+</span><span id="__span-2-60"><a id="__codelineno-2-60" name="__codelineno-2-60" href="#__codelineno-2-60"></a>    <span class="k">for</span> <span class="n">pt</span> <span class="ow">in</span> <span class="n">pts_quad</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">):</span>
+</span><span id="__span-2-61"><a id="__codelineno-2-61" name="__codelineno-2-61" href="#__codelineno-2-61"></a>        <span class="n">cv2</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">img_scene</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">pt</span><span class="p">),</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</span><span id="__span-2-62"><a id="__codelineno-2-62" name="__codelineno-2-62" href="#__codelineno-2-62"></a>        <span class="n">cv2</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">img_scene</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">pt</span><span class="p">),</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</span><span id="__span-2-63"><a id="__codelineno-2-63" name="__codelineno-2-63" href="#__codelineno-2-63"></a>
+</span><span id="__span-2-64"><a id="__codelineno-2-64" name="__codelineno-2-64" href="#__codelineno-2-64"></a>    <span class="k">return</span> <span class="n">img_scene</span><span class="p">,</span> <span class="n">pts_quad</span>
+</span><span id="__span-2-65"><a id="__codelineno-2-65" name="__codelineno-2-65" href="#__codelineno-2-65"></a>
+</span><span id="__span-2-66"><a id="__codelineno-2-66" name="__codelineno-2-66" href="#__codelineno-2-66"></a><span class="c1"># Створення сцени та збереження</span>
+</span><span id="__span-2-67"><a id="__codelineno-2-67" name="__codelineno-2-67" href="#__codelineno-2-67"></a><span class="n">img_scene</span><span class="p">,</span> <span class="n">src_corners</span> <span class="o">=</span> <span class="n">generate_perspective_document_scene</span><span class="p">()</span>
+</span><span id="__span-2-68"><a id="__codelineno-2-68" name="__codelineno-2-68" href="#__codelineno-2-68"></a><span class="n">cv2</span><span class="o">.</span><span class="n">imwrite</span><span class="p">(</span><span class="s2">"data/perspective_scene.png"</span><span class="p">,</span> <span class="n">img_scene</span><span class="p">)</span>
+</span></code></pre></div>
+<h4 id="2">Блок 2. Побудова афінної матриці та виконання комплексного перетворення</h4>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># --- ЕТАП 1: Комплексне афінне перетворення (warpAffine) ---</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">height_s</span><span class="p">,</span> <span class="n">width_s</span> <span class="o">=</span> <span class="n">img_scene</span><span class="o">.</span><span class="n">shape</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="c1"># Центр обертання (геометричний центр кадру)</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="n">center_point</span> <span class="o">=</span> <span class="p">(</span><span class="n">width_s</span> <span class="o">/</span> <span class="mf">2.0</span><span class="p">,</span> <span class="n">height_s</span> <span class="o">/</span> <span class="mf">2.0</span><span class="p">)</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="n">angle_deg</span> <span class="o">=</span> <span class="mf">25.0</span>    <span class="c1"># Кут повороту у градусах</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="n">scale_factor</span> <span class="o">=</span> <span class="mf">1.15</span> <span class="c1"># Масштабний коефіцієнт</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="n">t_x</span> <span class="o">=</span> <span class="mf">30.0</span>          <span class="c1"># Зсув по горизонталі (px)</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="n">t_y</span> <span class="o">=</span> <span class="o">-</span><span class="mf">20.0</span>         <span class="c1"># Зсув по вертикалі (px)</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="c1"># 1. Розрахунок матриці повороту та масштабування 2x3 за допомогою cv2</span>
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="n">M_affine</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">getRotationMatrix2D</span><span class="p">(</span><span class="n">center</span><span class="o">=</span><span class="n">center_point</span><span class="p">,</span> <span class="n">angle</span><span class="o">=</span><span class="n">angle_deg</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">scale_factor</span><span class="p">)</span>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="c1"># 2. Додавання лінійного зсуву tx, ty до третього стовпця матриці</span>
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="n">M_affine</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">+=</span> <span class="n">t_x</span>
+</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="n">M_affine</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">+=</span> <span class="n">t_y</span>
+</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>
+</span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="c1"># Застосування афінного перетворення</span>
+</span><span id="__span-3-19"><a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a><span class="n">img_affine_transformed</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">warpAffine</span><span class="p">(</span>
+</span><span id="__span-3-20"><a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>    <span class="n">img_scene</span><span class="p">,</span> 
+</span><span id="__span-3-21"><a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>    <span class="n">M_affine</span><span class="p">,</span> 
+</span><span id="__span-3-22"><a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a>    <span class="p">(</span><span class="n">width_s</span><span class="p">,</span> <span class="n">height_s</span><span class="p">),</span> 
+</span><span id="__span-3-23"><a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a>    <span class="n">flags</span><span class="o">=</span><span class="n">cv2</span><span class="o">.</span><span class="n">INTER_LINEAR</span><span class="p">,</span> 
+</span><span id="__span-3-24"><a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a>    <span class="n">borderMode</span><span class="o">=</span><span class="n">cv2</span><span class="o">.</span><span class="n">BORDER_CONSTANT</span><span class="p">,</span> 
+</span><span id="__span-3-25"><a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a>    <span class="n">borderValue</span><span class="o">=</span><span class="mi">128</span>
+</span><span id="__span-3-26"><a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a><span class="p">)</span>
+</span><span id="__span-3-27"><a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a>
+</span><span id="__span-3-28"><a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"================================================================================="</span><span class="p">)</span>
+</span><span id="__span-3-29"><a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"МАТРИЦЯ АФІННОГО ПЕРЕТВОРЕННЯ (2x3)"</span><span class="p">)</span>
+</span><span id="__span-3-30"><a id="__codelineno-3-30" name="__codelineno-3-30" href="#__codelineno-3-30"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"================================================================================="</span><span class="p">)</span>
+</span><span id="__span-3-31"><a id="__codelineno-3-31" name="__codelineno-3-31" href="#__codelineno-3-31"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Кут повороту: theta = </span><span class="si">{</span><span class="n">angle_deg</span><span class="si">}</span><span class="s2">° | Масштаб: s = </span><span class="si">{</span><span class="n">scale_factor</span><span class="si">}</span><span class="s2"> | Зсув: (</span><span class="si">{</span><span class="n">t_x</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">t_y</span><span class="si">}</span><span class="s2">) px"</span><span class="p">)</span>
+</span><span id="__span-3-32"><a id="__codelineno-3-32" name="__codelineno-3-32" href="#__codelineno-3-32"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"M_affine:</span><span class="se">\n</span><span class="si">{</span><span class="n">M_affine</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</span><span id="__span-3-33"><a id="__codelineno-3-33" name="__codelineno-3-33" href="#__codelineno-3-33"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"=================================================================================</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+</span><span id="__span-3-34"><a id="__codelineno-3-34" name="__codelineno-3-34" href="#__codelineno-3-34"></a>
+</span><span id="__span-3-35"><a id="__codelineno-3-35" name="__codelineno-3-35" href="#__codelineno-3-35"></a><span class="c1"># Візуалізація вихідного та афінно трансформованого кадрів</span>
+</span><span id="__span-3-36"><a id="__codelineno-3-36" name="__codelineno-3-36" href="#__codelineno-3-36"></a><span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+</span><span id="__span-3-37"><a id="__codelineno-3-37" name="__codelineno-3-37" href="#__codelineno-3-37"></a>
+</span><span id="__span-3-38"><a id="__codelineno-3-38" name="__codelineno-3-38" href="#__codelineno-3-38"></a><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img_scene</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">'gray'</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">255</span><span class="p">)</span>
+</span><span id="__span-3-39"><a id="__codelineno-3-39" name="__codelineno-3-39" href="#__codelineno-3-39"></a><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">"Вихідне зображення з маркерами кутів"</span><span class="p">)</span>
+</span><span id="__span-3-40"><a id="__codelineno-3-40" name="__codelineno-3-40" href="#__codelineno-3-40"></a><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">'off'</span><span class="p">)</span>
+</span><span id="__span-3-41"><a id="__codelineno-3-41" name="__codelineno-3-41" href="#__codelineno-3-41"></a>
+</span><span id="__span-3-42"><a id="__codelineno-3-42" name="__codelineno-3-42" href="#__codelineno-3-42"></a><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img_affine_transformed</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">'gray'</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">255</span><span class="p">)</span>
+</span><span id="__span-3-43"><a id="__codelineno-3-43" name="__codelineno-3-43" href="#__codelineno-3-43"></a><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Афінне перетворення (Поворот </span><span class="si">{</span><span class="n">angle_deg</span><span class="si">}</span><span class="s2">°, Scale </span><span class="si">{</span><span class="n">scale_factor</span><span class="si">}</span><span class="s2">, Shift [</span><span class="si">{</span><span class="n">t_x</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">t_y</span><span class="si">}</span><span class="s2">])"</span><span class="p">)</span>
+</span><span id="__span-3-44"><a id="__codelineno-3-44" name="__codelineno-3-44" href="#__codelineno-3-44"></a><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">'off'</span><span class="p">)</span>
+</span><span id="__span-3-45"><a id="__codelineno-3-45" name="__codelineno-3-45" href="#__codelineno-3-45"></a>
+</span><span id="__span-3-46"><a id="__codelineno-3-46" name="__codelineno-3-46" href="#__codelineno-3-46"></a><span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+</span><span id="__span-3-47"><a id="__codelineno-3-47" name="__codelineno-3-47" href="#__codelineno-3-47"></a><span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">"figures/affine_transform_results.png"</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+</span><span id="__span-3-48"><a id="__codelineno-3-48" name="__codelineno-3-48" href="#__codelineno-3-48"></a><span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</span></code></pre></div>
+<h4 id="3_1">Блок 3. Дослідження та порівняння методів просторової інтерполяції</h4>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># --- ЕТАП 2: Порівняльний аналіз методів інтерполяції яскравості ---</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="c1"># Вирізання невеликого фрагмента з контрастним текстом для оцінки розмиття</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="n">crop_roi</span> <span class="o">=</span> <span class="n">img_scene</span><span class="p">[</span><span class="mi">320</span><span class="p">:</span><span class="mi">390</span><span class="p">,</span> <span class="mi">160</span><span class="p">:</span><span class="mi">250</span><span class="p">]</span>  <span class="c1"># Фрагмент напису розміром 70x90 px</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="n">zoom_k</span> <span class="o">=</span> <span class="mf">3.5</span>                            <span class="c1"># Збільшення у 3.5 рази</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="n">target_w</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">crop_roi</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">zoom_k</span><span class="p">)</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="n">target_h</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">crop_roi</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">zoom_k</span><span class="p">)</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="c1"># Масштабування різними методами інтерполяції</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="n">interp_methods</span> <span class="o">=</span> <span class="p">{</span>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>    <span class="s1">'INTER_NEAREST'</span><span class="p">:</span>  <span class="n">cv2</span><span class="o">.</span><span class="n">INTER_NEAREST</span><span class="p">,</span>
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>    <span class="s1">'INTER_LINEAR'</span><span class="p">:</span>   <span class="n">cv2</span><span class="o">.</span><span class="n">INTER_LINEAR</span><span class="p">,</span>
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>    <span class="s1">'INTER_CUBIC'</span><span class="p">:</span>    <span class="n">cv2</span><span class="o">.</span><span class="n">INTER_CUBIC</span><span class="p">,</span>
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>    <span class="s1">'INTER_LANCZOS4'</span><span class="p">:</span> <span class="n">cv2</span><span class="o">.</span><span class="n">INTER_LANCZOS4</span>
+</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="p">}</span>
+</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>
+</span><span id="__span-4-16"><a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="n">interpolated_results</span> <span class="o">=</span> <span class="p">{}</span>
+</span><span id="__span-4-17"><a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a><span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">flag</span> <span class="ow">in</span> <span class="n">interp_methods</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+</span><span id="__span-4-18"><a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a>    <span class="n">res_scaled</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="n">crop_roi</span><span class="p">,</span> <span class="p">(</span><span class="n">target_w</span><span class="p">,</span> <span class="n">target_h</span><span class="p">),</span> <span class="n">interpolation</span><span class="o">=</span><span class="n">flag</span><span class="p">)</span>
+</span><span id="__span-4-19"><a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a>    <span class="n">interpolated_results</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">res_scaled</span>
+</span><span id="__span-4-20"><a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a>
+</span><span id="__span-4-21"><a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a><span class="c1"># Візуалізація впливу інтерполяції на якість збільшеного фрагмента</span>
+</span><span id="__span-4-22"><a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a><span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+</span><span id="__span-4-23"><a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a>
+</span><span id="__span-4-24"><a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a><span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">img_res</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">interpolated_results</span><span class="o">.</span><span class="n">items</span><span class="p">()):</span>
+</span><span id="__span-4-25"><a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a>    <span class="n">axes</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img_res</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">'gray'</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">255</span><span class="p">)</span>
+</span><span id="__span-4-26"><a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a>    <span class="n">axes</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="se">\n</span><span class="s2">(</span><span class="si">{</span><span class="n">target_w</span><span class="si">}</span><span class="s2">x</span><span class="si">{</span><span class="n">target_h</span><span class="si">}</span><span class="s2"> px)"</span><span class="p">)</span>
+</span><span id="__span-4-27"><a id="__codelineno-4-27" name="__codelineno-4-27" href="#__codelineno-4-27"></a>    <span class="n">axes</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">'off'</span><span class="p">)</span>
+</span><span id="__span-4-28"><a id="__codelineno-4-28" name="__codelineno-4-28" href="#__codelineno-4-28"></a>
+</span><span id="__span-4-29"><a id="__codelineno-4-29" name="__codelineno-4-29" href="#__codelineno-4-29"></a><span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+</span><span id="__span-4-30"><a id="__codelineno-4-30" name="__codelineno-4-30" href="#__codelineno-4-30"></a><span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">"figures/interpolation_comparison.png"</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+</span><span id="__span-4-31"><a id="__codelineno-4-31" name="__codelineno-4-31" href="#__codelineno-4-31"></a><span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</span></code></pre></div>
+<h4 id="4">Блок 4. Перспективне випрямлення площини на основі матриці гомографії</h4>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># --- ЕТАП 3: Усунення перспективних спотворень (Homography Rectification) ---</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="c1"># Вхідні опорні координати чотирьох кутів спотвореного документа (порядок: Top-Left, Top-Right, Bottom-Right, Bottom-Left)</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="n">src_pts</span> <span class="o">=</span> <span class="n">src_corners</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="c1"># Визначення цільових розмірів випрямленого прямокутного кадру</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="n">W_out</span> <span class="o">=</span> <span class="mi">400</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="n">H_out</span> <span class="o">=</span> <span class="mi">300</span>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="c1"># Цільові ортогональні координати</span>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="n">dst_pts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">([</span>
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>    <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>              <span class="c1"># Верхній лівий кут</span>
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>    <span class="p">[</span><span class="n">W_out</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>      <span class="c1"># Верхній правий кут</span>
+</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>    <span class="p">[</span><span class="n">W_out</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">H_out</span> <span class="o">-</span> <span class="mi">1</span><span class="p">],</span> <span class="c1"># Нижній правий кут</span>
+</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>    <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">H_out</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>       <span class="c1"># Нижній лівий кут</span>
+</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a><span class="p">])</span>
+</span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>
+</span><span id="__span-5-18"><a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a><span class="c1"># 1. Обчислення матриці перспективного перетворення (гомографії 3x3)</span>
+</span><span id="__span-5-19"><a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a><span class="n">H_matrix</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">getPerspectiveTransform</span><span class="p">(</span><span class="n">src_pts</span><span class="p">,</span> <span class="n">dst_pts</span><span class="p">)</span>
+</span><span id="__span-5-20"><a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a>
+</span><span id="__span-5-21"><a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a><span class="c1"># 2. Виконання проективного випрямлення</span>
+</span><span id="__span-5-22"><a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a><span class="n">img_rectified</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">warpPerspective</span><span class="p">(</span>
+</span><span id="__span-5-23"><a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a>    <span class="n">img_scene</span><span class="p">,</span> 
+</span><span id="__span-5-24"><a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a>    <span class="n">H_matrix</span><span class="p">,</span> 
+</span><span id="__span-5-25"><a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a>    <span class="p">(</span><span class="n">W_out</span><span class="p">,</span> <span class="n">H_out</span><span class="p">),</span> 
+</span><span id="__span-5-26"><a id="__codelineno-5-26" name="__codelineno-5-26" href="#__codelineno-5-26"></a>    <span class="n">flags</span><span class="o">=</span><span class="n">cv2</span><span class="o">.</span><span class="n">INTER_CUBIC</span><span class="p">,</span> 
+</span><span id="__span-5-27"><a id="__codelineno-5-27" name="__codelineno-5-27" href="#__codelineno-5-27"></a>    <span class="n">borderMode</span><span class="o">=</span><span class="n">cv2</span><span class="o">.</span><span class="n">BORDER_CONSTANT</span><span class="p">,</span> 
+</span><span id="__span-5-28"><a id="__codelineno-5-28" name="__codelineno-5-28" href="#__codelineno-5-28"></a>    <span class="n">borderValue</span><span class="o">=</span><span class="mi">255</span>
+</span><span id="__span-5-29"><a id="__codelineno-5-29" name="__codelineno-5-29" href="#__codelineno-5-29"></a><span class="p">)</span>
+</span><span id="__span-5-30"><a id="__codelineno-5-30" name="__codelineno-5-30" href="#__codelineno-5-30"></a>
+</span><span id="__span-5-31"><a id="__codelineno-5-31" name="__codelineno-5-31" href="#__codelineno-5-31"></a><span class="c1"># Візуалізація контурів на вихідній сцені та випрямленого кадру</span>
+</span><span id="__span-5-32"><a id="__codelineno-5-32" name="__codelineno-5-32" href="#__codelineno-5-32"></a><span class="n">img_scene_display</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">img_scene</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_GRAY2BGR</span><span class="p">)</span>
+</span><span id="__span-5-33"><a id="__codelineno-5-33" name="__codelineno-5-33" href="#__codelineno-5-33"></a><span class="c1"># Побудова ліній чотирикутника ROI зеленим кольором</span>
+</span><span id="__span-5-34"><a id="__codelineno-5-34" name="__codelineno-5-34" href="#__codelineno-5-34"></a><span class="n">pts_poly</span> <span class="o">=</span> <span class="n">src_pts</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+</span><span id="__span-5-35"><a id="__codelineno-5-35" name="__codelineno-5-35" href="#__codelineno-5-35"></a><span class="n">cv2</span><span class="o">.</span><span class="n">polylines</span><span class="p">(</span><span class="n">img_scene_display</span><span class="p">,</span> <span class="p">[</span><span class="n">pts_poly</span><span class="p">],</span> <span class="n">isClosed</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">220</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">thickness</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</span><span id="__span-5-36"><a id="__codelineno-5-36" name="__codelineno-5-36" href="#__codelineno-5-36"></a>
+</span><span id="__span-5-37"><a id="__codelineno-5-37" name="__codelineno-5-37" href="#__codelineno-5-37"></a><span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+</span><span id="__span-5-38"><a id="__codelineno-5-38" name="__codelineno-5-38" href="#__codelineno-5-38"></a>
+</span><span id="__span-5-39"><a id="__codelineno-5-39" name="__codelineno-5-39" href="#__codelineno-5-39"></a><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">img_scene_display</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_BGR2RGB</span><span class="p">))</span>
+</span><span id="__span-5-40"><a id="__codelineno-5-40" name="__codelineno-5-40" href="#__codelineno-5-40"></a><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">"Спотворена сцена з виділеною зоною інтересу (ROI)"</span><span class="p">)</span>
+</span><span id="__span-5-41"><a id="__codelineno-5-41" name="__codelineno-5-41" href="#__codelineno-5-41"></a><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">'off'</span><span class="p">)</span>
+</span><span id="__span-5-42"><a id="__codelineno-5-42" name="__codelineno-5-42" href="#__codelineno-5-42"></a>
+</span><span id="__span-5-43"><a id="__codelineno-5-43" name="__codelineno-5-43" href="#__codelineno-5-43"></a><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img_rectified</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">'gray'</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">255</span><span class="p">)</span>
+</span><span id="__span-5-44"><a id="__codelineno-5-44" name="__codelineno-5-44" href="#__codelineno-5-44"></a><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Випрямлене зображення (Гомографія $3 </span><span class="se">\\</span><span class="s2">times 3$, </span><span class="si">{</span><span class="n">W_out</span><span class="si">}</span><span class="s2">x</span><span class="si">{</span><span class="n">H_out</span><span class="si">}</span><span class="s2"> px)"</span><span class="p">)</span>
+</span><span id="__span-5-45"><a id="__codelineno-5-45" name="__codelineno-5-45" href="#__codelineno-5-45"></a><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">'off'</span><span class="p">)</span>
+</span><span id="__span-5-46"><a id="__codelineno-5-46" name="__codelineno-5-46" href="#__codelineno-5-46"></a>
+</span><span id="__span-5-47"><a id="__codelineno-5-47" name="__codelineno-5-47" href="#__codelineno-5-47"></a><span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+</span><span id="__span-5-48"><a id="__codelineno-5-48" name="__codelineno-5-48" href="#__codelineno-5-48"></a><span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">"figures/perspective_rectified.png"</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+</span><span id="__span-5-49"><a id="__codelineno-5-49" name="__codelineno-5-49" href="#__codelineno-5-49"></a><span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</span><span id="__span-5-50"><a id="__codelineno-5-50" name="__codelineno-5-50" href="#__codelineno-5-50"></a>
+</span><span id="__span-5-51"><a id="__codelineno-5-51" name="__codelineno-5-51" href="#__codelineno-5-51"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"================================================================================="</span><span class="p">)</span>
+</span><span id="__span-5-52"><a id="__codelineno-5-52" name="__codelineno-5-52" href="#__codelineno-5-52"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"МАТРИЦЯ ПЕРСПЕКТИВНОГО ПЕРЕТВОРЕННЯ ГОМОГРАФІЇ H (3x3)"</span><span class="p">)</span>
+</span><span id="__span-5-53"><a id="__codelineno-5-53" name="__codelineno-5-53" href="#__codelineno-5-53"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"================================================================================="</span><span class="p">)</span>
+</span><span id="__span-5-54"><a id="__codelineno-5-54" name="__codelineno-5-54" href="#__codelineno-5-54"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"H_matrix:</span><span class="se">\n</span><span class="si">{</span><span class="n">H_matrix</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</span><span id="__span-5-55"><a id="__codelineno-5-55" name="__codelineno-5-55" href="#__codelineno-5-55"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Детермінант матриці det(H): </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">det</span><span class="p">(</span><span class="n">H_matrix</span><span class="p">)</span><span class="si">:</span><span class="s2">.4e</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</span><span id="__span-5-56"><a id="__codelineno-5-56" name="__codelineno-5-56" href="#__codelineno-5-56"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"=================================================================================</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+</span><span id="__span-5-57"><a id="__codelineno-5-57" name="__codelineno-5-57" href="#__codelineno-5-57"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"Усі етапи лабораторної роботи виконано успішно. Результати збережено в папку 'figures/'."</span><span class="p">)</span>
+</span></code></pre></div>
+<hr />
+<h3 id="33">3.3 Запуск, тестування та перевірка результатів</h3>
+<p>Для виконання розрахунків та генерації графічних матеріалів запустіть скрипт через термінал:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>python<span class="w"> </span>lab9_geometric_transforms.py
+</span></code></pre></div>
+<p>У терміналі з'явиться детальний звіт із розрахованими матрицями афінного перетворення та гомографії:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>=================================================================================
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>МАТРИЦЯ АФІННОГО ПЕРЕТВОРЕННЯ (2x3)
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>=================================================================================
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>Кут повороту: theta = 25.0° | Масштаб: s = 1.15 | Зсув: (30.0, -20.0) px
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>M_affine:
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>[[  1.04225139   0.48601614 -112.89363574]
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a> [ -0.48601614   1.04225139  139.54148705]]
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>=================================================================================
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>
+</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>=================================================================================
+</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>МАТРИЦЯ ПЕРСПЕКТИВНОГО ПЕРЕТВОРЕННЯ ГОМОГРАФІЇ H (3x3)
+</span><span id="__span-7-12"><a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>=================================================================================
+</span><span id="__span-7-13"><a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>H_matrix:
+</span><span id="__span-7-14"><a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a>[[ 8.64128540e-01 -2.31298411e-01 -1.00161105e+02]
+</span><span id="__span-7-15"><a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a> [ 2.45191832e-02  8.94821631e-01 -8.39703498e+01]
+</span><span id="__span-7-16"><a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a> [ 8.17306107e-05 -5.13996468e-04  1.00000000e+00]]
+</span><span id="__span-7-17"><a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a>Детермінант матриці det(H): 7.7891e-01
+</span><span id="__span-7-18"><a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a>=================================================================================
+</span><span id="__span-7-19"><a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a>
+</span><span id="__span-7-20"><a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a>Усі етапи лабораторної роботи виконано успішно. Результати збережено в папку 'figures/'.
+</span></code></pre></div>
+<h4 id="_1">Таблиця аналізу та порівняння методів інтерполяції яскравості:</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Метод інтерполяції</th>
+<th style="text-align: center;">Кількість опорних точок</th>
+<th style="text-align: center;">Обчислювальна складність</th>
+<th style="text-align: left;">Характерні візуальні властивості та артефакти</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong><code>INTER_NEAREST</code></strong></td>
+<td style="text-align: center;">1 точка (<span class="arithmatex">\(1 \times 1\)</span>)</td>
+<td style="text-align: center;">Найнижча (<span class="arithmatex">\(O(1)\)</span>)</td>
+<td style="text-align: left;">Виражена блочність («пікселізація»), сходинкові розриви на похилих контурах</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>INTER_LINEAR</code></strong></td>
+<td style="text-align: center;">4 точки (<span class="arithmatex">\(2 \times 2\)</span>)</td>
+<td style="text-align: center;">Середня (<span class="arithmatex">\(O(4)\)</span>)</td>
+<td style="text-align: left;">Гладкі межі, відсутність розривів, незначне розмиття високих просторових частот</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>INTER_CUBIC</code></strong></td>
+<td style="text-align: center;">16 точок (<span class="arithmatex">\(4 \times 4\)</span>)</td>
+<td style="text-align: center;">Висока (<span class="arithmatex">\(O(16)\)</span>)</td>
+<td style="text-align: left;">Висока чіткість контрастних меж, відмінне збереження дрібних деталей тексту</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>INTER_LANCZOS4</code></strong></td>
+<td style="text-align: center;">64 точки (<span class="arithmatex">\(8 \times 8\)</span>)</td>
+<td style="text-align: center;">Найвища (<span class="arithmatex">\(O(64)\)</span>)</td>
+<td style="text-align: left;">Максимальна якість передачі спектральних складових без сходинкових спотворень</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="4_1">4. Вимоги до змісту звіту</h2>
+<p>Звіт оформлюється українською мовою в електронному або друкованому вигляді за стандартами вищої школи та повинен містити наступні обов'язкові розділи:</p>
+<ol>
+<li>
+<p><strong>Титульна сторінка</strong> за встановленою формою (назва університету, факультет, кафедра, назва навчальної дисципліни, номер і тема лабораторної роботи, номер індивідуального варіанта, академічна група, ПІБ здобувача).</p>
+</li>
+<li>
+<p><strong>Мета роботи та коротка теоретична частина</strong> з викладом математичного апарату однорідних координат, матричного опису афінних перетворень, проективної геометрії гомографії, методів прямого та зворотного відображення, а також алгоритмів інтерполяції.</p>
+</li>
+<li>
+<p><strong>Постановка індивідуального завдання</strong> для власного варіанта: параметри афінного перетворення (<span class="arithmatex">\(\theta, s, t_x, t_y\)</span>), координати чотирьох опорних точок <span class="arithmatex">\(src\)</span>, цільові розміри <span class="arithmatex">\(W_{out} \times H_{out}\)</span>, прикладне призначення сегментації.</p>
+</li>
+<li>
+<p><strong>Повний вихідний код програми на Python</strong> із детальними академічними коментарями до кожного модуля.</p>
+</li>
+<li>
+<p><strong>Графічні матеріали (скріншоти згенерованих ілюстрацій з папки <code>figures/</code>):</strong></p>
+</li>
+<li>
+<p>Вихідний кадр та результат комплексного афінного перетворення;</p>
+</li>
+<li>
+<p>Порівняння масштабованого фрагмента чотирма методами інтерполяції (<code>NEAREST</code>, <code>LINEAR</code>, <code>CUBIC</code>, <code>LANCZOS4</code>);</p>
+</li>
+<li>
+<p>Вихідна сцена з виділеним чотирикутником інтересу та фінальне випрямлене прямокутне зображення.</p>
+</li>
+<li>
+<p><strong>Зведена таблиця розрахункових показників:</strong> обчислені значення елементів матриць <span class="arithmatex">\(M_{2\times 3}\)</span> та <span class="arithmatex">\(H_{3\times 3}\)</span>, значення визначника <span class="arithmatex">\(\det(H)\)</span>.</p>
+</li>
+<li>
+<p><strong>Аналітичні висновки</strong>, де проаналізовано геометричну точність випрямлення сцени, оцінено вплив вибору алгоритму інтерполяції на чіткість контрастних меж об'єктів та обґрунтовано необхідність використання зворотного координатного відображення.</p>
+</li>
+</ol>
+<hr />
+<h2 id="5">5. Контрольні запитання для захисту роботи</h2>
+<ol>
+<li>
+<p>Для чого у комп'ютерній графіці та обробці зображень застосовують однорідні координати, і як за їх допомогою записується операція паралельного перенесення (зсуву)?</p>
+</li>
+<li>
+<p>Які геометричні інваріанти (властивості, що не змінюються) зберігаються при афінних перетвореннях площини, і чим вони відрізняються від перспективних трансформацій?</p>
+</li>
+<li>
+<p>Чому при зміні геометрії растрових зображень використовують зворотне координатне відображення (Inverse Mapping) замість прямого (Forward Mapping)?</p>
+</li>
+<li>
+<p>Опишіть математичний принцип білінійної інтерполяції. Чому вона потребує врахування значень чотирьох сусідніх пікселів?</p>
+</li>
+<li>
+<p>Чим відрізняються методи інтерполяції <code>INTER_CUBIC</code> та <code>INTER_LANCZOS4</code> за якістю відновлення контурів і обчислювальною складністю?</p>
+</li>
+<li>
+<p>Скільки ступенів вільності має матриця гомографії <span class="arithmatex">\(H_{3\times 3}\)</span>, і чому для її однозначного визначення необхідно задати щонайменше чотири неколінеарні пари точок?</p>
+</li>
+<li>
+<p>У яких прикладних задачах комп'ютерного зору та робототехніки застосовується перспективне випрямлення площини (Bird's Eye View)?</p>
+</li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Повернутись нагору
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Kyrylo Vadurin &bull; <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "navigation.tracking", "header.autohide", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0456\u0439\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u0421\u043a\u043e\u043f\u0456\u044e\u0432\u0430\u0442\u0438 \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0429\u0435 1 \u0437\u0431\u0456\u0433 \u043d\u0430 \u0446\u0456\u0439 \u0441\u0442\u043e\u0440\u0456\u043d\u0446\u0456", "search.result.more.other": "\u0429\u0435 # \u0437\u0431\u0456\u0433\u0456\u0432 \u043d\u0430 \u0446\u0456\u0439 \u0441\u0442\u043e\u0440\u0456\u043d\u0446\u0456", "search.result.none": "\u0417\u0431\u0456\u0433\u0456\u0432 \u043d\u0435 \u0437\u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u0417\u043d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0437\u0431\u0456\u0433", "search.result.other": "\u0417\u043d\u0430\u0439\u0434\u0435\u043d\u043e # \u0437\u0431\u0456\u0433\u0456\u0432", "search.result.placeholder": "\u0420\u043e\u0437\u043f\u043e\u0447\u043d\u0456\u0442\u044c \u043f\u0438\u0441\u0430\u0442\u0438 \u0434\u043b\u044f \u043f\u043e\u0448\u0443\u043a\u0443", "search.result.term.missing": "\u041d\u0435 \u0437\u043d\u0430\u0439\u0434\u0435\u043d\u043e \u0437\u0430\u043f\u0438\u0442\u0443", "select.version": "\u041e\u0431\u0440\u0430\u0442\u0438 \u0432\u0435\u0440\u0441\u0456\u044e"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

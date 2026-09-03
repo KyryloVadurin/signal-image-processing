@@ -1,0 +1,2379 @@
+
+<!doctype html>
+<html lang="uk" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Навчальний портал з дисципліни "Обробка сигналів та зображень"">
+      
+      
+      
+      
+        <link rel="prev" href="../lb4/">
+      
+      
+        <link rel="next" href="../lb6/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>ЛБ 5. Статистичний та кореляційний аналіз - Обробка сигналів та зображень</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#no-5" class="md-skip">
+          Перейти до змісту
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Хедер">
+    <a href="../.." title="Обробка сигналів та зображень" class="md-header__button md-logo" aria-label="Обробка сигналів та зображень" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Обробка сигналів та зображень
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              ЛБ 5. Статистичний та кореляційний аналіз
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="cyan"  aria-label="Переключити на темну тему"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Переключити на темну тему" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="cyan"  aria-label="Переключити на світлу тему"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Переключити на світлу тему" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Пошук" placeholder="Пошук" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Шукати">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистити" aria-label="Очистити" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Пошук розпочато
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Вкладки" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Робоча програма
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../lk/lk1/" class="md-tabs__link">
+          
+  
+  
+  Лекції
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../lb1/" class="md-tabs__link">
+          
+  
+  
+  Лабораторні роботи
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../sr/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Самостійна робота
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../rg/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Розрахунково-графічна робота
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Навігація" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Обробка сигналів та зображень" class="md-nav__button md-logo" aria-label="Обробка сигналів та зображень" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Обробка сигналів та зображень
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Робоча програма
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лекції
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Лекції
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lk/lk1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 1. Математичне представлення, дискретизація та квантування
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lk/lk2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 2. Лінійні стаціонарні дискретні системи
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lk/lk3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 3. Спектральний аналіз дискретних сигналів
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lk/lk4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 4. Z-перетворення та проєктування цифрових фільтрів
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lk/lk5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 5. Цифрове представлення зображень та колориметричні моделі
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lk/lk6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 6. Поелементні амплітудні перетворення
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lk/lk7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 7. Просторова фільтрація зображень
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lk/lk8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 8. Геометричні трансформації та математична морфологія
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lk/lk9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 9. Двовимірна Фур'є-обробка та детектори контурів
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лабораторні роботи
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Лабораторні роботи
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lb1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 1. Дискретизація, квантування сигналів та ефект аліасингу
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lb2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 2. Лінійні стаціонарні системи та дискретна згортка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lb3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 3. Спектральний аналіз за допомогою ДПФ/ШПФ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lb4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 4. Синтез цифрових КІХ та НІХ фільтрів
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 5. Статистичний та кореляційний аналіз
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 5. Статистичний та кореляційний аналіз
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Зміст">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Зміст
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1 Теоретичні відомості
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-0" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2 Підготовка середовища та розгортання проєкту (Крок 0)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2 Підготовка середовища та розгортання проєкту (Крок 0)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Налаштування віртуального оточення та встановлення пакетів
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Структура файлової системи проєкту
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3 Порядок виконання роботи
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3 Порядок виконання роботи">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Індивідуальні завдання
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 Покроковий алгоритм та розв'язок еталонного прикладу
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.2 Покроковий алгоритм та розв&#39;язок еталонного прикладу">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Блок 1. Підготовка середовища, імпорт модулів та налаштування стилю
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Блок 2. Генерація білого шуму, марківського процесу та розрахунок числових характеристик
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Блок 3. Обчислення та порівняльний аналіз автокореляційних функцій
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Блок 4. Розв'язання задачі локаційного виявлення сигналу за допомогою ВКФ
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 Запуск, тестування та перевірка результатів
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.3 Запуск, тестування та перевірка результатів">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Таблиця верифікації та порівняння параметрів випадкових сигналів:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Вимоги до змісту звіту
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Контрольні запитання для захисту роботи
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lb6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 6. Базові операції з цифровими зображеннями
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lb7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 7. Амплітудні перетворення та бінаризація
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lb8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 8. Просторова фільтрація зображень
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lb9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 9. Геометричні перетворення зображень
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lb10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 10. Математична морфологія зображень
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lb11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 11. 2D перетворення Фур'є та детектування контурів
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Самостійна робота
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Розрахунково-графічна робота
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Зміст">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Зміст
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1 Теоретичні відомості
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-0" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2 Підготовка середовища та розгортання проєкту (Крок 0)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2 Підготовка середовища та розгортання проєкту (Крок 0)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Налаштування віртуального оточення та встановлення пакетів
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Структура файлової системи проєкту
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3 Порядок виконання роботи
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3 Порядок виконання роботи">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Індивідуальні завдання
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 Покроковий алгоритм та розв'язок еталонного прикладу
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.2 Покроковий алгоритм та розв&#39;язок еталонного прикладу">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Блок 1. Підготовка середовища, імпорт модулів та налаштування стилю
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Блок 2. Генерація білого шуму, марківського процесу та розрахунок числових характеристик
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Блок 3. Обчислення та порівняльний аналіз автокореляційних функцій
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Блок 4. Розв'язання задачі локаційного виявлення сигналу за допомогою ВКФ
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 Запуск, тестування та перевірка результатів
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.3 Запуск, тестування та перевірка результатів">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Таблиця верифікації та порівняння параметрів випадкових сигналів:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Вимоги до змісту звіту
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Контрольні запитання для захисту роботи
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="no-5">Лабораторна робота № 5. Статистичний та кореляційний аналіз випадкових дискретних сигналів</h1>
+<p><strong>Мета:</strong> Засвоїти фундаментальні математичні засади теорії стаціонарних та ергодичних випадкових процесів у дискретному часі, опанувати алгоритми розрахунку числових характеристик випадкових послідовностей (математичного очікування, дисперсії, середньоквадратичного відхилення), вивчити властивості автокореляційних функцій (АКФ) для білого та корельованого марківського шуму, а також набути практичних навичок застосування взаємної кореляційної функції (ВКФ) для виявлення та оцінки затримки слабких локаційних сигналів в умовах значних адитивних завад.</p>
+<p><strong>Стек технологій та інструменти:</strong></p>
+<ul>
+<li>
+<p><strong>Мова програмування / Середовище:</strong> Python 3.10+</p>
+</li>
+<li>
+<p><strong>Платформа / Бібліотеки / Модулі:</strong> NumPy 1.24+, SciPy 1.10+ (модуль <code>scipy.signal</code>), Matplotlib 3.7+</p>
+</li>
+<li>
+<p><strong>Інструменти розробки:</strong> VS Code / PyCharm / Jupyter Notebook / Google Colab, Термінал (CLI)</p>
+</li>
+</ul>
+<hr />
+<h2 id="1">1 Теоретичні відомості</h2>
+<p>У реальних радіотехнічних, акустичних та комп'ютерно-інтегрованих системах вимірювальні сигнали функціонують на тлі випадкових завад і шумів. Випадковий дискретний сигнал <span class="arithmatex">\(x[n]\)</span> являє собою послідовність, значення якої в кожен момент часу <span class="arithmatex">\(n\)</span> є випадковою величиною, що підпорядковується певному ймовірнісному закону розподілу. Для стаціонарних у широкому сенсі та ергодичних процесів часове усереднення вздовж однієї нескінченно довгої реалізації еквівалентне усередненню за ансамблем можливих станів.</p>
+<p><pre class="mermaid"><code>graph LR
+    subgraph Signal_Correlation_System [Тракт генерації марківського шуму та кореляційного аналізу]
+        W["Генератор білого шуму&lt;br/&gt;v[n] ~ N(0, sigma_v^2)"] --&gt; AR["Фільтр авторегресії AR(1)&lt;br/&gt;x[n] = a*x[n-1] + b*v[n]"]
+        AR --&gt; Markov["Марківський випадковий&lt;br/&gt;сигнал x[n]"]
+
+        Probe["Еталонний зондуючий&lt;br/&gt;сигнал s[n]"] --&gt; Channel["Канал поширення&lt;br/&gt;(Затримка n_0 + Шум)"]
+        Channel --&gt; Recv["Прийнята суміш&lt;br/&gt;y[n] = s[n - n_0] + xi[n]"]
+
+        Recv --&gt; CCF["Обчислювач взаємної кореляції&lt;br/&gt;R_ys[m] = y[n] * s[-n]"]
+        Probe --&gt; CCF
+        CCF --&gt; Det["Детектор екстремуму&lt;br/&gt;Оцінка затримки n_0 = argmax(R_ys)"]
+    end</code></pre>
+<em>Рисунок 1 — Структурна схема формування випадкових сигналів та кореляційного тракту виявлення</em></p>
+<p>Основними точковими числовими характеристиками випадкового сигналу є його вибіркові моменти першого та другого порядків:</p>
+<p>Вибіркове математичне очікування (оцінка середнього значення) визначається як:</p>
+<div class="arithmatex">\[\bar{x} = \frac{1}{N} \sum_{n=0}^{N-1} x[n]\]</div>
+<p>де <span class="arithmatex">\(\bar{x}\)</span> позначає постійну складову випадкового процесу у вольтах (<span class="arithmatex">\(\text{В}\)</span>), <span class="arithmatex">\(x[n]\)</span> — значення <span class="arithmatex">\(n\)</span>-го відліку реалізації сигналу, а <span class="arithmatex">\(N\)</span> — загальна кількість відліків у вибірці.</p>
+<p>Незсунена вибіркова дисперсія (потужність флуктуаційної складової) розраховується за формулою:</p>
+<div class="arithmatex">\[\sigma_x^2 = \frac{1}{N-1} \sum_{n=0}^{N-1} (x[n] - \bar{x})^2\]</div>
+<p>де <span class="arithmatex">\(\sigma_x^2\)</span> є вибірковою дисперсією процесу у квадратних вольтах (<span class="arithmatex">\(\text{В}^2\)</span>), а <span class="arithmatex">\(\sigma_x = \sqrt{\sigma_x^2}\)</span> — середньоквадратичним відхиленням (СКВ) сигналу.</p>
+<p>Дискретний білий гаусів шум <span class="arithmatex">\(v[n]\)</span> є некорельованою випадковою послідовністю з нормальною щільністю ймовірності <span class="arithmatex">\(\mathcal{N}(0, \sigma_v^2)\)</span>. Автокореляційна функція (АКФ) такого шуму має вигляд зваженого одиничного імпульсу Кронекера:</p>
+<div class="arithmatex">\[R_{vv}[m] = E\{v[n] v[n+m]\} = \sigma_v^2 \delta[m]\]</div>
+<p>де <span class="arithmatex">\(R_{vv}[m]\)</span> представляє автокореляційну функцію білого шуму, <span class="arithmatex">\(m\)</span> — цілочисельний часовий зсув у тактах, <span class="arithmatex">\(\sigma_v^2\)</span> — дисперсія білого шуму, а <span class="arithmatex">\(\delta[m]\)</span> — одиничний дискретний імпульс (<span class="arithmatex">\(\delta[0] = 1\)</span> та <span class="arithmatex">\(\delta[m] = 0\)</span> при <span class="arithmatex">\(m \neq 0\)</span>).</p>
+<p>Для моделювання випадкових процесів із заданим радіусом кореляції білий шум пропускають через формувальні дискретні фільтри. Найпростішою моделлю забарвленого шуму є авторегресійний процес першого порядку <span class="arithmatex">\(\text{AR}(1)\)</span>, який також називають марківським випадковим сигналом:</p>
+<div class="arithmatex">\[x[n] = a x[n-1] + b v[n]\]</div>
+<p>де <span class="arithmatex">\(a\)</span> є коефіцієнтом авторегресії (параметром зворотного зв'язку, що задовольняє умові стійкості <span class="arithmatex">\(|a| &lt; 1\)</span>), а <span class="arithmatex">\(b\)</span> — масштабним коефіцієнтом збуджувального білого шуму <span class="arithmatex">\(v[n]\)</span>.</p>
+<p><pre class="mermaid"><code>flowchart TD
+    subgraph Correlation_Analysis_Workflow [Алгоритм статистичного та кореляційного дослідження]
+        Step1["Генерація вибірок білого шуму v[n] та марківського процесу x[n]"] --&gt; Step2["Розрахунок вибіркових середніх, дисперсій та побудова гістограм"]
+        Step2 --&gt; Step3["Обчислення зсунутих оцінок АКФ R_xx[m] за часовими відліками"]
+        Step3 --&gt; Step4["Розрахунок інтервалу кореляції m_k за рівнем e^-1"]
+        Step4 --&gt; Step5["Формування зашумленого каналу: y[n] = A_0 * s[n - n_0] + xi[n]"]
+        Step5 --&gt; Step6["Обчислення функції взаємної кореляції R_ys[m]"]
+        Step6 --&gt; Step7["Фіксація координати максимуму та визначення часової затримки n_0"]
+    end</code></pre>
+<em>Рисунок 2 — Послідовність обчислювальних операцій кореляційного аналізу</em></p>
+<p>Теоретична автокореляційна функція марківського процесу спадає за експоненційним законом:</p>
+<div class="arithmatex">\[R_{xx}[m] = \sigma_x^2 a^{|m|} = \frac{b^2 \sigma_v^2}{1 - a^2} a^{|m|}\]</div>
+<p>де <span class="arithmatex">\(\sigma_x^2 = \frac{b^2 \sigma_v^2}{1 - a^2}\)</span> представляє повну дисперсію марківського процесу у квадратних вольтах (<span class="arithmatex">\(\text{В}^2\)</span>).</p>
+<p>Нормована АКФ <span class="arithmatex">\(r_{xx}[m] = R_{xx}[m] / R_{xx}[0] = a^{|m|}\)</span> визначає ступінь статистичного зв'язку між відліками. Числовою мірою тривалості внутрішнього часового зв'язку є інтервал кореляції <span class="arithmatex">\(\tau_k\)</span> (у тактах <span class="arithmatex">\(m_k\)</span>), який визначається як зсув, за якого АКФ зменшується в <span class="arithmatex">\(e \approx 2.718\)</span> разів від свого максимуму:</p>
+<div class="arithmatex">\[m_k \approx -\frac{1}{\ln(|a|)}\]</div>
+<p>Для виявлення затриманого зондуючого сигналу <span class="arithmatex">\(s[n]\)</span> у прийнятій суміші <span class="arithmatex">\(y[n] = s[n - n_0] + \xi[n]\)</span> (де <span class="arithmatex">\(n_0\)</span> — невідома часова затримка, а <span class="arithmatex">\(\xi[n]\)</span> — адитивний шум) обчислюють взаємну кореляційну функцію (ВКФ, Cross-Correlation Function — CCF):</p>
+<div class="arithmatex">\[R_{ys}[m] = \sum_{n=-\infty}^{\infty} y[n] s[n - m]\]</div>
+<p>Згідно з нерівністю Коші-Буняковського, абсолютне значення ВКФ досягає глобального максимуму в точці <span class="arithmatex">\(m = n_0\)</span>, де форма опорного сигналу <span class="arithmatex">\(s[n]\)</span> ідеально збігається з корисною компонентою прийнятого коливання. Завдяки ефекту когерентного накопичення енергії кореляційний прийом дозволяє надійно виявляти факт наявності сигналу та точно визначати час його затримки <span class="arithmatex">\(n_0\)</span> навіть тоді, коли середня потужність завади в каналі у кілька разів перевищує потужність самого корисного сигналу (<span class="arithmatex">\(\text{SNR} &lt; 0\text{ дБ}\)</span>).</p>
+<hr />
+<h2 id="2-0">2 Підготовка середовища та розгортання проєкту (Крок 0)</h2>
+<p>Перед початком виконання лабораторної роботи необхідно налаштувати робоче середовище, створити структуру каталогів проєкту та перевірити доступність необхідних бібліотек.</p>
+<h3 id="21">2.1 Налаштування віртуального оточення та встановлення пакетів</h3>
+<p>Виконайте у системному терміналі команди створення каталогу та ініціалізації віртуального середовища:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># Створення робочого каталогу лабораторної роботи № 5</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>mkdir<span class="w"> </span>dsp_lab5_correlation_analysis
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nb">cd</span><span class="w"> </span>dsp_lab5_correlation_analysis
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="c1"># Створення та активація віртуального середовища</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>python3<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>venv
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="c1"># Активація для Linux/macOS:</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="nb">source</span><span class="w"> </span>venv/bin/activate
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="c1"># Активація для Windows (PowerShell):</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="c1"># venv\Scripts\Activate.ps1</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="c1"># Активація для Windows (CMD):</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="c1"># venv\Scripts\activate.bat</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="c1"># Оновлення pip та встановлення бібліотек</span>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>pip
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>pip<span class="w"> </span>install<span class="w"> </span>numpy<span class="w"> </span>scipy<span class="w"> </span>matplotlib
+</span></code></pre></div>
+<h3 id="22">2.2 Структура файлової системи проєкту</h3>
+<p>Файлова структура проєкту повинна мати такий вигляд:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>dsp_lab5_correlation_analysis/
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>├── figures/
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>│   ├── noise_histograms.png           # Гістограми розподілу ймовірностей шуму
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>│   ├── acf_comparison.png             # Графіки АКФ білого та марківського процесів
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>│   └── radar_detection_ccf.png        # Графіки зашумленого сигналу та піку ВКФ
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>├── lab5_correlation_analysis.py       # Головний виконуваний скрипт програми
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>├── requirements.txt                   # Зафіксовані версії пакетів
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>└── venv/                              # Віртуальне оточення
+</span></code></pre></div>
+<hr />
+<h2 id="3">3 Порядок виконання роботи</h2>
+<h3 id="31">3.1 Індивідуальні завдання</h3>
+<p>Здобувач вищої освіти обирає варіант індивідуального завдання відповідно до свого порядкового номера в академічному журналі групи.</p>
+<p>У кожному варіанті досліджуються:</p>
+<ol>
+<li>
+<p>Моделювання білого шуму <span class="arithmatex">\(v[n] \sim \mathcal{N}(0, \sigma_v^2)\)</span> та марківського процесу <span class="arithmatex">\(x[n] = a x[n-1] + b v[n]\)</span> тривалістю <span class="arithmatex">\(N = 10000\)</span> відліків;</p>
+</li>
+<li>
+<p>Статистичний аналіз вибірок та розрахунок інтервалу кореляції <span class="arithmatex">\(\tau_k\)</span>;</p>
+</li>
+<li>
+<p>Кореляційне виявлення зондуючого радіоімпульсу або складного фазоманіпульованого сигналу (LFM / Barker code) із заданою затримкою <span class="arithmatex">\(n_0\)</span> в каналі з адитивним шумом зі середньоквадратичним відхиленням <span class="arithmatex">\(\sigma_{ch}\)</span>.</p>
+</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Варіант</th>
+<th style="text-align: center;">Коефіцієнт <span class="arithmatex">\(a\)</span></th>
+<th style="text-align: center;">Коефіцієнт <span class="arithmatex">\(b\)</span></th>
+<th style="text-align: center;"><span class="arithmatex">\(\sigma_v\)</span>, В</th>
+<th style="text-align: center;">Тип зондуючого сигналу <span class="arithmatex">\(s[n]\)</span></th>
+<th style="text-align: center;">Довжина <span class="arithmatex">\(L_s\)</span></th>
+<th style="text-align: center;">Затримка <span class="arithmatex">\(n_0\)</span></th>
+<th style="text-align: center;">Шум каналу <span class="arithmatex">\(\sigma_{ch}\)</span>, В</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><strong>1</strong></td>
+<td style="text-align: center;">0.80</td>
+<td style="text-align: center;">0.60</td>
+<td style="text-align: center;">1.0</td>
+<td style="text-align: center;">Гармонічний радіоімпульс (50 Гц)</td>
+<td style="text-align: center;">80</td>
+<td style="text-align: center;">180</td>
+<td style="text-align: center;">1.8</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>2</strong></td>
+<td style="text-align: center;">0.85</td>
+<td style="text-align: center;">0.52</td>
+<td style="text-align: center;">1.2</td>
+<td style="text-align: center;">Баркер-код 7 біт (<code>[1, 1, 1, -1, -1, 1, -1]</code>)</td>
+<td style="text-align: center;">70</td>
+<td style="text-align: center;">220</td>
+<td style="text-align: center;">2.0</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>3</strong></td>
+<td style="text-align: center;">0.70</td>
+<td style="text-align: center;">0.71</td>
+<td style="text-align: center;">1.5</td>
+<td style="text-align: center;">ЛЧМ-імпульс (Chirp <span class="arithmatex">\(20 \dots 120\)</span> Гц)</td>
+<td style="text-align: center;">100</td>
+<td style="text-align: center;">150</td>
+<td style="text-align: center;">2.5</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>4</strong></td>
+<td style="text-align: center;">0.90</td>
+<td style="text-align: center;">0.43</td>
+<td style="text-align: center;">0.8</td>
+<td style="text-align: center;">Трикутний імпульс</td>
+<td style="text-align: center;">60</td>
+<td style="text-align: center;">260</td>
+<td style="text-align: center;">1.5</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>5</strong></td>
+<td style="text-align: center;">0.75</td>
+<td style="text-align: center;">0.66</td>
+<td style="text-align: center;">1.0</td>
+<td style="text-align: center;">Гармонічний радіоімпульс (80 Гц)</td>
+<td style="text-align: center;">90</td>
+<td style="text-align: center;">310</td>
+<td style="text-align: center;">2.2</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>6</strong></td>
+<td style="text-align: center;">0.88</td>
+<td style="text-align: center;">0.47</td>
+<td style="text-align: center;">1.1</td>
+<td style="text-align: center;">Баркер-код 11 біт</td>
+<td style="text-align: center;">110</td>
+<td style="text-align: center;">140</td>
+<td style="text-align: center;">2.8</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>7</strong></td>
+<td style="text-align: center;">0.65</td>
+<td style="text-align: center;">0.76</td>
+<td style="text-align: center;">1.4</td>
+<td style="text-align: center;">ЛЧМ-імпульс (Chirp <span class="arithmatex">\(30 \dots 150\)</span> Гц)</td>
+<td style="text-align: center;">120</td>
+<td style="text-align: center;">280</td>
+<td style="text-align: center;">3.0</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>8</strong></td>
+<td style="text-align: center;">0.92</td>
+<td style="text-align: center;">0.39</td>
+<td style="text-align: center;">0.9</td>
+<td style="text-align: center;">Гаусівський радіоімпульс</td>
+<td style="text-align: center;">75</td>
+<td style="text-align: center;">190</td>
+<td style="text-align: center;">1.6</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>9</strong></td>
+<td style="text-align: center;">0.82</td>
+<td style="text-align: center;">0.57</td>
+<td style="text-align: center;">1.3</td>
+<td style="text-align: center;">Гармонічний радіоімпульс (60 Гц)</td>
+<td style="text-align: center;">85</td>
+<td style="text-align: center;">240</td>
+<td style="text-align: center;">2.4</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>10</strong></td>
+<td style="text-align: center;">0.78</td>
+<td style="text-align: center;">0.62</td>
+<td style="text-align: center;">1.0</td>
+<td style="text-align: center;">Баркер-код 13 біт</td>
+<td style="text-align: center;">130</td>
+<td style="text-align: center;">330</td>
+<td style="text-align: center;">3.2</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>11</strong></td>
+<td style="text-align: center;">0.86</td>
+<td style="text-align: center;">0.51</td>
+<td style="text-align: center;">1.2</td>
+<td style="text-align: center;">ЛЧМ-імпульс (Chirp <span class="arithmatex">\(10 \dots 80\)</span> Гц)</td>
+<td style="text-align: center;">100</td>
+<td style="text-align: center;">160</td>
+<td style="text-align: center;">2.1</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>12</strong></td>
+<td style="text-align: center;">0.60</td>
+<td style="text-align: center;">0.80</td>
+<td style="text-align: center;">1.5</td>
+<td style="text-align: center;">Прямокутний радіоімпульс (100 Гц)</td>
+<td style="text-align: center;">70</td>
+<td style="text-align: center;">210</td>
+<td style="text-align: center;">1.9</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>13</strong></td>
+<td style="text-align: center;">0.89</td>
+<td style="text-align: center;">0.45</td>
+<td style="text-align: center;">1.0</td>
+<td style="text-align: center;">Трикутний імпульс</td>
+<td style="text-align: center;">80</td>
+<td style="text-align: center;">290</td>
+<td style="text-align: center;">2.6</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>14</strong></td>
+<td style="text-align: center;">0.72</td>
+<td style="text-align: center;">0.69</td>
+<td style="text-align: center;">1.1</td>
+<td style="text-align: center;">Баркер-код 7 біт</td>
+<td style="text-align: center;">70</td>
+<td style="text-align: center;">170</td>
+<td style="text-align: center;">2.3</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>15</strong></td>
+<td style="text-align: center;">0.84</td>
+<td style="text-align: center;">0.54</td>
+<td style="text-align: center;">1.4</td>
+<td style="text-align: center;">ЛЧМ-імпульс (Chirp <span class="arithmatex">\(40 \dots 160\)</span> Гц)</td>
+<td style="text-align: center;">110</td>
+<td style="text-align: center;">350</td>
+<td style="text-align: center;">3.5</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>16</strong></td>
+<td style="text-align: center;">0.91</td>
+<td style="text-align: center;">0.41</td>
+<td style="text-align: center;">0.7</td>
+<td style="text-align: center;">Гармонічний радіоімпульс (70 Гц)</td>
+<td style="text-align: center;">95</td>
+<td style="text-align: center;">200</td>
+<td style="text-align: center;">1.7</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>17</strong></td>
+<td style="text-align: center;">0.68</td>
+<td style="text-align: center;">0.73</td>
+<td style="text-align: center;">1.3</td>
+<td style="text-align: center;">Гаусівський радіоімпульс</td>
+<td style="text-align: center;">65</td>
+<td style="text-align: center;">270</td>
+<td style="text-align: center;">2.0</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>18</strong></td>
+<td style="text-align: center;">0.87</td>
+<td style="text-align: center;">0.49</td>
+<td style="text-align: center;">1.0</td>
+<td style="text-align: center;">Баркер-код 11 біт</td>
+<td style="text-align: center;">110</td>
+<td style="text-align: center;">320</td>
+<td style="text-align: center;">3.0</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>19</strong></td>
+<td style="text-align: center;">0.76</td>
+<td style="text-align: center;">0.65</td>
+<td style="text-align: center;">1.2</td>
+<td style="text-align: center;">ЛЧМ-імпульс (Chirp <span class="arithmatex">\(25 \dots 100\)</span> Гц)</td>
+<td style="text-align: center;">105</td>
+<td style="text-align: center;">130</td>
+<td style="text-align: center;">2.5</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>20</strong></td>
+<td style="text-align: center;">0.83</td>
+<td style="text-align: center;">0.55</td>
+<td style="text-align: center;">1.6</td>
+<td style="text-align: center;">Гармонічний радіоімпульс (90 Гц)</td>
+<td style="text-align: center;">90</td>
+<td style="text-align: center;">250</td>
+<td style="text-align: center;">2.7</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="32">3.2 Покроковий алгоритм та розв'язок еталонного прикладу</h3>
+<p>Для демонстрації повного алгоритмічного циклу розв'яжемо базовий еталонний приклад з наступними вихідними параметрами:</p>
+<ul>
+<li>
+<p>Параметри формувального фільтра марківського процесу: <span class="arithmatex">\(a = 0.85\)</span>, <span class="arithmatex">\(b = 0.5268\)</span>, дисперсія білого шуму <span class="arithmatex">\(\sigma_v^2 = 1.0\)</span> (що забезпечує теоретичну дисперсію <span class="arithmatex">\(\sigma_x^2 = \frac{0.5268^2 \cdot 1.0}{1 - 0.85^2} = 1.0\text{ В}^2\)</span>);</p>
+</li>
+<li>
+<p>Кількість відліків для статистичного моделювання: <span class="arithmatex">\(N = 10000\)</span>;</p>
+</li>
+<li>
+<p>Параметри зондуючого сигналу: гармонічний імпульс <span class="arithmatex">\(s[n] = A_0 \sin(2\pi f_0 n / f_s)\)</span> з амплітудою <span class="arithmatex">\(A_0 = 1.0\text{ В}\)</span>, частотою <span class="arithmatex">\(f_0 = 50\text{ Гц}\)</span>, тривалістю <span class="arithmatex">\(L_s = 100\)</span> відліків при частоті дискретизації <span class="arithmatex">\(f_s = 1000\text{ Гц}\)</span>;</p>
+</li>
+<li>
+<p>Істинна часова затримка в каналі: <span class="arithmatex">\(n_0 = 250\)</span> тактів (<span class="arithmatex">\(250\text{ мс}\)</span>);</p>
+</li>
+<li>
+<p>Рівень шуму в каналі зв'язку: гаусівський білий шум з <span class="arithmatex">\(\sigma_{ch} = 2.0\text{ В}\)</span> (відношення сигнал/шум <span class="arithmatex">\(\text{SNR} \approx -9\text{ дБ}\)</span>, за якого амплітуда завади вдвічі перевищує амплітуду корисного сигналу).</p>
+</li>
+</ul>
+<p>Нижче наведено структурований поблочний код <code>lab5_correlation_analysis.py</code>.</p>
+<h4 id="1_1">Блок 1. Підготовка середовища, імпорт модулів та налаштування стилю</h4>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="ch">#!/usr/bin/env python3</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="c1"># -*- coding: utf-8 -*-</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="sd">"""</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="sd">Лабораторна робота №5: Статистичний та кореляційний аналіз випадкових дискретних сигналів</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="sd">Стек: Python 3.10+, NumPy, SciPy (scipy.signal), Matplotlib</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="sd">"""</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="kn">from</span><span class="w"> </span><span class="nn">scipy</span><span class="w"> </span><span class="kn">import</span> <span class="n">signal</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="c1"># Створення директорії для графічних матеріалів звіту</span>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="s2">"figures"</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="c1"># Встановлення академічного стилю візуалізації</span>
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">'font.sans-serif'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'DejaVu Sans'</span>
+</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">'axes.edgecolor'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'#333333'</span>
+</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">'axes.linewidth'</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.0</span>
+</span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">'grid.color'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'#cccccc'</span>
+</span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a><span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">'grid.linestyle'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'--'</span>
+</span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a><span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">'grid.alpha'</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.7</span>
+</span></code></pre></div>
+<h4 id="2">Блок 2. Генерація білого шуму, марківського процесу та розрахунок числових характеристик</h4>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># --- ЕТАП 1: Генерація випадкових послідовностей та їхня статистика ---</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>  <span class="c1"># Фіксація генератора псевдовипадкових чисел</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="n">N_samples</span> <span class="o">=</span> <span class="mi">10000</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="n">sigma_v</span> <span class="o">=</span> <span class="mf">1.0</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="c1"># 1. Генерація білого гаусового шуму v[n] ~ N(0, sigma_v^2)</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="n">v_white</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">sigma_v</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">N_samples</span><span class="p">)</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="c1"># 2. Моделювання марківського процесу AR(1): x[n] = a * x[n-1] + b * v[n]</span>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="n">a_param</span> <span class="o">=</span> <span class="mf">0.85</span>
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="n">b_param</span> <span class="o">=</span> <span class="mf">0.5268</span>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="c1"># Реалізація формувального фільтра через scipy.signal.lfilter</span>
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="c1"># Рівняння: x[n] - a * x[n-1] = b * v[n] -&gt; b_coeffs = [b], a_coeffs = [1, -a]</span>
+</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="n">b_filter</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">b_param</span><span class="p">])</span>
+</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="n">a_filter</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.0</span><span class="p">,</span> <span class="o">-</span><span class="n">a_param</span><span class="p">])</span>
+</span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="n">x_markov</span> <span class="o">=</span> <span class="n">signal</span><span class="o">.</span><span class="n">lfilter</span><span class="p">(</span><span class="n">b_filter</span><span class="p">,</span> <span class="n">a_filter</span><span class="p">,</span> <span class="n">v_white</span><span class="p">)</span>
+</span><span id="__span-3-19"><a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>
+</span><span id="__span-3-20"><a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a><span class="c1"># 3. Розрахунок вибіркових числових характеристик</span>
+</span><span id="__span-3-21"><a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a><span class="k">def</span><span class="w"> </span><span class="nf">calculate_statistics</span><span class="p">(</span><span class="n">seq_data</span><span class="p">,</span> <span class="n">name_str</span><span class="p">):</span>
+</span><span id="__span-3-22"><a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a>    <span class="n">mean_val</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">seq_data</span><span class="p">)</span>
+</span><span id="__span-3-23"><a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a>    <span class="n">var_val</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="n">seq_data</span><span class="p">,</span> <span class="n">ddof</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</span><span id="__span-3-24"><a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a>    <span class="n">std_val</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">seq_data</span><span class="p">,</span> <span class="n">ddof</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</span><span id="__span-3-25"><a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"[</span><span class="si">{</span><span class="n">name_str</span><span class="si">}</span><span class="s2">] Математичне очікування: </span><span class="si">{</span><span class="n">mean_val</span><span class="si">:</span><span class="s2">8.4f</span><span class="si">}</span><span class="s2"> В | "</span>
+</span><span id="__span-3-26"><a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a>          <span class="sa">f</span><span class="s2">"Дисперсія: </span><span class="si">{</span><span class="n">var_val</span><span class="si">:</span><span class="s2">8.4f</span><span class="si">}</span><span class="s2"> В^2 | СКВ: </span><span class="si">{</span><span class="n">std_val</span><span class="si">:</span><span class="s2">8.4f</span><span class="si">}</span><span class="s2"> В"</span><span class="p">)</span>
+</span><span id="__span-3-27"><a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a>    <span class="k">return</span> <span class="n">mean_val</span><span class="p">,</span> <span class="n">var_val</span><span class="p">,</span> <span class="n">std_val</span>
+</span><span id="__span-3-28"><a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a>
+</span><span id="__span-3-29"><a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"================================================================================="</span><span class="p">)</span>
+</span><span id="__span-3-30"><a id="__codelineno-3-30" name="__codelineno-3-30" href="#__codelineno-3-30"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"СТАТИСТИЧНІ ХАРАКТЕРИСТИКИ ВИПАДКОВИХ ПРОЦЕСІВ (N = 10000)"</span><span class="p">)</span>
+</span><span id="__span-3-31"><a id="__codelineno-3-31" name="__codelineno-3-31" href="#__codelineno-3-31"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"================================================================================="</span><span class="p">)</span>
+</span><span id="__span-3-32"><a id="__codelineno-3-32" name="__codelineno-3-32" href="#__codelineno-3-32"></a><span class="n">mean_w</span><span class="p">,</span> <span class="n">var_w</span><span class="p">,</span> <span class="n">std_w</span> <span class="o">=</span> <span class="n">calculate_statistics</span><span class="p">(</span><span class="n">v_white</span><span class="p">,</span> <span class="s2">"Білий шум v[n]"</span><span class="p">)</span>
+</span><span id="__span-3-33"><a id="__codelineno-3-33" name="__codelineno-3-33" href="#__codelineno-3-33"></a><span class="n">mean_m</span><span class="p">,</span> <span class="n">var_m</span><span class="p">,</span> <span class="n">std_m</span> <span class="o">=</span> <span class="n">calculate_statistics</span><span class="p">(</span><span class="n">x_markov</span><span class="p">,</span> <span class="s2">"Марківський x[n]"</span><span class="p">)</span>
+</span><span id="__span-3-34"><a id="__codelineno-3-34" name="__codelineno-3-34" href="#__codelineno-3-34"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"=================================================================================</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+</span><span id="__span-3-35"><a id="__codelineno-3-35" name="__codelineno-3-35" href="#__codelineno-3-35"></a>
+</span><span id="__span-3-36"><a id="__codelineno-3-36" name="__codelineno-3-36" href="#__codelineno-3-36"></a><span class="c1"># Побудова гістограм розподілу ймовірностей</span>
+</span><span id="__span-3-37"><a id="__codelineno-3-37" name="__codelineno-3-37" href="#__codelineno-3-37"></a><span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+</span><span id="__span-3-38"><a id="__codelineno-3-38" name="__codelineno-3-38" href="#__codelineno-3-38"></a>
+</span><span id="__span-3-39"><a id="__codelineno-3-39" name="__codelineno-3-39" href="#__codelineno-3-39"></a><span class="c1"># Гістограма білого шуму</span>
+</span><span id="__span-3-40"><a id="__codelineno-3-40" name="__codelineno-3-40" href="#__codelineno-3-40"></a><span class="n">count_w</span><span class="p">,</span> <span class="n">bins_w</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">v_white</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'#1f77b4'</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">'black'</span><span class="p">)</span>
+</span><span id="__span-3-41"><a id="__codelineno-3-41" name="__codelineno-3-41" href="#__codelineno-3-41"></a><span class="n">pdf_theor_w</span> <span class="o">=</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">/</span> <span class="p">(</span><span class="n">sigma_v</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)))</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">bins_w</span> <span class="o">/</span> <span class="n">sigma_v</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+</span><span id="__span-3-42"><a id="__codelineno-3-42" name="__codelineno-3-42" href="#__codelineno-3-42"></a><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">bins_w</span><span class="p">,</span> <span class="n">pdf_theor_w</span><span class="p">,</span> <span class="s1">'r-'</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'Теоретична густина $</span><span class="se">\\</span><span class="s1">mathcal</span><span class="si">{N}</span><span class="s1">(0, 1)$'</span><span class="p">)</span>
+</span><span id="__span-3-43"><a id="__codelineno-3-43" name="__codelineno-3-43" href="#__codelineno-3-43"></a><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">"Щільність розподілу ймовірностей білого шуму"</span><span class="p">)</span>
+</span><span id="__span-3-44"><a id="__codelineno-3-44" name="__codelineno-3-44" href="#__codelineno-3-44"></a><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">"Значення сигналу, В"</span><span class="p">)</span>
+</span><span id="__span-3-45"><a id="__codelineno-3-45" name="__codelineno-3-45" href="#__codelineno-3-45"></a><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">"Густина ймовірності"</span><span class="p">)</span>
+</span><span id="__span-3-46"><a id="__codelineno-3-46" name="__codelineno-3-46" href="#__codelineno-3-46"></a><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+</span><span id="__span-3-47"><a id="__codelineno-3-47" name="__codelineno-3-47" href="#__codelineno-3-47"></a><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+</span><span id="__span-3-48"><a id="__codelineno-3-48" name="__codelineno-3-48" href="#__codelineno-3-48"></a>
+</span><span id="__span-3-49"><a id="__codelineno-3-49" name="__codelineno-3-49" href="#__codelineno-3-49"></a><span class="c1"># Гістограма марківського шуму</span>
+</span><span id="__span-3-50"><a id="__codelineno-3-50" name="__codelineno-3-50" href="#__codelineno-3-50"></a><span class="n">count_m</span><span class="p">,</span> <span class="n">bins_m</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">x_markov</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'#2ca02c'</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">'black'</span><span class="p">)</span>
+</span><span id="__span-3-51"><a id="__codelineno-3-51" name="__codelineno-3-51" href="#__codelineno-3-51"></a><span class="n">sigma_theor_m</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">b_param</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">sigma_v</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">-</span> <span class="n">a_param</span> <span class="o">**</span> <span class="mi">2</span><span class="p">))</span>
+</span><span id="__span-3-52"><a id="__codelineno-3-52" name="__codelineno-3-52" href="#__codelineno-3-52"></a><span class="n">pdf_theor_m</span> <span class="o">=</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">/</span> <span class="p">(</span><span class="n">sigma_theor_m</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)))</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">bins_m</span> <span class="o">/</span> <span class="n">sigma_theor_m</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+</span><span id="__span-3-53"><a id="__codelineno-3-53" name="__codelineno-3-53" href="#__codelineno-3-53"></a><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">bins_m</span><span class="p">,</span> <span class="n">pdf_theor_m</span><span class="p">,</span> <span class="s1">'r-'</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">'Теоретична $</span><span class="se">\\</span><span class="s1">mathcal</span><span class="si">{</span><span class="n">N</span><span class="si">}</span><span class="s1">(0, </span><span class="si">{</span><span class="n">sigma_theor_m</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">^2)$'</span><span class="p">)</span>
+</span><span id="__span-3-54"><a id="__codelineno-3-54" name="__codelineno-3-54" href="#__codelineno-3-54"></a><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">"Щільність розподілу ймовірностей марківського процесу"</span><span class="p">)</span>
+</span><span id="__span-3-55"><a id="__codelineno-3-55" name="__codelineno-3-55" href="#__codelineno-3-55"></a><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">"Значення сигналу, В"</span><span class="p">)</span>
+</span><span id="__span-3-56"><a id="__codelineno-3-56" name="__codelineno-3-56" href="#__codelineno-3-56"></a><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">"Густина ймовірності"</span><span class="p">)</span>
+</span><span id="__span-3-57"><a id="__codelineno-3-57" name="__codelineno-3-57" href="#__codelineno-3-57"></a><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+</span><span id="__span-3-58"><a id="__codelineno-3-58" name="__codelineno-3-58" href="#__codelineno-3-58"></a><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+</span><span id="__span-3-59"><a id="__codelineno-3-59" name="__codelineno-3-59" href="#__codelineno-3-59"></a>
+</span><span id="__span-3-60"><a id="__codelineno-3-60" name="__codelineno-3-60" href="#__codelineno-3-60"></a><span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+</span><span id="__span-3-61"><a id="__codelineno-3-61" name="__codelineno-3-61" href="#__codelineno-3-61"></a><span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">"figures/noise_histograms.png"</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+</span><span id="__span-3-62"><a id="__codelineno-3-62" name="__codelineno-3-62" href="#__codelineno-3-62"></a><span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</span></code></pre></div>
+<h4 id="3_1">Блок 3. Обчислення та порівняльний аналіз автокореляційних функцій</h4>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># --- ЕТАП 2: Автокореляційний аналіз (АКФ) ---</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="k">def</span><span class="w"> </span><span class="nf">compute_autocorrelation</span><span class="p">(</span><span class="n">data_seq</span><span class="p">,</span> <span class="n">max_lags</span><span class="p">):</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="sd">"""</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="sd">    Обчислення незсуненої нормованої автокореляційної функції:</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="sd">    r_xx[m] = R_xx[m] / R_xx[0] для лагів m in [-max_lags, max_lags]</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="sd">    """</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>    <span class="n">data_centered</span> <span class="o">=</span> <span class="n">data_seq</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">data_seq</span><span class="p">)</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>    <span class="n">full_corr</span> <span class="o">=</span> <span class="n">signal</span><span class="o">.</span><span class="n">correlate</span><span class="p">(</span><span class="n">data_centered</span><span class="p">,</span> <span class="n">data_centered</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">'full'</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">'auto'</span><span class="p">)</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>    <span class="n">lags</span> <span class="o">=</span> <span class="n">signal</span><span class="o">.</span><span class="n">correlation_lags</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data_centered</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">data_centered</span><span class="p">),</span> <span class="n">mode</span><span class="o">=</span><span class="s1">'full'</span><span class="p">)</span>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>    <span class="c1"># Виділення діапазону [-max_lags, max_lags]</span>
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>    <span class="n">mask</span> <span class="o">=</span> <span class="p">(</span><span class="n">lags</span> <span class="o">&gt;=</span> <span class="o">-</span><span class="n">max_lags</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">lags</span> <span class="o">&lt;=</span> <span class="n">max_lags</span><span class="p">)</span>
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>    <span class="n">lags_cut</span> <span class="o">=</span> <span class="n">lags</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span>
+</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>    <span class="n">corr_cut</span> <span class="o">=</span> <span class="n">full_corr</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span>
+</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>
+</span><span id="__span-4-16"><a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>    <span class="c1"># Нормування до максимуму в нулі</span>
+</span><span id="__span-4-17"><a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>    <span class="n">r_norm</span> <span class="o">=</span> <span class="n">corr_cut</span> <span class="o">/</span> <span class="n">full_corr</span><span class="p">[</span><span class="n">lags</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span>
+</span><span id="__span-4-18"><a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a>    <span class="k">return</span> <span class="n">lags_cut</span><span class="p">,</span> <span class="n">r_norm</span>
+</span><span id="__span-4-19"><a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a>
+</span><span id="__span-4-20"><a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a><span class="n">max_lag_val</span> <span class="o">=</span> <span class="mi">30</span>
+</span><span id="__span-4-21"><a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a><span class="n">lags_axis</span><span class="p">,</span> <span class="n">r_white</span> <span class="o">=</span> <span class="n">compute_autocorrelation</span><span class="p">(</span><span class="n">v_white</span><span class="p">,</span> <span class="n">max_lag_val</span><span class="p">)</span>
+</span><span id="__span-4-22"><a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a><span class="n">_</span><span class="p">,</span> <span class="n">r_markov</span> <span class="o">=</span> <span class="n">compute_autocorrelation</span><span class="p">(</span><span class="n">x_markov</span><span class="p">,</span> <span class="n">max_lag_val</span><span class="p">)</span>
+</span><span id="__span-4-23"><a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a>
+</span><span id="__span-4-24"><a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a><span class="c1"># Розрахунок теоретичної АКФ для марківського процесу: r_theor[m] = a^|m|</span>
+</span><span id="__span-4-25"><a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a><span class="n">r_markov_theor</span> <span class="o">=</span> <span class="n">a_param</span> <span class="o">**</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">lags_axis</span><span class="p">)</span>
+</span><span id="__span-4-26"><a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a>
+</span><span id="__span-4-27"><a id="__codelineno-4-27" name="__codelineno-4-27" href="#__codelineno-4-27"></a><span class="c1"># Визначення інтервалу кореляції за рівнем 1/e (e^-1 approx 0.368)</span>
+</span><span id="__span-4-28"><a id="__codelineno-4-28" name="__codelineno-4-28" href="#__codelineno-4-28"></a><span class="n">tau_level</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">e</span>
+</span><span id="__span-4-29"><a id="__codelineno-4-29" name="__codelineno-4-29" href="#__codelineno-4-29"></a><span class="n">pos_lags</span> <span class="o">=</span> <span class="n">lags_axis</span><span class="p">[</span><span class="n">lags_axis</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">]</span>
+</span><span id="__span-4-30"><a id="__codelineno-4-30" name="__codelineno-4-30" href="#__codelineno-4-30"></a><span class="n">pos_r_markov</span> <span class="o">=</span> <span class="n">r_markov</span><span class="p">[</span><span class="n">lags_axis</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">]</span>
+</span><span id="__span-4-31"><a id="__codelineno-4-31" name="__codelineno-4-31" href="#__codelineno-4-31"></a><span class="n">idx_tau</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">pos_r_markov</span> <span class="o">&lt;=</span> <span class="n">tau_level</span><span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+</span><span id="__span-4-32"><a id="__codelineno-4-32" name="__codelineno-4-32" href="#__codelineno-4-32"></a><span class="n">m_k_pract</span> <span class="o">=</span> <span class="n">pos_lags</span><span class="p">[</span><span class="n">idx_tau</span><span class="p">]</span>
+</span><span id="__span-4-33"><a id="__codelineno-4-33" name="__codelineno-4-33" href="#__codelineno-4-33"></a><span class="n">m_k_theor</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1.0</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">a_param</span><span class="p">)</span>
+</span><span id="__span-4-34"><a id="__codelineno-4-34" name="__codelineno-4-34" href="#__codelineno-4-34"></a>
+</span><span id="__span-4-35"><a id="__codelineno-4-35" name="__codelineno-4-35" href="#__codelineno-4-35"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"================================================================================="</span><span class="p">)</span>
+</span><span id="__span-4-36"><a id="__codelineno-4-36" name="__codelineno-4-36" href="#__codelineno-4-36"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"ОЦІНКА ІНТЕРВАЛУ КОРЕЛЯЦІЇ МАРКІВСЬКОГО ПРОЦЕСУ"</span><span class="p">)</span>
+</span><span id="__span-4-37"><a id="__codelineno-4-37" name="__codelineno-4-37" href="#__codelineno-4-37"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"================================================================================="</span><span class="p">)</span>
+</span><span id="__span-4-38"><a id="__codelineno-4-38" name="__codelineno-4-38" href="#__codelineno-4-38"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Коефіцієнт авторегресії a: </span><span class="si">{</span><span class="n">a_param</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</span><span id="__span-4-39"><a id="__codelineno-4-39" name="__codelineno-4-39" href="#__codelineno-4-39"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Теоретичний інтервал кореляції (рівень 1/e): </span><span class="si">{</span><span class="n">m_k_theor</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> тактів"</span><span class="p">)</span>
+</span><span id="__span-4-40"><a id="__codelineno-4-40" name="__codelineno-4-40" href="#__codelineno-4-40"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Практичний інтервал кореляції за графіком:   </span><span class="si">{</span><span class="n">m_k_pract</span><span class="si">}</span><span class="s2"> тактів"</span><span class="p">)</span>
+</span><span id="__span-4-41"><a id="__codelineno-4-41" name="__codelineno-4-41" href="#__codelineno-4-41"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"=================================================================================</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+</span><span id="__span-4-42"><a id="__codelineno-4-42" name="__codelineno-4-42" href="#__codelineno-4-42"></a>
+</span><span id="__span-4-43"><a id="__codelineno-4-43" name="__codelineno-4-43" href="#__codelineno-4-43"></a><span class="c1"># Візуалізація АКФ</span>
+</span><span id="__span-4-44"><a id="__codelineno-4-44" name="__codelineno-4-44" href="#__codelineno-4-44"></a><span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+</span><span id="__span-4-45"><a id="__codelineno-4-45" name="__codelineno-4-45" href="#__codelineno-4-45"></a>
+</span><span id="__span-4-46"><a id="__codelineno-4-46" name="__codelineno-4-46" href="#__codelineno-4-46"></a><span class="c1"># АКФ білого шуму</span>
+</span><span id="__span-4-47"><a id="__codelineno-4-47" name="__codelineno-4-47" href="#__codelineno-4-47"></a><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">stem</span><span class="p">(</span><span class="n">lags_axis</span><span class="p">,</span> <span class="n">r_white</span><span class="p">,</span> <span class="n">linefmt</span><span class="o">=</span><span class="s1">'b-'</span><span class="p">,</span> <span class="n">markerfmt</span><span class="o">=</span><span class="s1">'bo'</span><span class="p">,</span> <span class="n">basefmt</span><span class="o">=</span><span class="s1">'k-'</span><span class="p">)</span>
+</span><span id="__span-4-48"><a id="__codelineno-4-48" name="__codelineno-4-48" href="#__codelineno-4-48"></a><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">"Нормована АКФ дискретного білого шуму $r_</span><span class="si">{vv}</span><span class="s2">[m]$"</span><span class="p">)</span>
+</span><span id="__span-4-49"><a id="__codelineno-4-49" name="__codelineno-4-49" href="#__codelineno-4-49"></a><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">"Часовий зсув (лаг), $m$"</span><span class="p">)</span>
+</span><span id="__span-4-50"><a id="__codelineno-4-50" name="__codelineno-4-50" href="#__codelineno-4-50"></a><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">"Нормований коефіцієнт кореляції"</span><span class="p">)</span>
+</span><span id="__span-4-51"><a id="__codelineno-4-51" name="__codelineno-4-51" href="#__codelineno-4-51"></a><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">([</span><span class="o">-</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">])</span>
+</span><span id="__span-4-52"><a id="__codelineno-4-52" name="__codelineno-4-52" href="#__codelineno-4-52"></a><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+</span><span id="__span-4-53"><a id="__codelineno-4-53" name="__codelineno-4-53" href="#__codelineno-4-53"></a>
+</span><span id="__span-4-54"><a id="__codelineno-4-54" name="__codelineno-4-54" href="#__codelineno-4-54"></a><span class="c1"># АКФ марківського процесу</span>
+</span><span id="__span-4-55"><a id="__codelineno-4-55" name="__codelineno-4-55" href="#__codelineno-4-55"></a><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">stem</span><span class="p">(</span><span class="n">lags_axis</span><span class="p">,</span> <span class="n">r_markov</span><span class="p">,</span> <span class="n">linefmt</span><span class="o">=</span><span class="s1">'g-'</span><span class="p">,</span> <span class="n">markerfmt</span><span class="o">=</span><span class="s1">'go'</span><span class="p">,</span> <span class="n">basefmt</span><span class="o">=</span><span class="s1">'k-'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'Експериментальна АКФ'</span><span class="p">)</span>
+</span><span id="__span-4-56"><a id="__codelineno-4-56" name="__codelineno-4-56" href="#__codelineno-4-56"></a><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lags_axis</span><span class="p">,</span> <span class="n">r_markov_theor</span><span class="p">,</span> <span class="s1">'r--'</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">'Теоретична $a^</span><span class="se">{{</span><span class="s1">|m|</span><span class="se">}}</span><span class="s1">$ ($a=</span><span class="si">{</span><span class="n">a_param</span><span class="si">}</span><span class="s1">$)'</span><span class="p">)</span>
+</span><span id="__span-4-57"><a id="__codelineno-4-57" name="__codelineno-4-57" href="#__codelineno-4-57"></a><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">tau_level</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'gray'</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">':'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'Рівень $e^{-1} </span><span class="se">\\</span><span class="s1">approx 0.368$'</span><span class="p">)</span>
+</span><span id="__span-4-58"><a id="__codelineno-4-58" name="__codelineno-4-58" href="#__codelineno-4-58"></a><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">m_k_pract</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'magenta'</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">':'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">'Інтервал $</span><span class="se">\\</span><span class="s1">tau_k </span><span class="se">\\</span><span class="s1">approx </span><span class="si">{</span><span class="n">m_k_pract</span><span class="si">}</span><span class="s1">$'</span><span class="p">)</span>
+</span><span id="__span-4-59"><a id="__codelineno-4-59" name="__codelineno-4-59" href="#__codelineno-4-59"></a><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">"Нормована АКФ марківського процесу $r_</span><span class="si">{xx}</span><span class="s2">[m]$"</span><span class="p">)</span>
+</span><span id="__span-4-60"><a id="__codelineno-4-60" name="__codelineno-4-60" href="#__codelineno-4-60"></a><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">"Часовий зсув (лаг), $m$"</span><span class="p">)</span>
+</span><span id="__span-4-61"><a id="__codelineno-4-61" name="__codelineno-4-61" href="#__codelineno-4-61"></a><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">"Нормований коефіцієнт кореляції"</span><span class="p">)</span>
+</span><span id="__span-4-62"><a id="__codelineno-4-62" name="__codelineno-4-62" href="#__codelineno-4-62"></a><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">([</span><span class="o">-</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">])</span>
+</span><span id="__span-4-63"><a id="__codelineno-4-63" name="__codelineno-4-63" href="#__codelineno-4-63"></a><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+</span><span id="__span-4-64"><a id="__codelineno-4-64" name="__codelineno-4-64" href="#__codelineno-4-64"></a><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+</span><span id="__span-4-65"><a id="__codelineno-4-65" name="__codelineno-4-65" href="#__codelineno-4-65"></a>
+</span><span id="__span-4-66"><a id="__codelineno-4-66" name="__codelineno-4-66" href="#__codelineno-4-66"></a><span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+</span><span id="__span-4-67"><a id="__codelineno-4-67" name="__codelineno-4-67" href="#__codelineno-4-67"></a><span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">"figures/acf_comparison.png"</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+</span><span id="__span-4-68"><a id="__codelineno-4-68" name="__codelineno-4-68" href="#__codelineno-4-68"></a><span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</span></code></pre></div>
+<h4 id="4">Блок 4. Розв'язання задачі локаційного виявлення сигналу за допомогою ВКФ</h4>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># --- ЕТАП 3: Кореляційне виявлення слабкого затриманого сигналу ---</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="n">fs_loc</span> <span class="o">=</span> <span class="mf">1000.0</span>     <span class="c1"># Частота дискретизації, Гц</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="n">L_probe</span> <span class="o">=</span> <span class="mi">100</span>       <span class="c1"># Тривалість зондуючого сигналу, відліків</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="n">f_probe</span> <span class="o">=</span> <span class="mf">50.0</span>      <span class="c1"># Частота заповнення, Гц</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="n">A_probe</span> <span class="o">=</span> <span class="mf">1.0</span>       <span class="c1"># Амплітуда зондуючого сигналу, В</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="c1"># 1. Формування опорного зондуючого радіоімпульсу s[n]</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="n">n_probe</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">L_probe</span><span class="p">)</span>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="n">s_probe</span> <span class="o">=</span> <span class="n">A_probe</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">f_probe</span> <span class="o">*</span> <span class="n">n_probe</span> <span class="o">/</span> <span class="n">fs_loc</span><span class="p">)</span>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="c1"># 2. Формування прийнятого сигналу y[n] у каналі зі затримкою n0 = 250 та шумом</span>
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="n">N_channel</span> <span class="o">=</span> <span class="mi">600</span>
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="n">n0_true</span> <span class="o">=</span> <span class="mi">250</span>
+</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="n">sigma_channel</span> <span class="o">=</span> <span class="mf">2.0</span>  <span class="c1"># Високий рівень шуму (SNR &lt;&lt; 0 дБ)</span>
+</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>
+</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a><span class="n">y_clean_delayed</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N_channel</span><span class="p">)</span>
+</span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a><span class="n">y_clean_delayed</span><span class="p">[</span><span class="n">n0_true</span> <span class="p">:</span> <span class="n">n0_true</span> <span class="o">+</span> <span class="n">L_probe</span><span class="p">]</span> <span class="o">=</span> <span class="n">s_probe</span>
+</span><span id="__span-5-18"><a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>
+</span><span id="__span-5-19"><a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a><span class="c1"># Додавання адитивного білого шуму каналу xi[n]</span>
+</span><span id="__span-5-20"><a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">99</span><span class="p">)</span>
+</span><span id="__span-5-21"><a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a><span class="n">channel_noise</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">sigma_channel</span><span class="p">,</span> <span class="n">N_channel</span><span class="p">)</span>
+</span><span id="__span-5-22"><a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a><span class="n">y_received</span> <span class="o">=</span> <span class="n">y_clean_delayed</span> <span class="o">+</span> <span class="n">channel_noise</span>
+</span><span id="__span-5-23"><a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a>
+</span><span id="__span-5-24"><a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a><span class="c1"># 3. Обчислення функції взаємної кореляції (ВКФ) між y[n] та опорним s[n]</span>
+</span><span id="__span-5-25"><a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a><span class="c1"># Використовуємо 'valid'/'full' кореляцію</span>
+</span><span id="__span-5-26"><a id="__codelineno-5-26" name="__codelineno-5-26" href="#__codelineno-5-26"></a><span class="n">r_ys_full</span> <span class="o">=</span> <span class="n">signal</span><span class="o">.</span><span class="n">correlate</span><span class="p">(</span><span class="n">y_received</span><span class="p">,</span> <span class="n">s_probe</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">'full'</span><span class="p">)</span>
+</span><span id="__span-5-27"><a id="__codelineno-5-27" name="__codelineno-5-27" href="#__codelineno-5-27"></a><span class="n">lags_ys</span> <span class="o">=</span> <span class="n">signal</span><span class="o">.</span><span class="n">correlation_lags</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">y_received</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">s_probe</span><span class="p">),</span> <span class="n">mode</span><span class="o">=</span><span class="s1">'full'</span><span class="p">)</span>
+</span><span id="__span-5-28"><a id="__codelineno-5-28" name="__codelineno-5-28" href="#__codelineno-5-28"></a>
+</span><span id="__span-5-29"><a id="__codelineno-5-29" name="__codelineno-5-29" href="#__codelineno-5-29"></a><span class="c1"># Відсікання від'ємних лагів (оскільки затримка фізично додатна)</span>
+</span><span id="__span-5-30"><a id="__codelineno-5-30" name="__codelineno-5-30" href="#__codelineno-5-30"></a><span class="n">pos_mask_ys</span> <span class="o">=</span> <span class="n">lags_ys</span> <span class="o">&gt;=</span> <span class="mi">0</span>
+</span><span id="__span-5-31"><a id="__codelineno-5-31" name="__codelineno-5-31" href="#__codelineno-5-31"></a><span class="n">lags_ys_pos</span> <span class="o">=</span> <span class="n">lags_ys</span><span class="p">[</span><span class="n">pos_mask_ys</span><span class="p">]</span>
+</span><span id="__span-5-32"><a id="__codelineno-5-32" name="__codelineno-5-32" href="#__codelineno-5-32"></a><span class="n">r_ys_pos</span> <span class="o">=</span> <span class="n">r_ys_full</span><span class="p">[</span><span class="n">pos_mask_ys</span><span class="p">]</span>
+</span><span id="__span-5-33"><a id="__codelineno-5-33" name="__codelineno-5-33" href="#__codelineno-5-33"></a>
+</span><span id="__span-5-34"><a id="__codelineno-5-34" name="__codelineno-5-34" href="#__codelineno-5-34"></a><span class="c1"># Знаходження положення максимуму ВКФ (оцінка затримки)</span>
+</span><span id="__span-5-35"><a id="__codelineno-5-35" name="__codelineno-5-35" href="#__codelineno-5-35"></a><span class="n">idx_max_ccf</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">r_ys_pos</span><span class="p">)</span>
+</span><span id="__span-5-36"><a id="__codelineno-5-36" name="__codelineno-5-36" href="#__codelineno-5-36"></a><span class="n">n0_estimated</span> <span class="o">=</span> <span class="n">lags_ys_pos</span><span class="p">[</span><span class="n">idx_max_ccf</span><span class="p">]</span>
+</span><span id="__span-5-37"><a id="__codelineno-5-37" name="__codelineno-5-37" href="#__codelineno-5-37"></a>
+</span><span id="__span-5-38"><a id="__codelineno-5-38" name="__codelineno-5-38" href="#__codelineno-5-38"></a><span class="c1"># Розрахунок практичного співвідношення сигнал/шум у каналі (SNR, дБ)</span>
+</span><span id="__span-5-39"><a id="__codelineno-5-39" name="__codelineno-5-39" href="#__codelineno-5-39"></a><span class="n">p_signal</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">y_clean_delayed</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+</span><span id="__span-5-40"><a id="__codelineno-5-40" name="__codelineno-5-40" href="#__codelineno-5-40"></a><span class="n">p_noise</span> <span class="o">=</span> <span class="n">sigma_channel</span> <span class="o">**</span> <span class="mi">2</span>
+</span><span id="__span-5-41"><a id="__codelineno-5-41" name="__codelineno-5-41" href="#__codelineno-5-41"></a><span class="n">snr_channel_db</span> <span class="o">=</span> <span class="mf">10.0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">p_signal</span> <span class="o">/</span> <span class="n">p_noise</span><span class="p">)</span>
+</span><span id="__span-5-42"><a id="__codelineno-5-42" name="__codelineno-5-42" href="#__codelineno-5-42"></a>
+</span><span id="__span-5-43"><a id="__codelineno-5-43" name="__codelineno-5-43" href="#__codelineno-5-43"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"================================================================================="</span><span class="p">)</span>
+</span><span id="__span-5-44"><a id="__codelineno-5-44" name="__codelineno-5-44" href="#__codelineno-5-44"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"РЕЗУЛЬТАТИ КОРЕЛЯЦІЙНОГО ВИЯВЛЕННЯ ЗА СИГНАЛОМ У ШУМАХ"</span><span class="p">)</span>
+</span><span id="__span-5-45"><a id="__codelineno-5-45" name="__codelineno-5-45" href="#__codelineno-5-45"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"================================================================================="</span><span class="p">)</span>
+</span><span id="__span-5-46"><a id="__codelineno-5-46" name="__codelineno-5-46" href="#__codelineno-5-46"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Співвідношення сигнал/шум у каналі (SNR): </span><span class="si">{</span><span class="n">snr_channel_db</span><span class="si">:</span><span class="s2">6.2f</span><span class="si">}</span><span class="s2"> дБ"</span><span class="p">)</span>
+</span><span id="__span-5-47"><a id="__codelineno-5-47" name="__codelineno-5-47" href="#__codelineno-5-47"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Істинна затримка сигналу (n0_true):      </span><span class="si">{</span><span class="n">n0_true</span><span class="si">}</span><span class="s2"> тактів (</span><span class="si">{</span><span class="n">n0_true</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">fs_loc</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">1000</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2"> мс)"</span><span class="p">)</span>
+</span><span id="__span-5-48"><a id="__codelineno-5-48" name="__codelineno-5-48" href="#__codelineno-5-48"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Оцінена затримка за піком ВКФ:           </span><span class="si">{</span><span class="n">n0_estimated</span><span class="si">}</span><span class="s2"> тактів (</span><span class="si">{</span><span class="n">n0_estimated</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">fs_loc</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">1000</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2"> мс)"</span><span class="p">)</span>
+</span><span id="__span-5-49"><a id="__codelineno-5-49" name="__codelineno-5-49" href="#__codelineno-5-49"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Абсолютна похибка оцінки затримки:       </span><span class="si">{</span><span class="nb">abs</span><span class="p">(</span><span class="n">n0_true</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">n0_estimated</span><span class="p">)</span><span class="si">}</span><span class="s2"> тактів"</span><span class="p">)</span>
+</span><span id="__span-5-50"><a id="__codelineno-5-50" name="__codelineno-5-50" href="#__codelineno-5-50"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"=================================================================================</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+</span><span id="__span-5-51"><a id="__codelineno-5-51" name="__codelineno-5-51" href="#__codelineno-5-51"></a>
+</span><span id="__span-5-52"><a id="__codelineno-5-52" name="__codelineno-5-52" href="#__codelineno-5-52"></a><span class="c1"># Візуалізація процесу виявлення</span>
+</span><span id="__span-5-53"><a id="__codelineno-5-53" name="__codelineno-5-53" href="#__codelineno-5-53"></a><span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">13</span><span class="p">,</span> <span class="mi">9</span><span class="p">))</span>
+</span><span id="__span-5-54"><a id="__codelineno-5-54" name="__codelineno-5-54" href="#__codelineno-5-54"></a>
+</span><span id="__span-5-55"><a id="__codelineno-5-55" name="__codelineno-5-55" href="#__codelineno-5-55"></a><span class="c1"># 1. Опорний зондуючий сигнал</span>
+</span><span id="__span-5-56"><a id="__codelineno-5-56" name="__codelineno-5-56" href="#__codelineno-5-56"></a><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">n_probe</span><span class="p">,</span> <span class="n">s_probe</span><span class="p">,</span> <span class="s1">'k-'</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">1.8</span><span class="p">)</span>
+</span><span id="__span-5-57"><a id="__codelineno-5-57" name="__codelineno-5-57" href="#__codelineno-5-57"></a><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">"Опорний зондуючий сигнал $s[n]$ (тривалість $L=100$ відліків)"</span><span class="p">)</span>
+</span><span id="__span-5-58"><a id="__codelineno-5-58" name="__codelineno-5-58" href="#__codelineno-5-58"></a><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">"Індекс відліку, $n$"</span><span class="p">)</span>
+</span><span id="__span-5-59"><a id="__codelineno-5-59" name="__codelineno-5-59" href="#__codelineno-5-59"></a><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">"Амплітуда, В"</span><span class="p">)</span>
+</span><span id="__span-5-60"><a id="__codelineno-5-60" name="__codelineno-5-60" href="#__codelineno-5-60"></a><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+</span><span id="__span-5-61"><a id="__codelineno-5-61" name="__codelineno-5-61" href="#__codelineno-5-61"></a>
+</span><span id="__span-5-62"><a id="__codelineno-5-62" name="__codelineno-5-62" href="#__codelineno-5-62"></a><span class="c1"># 2. Прийнята зашумлена суміш у каналі спостереження</span>
+</span><span id="__span-5-63"><a id="__codelineno-5-63" name="__codelineno-5-63" href="#__codelineno-5-63"></a><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">N_channel</span><span class="p">),</span> <span class="n">y_received</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'#7f7f7f'</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'Прийнята суміш $y[n]$ (сигнал замасковано шумом)'</span><span class="p">)</span>
+</span><span id="__span-5-64"><a id="__codelineno-5-64" name="__codelineno-5-64" href="#__codelineno-5-64"></a><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">N_channel</span><span class="p">),</span> <span class="n">y_clean_delayed</span><span class="p">,</span> <span class="s1">'r--'</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">1.8</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">'Прихований сигнал (істинна затримка $n_0=</span><span class="si">{</span><span class="n">n0_true</span><span class="si">}</span><span class="s1">$)'</span><span class="p">)</span>
+</span><span id="__span-5-65"><a id="__codelineno-5-65" name="__codelineno-5-65" href="#__codelineno-5-65"></a><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Сигнал на вході приймача (SNR = </span><span class="si">{</span><span class="n">snr_channel_db</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> дБ, $</span><span class="se">\\</span><span class="s2">sigma_</span><span class="se">{{</span><span class="s2">ch</span><span class="se">}}</span><span class="s2"> = </span><span class="si">{</span><span class="n">sigma_channel</span><span class="si">}</span><span class="s2">$ В)"</span><span class="p">)</span>
+</span><span id="__span-5-66"><a id="__codelineno-5-66" name="__codelineno-5-66" href="#__codelineno-5-66"></a><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">"Індекс відліку, $n$"</span><span class="p">)</span>
+</span><span id="__span-5-67"><a id="__codelineno-5-67" name="__codelineno-5-67" href="#__codelineno-5-67"></a><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">"Амплітуда, В"</span><span class="p">)</span>
+</span><span id="__span-5-68"><a id="__codelineno-5-68" name="__codelineno-5-68" href="#__codelineno-5-68"></a><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+</span><span id="__span-5-69"><a id="__codelineno-5-69" name="__codelineno-5-69" href="#__codelineno-5-69"></a><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">'upper right'</span><span class="p">)</span>
+</span><span id="__span-5-70"><a id="__codelineno-5-70" name="__codelineno-5-70" href="#__codelineno-5-70"></a>
+</span><span id="__span-5-71"><a id="__codelineno-5-71" name="__codelineno-5-71" href="#__codelineno-5-71"></a><span class="c1"># 3. Взаємна кореляційна функція (ВКФ)</span>
+</span><span id="__span-5-72"><a id="__codelineno-5-72" name="__codelineno-5-72" href="#__codelineno-5-72"></a><span class="n">axes</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lags_ys_pos</span><span class="p">,</span> <span class="n">r_ys_pos</span><span class="p">,</span> <span class="s1">'b-'</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">1.8</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'ВКФ $R_</span><span class="si">{ys}</span><span class="s1">[m]$'</span><span class="p">)</span>
+</span><span id="__span-5-73"><a id="__codelineno-5-73" name="__codelineno-5-73" href="#__codelineno-5-73"></a><span class="n">axes</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">n0_estimated</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'r'</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">'--'</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">'Виявлений пік: $</span><span class="se">\\</span><span class="s1">hat</span><span class="se">{{</span><span class="s1">n</span><span class="se">}}</span><span class="s1">_0 = </span><span class="si">{</span><span class="n">n0_estimated</span><span class="si">}</span><span class="s1">$'</span><span class="p">)</span>
+</span><span id="__span-5-74"><a id="__codelineno-5-74" name="__codelineno-5-74" href="#__codelineno-5-74"></a><span class="n">axes</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">"Взаємна кореляційна функція $R_</span><span class="si">{ys}</span><span class="s2">[m]$ (Чіткий кореляційний пік на затримці $n_0$)"</span><span class="p">)</span>
+</span><span id="__span-5-75"><a id="__codelineno-5-75" name="__codelineno-5-75" href="#__codelineno-5-75"></a><span class="n">axes</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">"Часовий зсув (лаг), $m$"</span><span class="p">)</span>
+</span><span id="__span-5-76"><a id="__codelineno-5-76" name="__codelineno-5-76" href="#__codelineno-5-76"></a><span class="n">axes</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">"Рівень кореляції"</span><span class="p">)</span>
+</span><span id="__span-5-77"><a id="__codelineno-5-77" name="__codelineno-5-77" href="#__codelineno-5-77"></a><span class="n">axes</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+</span><span id="__span-5-78"><a id="__codelineno-5-78" name="__codelineno-5-78" href="#__codelineno-5-78"></a><span class="n">axes</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">'upper right'</span><span class="p">)</span>
+</span><span id="__span-5-79"><a id="__codelineno-5-79" name="__codelineno-5-79" href="#__codelineno-5-79"></a>
+</span><span id="__span-5-80"><a id="__codelineno-5-80" name="__codelineno-5-80" href="#__codelineno-5-80"></a><span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+</span><span id="__span-5-81"><a id="__codelineno-5-81" name="__codelineno-5-81" href="#__codelineno-5-81"></a><span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">"figures/radar_detection_ccf.png"</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+</span><span id="__span-5-82"><a id="__codelineno-5-82" name="__codelineno-5-82" href="#__codelineno-5-82"></a><span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</span><span id="__span-5-83"><a id="__codelineno-5-83" name="__codelineno-5-83" href="#__codelineno-5-83"></a>
+</span><span id="__span-5-84"><a id="__codelineno-5-84" name="__codelineno-5-84" href="#__codelineno-5-84"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"Моделювання успішно завершено. Усі графічні матеріали збережено в папку 'figures/'."</span><span class="p">)</span>
+</span></code></pre></div>
+<hr />
+<h3 id="33">3.3 Запуск, тестування та перевірка результатів</h3>
+<p>Для виконання розрахунків та побудови графіків запустіть скрипт у терміналі:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>python<span class="w"> </span>lab5_correlation_analysis.py
+</span></code></pre></div>
+<p>У консолі з'являться розраховані значення числових моментів випадкових процесів та результати оцінки часової затримки:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>=================================================================================
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>СТАТИСТИЧНІ ХАРАКТЕРИСТИКИ ВИПАДКОВИХ ПРОЦЕСІВ (N = 10000)
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>=================================================================================
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>[Білий шум v[n]]   Математичне очікування:  -0.0026 В | Дисперсія:   0.9892 В^2 | СКВ:   0.9946 В
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>[Марківський x[n]] Математичне очікування:  -0.0035 В | Дисперсія:   0.9856 В^2 | СКВ:   0.9928 В
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>=================================================================================
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>=================================================================================
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>ОЦІНКА ІНТЕРВАЛУ КОРЕЛЯЦІЇ МАРКІВСЬКОГО ПРОЦЕСУ
+</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>=================================================================================
+</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>Коефіцієнт авторегресії a: 0.85
+</span><span id="__span-7-12"><a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>Теоретичний інтервал кореляції (рівень 1/e): 6.15 тактів
+</span><span id="__span-7-13"><a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>Практичний інтервал кореляції за графіком:   6 тактів
+</span><span id="__span-7-14"><a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a>=================================================================================
+</span><span id="__span-7-15"><a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a>
+</span><span id="__span-7-16"><a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a>=================================================================================
+</span><span id="__span-7-17"><a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a>РЕЗУЛЬТАТИ КОРЕЛЯЦІЙНОГО ВИЯВЛЕННЯ ЗА СИГНАЛОМ У ШУМАХ
+</span><span id="__span-7-18"><a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a>=================================================================================
+</span><span id="__span-7-19"><a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a>Співвідношення сигнал/шум у каналі (SNR): -13.80 дБ
+</span><span id="__span-7-20"><a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a>Істинна затримка сигналу (n0_true):      250 тактів (250.0 мс)
+</span><span id="__span-7-21"><a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a>Оцінена затримка за піком ВКФ:           250 тактів (250.0 мс)
+</span><span id="__span-7-22"><a id="__codelineno-7-22" name="__codelineno-7-22" href="#__codelineno-7-22"></a>Абсолютна похибка оцінки затримки:       0 тактів
+</span><span id="__span-7-23"><a id="__codelineno-7-23" name="__codelineno-7-23" href="#__codelineno-7-23"></a>=================================================================================
+</span><span id="__span-7-24"><a id="__codelineno-7-24" name="__codelineno-7-24" href="#__codelineno-7-24"></a>
+</span><span id="__span-7-25"><a id="__codelineno-7-25" name="__codelineno-7-25" href="#__codelineno-7-25"></a>Моделювання успішно завершено. Усі графічні матеріали збережено в папку 'figures/'.
+</span></code></pre></div>
+<h4 id="_1">Таблиця верифікації та порівняння параметрів випадкових сигналів:</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Параметр дослідження</th>
+<th style="text-align: center;">Білий гаусів шум <span class="arithmatex">\(v[n]\)</span></th>
+<th style="text-align: center;">Марківський процес <span class="arithmatex">\(x[n]\)</span> (<span class="arithmatex">\(\text{AR}(1)\)</span>)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Теоретичне мат. очікування (<span class="arithmatex">\(\mu\)</span>)</strong></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.0\text{ В}\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.0\text{ В}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Вибіркове мат. очікування (<span class="arithmatex">\(\bar{x}\)</span>)</strong></td>
+<td style="text-align: center;"><span class="arithmatex">\(-0.0026\text{ В}\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(-0.0035\text{ В}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Теоретична дисперсія (<span class="arithmatex">\(\sigma^2\)</span>)</strong></td>
+<td style="text-align: center;"><span class="arithmatex">\(1.0000\text{ В}^2\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(\frac{0.5268^2 \cdot 1}{1 - 0.85^2} = 1.0000\text{ В}^2\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Вибіркова дисперсія (<span class="arithmatex">\(s^2\)</span>)</strong></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.9892\text{ В}^2\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(0.9856\text{ В}^2\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Форма автокореляційної функції (АКФ)</strong></td>
+<td style="text-align: center;">Дельта-подібна <span class="arithmatex">\(\delta[m]\)</span> (відліки некорельовані)</td>
+<td style="text-align: center;">Експоненційно згасаюча $r_{xx}[m] = 0.85^{</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Інтервал кореляції (<span class="arithmatex">\(\tau_k\)</span>)</strong></td>
+<td style="text-align: center;"><span class="arithmatex">\(0\text{ тактів}\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(6\text{ тактів}\)</span> (теоретичний <span class="arithmatex">\(6.15\)</span> тактів)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Точність локаційного виявлення затримки <span class="arithmatex">\(n_0\)</span></strong></td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">Абсолютна точність (<span class="arithmatex">\(n_0 = 250\)</span>, похибка <span class="arithmatex">\(0\)</span> тактів при <span class="arithmatex">\(\text{SNR} = -13.8\text{ дБ}\)</span>)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="4_1">4. Вимоги до змісту звіту</h2>
+<p>Звіт виконується державною мовою відповідно до встановлених вимог вищої школи та повинен містити такі обов'язкові компоненти:</p>
+<ol>
+<li>
+<p><strong>Титульна сторінка</strong> за єдиним стандартом університету із зазначенням назви ЗВО, кафедри, дисципліни, номера й теми роботи, номера індивідуального варіанта, групи та ПІБ здобувача.</p>
+</li>
+<li>
+<p><strong>Мета роботи та коротка теоретична частина</strong> з викладом математичного апарату теорії випадкових процесів, формул автокореляційної та взаємної кореляційної функцій, властивостей дискретного білого та марківського шуму, теореми Вінера-Хінчіна.</p>
+</li>
+<li>
+<p><strong>Постановка індивідуального завдання</strong> для власного варіанта: вхідні параметри авторегресійного фільтра (<span class="arithmatex">\(a, b, \sigma_v\)</span>), параметри зондуючого імпульсу (<span class="arithmatex">\(s[n], L_s\)</span>), істинне значення затримки <span class="arithmatex">\(n_0\)</span> та рівень шуму в каналі <span class="arithmatex">\(\sigma_{ch}\)</span>.</p>
+</li>
+<li>
+<p><strong>Повний вихідний код програми на Python</strong> із детальними академічними коментарями до кожного модуля.</p>
+</li>
+<li>
+<p><strong>Графічні матеріали (скріншоти з директорії <code>figures/</code>):</strong></p>
+</li>
+<li>
+<p>Гістограми розподілу ймовірностей білого та марківського шуму з накладеними теоретичними кривими щільності Гаусса;</p>
+</li>
+<li>
+<p>Графіки нормованих АКФ для білого шуму та марківського процесу з позначенням інтервалу кореляції <span class="arithmatex">\(\tau_k\)</span>;</p>
+</li>
+<li>
+<p>Часові осцилограми зондуючого сигналу, прийнятої суміші в зашумленому каналі та результуючий графік ВКФ <span class="arithmatex">\(R_{ys}[m]\)</span> із виділеним піком затримки.</p>
+</li>
+<li>
+<p><strong>Зведена таблиця розрахункових показників:</strong> теоретичні та вибіркові значення математичного очікування, дисперсії, інтервалу кореляції, розрахункове значення співвідношення сигнал/шум (<span class="arithmatex">\(\text{SNR}\)</span>) та точність виявлення затримки.</p>
+</li>
+<li>
+<p><strong>Аналітичні висновки</strong>, де проаналізовано відповідність експериментальних оцінок теоретичним моделям, оцінено ступінь збереження статистичного зв'язку між сусідніми відліками при різних значеннях параметра <span class="arithmatex">\(a\)</span>, а також обґрунтовано високу завадостійкість кореляційного методу виявлення затриманих сигналів на фоні значних шумів.</p>
+</li>
+</ol>
+<hr />
+<h2 id="5">5. Контрольні запитання для захисту роботи</h2>
+<ol>
+<li>
+<p>У чому полягає фізична та статистична відмінність між поняттями стаціонарного у широкому сенсі та ергодичного випадкового процесу?</p>
+</li>
+<li>
+<p>Які властивості має автокореляційна функція (АКФ) стаціонарного дискретного сигналу в точці нульового часового зсуву (<span class="arithmatex">\(m = 0\)</span>) та при віддаленні від початку координат (<span class="arithmatex">\(m \to \infty\)</span>)?</p>
+</li>
+<li>
+<p>Чому автокореляційна функція дискретного білого шуму має вигляд дискретного імпульсу Кронекера <span class="arithmatex">\(\sigma^2 \delta[m]\)</span>, і яке значення має його інтервал кореляції?</p>
+</li>
+<li>
+<p>Яким чином коефіцієнт зворотного зв'язку <span class="arithmatex">\(a\)</span> в моделі марківського авторегресійного процесу першого порядку <span class="arithmatex">\(\text{AR}(1)\)</span> впливає на ширину інтервалу кореляції <span class="arithmatex">\(\tau_k\)</span> та форму спектральної щільності потужності?</p>
+</li>
+<li>
+<p>У чому полягає сутність теореми Вінера-Хінчіна, і як пов'язані між собою автокореляційна функція сигналу та його спектральна щільність потужності (Power Spectral Density — PSD)?</p>
+</li>
+<li>
+<p>Чому функція взаємної кореляції (ВКФ) досягає свого екстремуму в момент збігу часових зсувів двох сигналів, і яким чином це дозволяє виявляти сигнали при співвідношенні сигнал/шум <span class="arithmatex">\(\text{SNR} \ll 0\text{ дБ}\)</span>?</p>
+</li>
+<li>
+<p>Чим відрізняється поведінка кореляційного піку для простого гармонійного радіоімпульсу та для складного фазоманіпульованого сигналу (наприклад, коду Баркера або ЛЧМ-імпульсу)?</p>
+</li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Повернутись нагору
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Kyrylo Vadurin &bull; <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "navigation.tracking", "header.autohide", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0456\u0439\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u0421\u043a\u043e\u043f\u0456\u044e\u0432\u0430\u0442\u0438 \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0429\u0435 1 \u0437\u0431\u0456\u0433 \u043d\u0430 \u0446\u0456\u0439 \u0441\u0442\u043e\u0440\u0456\u043d\u0446\u0456", "search.result.more.other": "\u0429\u0435 # \u0437\u0431\u0456\u0433\u0456\u0432 \u043d\u0430 \u0446\u0456\u0439 \u0441\u0442\u043e\u0440\u0456\u043d\u0446\u0456", "search.result.none": "\u0417\u0431\u0456\u0433\u0456\u0432 \u043d\u0435 \u0437\u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u0417\u043d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0437\u0431\u0456\u0433", "search.result.other": "\u0417\u043d\u0430\u0439\u0434\u0435\u043d\u043e # \u0437\u0431\u0456\u0433\u0456\u0432", "search.result.placeholder": "\u0420\u043e\u0437\u043f\u043e\u0447\u043d\u0456\u0442\u044c \u043f\u0438\u0441\u0430\u0442\u0438 \u0434\u043b\u044f \u043f\u043e\u0448\u0443\u043a\u0443", "search.result.term.missing": "\u041d\u0435 \u0437\u043d\u0430\u0439\u0434\u0435\u043d\u043e \u0437\u0430\u043f\u0438\u0442\u0443", "select.version": "\u041e\u0431\u0440\u0430\u0442\u0438 \u0432\u0435\u0440\u0441\u0456\u044e"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

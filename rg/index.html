@@ -1,0 +1,2665 @@
+
+<!doctype html>
+<html lang="uk" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Навчальний портал з дисципліни "Обробка сигналів та зображень"">
+      
+      
+      
+      
+        <link rel="prev" href="../sr/">
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Розрахунково-графічна робота - Обробка сигналів та зображень</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#-" class="md-skip">
+          Перейти до змісту
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Хедер">
+    <a href=".." title="Обробка сигналів та зображень" class="md-header__button md-logo" aria-label="Обробка сигналів та зображень" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Обробка сигналів та зображень
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Розрахунково-графічна робота
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="cyan"  aria-label="Переключити на темну тему"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Переключити на темну тему" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="cyan"  aria-label="Переключити на світлу тему"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Переключити на світлу тему" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Пошук" placeholder="Пошук" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Шукати">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистити" aria-label="Очистити" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Пошук розпочато
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Вкладки" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Робоча програма
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../lk/lk1/" class="md-tabs__link">
+          
+  
+  
+  Лекції
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../lb/lb1/" class="md-tabs__link">
+          
+  
+  
+  Лабораторні роботи
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../sr/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Самостійна робота
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Розрахунково-графічна робота
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Навігація" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Обробка сигналів та зображень" class="md-nav__button md-logo" aria-label="Обробка сигналів та зображень" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Обробка сигналів та зображень
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Робоча програма
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лекції
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Лекції
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lk/lk1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 1. Математичне представлення, дискретизація та квантування
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lk/lk2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 2. Лінійні стаціонарні дискретні системи
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lk/lk3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 3. Спектральний аналіз дискретних сигналів
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lk/lk4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 4. Z-перетворення та проєктування цифрових фільтрів
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lk/lk5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 5. Цифрове представлення зображень та колориметричні моделі
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lk/lk6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 6. Поелементні амплітудні перетворення
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lk/lk7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 7. Просторова фільтрація зображень
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lk/lk8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 8. Геометричні трансформації та математична морфологія
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lk/lk9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 9. Двовимірна Фур'є-обробка та детектори контурів
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лабораторні роботи
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Лабораторні роботи
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lb/lb1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 1. Дискретизація, квантування сигналів та ефект аліасингу
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lb/lb2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 2. Лінійні стаціонарні системи та дискретна згортка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lb/lb3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 3. Спектральний аналіз за допомогою ДПФ/ШПФ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lb/lb4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 4. Синтез цифрових КІХ та НІХ фільтрів
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lb/lb5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 5. Статистичний та кореляційний аналіз
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lb/lb6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 6. Базові операції з цифровими зображеннями
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lb/lb7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 7. Амплітудні перетворення та бінаризація
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lb/lb8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 8. Просторова фільтрація зображень
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lb/lb9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 9. Геометричні перетворення зображень
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lb/lb10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 10. Математична морфологія зображень
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lb/lb11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 11. 2D перетворення Фур'є та детектування контурів
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Самостійна робота
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Розрахунково-графічна робота
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Розрахунково-графічна робота
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Зміст">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Зміст
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ВСТУП
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1 ЗАГАЛЬНІ ПОЛОЖЕННЯ
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1 ЗАГАЛЬНІ ПОЛОЖЕННЯ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 Мета і завдання розрахунково-графічної роботи
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 Основні етапи виконання розрахунково-графічної роботи
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3 Типова структура записки та вимоги до її змісту
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2 ОФОРМЛЕННЯ ПОЯСНЮВАЛЬНОЇ ЗАПИСКИ
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2 ОФОРМЛЕННЯ ПОЯСНЮВАЛЬНОЇ ЗАПИСКИ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Загальні вимоги та правила викладу тексту
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Вимоги до складання реферату
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 Нумерація розділів, сторінок, ілюстрацій та таблиць
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4 Оформлення математичних виразів та формул
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.5 Оформлення додатків та списку літератури
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3 ОФОРМЛЕННЯ ГРАФІЧНОЇ / ПРАКТИЧНОЇ ЧАСТИНИ
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4 ВИМОГИ ДО ПІДГОТОВКИ ПРЕЗЕНТАЦІЇ ТА ДОПОВІДІ НА ЗАХИСТІ
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4 ВИМОГИ ДО ПІДГОТОВКИ ПРЕЗЕНТАЦІЇ ТА ДОПОВІДІ НА ЗАХИСТІ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 Загальні вимоги до структури та регламенту доповіді
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 Вимоги до змісту та візуального оформлення мультимедійної презентації
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 Вимоги до проведення демонстрації функціонування комплексу
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.4 Порядок процедури захисту та критерії відповідей на запитання
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5 ТИПОВІ ТЕМИ РОЗРАХУНКОВО-ГРАФІЧНОЇ РОБОТИ
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6 КРИТЕРІЇ ТА ШКАЛА ОЦІНЮВАННЯ
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        СПИСОК РЕКОМЕНДОВАНОЇ ЛІТЕРАТУРИ
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="СПИСОК РЕКОМЕНДОВАНОЇ ЛІТЕРАТУРИ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Основна література:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Додаткова література:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Інформаційні ресурси в Інтернеті:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ДОДАТКИ
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ДОДАТКИ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ДОДАТОК АЗразок оформлення титульної сторінки
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ДОДАТОК БЗразок бланка технічного завдання та календарного плану
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ДОДАТОК БЗразок бланка технічного завдання та календарного плану">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Сторона аркуша 1
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Сторона аркуша 2
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Зміст">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Зміст
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ВСТУП
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1 ЗАГАЛЬНІ ПОЛОЖЕННЯ
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1 ЗАГАЛЬНІ ПОЛОЖЕННЯ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 Мета і завдання розрахунково-графічної роботи
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.2 Основні етапи виконання розрахунково-графічної роботи
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.3 Типова структура записки та вимоги до її змісту
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2 ОФОРМЛЕННЯ ПОЯСНЮВАЛЬНОЇ ЗАПИСКИ
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2 ОФОРМЛЕННЯ ПОЯСНЮВАЛЬНОЇ ЗАПИСКИ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Загальні вимоги та правила викладу тексту
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Вимоги до складання реферату
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 Нумерація розділів, сторінок, ілюстрацій та таблиць
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4 Оформлення математичних виразів та формул
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.5 Оформлення додатків та списку літератури
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3 ОФОРМЛЕННЯ ГРАФІЧНОЇ / ПРАКТИЧНОЇ ЧАСТИНИ
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4 ВИМОГИ ДО ПІДГОТОВКИ ПРЕЗЕНТАЦІЇ ТА ДОПОВІДІ НА ЗАХИСТІ
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4 ВИМОГИ ДО ПІДГОТОВКИ ПРЕЗЕНТАЦІЇ ТА ДОПОВІДІ НА ЗАХИСТІ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 Загальні вимоги до структури та регламенту доповіді
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 Вимоги до змісту та візуального оформлення мультимедійної презентації
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 Вимоги до проведення демонстрації функціонування комплексу
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.4 Порядок процедури захисту та критерії відповідей на запитання
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5 ТИПОВІ ТЕМИ РОЗРАХУНКОВО-ГРАФІЧНОЇ РОБОТИ
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6 КРИТЕРІЇ ТА ШКАЛА ОЦІНЮВАННЯ
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        СПИСОК РЕКОМЕНДОВАНОЇ ЛІТЕРАТУРИ
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="СПИСОК РЕКОМЕНДОВАНОЇ ЛІТЕРАТУРИ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Основна література:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Додаткова література:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Інформаційні ресурси в Інтернеті:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ДОДАТКИ
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ДОДАТКИ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ДОДАТОК АЗразок оформлення титульної сторінки
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ДОДАТОК БЗразок бланка технічного завдання та календарного плану
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ДОДАТОК БЗразок бланка технічного завдання та календарного плану">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Сторона аркуша 1
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Сторона аркуша 2
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="-">МЕТОДИЧНІ ВКАЗІВКИ ЩОДО ВИКОНАННЯ РОЗРАХУНКОВО-ГРАФІЧНОЇ РОБОТИ<br>з освітнього компонента<br>«ОБРОБКА СИГНАЛІВ ТА ЗОБРАЖЕНЬ»</h1>
+<hr />
+<h2 id="_1">ВСТУП</h2>
+<p>Розрахунково-графічна робота (РГР) з освітнього компонента «Обробка сигналів та зображень» є ключовим індивідуальним практично-дослідницьким завданням, що виконується здобувачами першого (бакалаврського) рівня вищої освіти спеціальності 123 «Комп'ютерна інженерія». Вона інтегрує знання з вищої математики, обчислювальних методів, програмування та архітектури комп'ютерних систем, спрямовуючи їх на проектування прикладних алгоритмів цифрової обробки одновимірних часових послідовностей і багатовимірних просторових матриць зображень. Виконання роботи закріплює здатність розв'язувати комплексні інженерні задачі у сферах вбудованих систем, приладобудування, комп'ютерного зору, робототехніки та біомедичної діагностики.</p>
+<p>Головною метою розрахунково-графічної роботи є набуття практичного досвіду самостійної побудови наскрізних обчислювальних трактів обробки сигналів і зображень. Здобувачі здійснюють повний цикл розробки: від формалізації математичної моделі фізичного процесу, спектрального аналізу та синтезу стійких цифрових фільтрів до алгоритмічної реалізації попередньої обробки, геометричної нормалізації, сегментації та оконтурювання растрових зображень у мовному середовищі Python.</p>
+<p>У процесі виконання розрахунково-графічної роботи здобувач вищої освіти поглиблює та демонструє наступні результати навчання:</p>
+<p><strong>знати:</strong></p>
+<ul>
+<li>
+<p>математичні моделі та алгоритми дискретизації, квантування аналогових процесів, теорему відліків Котельникова-Шеннона-Найквіста, природу виникнення аліасингу та методи його запобігання;</p>
+</li>
+<li>
+<p>часові та частотні характеристики лінійних стаціонарних дискретних систем, математичний апарат лінійної та кругової згортки, різницеві рівняння другого і вищих порядків;</p>
+</li>
+<li>
+<p>теоретичні основи прямого, оберненого та швидкого перетворення Фур'є, алгоритми факторизації матриць Кулі-Тьюкі та властивості спектральних віконних функцій;</p>
+</li>
+<li>
+<p>апарат <span class="arithmatex">\(z\)</span>-перетворення, поняття дискретної передавальної функції <span class="arithmatex">\(H(z)\)</span>, методи аналізу стійкості за полюсами на комплексній <span class="arithmatex">\(z\)</span>-площині та алгоритми синтезу КІХ і НІХ фільтрів;</p>
+</li>
+<li>
+<p>колориметричні стандарти кодування зображень (RGB, BGR, HSV, CIELab, CMYK), правила перерахунку координат та закони змішування кольорів Грасмана;</p>
+</li>
+<li>
+<p>алгоритми поелементних амплітудних перетворень, нелінійної гамма-корекції через таблиці LUT, глобальної еквалізації гістограм та порогової бінаризації за методом Оцу;</p>
+</li>
+<li>
+<p>методи просторової лінійної та нелінійної фільтрації (Box, Gauss, Median, Bilateral), диференціального підвищення різкості, афінних і перспективних геометричних трансформацій та математичної морфології.</p>
+</li>
+</ul>
+<p><strong>уміти:</strong></p>
+<ul>
+<li>
+<p>розраховувати та програмно моделювати процеси дискретизації й квантування вимірювальних сигналів із розрахунком співвідношення сигнал/шум (<span class="arithmatex">\(\text{SNR}\)</span>) та застосуванням процедури дизеризації;</p>
+</li>
+<li>
+<p>синтезувати цифрові смугові, режекторні, низькочастотні та високочастотні фільтри (КІХ методом вікон та НІХ методом білінійного перетворення) і проводити оцінку їхньої BIBO-стійкості;</p>
+</li>
+<li>
+<p>виконувати швидкий спектральний аналіз дискретних сигналів за допомогою бібліотеки <code>numpy.fft</code> з придушенням витоку енергії спектра;</p>
+</li>
+<li>
+<p>проектувати програмні модулі для обробки багатовимірних масивів зображень засобами бібліотек OpenCV, NumPy, SciPy та Pillow;</p>
+</li>
+<li>
+<p>реалізовувати процедури усунення перспективних спотворень на основі матриць гомографії за чотирма опорними точками;</p>
+</li>
+<li>
+<p>виконувати морфологічне очищення бінарних масок, виділення контурів операторами Собеля, Шарра та оптимальним детектором Кенні;</p>
+</li>
+<li>
+<p>оформлювати пояснювальну записку та графічні демонстраційні матеріали відповідно до вимог національних стандартів України.</p>
+</li>
+</ul>
+<hr />
+<h2 id="1">1 ЗАГАЛЬНІ ПОЛОЖЕННЯ</h2>
+<h3 id="11-">1.1 Мета і завдання розрахунково-графічної роботи</h3>
+<p>Об'єктом проектування та дослідження у розрахунково-графічній роботі є програмно-алгоритмічний комплекс цифрової обробки одновимірних вимірювальних сигналів та цифрових двовимірних напівтонових і кольорових зображень. Предметом дослідження є математичні методи спектрально-часової фільтрації сигналів, методи розширення динамічного діапазону, шумозаглушення, геометричної нормалізації, просторового диференціювання та морфологічного аналізу зображень.</p>
+<p>Під час виконання розрахунково-графічної роботи здобувач вищої освіти вирішує наступні науково-технічні та інженерні завдання:</p>
+<ul>
+<li>
+<p>аналітично описати та програмно згенерувати тестовий полігармонічний сигнал із заданим рівнем адитивного гаусового або імпульсного шуму;</p>
+</li>
+<li>
+<p>виконати пряме дискретне та швидке перетворення Фур'є, оцінити вплив розтікання спектра та обрати оптимальну вагову віконну функцію;</p>
+</li>
+<li>
+<p>розрахувати передавальну функцію <span class="arithmatex">\(H(z)\)</span> цифрового фільтра відповідно до вимог технічного завдання, визначити координати нулів і полюсів, побудувати діаграму на <span class="arithmatex">\(z\)</span>-площині та довести BIBO-стійкість системи;</p>
+</li>
+<li>
+<p>здійснити програмну фільтрацію зашумленого сигналу, обчислити значення <span class="arithmatex">\(\text{SNR}\)</span> на вході та виході фільтра й побудувати порівняльні часові та спектральні діаграми;</p>
+</li>
+<li>
+<p>реалізувати алгоритм попередньої обробки зображення, що включає декомпозицію каналів, колірне перетворення у простір HSV або CIELab, лінійне контрастування, гамма-корекцію та еквалізацію гістограми;</p>
+</li>
+<li>
+<p>провести двовимірну просторову лінійну або нелінійну фільтрацію для придушення шумів зі збереженням границь об'єктів та оцінити якість реставрації за метриками <span class="arithmatex">\(\text{MSE}\)</span> і <span class="arithmatex">\(\text{PSNR}\)</span>;</p>
+</li>
+<li>
+<p>розрахувати елементи матриці гомографії <span class="arithmatex">\(3 \times 3\)</span> за чотирма кутовими опорними точками та виконати перспективне випрямлення цільової області інтересу (<span class="arithmatex">\(\text{ROI}\)</span>);</p>
+</li>
+<li>
+<p>побудувати алгоритм бінаризації за методом Оцу, виконати морфологічне очищення маски об'єктів та виділити неперервні контури за допомогою градієнтних операторів або детектора Кенні.</p>
+</li>
+</ul>
+<h3 id="12-">1.2 Основні етапи виконання розрахунково-графічної роботи</h3>
+<p>Виконання індивідуального завдання носить наскрізний характер і триває протягом 5-го навчального семестру відповідно до графіка навчального процесу.</p>
+<p>Послідовність етапів виконання та захисту розрахунково-графічної роботи:</p>
+<ol>
+<li>
+<p>Отримання технічного завдання та вибір варіанта індивідуального завдання.</p>
+</li>
+<li>
+<p>Опрацювання літературних джерел, стандартів та аналіз алгоритмічних аналогів.</p>
+</li>
+<li>
+<p>Математичне моделювання, синтез передавальної функції цифрового фільтра та розрахунок матриць перетворення зображень.</p>
+</li>
+<li>
+<p>Програмна реалізація алгоритмів цифрової обробки сигналів та конвеєра обробки зображень у середовищі Python.</p>
+</li>
+<li>
+<p>Комп'ютерне моделювання, проведення експериментів, розрахунок числових метрик якості та побудова графічних залежностей.</p>
+</li>
+<li>
+<p>Оформлення розрахунково-пояснювальної записки та графічних демонстраційних матеріалів (плакатів/панелей).</p>
+</li>
+<li>
+<p>Попередня перевірка роботи керівником, нормоконтроль та перевірка на академічну доброчесність.</p>
+</li>
+<li>
+<p>Публічний захист розрахунково-графічної роботи перед комісією кафедри.</p>
+</li>
+</ol>
+<p>На початкових етапах здобувач здійснює детальну математичну формалізацію завдання, формує структуру програмного проекту та обґрунтовує вибір числових параметрів дискретизації, віконних функцій і порядків фільтрів. Завершення теоретичних розрахунків є передумовою для переходу до етапу комп'ютерного моделювання, під час якого створюється програмний код на мові Python, налагоджуються конвеєри фільтрації та формуються масиви тестових даних.</p>
+<p>Заключні етапи присвячені верифікації отриманих числових результатів, порівняльному аналізу часових і спектральних характеристик, оцінці ефективності придушення шумів на зображеннях та систематизації результатів у вигляді пояснювальної записки й графічних плакатів. Завершальним контрольним заходом є публічний захист роботи, під час якого здобувач демонструє функціонування розробленого програмного забезпечення, обґрунтовує прийняті інженерні рішення та відповідає на фахові запитання комісії.</p>
+<h3 id="13">1.3 Типова структура записки та вимоги до її змісту</h3>
+<p>Пояснювальна записка розрахунково-графічної роботи повинна мати обсяг 25–35 сторінок друкованого тексту формату А4 (без урахування додатків) та містити наступні обов'язкові структурні елементи:</p>
+<ol>
+<li>
+<p><strong>Титульна сторінка</strong> — оформлюється за встановленим університетським зразком, наведеним у Додатку А.</p>
+</li>
+<li>
+<p><strong>Бланк технічного завдання</strong> — підписується здобувачем вищої освіти та керівником роботи, містить повний перелік вихідних параметрів і календарний план (Додаток Б).</p>
+</li>
+<li>
+<p><strong>Реферат (Анотація)</strong> — містить стислу характеристику роботи державною та англійською мовами з обов'язковим зазначенням кількісних показників обсягу записки, ілюстрацій, таблиць, джерел та переліку ключових слів.</p>
+</li>
+<li>
+<p><strong>Зміст</strong> — автоматично згенерований структурований перелік усіх розділів, підрозділів, висновків, списку літератури та додатків із зазначенням початкових номерів сторінок.</p>
+</li>
+<li>
+<p><strong>Перелік умовних позначень, символів, одиниць та скорочень</strong> — упорядкований за абеткою список спеціальних скорочень, абревіатур (АЦП, ЦАП, ДПФ, ШПФ, КІХ, НІХ, АЧХ, ФЧХ, LUT, RGB, HSV, ROI, MSE, PSNR тощо) та специфічних математичних символів.</p>
+</li>
+<li>
+<p><strong>Вступ</strong> — розкриває актуальність теми, мету і задачі роботи, об'єкт і предмет дослідження, опис практичної цінності та короткий зміст розділів.</p>
+</li>
+<li>
+<p><strong>Розділ 1. Цифрова обробка та спектрально-часова фільтрація одновимірних вимірювальних сигналів:</strong></p>
+</li>
+<li>
+<p><em>1.1. Математична постановка задачі та параметризація тестового полігармонічного сигналу з адитивним шумом.</em></p>
+</li>
+<li>
+<p><em>1.2. Дослідження спектральних характеристик сигналу за допомогою ШПФ (FFT) та аналіз ефекту витоку спектра при застосуванні віконних функцій.</em></p>
+</li>
+<li>
+<p><em>1.3. Синтез цифрового фільтра (КІХ або НІХ), аналітичний розрахунок передавальної функції <span class="arithmatex">\(H(z)\)</span>, побудова карти нулів і полюсів та аналіз стійкості.</em></p>
+</li>
+<li>
+<p><em>1.4. Програмна реалізація фільтрації сигналу, порівняльний аналіз осцилограм, спектрів та оцінка підвищення відношення сигнал/шум (<span class="arithmatex">\(\text{SNR}\)</span>).</em></p>
+</li>
+<li>
+<p><strong>Розділ 2. Просторовий та спектральний конвеєр цифрової обробки та аналізу зображень:</strong></p>
+</li>
+<li>
+<p><em>2.1. Попередня обробка тестового зображення: декомпозиція на колірні канали, конвертація у простір HSV/CIELab, амплітудна гамма-корекція та еквалізація гістограми.</em></p>
+</li>
+<li>
+<p><em>2.2. Просторова та 2D-FFT частотна фільтрація: моделювання шумів, лінійне згладжування, нелінійна медіанна й білатеральна обробка, розрахунок метрик MSE та PSNR.</em></p>
+</li>
+<li>
+<p><em>2.3. Геометричні перетворення та перспективне випрямлення цільової області інтересу (ROI) на основі матриці гомографії за 4-ма опорними точками.</em></p>
+</li>
+<li>
+<p><em>2.4. Сегментація об'єктів методом Оцу, математична морфологія бінарних масок та виділення контурів градієнтними детекторами (Собель, Шарр, Кенні).</em></p>
+</li>
+<li>
+<p><strong>Висновки</strong> — містять узагальнені науково-технічні підсумки роботи, підтвердження виконання всіх пунктів технічного завдання та аналіз досягнутих кількісних показників якості фільтрації й розпізнавання.</p>
+</li>
+<li>
+<p><strong>Список використаної літератури</strong> — бібліографічний перелік використаних джерел, оформлений відповідно до ДСТУ 8302:2015.</p>
+</li>
+<li>
+<p><strong>Додатки</strong> — містять повний програмний код розроблених модулів на мові Python (Додаток В) та інші допоміжні матеріали.</p>
+</li>
+</ol>
+<hr />
+<h2 id="2">2 ОФОРМЛЕННЯ ПОЯСНЮВАЛЬНОЇ ЗАПИСКИ</h2>
+<h3 id="21">2.1 Загальні вимоги та правила викладу тексту</h3>
+<p>Пояснювальна записка розрахунково-графічної роботи оформлюється на аркушах білого паперу формату А4 (<span class="arithmatex">\(210 \times 297\text{ мм}\)</span>) з одного боку аркуша відповідно до вимог ДСТУ 3008:2015. Текст роботи набирається на комп'ютері гарнітурою Times New Roman розміром <span class="arithmatex">\(14\text{ pt}\)</span> із міжрядковим інтервалом <span class="arithmatex">\(1.5\)</span> рядка (допускається розмір <span class="arithmatex">\(12\text{ pt}\)</span> у таблицях та лістингах програмного коду).</p>
+<p>Розміри полів сторінки повинні строго становити:</p>
+<ul>
+<li>
+<p>ліве поле — <span class="arithmatex">\(30\text{ мм}\)</span> (для забезпечення можливості брошурування);</p>
+</li>
+<li>
+<p>праве поле — <span class="arithmatex">\(10\text{ мм}\)</span>;</p>
+</li>
+<li>
+<p>верхнє поле — <span class="arithmatex">\(20\text{ мм}\)</span>;</p>
+</li>
+<li>
+<p>нижнє поле — <span class="arithmatex">\(20\text{ мм}\)</span>.</p>
+</li>
+</ul>
+<p>Абзацний відступ (перший рядок абзацу) повинен бути однаковим по всьому тексту записки та дорівнювати <span class="arithmatex">\(1.25\text{ см}\)</span>. Вирівнювання основного тексту здійснюється по ширині сторінки з обов'язковим увімкненням автоматичного переносу слів. Текст викладається державною мовою в академічному стилі у безособовій формі або від третьої особи. Категорично забороняється використання псевдосписків типу «Термін: Опис». Усі пункти маркованих списків оформлюються як граматично повні речення з власною граматичною основою.</p>
+<h3 id="22">2.2 Вимоги до складання реферату</h3>
+<p>Реферат (анотація) розміщується безпосередньо після бланка технічного завдання і призначений для стислого ознайомлення зі змістом та основними результатами роботи. Обсяг реферату не повинен перевищувати <span class="arithmatex">\(500\)</span> слів (одна сторінка друкованого тексту). Реферат складається державною та англійською мовами.</p>
+<p>Структурно реферат розпочинається з відомостей про кількісні параметри записки: загальний обсяг сторінок, кількість ілюстрацій (рисунків), кількість таблиць, кількість додатків та кількість найменувань використаної літератури. Нижче наводиться перелік ключових слів (від <span class="arithmatex">\(5\)</span> до <span class="arithmatex">\(15\)</span> слів чи словосполучень), які друкуються ВЕЛИКИМИ ЛІТЕРАМИ у називному відмінку в один рядок через коми. Основний текст реферату розкриває актуальність розробки, мету роботи, застосовані методи моделювання та синтезу, отримані числові результати фільтрації й розпізнавання та сферу практичного використання результатів.</p>
+<h3 id="23">2.3 Нумерація розділів, сторінок, ілюстрацій та таблиць</h3>
+<p>Нумерація сторінок записки є наскрізною арабськими цифрами. Номер сторінки проставляється у правому верхньому куті без крапки в кінці. Першою сторінкою є титульний аркуш, другою — бланк завдання, проте номери сторінок на них не проставляються. Нумерація починається цифрою «3» зі сторінки реферату.</p>
+<p>Розділи записки повинні мати порядкову нумерацію арабськими цифрами (наприклад, 1, 2). Підрозділи нумеруються двома цифрами через крапку, де перша цифра вказує номер розділу, а друга — номер підрозділу (наприклад, 1.2, 2.3). Заголовки розділів друкуються жирним шрифтом великими літерами з вирівнюванням по центру, а заголовки підрозділів — жирним шрифтом із великої літери з абзацного відступу. Крапка в кінці заголовків не ставиться. Кожен розділ необхідно починати з нової сторінки.</p>
+<p>Усі ілюстрації (графіки, осцилограми, спектрограми, діаграми, скріншоти, схеми) іменуються словом «Рисунок» та нумеруються арабськими цифрами в межах розділу. Підпис розміщується під рисунком по центру з обов'язковим словесним описом:</p>
+<p><em>Рисунок 1.3 — Карта нулів і полюсів передавальної функції цифрового фільтра на z-площині</em></p>
+<p>Таблиці нумеруються арабськими цифрами в межах розділу. Назва таблиці розміщується над таблицею з лівого боку з абзацного відступу:</p>
+<p><em>Таблиця 2.1 — Метрики якості фільтрації зображень за критеріями MSE та PSNR</em></p>
+<h3 id="24">2.4 Оформлення математичних виразів та формул</h3>
+<p>Усі математичні вирази та формули записуються у форматі LaTeX. Формули, на які є посилання в тексті, виділяються в окремий рядок та центруються. Порядковий номер формули вказується арабськими цифрами у круглих дужках біля правого берега сторінки в межах розділу.</p>
+<p>Пояснення значень символів і числових коефіцієнтів (експлікація) наводиться безпосередньо під формулою. Експлікація розпочинається зі слова «де» без двокрапки, без абзацного відступу. Значення кожного символу подається з нового рядка або через кому з обов'язковим зазначенням фізичної розмірності, а окремі позиції відокремлюються крапкою з комою.</p>
+<p>Репрезентативний приклад оформлення формули розрахунку співвідношення сигнал/шум (<span class="arithmatex">\(\text{SNR}\)</span>) у тракті цифрової фільтрації:</p>
+<div class="arithmatex">\[\text{SNR}_{\text{дБ}} = 10 \lg \left( \frac{\sum_{n=0}^{N-1} s^2[n]}{\sum_{n=0}^{N-1} (y[n] - s[n])^2} \right) \qquad (1.1)\]</div>
+<p>де <span class="arithmatex">\(s[n]\)</span> позначає еталонний неспотворений відлік корисного сигналу у момент часу <span class="arithmatex">\(n\)</span> у вольтах (<span class="arithmatex">\(\text{В}\)</span>); <span class="arithmatex">\(y[n]\)</span> представляє відфільтрований вихідний відлік сигналу у вольтах (<span class="arithmatex">\(\text{В}\)</span>); <span class="arithmatex">\(N\)</span> є загальною кількістю часових відліків вибірки; а <span class="arithmatex">\(\text{SNR}_{\text{дБ}}\)</span> виражає рівень перевищення сигналу над залишковим шумом у децибелах (<span class="arithmatex">\(\text{дБ}\)</span>).</p>
+<p>Репрезентативний приклад оформлення двовимірної просторової згортки зображення:</p>
+<div class="arithmatex">\[g(x, y) = \sum_{s=-a}^{a} \sum_{t=-b}^{b} f(x + s, y + t) \cdot h(s, t) \qquad (2.1)\]</div>
+<p>де <span class="arithmatex">\(f(x+s, y+t)\)</span> позначає значення яскравості сусідніх пікселів вхідного зображення на інтервалі ковзного вікна; <span class="arithmatex">\(h(s, t)\)</span> є нормованим ваговим коефіцієнтом просторового ядра фільтра розмірністю <span class="arithmatex">\((2a+1) \times (2b+1)\)</span>; а <span class="arithmatex">\(g(x, y)\)</span> представляє обчислену яскравість вихідного пікселя у координатах <span class="arithmatex">\((x, y)\)</span>.</p>
+<h3 id="25">2.5 Оформлення додатків та списку літератури</h3>
+<p>Додатки оформлюються як продовження пояснювальної записки після списку використаної літератури. Кожен додаток починається з нової сторінки з вирівнюванням по правому краю слова «ДОДАТОК» та великої літери української абетки, що позначає його послідовність (наприклад, ДОДАТОК А, ДОДАТОК Б, ДОДАТОК В). За правилами стандарту забороняється використовувати літери Ґ, Є, І, Ї, Й, О, Ч, Ь. Під позначенням додатка по центру сторінки наводиться його тематичний заголовок. Ілюстрації, таблиці та формули в додатках нумеруються з додаванням літери додатка (наприклад, Рисунок В.1, Таблиця Б.2, формула (А.1)).</p>
+<p>Список використаної літератури складається в порядку посилання на джерела в тексті або за абеткою відповідно до ДСТУ 8302:2015. Посилання в тексті записки наводяться у квадратних дужках із зазначенням порядкового номера джерела, наприклад: [3, с. 45].</p>
+<hr />
+<h2 id="3">3 ОФОРМЛЕННЯ ГРАФІЧНОЇ / ПРАКТИЧНОЇ ЧАСТИНИ</h2>
+<p>Графічна частина розрахунково-графічної роботи виконується на 2–3 аркушах демонстраційних креслень (формату А1 або А2) або подається у вигляді повнофункціонального інтерактивного програмного комплексу (цифрових дашбордів на базі Matplotlib / Jupyter Notebook). Графічні аркуші виконуються з дотриманням вимог Єдиної системи конструкторської документації (ЄСКД) із стандартною рамкою та основним написом (кутовим штампом за формою 1 для першого аркуша та за формою 2а для наступних аркушів).</p>
+<p>Поаркушний склад та зміст графічної частини:</p>
+<ol>
+<li>
+<p><strong>Аркуш 1. Структурно-концептуальні схеми та спектрально-часовий аналіз сигналів:</strong></p>
+</li>
+<li>
+<p>функціональна схема тракту цифрової обробки сигналів (АЦП <span class="arithmatex">\(\to\)</span> блок ШПФ <span class="arithmatex">\(\to\)</span> цифровий фільтр <span class="arithmatex">\(\to\)</span> ЦАП);</p>
+</li>
+<li>
+<p>графіки вхідного неперервного, дискретизованого та квантованого сигналів;</p>
+</li>
+<li>
+<p>часові діаграми ефекту аліасингу при піддискретизації;</p>
+</li>
+<li>
+<p>амплітудні спектри сигналів до та після віконного зважування (вікна Ханна, Хеммінга, Блекмана);</p>
+</li>
+<li>
+<p>карта нулів і полюсів передавальної функції <span class="arithmatex">\(H(z)\)</span> на комплексній <span class="arithmatex">\(z\)</span>-площині з нанесеним одиничним колом <span class="arithmatex">\(|z| = 1\)</span>;</p>
+</li>
+<li>
+<p>амплітудно-частотна (АЧХ) та фазочастотна (ФЧХ) характеристики синтезованого цифрового фільтра.</p>
+</li>
+<li>
+<p><strong>Аркуш 2. Алгоритмічні моделі та просторово-частотний конвеєр обробки зображень:</strong></p>
+</li>
+<li>
+<p>блок-схема алгоритму комплексного конвеєра обробки зображення (завантаження <span class="arithmatex">\(\to\)</span> перетворення просторів <span class="arithmatex">\(\to\)</span> фільтрація <span class="arithmatex">\(\to\)</span> випрямлення <span class="arithmatex">\(\to\)</span> сегментація);</p>
+</li>
+<li>
+<p>графічні діаграми розподілу колірних просторів RGB, HSV та CIELab;</p>
+</li>
+<li>
+<p>амплітудні передавальні характеристики лінійного контрастування та нелінійної гамма-корекції;</p>
+</li>
+<li>
+<p>гістограми розподілу рівнів сірого до та після глобальної еквалізації із графіком кумулятивної функції CDF;</p>
+</li>
+<li>
+<p>двовимірні амплітудні спектри 2D-FFT та частотні маски низьких (GLPF) і високих (GHPF) частот.</p>
+</li>
+<li>
+<p><strong>Аркуш 3. Результати просторової фільтрації, геометричної нормалізації та детектування контурів:</strong></p>
+</li>
+<li>
+<p>порівняльні візуальні результати придушення гаусового та імпульсного шумів фільтрами Box, Gauss, Median та Bilateral;</p>
+</li>
+<li>
+<p>діаграма порівняння числових метрик якості відновлення за шкалами <span class="arithmatex">\(\text{MSE}\)</span> та <span class="arithmatex">\(\text{PSNR}\)</span> (дБ);</p>
+</li>
+<li>
+<p>схема перспективного перетворення (гомографії) з відображенням чотирьох опорних точок <span class="arithmatex">\(src\)</span> та випрямленого кадру <span class="arithmatex">\(dst\)</span>;</p>
+</li>
+<li>
+<p>результати бінаризації методом Оцу, маски морфологічного очищення та карти контурів, виділених детекторами Собеля, Шарра та Кенні.</p>
+</li>
+</ol>
+<hr />
+<h2 id="4">4 ВИМОГИ ДО ПІДГОТОВКИ ПРЕЗЕНТАЦІЇ ТА ДОПОВІДІ НА ЗАХИСТІ</h2>
+<h3 id="41">4.1 Загальні вимоги до структури та регламенту доповіді</h3>
+<p>Публічний захист розрахунково-графічної роботи проводиться перед екзаменаційною комісією кафедри комп'ютерної інженерії та електроніки. Загальний регламент виступу здобувача становить від 5 до 7 хвилин.</p>
+<p>Похвилинний розподіл виступу:</p>
+<ul>
+<li>
+<p><strong>Вступна частина (до 1 хвилини):</strong> оголошення теми індивідуального варіанта, обґрунтування актуальності розробки, визначення об'єкта, предмета та мети роботи.</p>
+</li>
+<li>
+<p><strong>Математична та аналітична частина (1.5–2 хвилини):</strong> стислий виклад математичних моделей дискретизації, розрахунок частоти Найквіста, обґрунтування вибору вікна ШПФ, демонстрація передавальної функції <span class="arithmatex">\(H(z)\)</span>, карти полюсів на <span class="arithmatex">\(z\)</span>-площині та доведення стійкості фільтра.</p>
+</li>
+<li>
+<p><strong>Інженерно-програмна частина (2–2.5 хвилини):</strong> демонстрація розробленого конвеєра обробки зображень, обґрунтування вибору колірного простору, параметрів просторових фільтрів, розрахунок матриці гомографії та результати роботи детектора Кенні.</p>
+</li>
+<li>
+<p><strong>Висновки та результати (до 1 хвилини):</strong> підсумок виконаних завдань, кількісні показники ефективності (<span class="arithmatex">\(\text{SNR}\)</span>, <span class="arithmatex">\(\text{MSE}\)</span>, <span class="arithmatex">\(\text{PSNR}\)</span>) та загальні висновки.</p>
+</li>
+</ul>
+<h3 id="42">4.2 Вимоги до змісту та візуального оформлення мультимедійної презентації</h3>
+<p>Мультимедійна презентація готується у форматі 16:9 у середовищі PowerPoint або PDF і повинна містити від 8 до 12 слайдів. Оформлення слайдів має бути контрастним, лаконічним та витриманим у єдиному академічному стилі. Рекомендований розмір шрифту для заголовків становить <span class="arithmatex">\(28\text{–}36\text{ pt}\)</span>, для основного тексту — <span class="arithmatex">\(18\text{–}24\text{ pt}\)</span>.</p>
+<p>Обов'язковий склад слайдів презентації:</p>
+<ul>
+<li>
+<p>Слайд 1: Титульний слайд (назва університету, кафедри, тема роботи, відомості про здобувача та керівника).</p>
+</li>
+<li>
+<p>Слайд 2: Мета, завдання роботи та параметри індивідуального варіанта.</p>
+</li>
+<li>
+<p>Слайд 3: Моделювання дискретизації, аліасингу та віконного спектрального аналізу ШПФ.</p>
+</li>
+<li>
+<p>Слайд 4: Синтез цифрового фільтра, карта нулів і полюсів на <span class="arithmatex">\(z\)</span>-площині, АЧХ та ФЧХ.</p>
+</li>
+<li>
+<p>Слайд 5: Результати фільтрації одновимірного сигналу та оцінка зміни <span class="arithmatex">\(\text{SNR}\)</span>.</p>
+</li>
+<li>
+<p>Слайд 6: Декомпозиція колірних каналів, амплітудні перетворення та еквалізація гістограми.</p>
+</li>
+<li>
+<p>Слайд 7: Просторова та 2D-FFT фільтрація зображення, аналіз метрик <span class="arithmatex">\(\text{MSE}\)</span> і <span class="arithmatex">\(\text{PSNR}\)</span>.</p>
+</li>
+<li>
+<p>Слайд 8: Перспективне випрямлення сцени за матрицею гомографії та морфологічна обробка.</p>
+</li>
+<li>
+<p>Слайд 9: Виділення контурів операторами Собеля/Шарра та детектором Кенні.</p>
+</li>
+<li>
+<p>Слайд 10: Загальні висновки за результатами розрахунково-графічної роботи.</p>
+</li>
+</ul>
+<h3 id="43">4.3 Вимоги до проведення демонстрації функціонування комплексу</h3>
+<p>Після завершення усної доповіді здобувач проводить демонстрацію функціонування розробленого програмного комплексу на комп'ютері в реальному часі (тривалість до 2–3 хвилин).</p>
+<p>Чеклист обов'язкових дій під час демонстрації (Live Demo):</p>
+<ol>
+<li>
+<p>Запуск програмного скрипту або ноутбука <code>Jupyter Notebook</code> у віртуальному середовищі Python.</p>
+</li>
+<li>
+<p>Генерація зашумленого сигналу з параметрами варіанта та візуалізація спектрального піку аліасингу.</p>
+</li>
+<li>
+<p>Демонстрація роботи цифрового фільтра: фільтрація сигналу у прямому ефірі, відображення вихідної осцилограми та автоматичний розрахунок приросту <span class="arithmatex">\(\text{SNR}\)</span>.</p>
+</li>
+<li>
+<p>Завантаження тестового зображення, інтерактивна зміна параметрів гамма-корекції через таблиці LUT та відображення еквалізованої гістограми.</p>
+</li>
+<li>
+<p>Демонстрація усунення шумів просторовим білатеральним / медіанним фільтром із виведенням числових значень <span class="arithmatex">\(\text{PSNR}\)</span>.</p>
+</li>
+<li>
+<p>Застосування матриці гомографії для випрямлення спотвореного чотирикутника ROI та фінальна візуалізація неперервних контурів Кенні.</p>
+</li>
+</ol>
+<h3 id="44">4.4 Порядок процедури захисту та критерії відповідей на запитання</h3>
+<p>Загальна тривалість захисту одного здобувача становить 10–15 хвилин, включаючи доповідь, демонстрацію програми та відповіді на запитання комісії.</p>
+<p>Типові напрямки фахових запитань членів комісії:</p>
+<ul>
+<li>
+<p>математичне обґрунтування вибору частоти дискретизації <span class="arithmatex">\(f_s\)</span> для усунення аліасингу;</p>
+</li>
+<li>
+<p>фізичний зміст положення полюсів передавальної функції на <span class="arithmatex">\(z\)</span>-площині та їхній вплив на стійкість;</p>
+</li>
+<li>
+<p>алгоритмічні відмінності між прямою лінійною та круговою згорткою;</p>
+</li>
+<li>
+<p>переваги та недоліки використання колірних просторів HSV та CIELab при сегментації;</p>
+</li>
+<li>
+<p>математичний механізм збереження меж у білатеральному фільтрі;</p>
+</li>
+<li>
+<p>принципи пригнічення немаксимумів та трасування гістерезисом в алгоритмі Кенні.</p>
+</li>
+</ul>
+<hr />
+<h2 id="5-">5 ТИПОВІ ТЕМИ РОЗРАХУНКОВО-ГРАФІЧНОЇ РОБОТИ</h2>
+<ol>
+<li>
+<p><strong>Варіант 1.</strong> Розробка системи виявлення та фільтрації кардіосигналів (ЕКГ) від мережевих наведень (<span class="arithmatex">\(50\text{ Гц}\)</span>) та сегментації контурів клітинних структур на мікроскопічних знімках.</p>
+</li>
+<li>
+<p><strong>Варіант 2.</strong> Проектування цифрового смугового НІХ-фільтра мовного діапазону та програмного комплексу перспективного вирівнювання і розпізнавання автомобільних номерних знаків.</p>
+</li>
+<li>
+<p><strong>Варіант 3.</strong> Синтез режекторного КІХ-фільтра для придушення гармонійної завади в телеметричному каналі та виділення дефектів друкованих плат методами математичної морфології.</p>
+</li>
+<li>
+<p><strong>Варіант 4.</strong> Дослідження спектрального складу віброакустичних сигналів підшипникових вузлів за допомогою FFT та сегментація дорожньої розмітки в умовах низького освітлення (HSV + Canny).</p>
+</li>
+<li>
+<p><strong>Варіант 5.</strong> Проектування фільтра нижніх частот Баттерворта для біомедичних датчиків пульсоксиметрії та відновлення розмитих рухом аерофотознімків за допомогою 2D-FFT.</p>
+</li>
+<li>
+<p><strong>Варіант 6.</strong> Розробка алгоритму кореляційного пеленгування радіолокаційного імпульсу та автоматичної бінаризації зашумлених сканованих текстових документів методом Оцу.</p>
+</li>
+<li>
+<p><strong>Варіант 7.</strong> Синтез смугово-загороджувального цифрового фільтра звукових сигналів та виявлення тріщин матеріалів на рентгенівських знімках за допомогою лапласіана та морфології.</p>
+</li>
+<li>
+<p><strong>Варіант 8.</strong> Розробка програмного модуля децимації та інтерполяції аудіосигналів і алгоритму адаптивної білатеральної фільтрації супутникових знімків земної поверхні.</p>
+</li>
+<li>
+<p><strong>Варіант 9.</strong> Спектральний аналіз електроенцефалограм (ЕЕГ) з віконним зважуванням Блекмана та виділення границь лісових масивів на мультиспектральних картах.</p>
+</li>
+<li>
+<p><strong>Варіант 10.</strong> Проектування високочастотного КІХ-диференціатора сигналів та вирівнювання перспективних спотворень фасадів будівель за 4-ма опорними точками (гомографія).</p>
+</li>
+<li>
+<p><strong>Варіант 11.</strong> Фільтрація промислових шумів у каналах зв'язку АСУТП та морфологічний аналіз розміру та форми гранул порошкової металургії на мікрофотографіях.</p>
+</li>
+<li>
+<p><strong>Варіант 12.</strong> Розробка алгоритму автокореляційного визначення періоду основного тону мови та адаптивного контрастування медичних ультразвукових (УЗД) зображень (CLAHE).</p>
+</li>
+<li>
+<p><strong>Варіант 13.</strong> Синтез оптимального резонатора 2-го порядку для виділення пілот-сигналу та контурна сегментація судинної сітки очного дна детектором Шарра.</p>
+</li>
+<li>
+<p><strong>Варіант 14.</strong> Моделювання марківських випадкових процесів у радіоканалах та частотна 2D-FFT режекція періодичних растрових завад на поліграфічних сканах.</p>
+</li>
+<li>
+<p><strong>Варіант 15.</strong> Проектування цифрового фільтра Чебишева I роду для геофізичних сигналів та сегментація теплових плям інфрачервоного діапазону у просторі CIELab.</p>
+</li>
+<li>
+<p><strong>Варіант 16.</strong> Розробка програмного тракту ліквідації еліасингу у вимірювальних перетворювачах та морфологічне виділення слідів лазерного маркування на металевих деталях.</p>
+</li>
+<li>
+<p><strong>Варіант 17.</strong> Спектральний аналіз акустичних шумів компресорних станцій та геометрична нормалізація (афінний поворот і масштабування) зображень облич.</p>
+</li>
+<li>
+<p><strong>Варіант 18.</strong> Синтез фазоінверсного цифрового фільтра для задач гідролокації та сегментація зерен сільськогосподарських культур методом маркерного вододілу.</p>
+</li>
+<li>
+<p><strong>Варіант 19.</strong> Дослідження методів дизеризації при низькорозрядному квантуванні аудіоданих та виділення контурів крововиливів на томограмах детектором Кенні.</p>
+</li>
+<li>
+<p><strong>Варіант 20.</strong> Проектування комбінованого КІХ-фільтра з лінійною ФЧХ для сейсмічних датчиків та алгоритм виявлення рухомих об'єктів на відеопослідовності методом різницевих кадрів і морфологічного закриття.</p>
+</li>
+</ol>
+<hr />
+<h2 id="6">6 КРИТЕРІЇ ТА ШКАЛА ОЦІНЮВАННЯ</h2>
+<p>Оцінювання розрахунково-графічної роботи здійснюється за 15-бальною шкалою з наступним переведенням у загальний семестровий рейтинг здобувача з освітнього компонента. Підсумкова оцінка формується комплексно на основі експертизи розрахункової частини, якості оформлення пояснювальної записки, стабільності роботи програмного коду та результатів публічного захисту.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">№ з/п</th>
+<th style="text-align: left;">Об’єкт та критерії експертного оцінювання</th>
+<th style="text-align: center;">Максимальний бал</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;"><strong>Зміст, алгоритмічна та технічна якість розробки:</strong> повнота математичного апарату, коректність синтезу цифрового фільтра, стійкість за полюсами на <span class="arithmatex">\(z\)</span>-площині, якість конвеєра обробки зображень, працездатність та модульність Python-коду.</td>
+<td style="text-align: center;"><strong>6</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td style="text-align: left;"><strong>Якість оформлення пояснювальної записки та графічних матеріалів:</strong> дотримання вимог ДСТУ 3008:2015, правильність запису формул у LaTeX, якість таблиць, рисунків, плакатів, повнота анотації та списку літератури.</td>
+<td style="text-align: center;"><strong>4</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td style="text-align: left;"><strong>Захист роботи, доповідь та демонстрація функціонування:</strong> чіткість доповіді за регламентом, успішне проведення Live Demo, аргументовані та вичерпні відповіді на запитання екзаменаційної комісії.</td>
+<td style="text-align: center;"><strong>5</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: left;"><strong>РАЗОМ ЗА РОЗРАХУНКОВО-ГРАФІЧНУ РОБОТУ:</strong></td>
+<td style="text-align: center;"><strong>15</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Максимальні бали (5–6 балів за перший блок, 4 бали за другий, 5 балів за третій) виставляються, якщо всі завдання технічного завдання виконані бездоганно, розрахунки не містять похибок, програмний код є модульним і повністю задокументованим, записка оформлена за стандартом, а здобувач впевнено володіє матеріалом та безпомилково відповідає на всі запитання.</p>
+<p>Оцінка зменшується у випадках наявності некритичних арифметичних помилок у розрахунках передавальних функцій, відсутності детальних коментарів у програмному коді, незначних порушень вимог ДСТУ щодо оформлення таблиць або формул, невпевнених відповідей на додаткові теоретичні питання під час захисту.</p>
+<p>Дотримання академічної доброчесності є обов'язковою умовою допуску роботи до захисту. Роботи, у яких виявлено ознаки текстового чи програмного плагіату, використання чужих розрахунків без належного бібліографічного посилання або компіляцію непрацездатного стороннього коду, не допускаються до захисту та повертаються на повторне виконання за новим індивідуальним варіантом.</p>
+<hr />
+<h2 id="_2">СПИСОК РЕКОМЕНДОВАНОЇ ЛІТЕРАТУРИ</h2>
+<h3 id="_3">Основна література:</h3>
+<ol>
+<li>
+<p><strong>Микитенко В. І., Тимчик Г. С.</strong> Цифрова обробка сигналів та зображень : навч. посіб. для здобувачів ступеня магістра. — 2-ге вид., переробл. і доповн. — Київ : КПІ ім. Ігоря Сікорського, 2025. — 181 с. — URL: https://ela.kpi.ua/handle/123456789/68421</p>
+</li>
+<li>
+<p><strong>Кравченко І. В., Микитенко В. І.</strong> Цифрова обробка сигналів та зображень. Частина 2. Практикум : навч. посіб. для здобувачів ступеня магістра. — Київ : КПІ ім. Ігоря Сікорського, 2025. — 85 с. — URL: https://ela.kpi.ua/handle/123456789/68422</p>
+</li>
+<li>
+<p><strong>Лавер В. О., Левчук О. М.</strong> Обробка зображень та мультимедія : навч.-метод. посіб. — Ужгород : Вид-во ПП «АУТДОР-ШАРК», 2021. — 51 с. — URL: https://dspace.uzhnu.edu.ua/jspui/handle/lib/38456</p>
+</li>
+<li>
+<p><strong>Мазуренко В. Б.</strong> Основи цифрової обробки сигналів та зображень : конспект лекцій. — Дніпро : ДНУ ім. Олеся Гончара, 2020. — 153 с. — URL: https://dspace.dnu.dp.ua/jspui/handle/123456789/8741</p>
+</li>
+<li>
+<p><strong>Gonzalez R. C., Woods R. E.</strong> Digital Image Processing. — 4th ed. — New York : Pearson, 2018. — 1168 p. — URL: https://www.pearson.com/en-us/subject-catalog/p/digital-image-processing/P200000003301</p>
+</li>
+<li>
+<p><strong>Oppenheim A. V., Schafer R. W.</strong> Discrete-Time Signal Processing. — 3rd ed. — Upper Saddle River : Prentice Hall, 2010. — 1120 p. — URL: https://www.pearson.com/en-us/subject-catalog/p/discrete-time-signal-processing/P200000003325</p>
+</li>
+</ol>
+<h3 id="_4">Додаткова література:</h3>
+<ol>
+<li>
+<p><strong>Szeliski R.</strong> Computer Vision: Algorithms and Applications. — 2nd ed. — London : Springer, 2022. — 1232 p. — DOI: https://doi.org/10.1007/978-3-030-34372-9</p>
+</li>
+<li>
+<p><strong>Lyons R. G.</strong> Understanding Digital Signal Processing. — 3rd ed. — Boston : Prentice Hall / Pearson, 2010. — 994 p. — URL: https://www.pearson.com/en-us/subject-catalog/p/understanding-digital-signal-processing/P200000003350</p>
+</li>
+<li>
+<p><strong>Боровицький В. М.</strong> Розробка програм для цифрової обробки зображень з застосуванням OpenCV : навч. посіб. — Київ : Політехніка, 2022. — 84 с. — URL: https://kpi.ua/node/18412</p>
+</li>
+<li>
+<p><strong>Ушенко Ю. О., Гавриляк М. С., Талах М. В., Дворжак В. В.</strong> Основи та методи цифрової обробки сигналів: від теорії до практики : навч. посіб. — Чернівці : Чернівецький нац. ун-т ім. Ю. Федьковича, 2021. — 308 с. — URL: https://archer.chnu.edu.ua/handle/123456789/2341</p>
+</li>
+<li>
+<p><strong>Mallat S.</strong> A Wavelet Tour of Signal Processing: The Sparse Way. — 3rd ed. — Burlington : Academic Press, 2009. — 832 p. — DOI: https://doi.org/10.1016/B978-0-12-374370-1.X0001-8</p>
+</li>
+<li>
+<p><strong>Geron A.</strong> Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow. — 3rd ed. — Sebastopol : O’Reilly Media, 2022. — 856 p. — URL: https://www.oreilly.com/library/view/hands-on-machine-learning/9781098125967/</p>
+</li>
+</ol>
+<h3 id="_5">Інформаційні ресурси в Інтернеті:</h3>
+<ol>
+<li>
+<p>Офіційний портал документації бібліотеки комп'ютерного зору OpenCV: https://docs.opencv.org/4.x/</p>
+</li>
+<li>
+<p>Документація модулів обробки сигналів та просторових матриць SciPy (<code>scipy.signal</code>, <code>scipy.ndimage</code>, <code>scipy.fft</code>): https://docs.scipy.org/doc/scipy/reference/</p>
+</li>
+<li>
+<p>Офіційне керівництво користувача з багатовимірної матричної алгебри NumPy: https://numpy.org/doc/stable/</p>
+</li>
+<li>
+<p>Довідкова система графічної бібліотеки візуалізації даних Matplotlib: https://matplotlib.org/stable/contents.html</p>
+</li>
+<li>
+<p>Офіційна технічна документація бібліотеки обробки зображень Pillow: https://pillow.readthedocs.io/en/stable/</p>
+</li>
+</ol>
+<hr />
+<h2 id="_6">ДОДАТКИ</h2>
+<h3 id="_7">ДОДАТОК А<br>Зразок оформлення титульної сторінки</h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>       МІНІСТЕРСТВО ОСВІТИ І НАУКИ УКРАЇНИ
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>КРЕМЕНЧУЦЬКИЙ НАЦІОНАЛЬНИЙ УНІВЕРСИТЕТ ІМЕНІ МИХАЙЛА ОСТРОГРАДСЬКОГО
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>     Факультет електроніки та нанотехнологій
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a> Кафедра комп'ютерної інженерії та електроніки
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>             РОЗРАХУНКОВО-ГРАФІЧНА РОБОТА
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>     з освітнього компонента «Обробка сигналів та зображень»
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>на тему: «Розробка та дослідження комбінованого програмного тракту 
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>          цифрової обробки сигналів та просторово-спектральної 
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>          фільтрації зображень»
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>                             Виконав:
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>                             здобувач вищої освіти III курсу
+</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>                             групи КІ-23-1
+</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>                             спеціальності 123 «Комп'ютерна інженерія»
+</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>                             Іваненко Іван Іванович
+</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>
+</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>                             Керівник:
+</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>                             д.т.н., професор кафедри КІЕ
+</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>                             Микитенко Володимир Іванович
+</span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>
+</span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>
+</span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a>
+</span><span id="__span-0-32"><a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a>Комісія кафедри:
+</span><span id="__span-0-33"><a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a>Члени комісії:   _________  ________________________
+</span><span id="__span-0-34"><a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a>                  (підпис)    (вчене звання, ПІБ)
+</span><span id="__span-0-35"><a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a>                 _________  ________________________
+</span><span id="__span-0-36"><a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a>                  (підпис)    (вчене звання, ПІБ)
+</span><span id="__span-0-37"><a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a>
+</span><span id="__span-0-38"><a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a>Кількість балів: _____  Оцінка: Національна _______  ECTS ___
+</span><span id="__span-0-39"><a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a>
+</span><span id="__span-0-40"><a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a>
+</span><span id="__span-0-41"><a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a>
+</span><span id="__span-0-42"><a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a>                      Кременчук — 2026
+</span></code></pre></div>
+<hr />
+<h3 id="_8">ДОДАТОК Б<br>Зразок бланка технічного завдання та календарного плану</h3>
+<h4 id="1_1">Сторона аркуша 1</h4>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>КРЕМЕНЧУЦЬКИЙ НАЦІОНАЛЬНИЙ УНІВЕРСИТЕТ ІМЕНІ МИХАЙЛА ОСТРОГРАДСЬКОГО
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>Факультет електроніки та нанотехнологій
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>Кафедра комп'ютерної інженерії та електроніки
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>Освітній рівень: Перший (бакалаврський)
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>Спеціальність: 123 «Комп'ютерна інженерія»
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>Освітньо-професійна програма: «Комп'ютерна інженерія»
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>                                      ЗАТВЕРДЖУЮ
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>                                      Завідувач кафедри КІЕ
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>                                      _________  _____________________
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>                                       (підпис)        (ініціали, прізвище)
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>                                      «___» _______________ 2026 р.
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>                            ЗАВДАННЯ
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>             НА РОЗРАХУНКОВО-ГРАФІЧНУ РОБОТУ ЗДОБУВАЧА
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>                       Іваненка Івана Івановича
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>
+</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>1. Тема роботи: Розробка системи виявлення та фільтрації кардіосигналів (ЕКГ)
+</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>   від мережевих наведень (50 Гц) та сегментації контурів клітинних структур.
+</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>
+</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>2. Термін здачі здобувачем закінченої роботи: «15» грудня 2026 р.
+</span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>
+</span><span id="__span-1-23"><a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>3. Вихідні дані до роботи:
+</span><span id="__span-1-24"><a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a>
+</span><span id="__span-1-25"><a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a>   - Сигнал: полігармонійний s(t) = A1*sin(2*pi*f1*t) + A2*sin(2*pi*f2*t) + v(t);
+</span><span id="__span-1-26"><a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a>
+</span><span id="__span-1-27"><a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a>   - Параметри: A1 = 1.5 В, f1 = 50 Гц, A2 = 1.0 В, f2 = 300 Гц, sigma = 0.25 В;
+</span><span id="__span-1-28"><a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a>
+</span><span id="__span-1-29"><a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a>   - Частота дискретизації тракту: fs = 1000 Гц;
+</span><span id="__span-1-30"><a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a>
+</span><span id="__span-1-31"><a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a>   - Тип цифрового фільтра: Фільтр низьких частот (ФНЧ), fc = 120 Гц, N_FIR = 45;
+</span><span id="__span-1-32"><a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a>
+</span><span id="__span-1-33"><a id="__codelineno-1-33" name="__codelineno-1-33" href="#__codelineno-1-33"></a>   - Зображення: біомедичний мікропрепарат клітин (512х512 px);
+</span><span id="__span-1-34"><a id="__codelineno-1-34" name="__codelineno-1-34" href="#__codelineno-1-34"></a>
+</span><span id="__span-1-35"><a id="__codelineno-1-35" name="__codelineno-1-35" href="#__codelineno-1-35"></a>   - Просторова фільтрація: Білатеральний фільтр (d=9, sigmaColor=75, sigmaSpace=75);
+</span><span id="__span-1-36"><a id="__codelineno-1-36" name="__codelineno-1-36" href="#__codelineno-1-36"></a>
+</span><span id="__span-1-37"><a id="__codelineno-1-37" name="__codelineno-1-37" href="#__codelineno-1-37"></a>   - Перспективне випрямлення: 4 опорні точки ROI [[140,100],[660,110],[780,540],[20,520]];
+</span><span id="__span-1-38"><a id="__codelineno-1-38" name="__codelineno-1-38" href="#__codelineno-1-38"></a>
+</span><span id="__span-1-39"><a id="__codelineno-1-39" name="__codelineno-1-39" href="#__codelineno-1-39"></a>   - Сегментація та контури: Метод Оцу, морфологічне відкриття, детектор Кенні [40, 120].
+</span><span id="__span-1-40"><a id="__codelineno-1-40" name="__codelineno-1-40" href="#__codelineno-1-40"></a>
+</span><span id="__span-1-41"><a id="__codelineno-1-41" name="__codelineno-1-41" href="#__codelineno-1-41"></a>4. Зміст розрахунково-пояснювальної записки:
+</span><span id="__span-1-42"><a id="__codelineno-1-42" name="__codelineno-1-42" href="#__codelineno-1-42"></a>
+</span><span id="__span-1-43"><a id="__codelineno-1-43" name="__codelineno-1-43" href="#__codelineno-1-43"></a>   - Вступ;
+</span><span id="__span-1-44"><a id="__codelineno-1-44" name="__codelineno-1-44" href="#__codelineno-1-44"></a>
+</span><span id="__span-1-45"><a id="__codelineno-1-45" name="__codelineno-1-45" href="#__codelineno-1-45"></a>   - Розділ 1. Цифрова обробка та спектрально-часова фільтрація одновимірних сигналів;
+</span><span id="__span-1-46"><a id="__codelineno-1-46" name="__codelineno-1-46" href="#__codelineno-1-46"></a>
+</span><span id="__span-1-47"><a id="__codelineno-1-47" name="__codelineno-1-47" href="#__codelineno-1-47"></a>   - Розділ 2. Просторовий та спектральний конвеєр цифрової обробки зображень;
+</span><span id="__span-1-48"><a id="__codelineno-1-48" name="__codelineno-1-48" href="#__codelineno-1-48"></a>
+</span><span id="__span-1-49"><a id="__codelineno-1-49" name="__codelineno-1-49" href="#__codelineno-1-49"></a>   - Висновки;
+</span><span id="__span-1-50"><a id="__codelineno-1-50" name="__codelineno-1-50" href="#__codelineno-1-50"></a>
+</span><span id="__span-1-51"><a id="__codelineno-1-51" name="__codelineno-1-51" href="#__codelineno-1-51"></a>   - Список використаної літератури;
+</span><span id="__span-1-52"><a id="__codelineno-1-52" name="__codelineno-1-52" href="#__codelineno-1-52"></a>
+</span><span id="__span-1-53"><a id="__codelineno-1-53" name="__codelineno-1-53" href="#__codelineno-1-53"></a>   - Додатки (програмний код на мові Python).
+</span><span id="__span-1-54"><a id="__codelineno-1-54" name="__codelineno-1-54" href="#__codelineno-1-54"></a>
+</span><span id="__span-1-55"><a id="__codelineno-1-55" name="__codelineno-1-55" href="#__codelineno-1-55"></a>5. Перелік графічного матеріалу:
+</span><span id="__span-1-56"><a id="__codelineno-1-56" name="__codelineno-1-56" href="#__codelineno-1-56"></a>
+</span><span id="__span-1-57"><a id="__codelineno-1-57" name="__codelineno-1-57" href="#__codelineno-1-57"></a>   - Аркуш 1: Структурні схеми, спектрограми, z-діаграма нулів і полюсів, АЧХ/ФЧХ;
+</span><span id="__span-1-58"><a id="__codelineno-1-58" name="__codelineno-1-58" href="#__codelineno-1-58"></a>
+</span><span id="__span-1-59"><a id="__codelineno-1-59" name="__codelineno-1-59" href="#__codelineno-1-59"></a>   - Аркуш 2: Конвеєри обробки зображень, гістограми, амплітудні криві, 2D-FFT маски;
+</span><span id="__span-1-60"><a id="__codelineno-1-60" name="__codelineno-1-60" href="#__codelineno-1-60"></a>
+</span><span id="__span-1-61"><a id="__codelineno-1-61" name="__codelineno-1-61" href="#__codelineno-1-61"></a>   - Аркуш 3: Результати фільтрації шумів, випрямлення гомографії, контури Кенні.
+</span><span id="__span-1-62"><a id="__codelineno-1-62" name="__codelineno-1-62" href="#__codelineno-1-62"></a>
+</span><span id="__span-1-63"><a id="__codelineno-1-63" name="__codelineno-1-63" href="#__codelineno-1-63"></a>6. Дата видачі завдання: «01» вересня 2026 р.
+</span></code></pre></div>
+<h4 id="2_1">Сторона аркуша 2</h4>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>            КАЛЕНДАРНИЙ ПЛАН ВИКОНАННЯ ЕТАПІВ РОБОТИ
+</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Номер етапу</th>
+<th style="text-align: left;">Назва етапу розрахунково-графічної роботи</th>
+<th style="text-align: center;">Термін виконання етапу</th>
+<th style="text-align: center;">Відмітка про виконання</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><strong>1</strong></td>
+<td style="text-align: left;">Отримання завдання, аналіз фахових джерел, формалізація математичних моделей сигналу і фільтра</td>
+<td style="text-align: center;">1–2 тиждень</td>
+<td style="text-align: center;">Виконано</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>2</strong></td>
+<td style="text-align: left;">Синтез передавальної функції <span class="arithmatex">\(H(z)\)</span>, аналіз <span class="arithmatex">\(z\)</span>-полюсів, моделювання ШПФ та віконного зважування</td>
+<td style="text-align: center;">3–5 тиждень</td>
+<td style="text-align: center;">Виконано</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>3</strong></td>
+<td style="text-align: left;">Програмна реалізація алгоритмів фільтрації сигналу, розрахунок приросту <span class="arithmatex">\(\text{SNR}\)</span> у Python</td>
+<td style="text-align: center;">6–8 тиждень</td>
+<td style="text-align: center;">Виконано</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>4</strong></td>
+<td style="text-align: left;">Розробка конвеєра обробки зображень: просторова/2D-FFT фільтрація, гомографія, метод Оцу</td>
+<td style="text-align: center;">9–11 тиждень</td>
+<td style="text-align: center;">Виконано</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>5</strong></td>
+<td style="text-align: left;">Оформлення пояснювальної записки за ДСТУ 3008:2015 та підготовка графічних плакатів</td>
+<td style="text-align: center;">12–13 тиждень</td>
+<td style="text-align: center;">Виконано</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>6</strong></td>
+<td style="text-align: left;">Попередня перевірка, нормоконтроль, перевірка на плагіат та публічний захист роботи</td>
+<td style="text-align: center;">14 тиждень</td>
+<td style="text-align: center;">Захищено</td>
+</tr>
+</tbody>
+</table>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>Здобувач вищої освіти   _________________   Іван ІВАНЕНКО
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>                            (підпис)
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>Керівник роботи         _________________   Володимир МИКИТЕНКО
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>                            (підпис)
+</span></code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Повернутись нагору
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Kyrylo Vadurin &bull; <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "navigation.tracking", "header.autohide", "search.suggest", "search.highlight", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0456\u0439\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u0421\u043a\u043e\u043f\u0456\u044e\u0432\u0430\u0442\u0438 \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0429\u0435 1 \u0437\u0431\u0456\u0433 \u043d\u0430 \u0446\u0456\u0439 \u0441\u0442\u043e\u0440\u0456\u043d\u0446\u0456", "search.result.more.other": "\u0429\u0435 # \u0437\u0431\u0456\u0433\u0456\u0432 \u043d\u0430 \u0446\u0456\u0439 \u0441\u0442\u043e\u0440\u0456\u043d\u0446\u0456", "search.result.none": "\u0417\u0431\u0456\u0433\u0456\u0432 \u043d\u0435 \u0437\u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u0417\u043d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0437\u0431\u0456\u0433", "search.result.other": "\u0417\u043d\u0430\u0439\u0434\u0435\u043d\u043e # \u0437\u0431\u0456\u0433\u0456\u0432", "search.result.placeholder": "\u0420\u043e\u0437\u043f\u043e\u0447\u043d\u0456\u0442\u044c \u043f\u0438\u0441\u0430\u0442\u0438 \u0434\u043b\u044f \u043f\u043e\u0448\u0443\u043a\u0443", "search.result.term.missing": "\u041d\u0435 \u0437\u043d\u0430\u0439\u0434\u0435\u043d\u043e \u0437\u0430\u043f\u0438\u0442\u0443", "select.version": "\u041e\u0431\u0440\u0430\u0442\u0438 \u0432\u0435\u0440\u0441\u0456\u044e"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,1826 @@
+
+<!doctype html>
+<html lang="uk" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Навчальний портал з дисципліни "Обробка сигналів та зображень"">
+      
+      
+      
+      
+        <link rel="prev" href="../lk6/">
+      
+      
+        <link rel="next" href="../lk8/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Тема 7. Просторова фільтрація зображень - Обробка сигналів та зображень</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#7" class="md-skip">
+          Перейти до змісту
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Хедер">
+    <a href="../.." title="Обробка сигналів та зображень" class="md-header__button md-logo" aria-label="Обробка сигналів та зображень" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Обробка сигналів та зображень
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Тема 7. Просторова фільтрація зображень
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="cyan"  aria-label="Переключити на темну тему"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Переключити на темну тему" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="cyan"  aria-label="Переключити на світлу тему"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Переключити на світлу тему" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Пошук" placeholder="Пошук" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Шукати">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистити" aria-label="Очистити" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Пошук розпочато
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Вкладки" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Робоча програма
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../lk1/" class="md-tabs__link">
+          
+  
+  
+  Лекції
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../lb/lb1/" class="md-tabs__link">
+          
+  
+  
+  Лабораторні роботи
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../sr/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Самостійна робота
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../rg/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Розрахунково-графічна робота
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Навігація" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Обробка сигналів та зображень" class="md-nav__button md-logo" aria-label="Обробка сигналів та зображень" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Обробка сигналів та зображень
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Робоча програма
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лекції
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Лекції
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lk1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 1. Математичне представлення, дискретизація та квантування
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lk2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 2. Лінійні стаціонарні дискретні системи
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lk3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 3. Спектральний аналіз дискретних сигналів
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lk4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 4. Z-перетворення та проєктування цифрових фільтрів
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lk5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 5. Цифрове представлення зображень та колориметричні моделі
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lk6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 6. Поелементні амплітудні перетворення
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 7. Просторова фільтрація зображень
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 7. Просторова фільтрація зображень
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Зміст">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Зміст
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#71-2d-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1. Основи 2D-згортки та кореляції матриць. Ядро просторового фільтра (маска), механізми обробки крайових пікселів
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7.1. Основи 2D-згортки та кореляції матриць. Ядро просторового фільтра (маска), механізми обробки крайових пікселів">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Основний зміст та теоретичний базис
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#72-box-filter-gaussian-blur" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2. Лінійні згладжувальні фільтри: усереднюючий фільтр (Box filter), двовимірний фільтр Гаусса (Gaussian Blur)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7.2. Лінійні згладжувальні фільтри: усереднюючий фільтр (Box filter), двовимірний фільтр Гаусса (Gaussian Blur)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Основний зміст та теоретичний базис
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#73-median-blur" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3. Нелінійні просторові фільтри: медіанний фільтр (Median blur) для усунення імпульсного шуму, фільтри мінімуму та максимуму
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7.3. Нелінійні просторові фільтри: медіанний фільтр (Median blur) для усунення імпульсного шуму, фільтри мінімуму та максимуму">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Основний зміст та теоретичний базис
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#74-bilateral" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.4. Двостороння (Bilateral) фільтрація для збереження меж при шумозаглушенні
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7.4. Двостороння (Bilateral) фільтрація для збереження меж при шумозаглушенні">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Основний зміст та теоретичний базис
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#75" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.5. Диференціальні фільтри підвищення різкості на основі дискретного оператора Лапласа (Лапласіан)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7.5. Диференціальні фільтри підвищення різкості на основі дискретного оператора Лапласа (Лапласіан)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Основний зміст та теоретичний базис
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Питання для самоперевірки та аналітичного осмислення
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lk8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 8. Геометричні трансформації та математична морфологія
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lk9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 9. Двовимірна Фур'є-обробка та детектори контурів
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лабораторні роботи
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Лабораторні роботи
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lb/lb1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 1. Дискретизація, квантування сигналів та ефект аліасингу
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lb/lb2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 2. Лінійні стаціонарні системи та дискретна згортка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lb/lb3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 3. Спектральний аналіз за допомогою ДПФ/ШПФ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lb/lb4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 4. Синтез цифрових КІХ та НІХ фільтрів
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lb/lb5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 5. Статистичний та кореляційний аналіз
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lb/lb6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 6. Базові операції з цифровими зображеннями
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lb/lb7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 7. Амплітудні перетворення та бінаризація
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lb/lb8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 8. Просторова фільтрація зображень
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lb/lb9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 9. Геометричні перетворення зображень
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lb/lb10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 10. Математична морфологія зображень
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lb/lb11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 11. 2D перетворення Фур'є та детектування контурів
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Самостійна робота
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Розрахунково-графічна робота
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Зміст">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Зміст
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#71-2d-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1. Основи 2D-згортки та кореляції матриць. Ядро просторового фільтра (маска), механізми обробки крайових пікселів
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7.1. Основи 2D-згортки та кореляції матриць. Ядро просторового фільтра (маска), механізми обробки крайових пікселів">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Основний зміст та теоретичний базис
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#72-box-filter-gaussian-blur" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2. Лінійні згладжувальні фільтри: усереднюючий фільтр (Box filter), двовимірний фільтр Гаусса (Gaussian Blur)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7.2. Лінійні згладжувальні фільтри: усереднюючий фільтр (Box filter), двовимірний фільтр Гаусса (Gaussian Blur)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Основний зміст та теоретичний базис
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#73-median-blur" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3. Нелінійні просторові фільтри: медіанний фільтр (Median blur) для усунення імпульсного шуму, фільтри мінімуму та максимуму
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7.3. Нелінійні просторові фільтри: медіанний фільтр (Median blur) для усунення імпульсного шуму, фільтри мінімуму та максимуму">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Основний зміст та теоретичний базис
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#74-bilateral" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.4. Двостороння (Bilateral) фільтрація для збереження меж при шумозаглушенні
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7.4. Двостороння (Bilateral) фільтрація для збереження меж при шумозаглушенні">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Основний зміст та теоретичний базис
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#75" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.5. Диференціальні фільтри підвищення різкості на основі дискретного оператора Лапласа (Лапласіан)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7.5. Диференціальні фільтри підвищення різкості на основі дискретного оператора Лапласа (Лапласіан)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Основний зміст та теоретичний базис
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Питання для самоперевірки та аналітичного осмислення
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="7">ТЕМА 7. ПРОСТОРОВА ФІЛЬТРАЦІЯ ЗОБРАЖЕНЬ У ПРОСТОРОВІЙ ОБЛАСТІ</h1>
+<hr />
+<h2 id="71-2d-">7.1. Основи 2D-згортки та кореляції матриць. Ядро просторового фільтра (маска), механізми обробки крайових пікселів</h2>
+<h3 id="_1">Основний зміст та теоретичний базис</h3>
+<p><strong>Просторова фільтрація зображень</strong> є базовою технологією контекстної обробки растрових даних, за якої результуюче значення яскравості кожного вихідного пікселя формується на основі аналізу локальної групи сусідніх пікселів вхідного растра. Ця операція є двовимірним розширенням концепції фільтрації в часовій області й здійснюється шляхом переміщення дискретної вагового вікна — <strong>маски (ядра фільтра, <em>kernel</em>)</strong> — вздовж усього двовимірного поля зображення.</p>
+<p>Математичним фундаментом просторової лінійної фільтрації виступають операції <strong>двовимірної дискретної взаємної кореляції</strong> та <strong>двовимірної дискретної згортки</strong>. Для вхідного монохромного растра <span class="arithmatex">\(f(x, y)\)</span> розмірністю <span class="arithmatex">\(M \times N\)</span> та просторової маски фільтра <span class="arithmatex">\(w(s, t)\)</span> непарної розмірності <span class="arithmatex">\(K \times K\)</span> (де <span class="arithmatex">\(K = 2a + 1\)</span>, а просторові зміщення маски лежать у межах <span class="arithmatex">\(-a \le s, t \le a\)</span>), операція двовимірної кореляції описується виразом:</p>
+<div class="arithmatex">\[g_{\text{corr}}(x, y) = w(x, y) \otimes f(x, y) = \sum_{s=-a}^{a} \sum_{t=-a}^{a} w(s, t) f(x + s, y + t)\]</div>
+<p>де <span class="arithmatex">\(f(x + s, y + t)\)</span> позначає значення яскравості пікселя у поточному просторовому околі; <span class="arithmatex">\(w(s, t)\)</span> — ваговий коефіцієнт маски фільтра за просторовими координатами <span class="arithmatex">\((s, t)\)</span> відносно геометричного центру ядра <span class="arithmatex">\((0, 0)\)</span>; <span class="arithmatex">\(g_{\text{corr}}(x, y)\)</span> — результуюче значення відфільтрованого пікселя у вузлі <span class="arithmatex">\((x, y)\)</span>.</p>
+<p>Операція <strong>двовимірної лінійної згортки</strong> відрізняється від кореляції тим, що матриця ядра <span class="arithmatex">\(w(s, t)\)</span> попередньо дзеркально обертається на <span class="arithmatex">\(180^\circ\)</span> відносно свого центру (виконується подвійна інверсія просторових координат <span class="arithmatex">\(s \to -s, t \to -t\)</span>):</p>
+<div class="arithmatex">\[g_{\text{conv}}(x, y) = w(x, y) * f(x, y) = \sum_{s=-a}^{a} \sum_{t=-a}^{a} w(s, t) f(x - s, y - t)\]</div>
+<p>Якщо маска фільтра володіє центральною або осьовою просторовою симетрією (<span class="arithmatex">\(w(s, t) = w(-s, -t)\)</span>), що є характерним для більшості згладжувальних та ізотропних диференціальних операторів, операції кореляції та згортки стають математично тотожними.</p>
+<p><pre class="mermaid"><code>flowchart LR
+    A["Вхідний растр f(x, y)&lt;br&gt;Розмір: M × N"] --&gt; B["Доповнення границь (Padding)&lt;br&gt;Ширина: a = (K - 1) / 2"]
+    B --&gt; C["Ковзне ядро фільтра w(s, t)&lt;br&gt;Розмір: K × K"]
+    C --&gt; D["Локальний зважений розрахунок&lt;br&gt;∑ ∑ w(s, t) · f(x+s, y+t)"]
+    D --&gt; E["Вихідний растр g(x, y)&lt;br&gt;Розмір: M × N"]</code></pre>
+<em>Рисунок 7.1 — Структурна схема просторової фільтрації зображення за допомогою ковзного двовимірного ядра з крайовим доповненням</em></p>
+<p>При переміщенні ковзної маски вздовж периферійних ділянок зображення виникає <strong>крайовий ефект (border problem)</strong>, коли частина вагових коефіцієнтів ядра виходить за межі фізичного координатного поля кадру. Для розв'язання цієї проблеми вхідний растр штучно розширюють на величину радіуса маски <span class="arithmatex">\(a = (K - 1)/2\)</span> за допомогою методів крайового доповнення (<strong>padding</strong>):</p>
+<ul>
+<li>
+<p><strong>Доповнення нулями або сталою величиною (<em>Constant padding / Zero padding</em>):</strong> усі фіктивні пікселі за межами вихідного растра заповнюються нульовим значенням або фіксованою константою <span class="arithmatex">\(C\)</span>, що може призводити до появи штучних темних рамок по краях кадру.</p>
+</li>
+<li>
+<p><strong>Реплікація крайніх пікселів (<em>Replicate / Nearest padding</em>):</strong> координати пікселів, що вийшли за межі сітки, замінюються значеннями найближчих граничних пікселів зображення: <span class="arithmatex">\(f(x, y) = f(\text{clamp}(x, 0, M-1), \text{clamp}(y, 0, N-1))\)</span>, що мінімізує градієнтні збурення.</p>
+</li>
+<li>
+<p><strong>Дзеркальне відображення без повторення межі (<em>Reflect 101 / Default mirror</em>):</strong> пікселі крайової смуги відображаються симетрично відносно крайнього елемента (послідовність відліків <span class="arithmatex">\(a, b, c, d\)</span> розширюється як <span class="arithmatex">\(c, b | a, b, c, d | c, b\)</span>), забезпечуючи найвищу гладкість просторових похідних.</p>
+</li>
+<li>
+<p><strong>Періодичне циклічне загортання (<em>Wrap / Periodic padding</em>):</strong> координати пікселів обчислюються за модулем розмірності растра (<span class="arithmatex">\(x \bmod M, y \bmod N\)</span>), що є математично необхідним при фільтрації у спектральній області 2D-FFT.</p>
+</li>
+</ul>
+<hr />
+<h2 id="72-box-filter-gaussian-blur">7.2. Лінійні згладжувальні фільтри: усереднюючий фільтр (Box filter), двовимірний фільтр Гаусса (Gaussian Blur)</h2>
+<h3 id="_2">Основний зміст та теоретичний базис</h3>
+<p><strong>Лінійні згладжувальні (низькочастотні) просторові фільтри</strong> призначені для придушення високочастотного адитивного шуму, зменшення дрібної плямистості та згладжування різких перепадів інтенсивності. Їхня дія базується на усередненні значень пікселів у локальному околі. Для збереження середньої інтегральної яскравості та постійної складової зображення сума всіх коефіцієнтів згладжувального ядра обов'язково повинна дорівнювати одиниці (умова нормування):</p>
+<div class="arithmatex">\[\sum_{s=-a}^{a} \sum_{t=-a}^{a} w(s, t) = 1\]</div>
+<p>Найпростішим представником є <strong>прямокутний усереднюючий фільтр (<em>Box filter</em>)</strong>, усі коефіцієнти якого є строго однаковими і дорівнюють оберненій площі маски <span class="arithmatex">\(1 / K^2\)</span>. Ядра усереднюючого фільтра розмірністю <span class="arithmatex">\(3 \times 3\)</span> та <span class="arithmatex">\(5 \times 5\)</span> мають таку матричну структуру:</p>
+<div class="arithmatex">\[K_{\text{box}, 3\times 3} = \frac{1}{9} \begin{bmatrix}
+1 &amp; 1 &amp; 1 \\
+1 &amp; 1 &amp; 1 \\
+1 &amp; 1 &amp; 1
+\end{bmatrix}, \quad
+K_{\text{box}, 5\times 5} = \frac{1}{25} \begin{bmatrix}
+1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 \\
+1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 \\
+1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 \\
+1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 \\
+1 &amp; 1 &amp; 1 &amp; 1 &amp; 1
+\end{bmatrix}\]</div>
+<p>Усереднюючий фільтр володіє максимальною обчислювальною швидкодією, оскільки його матриця є сепарабельною (може бути представлена як добуток одновимірних векторів <span class="arithmatex">\(K = \mathbf{u} \cdot \mathbf{v}^T\)</span>), проте він викликає значне розмиття структурних контурів і створює сходинкові псевдоконтурні артефакти через різкий прямокутний профіль вагової функції.</p>
+<p>Більш досконалим лінійним фільтром є <strong>двовимірний фільтр Гаусса (<em>Gaussian Blur</em>)</strong>, вагові коефіцієнти якого спадають від центру до периферії відповідно до закону двовимірного нормального розподілу:</p>
+<div class="arithmatex">\[G(x, y) = \frac{1}{2\pi \sigma^2} \exp\left( -\frac{x^2 + y^2}{2\sigma^2} \right)\]</div>
+<p>де <span class="arithmatex">\(\sigma\)</span> — середньоквадратичне відхилення (параметр розмиття Гаусса), що задає просторову ширину дзвоноподібного профілю; <span class="arithmatex">\((x, y)\)</span> — декартові координати відносно центру ядра.</p>
+<p><pre class="mermaid"><code>flowchart TD
+    subgraph Gaussian_Separability [Властивість сепарабельності 2D-фільтра Гаусса]
+        direction LR
+        In["f(x, y)"] --&gt; H_Row["Горизонтальна 1D-згортка:&lt;br&gt;G_x(s) = (1/√(2π)σ)·exp(-s²/2σ²)"]
+        H_Row --&gt; V_Col["Вертикальна 1D-згортка:&lt;br&gt;G_y(t) = (1/√(2π)σ)·exp(-t²/2σ²)"]
+        V_Col --&gt; Out["g(x, y)"]
+    end</code></pre>
+<em>Рисунок 7.2 — Схема сепарабельної реалізації двовимірного фільтра Гаусса шляхом послідовної одновимірної обробки рядків і стовпців</em></p>
+<p>Фільтр Гаусса володіє важливою математичною властивістю <strong>сепарабельності</strong> (<span class="arithmatex">\(G(x, y) = G(x) \cdot G(y)\)</span>), що дозволяє замінити трудомістку двовимірну згортку розмірністю <span class="arithmatex">\(K \times K\)</span> двома послідовними одновимірними згортками розмірністю <span class="arithmatex">\(1 \times K\)</span> та <span class="arithmatex">\(K \times 1\)</span>. Це скорочує кількість операцій множення на один піксель із <span class="arithmatex">\(K^2\)</span> до <span class="arithmatex">\(2K\)</span>. Крім того, функція Гаусса є ізотропною (володіє ідеальною круговою симетрією), завдяки чому згладжування здійснюється рівномірно за всіма напрямками без спрямованих спотворень.</p>
+<p>Дискретні нормовані цілочислові апроксимації ядер Гаусса для розмірностей <span class="arithmatex">\(3 \times 3\)</span> (<span class="arithmatex">\(\sigma \approx 0.85\)</span>) та <span class="arithmatex">\(5 \times 5\)</span> (<span class="arithmatex">\(\sigma \approx 1.0\)</span>) мають вигляд:</p>
+<div class="arithmatex">\[K_{\text{gauss}, 3\times 3} = \frac{1}{16} \begin{bmatrix}
+1 &amp; 2 &amp; 1 \\
+2 &amp; 4 &amp; 2 \\
+1 &amp; 2 &amp; 1
+\end{bmatrix}, \quad
+K_{\text{gauss}, 5\times 5} = \frac{1}{273} \begin{bmatrix}
+1 &amp; 4 &amp; 7 &amp; 4 &amp; 1 \\
+4 &amp; 16 &amp; 26 &amp; 16 &amp; 4 \\
+7 &amp; 26 &amp; 41 &amp; 26 &amp; 7 \\
+4 &amp; 16 &amp; 26 &amp; 16 &amp; 4 \\
+1 &amp; 4 &amp; 7 &amp; 4 &amp; 1
+\end{bmatrix}\]</div>
+<hr />
+<h2 id="73-median-blur">7.3. Нелінійні просторові фільтри: медіанний фільтр (Median blur) для усунення імпульсного шуму, фільтри мінімуму та максимуму</h2>
+<h3 id="_3">Основний зміст та теоретичний базис</h3>
+<p>Лінійні фільтри є неефективними при обробці зображень, спотворених <strong>імпульсним шумом («сіль та перець», <em>salt and pepper noise</em>)</strong>, що виникає внаслідок збоїв аналогово-цифрового перетворення або дефектів окремих фотодіодів матриці. Оскільки імпульсний шум має вигляд ізольованих екстремальних викидів максимальної (255) або мінімальної (0) яскравості, лінійне усереднення розмиває одиничний дефект у велику напівпрозору пляму, не усуваючи його енергію.</p>
+<p>У таких випадках застосовують нелінійні <strong>рангові (порядкові) фільтри</strong>, робота яких базується на попередньому впорядкуванні (сортуванні) значень пікселів локального околу.</p>
+<p><pre class="mermaid"><code>flowchart LR
+    A["Окіл 3×3 пікселів:&lt;br&gt;[12, 15, 255, 14, 11, 13, 0, 16, 15]"] --&gt; B["Сортування за зростанням:&lt;br&gt;[0, 11, 12, 13, 14, 15, 15, 16, 255]"]
+    B --&gt; C["Вибір центрального елемента (Ранг 5):&lt;br&gt;Медіана = 14"]
+    C --&gt; D["Заміна центрального пікселя:&lt;br&gt;I_out[x, y] = 14"]</code></pre>
+<em>Рисунок 7.3 — Алгоритмічний конвеєр статистичного сортування та вилучення медіанного значення яскравості в апертурі 3×3</em></p>
+<p><strong>Медіанний фільтр (<em>Median filter</em>)</strong> замінює яскравість центрального пікселя медіаною варіаційного ряду, утвореного відліками ковзного вікна <span class="arithmatex">\(S_{x,y}\)</span>:</p>
+<div class="arithmatex">\[g_{\text{median}}(x, y) = \text{median}\big( \{ f(x + s, y + t) \mid (s, t) \in S_{x,y} \} \big)\]</div>
+<p>Оскільки поодинокі імпульсні шумові викиди після сортування завжди потрапляють на крайні позиції варіаційного ряду (на початок або в кінець списку), вони повністю відсікаються при виборі центрального елемента. Важливою перевагою медіанного фільтра є його здатність зберігати монотонні сходинкові контури без розмиття границь за умови, що розмір вікна фільтра не перевищує подвоєного розміру структурного об'єкта.</p>
+<p><strong>Фільтри екстремальних рангів (фільтри мінімуму та максимуму):</strong></p>
+<ul>
+<li>
+<p><strong>Фільтр мінімуму (морфологічна ерозія півтонів):</strong> обирає найменше значення яскравості у вікні <span class="arithmatex">\(g_{\min}(x, y) = \min_{(s,t) \in S} f(x+s, y+t)\)</span>, що забезпечує повне видалення позитивних високоінтенсивних імпульсів шуму («сіль»), проте викликає загальне затемнення растра та розширення темних об'єктів.</p>
+</li>
+<li>
+<p><strong>Фільтр максимуму (морфологічна діляція півтонів):</strong> обирає найбільше значення яскравості у вікні <span class="arithmatex">\(g_{\max}(x, y) = \max_{(s,t) \in S} f(x+s, y+t)\)</span>, ефективно усуваючи негативні низькоінтенсивні імпульси шуму («перець») із одночасним висвітленням сцени та розростанням світлих ділянок.</p>
+</li>
+</ul>
+<hr />
+<h2 id="74-bilateral">7.4. Двостороння (Bilateral) фільтрація для збереження меж при шумозаглушенні</h2>
+<h3 id="_4">Основний зміст та теоретичний базис</h3>
+<p>Головним недоліком фільтра Гаусса є його неспроможність розрізняти високочастотний шум та корисні просторові межі об'єктів: згладжуючи флуктуації, він неминуче розмиває чіткі контури та текстурні переходи. Для подолання цього обмеження застосовують <strong>двосторонній (білатеральний) фільтр (<em>Bilateral filter</em>)</strong>, запропонований Томазі та Мандучі (1998 р.).</p>
+<p>Білатеральний фільтр є нелінійним адаптивним фільтром, ваговий коефіцієнт кожного пікселя в якому формується як добуток двох незалежних ядер Гаусса — <strong>просторового ядра (<em>spatial domain</em>)</strong> та <strong>ядра фотометричної подібності за яскравістю (<em>range domain</em>)</strong>:</p>
+<div class="arithmatex">\[I_{\text{bilat}}(x, y) = \frac{1}{W_p(x, y)} \sum_{s=-a}^{a} \sum_{t=-a}^{a} I_{\text{in}}(x+s, y+t) \cdot g_s(s, t) \cdot f_r\big(I_{\text{in}}(x+s, y+t), I_{\text{in}}(x, y)\big)\]</div>
+<p>де просторовий ваговий коефіцієнт <span class="arithmatex">\(g_s(s, t)\)</span> визначається геометричною відстанню від центру маски:</p>
+<div class="arithmatex">\[g_s(s, t) = \exp\left( -\frac{s^2 + t^2}{2\sigma_s^2} \right)\]</div>
+<p>а фотометричний ваговий коефіцієнт <span class="arithmatex">\(f_r(I_1, I_2)\)</span> залежить від абсолютної різниці рівнів яскравості між сусіднім та центральним пікселями:</p>
+<div class="arithmatex">\[f_r\big(I_{\text{in}}(x+s, y+t), I_{\text{in}}(x, y)\big) = \exp\left( -\frac{\big(I_{\text{in}}(x+s, y+t) - I_{\text{in}}(x, y)\big)^2}{2\sigma_r^2} \right)\]</div>
+<p>Нормуючий множник <span class="arithmatex">\(W_p(x, y)\)</span> гарантує збереження середнього енергетичного балансу:</p>
+<div class="arithmatex">\[W_p(x, y) = \sum_{s=-a}^{a} \sum_{t=-a}^{a} g_s(s, t) \cdot f_r\big(I_{\text{in}}(x+s, y+t), I_{\text{in}}(x, y)\big)\]</div>
+<p>де <span class="arithmatex">\(\sigma_s\)</span> — параметр просторового розмиття (геометричний радіус дії фільтра); <span class="arithmatex">\(\sigma_r\)</span> — параметр амплітудної чутливості за яскравістю (радіометричний поріг розрізнення меж).</p>
+<p><pre class="mermaid"><code>flowchart TD
+    subgraph Bilateral_Mechanism [Механізм формування ваг білатерального фільтра]
+        direction TB
+        A["Центральний піксель (x, y) та сусідній піксель (x+s, y+t)"]
+        A --&gt; B["Просторова вага g_s = exp(-d² / 2σ_s²)&lt;br&gt;(Близькість координат)"]
+        A --&gt; C["Фотометрична вага f_r = exp(-ΔI² / 2σ_r²)&lt;br&gt;(Близькість рівнів сірого)"]
+        B --&gt; D["Комбінована вага w = g_s · f_r"]
+        C --&gt; D
+        D --&gt; E{"Аналіз зони обробки"}
+        E --&gt;|Однорідна область: ΔI ≈ 0 → f_r ≈ 1| F["Звичайне Гаусове згладжування шуму"]
+        E --&gt;|Різка межа: ΔI &gt;&gt; σ_r → f_r ≈ 0| G["Блокування фільтрації через межу (Збереження різкості)"]
+    end</code></pre>
+<em>Рисунок 7.4 — Двовимірний механізм селективного зважування в білатеральному фільтрі залежно від просторової та колориметричної відстаней</em></p>
+<p>В однорідних областях зображення різниця яскравостей сусідніх пікселів є малою (<span class="arithmatex">\(|I_{\text{in}}(x+s, y+t) - I_{\text{in}}(x, y)| \ll \sigma_r\)</span>), тому фотометрична вага наближається до одиниці (<span class="arithmatex">\(f_r \approx 1\)</span>), і фільтр функціонує як звичайний згладжувальний фільтр Гаусса, ефективно придушуючи високочастотний шум. </p>
+<p>Коли ж у зону апертури потрапляє різка просторова межа (контур об'єкта), різниця яскравостей пікселів по різні боки межі значно перевищує параметр <span class="arithmatex">\(\sigma_r\)</span>. Внаслідок цього значення <span class="arithmatex">\(f_r\)</span> експоненціально прямує до нуля, практично виключаючи пікселі іншого боку контуру з процесу усереднення. Це дозволяє ефективно згладжувати шум всередині сегментів без розмиття границь між ними.</p>
+<hr />
+<h2 id="75">7.5. Диференціальні фільтри підвищення різкості на основі дискретного оператора Лапласа (Лапласіан)</h2>
+<h3 id="_5">Основний зміст та теоретичний базис</h3>
+<p><strong>Підвищення різкості (акцентування деталей, <em>image sharpening</em>)</strong> є високочастотною просторовою операцією, спрямованою на підкреслення тонких ліній, текстурних переходів та контурів об'єктів. Математичною основою підвищення різкості є обчислення других просторових похідних за допомогою лінійного диференціального <strong>оператора Лапласа (Лапласіана)</strong>:</p>
+<div class="arithmatex">\[\nabla^2 f(x, y) = \frac{\partial^2 f(x, y)}{\partial x^2} + \frac{\partial^2 f(x, y)}{\partial y^2}\]</div>
+<p>У дискретному просторі другі частинні похідні апроксимуються центральними скінченними різницями другого порядку:</p>
+<div class="arithmatex">\[\frac{\partial^2 f}{\partial x^2} \approx f(x+1, y) + f(x-1, y) - 2f(x, y)\]</div>
+<div class="arithmatex">\[\frac{\partial^2 f}{\partial y^2} \approx f(x, y+1) + f(x, y-1) - 2f(x, y)\]</div>
+<p>Підсумовуючи ці компоненти, отримуємо дискретну модель 4-зв'язного ізотропного Лапласіана:</p>
+<div class="arithmatex">\[\nabla^2 f(x, y) \approx f(x+1, y) + f(x-1, y) + f(x, y+1) + f(x, y-1) - 4f(x, y)\]</div>
+<p>Враховуючи також внесок діагональних сусідів, отримуємо 8-зв'язну ізотропну апроксимацію Лапласіана з кутовою інваріантністю з кроком <span class="arithmatex">\(45^\circ\)</span>. Матриці ядер Лапласа розмірністю <span class="arithmatex">\(3 \times 3\)</span> (для 4- та 8-зв'язності) та розмірністю <span class="arithmatex">\(5 \times 5\)</span> мають вигляд:</p>
+<div class="arithmatex">\[K_{\text{lap}, 3\times 3}^{(4)} = \begin{bmatrix}
+0 &amp; 1 &amp; 0 \\
+1 &amp; -4 &amp; 1 \\
+0 &amp; 1 &amp; 0
+\end{bmatrix}, \quad
+K_{\text{lap}, 3\times 3}^{(8)} = \begin{bmatrix}
+1 &amp; 1 &amp; 1 \\
+1 &amp; -8 &amp; 1 \\
+1 &amp; 1 &amp; 1
+\end{bmatrix}, \quad
+K_{\text{lap}, 5\times 5} = \begin{bmatrix}
+0 &amp; 0 &amp; -1 &amp; 0 &amp; 0 \\
+0 &amp; -1 &amp; -2 &amp; -1 &amp; 0 \\
+-1 &amp; -2 &amp; 16 &amp; -2 &amp; -1 \\
+0 &amp; -1 &amp; -2 &amp; -1 &amp; 0 \\
+0 &amp; 0 &amp; -1 &amp; 0 &amp; 0
+\end{bmatrix}\]</div>
+<p>Сума коефіцієнтів будь-якого ядра Лапласіана строго дорівнює нулю (<span class="arithmatex">\(\sum w = 0\)</span>), що обумовлює повне обнулення постійної складової в однорідних областях та формування нульового відгуку на ділянках із постійною яскравістю.</p>
+<p>Формування підсиленого за різкістю зображення <span class="arithmatex">\(g_{\text{sharp}}(x, y)\)</span> здійснюється шляхом віднімання обчисленого Лапласіана від вихідного растра (якщо центральний коефіцієнт ядра Лапласа від'ємний) або його додавання (якщо центральний коефіцієнт додатний):</p>
+<div class="arithmatex">\[g_{\text{sharp}}(x, y) = f(x, y) - c \cdot \nabla^2 f(x, y)\]</div>
+<p>де <span class="arithmatex">\(c \ge 0\)</span> — ваговий коефіцієнт підсилення різкості (зазвичай <span class="arithmatex">\(c \in [0.5; 1.5]\)</span>).</p>
+<p>Об'єднання операції вилучення вихідного сигналу та віднімання Лапласіана в єдине еквівалентне просторове ядро формує <strong>матриці прямого підвищення різкості (<em>Sharpening kernels</em>)</strong>:</p>
+<div class="arithmatex">\[K_{\text{sharp}, 3\times 3} = \begin{bmatrix}
+0 &amp; -1 &amp; 0 \\
+-1 &amp; 5 &amp; -1 \\
+0 &amp; -1 &amp; 0
+\end{bmatrix}, \quad
+K_{\text{sharp}, 3\times 3}^{(\text{diag})} = \begin{bmatrix}
+-1 &amp; -1 &amp; -1 \\
+-1 &amp; 9 &amp; -1 \\
+-1 &amp; -1 &amp; -1
+\end{bmatrix}, \quad
+K_{\text{sharp}, 5\times 5} = \begin{bmatrix}
+-1 &amp; -3 &amp; -4 &amp; -3 &amp; -1 \\
+-3 &amp; 0 &amp; 6 &amp; 0 &amp; -3 \\
+-4 &amp; 6 &amp; 21 &amp; 6 &amp; -4 \\
+-3 &amp; 0 &amp; 6 &amp; 0 &amp; -3 \\
+-1 &amp; -3 &amp; -4 &amp; -3 &amp; -1
+\end{bmatrix}\]</div>
+<p>Сума коефіцієнтів ядер підвищення різкості завжди дорівнює одиниці (<span class="arithmatex">\(\sum w = 1\)</span>), що гарантує збереження фонового рівня яскравості зображення при суттєвому загостренні градієнтних меж.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Тип просторового фільтра</th>
+<th style="text-align: left;">Математичний клас</th>
+<th style="text-align: left;">Ефективність: Гаусів шум</th>
+<th style="text-align: left;">Ефективність: Шум «сіль та перець»</th>
+<th style="text-align: left;">Ступінь збереження меж</th>
+<th style="text-align: center;">Обчислювальна складність</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Box Filter</strong></td>
+<td style="text-align: left;">Лінійний (ФНЧ)</td>
+<td style="text-align: left;">Добра</td>
+<td style="text-align: left;">Низька (розмиває імпульси)</td>
+<td style="text-align: left;">Низька (сильне розмиття)</td>
+<td style="text-align: center;"><strong><span class="arithmatex">\(\mathcal{O}(1)\)</span></strong> (через інтегральні зображення)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Gaussian Blur</strong></td>
+<td style="text-align: left;">Лінійний (ФНЧ)</td>
+<td style="text-align: left;"><strong>Висока</strong></td>
+<td style="text-align: left;">Низька</td>
+<td style="text-align: left;">Середня (ізотропне розмиття)</td>
+<td style="text-align: center;"><span class="arithmatex">\(\mathcal{O}(K)\)</span> (сепарабельний)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Median Filter</strong></td>
+<td style="text-align: left;">Нелінійний (Ранговий)</td>
+<td style="text-align: left;">Посередня</td>
+<td style="text-align: left;"><strong>Ідеальна</strong> (повне видалення)</td>
+<td style="text-align: left;"><strong>Висока</strong> (зберігає сходинки)</td>
+<td style="text-align: center;"><span class="arithmatex">\(\mathcal{O}(K^2 \log K)\)</span> (сортування)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Bilateral Filter</strong></td>
+<td style="text-align: left;">Нелінійний (Адаптивний)</td>
+<td style="text-align: left;"><strong>Висока</strong></td>
+<td style="text-align: left;">Середня</td>
+<td style="text-align: left;"><strong>Найвища</strong> (ідеальні контури)</td>
+<td style="text-align: center;"><span class="arithmatex">\(\mathcal{O}(K^2)\)</span> (не сепарабельний)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Laplacian Sharpen</strong></td>
+<td style="text-align: left;">Лінійний (ФВЧ)</td>
+<td style="text-align: left;">Підсилює шум</td>
+<td style="text-align: left;">Підсилює шум</td>
+<td style="text-align: left;">Підкреслює та загострює</td>
+<td style="text-align: center;"><span class="arithmatex">\(\mathcal{O}(K^2)\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>Порівняльний аналіз показує, що для придушення широкосмугового нормального шуму найефективнішим є фільтр Гаусса або білатеральний фільтр, тоді як при наявності бінарних імпульсних викидів безальтернативним інструментом виступає медіанний фільтр. Диференціальні фільтри підвищення різкості вимагають обов'язкової попередньої фільтрації завад, оскільки оператор Лапласа різко підсилює високочастотний шум.</p>
+<hr />
+<h3 id="_6">Питання для самоперевірки та аналітичного осмислення</h3>
+<ol>
+<li>
+<p>У чому полягає фундаментальна математична відмінність між операціями двовимірної взаємної кореляції та двовимірної згортки матриць, і за яких умов просторова фільтрація кореляцією та згорткою дає абсолютно однаковий числовий результат?</p>
+</li>
+<li>
+<p>Опишіть фізичний механізм виникнення крайового ефекту при просторовій фільтрації. Проведіть порівняльний аналіз методів доповнення границь (Zero padding, Replicate padding, Reflect padding) за критерієм мінімізації крайових спотворень.</p>
+</li>
+<li>
+<p>Доведіть властивість сепарабельності двовимірного фільтра Гаусса. Який математичний та апаратний виграш у кількості операцій множення надає застосування двох послідовних одновимірних згорток замість повної 2D-згортки?</p>
+</li>
+<li>
+<p>Поясніть причину абсолютної неефективності лінійних усереднюючих фільтрів при придушенні імпульсного шуму типу «сіль та перець». Чому нелінійний медіанний фільтр здатен повністю ліквідувати імпульсні викиди без суттєвого розмиття контрастних контурів?</p>
+</li>
+<li>
+<p>Наведіть аналітичну формулу білатерального фільтра (Bilateral filter). Яким чином взаємодія просторового ядра <span class="arithmatex">\(g_s\)</span> та фотометричного ядра <span class="arithmatex">\(f_r\)</span> забезпечує адаптивне шумозаглушення зі збереженням різкості меж об'єктів?</p>
+</li>
+<li>
+<p>Виведіть матричну форму дискретного оператора Лапласа на основі скінченно-різницевої апроксимації других частинних похідних. Чому сума коефіцієнтів ядра Лапласіана повинна строго дорівнювати нулю, а сума коефіцієнтів ядра прямого підвищення різкості — одиниці?</p>
+</li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Повернутись нагору
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Kyrylo Vadurin &bull; <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "navigation.tracking", "header.autohide", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0456\u0439\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u0421\u043a\u043e\u043f\u0456\u044e\u0432\u0430\u0442\u0438 \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0429\u0435 1 \u0437\u0431\u0456\u0433 \u043d\u0430 \u0446\u0456\u0439 \u0441\u0442\u043e\u0440\u0456\u043d\u0446\u0456", "search.result.more.other": "\u0429\u0435 # \u0437\u0431\u0456\u0433\u0456\u0432 \u043d\u0430 \u0446\u0456\u0439 \u0441\u0442\u043e\u0440\u0456\u043d\u0446\u0456", "search.result.none": "\u0417\u0431\u0456\u0433\u0456\u0432 \u043d\u0435 \u0437\u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u0417\u043d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0437\u0431\u0456\u0433", "search.result.other": "\u0417\u043d\u0430\u0439\u0434\u0435\u043d\u043e # \u0437\u0431\u0456\u0433\u0456\u0432", "search.result.placeholder": "\u0420\u043e\u0437\u043f\u043e\u0447\u043d\u0456\u0442\u044c \u043f\u0438\u0441\u0430\u0442\u0438 \u0434\u043b\u044f \u043f\u043e\u0448\u0443\u043a\u0443", "search.result.term.missing": "\u041d\u0435 \u0437\u043d\u0430\u0439\u0434\u0435\u043d\u043e \u0437\u0430\u043f\u0438\u0442\u0443", "select.version": "\u041e\u0431\u0440\u0430\u0442\u0438 \u0432\u0435\u0440\u0441\u0456\u044e"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

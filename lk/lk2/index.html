@@ -1,0 +1,1805 @@
+
+<!doctype html>
+<html lang="uk" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Навчальний портал з дисципліни "Обробка сигналів та зображень"">
+      
+      
+      
+      
+        <link rel="prev" href="../lk1/">
+      
+      
+        <link rel="next" href="../lk3/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Тема 2. Лінійні стаціонарні дискретні системи - Обробка сигналів та зображень</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#2" class="md-skip">
+          Перейти до змісту
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Хедер">
+    <a href="../.." title="Обробка сигналів та зображень" class="md-header__button md-logo" aria-label="Обробка сигналів та зображень" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Обробка сигналів та зображень
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Тема 2. Лінійні стаціонарні дискретні системи
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="cyan"  aria-label="Переключити на темну тему"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Переключити на темну тему" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="cyan"  aria-label="Переключити на світлу тему"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Переключити на світлу тему" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Пошук" placeholder="Пошук" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Шукати">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистити" aria-label="Очистити" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Пошук розпочато
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Вкладки" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Робоча програма
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../lk1/" class="md-tabs__link">
+          
+  
+  
+  Лекції
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../lb/lb1/" class="md-tabs__link">
+          
+  
+  
+  Лабораторні роботи
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../sr/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Самостійна робота
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../rg/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Розрахунково-графічна робота
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Навігація" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Обробка сигналів та зображень" class="md-nav__button md-logo" aria-label="Обробка сигналів та зображень" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Обробка сигналів та зображень
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Робоча програма
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лекції
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Лекції
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lk1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 1. Математичне представлення, дискретизація та квантування
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 2. Лінійні стаціонарні дискретні системи
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 2. Лінійні стаціонарні дискретні системи
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Зміст">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Зміст
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#21-bibo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1. Поняття дискретної системи, властивості: лінійність (адитивність, однорідність), стаціонарність (інваріантність до зсуву), каузальність, стійкість (BIBO)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.1. Поняття дискретної системи, властивості: лінійність (адитивність, однорідність), стаціонарність (інваріантність до зсуву), каузальність, стійкість (BIBO)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Основний зміст та теоретичний базис
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#22-hn-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2. Імпульсна характеристика \(h[n]\) як повний опис ЛСД-системи. Відгук системи у вигляді дискретної лінійної згортки
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.2. Імпульсна характеристика \(h[n]\) як повний опис ЛСД-системи. Відгук системи у вигляді дискретної лінійної згортки">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Основний зміст та теоретичний базис
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#23" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3. Властивості та алгоритмічна процедура обчислення дискретної згортки (інверсія в часі, зсув, множення, сумування). Кругова згортка
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.3. Властивості та алгоритмічна процедура обчислення дискретної згортки (інверсія в часі, зсув, множення, сумування). Кругова згортка">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Основний зміст та теоретичний базис
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#24-z-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4. Способи опису дискретних систем: різницеві рівняння та структури блок-схем (суматори, підсилювачі, елементи одиничної затримки \(z^{-1}\))
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.4. Способи опису дискретних систем: різницеві рівняння та структури блок-схем (суматори, підсилювачі, елементи одиничної затримки \(z^{-1}\))">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Основний зміст та теоретичний базис
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Питання для самоперевірки та аналітичного осмислення
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lk3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 3. Спектральний аналіз дискретних сигналів
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lk4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 4. Z-перетворення та проєктування цифрових фільтрів
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lk5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 5. Цифрове представлення зображень та колориметричні моделі
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lk6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 6. Поелементні амплітудні перетворення
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lk7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 7. Просторова фільтрація зображень
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lk8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 8. Геометричні трансформації та математична морфологія
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lk9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 9. Двовимірна Фур'є-обробка та детектори контурів
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лабораторні роботи
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Лабораторні роботи
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lb/lb1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 1. Дискретизація, квантування сигналів та ефект аліасингу
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lb/lb2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 2. Лінійні стаціонарні системи та дискретна згортка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lb/lb3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 3. Спектральний аналіз за допомогою ДПФ/ШПФ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lb/lb4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 4. Синтез цифрових КІХ та НІХ фільтрів
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lb/lb5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 5. Статистичний та кореляційний аналіз
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lb/lb6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 6. Базові операції з цифровими зображеннями
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lb/lb7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 7. Амплітудні перетворення та бінаризація
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lb/lb8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 8. Просторова фільтрація зображень
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lb/lb9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 9. Геометричні перетворення зображень
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lb/lb10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 10. Математична морфологія зображень
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lb/lb11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 11. 2D перетворення Фур'є та детектування контурів
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Самостійна робота
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Розрахунково-графічна робота
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Зміст">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Зміст
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#21-bibo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1. Поняття дискретної системи, властивості: лінійність (адитивність, однорідність), стаціонарність (інваріантність до зсуву), каузальність, стійкість (BIBO)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.1. Поняття дискретної системи, властивості: лінійність (адитивність, однорідність), стаціонарність (інваріантність до зсуву), каузальність, стійкість (BIBO)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Основний зміст та теоретичний базис
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#22-hn-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2. Імпульсна характеристика \(h[n]\) як повний опис ЛСД-системи. Відгук системи у вигляді дискретної лінійної згортки
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.2. Імпульсна характеристика \(h[n]\) як повний опис ЛСД-системи. Відгук системи у вигляді дискретної лінійної згортки">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Основний зміст та теоретичний базис
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#23" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3. Властивості та алгоритмічна процедура обчислення дискретної згортки (інверсія в часі, зсув, множення, сумування). Кругова згортка
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.3. Властивості та алгоритмічна процедура обчислення дискретної згортки (інверсія в часі, зсув, множення, сумування). Кругова згортка">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Основний зміст та теоретичний базис
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#24-z-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4. Способи опису дискретних систем: різницеві рівняння та структури блок-схем (суматори, підсилювачі, елементи одиничної затримки \(z^{-1}\))
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.4. Способи опису дискретних систем: різницеві рівняння та структури блок-схем (суматори, підсилювачі, елементи одиничної затримки \(z^{-1}\))">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Основний зміст та теоретичний базис
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Питання для самоперевірки та аналітичного осмислення
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="2">ТЕМА 2. ЛІНІЙНІ СТАЦІОНАРНІ ДИСКРЕТНІ (ЛСД) СИСТЕМИ. ІМПУЛЬСНА ХАРАКТЕРИСТИКА ТА ДИСКРЕТНА ЗГОРТКА</h1>
+<hr />
+<h2 id="21-bibo">2.1. Поняття дискретної системи, властивості: лінійність (адитивність, однорідність), стаціонарність (інваріантність до зсуву), каузальність, стійкість (BIBO)</h2>
+<h3 id="_1">Основний зміст та теоретичний базис</h3>
+<p>У цифровій обробці сигналів під <strong>дискретною системою</strong> розуміють математичний оператор, алгоритм або апаратний пристрій, який перетворює вхідну числову послідовність <span class="arithmatex">\(x[n]\)</span> (збудження, вхідний сигнал) у вихідну числову послідовність <span class="arithmatex">\(y[n]\)</span> (відгук, реакцію системи). Формально цей процес записується за допомогою операторного перетворення:</p>
+<div class="arithmatex">\[y[n] = \mathcal{T}\{x[n]\}\]</div>
+<p>де <span class="arithmatex">\(x[n]\)</span> виступає вхідною дискретною послідовністю, визначеною на множині цілих чисел <span class="arithmatex">\(n \in \mathbb{Z}\)</span>; <span class="arithmatex">\(y[n]\)</span> є результуючим вихідним сигналом; <span class="arithmatex">\(\mathcal{T}\{\cdot\}\)</span> позначає оператор перетворення, який встановлює правило формування відліків вихідного сигналу на основі вхідних даних.</p>
+<p>Поведінка, обчислювальна складність та методи проектування дискретних систем визначаються сукупністю фундаментальних властивостей. Найважливішою класифікаційною ознакою є <strong>лінійність</strong>, яка базується на виконанні принципу суперпозиції. Система називається лінійною тоді й лише тоді, коли вона одночасно задовольняє двом умовам — адитивності та однорідності (масштабованості):</p>
+<div class="arithmatex">\[\mathcal{T}\{a \cdot x_1[n] + b \cdot x_2[n]\} = a \cdot \mathcal{T}\{x_1[n]\} + b \cdot \mathcal{T}\{x_2[n]\} = a \cdot y_1[n] + b \cdot y_2[n]\]</div>
+<p>де <span class="arithmatex">\(x_1[n]\)</span> та <span class="arithmatex">\(x_2[n]\)</span> — довільні вхідні числові послідовності; <span class="arithmatex">\(y_1[n] = \mathcal{T}\{x_1[n]\}\)</span> та <span class="arithmatex">\(y_2[n] = \mathcal{T}\{x_2[n]\}\)</span> — відповідні їм відгуки системи; <span class="arithmatex">\(a\)</span> та <span class="arithmatex">\(b\)</span> — довільні скалярні коефіцієнти (дійсні або комплексні константи). Властивість адитивності гарантує, що реакція системи на суму сигналів дорівнює сумі реакцій на кожен сигнал окремо, а властивість однорідності забезпечує пропорційну зміну вихідного відгуку при масштабуванні вхідного впливу. Якщо для системи принцип суперпозиції порушується хоча б для однієї комбінації сигналів чи констант (наприклад, для системи квадратування <span class="arithmatex">\(y[n] = x^2[n]\)</span> або логарифмування <span class="arithmatex">\(y[n] = \log_{10}|x[n]|\)</span>), така система класифікується як <strong>нелінійна</strong>.</p>
+<p><pre class="mermaid"><code>flowchart TD
+    A[Дискретна система y_n = T{x_n}] --&gt; B{Перевірка лінійності}
+    B --&gt;|T{a·x1 + b·x2} = a·y1 + b·y2| C[Лінійна система]
+    B --&gt;|Принцип суперпозиції порушено| D[Нелінійна система]
+
+    C --&gt; E{Перевірка стаціонарності}
+    E --&gt;|T{x_n-k} = y_n-k| F[ЛСД / LTI система]
+    E --&gt;|Параметри залежать від n| G[Лінійна нестаціонарна]
+
+    F --&gt; H{Аналіз каузальності та стійкості}
+    H --&gt;|h_n = 0 при n &lt; 0| I[Каузальна фізично реалізовна]
+    H --&gt;|Сума |h_n| &lt; ∞| J[BIBO-стійка система]</code></pre>
+<em>Рисунок 2.1 — Діаграма верифікації базових властивостей дискретних систем та виділення класу лінійних стаціонарних дискретних (ЛСД) систем</em></p>
+<p>Властивість <strong>стаціонарності</strong> (інваріантності до зсуву в часі, <em>time-invariance</em>) визначає сталість внутрішніх параметрів системи протягом усього періоду її функціонування. Система вважається стаціонарною, якщо довільна часова затримка або випередження вхідного сигналу на <span class="arithmatex">\(n_0\)</span> тактів викликає абсолютно таку саму часову затримку або випередження вихідного сигналу без зміни його форми:</p>
+<div class="arithmatex">\[\mathcal{T}\{x[n - n_0]\} = y[n - n_0], \quad \forall n_0 \in \mathbb{Z}\]</div>
+<p>Якщо реакція системи на зсунутий сигнал залежить від абсолютного моменту подачі сигналу (наприклад, у системах децимації <span class="arithmatex">\(y[n] = x[M \cdot n]\)</span> або модуляторах із часово-залежними коефіцієнтами <span class="arithmatex">\(y[n] = n \cdot x[n]\)</span>), система є <strong>нестаціонарною</strong> (параметричною). Системи, які одночасно є лінійними та стаціонарними, утворюють фундаментальний клас <strong>лінійних стаціонарних дискретних (ЛСД) систем</strong> (в англомовній літературі — <em>Linear Time-Invariant, LTI systems</em>).</p>
+<p>Властивість <strong>каузальності</strong> (причинності або динамічного детермінізму) відображає фізичну реалізовність системи у реальному часі. Дискретна система називається каузальною, якщо значення вихідного сигналу <span class="arithmatex">\(y[n]\)</span> у довільний момент часу <span class="arithmatex">\(n\)</span> залежить виключно від поточного <span class="arithmatex">\(x[n]\)</span> та попередніх значень вхідного сигналу <span class="arithmatex">\(x[n-1], x[n-2], \dots\)</span>, і абсолютно не залежить від майбутніх значень <span class="arithmatex">\(x[n+1], x[n+2], \dots\)</span>. Для каузальних систем відгук не може виникнути раніше, ніж з'явиться вхідне збудження. Системи просторової обробки зображень або офлайн-фільтрації попередньо записаних файлів можуть бути некаузальними, оскільки в них доступний увесь масив даних за просторовими координатами чи часом.</p>
+<p>Властивість <strong>стійкості за критерієм обмеженого входу — обмеженого виходу</strong> (<em>Bounded-Input Bounded-Output Stability, BIBO</em>) означає, що за умови подачі на вхід довільної послідовності з обмеженою амплітудою, вихідний сигнал системи гарантовано залишатиметься обмеженим за абсолютною величиною:</p>
+<div class="arithmatex">\[\forall |x[n]| \le B_x \lt  \infty \implies |y[n]| \le B_y \lt  \infty, \quad \forall n \in \mathbb{Z}\]</div>
+<p>де <span class="arithmatex">\(B_x\)</span> та <span class="arithmatex">\(B_y\)</span> — скінченні додатні константи. Для ЛСД-систем необхідною і достатньою умовою BIBO-стійкості є абсолютна збіжність (абсолютна сумовність) її імпульсної характеристики:</p>
+<div class="arithmatex">\[\sum_{n=-\infty}^{\infty} |h[n]| \lt  \infty\]</div>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Властивість системи</th>
+<th style="text-align: left;">Математичний критерій</th>
+<th style="text-align: left;">Фізичний та інженерний зміст</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Лінійність</strong></td>
+<td style="text-align: left;"><span class="arithmatex">\(\mathcal{T}\{a x_1[n] + b x_2[n]\} = a y_1[n] + b y_2[n]\)</span></td>
+<td style="text-align: left;">Відсутність взаємної модуляції частот, збереження спектральної форми гармонік.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Стаціонарність</strong></td>
+<td style="text-align: left;"><span class="arithmatex">\(\mathcal{T}\{x[n - n_0]\} = y[n - n_0]\)</span></td>
+<td style="text-align: left;">Незалежність алгоритму обробки від моменту початку спостереження сигналу.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Каузальність</strong></td>
+<td style="text-align: left;"><span class="arithmatex">\(y[n] = f(x[n], x[n-1], \dots, y[n-1], \dots)\)</span></td>
+<td style="text-align: left;">Здатність системи функціонувати в реальному масштабі фізичного часу.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>BIBO-стійкість</strong></td>
+<td style="text-align: left;"><span class="arithmatex">\(\sum_{n=-\infty}^{\infty} \|h[n]\| \le M_h &lt; \infty\)</span></td>
+<td style="text-align: left;">Запобігання необмеженому зростанню сигналів та самозбудженню фільтрів.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Пам'ять системи</strong></td>
+<td style="text-align: left;"><span class="arithmatex">\(y[n]\)</span> залежить від <span class="arithmatex">\(x[n-k]\)</span> при <span class="arithmatex">\(k \neq 0\)</span></td>
+<td style="text-align: left;">Необхідність наявності регістрів затримки для збереження попередніх відліків.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="22-hn-">2.2. Імпульсна характеристика <span class="arithmatex">\(h[n]\)</span> як повний опис ЛСД-системи. Відгук системи у вигляді дискретної лінійної згортки</h2>
+<h3 id="_2">Основний зміст та теоретичний базис</h3>
+<p>Фундаментальною властивістю лінійних стаціонарних дискретних систем є те, що їхня динамічна поведінка повністю й однозначно описується єдиною функцією часу — <strong>імпульсною характеристикою</strong> <span class="arithmatex">\(h[n]\)</span>. Імпульсною характеристикою називається відгук ЛСД-системи на вхідний сигнал у вигляді одиничного дискретного імпульсу Кронекера <span class="arithmatex">\(\delta[n]\)</span> за нульових початкових умов:</p>
+<div class="arithmatex">\[h[n] = \mathcal{T}\{\delta[n]\}\]</div>
+<p>де <span class="arithmatex">\(\delta[n]\)</span> — одиничний імпульс, що дорівнює 1 при <span class="arithmatex">\(n = 0\)</span> та 0 при <span class="arithmatex">\(n \neq 0\)</span>; <span class="arithmatex">\(h[n]\)</span> — числова послідовність відгуку.</p>
+<p>Для строгого аналітичного виведення виразу реакції ЛСД-системи на довільний вхідний сигнал <span class="arithmatex">\(x[n]\)</span> скористаємося властивістю розкладання сигналу на суму зважених одиничних імпульсів:</p>
+<div class="arithmatex">\[x[n] = \sum_{k=-\infty}^{\infty} x[k] \delta[n - k]\]</div>
+<p>Підставляючи дане представлення вхідного сигналу в операторне рівняння системи, отримуємо вираз для вихідного відгуку:</p>
+<div class="arithmatex">\[y[n] = \mathcal{T}\{x[n]\} = \mathcal{T}\left\{ \sum_{k=-\infty}^{\infty} x[k] \delta[n - k] \right\}\]</div>
+<p>Враховуючи лінійність системи (принцип суперпозиції), оператор перетворення <span class="arithmatex">\(\mathcal{T}\{\cdot\}\)</span> можна внести під знак нескінченної суми, а скалярні величини відліків <span class="arithmatex">\(x[k]\)</span>, які відносно змінної <span class="arithmatex">\(n\)</span> є константами, винести за знак оператора:</p>
+<div class="arithmatex">\[y[n] = \sum_{k=-\infty}^{\infty} x[k] \mathcal{T}\{\delta[n - k]\}\]</div>
+<p>Завдяки стаціонарності системи, відгук на зсунутий одиничний імпульс <span class="arithmatex">\(\delta[n - k]\)</span> є зсунутою на <span class="arithmatex">\(k\)</span> тактів імпульсною характеристикою системи: <span class="arithmatex">\(\mathcal{T}\{\delta[n - k]\} = h[n - k]\)</span>. Підстановка цього співвідношення приводить до фундаментальної формули <strong>дискретної лінійної згортки</strong> (convolution sum):</p>
+<div class="arithmatex">\[y[n] = \sum_{k=-\infty}^{\infty} x[k] h[n - k] = x[n] * h[n]\]</div>
+<p>де символ <span class="arithmatex">\(*\)</span> позначає операцію дискретної згортки; <span class="arithmatex">\(x[k]\)</span> — значення відліків вхідного сигналу; <span class="arithmatex">\(h[n - k]\)</span> — зсунута та інвертована в часі імпульсна характеристика системи.</p>
+<p><pre class="mermaid"><code>sequenceDiagram
+    participant X as Вхідний сигнал x[n]
+    participant D as Розклад на зважені імпульси x[k]δ[n-k]
+    participant S as ЛСД-Система (Ядро згортки h[n])
+    participant Y as Вихідний відгук y[n] = x[n] * h[n]
+
+    X-&gt;&gt;D: Подання у базисі дискретних дельта-функцій
+    D-&gt;&gt;S: Подача зсунутих елементарних збуджень
+    S-&gt;&gt;Y: Формування елементарних відгуків x[k]h[n-k]
+    Note over Y: Суперпозиція: y[n] = ∑ x[k]h[n-k]</code></pre>
+<em>Рисунок 2.2 — Концептуальна схема формування вихідного сигналу ЛСД-системи на основі принципу суперпозиції зважених зсунутих імпульсних відгуків</em></p>
+<p>Фізичний зміст формули дискретної згортки полягає в тому, що значення вихідного сигналу <span class="arithmatex">\(y[n]\)</span> у момент часу <span class="arithmatex">\(n\)</span> формується як зважена сума всіх поточних і минулих значень вхідного сигналу, де роль вагових коефіцієнтів відіграють відповідні відліки імпульсної характеристики <span class="arithmatex">\(h[n]\)</span>. Якщо система є каузальною, її імпульсна характеристика задовольняє умові <span class="arithmatex">\(h[n] = 0\)</span> при <span class="arithmatex">\(n &lt; 0\)</span>, завдяки чому верхня межа підсумовування обмежується поточним моментом часу <span class="arithmatex">\(n\)</span>:</p>
+<div class="arithmatex">\[y[n] = \sum_{k=-\infty}^{n} x[k] h[n - k]\]</div>
+<p>Якщо, крім того, вхідний сигнал подається починаючи з моменту часу <span class="arithmatex">\(n = 0\)</span> (тобто <span class="arithmatex">\(x[n] = 0\)</span> для всіх <span class="arithmatex">\(n &lt; 0\)</span>), формула згортки набуває скінченних меж:</p>
+<div class="arithmatex">\[y[n] = \sum_{k=0}^{n} x[k] h[n - k] = \sum_{k=0}^{n} h[k] x[n - k]\]</div>
+<p>Знання імпульсної характеристики <span class="arithmatex">\(h[n]\)</span> надає вичерпну інформацію про динамічні та частотні властивості ЛСД-системи, дозволяючи аналітично чи алгоритмічно визначити її реакцію на довільний вхідний процес.</p>
+<hr />
+<h2 id="23">2.3. Властивості та алгоритмічна процедура обчислення дискретної згортки (інверсія в часі, зсув, множення, сумування). Кругова згортка</h2>
+<h3 id="_3">Основний зміст та теоретичний базис</h3>
+<p>Операція лінійної дискретної згортки має фундаментальні алгебраїчні властивості, що забезпечують еквівалентність різних структурних реалізацій цифрових систем:</p>
+<ol>
+<li>
+<p><strong>Комутативність (переставна властивість):</strong>
+   $<span class="arithmatex">\(x[n] * h[n] = h[n] * x[n] \iff \sum_{k=-\infty}^{\infty} x[k] h[n - k] = \sum_{k=-\infty}^{\infty} h[k] x[n - k]\)</span>$
+   Результат фільтрації залишається незмінним незалежно від того, яка з послідовностей розглядається як вхідний сигнал, а яка — як імпульсна характеристика.</p>
+</li>
+<li>
+<p><strong>Асоціативність (сполучна властивість):</strong>
+   $<span class="arithmatex">\((x[n] * h_1[n]) * h_2[n] = x[n] * (h_1[n] * h_2[n])\)</span>$
+   Послідовне (каскадне) з'єднання двох систем з імпульсними характеристиками <span class="arithmatex">\(h_1[n]\)</span> та <span class="arithmatex">\(h_2[n]\)</span> еквівалентне одній системі з еквівалентною характеристикою <span class="arithmatex">\(h_{\text{екв}}[n] = h_1[n] * h_2[n]\)</span>.</p>
+</li>
+<li>
+<p><strong>Дистрибутивність (розподільна властивість):</strong>
+   $<span class="arithmatex">\(x[n] * (h_1[n] + h_2[n]) = x[n] * h_1[n] + x[n] * h_2[n]\)</span>$
+   Паралельне з'єднання систем еквівалентне системі, імпульсна характеристика якої дорівнює сумі характеристик паралельних гілок.</p>
+</li>
+</ol>
+<p>Обчислення згортки для кожного фіксованого значення вихідного індексу <span class="arithmatex">\(n\)</span> реалізується за суворим чотириетапним алгоритмом:</p>
+<p><pre class="mermaid"><code>flowchart LR
+    A["1. Інверсія в часі&lt;br&gt;h[k] → h[-k]"] --&gt; B["2. Часовий зсув на n&lt;br&gt;h[-k] → h[n-k]"]
+    B --&gt; C["3. Поелементне множення&lt;br&gt;v[k] = x[k] · h[n-k]"]
+    C --&gt; D["4. Сумування по k&lt;br&gt;y[n] = ∑ v[k]"]</code></pre>
+<em>Рисунок 2.3 — Алгоритмічний конвеєр розрахунку одного відліку лінійної дискретної згортки</em></p>
+<p>Якщо вхідний сигнал <span class="arithmatex">\(x[n]\)</span> містить <span class="arithmatex">\(N_x\)</span> відліків (<span class="arithmatex">\(n = 0, 1, \dots, N_x - 1\)</span>), а імпульсна характеристика <span class="arithmatex">\(h[n]\)</span> містить <span class="arithmatex">\(N_h\)</span> відліків (<span class="arithmatex">\(n = 0, 1, \dots, N_h - 1\)</span>), тривалість вихідної послідовності <span class="arithmatex">\(y[n]\)</span> строго дорівнює:</p>
+<div class="arithmatex">\[N_y = N_x + N_h - 1\]</div>
+<p>Розглянемо практичний приклад аналітичного, табличного та графічного розрахунку згортки скінченних послідовностей:
+Нехай вхідний сигнал задано у вигляді послідовності <span class="arithmatex">\(x[n] = \{1, 3, 2\}\)</span> (<span class="arithmatex">\(N_x = 3\)</span>), а імпульсна характеристика становить <span class="arithmatex">\(h[n] = \{1, 2, 3, 4\}\)</span> (<span class="arithmatex">\(N_h = 4\)</span>). Довжина вихідної послідовності дорівнює <span class="arithmatex">\(N_y = 3 + 4 - 1 = 6\)</span> відліків (<span class="arithmatex">\(n = 0, 1, 2, 3, 4, 5\)</span>).</p>
+<p>Покроковий аналітичний розрахунок:</p>
+<ul>
+<li>
+<p>Для <span class="arithmatex">\(n = 0\)</span>: <span class="arithmatex">\(y[0] = x[0]h[0] = 1 \cdot 1 = 1\)</span>;</p>
+</li>
+<li>
+<p>Для <span class="arithmatex">\(n = 1\)</span>: <span class="arithmatex">\(y[1] = x[0]h[1] + x[1]h[0] = 1 \cdot 2 + 3 \cdot 1 = 5\)</span>;</p>
+</li>
+<li>
+<p>Для <span class="arithmatex">\(n = 2\)</span>: <span class="arithmatex">\(y[2] = x[0]h[2] + x[1]h[1] + x[2]h[0] = 1 \cdot 3 + 3 \cdot 2 + 2 \cdot 1 = 11\)</span>;</p>
+</li>
+<li>
+<p>Для <span class="arithmatex">\(n = 3\)</span>: <span class="arithmatex">\(y[3] = x[0]h[3] + x[1]h[2] + x[2]h[1] = 1 \cdot 4 + 3 \cdot 3 + 2 \cdot 2 = 17\)</span>;</p>
+</li>
+<li>
+<p>Для <span class="arithmatex">\(n = 4\)</span>: <span class="arithmatex">\(y[4] = x[1]h[3] + x[2]h[2] = 3 \cdot 4 + 2 \cdot 3 = 18\)</span>;</p>
+</li>
+<li>
+<p>Для <span class="arithmatex">\(n = 5\)</span>: <span class="arithmatex">\(y[5] = x[2]h[3] = 2 \cdot 4 = 8\)</span>.</p>
+</li>
+</ul>
+<p>Результуюча послідовність: <span class="arithmatex">\(y[n] = \{1, 5, 11, 17, 18, 8\}\)</span>.</p>
+<p>Табличний метод обчислення базується на формуванні матриці часткових добутків, у якій стовпці відповідають зсунутим компонентам, а підсумовування проводиться вздовж діагоналей:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;"><span class="arithmatex">\(x[k] \backslash h[m]\)</span></th>
+<th style="text-align: center;"><span class="arithmatex">\(h[0] = 1\)</span></th>
+<th style="text-align: center;"><span class="arithmatex">\(h[1] = 2\)</span></th>
+<th style="text-align: center;"><span class="arithmatex">\(h[2] = 3\)</span></th>
+<th style="text-align: center;"><span class="arithmatex">\(h[3] = 4\)</span></th>
+<th style="text-align: center;">Діагональна сума для <span class="arithmatex">\(y[n]\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><strong><span class="arithmatex">\(x[0] = 1\)</span></strong></td>
+<td style="text-align: center;"><strong>1</strong> (<span class="arithmatex">\(n=0\)</span>)</td>
+<td style="text-align: center;"><strong>2</strong> (<span class="arithmatex">\(n=1\)</span>)</td>
+<td style="text-align: center;"><strong>3</strong> (<span class="arithmatex">\(n=2\)</span>)</td>
+<td style="text-align: center;"><strong>4</strong> (<span class="arithmatex">\(n=3\)</span>)</td>
+<td style="text-align: center;"><span class="arithmatex">\(y[0] = 1\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong><span class="arithmatex">\(x[1] = 3\)</span></strong></td>
+<td style="text-align: center;"><strong>3</strong> (<span class="arithmatex">\(n=1\)</span>)</td>
+<td style="text-align: center;"><strong>6</strong> (<span class="arithmatex">\(n=2\)</span>)</td>
+<td style="text-align: center;"><strong>9</strong> (<span class="arithmatex">\(n=3\)</span>)</td>
+<td style="text-align: center;"><strong>12</strong> (<span class="arithmatex">\(n=4\)</span>)</td>
+<td style="text-align: center;"><span class="arithmatex">\(y[1] = 2 + 3 = 5\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong><span class="arithmatex">\(x[2] = 2\)</span></strong></td>
+<td style="text-align: center;"><strong>2</strong> (<span class="arithmatex">\(n=2\)</span>)</td>
+<td style="text-align: center;"><strong>4</strong> (<span class="arithmatex">\(n=3\)</span>)</td>
+<td style="text-align: center;"><strong>6</strong> (<span class="arithmatex">\(n=4\)</span>)</td>
+<td style="text-align: center;"><strong>8</strong> (<span class="arithmatex">\(n=5\)</span>)</td>
+<td style="text-align: center;"><span class="arithmatex">\(y[2] = 3 + 6 + 2 = 11\)</span> <br> <span class="arithmatex">\(y[3] = 4 + 9 + 4 = 17\)</span> <br> <span class="arithmatex">\(y[4] = 12 + 6 = 18\)</span> <br> <span class="arithmatex">\(y[5] = 8\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>Табличний розрахунок наочно демонструє алгебраїчний механізм множення поліномів: перемножування полінома <span class="arithmatex">\(X(z) = 1 + 3z^{-1} + 2z^{-2}\)</span> на поліном <span class="arithmatex">\(H(z) = 1 + 2z^{-1} + 3z^{-2} + 4z^{-3}\)</span> дає результуючий поліном <span class="arithmatex">\(Y(z) = 1 + 5z^{-1} + 11z^{-2} + 17z^{-3} + 18z^{-4} + 8z^{-5}\)</span>, коефіцієнти якого точно збігаються з відліками вихідної послідовності <span class="arithmatex">\(y[n]\)</span>.</p>
+<p><strong>Круговою (циклічною) згорткою</strong> двох <span class="arithmatex">\(N\)</span>-точкових періодичних послідовностей <span class="arithmatex">\(x[n]\)</span> та <span class="arithmatex">\(h[n]\)</span> називають операцію, підсумовування в якій виконується в межах одного періоду <span class="arithmatex">\(N\)</span> із використанням операції взяття індексу за модулем <span class="arithmatex">\(N\)</span>:</p>
+<div class="arithmatex">\[y_c[n] = x[n] \circledast h[n] = \sum_{m=0}^{N-1} x[m] h[(n - m) \bmod N]\]</div>
+<p>де <span class="arithmatex">\((n - m) \bmod N\)</span> позначає залишок від ділення різниці <span class="arithmatex">\((n - m)\)</span> на довжину блоку <span class="arithmatex">\(N\)</span>. Відмінність кругової згортки від лінійної полягає в тому, що зсув послідовності є циклічним: відліки, які виходять за праву межу інтервалу <span class="arithmatex">\([0; N-1]\)</span>, циклічно з'являються зліва. </p>
+<p>Згідно з теоремою про дискретну згортку, кругова згортка в часовій області строго відповідає поелементному множенню дискретних перетворень Фур'є послідовностей: <span class="arithmatex">\(\text{DFT}\{x[n] \circledast h[n]\} = X[k] \cdot H[k]\)</span>. Для того щоб за допомогою швидкого перетворення Фур'є (ШПФ) та кругової згортки обчислити лінійну аперіодичну згортку без виникнення циклічного накладання крайових відліків, обидві вихідні послідовності необхідно штучно доповнити нулями (<em>zero-padding</em>) до загальної довжини не менше <span class="arithmatex">\(N \ge N_x + N_h - 1\)</span>.</p>
+<hr />
+<h2 id="24-z-1">2.4. Способи опису дискретних систем: різницеві рівняння та структури блок-схем (суматори, підсилювачі, елементи одиничної затримки <span class="arithmatex">\(z^{-1}\)</span>)</h2>
+<h3 id="_4">Основний зміст та теоретичний базис</h3>
+<p>Крім імпульсної характеристики, універсальним математичним апаратом опису ЛСД-систем виступають <strong>лінійні різницеві рівняння зі сталими коефіцієнтами</strong> (<em>Linear Constant-Coefficient Difference Equations, LCCDE</em>). Різницеве рівняння пов'язує поточний вихідний відлік системи <span class="arithmatex">\(y[n]\)</span> із поточним і попередніми вхідними відліками <span class="arithmatex">\(x[n-m]\)</span>, а також із попередніми значеннями вихідного сигналу <span class="arithmatex">\(y[n-k]\)</span>:</p>
+<div class="arithmatex">\[\sum_{k=0}^{N} a_k y[n - k] = \sum_{m=0}^{M} b_m x[n - m]\]</div>
+<p>де <span class="arithmatex">\(a_k\)</span> та <span class="arithmatex">\(b_m\)</span> — постійні дійсні коефіцієнти системи; <span class="arithmatex">\(M\)</span> визначає глибину затримки вхідного сигналу; <span class="arithmatex">\(N\)</span> визначає порядок системи (максимальну затримку вихідного сигналу).</p>
+<p>Прийнявши умову нормування <span class="arithmatex">\(a_0 = 1\)</span>, різницеве рівняння записують у формі явного обчислювального алгоритму:</p>
+<div class="arithmatex">\[y[n] = \sum_{m=0}^{M} b_m x[n - m] - \sum_{k=1}^{N} a_k y[n - k]\]</div>
+<p>Залежно від наявності зворотного зв'язку (членів <span class="arithmatex">\(y[n-k]\)</span> при <span class="arithmatex">\(k \ge 1\)</span>) цифрові системи поділяють на два фундаментальні класи:</p>
+<ol>
+<li>
+<p><strong>Нерекурсивні системи (КІХ-системи, <em>Finite Impulse Response, FIR</em>):</strong> Усі коефіцієнти зворотного зв'язку дорівнюють нулю (<span class="arithmatex">\(a_k = 0\)</span> для всіх <span class="arithmatex">\(k \ge 1\)</span>). Рівняння спрощується до вигляду <span class="arithmatex">\(y[n] = \sum_{m=0}^{M} b_m x[n - m]\)</span>. Імпульсна характеристика такої системи є скінченною за тривалістю і її відліки безпосередньо збігаються з ваговими коефіцієнтами: <span class="arithmatex">\(h[n] = b_n\)</span> для <span class="arithmatex">\(0 \le n \le M\)</span> та <span class="arithmatex">\(h[n] = 0\)</span> для <span class="arithmatex">\(n &gt; M\)</span>. КІХ-фільтри є безумовно стійкими.</p>
+</li>
+<li>
+<p><strong>Рекурсивні системи (НІХ-системи, <em>Infinite Impulse Response, IIR</em>):</strong> Принаймні один коефіцієнт <span class="arithmatex">\(a_k \neq 0\)</span> (<span class="arithmatex">\(k \ge 1\)</span>). Наявність зворотного зв'язку призводить до нескінченної тривалості імпульсної характеристики <span class="arithmatex">\(h[n]\)</span>, яка складається із суми згасаючих або наростаючих експонент та синусоїд. НІХ-системи вимагають строгого контролю полюсів передавальної функції для забезпечення стійкості.</p>
+</li>
+</ol>
+<p>Для структурного та апаратного моделювання дискретних алгоритмів використовують три базові елементарні функціональні блоки:</p>
+<ul>
+<li>
+<p><strong>Суматор:</strong> виконує операцію додавання двох або більше числових послідовностей <span class="arithmatex">\(y[n] = x_1[n] + x_2[n]\)</span>;</p>
+</li>
+<li>
+<p><strong>Підсилювач (масштабатор):</strong> здійснює множення вхідного відліку на постійний коефіцієнт <span class="arithmatex">\(y[n] = c \cdot x[n]\)</span>;</p>
+</li>
+<li>
+<p><strong>Елемент одиничної затримки (<span class="arithmatex">\(z^{-1}\)</span> або Delay):</strong> запам'ятовує вхідний відлік на один такт дискретизації, формуючи вихідний сигнал <span class="arithmatex">\(y[n] = x[n - 1]\)</span>.</p>
+</li>
+</ul>
+<p>Існують дві класичні канонічні форми побудови блок-схем ЛСД-систем: <strong>пряма форма I (Direct Form I)</strong> та <strong>пряма форма II (Direct Form II, канонічна)</strong>.</p>
+<p><pre class="mermaid"><code>flowchart TD
+    subgraph Direct_Form_I [Пряма форма I: Роздільні лінії затримки для входу та виходу]
+        direction LR
+        x1["x[n]"] --&gt; D1["z⁻¹"] --&gt; D2["z⁻¹"]
+        x1 --&gt; b0((b0))
+        D1 --&gt; b1((b1))
+        D2 --&gt; b2((b2))
+        b0 --&gt; S1((+))
+        b1 --&gt; S1
+        b2 --&gt; S1
+        S1 --&gt; S2((+))
+        S2 --&gt; y1["y[n]"]
+        y1 --&gt; D3["z⁻¹"] --&gt; D4["z⁻¹"]
+        D3 --&gt; a1(("-a1"))
+        D4 --&gt; a2(("-a2"))
+        a1 --&gt; S2
+        a2 --&gt; S2
+    end</code></pre>
+<em>Рисунок 2.4 — Структурна схема прямої форми I реалізації дискретної системи другого порядку (<span class="arithmatex">\(N=2, M=2\)</span>)</em></p>
+<p><pre class="mermaid"><code>flowchart TD
+    subgraph Direct_Form_II [Пряма форма II / Канонічна: Єдина мінімізована лінія затримки]
+        direction LR
+        x2["x[n]"] --&gt; S3((+))
+        S3 --&gt; w["w[n]"]
+        w --&gt; D5["z⁻¹"] --&gt; D6["z⁻¹"]
+        D5 --&gt; a11(("-a1"))
+        D6 --&gt; a22(("-a2"))
+        a11 --&gt; S3
+        a22 --&gt; S3
+        w --&gt; b00((b0))
+        D5 --&gt; b11((b1))
+        D6 --&gt; b22((b2))
+        b00 --&gt; S4((+))
+        b11 --&gt; S4
+        b22 --&gt; S4
+        S4 --&gt; y2["y[n]"]
+    end</code></pre>
+<em>Рисунок 2.5 — Структурна схема прямої канонічної форми II реалізації дискретної системи другого порядку (<span class="arithmatex">\(N=2, M=2\)</span>)</em></p>
+<p>Пряма форма I безпосередньо реалізує різницеве рівняння, використовуючи дві незалежні лінії затримки: одну для вхідного сигналу (довжиною <span class="arithmatex">\(M\)</span> комірок), іншу — для вихідного сигналу (довжиною <span class="arithmatex">\(N\)</span> комірок), що сумарно вимагає <span class="arithmatex">\(M + N\)</span> елементів пам'яті. </p>
+<p>Канонічна пряма форма II утворюється шляхом перестановки місцями нерекурсивної та рекурсивної частин системи, що є математично коректним завдяки лінійності операцій. У результаті проміжний сигнал <span class="arithmatex">\(w[n]\)</span> надходить на спільну лінію затримки, яка одночасно обслуговує рекурсивну та нерекурсивну гілки:</p>
+<div class="arithmatex">\[w[n] = x[n] - \sum_{k=1}^{N} a_k w[n - k], \quad y[n] = \sum_{m=0}^{M} b_m w[n - m]\]</div>
+<p>Канонічна форма вимагає мінімально можливої кількості комірок пам'яті <span class="arithmatex">\(\max(N, M)\)</span>, що робить її високоефективною для апаратної реалізації в цифрових сигнальних процесорах (DSP) та ПЛІС (FPGA).</p>
+<hr />
+<h3 id="_5">Питання для самоперевірки та аналітичного осмислення</h3>
+<ol>
+<li>
+<p>Сформулюйте математичний критерій лінійності дискретної системи. Чому наявність постійного зміщення (bias) виду <span class="arithmatex">\(y[n] = 2x[n] + 3\)</span> перетворює систему на нелінійну, незважаючи на графічну лінійність функції?</p>
+</li>
+<li>
+<p>Наведіть математичне доведення того, що відгук довільної лінійної стаціонарної системи на довільне збудження <span class="arithmatex">\(x[n]\)</span> строго описується операцією дискретної згортки сигналу з імпульсною характеристикою системи.</p>
+</li>
+<li>
+<p>Поясніть фізичний та алгоритмічний зміст чотирьох етапів процедури обчислення дискретної згортки (<span class="arithmatex">\(h[k] \to h[-k] \to h[n-k] \to \text{множення} \to \text{підсумовування}\)</span>). Чому вихідна послідовність згортки послідовностей довжиною <span class="arithmatex">\(N_x\)</span> та <span class="arithmatex">\(N_h\)</span> має розмірність <span class="arithmatex">\(N_x + N_h - 1\)</span>?</p>
+</li>
+<li>
+<p>У чому полягає відмінність між лінійною та круговою (циклічною) згорткою? За якої умови результат кругової згортки скінченних послідовностей повністю збігається з результатом їхньої лінійної аперіодичної згортки?</p>
+</li>
+<li>
+<p>Доведіть, чому нерекурсивна дискретна система (КІХ-фільтр) є безумовно стійкою за критерієм BIBO, тоді як рекурсивна система (НІХ-фільтр) може втратити стійкість.</p>
+</li>
+<li>
+<p>Порівняйте пряму форму I та канонічну пряму форму II реалізації цифрового фільтра. Які переваги та потенційні ризики (зокрема, щодо динамічного діапазону проміжних змінних <span class="arithmatex">\(w[n]\)</span>) має канонічна форма при реалізації на процесорах із фіксованою комою?</p>
+</li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Повернутись нагору
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Kyrylo Vadurin &bull; <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "navigation.tracking", "header.autohide", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0456\u0439\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u0421\u043a\u043e\u043f\u0456\u044e\u0432\u0430\u0442\u0438 \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0429\u0435 1 \u0437\u0431\u0456\u0433 \u043d\u0430 \u0446\u0456\u0439 \u0441\u0442\u043e\u0440\u0456\u043d\u0446\u0456", "search.result.more.other": "\u0429\u0435 # \u0437\u0431\u0456\u0433\u0456\u0432 \u043d\u0430 \u0446\u0456\u0439 \u0441\u0442\u043e\u0440\u0456\u043d\u0446\u0456", "search.result.none": "\u0417\u0431\u0456\u0433\u0456\u0432 \u043d\u0435 \u0437\u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u0417\u043d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0437\u0431\u0456\u0433", "search.result.other": "\u0417\u043d\u0430\u0439\u0434\u0435\u043d\u043e # \u0437\u0431\u0456\u0433\u0456\u0432", "search.result.placeholder": "\u0420\u043e\u0437\u043f\u043e\u0447\u043d\u0456\u0442\u044c \u043f\u0438\u0441\u0430\u0442\u0438 \u0434\u043b\u044f \u043f\u043e\u0448\u0443\u043a\u0443", "search.result.term.missing": "\u041d\u0435 \u0437\u043d\u0430\u0439\u0434\u0435\u043d\u043e \u0437\u0430\u043f\u0438\u0442\u0443", "select.version": "\u041e\u0431\u0440\u0430\u0442\u0438 \u0432\u0435\u0440\u0441\u0456\u044e"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

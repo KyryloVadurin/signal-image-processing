@@ -1,0 +1,2740 @@
+
+<!doctype html>
+<html lang="uk" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Навчальний портал з дисципліни "Обробка сигналів та зображень"">
+      
+      
+      
+      
+      
+        <link rel="next" href="lk/lk1/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Обробка сигналів та зображень</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="stylesheets/extra.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Перейти до змісту
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Хедер">
+    <a href="." title="Обробка сигналів та зображень" class="md-header__button md-logo" aria-label="Обробка сигналів та зображень" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Обробка сигналів та зображень
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Робоча програма
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="cyan"  aria-label="Переключити на темну тему"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Переключити на темну тему" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="cyan"  aria-label="Переключити на світлу тему"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Переключити на світлу тему" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Пошук" placeholder="Пошук" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Шукати">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистити" aria-label="Очистити" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Пошук розпочато
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Вкладки" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Робоча програма
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="lk/lk1/" class="md-tabs__link">
+          
+  
+  
+  Лекції
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="lb/lb1/" class="md-tabs__link">
+          
+  
+  
+  Лабораторні роботи
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="sr/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Самостійна робота
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="rg/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Розрахунково-графічна робота
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Навігація" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="." title="Обробка сигналів та зображень" class="md-nav__button md-logo" aria-label="Обробка сигналів та зображень" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Обробка сигналів та зображень
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Робоча програма
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="." class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Робоча програма
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Зміст">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Зміст
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Опис освітнього компонента
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Мета та завдання освітнього компонента
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. У результаті вивчення освітнього компонента здобувач вищої освіти повинен:
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Програма навчальної дисципліни
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Програма навчальної дисципліни">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Модуль 1. Основи цифрової обробки сигналів та просторово-спектрального аналізу зображень
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-dsp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Змістовий модуль 1. Цифрова обробка сигналів та лінійні дискретні системи (DSP)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-dip-cv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Змістовий модуль 2. Цифрова обробка, фільтрація та аналіз зображень (DIP &amp; CV)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Структура освітнього компонента
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Теми лабораторних робіт
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Теми практичних (семінарських) занять
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Самостійна робота
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Методи навчання
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Методи контролю
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Розподіл балів, які отримують здобувачі за темами
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. Розподіл балів, які отримують здобувачі за видами занять
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. Критерії оцінювання
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="13. Критерії оцінювання">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#131" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.1. Критерії оцінювання лабораторних робіт та поточного контролю
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#132" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.2. Критерії оцінювання індивідуального завдання (РГР)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#133" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.3. Критерії оцінювання підсумкового контролю (диференційованого заліку)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-ects" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14. Шкала оцінювання: національна та ECTS
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15. Рекомендована література та інформаційні ресурси
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="15. Рекомендована література та інформаційні ресурси">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Основна література:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Додаткова література:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Інформаційні ресурси в Інтернеті:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лекції
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Лекції
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="lk/lk1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 1. Математичне представлення, дискретизація та квантування
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="lk/lk2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 2. Лінійні стаціонарні дискретні системи
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="lk/lk3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 3. Спектральний аналіз дискретних сигналів
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="lk/lk4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 4. Z-перетворення та проєктування цифрових фільтрів
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="lk/lk5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 5. Цифрове представлення зображень та колориметричні моделі
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="lk/lk6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 6. Поелементні амплітудні перетворення
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="lk/lk7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 7. Просторова фільтрація зображень
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="lk/lk8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 8. Геометричні трансформації та математична морфологія
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="lk/lk9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 9. Двовимірна Фур'є-обробка та детектори контурів
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лабораторні роботи
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Лабораторні роботи
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="lb/lb1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 1. Дискретизація, квантування сигналів та ефект аліасингу
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="lb/lb2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 2. Лінійні стаціонарні системи та дискретна згортка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="lb/lb3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 3. Спектральний аналіз за допомогою ДПФ/ШПФ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="lb/lb4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 4. Синтез цифрових КІХ та НІХ фільтрів
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="lb/lb5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 5. Статистичний та кореляційний аналіз
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="lb/lb6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 6. Базові операції з цифровими зображеннями
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="lb/lb7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 7. Амплітудні перетворення та бінаризація
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="lb/lb8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 8. Просторова фільтрація зображень
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="lb/lb9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 9. Геометричні перетворення зображень
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="lb/lb10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 10. Математична морфологія зображень
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="lb/lb11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 11. 2D перетворення Фур'є та детектування контурів
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="sr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Самостійна робота
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="rg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Розрахунково-графічна робота
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Зміст">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Зміст
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Опис освітнього компонента
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Мета та завдання освітнього компонента
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. У результаті вивчення освітнього компонента здобувач вищої освіти повинен:
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Програма навчальної дисципліни
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Програма навчальної дисципліни">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Модуль 1. Основи цифрової обробки сигналів та просторово-спектрального аналізу зображень
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-dsp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Змістовий модуль 1. Цифрова обробка сигналів та лінійні дискретні системи (DSP)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-dip-cv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Змістовий модуль 2. Цифрова обробка, фільтрація та аналіз зображень (DIP &amp; CV)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Структура освітнього компонента
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Теми лабораторних робіт
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Теми практичних (семінарських) занять
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Самостійна робота
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Методи навчання
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Методи контролю
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Розподіл балів, які отримують здобувачі за темами
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. Розподіл балів, які отримують здобувачі за видами занять
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. Критерії оцінювання
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="13. Критерії оцінювання">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#131" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.1. Критерії оцінювання лабораторних робіт та поточного контролю
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#132" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.2. Критерії оцінювання індивідуального завдання (РГР)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#133" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.3. Критерії оцінювання підсумкового контролю (диференційованого заліку)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-ects" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14. Шкала оцінювання: національна та ECTS
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15. Рекомендована література та інформаційні ресурси
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="15. Рекомендована література та інформаційні ресурси">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Основна література:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Додаткова література:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Інформаційні ресурси в Інтернеті:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="_1">РОБОЧА ПРОГРАМА ОСВІТНЬОГО КОМПОНЕНТА<br>«Обробка сигналів та зображень»</h1>
+<hr />
+<h3 id="1">1. Опис освітнього компонента</h3>
+<p>Освітній компонент «Обробка сигналів та зображень» є нормативною фундаментальною дисципліною професійного циклу підготовки бакалаврів зі спеціальності 123 «Комп'ютерна інженерія». Дисципліна формує у майбутніх фахівців системне інженерне мислення, базові математичні знання та стійкі практичні навички в галузі алгоритмічного, програмного та апаратного забезпечення цифрової обробки одновимірних часових послідовностей і багатовимірних просторових даних (статичних зображень і відеопотоків). Опанування цього компонента створює підґрунтя для розроблення сучасних інформаційно-вимірювальних систем, вбудованих контролерів Інтернету речей, систем комп'ютерного зору, робототехнічних комплексів, біомедичної діагностичної апаратури та засобів інтелектуального аналізу мультимедійних даних.</p>
+<p><pre class="mermaid"><code>flowchart TD
+    subgraph Prerequisites [Пререквізити]
+        P1["Вища математика&lt;br/&gt;(Матрична алгебра, Матаналіз)"]
+        P2["Програмування&lt;br/&gt;(Python, базові алгоритми)"]
+        P3["Комп'ютерна електроніка&lt;br/&gt;(Теорія електричних кіл і сигналів)"]
+    end
+
+    subgraph CoreComponent [Освітній компонент: Обробка сигналів та зображень]
+        M1["Змістовий модуль 1:&lt;br/&gt;Цифрова обробка сигналів та ЛСД-системи (DSP)"]
+        M2["Змістовий модуль 2:&lt;br/&gt;Цифрова обробка, фільтрація та аналіз зображень (DIP)"]
+        RGR["Індивідуальне завдання:&lt;br/&gt;Розрахунково-графічна робота (РГР)"]
+        M1 --&gt; M2
+        M1 --&gt; RGR
+        M2 --&gt; RGR
+    end
+
+    subgraph Postrequisites [Постреквізити]
+        Post1["Комп'ютерний зір та розпізнавання образів"]
+        Post2["Системи штучного інтелекту"]
+        Post3["Спеціалізовані комп'ютерні системи"]
+    end
+
+    Prerequisites --&gt; CoreComponent
+    CoreComponent --&gt; Postrequisites</code></pre>
+<em>Рисунок 1 — Структурно-логічна схема міжпредметних зв'язків освітнього компонента</em></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Найменування показників</th>
+<th style="text-align: left;">Галузь знань, спеціальність, освітній рівень</th>
+<th style="text-align: left;">Характеристика навчальної дисципліни</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Кількість кредитів ECTS:</strong> 4,0<br><strong>Загальний обсяг годин:</strong> 120</td>
+<td style="text-align: left;"><strong>Галузь знань:</strong> 12 «Інформаційні технології»<br><strong>Спеціальність:</strong> 123 «Комп'ютерна інженерія»</td>
+<td style="text-align: left;"><strong>Вид дисципліни:</strong> Обов'язковий освітній компонент (ООК 22)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Кількість модулів:</strong> 1<br><strong>Змістових модулів:</strong> 2<br><strong>Індивідуальне завдання:</strong> Розрахунково-графічна робота (РГР, 10 год)</td>
+<td style="text-align: left;"><strong>Освітня програма:</strong> «Комп'ютерна інженерія»<br><strong>Освітній рівень:</strong> Перший (бакалаврський) рівень</td>
+<td style="text-align: left;"><strong>Рік підготовки:</strong> 3-й (третій)<br><strong>Семестр:</strong> 5-й (п'ятий)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Тижневих годин:</strong><br>аудиторних — 2 год;<br>самостійної роботи — 4 год</td>
+<td style="text-align: left;"><strong>Форма навчання:</strong> Денна</td>
+<td style="text-align: left;"><strong>Лекції:</strong> 18 год.<br><strong>Практичні:</strong> 0 год.<br><strong>Лабораторні:</strong> 22 год.<br><strong>Самостійна робота:</strong> 70 год.<br><strong>Індивідуальне завдання (РГР):</strong> 10 год.<br><strong>Вид підсумкового контролю:</strong> Диференційований залік</td>
+</tr>
+</tbody>
+</table>
+<p>Співвідношення кількості годин аудиторних занять до самостійної та індивідуальної роботи здобувачів вищої освіти становить: <span class="arithmatex">\(40 / 80 = 1 / 2\)</span> (<span class="arithmatex">\(33.3\%\)</span> аудиторного навантаження та <span class="arithmatex">\(66.7\%\)</span> позааудиторної самостійної роботи).</p>
+<hr />
+<h3 id="2">2. Мета та завдання освітнього компонента</h3>
+<p><strong>Метою викладання освітнього компонента</strong> є формування у здобувачів вищої освіти комплексної системи теоретичних знань, алгоритмічної культури та стійких практичних компетентностей з математичного моделювання, спектрального аналізу, синтезу цифрових фільтрів і комп'ютерної обробки сигналів та зображень із використанням сучасного інструментарію мови програмування Python та спеціалізованих інженерних бібліотек.</p>
+<p><strong>Основними завданнями освітнього компонента є:</strong></p>
+<ul>
+<li>
+<p>Засвоєння фізико-математичних засад дискретизації, квантування аналогових процесів, теореми відліків Котельникова-Шеннона-Найквіста та методів запобігання аліасингу.</p>
+</li>
+<li>
+<p>Опанування апарату лінійних стаціонарних дискретних (ЛСД) систем, лінійної та кругової згортки, різницевих рівнянь та структур їхньої програмно-апаратної реалізації.</p>
+</li>
+<li>
+<p>Вивчення методів прямого, швидкого (ШПФ / FFT) та двовимірного перетворень Фур'є, властивостей спектральних віконних функцій для мінімізації витоку енергії спектра.</p>
+</li>
+<li>
+<p>Набуття практичних навичок проектування цифрових фільтрів зі скінченною (КІХ) та нескінченною (НІХ) імпульсними характеристиками, аналізу передавальних функцій <span class="arithmatex">\(H(z)\)</span> та перевірки BIBO-стійкості у комплексній z-площині.</p>
+</li>
+<li>
+<p>Вивчення спектрально-статистичних властивостей випадкових послідовностей, методів оцінювання автокореляційних і взаємнокореляційних функцій для локаційного виявлення затриманих сигналів у шумах.</p>
+</li>
+<li>
+<p>Опанування математичних моделей растрових зображень, колориметричних систем (RGB, HSV, CIELab, CMYK), алгоритмів поелементної корекції яскравості, контрасту, еквалізації гістограм та автоматичної бінаризації методом Оцу.</p>
+</li>
+<li>
+<p>Набуття практичних навичок реалізації просторової лінійної (Box, Gauss), нелінійної (Median, Bilateral) та диференціальної (Лапласіан, Собель, Шарр, Кенні) фільтрації, афінних і перспективних трансформацій та алгоритмів математичної морфології.</p>
+</li>
+</ul>
+<hr />
+<h3 id="3">3. У результаті вивчення освітнього компонента здобувач вищої освіти повинен:</h3>
+<p><strong>Знати:</strong></p>
+<ul>
+<li>
+<p>Математичні моделі неперервних, дискретних, квантованих та цифрових сигналів, умови збереження інформації при перетворенні «аналог-цифра» та фізичну сутність ефекту аліасингу.</p>
+</li>
+<li>
+<p>Властивості та часові характеристики лінійних стаціонарних дискретних систем, алгоритми обчислення прямої лінійної та циклічної дискретної згортки.</p>
+</li>
+<li>
+<p>Теоретичні основи прямого, оберненого та швидкого перетворення Фур'є за основою 2, структуру обчислювального графа типу «метелик», математичні вирази та властивості вікон Ханна, Хеммінга, Блекмана.</p>
+</li>
+<li>
+<p>Апарат прямого та оберненого z-перетворення, геометричний та алгебраїчний критерії стійкості ЛСД-систем за розташуванням полюсів на z-площині, топології реалізації КІХ та НІХ фільтрів.</p>
+</li>
+<li>
+<p>Закони змішування кольорів Грасмана, формулу яскравості ITU-R BT.601, аналітичні моделі перерахунку координат між просторами RGB, HSV, CIELab та CMYK.</p>
+</li>
+<li>
+<p>Методи поелементних амплітудних перетворень, математичний апарат глобальної еквалізації гістограм на основі дискретної функції CDF, критерій максимізації міжкласової дисперсії Оцу та локальну адаптивну бінаризацію.</p>
+</li>
+<li>
+<p>Алгоритми двовимірної просторової фільтрації, матриці ядер згладжування, підвищення різкості, операторів Собеля, Шарра, Кенні та морфологічних операторів ерозії, діляції, відкриття, закриття, Top-Hat та Black-Hat.</p>
+</li>
+</ul>
+<p><strong>Уміти:</strong></p>
+<ul>
+<li>
+<p>Розраховувати мінімально допустиму частоту дискретизації для полігармонічних процесів, оцінювати похибки квантування за рівнем та застосовувати процедуру дизеризації для лінеаризації передавальної характеристики квантувача.</p>
+</li>
+<li>
+<p>Складати різницеві рівняння, будувати канонічні блок-схеми та обчислювати вихідний відгук ЛСД-систем методом дискретної згортки у часовій області.</p>
+</li>
+<li>
+<p>Виконувати спектральний аналіз одновимірних сигналів за допомогою бібліотеки <code>numpy.fft</code>, усувати ефект розтікання спектра застосуванням вагових вікон, аналізувати амплітудний та фазовий спектри.</p>
+</li>
+<li>
+<p>Синтезувати цифрові КІХ-фільтри методом віконного зважування та НІХ-фільтри Баттерворта за допомогою бібліотеки <code>scipy.signal</code>, аналізувати АЧХ, ФЧХ та груповий час затримки.</p>
+</li>
+<li>
+<p>Проводити статистичний та кореляційний аналіз випадкових послідовностей, розраховувати інтервал кореляції та виконувати пошук затриманого сигналу методом взаємної кореляції.</p>
+</li>
+<li>
+<p>Виконувати завантаження, декомпозицію каналів, конвертацію колірних просторів та колірну сегментацію об'єктів засобами бібліотек OpenCV та Pillow.</p>
+</li>
+<li>
+<p>Здійснювати лінійне контрастування, гамма-корекцію за допомогою таблиць LUT, еквалізацію гістограм та бінаризацію зображень з нерівномірним освітленням.</p>
+</li>
+<li>
+<p>Застосовувати лінійні, медіанні, білатеральні та лапласівські просторові фільтри, розраховувати матриці афінних та перспективних перетворень (гомографії), виконувати морфологічне очищення масок та оконтурювання об'єктів.</p>
+</li>
+</ul>
+<p><strong>Формовані компетентності та програмні результати навчання (згідно зі стандартом ВО 123 «Комп'ютерна інженерія»):</strong></p>
+<ul>
+<li>
+<p><strong>ЗК 1:</strong> Здатність до абстрактного мислення, аналізу та синтезу при побудові математичних моделей сигналів і систем.</p>
+</li>
+<li>
+<p><strong>ЗК 2:</strong> Здатність застосовувати теоретичні знання математики, фізики та інформатики для розв'язання практичних інженерних задач цифрової обробки інформації.</p>
+</li>
+<li>
+<p><strong>ЗК 6:</strong> Здатність до пошуку, оброблення та аналізу науково-технічної інформації з фахових джерел, стандартів та документації до спеціалізованих програмних бібліотек.</p>
+</li>
+<li>
+<p><strong>СК 2:</strong> Здатність використовувати сучасні методи, алгоритми та мови високого рівня (Python) для створення й тестування програмного забезпечення комп'ютерних систем обробки сигналів та зображень.</p>
+</li>
+<li>
+<p><strong>СК 7:</strong> Здатність проектувати, моделювати та досліджувати апаратно-програмні компоненти цифрових фільтрів, спектроаналізаторів і пристроїв перетворення сигналів у комп'ютерно-інтегрованих системах.</p>
+</li>
+<li>
+<p><strong>СК 12:</strong> Здатність розробляти та впроваджувати алгоритми цифрової обробки зображень, просторової фільтрації, геометричної нормалізації та детектування ознак у прикладних інженерних та комп'ютерних відеосистемах.</p>
+</li>
+<li>
+<p><strong>ПРН 2:</strong> Вміти застосовувати фундаментальні знання математичного аналізу, теорії ймовірностей, лінійної алгебри та теорії функцій комплексної змінної для розв'язання інженерних задач обробки сигналів.</p>
+</li>
+<li>
+<p><strong>ПРН 8:</strong> Вміти розробляти алгоритмічне, математичне та програмне забезпечення для моделювання динамічних процесів, лінійних систем і фільтрації завад у каналах передачі даних.</p>
+</li>
+<li>
+<p><strong>ПРН 14:</strong> Вміти виконувати часовий, спектральний, кореляційний та просторовий аналіз одновимірних сигналів і багатовимірних зображень, оцінювати якісні показники передачі та обробки даних у комп'ютерних системах.</p>
+</li>
+</ul>
+<hr />
+<h3 id="4">4. Програма навчальної дисципліни</h3>
+<h4 id="1-">Модуль 1. Основи цифрової обробки сигналів та просторово-спектрального аналізу зображень</h4>
+<h4 id="1-dsp">Змістовий модуль 1. Цифрова обробка сигналів та лінійні дискретні системи (DSP)</h4>
+<ul>
+<li>
+<p><strong>Тема 1. Математичне представлення, дискретизація та квантування сигналів. Теорема Котельникова-Шеннона-Найквіста.</strong>
+  Фізична та інформаційна природа вимірювальних сигналів у комп'ютерних системах. Класифікація сигналів: неперервні аналогові, квантовані за рівнем, дискретизовані за часом та цифрові послідовності. Базові тестові сигнали дискретного часу: одиничний імпульс Дірака-Кронекера <span class="arithmatex">\(\delta[n]\)</span>, одиничний стрибок Хевісайда <span class="arithmatex">\(u[n]\)</span>, дійсна та комплексна експоненти, цифрова гармонійна послідовність. Математичні основи часової дискретизації аналогових процесів. Спектральний склад дискретизованого сигналу та періодична реплікація спектральної щільності з кроком частоти дискретизації <span class="arithmatex">\(f_s\)</span>. Фундаментальна теорема відліків Котельникова-Шеннона-Найквіста, визначення критичної частоти Найквіста <span class="arithmatex">\(f_{Nyq} = f_s / 2\)</span>. Природа виникнення стробоскопічного ефекту та спектрального накладання (аліасингу / aliasing), аналітичний розрахунок частот несправжніх гармонік <span class="arithmatex">\(f_{alias}\)</span>. Призначення та схемотехнічні вимоги до аналогових фільтрів попереднього захисту від аліасингу (Anti-Aliasing Filters). Математична модель квантування за рівнем. Крок рівномірного квантування <span class="arithmatex">\(\Delta\)</span>, розрахунок дисперсії похибки квантування <span class="arithmatex">\(\sigma_e^2 = \Delta^2 / 12\)</span>, співвідношення сигнал/шум (<span class="arithmatex">\(\text{SNR}\)</span>). Фізичні засади та алгоритми дизеризації (dithering) для рандомізації шуму квантування та усунення нелінійних гармонійних спотворень у низькорозрядних АЦП.</p>
+</li>
+<li>
+<p><strong>Тема 2. Лінійні стаціонарні дискретні (ЛСД) системи. Імпульсна характеристика та дискретна згортка.</strong>
+  Поняття дискретної системи як перетворення та оператора <span class="arithmatex">\(\mathcal{T}\{\cdot\}\)</span>. Класифікація систем: пам'ять, лінійність (принцип суперпозиції, адитивність, однорідність), часова стаціонарність (інваріантність до часового зсуву), причинність (каузальність) та BIBO-стійкість за обмеженим входом. Імпульсна характеристика <span class="arithmatex">\(h[n]\)</span> як вичерпний часовий опис динамічних властивостей ЛСД-системи. Математичний апарат дискретної лінійної згортки <span class="arithmatex">\(y[n] = \sum x[k] h[n-k]\)</span>, її комутативні, асоціативні та дистрибутивні властивості. Алгоритмічні кроки обчислення згортки: часове обертання, зсув, поелементне множення та інтегрування. Розрахунок тривалості відгуку для скінченних послідовностей <span class="arithmatex">\(N_y = N_x + N_h - 1\)</span>. Опис ЛСД-систем лінійними різницевими рівняннями <span class="arithmatex">\(N\)</span>-го порядку з постійними коефіцієнтами. Структурні графічні схеми систем: суматори, масштабні помножувачі, елементи одиничної затримки <span class="arithmatex">\(z^{-1}\)</span>. Системи зі скінченною (СІХ / FIR) та нескінченною (НІХ / IIR) імпульсними характеристиками. Кругова (циклічна) згортка періодичних сигналів, зв'язок між лінійною та круговою згорткою на основі процедури доповнення послідовностей нулями (Zero-Padding).</p>
+</li>
+<li>
+<p><strong>Тема 3. Спектральний аналіз дискретних сигналів: Дискретне перетворення Фур'є (ДПФ), ШПФ (FFT) та віконні функції.</strong>
+  Перехід від інтегрального перетворення Фур'є до Дискретного перетворення Фур'є (ДПФ / DFT) на скінченному інтервалі спостереження. Пряме та обернене ДПФ, аналітичний зміст поворотних комплексних множників <span class="arithmatex">\(W_N = \exp(-j 2\pi / N)\)</span>. Матрична форма подання ДПФ <span class="arithmatex">\(\mathbf{X} = \mathbf{W}_N \mathbf{x}\)</span>, оцінка квадратичної обчислювальної складності <span class="arithmatex">\(O(N^2)\)</span>. Алгоритми швидкого перетворення Фур'є (ШПФ / FFT) Кулі-Тьюкі за основою 2 з проріджуванням за часом (DIT) та за частотою (DIF). Базова операція «метелик», факторизація матриць, зменшення складності до <span class="arithmatex">\(O(N \log_2 N)\)</span>. Властивості ДПФ: спектральна симетрія дійсних сигналів, циклічний зсув, рівність Парсеваля. Амплітудний та фазовий спектри, розрахунок частотного кроку сітки <span class="arithmatex">\(\Delta f = f_s / N\)</span>. Фізична природа ефекту розтікання (витоку) спектра (spectral leakage) при некратному співвідношенні частот сигналу та кроку сітки. Методи зменшення витоку енергії за допомогою множення сигналу на вагові віконні функції. Аналіз спектральних властивостей прямокутного вікна, вікон Ханна, Хеммінга та Блекмана: порівняння ширини головної пелюстки, рівня пригнічення бічних пелюсток, швидкості спадання та когерентного підсилення.</p>
+</li>
+<li>
+<p><strong>Тема 4. Z-перетворення та проектування цифрових фільтрів (КІХ та НІХ). Аналіз стійкості у z-площині.</strong>
+  Визначення прямого двостороннього та одностороннього z-перетворення для дискретних послідовностей. Комплексна змінна <span class="arithmatex">\(z = \rho e^{j\Omega}\)</span>, поняття області збіжності (Region of Convergence — ROC). Зв'язок z-перетворення з перетворенням Лапласа та дискретним перетворенням Фур'є. Властивості z-перетворення: лінійність, теорема затримки, z-образ згортки, диференціювання зображення. Передавальна функція дискретної системи <span class="arithmatex">\(H(z)\)</span> як відношення поліномів. Геометрична інтерпретація передавальної функції: визначення нулів <span class="arithmatex">\(z_m\)</span> та полюсів <span class="arithmatex">\(p_k\)</span>. Зв'язок розташування нулів і полюсів з формою амплітудно-частотної (АЧХ) та фазочастотної (ФЧХ) характеристик системи. Алгебраїчний та геометричний критерії стійкості каузальних ЛСД-систем: вимога розташування всіх полюсів строго всередині одиничного кола <span class="arithmatex">\(|p_k| &lt; 1\)</span>. Синтез цифрових фільтрів зі скінченною імпульсною характеристикою (КІХ / FIR): метод віконного зважування ідеальної імпульсної характеристики, умови забезпечення строго лінійної ФЧХ та постійного групового часу затримки (<span class="arithmatex">\(\tau_g = \text{const}\)</span>). Синтез цифрових фільтрів з нескінченною імпульсною характеристикою (НІХ / IIR): метод білінійного z-перетворення (Тастіна) аналогових фільтрів-прототипів Баттерворта, Чебишева та Кауера, структури прямої (Direct Form I, II) та канонічної реалізації. Статистичні властивості випадкових сигналів, поняття білого шуму, марківського авторегресійного процесу 1-го порядку <span class="arithmatex">\(\text{AR}(1)\)</span>, теорема Вінера-Хінчіна, автокореляційна функція (АКФ) та взаємна кореляційна функція (ВКФ) для виявлення затриманих сигналів на тлі сильних завад.</p>
+</li>
+</ul>
+<p><pre class="mermaid"><code>flowchart LR
+    subgraph DSP_Theory_Flow [Логічний ланцюг цифрової обробки сигналів]
+        T1["Тема 1: Неперервний сигнал s(t)&lt;br/&gt;Дискретизація fs &gt;= 2*fmax, Квантування Delta"] --&gt; T2["Тема 2: ЛСД-системи&lt;br/&gt;Імпульсна характеристика h[n], Згортка"]
+        T2 --&gt; T3["Тема 3: Спектральний аналіз&lt;br/&gt;ДПФ, ШПФ O(N log N), Вікна"]
+        T3 --&gt; T4["Тема 4: z-перетворення, Синтез фільтрів&lt;br/&gt;H(z), Полюси |p| &lt; 1, КІХ та НІХ"]
+    end</code></pre>
+<em>Рисунок 2 — Концептуальний ланцюг перетворень та аналізу сигналів у змістовому модулі 1</em></p>
+<hr />
+<h4 id="2-dip-cv">Змістовий модуль 2. Цифрова обробка, фільтрація та аналіз зображень (DIP &amp; CV)</h4>
+<ul>
+<li>
+<p><strong>Тема 5. Цифрове представлення зображень та колориметричні моделі.</strong>
+  Математичний опис плоского монохромного зображення як неперервної функції двох просторових координат <span class="arithmatex">\(f(x, y)\)</span> та дискретного растру як матриці <span class="arithmatex">\(I[y, x]\)</span>. Структура матричних фотоприймачів (CCD/CMOS), масив колірних фільтрів Баєра (Bayer pattern), просторова дискретизація та квантування яскравості пікселів. Розрядність цифрових зображень: бінарні (1 біт), півтонові (8 біт, типи <code>uint8</code>, <code>CV_8U</code>), підвищеної точності (16 біт <code>uint16</code>, 32 біти з рухомою комою <code>float32</code>, <code>CV_32F</code>). Формати зберігання зображень без стиснення (BMP, TIFF) та з компресією (PNG, JPEG). Колориметрія та біологічні основи зорового сприйняття. Закони змішування кольорів Грасмана. Світлота, колірний тон (Hue), насиченість (Saturation). Адитивний колірний простір RGB, формули унормованого перетворення у напівтонове півтонове зображення за стандартом ITU-R BT.601 (<span class="arithmatex">\(Y = 0.2989R + 0.5870G + 0.1140B\)</span>). Специфіка колірного кодування бібліотеки OpenCV (порядок каналів BGR) у порівнянні з Pillow та Matplotlib (RGB). Циліндричний колірний простір HSV/HSL, формули взаємного перерахунку з RGB, нормування параметрів у 8-бітній шкалі. Апаратно-незалежні колірні системи CIE XYZ та рівноконтрастний простір CIELab (<span class="arithmatex">\(L^*a^*b^*\)</span>). Субтрактивні поліграфічні моделі CMY та CMYK. Алгоритми декомпозиції колірних каналів та порогової сегментації об'єктів у просторі HSV.</p>
+</li>
+<li>
+<p><strong>Тема 6. Поелементні амплітудні перетворення, гістограмний аналіз та методи бінаризації.</strong>
+  Математична модель поелементного амплітудного перетворення яскравості <span class="arithmatex">\(s = T(r)\)</span>. Лінійне масштабування динамічного діапазону: регулювання яскравості (зміщення <span class="arithmatex">\(b\)</span>) та контрастності (коефіцієнт <span class="arithmatex">\(k\)</span>) за виразом <span class="arithmatex">\(s = \text{clip}(k \cdot r + b, 0, 255)\)</span>. Перетворення зображення в негатив. Степеневе нелінійне перетворення (гамма-корекція) <span class="arithmatex">\(s = 255 \cdot (r / 255)^\gamma\)</span>, аналіз випадків розтягування темних тонів (<span class="arithmatex">\(\gamma &lt; 1\)</span>) та стиснення пересвітлених областей (<span class="arithmatex">\(\gamma &gt; 1\)</span>). Програмна оптимізація амплітудних перетворень на основі одновимірних таблиць пошуку (Look-Up Table — LUT). Гістограма розподілу рівнів яскравості монохромних зображень <span class="arithmatex">\(h(r_k) = n_k\)</span>, нормована оцінка щільності ймовірності <span class="arithmatex">\(p(r_k)\)</span>. Глобальна еквалізація гістограми за допомогою кумулятивної функції розподілу (CDF), лінеаризація інтегрального закону розподілу рівнів сірого. Сегментація зображень методом порогової бінаризації. Глобальні фіксовані пороги: режими прямої бінаризації, інверсної бінаризації, порогового усічення (TRUNC) та обнулення (TOZERO). Автоматичний метод бінаризації Оцу (Otsu's thresholding) на основі максимізації міжкласової дисперсії <span class="arithmatex">\(\sigma_B^2(T)\)</span>. Локальна адаптивна бінаризація (Adaptive Mean та Adaptive Gaussian) на ковзних блоках <span class="arithmatex">\(S \times S\)</span> для сегментації текстових документів і деталей в умовах неоднорідного освітлення та градієнтного фону.</p>
+</li>
+<li>
+<p><strong>Тема 7. Просторова фільтрація зображень: згладжування, шумозаглушення та підкреслення меж.</strong>
+  Концепція двовимірної просторової фільтрації у просторовій області на основі ковзної маски (ядра фільтра). Механізми обробки крайових пікселів кадру (padding: нульове розширення, дзеркальне відбиття reflect, повторення границі replicate, циклічне замикання wrap). Лінійні згладжувальні фільтри низьких частот: прямокутний усереднюючий фільтр (Box filter) та двовимірний фільтр Гаусса (Gaussian Blur). Математичні моделі шумів зображень: адитивний флуктуаційний гаусів шум та імпульсний біполярний шум «сіль та перець» (Salt &amp; Pepper). Нелінійна просторова фільтрація: ранговий медіанний фільтр (Median filter), його висока стійкість до імпульсних викидів та збереження монотонних перепадів яскравості. Білатеральна фільтрація (Bilateral filter) як метод нелінійного шумозаглушення зі збереженням різкості меж завдяки комбінації просторового та фотометричного гаусових ядер. Кількісні метрики оцінювання якості реставрації зображень: середньоквадратична похибка (<span class="arithmatex">\(\text{MSE}\)</span>) та пікове співвідношення сигнал/шум (<span class="arithmatex">\(\text{PSNR}\)</span>). Диференціальні просторові фільтри другого порядку: дискретний оператор Лапласа (Лапласіан), конфігурація 4-зв'язних та 8-зв'язних ядер. Метод нерізкого маскування (Unsharp Masking) та підкреслення високочастотних контурів за схемою <span class="arithmatex">\(I_{sharp} = I_{orig} + k \cdot \nabla^2 I\)</span>.</p>
+</li>
+<li>
+<p><strong>Тема 8. Геометричні афінні та перспективні трансформації. Математична морфологія.</strong>
+  Матричний апарат просторових геометричних перетворень у 2D-просторі з використанням однорідних координат. Афінні перетворення: збереження паралельності прямих ліній, матриця перетворення розмірністю <span class="arithmatex">\(2 \times 3\)</span>. Елементарні афінні операції: пропорційне та непропорційне масштабування, поворот на кут <span class="arithmatex">\(\theta\)</span> навколо довільного полюса <span class="arithmatex">\((x_c, y_c)\)</span>, паралельне перенесення <span class="arithmatex">\((t_x, t_y)\)</span>, скіс (shear). Пряме та зворотне координатне відображення (Inverse Mapping). Методи просторової інтерполяції яскравості пікселів: інтерполяція за найближчим сусідом (<code>INTER_NEAREST</code>), білінійна (<code>INTER_LINEAR</code>), бікубічна на сплайнах (<code>INTER_CUBIC</code>), віконна інтерполяція Ланцоша (<code>INTER_LANCZOS4</code>). Перспективні перетворення (гомографія): матриця проекції розмірністю <span class="arithmatex">\(3 \times 3\)</span>, поняття точок сходу на площині. Розрахунок матриці гомографії за 4-ма неколінеарними парами опорних точок, алгоритм усунення перспективних спотворень (Bird's Eye View). Основи математичної морфології над множинами: поняття структуруючого елемента (ядра), форми зондуючих масок (прямокутник, хрест, еліпс). Базові операції над бінарними та напівтоновими зображеннями: ерозія (звуження <span class="arithmatex">\(A \ominus B\)</span>) та діляція (розширення <span class="arithmatex">\(A \oplus B\)</span>). Комбіновані морфологічні операції: відкриття (Opening), закриття (Closing), морфологічний градієнт, операції «білий капелюх» (White Top-Hat) та «чорний капелюх» (Black-Hat) для селективного виділення мікрооб'єктів на неоднорідному тлі.</p>
+</li>
+<li>
+<p><strong>Тема 9. Двовимірна Фур'є-обробка, детектори контурів та основи розпізнавання об'єктів.</strong>
+  Двовимірне дискретне перетворення Фур'є (2D-DFT / 2D-FFT) для аналізу просторових частот. Центрування спектрального масиву (<code>fftshift</code>), розрахунок логарифмічного амплітудного спектра <span class="arithmatex">\(20\log_{10}(|F(u, v)| + 1)\)</span> та фазового спектра. Частотна фільтрація у Фур'є-просторі: ідеальні фільтри (ILPF, IHPF), фільтри Гаусса (GLPF, GHPF). Аналіз паразитного явища дзвону (осциляцій Гіббса) при різкому частотному зрізі. Методи відновлення дефокусованих та розмитих рухом зображень. Градієнтні детектори меж першого порядку: оператори Робертса, Собеля, Шарра, Прюітта. Оптимальний детектор контурів Кенні (Canny edge detector): фільтрація шуму Гауссом, розрахунок модуля та напрямку градієнта, потоншення ліній пригніченням немаксимумів (Non-Maximum Suppression), подвійна порогова фільтрація та трасування контурів за гістерезисом. Вступ до інтелектуального аналізу зображень: базові принципи згорткових нейронних мереж (Convolutional Neural Networks — CNN), операція згортки у багатошарових мережах (Conv2D), шари підвибірки (MaxPooling2D), класифікаційні повнозв'язні шари (Dense) для автоматичного розпізнавання об'єктів.</p>
+</li>
+</ul>
+<p><pre class="mermaid"><code>flowchart LR
+    subgraph DIP_Image_Processing_Pipeline [Конвеєр цифрової обробки зображень]
+        T5["Тема 5: Вхідне растрове зображення&lt;br/&gt;Колірні простори RGB, HSV, Lab"] --&gt; T6["Тема 6: Амплітудна корекція&lt;br/&gt;Гістограми, Гамма, Бінаризація Оцу"]
+        T6 --&gt; T7["Тема 7: Просторова фільтрація&lt;br/&gt;Gauss, Median, Bilateral, Laplacian"]
+        T7 --&gt; T8["Тема 8: Геометрія та морфологія&lt;br/&gt;Афінні/Перспективні зміни, Ерозія/Діляція"]
+        T8 --&gt; T9["Тема 9: Спектр та контури&lt;br/&gt;2D-FFT, Canny, Основи CNN"]
+    end</code></pre>
+<em>Рисунок 3 — Концептуальний конвеєр цифрової обробки та аналізу зображень у змістовому модулі 2</em></p>
+<hr />
+<h3 id="5">5. Структура освітнього компонента</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Назва змістових модулів і тем</th>
+<th style="text-align: center;">Усього годин</th>
+<th style="text-align: center;">Лекції</th>
+<th style="text-align: center;">Практичні</th>
+<th style="text-align: center;">Лабораторні</th>
+<th style="text-align: center;">Самостійна робота</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Змістовий модуль 1. Цифрова обробка сигналів та лінійні дискретні системи (DSP)</strong></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">Тема 1. Математичне представлення, дискретизація та квантування сигналів. Теорема Котельникова-Шеннона-Найквіста.</td>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">6</td>
+</tr>
+<tr>
+<td style="text-align: left;">Тема 2. Лінійні стаціонарні дискретні (ЛСД) системи. Імпульсна характеристика та дискретна згортка.</td>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">6</td>
+</tr>
+<tr>
+<td style="text-align: left;">Тема 3. Спектральний аналіз дискретних сигналів: ДПФ, ШПФ (FFT) та віконні функції.</td>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">6</td>
+</tr>
+<tr>
+<td style="text-align: left;">Тема 4. Z-перетворення та проектування цифрових фільтрів (КІХ та НІХ). Аналіз стійкості у z-площині.</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">10</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Усього за змістовим модулем 1</strong></td>
+<td style="text-align: center;"><strong>46</strong></td>
+<td style="text-align: center;"><strong>8</strong></td>
+<td style="text-align: center;"><strong>0</strong></td>
+<td style="text-align: center;"><strong>10</strong></td>
+<td style="text-align: center;"><strong>28</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Змістовий модуль 2. Цифрова обробка, фільтрація та аналіз зображень (DIP &amp; CV)</strong></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">Тема 5. Цифрове представлення зображень та колориметричні моделі.</td>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">6</td>
+</tr>
+<tr>
+<td style="text-align: left;">Тема 6. Поелементні амплітудні перетворення, гістограмний аналіз та методи бінаризації.</td>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">6</td>
+</tr>
+<tr>
+<td style="text-align: left;">Тема 7. Просторова фільтрація зображень: згладжування, шумозаглушення та підкреслення меж.</td>
+<td style="text-align: center;">12</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">8</td>
+</tr>
+<tr>
+<td style="text-align: left;">Тема 8. Геометричні афінні та перспективні трансформації. Математична морфологія.</td>
+<td style="text-align: center;">18</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">12</td>
+</tr>
+<tr>
+<td style="text-align: left;">Тема 9. Двовимірна Фур'є-обробка, детектори контурів та основи розпізнавання об'єктів.</td>
+<td style="text-align: center;">14</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">10</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Усього за змістовим модулем 2</strong></td>
+<td style="text-align: center;"><strong>64</strong></td>
+<td style="text-align: center;"><strong>10</strong></td>
+<td style="text-align: center;"><strong>0</strong></td>
+<td style="text-align: center;"><strong>12</strong></td>
+<td style="text-align: center;"><strong>42</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">Виконання індивідуального завдання (Розрахунково-графічна робота)</td>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">10</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>УСЬОГО ГОДИН</strong></td>
+<td style="text-align: center;"><strong>120</strong></td>
+<td style="text-align: center;"><strong>18</strong></td>
+<td style="text-align: center;"><strong>0</strong></td>
+<td style="text-align: center;"><strong>22</strong></td>
+<td style="text-align: center;"><strong>80</strong></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="6">6. Теми лабораторних робіт</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">№ з/п</th>
+<th style="text-align: left;">Номер і повна назва теми лабораторної роботи</th>
+<th style="text-align: center;">Кількість годин</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;"><strong>Лабораторна робота № 1.</strong> Дослідження процесів дискретизації, квантування сигналів та ефекту аліасингу</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td style="text-align: left;"><strong>Лабораторна робота № 2.</strong> Моделювання лінійних стаціонарних систем та обчислення дискретної згортки</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td style="text-align: left;"><strong>Лабораторна робота № 3.</strong> Спектральний аналіз сигналів за допомогою ДПФ/ШПФ та застосування віконних функцій</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td style="text-align: left;"><strong>Лабораторна робота № 4.</strong> Синтез цифрових КІХ та НІХ фільтрів та аналіз стійкості у z-площині</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td style="text-align: left;"><strong>Лабораторна робота № 5.</strong> Статистичний та кореляційний аналіз випадкових дискретних сигналів</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">6</td>
+<td style="text-align: left;"><strong>Лабораторна робота № 6.</strong> Базові операції з цифровими зображеннями, аналіз каналів та колірні простори</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">7</td>
+<td style="text-align: left;"><strong>Лабораторна робота № 7.</strong> Амплітудні перетворення, еквалізація гістограм та бінаризація методом Оцу</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">8</td>
+<td style="text-align: left;"><strong>Лабораторна робота № 8.</strong> Просторова фільтрація зображень: згладжування, шумозаглушення та підкреслення меж</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">9</td>
+<td style="text-align: left;"><strong>Лабораторна робота № 9.</strong> Геометричні афінні та перспективні перетворення зображень</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">10</td>
+<td style="text-align: left;"><strong>Лабораторна робота № 10.</strong> Математична морфологія бінарних та напівтонових зображень</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">11</td>
+<td style="text-align: left;"><strong>Лабораторна робота № 11.</strong> Двовимірне перетворення Фур'є та детектування контурів на зображеннях</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: left;"><strong>Усього годин лабораторних занять</strong></td>
+<td style="text-align: center;"><strong>22</strong></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="7">7. Теми практичних (семінарських) занять</h3>
+<p>Навчальним планом підготовки бакалаврів зі спеціальності 123 «Комп'ютерна інженерія» у межах освітнього компонента «Обробка сигналів та зображень» окремих практичних занять не передбачено (0 годин). Усі розрахункові, алгоритмічні, моделюючі та експериментально-інженерні завдання інтегровано у структуру лабораторного практикуму (22 години) та самостійної роботи здобувачів вищої освіти.</p>
+<hr />
+<h3 id="8">8. Самостійна робота</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">№ з/п</th>
+<th style="text-align: left;">Назва теми для самостійного опрацювання та детальний зміст робіт</th>
+<th style="text-align: center;">Кількість годин СР</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;"><strong>Тема 1. Математичне представлення, дискретизація та квантування сигналів.</strong><br>Самостійне опрацювання методів точного відновлення сигналів за допомогою інтерполяційного ряду Уіттекера-Шеннона-Котельникова. Дослідження аналітичних залежностей спектрального шуму квантування від закону розподілу вхідного аналогового сигналу. Підготовка до лабораторної роботи № 1, оформлення звіту та програмного коду.</td>
+<td style="text-align: center;">6</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td style="text-align: left;"><strong>Тема 2. Лінійні стаціонарні дискретні системи та згортка.</strong><br>Вивчення аналітичних методів розв'язання різницевих рівнянь із постійними коефіцієнтами за допомогою класичного та операторного підходів. Дослідження алгоритмів швидкої згортки на основі теореми про циклічну згортку та блочних методів Overlap-Add і Overlap-Save. Підготовка до лабораторної роботи № 2, оформлення звіту.</td>
+<td style="text-align: center;">6</td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td style="text-align: left;"><strong>Тема 3. Спектральний аналіз: ДПФ, ШПФ та віконне зважування.</strong><br>Опрацювання алгоритмів ШПФ для довільних складених довжин вибірок (алгоритм Блуштайна, алгоритм Радера). Дослідження віконних функцій із регульованими параметрами: вікна Кайзера-Бесселя та вікон Чебишева. Підготовка до лабораторної роботи № 3, оформлення звіту.</td>
+<td style="text-align: center;">6</td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td style="text-align: left;"><strong>Тема 4. Z-перетворення, цифрові фільтри та випадкові процеси.</strong><br>Вивчення алгоритму Паркса-Макклеллана (Ремеза) для оптимального рівнохвильового синтезу КІХ-фільтрів. Дослідження методів мінімізації похибок заокруглення та шуму квантування коефіцієнтів у каскадних формах фільтрів. Опрацювання теорії випадкових марківських послідовностей вищих порядків. Підготовка до лабораторних робіт № 4 та № 5, оформлення звітів.</td>
+<td style="text-align: center;">10</td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td style="text-align: left;"><strong>Тема 5. Цифрове представлення зображень та колірні простори.</strong><br>Дослідження алгоритмів стиснення зображень без втрат (Run-Length Encoding, LZW, дефляція PNG) та з втратами (дискретне косинусне перетворення у стандарті JPEG). Опрацювання метрик обчислення колірних відмінностей за стандартом CIE Delta E (<span class="arithmatex">\(\Delta E_{76}, \Delta E_{94}, \Delta E_{00}\)</span>). Підготовка до лабораторної роботи № 6, оформлення звіту.</td>
+<td style="text-align: center;">6</td>
+</tr>
+<tr>
+<td style="text-align: center;">6</td>
+<td style="text-align: left;"><strong>Тема 6. Поелементні амплітудні перетворення та бінаризація.</strong><br>Вивчення алгоритмів локально-адаптивної еквалізації гістограми з обмеженням контрасту (CLAHE). Дослідження багатопорогової бінаризації зображень за розширеним методом Оцу та методом Сауволи для низькоякісних сканів. Підготовка до лабораторної роботи № 7, оформлення звіту.</td>
+<td style="text-align: center;">6</td>
+</tr>
+<tr>
+<td style="text-align: center;">7</td>
+<td style="text-align: left;"><strong>Тема 7. Просторова фільтрація зображень.</strong><br>Опрацювання методів оптимальної просторової деконволюції на основі фільтрації Вінера та регуляризації Тихонова для усунення розмиття зображень оптикою. Дослідження напрямлених та анізотропних фільтрів дифузії Перони-Маліка. Підготовка до лабораторної роботи № 8, оформлення звіту.</td>
+<td style="text-align: center;">8</td>
+</tr>
+<tr>
+<td style="text-align: center;">8</td>
+<td style="text-align: left;"><strong>Тема 8. Геометричні перетворення та математична морфологія.</strong><br>Вивчення алгоритмів оцінки матриці гомографії за множиною ключових дескрипторних точок методом RANSAC. Дослідження топологічних операцій морфологічної скелетизації, алгоритму витончення контурів Зонга-Суня та гранулометричного аналізу. Підготовка до лабораторних робіт № 9 та № 10, оформлення звітів.</td>
+<td style="text-align: center;">12</td>
+</tr>
+<tr>
+<td style="text-align: center;">9</td>
+<td style="text-align: left;"><strong>Тема 9. Двовимірна Фур'є-обробка та аналіз контурів.</strong><br>Опрацювання алгоритмів контурної сегментації на основі маркерного вододілу (Marker-Controlled Watershed) та активних контурів (Snakes). Ознайомлення з архітектурами сучасних згорткових нейронних мереж (LeNet, AlexNet, VGG) для задач класифікації зображень. Підготовка до лабораторної роботи № 11, оформлення звіту.</td>
+<td style="text-align: center;">10</td>
+</tr>
+<tr>
+<td style="text-align: center;">10</td>
+<td style="text-align: left;"><strong>Виконання індивідуального завдання (Розрахунково-графічна робота).</strong><br>Комплексний розрахунок, програмна реалізація, тестування наскрізного тракту цифрової фільтрації вимірювальних сигналів та конвеєра просторово-спектральної обробки зображень згідно з індивідуальним варіантом. Оформлення розрахунково-пояснювальної записки відповідно до ДСТУ 3008:2015 та публічний захист роботи.</td>
+<td style="text-align: center;">10</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: left;"><strong>Усього годин самостійної та індивідуальної роботи</strong></td>
+<td style="text-align: center;"><strong>80</strong></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="9">9. Методи навчання</h3>
+<p>Організація освітнього процесу з дисципліни «Обробка сигналів та зображень» базується на поєднанні традиційних академічних підходів та інноваційних інтерактивних методик проблемно-орієнтованого (Problem-Based Learning) і проектно-орієнтованого (Project-Based Learning) навчання.</p>
+<p>Лекційні заняття проводяться у форматі інтерактивних мультимедійних лекцій-візуалізацій із демонстрацією фізичних та математичних моделей явищ дискретизації, спектрального розкладу та фільтрації. Теоретичний матеріал супроводжується «живим» програмуванням (Live Coding) у середовищі Jupyter Notebook, де здобувачі мають можливість у реальному часі спостерігати зміну спектрів та матриць зображень при варіюванні параметрів алгоритмів. Викладач використовує проблемний виклад матеріалу, спонукаючи здобувачів до евристичного пошуку інженерних рішень щодо усунення завад, оптимізації складності та вибору колірних просторів.</p>
+<p>Лабораторні заняття організовано як індивідуальні науково-дослідні та інженерно-розрахункові практикуми. Кожен здобувач вищої освіти отримує унікальний числовий набір вхідних даних відповідно до свого варіанта, розробляє самостійні модульні скрипти на мові Python, проводить комп'ютерне моделювання, верифікує числові результати та аналізує графічні матеріали. Під час виконання лабораторних робіт здобувачі набувають практичних навичок роботи з промисловими бібліотеками обробки даних (NumPy, SciPy, OpenCV, Pillow, Matplotlib).</p>
+<p>Самостійна робота здобувачів забезпечується електронними навчально-методичними комплексами у системі дистанційного навчання університету, де розміщено конспекти лекцій, методичні вказівки до лабораторних робіт, банк тестових зображень, варіанти індивідуальних завдань та контрольні тести для самоперевірки. Консультації викладача проводяться як в очній формі, так і дистанційно в синхронному та асинхронному режимах.</p>
+<hr />
+<h3 id="10">10. Методи контролю</h3>
+<p>Оцінювання результатів навчання здобувачів вищої освіти з освітнього компонента «Обробка сигналів та зображень» здійснюється на засадах об'єктивності, прозорості, систематичності та дотримання академічної доброчесності. Система контролю включає поточний контроль, модульний контроль, контроль виконання індивідуального завдання та підсумковий семестровий контроль.</p>
+<p>Поточний контроль здійснюється під час проведення аудиторних занять і передбачає:</p>
+<ul>
+<li>
+<p>Оцінювання активності, відповідей на теоретичні питання та участі в обговоренні проблемних ситуацій під час лекційних занять;</p>
+</li>
+<li>
+<p>Перевірку правильності написання програмного коду, демонстрацію працездатності розроблених скриптів, якість графічних візуалізацій та індивідуальний захист кожної з 11 лабораторних робіт;</p>
+</li>
+<li>
+<p>Експрес-тестування за ключовими темами змістових модулів для оперативного контролю засвоєння математичного апарату.</p>
+</li>
+</ul>
+<p>Модульний (проміжний) контроль проводиться двічі на семестр у формі письмових або комп'ютерних модульних контрольних робіт (МКР 1 за змістовим модулем 1 та МКР 2 за змістовим модулем 2). МКР містить теоретичні запитання на розуміння алгоритмів та розрахункові інженерні задачі на обчислення параметрів дискретизації, згортки, z-полюсів, порогів бінаризації або геометричних матриць.</p>
+<p>Контроль виконання індивідуального завдання (Розрахунково-графічної роботи) полягає у комплексній експертизі розрахунково-пояснювальної записки, верифікації вихідного коду програми на наборі тестових даних та очному публічному захисті проекту здобувачем.</p>
+<p>Підсумковий семестровий контроль проводиться у формі диференційованого заліку в період заліково-екзаменаційної сесії. До складання підсумкового диференційованого заліку допускаються здобувачі, які повністю виконали навчальний план, захистили всі 11 лабораторних робіт, отримали позитивну оцінку за РГР та набрали за результатами поточного й модульного контролю не менше 35 балів.</p>
+<hr />
+<h3 id="11">11. Розподіл балів, які отримують здобувачі за темами</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Вид навчальної діяльності / Контрольні заходи</th>
+<th style="text-align: center;">Змістовий модуль 1 (DSP)</th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;">Змістовий модуль 2 (DIP &amp; CV)</th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;">Підсумковий контроль</th>
+<th style="text-align: center;">Сума балів</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: center;"><strong>Т1</strong></td>
+<td style="text-align: center;"><strong>Т2</strong></td>
+<td style="text-align: center;"><strong>Т3</strong></td>
+<td style="text-align: center;"><strong>Т4</strong></td>
+<td style="text-align: center;"><strong>МКР1</strong></td>
+<td style="text-align: center;"><strong>Т5</strong></td>
+<td style="text-align: center;"><strong>Т6</strong></td>
+<td style="text-align: center;"><strong>Т7</strong></td>
+<td style="text-align: center;"><strong>Т8</strong></td>
+<td style="text-align: center;"><strong>Т9</strong></td>
+<td style="text-align: center;"><strong>МКР2</strong></td>
+<td style="text-align: center;"><strong>Диф. залік</strong></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">Робота на лекціях / експрес-опитування</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;"><strong>9</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">Виконання та захист лабораторних робіт</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">8*</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">8*</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;"><strong>44</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">Модульна контрольна робота (МКР)</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">8</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">8</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;"><strong>16</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">Індивідуальне завдання (РГР)</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;"><strong>15</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">Підсумковий семестровий контроль (Диференційований залік)</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;"><strong>16</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Усього за тему / контрольний захід</strong></td>
+<td style="text-align: center;"><strong>5</strong></td>
+<td style="text-align: center;"><strong>5</strong></td>
+<td style="text-align: center;"><strong>5</strong></td>
+<td style="text-align: center;"><strong>13</strong></td>
+<td style="text-align: center;"><strong>8</strong></td>
+<td style="text-align: center;"><strong>5</strong></td>
+<td style="text-align: center;"><strong>5</strong></td>
+<td style="text-align: center;"><strong>5</strong></td>
+<td style="text-align: center;"><strong>13</strong></td>
+<td style="text-align: center;"><strong>5</strong></td>
+<td style="text-align: center;"><strong>8</strong></td>
+<td style="text-align: center;"><strong>16</strong></td>
+<td style="text-align: center;"><strong>100</strong></td>
+</tr>
+</tbody>
+</table>
+<p><em>*Примітка: У темі 4 оцінюються дві лабораторні роботи (ЛБ №4 та ЛБ №5 по 4 бали кожна, разом 8 балів); у темі 8 оцінюються дві лабораторні роботи (ЛБ №9 та ЛБ №10 по 4 бали кожна, разом 8 балів).</em></p>
+<hr />
+<h3 id="12">12. Розподіл балів, які отримують здобувачі за видами занять</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Вид навчальної роботи здобувача та обґрунтування</th>
+<th style="text-align: center;">Розрахункова формула</th>
+<th style="text-align: center;">Максимальний бал</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Опрацювання теоретичного матеріалу та активність на лекціях.</strong><br>Оцінюється відвідування лекцій, активна участь у евристичних дискусіях та виконання коротких експрес-опитувань на початку занять (9 лекційних тем по 1 балу за кожну тему).</td>
+<td style="text-align: center;"><span class="arithmatex">\(9 \text{ тем} \times 1 \text{ бал}\)</span></td>
+<td style="text-align: center;"><strong>9</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Виконання та захист лабораторних робіт.</strong><br>Оцінюється своєчасне виконання програмного коду, повнота числових і графічних результатів відповідно до індивідуального варіанта та успішний захист звіту (11 лабораторних робіт по 4 бали за кожну роботу).</td>
+<td style="text-align: center;"><span class="arithmatex">\(11 \text{ робіт} \times 4 \text{ бали}\)</span></td>
+<td style="text-align: center;"><strong>44</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Виконання модульних контрольних робіт (МКР).</strong><br>Оцінюються результати складання двох модульних контрольних робіт після завершення вивчення Змістового модуля 1 та Змістового модуля 2 (2 МКР по 8 балів за кожну роботу).</td>
+<td style="text-align: center;"><span class="arithmatex">\(2 \text{ МКР} \times 8 \text{ балів}\)</span></td>
+<td style="text-align: center;"><strong>16</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Виконання та захист індивідуального завдання (РГР).</strong><br>Оцінюється інженерна якість розрахункової частини, працездатність програмного коду, якість оформлення пояснювальної записки (8 балів) та якість очного захисту роботи (7 балів).</td>
+<td style="text-align: center;"><span class="arithmatex">\(8 \text{ б. (записка)} + 7 \text{ б. (захист)}\)</span></td>
+<td style="text-align: center;"><strong>15</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Підсумковий семестровий контроль (Диференційований залік).</strong><br>Оцінюється підсумковий письмово-усний залік, що складається з двох теоретичних запитань (по 4 бали кожне, разом 8 балів) та одного комплексного практичного завдання на розрахунок/алгоритмізацію (8 балів).</td>
+<td style="text-align: center;"><span class="arithmatex">\(2 \times 4 \text{ б. (теорія)} + 8 \text{ б. (практика)}\)</span></td>
+<td style="text-align: center;"><strong>16</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>ЗАГАЛЬНА СУМА БАЛІВ ЗА ОСВІТНІЙ КОМПОНЕНТ:</strong></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><strong>100</strong></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="13">13. Критерії оцінювання</h3>
+<h4 id="131">13.1. Критерії оцінювання лабораторних робіт та поточного контролю</h4>
+<p>Кожна з 11 лабораторних робіт оцінюється максимально у <strong>4 бали</strong> за такими критеріями:</p>
+<ul>
+<li>
+<p><strong>4 бали (Відмінно):</strong> Програмний код розроблено в повному обсязі відповідно до індивідуального варіанта, програма працює стабільно без помилок, реалізовано всі необхідні розрахунки та згенеровано високоякісні графічні ілюстрації. Здобувач вищої освіти демонструє глибоке розуміння фізико-математичних засад алгоритмів, вільно орієнтується у структурах даних NumPy та OpenCV, безпомилково відповідає на всі контрольні запитання під час захисту.</p>
+</li>
+<li>
+<p><strong>3 бали (Добре):</strong> Лабораторну роботу виконано повністю, проте у вихідному коді присутні незначні стилістичні огріхи або відсутні розширені коментарі до окремих функцій. Здобувач правильно інтерпретує отримані результати, але при відповідях на додаткові теоретичні питання припускається несуттєвих неточностей, які самостійно виправляє після навідних запитань викладача.</p>
+</li>
+<li>
+<p><strong>2 бали (Задовільно):</strong> Програмний код виконує лише базову частину завдання, окремі графічні матеріали побудовані з порушеннями вимог до оформлення або розрахункові значення містять похибки. Здобувач зазнає труднощів при поясненні математичного апарату перетворень та невпевнено відповідає на контрольні запитання.</p>
+</li>
+<li>
+<p><strong>0–1 бал (Незадовільно):</strong> Завдання лабораторної роботи не виконано або програмний код є непрацездатним. Звіт містить плагіат чи не відповідає індивідуальному варіанту, здобувач не володіє базовими поняттями теми та не здатний пояснити логіку реалізації алгоритмів. Робота повертається на доопрацювання.</p>
+</li>
+</ul>
+<h4 id="132">13.2. Критерії оцінювання індивідуального завдання (РГР)</h4>
+<p>Розрахунково-графічна робота (РГР) оцінюється максимально у <strong>15 балів</strong>. Розподіл балів за складовими елементами наведено нижче:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Складова частина РГР</th>
+<th style="text-align: left;">Об'єкт і критерії експертного оцінювання</th>
+<th style="text-align: center;">Максимальний бал</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Якість теоретичних розрахунків та алгоритмічної частини</strong></td>
+<td style="text-align: left;">Математична коректність синтезу цифрового фільтра, розрахунку передавальної функції <span class="arithmatex">\(H(z)\)</span>, побудови z-діаграми нулів і полюсів, обґрунтованість вибору колірних просторів та параметрів просторово-спектральних ядер обробки зображень.</td>
+<td style="text-align: center;"><strong>4</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Програмна реалізація та експериментальні дослідження</strong></td>
+<td style="text-align: left;">Повна працездатність програмного коду на мові Python, модульність архітектури, відсутність сторонніх надлишкових бібліотек, наявність вичерпних коментарів, висока наочність графічних результатів порівняльного аналізу до та після фільтрації.</td>
+<td style="text-align: center;"><strong>4</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Оформлення пояснювальної записки</strong></td>
+<td style="text-align: left;">Структурна цілісність, відповідність стандартам ДСТУ 3008:2015, грамотність тексту, правильність оформлення формул у LaTeX, таблиць, графіків, рисунків та списку використаних фахових джерел.</td>
+<td style="text-align: center;"><strong>3</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Публічний захист роботи</strong></td>
+<td style="text-align: left;">Лаконічність та структурованість доповіді здобувача, вільне володіння інженерною термінологією, обґрунтованість висновків та вичерпні точні відповіді на запитання викладача та членів комісії.</td>
+<td style="text-align: center;"><strong>4</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>УСЬОГО ЗА РОЗРАХУНКОВО-ГРАФІЧНУ РОБОТУ:</strong></td>
+<td style="text-align: left;"></td>
+<td style="text-align: center;"><strong>15</strong></td>
+</tr>
+</tbody>
+</table>
+<h4 id="133">13.3. Критерії оцінювання підсумкового контролю (диференційованого заліку)</h4>
+<p>Підсумковий диференційований залік оцінюється максимально у <strong>16 балів</strong>. Екзаменаційне завдання містить два теоретичні запитання (по 4 бали) та одну комплексну розрахунково-алгоритмічну задачу (8 балів).</p>
+<ul>
+<li>
+<p><strong>Теоретичні запитання (0–4 бали кожне):</strong></p>
+</li>
+<li>
+<p><em>4 бали:</em> Вичерпна, глибока та логічно структурована відповідь із наведенням повного математичного апарату, формул, схем алгоритмів та графічних ілюстрацій.</p>
+</li>
+<li>
+<p><em>3 бали:</em> Повна відповідь, що розкриває сутність явища чи методу, але містить незначні неточності у формулюваннях або непринципові описки у математичних виразах.</p>
+</li>
+<li>
+<p><em>2 бали:</em> Неповна або фрагментарна відповідь, у якій викладено лише загальні поняття без глибокого математичного обґрунтування та аналізу взаємозв'язків.</p>
+</li>
+<li>
+<p><em>0–1 бал:</em> Відповідь відсутня або демонструє грубі помилки в розумінні фундаментальних законів цифрової обробки сигналів та зображень.</p>
+</li>
+<li>
+<p><strong>Практичне розрахункове завдання (0–8 балів):</strong></p>
+</li>
+<li>
+<p><em>8 балів:</em> Алгоритм розроблено абсолютно правильно, математичні та матричні розрахунки виконано безпомилково, наведено правильний програмний псевдокод або Python-реалізацію, сформульовано чіткі інженерні висновки.</p>
+</li>
+<li>
+<p><em>6–7 балів:</em> Завдання розв'язано правильно, хід міркувань логічний, але допущено незначну арифметичну помилку, яка не спотворила загальної суті кінцевого результату.</p>
+</li>
+<li>
+<p><em>4–5 балів:</em> Запропоновано правильну схему розв'язання, але реалізовано лише окремі етапи розрахунку або допущено суттєві помилки у визначенні параметрів фільтрів/матриць.</p>
+</li>
+<li>
+<p><em>0–3 бали:</em> Завдання не розв'язано, хід міркувань математично хибний, алгоритмічна реалізація не відповідає поставленим вимогам.</p>
+</li>
+</ul>
+<hr />
+<h3 id="14-ects">14. Шкала оцінювання: національна та ECTS</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Сума балів за всі види навчальної діяльності</th>
+<th style="text-align: center;">Оцінка ECTS</th>
+<th style="text-align: left;">Оцінка за національною шкалою для диференційованого заліку</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><strong>90–100</strong></td>
+<td style="text-align: center;"><strong>A</strong></td>
+<td style="text-align: left;"><strong>Відмінно</strong> — теоретичний зміст курсу освоєно повністю, необхідні практичні компетентності сформовані бездоганно, всі завдання виконані на високому рівні.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>82–89</strong></td>
+<td style="text-align: center;"><strong>B</strong></td>
+<td style="text-align: left;"><strong>Добре</strong> — зміст дисципліни засвоєно на високому рівні, практичні навички сформовані, більшість завдань виконано без принципових зауважень.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>75–81</strong></td>
+<td style="text-align: center;"><strong>C</strong></td>
+<td style="text-align: left;"><strong>Добре</strong> — загальний зміст матеріалу засвоєно впевнено, практичні навички сформовані, проте під час виконання окремих робіт виникали незначні помилки.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>64–74</strong></td>
+<td style="text-align: center;"><strong>D</strong></td>
+<td style="text-align: left;"><strong>Задовільно</strong> — зміст дисципліни засвоєно частково, практичні навички сформовані на репродуктивному рівні, є зауваження до виконання робіт.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>60–63</strong></td>
+<td style="text-align: center;"><strong>E</strong></td>
+<td style="text-align: left;"><strong>Задовільно</strong> — засвоєно мінімальний обов'язковий обсяг знань і вмінь, виконання завдань задовольняє мінімальним академічним критеріям.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>35–59</strong></td>
+<td style="text-align: center;"><strong>FX</strong></td>
+<td style="text-align: left;"><strong>Незадовільно з можливістю повторного складання</strong> — здобувач не набрав мінімального порогового бала (60 балів), але має право на повторне складання заліку.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>1–34</strong></td>
+<td style="text-align: center;"><strong>F</strong></td>
+<td style="text-align: left;"><strong>Незадовільно з обов'язковим повторним вивченням</strong> — грубе невиконання навчального плану, що вимагає повторного проходження освітнього компонента.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="15">15. Рекомендована література та інформаційні ресурси</h3>
+<h4 id="_2">Основна література:</h4>
+<ol>
+<li>
+<p>Микитенко В. І., Тимчик Г. С. Цифрова обробка сигналів та зображень : навч. посіб. для студ. магістратури. — 2-ге вид., переробл. і доповн. — Київ : КПІ ім. Ігоря Сікорського, 2025. — 181 с.</p>
+</li>
+<li>
+<p>Кравченко І. В., Микитенко В. І. Цифрова обробка сигналів та зображень. Частина 2. Практикум : навч. посіб. для здобувачів ступеня магістра. — Київ : КПІ ім. Ігоря Сікорського, 2025. — 85 с.</p>
+</li>
+<li>
+<p>Лавер В. О., Левчук О. М. Обробка зображень та мультимедія : навч.-метод. посіб. — Ужгород : ПП «АУТДОР-ШАРК», 2021. — 51 с.</p>
+</li>
+<li>
+<p>Мазуренко В. Б. Основи цифрової обробки сигналів та зображень : конспект лекцій. — Дніпро : ДНУ ім. Олеся Гончара, 2020. — 153 с.</p>
+</li>
+<li>
+<p>Gonzalez R. C., Woods R. E. Digital Image Processing. — 4th ed. — New York : Pearson, 2018. — 1168 p.</p>
+</li>
+<li>
+<p>Oppenheim A. V., Schafer R. W. Discrete-Time Signal Processing. — 3rd ed. — Upper Saddle River : Prentice Hall, 2010. — 1120 p.</p>
+</li>
+</ol>
+<h4 id="_3">Додаткова література:</h4>
+<ol>
+<li>
+<p>Szeliski R. Computer Vision: Algorithms and Applications. — 2nd ed. — London : Springer, 2022. — 1232 p.</p>
+</li>
+<li>
+<p>Lyons R. G. Understanding Digital Signal Processing. — 3rd ed. — Boston : Prentice Hall / Pearson, 2010. — 994 p.</p>
+</li>
+<li>
+<p>Боровицький В. М. Розробка програм для цифрової обробки зображень з застосуванням OpenCV : навч. посіб. — Київ : Політехніка, 2022. — 84 с.</p>
+</li>
+<li>
+<p>Ушенко Ю. О., Гавриляк М. С., Талах М. В., Дворжак В. В. Основи та методи цифрової обробки сигналів: від теорії до практики : навч. посіб. — Чернівці : Чернівецький нац. ун-т ім. Ю. Федьковича, 2021. — 308 с.</p>
+</li>
+<li>
+<p>Mallat S. A Wavelet Tour of Signal Processing: The Sparse Way. — 3rd ed. — Burlington : Academic Press, 2009. — 832 p.</p>
+</li>
+</ol>
+<h4 id="_4">Інформаційні ресурси в Інтернеті:</h4>
+<ol>
+<li>
+<p>Офіційний портал документації бібліотеки комп'ютерного зору OpenCV: <a href="https://docs.opencv.org/4.x/">https://docs.opencv.org/4.x/</a></p>
+</li>
+<li>
+<p>Документація наукових пакетів SciPy та підмодуля обробки сигналів <code>scipy.signal</code>: <a href="https://docs.scipy.org/doc/scipy/reference/signal.html">https://docs.scipy.org/doc/scipy/reference/signal.html</a></p>
+</li>
+<li>
+<p>Офіційний посібник з багатовимірної матричної алгебри NumPy: <a href="https://numpy.org/doc/stable/">https://numpy.org/doc/stable/</a></p>
+</li>
+<li>
+<p>Довідник графічної бібліотеки візуалізації даних Matplotlib: <a href="https://matplotlib.org/stable/contents.html">https://matplotlib.org/stable/contents.html</a></p>
+</li>
+<li>
+<p>Офіційна документація модуля обробки растрових зображень Pillow (PIL Fork): <a href="https://pillow.readthedocs.io/en/stable/">https://pillow.readthedocs.io/en/stable/</a></p>
+</li>
+<li>
+<p>Репозиторій навчально-методичних матеріалів та дистанційних курсів КрНУ імені Михайла Остроградського: <a href="https://moodle.kdu.edu.ua/">https://moodle.kdu.edu.ua/</a></p>
+</li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Повернутись нагору
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Kyrylo Vadurin &bull; <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "navigation.tracking", "header.autohide", "search.suggest", "search.highlight", "content.code.copy"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0456\u0439\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u0421\u043a\u043e\u043f\u0456\u044e\u0432\u0430\u0442\u0438 \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0429\u0435 1 \u0437\u0431\u0456\u0433 \u043d\u0430 \u0446\u0456\u0439 \u0441\u0442\u043e\u0440\u0456\u043d\u0446\u0456", "search.result.more.other": "\u0429\u0435 # \u0437\u0431\u0456\u0433\u0456\u0432 \u043d\u0430 \u0446\u0456\u0439 \u0441\u0442\u043e\u0440\u0456\u043d\u0446\u0456", "search.result.none": "\u0417\u0431\u0456\u0433\u0456\u0432 \u043d\u0435 \u0437\u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u0417\u043d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0437\u0431\u0456\u0433", "search.result.other": "\u0417\u043d\u0430\u0439\u0434\u0435\u043d\u043e # \u0437\u0431\u0456\u0433\u0456\u0432", "search.result.placeholder": "\u0420\u043e\u0437\u043f\u043e\u0447\u043d\u0456\u0442\u044c \u043f\u0438\u0441\u0430\u0442\u0438 \u0434\u043b\u044f \u043f\u043e\u0448\u0443\u043a\u0443", "search.result.term.missing": "\u041d\u0435 \u0437\u043d\u0430\u0439\u0434\u0435\u043d\u043e \u0437\u0430\u043f\u0438\u0442\u0443", "select.version": "\u041e\u0431\u0440\u0430\u0442\u0438 \u0432\u0435\u0440\u0441\u0456\u044e"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

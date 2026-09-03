@@ -1,0 +1,1897 @@
+
+<!doctype html>
+<html lang="uk" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Навчальний портал з дисципліни "Обробка сигналів та зображень"">
+      
+      
+      
+      
+        <link rel="prev" href="../lk2/">
+      
+      
+        <link rel="next" href="../lk4/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Тема 3. Спектральний аналіз дискретних сигналів - Обробка сигналів та зображень</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#3" class="md-skip">
+          Перейти до змісту
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Хедер">
+    <a href="../.." title="Обробка сигналів та зображень" class="md-header__button md-logo" aria-label="Обробка сигналів та зображень" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Обробка сигналів та зображень
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Тема 3. Спектральний аналіз дискретних сигналів
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="cyan"  aria-label="Переключити на темну тему"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Переключити на темну тему" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="cyan"  aria-label="Переключити на світлу тему"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Переключити на світлу тему" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Пошук" placeholder="Пошук" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Шукати">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистити" aria-label="Очистити" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Пошук розпочато
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Вкладки" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Робоча програма
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../lk1/" class="md-tabs__link">
+          
+  
+  
+  Лекції
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../lb/lb1/" class="md-tabs__link">
+          
+  
+  
+  Лабораторні роботи
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../sr/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Самостійна робота
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../rg/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Розрахунково-графічна робота
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Навігація" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Обробка сигналів та зображень" class="md-nav__button md-logo" aria-label="Обробка сигналів та зображень" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Обробка сигналів та зображень
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Робоча програма
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лекції
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Лекції
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lk1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 1. Математичне представлення, дискретизація та квантування
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lk2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 2. Лінійні стаціонарні дискретні системи
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 3. Спектральний аналіз дискретних сигналів
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 3. Спектральний аналіз дискретних сигналів
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Зміст">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Зміст
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#31-dft-idft" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1. Перехід від інтегрального перетворення Фур'є до Дискретного перетворення Фур'є (ДПФ / DFT). Пряме та обернене ДПФ (IDFT)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.1. Перехід від інтегрального перетворення Фур&#39;є до Дискретного перетворення Фур&#39;є (ДПФ / DFT). Пряме та обернене ДПФ (IDFT)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Основний зміст та теоретичний базис
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#32" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2. Властивості ДПФ: лінійність, циклічний зсув, спектральна симетрія для дійсних сигналів, кругова згортка, енергетична рівність Парсеваля
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.2. Властивості ДПФ: лінійність, циклічний зсув, спектральна симетрія для дійсних сигналів, кругова згортка, енергетична рівність Парсеваля">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Основний зміст та теоретичний базис
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#33-fft-2-dit-dif" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3. Алгоритми швидкого перетворення Фур'є (ШПФ / FFT) за основою 2 з проріджуванням у часі (DIT) та частоті (DIF). Базова операція «метелик». Оцінка обчислювальної складності
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.3. Алгоритми швидкого перетворення Фур&#39;є (ШПФ / FFT) за основою 2 з проріджуванням у часі (DIT) та частоті (DIF). Базова операція «метелик». Оцінка обчислювальної складності">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Основний зміст та теоретичний базис
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#34-spectral-leakage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4. Ефект витоку спектра (spectral leakage). Вагові вікна (Хеммінга, Ханна, Блекмана, прямокутне) та їх характеристики
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.4. Ефект витоку спектра (spectral leakage). Вагові вікна (Хеммінга, Ханна, Блекмана, прямокутне) та їх характеристики">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Основний зміст та теоретичний базис
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Питання для самоперевірки та аналітичного осмислення
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lk4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 4. Z-перетворення та проєктування цифрових фільтрів
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lk5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 5. Цифрове представлення зображень та колориметричні моделі
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lk6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 6. Поелементні амплітудні перетворення
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lk7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 7. Просторова фільтрація зображень
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lk8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 8. Геометричні трансформації та математична морфологія
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lk9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 9. Двовимірна Фур'є-обробка та детектори контурів
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лабораторні роботи
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Лабораторні роботи
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lb/lb1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 1. Дискретизація, квантування сигналів та ефект аліасингу
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lb/lb2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 2. Лінійні стаціонарні системи та дискретна згортка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lb/lb3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 3. Спектральний аналіз за допомогою ДПФ/ШПФ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lb/lb4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 4. Синтез цифрових КІХ та НІХ фільтрів
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lb/lb5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 5. Статистичний та кореляційний аналіз
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lb/lb6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 6. Базові операції з цифровими зображеннями
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lb/lb7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 7. Амплітудні перетворення та бінаризація
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lb/lb8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 8. Просторова фільтрація зображень
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lb/lb9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 9. Геометричні перетворення зображень
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lb/lb10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 10. Математична морфологія зображень
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lb/lb11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 11. 2D перетворення Фур'є та детектування контурів
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Самостійна робота
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Розрахунково-графічна робота
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Зміст">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Зміст
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#31-dft-idft" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1. Перехід від інтегрального перетворення Фур'є до Дискретного перетворення Фур'є (ДПФ / DFT). Пряме та обернене ДПФ (IDFT)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.1. Перехід від інтегрального перетворення Фур&#39;є до Дискретного перетворення Фур&#39;є (ДПФ / DFT). Пряме та обернене ДПФ (IDFT)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Основний зміст та теоретичний базис
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#32" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2. Властивості ДПФ: лінійність, циклічний зсув, спектральна симетрія для дійсних сигналів, кругова згортка, енергетична рівність Парсеваля
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.2. Властивості ДПФ: лінійність, циклічний зсув, спектральна симетрія для дійсних сигналів, кругова згортка, енергетична рівність Парсеваля">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Основний зміст та теоретичний базис
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#33-fft-2-dit-dif" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3. Алгоритми швидкого перетворення Фур'є (ШПФ / FFT) за основою 2 з проріджуванням у часі (DIT) та частоті (DIF). Базова операція «метелик». Оцінка обчислювальної складності
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.3. Алгоритми швидкого перетворення Фур&#39;є (ШПФ / FFT) за основою 2 з проріджуванням у часі (DIT) та частоті (DIF). Базова операція «метелик». Оцінка обчислювальної складності">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Основний зміст та теоретичний базис
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#34-spectral-leakage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4. Ефект витоку спектра (spectral leakage). Вагові вікна (Хеммінга, Ханна, Блекмана, прямокутне) та їх характеристики
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.4. Ефект витоку спектра (spectral leakage). Вагові вікна (Хеммінга, Ханна, Блекмана, прямокутне) та їх характеристики">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Основний зміст та теоретичний базис
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Питання для самоперевірки та аналітичного осмислення
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="3">ТЕМА 3. СПЕКТРАЛЬНИЙ АНАЛІЗ ДИСКРЕТНИХ СИГНАЛІВ: ДИСКРЕТНЕ ПЕРЕТВОРЕННЯ ФУР'Є, ШВИДКЕ ПЕРЕТВОРЕННЯ ФУР'Є ТА ВІКОННІ ФУНКЦІЇ</h1>
+<hr />
+<h2 id="31-dft-idft">3.1. Перехід від інтегрального перетворення Фур'є до Дискретного перетворення Фур'є (ДПФ / DFT). Пряме та обернене ДПФ (IDFT)</h2>
+<h3 id="_1">Основний зміст та теоретичний базис</h3>
+<p>Спектральний аналіз у частотній області становить математичний фундамент цифрової обробки сигналів, дозволяючи перейти від часового опису процесів до їхнього частотного представлення у вигляді суперпозиції ортогональних гармонічних коливань. Для неперервного аналогового сигналу <span class="arithmatex">\(s(t)\)</span>, що задовольняє умовам абсолютної інтегрованості за Діріхле, класичне пряме інтегральне перетворення Фур'є визначає неперервну спектральну густину <span class="arithmatex">\(S(\omega)\)</span>:</p>
+<div class="arithmatex">\[S(\omega) = \int_{-\infty}^{\infty} s(t) e^{-j\omega t} \, dt\]</div>
+<p>де <span class="arithmatex">\(s(t)\)</span> — неперервний вхідний сигнал як функція фізичного часу <span class="arithmatex">\(t\)</span>; <span class="arithmatex">\(\omega = 2\pi f\)</span> — кутова частота в радіанах за секунду (<span class="arithmatex">\(\text{рад/с}\)</span>); <span class="arithmatex">\(j = \sqrt{-1}\)</span> — уявна одиниця; <span class="arithmatex">\(S(\omega)\)</span> — комплексна спектральна густина сигналу.</p>
+<p>При переході до дискретного часу шляхом заміни неперервного аргументу на послідовність відліків <span class="arithmatex">\(t = nT\)</span> (де <span class="arithmatex">\(T\)</span> — період дискретизації, <span class="arithmatex">\(n \in \mathbb{Z}\)</span>), формується дискретне в часі перетворення Фур'є (<em>Discrete-Time Fourier Transform, DTFT</em>):</p>
+<div class="arithmatex">\[S_{\text{DTFT}}(\omega) = \sum_{n=-\infty}^{\infty} s[n] e^{-j\omega n T}\]</div>
+<p>де <span class="arithmatex">\(s[n] = s(nT)\)</span> — дискретна послідовність відліків амплітуди; <span class="arithmatex">\(\omega T = \hat{\omega}\)</span> — нормована кругова частота, виражена в радіанах на відлік (<span class="arithmatex">\(\text{рад/відлік}\)</span>). Функція <span class="arithmatex">\(S_{\text{DTFT}}(\omega)\)</span> є неперервною функцією частоти та володіє періодичністю з періодом, що дорівнює кутовій частоті дискретизації <span class="arithmatex">\(\omega_s = 2\pi / T\)</span>. </p>
+<p>Безпосередня апаратна чи програмна реалізація DTFT в обчислювальних мікропроцесорних системах є неможливою, оскільки обчислювач не здатний зберігати нескінченні часові послідовності та оперувати неперервним континуумом частот. Для практичної реалізації спектрального аналізу на кінцевому часовому інтервалі тривалістю <span class="arithmatex">\(T_{\text{obs}} = N T\)</span> здійснюються дві послідовні математичні процедури: часове віконне обмеження вибірки до скінченної кількості <span class="arithmatex">\(N\)</span> відліків (<span class="arithmatex">\(n = 0, 1, \dots, N - 1\)</span>) та дискретизація частотної осі в межах одного періоду частоти дискретизації <span class="arithmatex">\(\omega_s\)</span>.</p>
+<p>Дискретизація частотної області здійснюється у <span class="arithmatex">\(N\)</span> рівновіддалених (еквідистантних) точках із кроком по частоті <span class="arithmatex">\(\Delta\omega = \frac{\omega_s}{N} = \frac{2\pi}{NT}\)</span> або <span class="arithmatex">\(\Delta f = \frac{1}{NT} = \frac{f_s}{N}\)</span>, де <span class="arithmatex">\(k\)</span>-та дискретна частота визначається виразом <span class="arithmatex">\(\omega_k = k \Delta\omega = \frac{2\pi k}{NT}\)</span> при <span class="arithmatex">\(k = 0, 1, \dots, N - 1\)</span>. Підстановка дискретних частот у формулу DTFT формує вираз <strong>Дискретного перетворення Фур'є (ДПФ)</strong> (в англомовній літературі — <em>Discrete Fourier Transform, DFT</em>):</p>
+<div class="arithmatex">\[X[k] = \sum_{n=0}^{N-1} x[n] e^{-j \frac{2\pi}{N} kn} = \sum_{n=0}^{N-1} x[n] W_N^{kn}, \quad k = 0, 1, \dots, N - 1\]</div>
+<p>де <span class="arithmatex">\(x[n]\)</span> — вхідна послідовність дійсних або комплексних чисел довжиною <span class="arithmatex">\(N\)</span>; <span class="arithmatex">\(X[k]\)</span> — <span class="arithmatex">\(k\)</span>-й комплексний спектральний відлік (спектральний коефіцієнт гармоніки з частотою <span class="arithmatex">\(f_k = k \frac{f_s}{N}\)</span>); <span class="arithmatex">\(N\)</span> — розмірність (довжина вибірки) ДПФ; <span class="arithmatex">\(W_N = e^{-j \frac{2\pi}{N}}\)</span> — фундаментальний комплексний <strong>поворотний множник</strong> (ядро перетворення або <em>twiddle factor</em>).</p>
+<p><pre class="mermaid"><code>flowchart LR
+    A["Неперервний сигнал s(t)&lt;br&gt;Час: t ∈ (-∞, +∞)"] --&gt;|Дискретизація t = nT| B["Дискретний сигнал s[n]&lt;br&gt;Час: n ∈ (-∞, +∞)"]
+    B --&gt;|Віконне обмеження| C["Скінченний блок x[n]&lt;br&gt;Довжина: n = 0..N-1"]
+    C --&gt;|Пряме ДПФ (DFT)| D["Дискретний спектр X[k]&lt;br&gt;Частота: k = 0..N-1"]
+    D --&gt;|Обернене ДПФ (IDFT)| C</code></pre>
+<em>Рисунок 3.1 — Етапи математичної редукції неперервного сигналу до скінченної послідовності та взаємозв'язок просторів прямого й оберненого ДПФ</em></p>
+<p>Відновлення вихідної дискретної послідовності <span class="arithmatex">\(x[n]\)</span> за її комплексними спектральними коефіцієнтами <span class="arithmatex">\(X[k]\)</span> здійснюється за допомогою <strong>Оберненого дискретного перетворення Фур'є (ОДПФ)</strong> (<em>Inverse Discrete Fourier Transform, IDFT</em>):</p>
+<div class="arithmatex">\[x[n] = \frac{1}{N} \sum_{k=0}^{N-1} X[k] e^{j \frac{2\pi}{N} kn} = \frac{1}{N} \sum_{k=0}^{N-1} X[k] W_N^{-kn}, \quad n = 0, 1, \dots, N - 1\]</div>
+<p>де множник <span class="arithmatex">\(\frac{1}{N}\)</span> забезпечує збереження енергетичного нормування амплітуд сигналів у часовій області. Формула ОДПФ відрізняється від прямого ДПФ виключно знаком у показнику комплексної експоненти та наявністю нормуючого масштабуючого коефіцієнта перед сумою.</p>
+<p>В алгебраїчній формі алгоритм ДПФ подається у вигляді матричного векторного добутку:</p>
+<div class="arithmatex">\[\mathbf{X} = \mathbf{W}_N \mathbf{x}\]</div>
+<p>де <span class="arithmatex">\(\mathbf{x} = [x[0], x[1], \dots, x[N-1]]^T\)</span> — вектор-стовпець вхідних відліків сигналу розмірності <span class="arithmatex">\(N \times 1\)</span>; <span class="arithmatex">\(\mathbf{X} = [X[0], X[1], \dots, X[N-1]]^T\)</span> — вектор-стовпець комплексних спектральних відліків розмірності <span class="arithmatex">\(N \times 1\)</span>; <span class="arithmatex">\(\mathbf{W}_N\)</span> — симетрична унітарна матриця перетворення Фур'є розмірності <span class="arithmatex">\(N \times N\)</span>, елементи якої визначаються ступенями поворотного множника:</p>
+<div class="arithmatex">\[\mathbf{W}_N = \begin{bmatrix} 
+W_N^0 &amp; W_N^0 &amp; W_N^0 &amp; \dots &amp; W_N^0 \\ 
+W_N^0 &amp; W_N^1 &amp; W_N^2 &amp; \dots &amp; W_N^{N-1} \\ 
+W_N^0 &amp; W_N^2 &amp; W_N^4 &amp; \dots &amp; W_N^{2(N-1)} \\ 
+\vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\ 
+W_N^0 &amp; W_N^{N-1} &amp; W_N^{2(N-1)} &amp; \dots &amp; W_N^{(N-1)(N-1)} 
+\end{bmatrix}\]</div>
+<p>Матриця <span class="arithmatex">\(\mathbf{W}_N\)</span> володіє ортогональністю рядків і стовпців, завдяки чому обернена матриця обчислюється через ермітове спряження: <span class="arithmatex">\(\mathbf{W}_N^{-1} = \frac{1}{N} \mathbf{W}_N^H = \frac{1}{N} (\mathbf{W}_N^*)^T\)</span>.</p>
+<hr />
+<h2 id="32">3.2. Властивості ДПФ: лінійність, циклічний зсув, спектральна симетрія для дійсних сигналів, кругова згортка, енергетична рівність Парсеваля</h2>
+<h3 id="_2">Основний зміст та теоретичний базис</h3>
+<p>Дискретне перетворення Фур'є володіє комплексом фундаментальних математичних властивостей, які базуються на періодичності дискретного базису <span class="arithmatex">\(W_N^{kn} = W_N^{(k \pm N)n} = W_N^{k(n \pm N)}\)</span> і визначають закономірності обробки сигналів у спектральній області:</p>
+<ol>
+<li>
+<p><strong>Лінійність:</strong> Якщо дві числові послідовності <span class="arithmatex">\(x_1[n]\)</span> та <span class="arithmatex">\(x_2[n]\)</span> мають ДПФ-спектри <span class="arithmatex">\(X_1[k]\)</span> та <span class="arithmatex">\(X_2[k]\)</span> відповідно, то спектр їхньої довільної лінійної комбінації з комплексними або дійсними коефіцієнтами <span class="arithmatex">\(\alpha\)</span> та <span class="arithmatex">\(\beta\)</span> дорівнює аналогічній лінійній комбінації їхніх спектрів:
+   $<span class="arithmatex">\(\text{DFT}\{\alpha x_1[n] + \beta x_2[n]\} = \alpha X_1[k] + \beta X_2[k]\)</span>$</p>
+</li>
+<li>
+<p><strong>Циклічний (круговий) зсув у часі:</strong> Зсув послідовності <span class="arithmatex">\(x[n]\)</span> уздовж осі часу на <span class="arithmatex">\(n_0\)</span> відліків у рамках періоду <span class="arithmatex">\(N\)</span> (де індекс розраховується за модулем <span class="arithmatex">\(N\)</span>, тобто <span class="arithmatex">\(x[(n - n_0) \bmod N]\)</span>) відповідає множенню вихідного спектра на лінійний фазовий множник:
+   $<span class="arithmatex">\(\text{DFT}\{x[(n - n_0) \bmod N]\} = X[k] e^{-j \frac{2\pi}{N} k n_0} = X[k] W_N^{k n_0}\)</span>$
+   Амплітудний спектр при цьому залишається інваріантним (<span class="arithmatex">\(|X_{\text{shift}}[k]| = |X[k]|\)</span>), а фазовий спектр отримує лінійний додатковий набіг фази <span class="arithmatex">\(\Delta\varphi_k = - \frac{2\pi}{N} k n_0\)</span>.</p>
+</li>
+<li>
+<p><strong>Циклічний зсув у частотній області (модуляція):</strong> Множення часового сигналу на комплексну експоненту <span class="arithmatex">\(W_N^{-l n} = e^{j \frac{2\pi}{N} l n}\)</span> еквівалентне круговому зсуву його дискретного спектра на <span class="arithmatex">\(l\)</span> позицій:
+   $<span class="arithmatex">\(\text{DFT}\{x[n] e^{j \frac{2\pi}{N} l n}\} = X[(k - l) \bmod N]\)</span>$</p>
+</li>
+<li>
+<p><strong>Спектральна комплексна ермітова симетрія для дійсних сигналів:</strong> Якщо вхідний сигнал є суто дійсною функцією часу (<span class="arithmatex">\(x[n] \in \mathbb{R}\)</span>), то його спектральні відліки, розташовані симетрично відносно половини розмірності перетворення <span class="arithmatex">\(N/2\)</span> (частоти Найквіста), утворюють комплексно-спряжені пари:
+   $<span class="arithmatex">\(X[N - k] = X^*[k], \quad k = 1, 2, \dots, \frac{N}{2} - 1\)</span>$
+   З даної властивості випливає, що модуль спектра (амплітудний спектр) володіє парною симетрією, а аргумент (фазовий спектр) — непарною симетрією відносно точки <span class="arithmatex">\(N/2\)</span>:
+   $<span class="arithmatex">\(|X[N - k]| = |X[k]|, \quad \arg\{X[N - k]\} = -\arg\{X[k]\}\)</span>$
+   Нульовий спектральний відлік <span class="arithmatex">\(X[0] = \sum_{n=0}^{N-1} x[n]\)</span> завжди є суто дійсним числом, що характеризує постійну складову сигналу. Якщо розмірність <span class="arithmatex">\(N\)</span> є парним числом, відлік на частоті Найквіста <span class="arithmatex">\(X[N/2] = \sum_{n=0}^{N-1} x[n] (-1)^n\)</span> також набуває виключно дійсного значення.</p>
+</li>
+<li>
+<p><strong>Теорема про кругову згортку:</strong> Поелементному добутку двох ДПФ-спектрів <span class="arithmatex">\(Y[k] = X_1[k] \cdot X_2[k]\)</span> у часовій області строго відповідає кругова (циклічна) згортка вихідних послідовностей:
+   $<span class="arithmatex">\(y_c[n] = \text{IDFT}\{X_1[k] \cdot X_2[k]\} = \sum_{m=0}^{N-1} x_1[m] x_2[(n - m) \bmod N]\)</span>$</p>
+</li>
+<li>
+<p><strong>Енергетична теорема Парсеваля для дискретних процесів:</strong> Повна енергія сигналу в часовій області строго дорівнює сумарній енергії його дискретних спектральних гармонік, масштабованій коефіцієнтом <span class="arithmatex">\(1/N\)</span>:
+   $<span class="arithmatex">\(\sum_{n=0}^{N-1} |x[n]|^2 = \frac{1}{N} \sum_{k=0}^{N-1} |X[k]|^2\)</span>$
+   Вираз встановлює еквівалентність розрахунку середньої потужності та енергії процесу як у часовому, так і у спектральному просторі.</p>
+</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Властивість</th>
+<th style="text-align: left;">Часова область <span class="arithmatex">\(x[n]\)</span></th>
+<th style="text-align: left;">Спектральна область <span class="arithmatex">\(X[k] = \text{DFT}\{x[n]\}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Лінійність</strong></td>
+<td style="text-align: left;"><span class="arithmatex">\(\alpha x_1[n] + \beta x_2[n]\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(\alpha X_1[k] + \beta X_2[k]\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Круговий зсув за часом</strong></td>
+<td style="text-align: left;"><span class="arithmatex">\(x[(n - n_0) \bmod N]\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(X[k] W_N^{k n_0} = X[k] e^{-j \frac{2\pi}{N} k n_0}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Круговий зсув за частотою</strong></td>
+<td style="text-align: left;"><span class="arithmatex">\(x[n] W_N^{-l n} = x[n] e^{j \frac{2\pi}{N} l n}\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(X[(k - l) \bmod N]\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Комплексне спряження</strong></td>
+<td style="text-align: left;"><span class="arithmatex">\(x^*[n]\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(X^*[(-k) \bmod N] = X^*[N - k]\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Ермітова симетрія (<span class="arithmatex">\(x[n] \in \mathbb{R}\)</span>)</strong></td>
+<td style="text-align: left;"><span class="arithmatex">\(x[n] = x^*[n]\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(X[k] = X^*[N - k], \; \|X[k]\| = \|X[N - k]\|\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Кругова згортка</strong></td>
+<td style="text-align: left;"><span class="arithmatex">\(x_1[n] \circledast x_2[n]\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(X_1[k] \cdot X_2[k]\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Поелементний добуток</strong></td>
+<td style="text-align: left;"><span class="arithmatex">\(x_1[n] \cdot x_2[n]\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(\frac{1}{N} [X_1[k] \circledast X_2[k]]\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Рівність Парсеваля</strong></td>
+<td style="text-align: left;"><span class="arithmatex">\(\sum_{n=0}^{N-1} \|x[n]\|^2\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(\frac{1}{N} \sum_{k=0}^{N-1} \|X[k]\|^2\)</span></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="33-fft-2-dit-dif">3.3. Алгоритми швидкого перетворення Фур'є (ШПФ / FFT) за основою 2 з проріджуванням у часі (DIT) та частоті (DIF). Базова операція «метелик». Оцінка обчислювальної складності</h2>
+<h3 id="_3">Основний зміст та теоретичний базис</h3>
+<p>Пряме обчислення спектральних коефіцієнтів за формулою ДПФ вимагає виконання для кожного із <span class="arithmatex">\(N\)</span> відліків суми <span class="arithmatex">\(N\)</span> комплексних множень та <span class="arithmatex">\((N-1)\)</span> комплексних додавань, що сумарно обумовлює квадратичну обчислювальну складність алгоритму:</p>
+<div class="arithmatex">\[C_{\text{mult}} = N^2, \quad C_{\text{add}} = N(N - 1) \approx N^2 \implies \mathcal{O}(N^2)\]</div>
+<p>При великих масивах даних (<span class="arithmatex">\(N \ge 1024\)</span>) прямий розрахунок створює неприпустиме навантаження на процесорні вузли. Кардинальне прискорення розрахунку досягається за допомогою <strong>алгоритмів швидкого перетворення Фур'є (ШПФ)</strong> (<em>Fast Fourier Transform, FFT</em>), розроблених Кулі та Тьюкі, які базуються на парадигмі «розділяй і володарюй» (<em>divide and conquer</em>). У разі, коли довжина послідовності є цілим ступенем двійки (<span class="arithmatex">\(N = 2^\nu\)</span>, де <span class="arithmatex">\(\nu = \log_2 N \in \mathbb{Z}\)</span>), застосовують алгоритми з основою 2 (<em>Radix-2 FFT</em>).</p>
+<p>У класичному алгоритмі <strong>ШПФ із проріджуванням у часі (<em>Decimation-in-Time, DIT FFT</em>)</strong> вхідна <span class="arithmatex">\(N\)</span>-точкова послідовність <span class="arithmatex">\(x[n]\)</span> на кожному ітераційному кроці розділяється на дві підпослідовності довжиною <span class="arithmatex">\(N/2\)</span>: парну <span class="arithmatex">\(x_{e}[m] = x[2m]\)</span> та непарну <span class="arithmatex">\(x_{o}[m] = x[2m + 1]\)</span>, де <span class="arithmatex">\(m = 0, 1, \dots, N/2 - 1\)</span>. </p>
+<p>Вираз прямого ДПФ трансформується шляхом групування доданків:</p>
+<div class="arithmatex">\[X[k] = \sum_{m=0}^{N/2-1} x[2m] e^{-j\frac{2\pi}{N} k(2m)} + \sum_{m=0}^{N/2-1} x[2m+1] e^{-j\frac{2\pi}{N} k(2m+1)}\]</div>
+<p>Враховуючи властивість поворотних множників <span class="arithmatex">\(W_N^{2mk} = e^{-j\frac{2\pi}{N} 2mk} = e^{-j\frac{2\pi}{N/2} mk} = W_{N/2}^{mk}\)</span> та виносячи спільний множник <span class="arithmatex">\(W_N^k\)</span> за межі другої суми, отримуємо декомпозицію <span class="arithmatex">\(N\)</span>-точкового ДПФ на два <span class="arithmatex">\((N/2)\)</span>-точкових ДПФ:</p>
+<div class="arithmatex">\[X[k] = \sum_{m=0}^{N/2-1} x_{e}[m] W_{N/2}^{mk} + W_N^k \sum_{m=0}^{N/2-1} x_{o}[m] W_{N/2}^{mk} = X_e[k] + W_N^k X_o[k]\]</div>
+<p>де <span class="arithmatex">\(X_e[k]\)</span> — <span class="arithmatex">\((N/2)\)</span>-точкове ДПФ парної вибірки; <span class="arithmatex">\(X_o[k]\)</span> — <span class="arithmatex">\((N/2)\)</span>-точкове ДПФ непарної вибірки.</p>
+<p>Оскільки спектри <span class="arithmatex">\(X_e[k]\)</span> та <span class="arithmatex">\(X_o[k]\)</span> є періодичними з періодом <span class="arithmatex">\(N/2\)</span>, для обчислення другої половини спектра (<span class="arithmatex">\(k = N/2, \dots, N - 1\)</span>) використовується властивість антисиметрії поворотного множника <span class="arithmatex">\(W_N^{k + N/2} = W_N^k \cdot W_N^{N/2} = W_N^k \cdot e^{-j\pi} = -W_N^k\)</span>:</p>
+<div class="arithmatex">\[\begin{cases} 
+X[k] = X_e[k] + W_N^k X_o[k] \\ 
+X\left[k + \frac{N}{2}\right] = X_e[k] - W_N^k X_o[k] 
+\end{cases}, \quad k = 0, 1, \dots, \frac{N}{2} - 1\]</div>
+<p>Пара наведених співвідношень становить базовий обчислювальний елемент ШПФ, відомий як <strong>операція «метелик» (<em>butterfly operation</em>)</strong>. Вона приймає два комплексні входи, виконує одне комплексне множення на коефіцієнт <span class="arithmatex">\(W_N^k\)</span>, одне додавання та одне віднімання, генеруючи два вихідні спектральні коефіцієнти.</p>
+<p><pre class="mermaid"><code>flowchart LR
+    subgraph Butterfly [Базова операція «метелик» Radix-2 DIT]
+        A["X_e[k]"] --&gt; C((+)) --&gt; Out1["X[k] = X_e[k] + W_N^k · X_o[k]"]
+        B["X_o[k]"] --&gt; M["Поворотний множник × W_N^k"]
+        M --&gt; C
+        A --&gt; D((+)) --&gt; Out2["X[k + N/2] = X_e[k] - W_N^k · X_o[k]"]
+        M --&gt;|× (-1)| D
+    end</code></pre>
+<em>Рисунок 3.2 — Структурна схема базового обчислювального модуля «метелик» алгоритму швидкого перетворення Фур'є з проріджуванням у часі</em></p>
+<p>При реалізації алгоритму DIT вхідні відліки <span class="arithmatex">\(x[n]\)</span> повинні подаватися не у звичайному порядку, а у двійково-інверсній послідовності (<em>bit-reversed order</em>). Порядок формується шляхом запису індексу <span class="arithmatex">\(n\)</span> у двійковій системі числення розрядністю <span class="arithmatex">\(\nu = \log_2 N\)</span>, дзеркального перевертання бітів та перерахунку отриманого двійкового числа у десятковий еквівалент:</p>
+<div class="arithmatex">\[\text{BitRev}_3(001_2) = 100_2 \iff 1 \to 4, \quad \text{BitRev}_3(011_2) = 110_2 \iff 3 \to 6\]</div>
+<p>Для розмірності <span class="arithmatex">\(N = 8\)</span> двійково-інверсний порядок перестановки вхідного вектора має вигляд: <span class="arithmatex">\(\{x[0], x[4], x[2], x[6], x[1], x[5], x[3], x[7]\}\)</span>.</p>
+<p><pre class="mermaid"><code>flowchart LR
+    subgraph FFT_8_Stages [Граф 8-точкового алгоритму DIT ШПФ]
+        direction LR
+        subgraph In [Вхідні відліки]
+            x0["x[0]"]
+            x4["x[4]"]
+            x2["x[2]"]
+            x6["x[6]"]
+            x1["x[1]"]
+            x5["x[5]"]
+            x3["x[3]"]
+            x7["x[7]"]
+        end
+        subgraph Stage1 [Етап 1: 2-точкові ДПФ]
+            S1_0["± (W8^0)"]
+            S1_1["± (W8^0)"]
+            S1_2["± (W8^0)"]
+            S1_3["± (W8^0)"]
+        end
+        subgraph Stage2 [Етап 2: 4-точкові ДПФ]
+            S2_0["± (W8^0, W8^2)"]
+            S2_1["± (W8^0, W8^2)"]
+        end
+        subgraph Stage3 [Етап 3: 8-точкове ДПФ]
+            S3_0["± (W8^0, W8^1, W8^2, W8^3)"]
+        end
+        subgraph Out [Вихідний спектр]
+            X0["X[0]"]
+            X1["X[1]"]
+            X2["X[2]"]
+            X3["X[3]"]
+            X4["X[4]"]
+            X5["X[5]"]
+            X6["X[6]"]
+            X7["X[7]"]
+        end
+
+        In --&gt; Stage1 --&gt; Stage2 --&gt; Stage3 --&gt; Out
+    end</code></pre>
+<em>Рисунок 3.3 — Трьохкаскадний спрямований граф обчислення 8-точкового швидкого перетворення Фур'є за схемою Кулі-Тьюкі</em></p>
+<p>Математично процедура ШПФ для <span class="arithmatex">\(N = 8\)</span> являє собою <strong>факторизацію повної матриці ДПФ</strong> <span class="arithmatex">\(\mathbf{W}_8\)</span> у добуток трьох розріджених унітарних матриць підкаскадів <span class="arithmatex">\(\mathbf{W}_1, \mathbf{W}_2, \mathbf{W}_3\)</span> та матриці двійково-інверсної перестановки <span class="arithmatex">\(\mathbf{P}_8\)</span>:</p>
+<div class="arithmatex">\[\mathbf{W}_8 = \mathbf{W}_3 \cdot \mathbf{W}_2 \cdot \mathbf{W}_1 \cdot \mathbf{P}_8\]</div>
+<p>Матриці каскадів мають високу розрідженість (містять переважно нулі та діагональні блоки з одиницями й поворотними множниками <span class="arithmatex">\(W_8^k = e^{-j \frac{2\pi}{8} k} = e^{-j \frac{\pi}{4} k}\)</span>):</p>
+<div class="arithmatex">\[\mathbf{P}_8 = \begin{bmatrix}
+1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 \\
+0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1
+\end{bmatrix}\]</div>
+<div class="arithmatex">\[\mathbf{W}_1 = \begin{bmatrix}
+1 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
+1 &amp; -1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 1 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 1 &amp; -1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 1 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; -1 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 1 \\
+0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; -1
+\end{bmatrix}\]</div>
+<div class="arithmatex">\[\mathbf{W}_2 = \begin{bmatrix}
+1 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 1 &amp; 0 &amp; W_8^2 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
+1 &amp; 0 &amp; -1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 1 &amp; 0 &amp; -W_8^2 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; W_8^2 \\
+0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; -1 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; -W_8^2
+\end{bmatrix}\]</div>
+<div class="arithmatex">\[\mathbf{W}_3 = \begin{bmatrix}
+1 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; W_8^1 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; W_8^2 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; W_8^3 \\
+1 &amp; 0 &amp; 0 &amp; 0 &amp; -1 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; -W_8^1 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; -W_8^2 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; -W_8^3
+\end{bmatrix}\]</div>
+<p>Загальна кількість обчислювальних етапів (каскадів) становить <span class="arithmatex">\(\nu = \log_2 N\)</span>. На кожному етапі паралельно виконується <span class="arithmatex">\(N/2\)</span> операцій «метелик». Таким чином, сумарна кількість комплексних множень для алгоритму ШПФ зменшується до:</p>
+<div class="arithmatex">\[M_{\text{FFT}} = \frac{N}{2} \log_2 N\]</div>
+<p>Кількість комплексних додавань становить:</p>
+<div class="arithmatex">\[A_{\text{FFT}} = N \log_2 N\]</div>
+<p>Асимптотична обчислювальна складність складає <span class="arithmatex">\(\mathcal{O}(N \log_2 N)\)</span>. Коефіцієнт прискорення розрахунків порівняно з прямим ДПФ зростає логарифмічно:</p>
+<div class="arithmatex">\[\xi = \frac{N^2}{\frac{N}{2} \log_2 N} = \frac{2N}{\log_2 N}\]</div>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Розмірність <span class="arithmatex">\(N\)</span></th>
+<th style="text-align: center;">Множення ДПФ (<span class="arithmatex">\(N^2\)</span>)</th>
+<th style="text-align: center;">Множення ШПФ (<span class="arithmatex">\(\frac{N}{2} \log_2 N\)</span>)</th>
+<th style="text-align: center;">Теоретичний виграш у швидкості <span class="arithmatex">\(\xi\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><strong>8</strong></td>
+<td style="text-align: center;">64</td>
+<td style="text-align: center;">12</td>
+<td style="text-align: center;">5.33</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>64</strong></td>
+<td style="text-align: center;">4 096</td>
+<td style="text-align: center;">192</td>
+<td style="text-align: center;">21.33</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>256</strong></td>
+<td style="text-align: center;">65 536</td>
+<td style="text-align: center;">1 024</td>
+<td style="text-align: center;">64.00</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>1024</strong></td>
+<td style="text-align: center;">1 048 576</td>
+<td style="text-align: center;">5 120</td>
+<td style="text-align: center;">204.80</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>4096</strong></td>
+<td style="text-align: center;">16 777 216</td>
+<td style="text-align: center;">24 576</td>
+<td style="text-align: center;">682.67</td>
+</tr>
+</tbody>
+</table>
+<p>В алгоритмі <strong>ШПФ із проріджуванням за частотою (<em>Decimation-in-Frequency, DIF FFT</em>)</strong> розбиття на підпрограми здійснюється у вихідному спектрі: вхідна послідовність подається у природному порядку і ділиться на першу та другу половини, а на виході спектральні відліки формуються у двійково-інверсній послідовності. Обчислювальна складність алгоритмів DIT та DIF є абсолютно однаковою.</p>
+<hr />
+<h2 id="34-spectral-leakage">3.4. Ефект витоку спектра (spectral leakage). Вагові вікна (Хеммінга, Ханна, Блекмана, прямокутне) та їх характеристики</h2>
+<h3 id="_4">Основний зміст та теоретичний базис</h3>
+<p>При застосуванні ДПФ до реальних сигналів виконується неявне теоретичне припущення про те, що аналізований скінченний фрагмент довжиною <span class="arithmatex">\(N\)</span> відліків періодично повторюється в часі від <span class="arithmatex">\(-\infty\)</span> до <span class="arithmatex">\(+\infty\)</span>. Якщо тривалість спостереження <span class="arithmatex">\(T_{\text{obs}} = NT\)</span> містить строго ціле число періодів <span class="arithmatex">\(K\)</span> кожної з гармонік сигналу (тобто частота гармоніки <span class="arithmatex">\(f_0 = K \Delta f = K \frac{f_s}{N}\)</span> точно потрапляє в центр одного з частотних бінів ДПФ), періодичне продовження залишається гладким і неперервним, а вся спектральна енергія зосереджується в єдиному біні <span class="arithmatex">\(k = K\)</span>.</p>
+<p>Якщо ж гармонійна складова має довільну частоту і на інтервалі <span class="arithmatex">\(NT\)</span> укладається неціле число періодів, на межах вікна аналізу виникає штучний стрибок першого роду (розрив фази). Математично операція виділення фрагмента сигналу є множенням нескінченного процесу <span class="arithmatex">\(s[n]\)</span> на прямокутну вагову функцію <span class="arithmatex">\(w[n]\)</span>:</p>
+<div class="arithmatex">\[x[n] = s[n] \cdot w[n], \quad w[n] = \begin{cases} 1, &amp; 0 \le n \le N - 1 \\ 0, &amp; \text{в інших випадках} \end{cases}\]</div>
+<p>Множенню в часовій області відповідає згортка істинного лінійчастого спектра сигналу зі спектральною характеристикою прямокутного вікна <span class="arithmatex">\(W(\omega)\)</span>, що описується ядром Діріхле:</p>
+<div class="arithmatex">\[W(\omega) = e^{-j\omega \frac{N-1}{2}} \frac{\sin\left(\frac{\omega N}{2}\right)}{\sin\left(\frac{\omega}{2}\right)}\]</div>
+<p>Оскільки функція ядра Діріхле має широкі бічні пелюстки, що повільно спадають за законом <span class="arithmatex">\(1/\omega\)</span>, енергія гармоніки «розтікається» по всьому частотному діапазону ДПФ. Цей паразитний феномен називається <strong>витоком спектра (<em>spectral leakage</em>)</strong>. Витік спектра знижує амплітудну точність визначення основних частот та маскує слабкі спектральні гармоніки потужними бічними пелюстками сусідніх сильних компонентів.</p>
+<p><pre class="mermaid"><code>flowchart TD
+    A["Неціле число періодів у вікні аналізу"] --&gt; B["Стрибок фази на границях фрагмента"]
+    B --&gt; C["Згортка спектра із ядром вікна W(ω)"]
+    C --&gt; D["Витік спектра (Spectral Leakage)"]
+    D --&gt; E["Маскування слабких гармонік бічними пелюстками"]
+
+    F["Застосування згладжувальних вагових вікон"] --&gt;|Зменшення крайових стрибків| G["Придушення рівня бічних пелюсток"]
+    G --&gt; H["Підвищення динамічного діапазону аналізу"]</code></pre>
+<em>Рисунок 3.4 — Причинно-наслідковий ланцюг виникнення витоку спектра та механізм його мінімізації за допомогою віконного зважування</em></p>
+<p>Для кардинального придушення витоку спектра застосовують спеціальні <strong>вагові вікна (<em>window functions</em>)</strong>, які плавно зменшують значення відліків сигналу на краях інтервалу аналізу до нуля, мінімізуючи амплітуду граничного розриву. </p>
+<p>Основними математичними моделями згладжувальних вікон є:</p>
+<ol>
+<li>
+<p><strong>Вікно Ханна (Hanning window):</strong> описується косинусоїдальною функцією, що плавно спадає до нуля на краях:
+   $<span class="arithmatex">\(w[n] = 0.5 - 0.5 \cos\left(\frac{2\pi n}{N - 1}\right) = \sin^2\left(\frac{\pi n}{N - 1}\right), \quad 0 \le n \le N - 1\)</span>$</p>
+</li>
+<li>
+<p><strong>Вікно Хеммінга (Hamming window):</strong> модифіковане косинусоїдальне вікно з ненульовим піднятим п'єдесталом, коефіцієнти якого оптимізовані для максимального придушення першої бічної пелюстки:
+   $<span class="arithmatex">\(w[n] = 0.54 - 0.46 \cos\left(\frac{2\pi n}{N - 1}\right), \quad 0 \le n \le N - 1\)</span>$</p>
+</li>
+<li>
+<p><strong>Вікно Блекмана (Blackman window):</strong> трьохгармонійна вагова функція з високим рівнем селективності та глибоким придушенням позасмугових паразитних компонентів:
+   $<span class="arithmatex">\(w[n] = 0.42 - 0.5 \cos\left(\frac{2\pi n}{N - 1}\right) + 0.08 \cos\left(\frac{4\pi n}{N - 1}\right), \quad 0 \le n \le N - 1\)</span>$</p>
+</li>
+</ol>
+<p>Вибір типу вагового вікна є інженерним компромісом між двома суперечливими критеріями: <strong>частотною роздільною здатністю</strong> (яка визначається шириною головної пелюстки спектрального вікна) та <strong>динамічним діапазоном виявлення слабких сигналів</strong> (який визначається рівнем придушення максимальної бічної пелюстки).</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Тип вагового вікна</th>
+<th style="text-align: left;">Ширина головної пелюстки <span class="arithmatex">\(\Delta f_{-3\text{dB}}\)</span></th>
+<th style="text-align: left;">Рівень максимальної бічної пелюстки (дБ)</th>
+<th style="text-align: left;">Швидкість спаду бічних пелюсток (дБ/октава)</th>
+<th style="text-align: left;">Сфера інженерного застосування</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Прямокутне (Rectangular)</strong></td>
+<td style="text-align: left;"><span class="arithmatex">\(0.89 \cdot \frac{f_s}{N}\)</span></td>
+<td style="text-align: left;"><strong><span class="arithmatex">\(-13.3\text{ дБ}\)</span></strong></td>
+<td style="text-align: left;"><span class="arithmatex">\(-6\text{ дБ/окт}\)</span></td>
+<td style="text-align: left;">Сигнали із суворо кратними періодами, вимірювання перехідних імпульсів</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Ханна (Hann)</strong></td>
+<td style="text-align: left;"><span class="arithmatex">\(1.20 \cdot \frac{f_s}{N}\)</span></td>
+<td style="text-align: left;"><strong><span class="arithmatex">\(-31.5\text{ дБ}\)</span></strong></td>
+<td style="text-align: left;"><span class="arithmatex">\(-18\text{ дБ/окт}\)</span></td>
+<td style="text-align: left;">Загальний спектральний аналіз, мовні та музичні сигнали</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Хеммінга (Hamming)</strong></td>
+<td style="text-align: left;"><span class="arithmatex">\(1.30 \cdot \frac{f_s}{N}\)</span></td>
+<td style="text-align: left;"><strong><span class="arithmatex">\(-42.7\text{ дБ}\)</span></strong></td>
+<td style="text-align: left;"><span class="arithmatex">\(-6\text{ дБ/окт}\)</span></td>
+<td style="text-align: left;">Вузькосмуговий гармонічний аналіз, синтез цифрових КІХ-фільтрів</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Блекмана (Blackman)</strong></td>
+<td style="text-align: left;"><span class="arithmatex">\(1.68 \cdot \frac{f_s}{N}\)</span></td>
+<td style="text-align: left;"><strong><span class="arithmatex">\(-58.1\text{ дБ}\)</span></strong></td>
+<td style="text-align: left;"><span class="arithmatex">\(-18\text{ дБ/окт}\)</span></td>
+<td style="text-align: left;">Виявлення слабких гармонік на фоні потужних завад, віброакустика</td>
+</tr>
+</tbody>
+</table>
+<p>З аналізу таблиці видно, що прямокутне вікно забезпечує найвищу частотну роздільну здатність завдяки найвужчій головній пелюстці, проте володіє неприпустимо високим рівнем бічних пелюсток (<span class="arithmatex">\(-13.3\text{ дБ}\)</span>), що призводить до сильного витоку спектра. Застосування вікна Блекмана розширює головну пелюстку майже вдвічі, погіршуючи роздільну здатність близьких частот, проте забезпечує глибоке придушення бічного витоку до рівня <span class="arithmatex">\(-58.1\text{ дБ}\)</span>, гарантуючи високу вибірковість при аналізі багатокомпонентних спектрів складних вимірювальних сигналів.</p>
+<hr />
+<h3 id="_5">Питання для самоперевірки та аналітичного осмислення</h3>
+<ol>
+<li>
+<p>Опишіть аналітичний зв'язок між неперервним інтегральним перетворенням Фур'є, дискретним у часі перетворенням Фур'є (DTFT) та Дискретним перетворенням Фур'є (ДПФ). Яким чином дискретизація частотної осі в ДПФ накладає вимогу періодичності на часовий сигнал?</p>
+</li>
+<li>
+<p>Доведіть властивість ермітової комплексної симетрії ДПФ для дійсного сигналу <span class="arithmatex">\(x[n] \in \mathbb{R}\)</span>. Чому інформаційна ємність спектра дійсного сигналу обмежена відліками в діапазоні від <span class="arithmatex">\(k = 0\)</span> до <span class="arithmatex">\(k = N/2\)</span>?</p>
+</li>
+<li>
+<p>Поясніть математичний механізм факторизації матриці ДПФ при переході від алгоритму прямого обчислення складності <span class="arithmatex">\(\mathcal{O}(N^2)\)</span> до алгоритму швидкого перетворення Фур'є Кулі-Тьюкі зі складністю <span class="arithmatex">\(\mathcal{O}(N \log_2 N)\)</span>.</p>
+</li>
+<li>
+<p>У чому полягає фізичний та алгоритмічний зміст базової операції «метелик» у структурі Radix-2 DIT FFT, і яку роль відіграє двійково-інверсна перестановка вхідних відліків?</p>
+</li>
+<li>
+<p>Яка фізична причина виникнення ефекту витоку спектра (spectral leakage) при аналізі сигналів скінченної тривалості, і як цей ефект інтерпретується в термінах згортки з ядром Діріхле у частотній області?</p>
+</li>
+<li>
+<p>Проведіть порівняльний аналіз прямокутного вікна та вікон Ханна, Хеммінга, Блекмана. За якими критеріями обирається тип віконної функції при вирішенні задач прецизійного вимірювання амплітуди гармоніки та розділення двох близько розташованих частот?</p>
+</li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Повернутись нагору
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Kyrylo Vadurin &bull; <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "navigation.tracking", "header.autohide", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0456\u0439\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u0421\u043a\u043e\u043f\u0456\u044e\u0432\u0430\u0442\u0438 \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0429\u0435 1 \u0437\u0431\u0456\u0433 \u043d\u0430 \u0446\u0456\u0439 \u0441\u0442\u043e\u0440\u0456\u043d\u0446\u0456", "search.result.more.other": "\u0429\u0435 # \u0437\u0431\u0456\u0433\u0456\u0432 \u043d\u0430 \u0446\u0456\u0439 \u0441\u0442\u043e\u0440\u0456\u043d\u0446\u0456", "search.result.none": "\u0417\u0431\u0456\u0433\u0456\u0432 \u043d\u0435 \u0437\u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u0417\u043d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0437\u0431\u0456\u0433", "search.result.other": "\u0417\u043d\u0430\u0439\u0434\u0435\u043d\u043e # \u0437\u0431\u0456\u0433\u0456\u0432", "search.result.placeholder": "\u0420\u043e\u0437\u043f\u043e\u0447\u043d\u0456\u0442\u044c \u043f\u0438\u0441\u0430\u0442\u0438 \u0434\u043b\u044f \u043f\u043e\u0448\u0443\u043a\u0443", "search.result.term.missing": "\u041d\u0435 \u0437\u043d\u0430\u0439\u0434\u0435\u043d\u043e \u0437\u0430\u043f\u0438\u0442\u0443", "select.version": "\u041e\u0431\u0440\u0430\u0442\u0438 \u0432\u0435\u0440\u0441\u0456\u044e"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

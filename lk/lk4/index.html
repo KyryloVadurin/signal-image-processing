@@ -1,0 +1,1831 @@
+
+<!doctype html>
+<html lang="uk" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Навчальний портал з дисципліни "Обробка сигналів та зображень"">
+      
+      
+      
+      
+        <link rel="prev" href="../lk3/">
+      
+      
+        <link rel="next" href="../lk5/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Тема 4. Z-перетворення та проєктування цифрових фільтрів - Обробка сигналів та зображень</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#4-z-" class="md-skip">
+          Перейти до змісту
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Хедер">
+    <a href="../.." title="Обробка сигналів та зображень" class="md-header__button md-logo" aria-label="Обробка сигналів та зображень" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Обробка сигналів та зображень
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Тема 4. Z-перетворення та проєктування цифрових фільтрів
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="cyan"  aria-label="Переключити на темну тему"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Переключити на темну тему" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="cyan"  aria-label="Переключити на світлу тему"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Переключити на світлу тему" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Пошук" placeholder="Пошук" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Шукати">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистити" aria-label="Очистити" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Пошук розпочато
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Вкладки" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Робоча програма
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../lk1/" class="md-tabs__link">
+          
+  
+  
+  Лекції
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../lb/lb1/" class="md-tabs__link">
+          
+  
+  
+  Лабораторні роботи
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../sr/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Самостійна робота
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../rg/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Розрахунково-графічна робота
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Навігація" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Обробка сигналів та зображень" class="md-nav__button md-logo" aria-label="Обробка сигналів та зображень" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Обробка сигналів та зображень
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Робоча програма
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лекції
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Лекції
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lk1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 1. Математичне представлення, дискретизація та квантування
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lk2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 2. Лінійні стаціонарні дискретні системи
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lk3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 3. Спектральний аналіз дискретних сигналів
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 4. Z-перетворення та проєктування цифрових фільтрів
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 4. Z-перетворення та проєктування цифрових фільтрів
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Зміст">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Зміст
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#41-z-roc-z-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1. Визначення прямого та оберненого z-перетворення. Область збіжності (ROC). Зв'язок z-перетворення з перетворенням Лапласа та ДПФ
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.1. Визначення прямого та оберненого z-перетворення. Область збіжності (ROC). Зв&#39;язок z-перетворення з перетворенням Лапласа та ДПФ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Основний зміст та теоретичний базис
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#42-hz-z-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2. Передавальна функція \(H(z)\) дискретної системи. Діаграма нулів і полюсів у z-площині. Алгебраїчний та геометричний критерії стійкості ЛСД-систем
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.2. Передавальна функція \(H(z)\) дискретної системи. Діаграма нулів і полюсів у z-площині. Алгебраїчний та геометричний критерії стійкості ЛСД-систем">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Основний зміст та теоретичний базис
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#43-fir" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3. Цифрові фільтри зі скінченною імпульсною характеристикою (КІХ / FIR): структура, властивості, лінійність ФЧХ, абсолютна стійкість
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.3. Цифрові фільтри зі скінченною імпульсною характеристикою (КІХ / FIR): структура, властивості, лінійність ФЧХ, абсолютна стійкість">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Основний зміст та теоретичний базис
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#44-iir" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.4. Цифрові фільтри з нескінченною імпульсною характеристикою (НІХ / IIR): структури реалізації та метод білінійного перетворення (Тастіна)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.4. Цифрові фільтри з нескінченною імпульсною характеристикою (НІХ / IIR): структури реалізації та метод білінійного перетворення (Тастіна)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Основний зміст та теоретичний базис
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Питання для самоперевірки та аналітичного осмислення
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lk5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 5. Цифрове представлення зображень та колориметричні моделі
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lk6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 6. Поелементні амплітудні перетворення
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lk7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 7. Просторова фільтрація зображень
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lk8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 8. Геометричні трансформації та математична морфологія
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lk9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 9. Двовимірна Фур'є-обробка та детектори контурів
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лабораторні роботи
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Лабораторні роботи
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lb/lb1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 1. Дискретизація, квантування сигналів та ефект аліасингу
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lb/lb2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 2. Лінійні стаціонарні системи та дискретна згортка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lb/lb3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 3. Спектральний аналіз за допомогою ДПФ/ШПФ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lb/lb4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 4. Синтез цифрових КІХ та НІХ фільтрів
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lb/lb5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 5. Статистичний та кореляційний аналіз
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lb/lb6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 6. Базові операції з цифровими зображеннями
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lb/lb7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 7. Амплітудні перетворення та бінаризація
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lb/lb8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 8. Просторова фільтрація зображень
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lb/lb9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 9. Геометричні перетворення зображень
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lb/lb10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 10. Математична морфологія зображень
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lb/lb11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 11. 2D перетворення Фур'є та детектування контурів
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Самостійна робота
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Розрахунково-графічна робота
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Зміст">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Зміст
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#41-z-roc-z-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1. Визначення прямого та оберненого z-перетворення. Область збіжності (ROC). Зв'язок z-перетворення з перетворенням Лапласа та ДПФ
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.1. Визначення прямого та оберненого z-перетворення. Область збіжності (ROC). Зв&#39;язок z-перетворення з перетворенням Лапласа та ДПФ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Основний зміст та теоретичний базис
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#42-hz-z-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2. Передавальна функція \(H(z)\) дискретної системи. Діаграма нулів і полюсів у z-площині. Алгебраїчний та геометричний критерії стійкості ЛСД-систем
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.2. Передавальна функція \(H(z)\) дискретної системи. Діаграма нулів і полюсів у z-площині. Алгебраїчний та геометричний критерії стійкості ЛСД-систем">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Основний зміст та теоретичний базис
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#43-fir" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3. Цифрові фільтри зі скінченною імпульсною характеристикою (КІХ / FIR): структура, властивості, лінійність ФЧХ, абсолютна стійкість
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.3. Цифрові фільтри зі скінченною імпульсною характеристикою (КІХ / FIR): структура, властивості, лінійність ФЧХ, абсолютна стійкість">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Основний зміст та теоретичний базис
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#44-iir" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.4. Цифрові фільтри з нескінченною імпульсною характеристикою (НІХ / IIR): структури реалізації та метод білінійного перетворення (Тастіна)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.4. Цифрові фільтри з нескінченною імпульсною характеристикою (НІХ / IIR): структури реалізації та метод білінійного перетворення (Тастіна)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Основний зміст та теоретичний базис
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Питання для самоперевірки та аналітичного осмислення
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="4-z-">ТЕМА 4. Z-ПЕРЕТВОРЕННЯ ТА ПРОЄКТУВАННЯ ЦИФРОВИХ ФІЛЬТРІВ</h1>
+<hr />
+<h2 id="41-z-roc-z-">4.1. Визначення прямого та оберненого z-перетворення. Область збіжності (ROC). Зв'язок z-перетворення з перетворенням Лапласа та ДПФ</h2>
+<h3 id="_1">Основний зміст та теоретичний базис</h3>
+<p>У теорії дискретних сигналів та лінійних стаціонарних систем <strong><span class="arithmatex">\(z\)</span>-перетворення</strong> відіграє таку саму фундаментальну роль, як перетворення Лапласа в аналізі неперервних динамічних систем або перетворення Фур'є в гармонічному аналізі. Воно є потужним операційним методом, який дозволяє переходити від різницевих рівнянь у часовій області до зручних алгебраїчних співвідношень у комплексній площині, спрощуючи задачі аналізу стійкості, розрахунку перехідних процесів та синтезу цифрових фільтрів.</p>
+<p>Математично <strong>пряме двостороннє <span class="arithmatex">\(z\)</span>-перетворення</strong> дискретної числової послідовності <span class="arithmatex">\(x[n]\)</span> визначається як сума нескінченного степеневого ряду за від'ємними степенями комплексної змінної <span class="arithmatex">\(z\)</span>:</p>
+<div class="arithmatex">\[X(z) = \mathcal{Z}\{x[n]\} = \sum_{n=-\infty}^{\infty} x[n] z^{-n}\]</div>
+<p>де <span class="arithmatex">\(x[n]\)</span> — дискретна послідовність відліків сигналу при <span class="arithmatex">\(n \in \mathbb{Z}\)</span>; <span class="arithmatex">\(z\)</span> — комплексна змінна, яка може бути записана в алгебраїчній або показниковій формі як <span class="arithmatex">\(z = \text{Re}(z) + j\text{Im}(z) = r e^{j\omega}\)</span>; <span class="arithmatex">\(r = |z|\)</span> є модулем комплексного числа; <span class="arithmatex">\(\omega = \arg(z)\)</span> позначає нормовану кругову частоту в радіанах на відлік; <span class="arithmatex">\(X(z)\)</span> є <span class="arithmatex">\(z\)</span>-образом аналізованої послідовності.</p>
+<p>Для каузальних (причинних) систем і сигналів, відліки яких тотожно дорівнюють нулю для всіх від'ємних моментів часу (<span class="arithmatex">\(x[n] = 0\)</span> при <span class="arithmatex">\(n &lt; 0\)</span>), використовують <strong>одностороннє <span class="arithmatex">\(z\)</span>-перетворення</strong>:</p>
+<div class="arithmatex">\[X(z) = \mathcal{Z}\{x[n]\} = \sum_{n=0}^{\infty} x[n] z^{-n}\]</div>
+<p>Оскільки <span class="arithmatex">\(z\)</span>-перетворення формалізується як нескінченний ряд Лорана, воно існує не для всієї комплексної площини, а лише для тих значень змінної <span class="arithmatex">\(z\)</span>, при яких цей ряд збігається абсолютно. Множина точок комплексної площини, для яких виконується умова <span class="arithmatex">\(\sum_{n=-\infty}^{\infty} |x[n] z^{-n}| &lt; \infty\)</span>, називається <strong>областю збіжності</strong> (в англомовній термінології — <em>Region of Convergence, ROC</em>).</p>
+<p><pre class="mermaid"><code>flowchart TD
+    A["Дискретна послідовність x[n]"] --&gt; B{"Тип послідовності за часом"}
+    B --&gt;|Правобічна / Каузальна: n ≥ 0| C["Область збіжності (ROC):&lt;br&gt;Зовнішня частина кола |z| &gt; R_max"]
+    B --&gt;|Лівобічна / Антикаузальна: n ≤ 0| D["Область збіжності (ROC):&lt;br&gt;Внутрішня частина кола |z| &lt; R_min"]
+    B --&gt;|Двобічна: -∞ &lt; n &lt; ∞| E["Область збіжності (ROC):&lt;br&gt;Кільце R_min &lt; |z| &lt; R_max"]
+
+    C --&gt; F{"Перевірка BIBO-стійкості"}
+    D --&gt; F
+    E --&gt; F
+    F --&gt;|Одиничне коло |z| = 1 входить в ROC| G["Система BIBO-стійка,&lt;br&gt;DTFT/ДПФ існує"]
+    F --&gt;|Одиничне коло |z| = 1 поза ROC| H["Система нестійка,&lt;br&gt;DTFT не збігається"]</code></pre>
+<em>Рисунок 4.1 — Класифікація конфігурацій областей збіжності (ROC) у z-площині та їхній взаємозв'язок із критерієм BIBO-стійкості системи</em></p>
+<p>Геометрична конфігурація області збіжності у комплексній площині <span class="arithmatex">\(z\)</span> підпорядковується суворим топологічним закономірностям:</p>
+<ul>
+<li>
+<p>Для правобічних каузальних сигналів скінченної або нескінченної тривалості область збіжності являє собою зовнішню частину круга радіусом <span class="arithmatex">\(R_{\max}\)</span>, що поширюється до нескінченності: <span class="arithmatex">\(\text{ROC}: |z| &gt; R_{\max}\)</span>, де <span class="arithmatex">\(R_{\max}\)</span> визначається модулем найвіддаленішого від початку координат полюса функції <span class="arithmatex">\(X(z)\)</span>.</p>
+</li>
+<li>
+<p>Для лівобічних антикаузальних сигналів область збіжності є внутрішньою частиною круга радіусом <span class="arithmatex">\(R_{\min}\)</span>, що не містить початку координат: <span class="arithmatex">\(\text{ROC}: |z| &lt; R_{\min}\)</span>.</p>
+</li>
+<li>
+<p>Для двобічних нескінченних послідовностей область збіжності має вигляд відкритого кільця <span class="arithmatex">\(R_{\min} &lt; |z| &lt; R_{\max}\)</span>, утвореного концентричними колами, якщо внутрішній радіус менший за зовнішній (<span class="arithmatex">\(R_{\min} &lt; R_{\max}\)</span>); якщо ж кола не перетинаються, <span class="arithmatex">\(z\)</span>-перетворення для двобічного сигналу не існує.</p>
+</li>
+<li>
+<p>Область збіжності за жодних умов не може містити полюсів функції <span class="arithmatex">\(X(z)\)</span>, оскільки в точках полюсів ряд розбігається до нескінченності.</p>
+</li>
+</ul>
+<p><strong>Обернене <span class="arithmatex">\(z\)</span>-перетворення</strong> (<em>Inverse z-Transform, IZT</em>) відновлює дискретну часову послідовність <span class="arithmatex">\(x[n]\)</span> за відомою комплексною функцією <span class="arithmatex">\(X(z)\)</span> шляхом інтегрування за замкненим контуром:</p>
+<div class="arithmatex">\[x[n] = \mathcal{Z}^{-1}\{X(z)\} = \frac{1}{2\pi j} \oint_{C} X(z) z^{n-1} \, dz\]</div>
+<p>де <span class="arithmatex">\(C\)</span> — замкнений контур інтегрування у комплексній площині <span class="arithmatex">\(z\)</span>, орієнтований проти годинникової стрілки, який повністю лежить у межах області збіжності <span class="arithmatex">\(\text{ROC}\)</span> та охоплює початок координат <span class="arithmatex">\(z = 0\)</span> і всі полюси функції <span class="arithmatex">\(X(z)\)</span>. На практиці контурний інтеграл обчислюють за допомогою теореми Коші про лишки, розкладання раціонального дробу <span class="arithmatex">\(X(z)\)</span> на суму найпростіших дробів із подальшим використанням таблиць відомих <span class="arithmatex">\(z\)</span>-перетворень, або шляхом ділення многочленів у степеневий ряд.</p>
+<p>Зв'язок <span class="arithmatex">\(z\)</span>-перетворення з неперервним перетворенням Лапласа встановлюється через математичну модель ідеальної імпульсної дискретизації за часом. Якщо неперервний сигнал <span class="arithmatex">\(x_a(t)\)</span> перетворюється у модульований потік дельта-імпульсів <span class="arithmatex">\(x_\delta(t) = \sum_{n=-\infty}^{\infty} x_a(nT) \delta(t - nT)\)</span>, то перетворення Лапласа від <span class="arithmatex">\(x_\delta(t)\)</span> має вигляд:</p>
+<div class="arithmatex">\[X_\delta(s) = \mathcal{L}\{x_\delta(t)\} = \int_{0}^{\infty} \left[ \sum_{n=0}^{\infty} x_a(nT) \delta(t - nT) \right] e^{-st} \, dt = \sum_{n=0}^{\infty} x_a(nT) e^{-snT}\]</div>
+<p>де <span class="arithmatex">\(s = \sigma + j\Omega\)</span> — комплексна частота Лапласа (<span class="arithmatex">\(\text{с}^{-1}\)</span>); <span class="arithmatex">\(T\)</span> — період дискретизації (с). </p>
+<p>Порівняння отриманого виразу з формулою одностороннього <span class="arithmatex">\(z\)</span>-перетворення показує їхню повну еквівалентність за умови введення конформного відображення змінних:</p>
+<div class="arithmatex">\[z = e^{sT} = e^{(\sigma + j\Omega)T} = e^{\sigma T} e^{j\Omega T}\]</div>
+<p>Дана функціональна залежність відображає комплексну <span class="arithmatex">\(s\)</span>-площину на комплексну <span class="arithmatex">\(z\)</span>-площину за такими фундаментальними правилами:</p>
+<ul>
+<li>
+<p>Уявна вісь <span class="arithmatex">\(s\)</span>-площини (<span class="arithmatex">\(\text{Re}(s) = \sigma = 0\)</span>) відображається на коло одиничного радіуса в <span class="arithmatex">\(z\)</span>-площині (<span class="arithmatex">\(|z| = e^{0} = 1\)</span>).</p>
+</li>
+<li>
+<p>Ліва комплексна півплощина стійкості Лапласа (<span class="arithmatex">\(\text{Re}(s) = \sigma &lt; 0\)</span>) відображається у внутрішню область одиничного кола (<span class="arithmatex">\(|z| &lt; 1\)</span>).</p>
+</li>
+<li>
+<p>Права нестійка півплощина Лапласа (<span class="arithmatex">\(\text{Re}(s) = \sigma &gt; 0\)</span>) відображається у зовнішню область одиничного кола (<span class="arithmatex">\(|z| &gt; 1\)</span>).</p>
+</li>
+<li>
+<p>Смуга шириною <span class="arithmatex">\(\Omega_s = 2\pi/T\)</span> уздовж уявної осі <span class="arithmatex">\(s\)</span>-площини при обході від <span class="arithmatex">\(-\pi/T\)</span> до <span class="arithmatex">\(+\pi/T\)</span> повністю покриває все одиничне коло в <span class="arithmatex">\(z\)</span>-площині проти годинникової стрілки, що безпосередньо відображає періодичність частотного спектра дискретизованого сигналу.</p>
+</li>
+</ul>
+<p>Зв'язок <span class="arithmatex">\(z\)</span>-перетворення з дискретним у часі перетворенням Фур'є (DTFT) виникає як частковий випадок обчислення <span class="arithmatex">\(X(z)\)</span> безпосередньо на одиничному колі, тобто при <span class="arithmatex">\(r = |z| = 1\)</span> або <span class="arithmatex">\(z = e^{j\omega}\)</span>:</p>
+<div class="arithmatex">\[X(e^{j\omega}) = \left. X(z) \right|_{z = e^{j\omega}} = \sum_{n=-\infty}^{\infty} x[n] e^{-j\omega n}\]</div>
+<p>Якщо одиничне коло <span class="arithmatex">\(|z| = 1\)</span> належить області збіжності <span class="arithmatex">\(\text{ROC}\)</span>, то спектральна функція <span class="arithmatex">\(X(e^{j\omega})\)</span> існує та збігається. Дискретне перетворення Фур'є (ДПФ) <span class="arithmatex">\(X[k]\)</span> розмірності <span class="arithmatex">\(N\)</span> є сукупністю рівновіддалених відліків <span class="arithmatex">\(z\)</span>-перетворення, узятих у <span class="arithmatex">\(N\)</span> точках на одиничному колі: <span class="arithmatex">\(z_k = e^{j\frac{2\pi}{N}k}\)</span> при <span class="arithmatex">\(k = 0, 1, \dots, N-1\)</span>.</p>
+<hr />
+<h2 id="42-hz-z-">4.2. Передавальна функція <span class="arithmatex">\(H(z)\)</span> дискретної системи. Діаграма нулів і полюсів у z-площині. Алгебраїчний та геометричний критерії стійкості ЛСД-систем</h2>
+<h3 id="_2">Основний зміст та теоретичний базис</h3>
+<p>Лінійна стаціонарна дискретна (ЛСД) система, яка у часовій області описується лінійним різницевим рівнянням зі сталими коефіцієнтами, у комплексній <span class="arithmatex">\(z\)</span>-області характеризується дробово-раціональною <strong>передавальною функцією</strong> <span class="arithmatex">\(H(z)\)</span>. Застосовуючи властивість лінійності та теорему про затримку <span class="arithmatex">\(z\)</span>-перетворення (<span class="arithmatex">\(\mathcal{Z}\{x[n-m]\} = z^{-m}X(z)\)</span>) до загального різницевого рівняння системи:</p>
+<div class="arithmatex">\[\sum_{k=0}^{N} a_k y[n - k] = \sum_{m=0}^{M} b_m x[n - m]\]</div>
+<p>після алгебраїчних перетворень отримуємо операторне співвідношення між <span class="arithmatex">\(z\)</span>-образом виходу <span class="arithmatex">\(Y(z)\)</span> та входу <span class="arithmatex">\(X(z)\)</span>:</p>
+<div class="arithmatex">\[Y(z) \sum_{k=0}^{N} a_k z^{-k} = X(z) \sum_{m=0}^{M} b_m z^{-m}\]</div>
+<p>Передавальна функція <span class="arithmatex">\(H(z)\)</span> визначається як відношення <span class="arithmatex">\(z\)</span>-перетворення вихідного сигналу до <span class="arithmatex">\(z\)</span>-перетворення вхідного сигналу при нульових початкових умовах, що еквівалентно <span class="arithmatex">\(z\)</span>-перетворенню імпульсної характеристики <span class="arithmatex">\(h[n]\)</span> системи:</p>
+<div class="arithmatex">\[H(z) = \frac{Y(z)}{X(z)} = \mathcal{Z}\{h[n]\} = \frac{\sum_{m=0}^{M} b_m z^{-m}}{\sum_{k=0}^{N} a_k z^{-k}} = \frac{b_0 + b_1 z^{-1} + b_2 z^{-2} + \dots + b_M z^{-M}}{a_0 + a_1 z^{-1} + a_2 z^{-2} + \dots + a_N z^{-N}}\]</div>
+<p>де <span class="arithmatex">\(\{b_m\}\)</span> — коефіцієнти прямого зв'язку (нерекурсивна частина фільтра); <span class="arithmatex">\(\{a_k\}\)</span> — коефіцієнти зворотного зв'язку (рекурсивна частина фільтра, за умови <span class="arithmatex">\(a_0 = 1\)</span>); <span class="arithmatex">\(M\)</span> та <span class="arithmatex">\(N\)</span> визначають порядок поліномів чисельника та знаменника відповідно.</p>
+<p>Переходячи до додатних степенів комплексної змінної <span class="arithmatex">\(z\)</span>, передавальну функцію подають у факторизованій формі через корені чисельника та знаменника:</p>
+<div class="arithmatex">\[H(z) = \frac{b_0}{a_0} z^{N-M} \frac{\prod_{m=1}^{M} (z - z_m)}{\prod_{k=1}^{N} (z - p_k)}\]</div>
+<p>де <span class="arithmatex">\(z_m\)</span> — <strong>нулі передавальної функції</strong> (значення комплексної змінної <span class="arithmatex">\(z\)</span>, при яких чисельник обертається в нуль, тобто <span class="arithmatex">\(H(z_m) = 0\)</span>); <span class="arithmatex">\(p_k\)</span> — <strong>полюси передавальної функції</strong> (значення комплексної змінної <span class="arithmatex">\(z\)</span>, при яких знаменник дорівнює нулю, а функція прямує до нескінченності, тобто <span class="arithmatex">\(H(p_k) \to \infty\)</span>).</p>
+<p><pre class="mermaid"><code>flowchart LR
+    subgraph S_Plane [Комплексна s-площина Лапласа]
+        direction TB
+        S1["Ліва півплощина: Re(s) &lt; 0 (Стійкість)"]
+        S2["Уявна вісь: s = jΩ"]
+        S3["Права півплощина: Re(s) &gt; 0 (Нестійкість)"]
+    end
+    subgraph Mapping [Конформне відображення z = e^(sT)]
+        direction TB
+        M1["Відображення на внутрішність круга |z| &lt; 1"]
+        M2["Відображення на одиничне коло |z| = 1"]
+        M3["Відображення на зовнішність круга |z| &gt; 1"]
+    end
+    subgraph Z_Plane [Комплексна z-площина]
+        direction TB
+        Z1["Всередині одиничного кола: |p_k| &lt; 1 (BIBO-стійка)"]
+        Z2["Одиничне коло: |z| = 1 (Межа стійкості / АЧХ)"]
+        Z3["Поза одиничним колом: |p_k| &gt; 1 (Нестійка система)"]
+    end
+
+    S1 --&gt; M1 --&gt; Z1
+    S2 --&gt; M2 --&gt; Z2
+    S3 --&gt; M3 --&gt; Z3</code></pre>
+<em>Рисунок 4.2 — Конформне відображення областей стійкості з комплексної s-площини Лапласа в комплексну z-площину</em></p>
+<p>Розташування нулів і полюсів на комплексній <span class="arithmatex">\(z\)</span>-площині (<strong>діаграма нулів і полюсів</strong>, <em>pole-zero plot</em>) однозначно визначає форму амплітудно-частотної (АЧХ) та фазочастотної (ФЧХ) характеристик системи. Комплексний коефіцієнт передачі <span class="arithmatex">\(H(e^{j\omega})\)</span> отримують підстановкою <span class="arithmatex">\(z = e^{j\omega}\)</span>, що відповідає обходу одиничного кола проти годинникової стрілки від <span class="arithmatex">\(\omega = 0\)</span> (точка <span class="arithmatex">\(z = 1\)</span>) до частоти Найквіста <span class="arithmatex">\(\omega = \pi\)</span> (точка <span class="arithmatex">\(z = -1\)</span>). </p>
+<p>Геометричний розрахунок модуля частотної характеристики базується на добутках довжин векторів, проведених від нулів і полюсів до поточної точки <span class="arithmatex">\(e^{j\omega}\)</span> на одиничному колі:</p>
+<div class="arithmatex">\[|H(e^{j\omega})| = \left|\frac{b_0}{a_0}\right| \frac{\prod_{m=1}^{M} |e^{j\omega} - z_m|}{\prod_{k=1}^{N} |e^{j\omega} - p_k|} = \left|\frac{b_0}{a_0}\right| \frac{\prod_{m=1}^{M} V_{z,m}(\omega)}{\prod_{k=1}^{N} V_{p,k}(\omega)}\]</div>
+<p>де <span class="arithmatex">\(V_{z,m}(\omega) = |e^{j\omega} - z_m|\)</span> — евклідова відстань від <span class="arithmatex">\(m\)</span>-го нуля до точки на одиничному колі; <span class="arithmatex">\(V_{p,k}(\omega) = |e^{j\omega} - p_k|\)</span> — евклідова відстань від <span class="arithmatex">\(k\)</span>-го полюса до тієї самої точки.</p>
+<p>З геометричного аналізу випливають фундаментальні закономірності формування частотного відгуку цифрових систем:</p>
+<ul>
+<li>
+<p>Наближення нуля <span class="arithmatex">\(z_m\)</span> до одиничного кола на частоті <span class="arithmatex">\(\omega_0\)</span> викликає різке зменшення відстані <span class="arithmatex">\(V_{z,m}(\omega_0) \to 0\)</span>, що формує глибокий провал (затухання) в АЧХ; якщо нуль лежить безпосередньо на одиничному колі (<span class="arithmatex">\(|z_m| = 1\)</span>), коефіцієнт передачі на цій частоті строго дорівнює нулю (<span class="arithmatex">\(|H(e^{j\omega_0})| = 0\)</span>).</p>
+</li>
+<li>
+<p>Наближення полюса <span class="arithmatex">\(p_k\)</span> до одиничного кола призводить до різкого зменшення знаменника <span class="arithmatex">\(V_{p,k}(\omega_0) \to 0\)</span>, формуючи виражений резонансний сплеск (пік підсилення) в АЧХ системи.</p>
+</li>
+<li>
+<p>Фазочастотна характеристика <span class="arithmatex">\(\arg\{H(e^{j\omega})\}\)</span> розраховується як сума фазових кутів векторів від усіх нулів мінус сума фазових кутів векторів від усіх полюсів до точки <span class="arithmatex">\(e^{j\omega}\)</span>.</p>
+</li>
+</ul>
+<p><strong>Критерій BIBO-стійкості ЛСД-систем:</strong>
+Каузальна лінійна стаціонарна дискретна система є стійкою за критерієм обмеженого входу — обмеженого виходу (BIBO) тоді й лише тоді, коли <strong>всі полюси її передавальної функції <span class="arithmatex">\(p_k\)</span> лежать строго всередині одиничного кола на комплексній <span class="arithmatex">\(z\)</span>-площині</strong>, тобто модуль кожного полюса є строго меншим за одиницю:</p>
+<div class="arithmatex">\[|p_k| \lt  1, \quad \forall k = 1, 2, \dots, N\]</div>
+<p>Якщо хоча б один полюс потрапляє на одиничне коло (<span class="arithmatex">\(|p_k| = 1\)</span>), система перебуває на межі стійкості (виникають незгасаючі автоколивання, притаманні цифровим генераторам). Якщо хоча б один полюс розташований за межами одиничного кола (<span class="arithmatex">\(|p_k| &gt; 1\)</span>), імпульсна характеристика експоненціально зростає до нескінченності, і система стає абсолютно нестійкою.</p>
+<p>Для дискретної системи другого порядку з характеристичним поліномом знаменника <span class="arithmatex">\(A(z) = 1 + a_1 z^{-1} + a_2 z^{-2} = 0\)</span> алгебраїчний критерій стійкості формулює систему обмежень на дійсні коефіцієнти зворотного зв'язку, відому як <strong>трикутник стійкості</strong>:</p>
+<div class="arithmatex">\[\begin{cases} |a_2| \lt  1 \\ a_2 &gt; -a_1 - 1 \\ a_2 &gt; a_1 - 1 \end{cases} \iff \begin{cases} |a_2| \lt  1 \\ |a_1| \lt  1 + a_2 \end{cases}\]</div>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Розташування полюсів <span class="arithmatex">\(p_k\)</span></th>
+<th style="text-align: left;">Поведінка імпульсної характеристики <span class="arithmatex">\(h[n]\)</span></th>
+<th style="text-align: left;">Стан стійкості системи</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">**Усі $</td>
+<td style="text-align: left;">p_k</td>
+<td style="text-align: left;">&lt; 1$ (всередині кола)**</td>
+</tr>
+<tr>
+<td style="text-align: left;">**Простий полюс $</td>
+<td style="text-align: left;">p_k</td>
+<td style="text-align: left;">= 1$ (на колі)**</td>
+</tr>
+<tr>
+<td style="text-align: left;">**Кратні полюси $</td>
+<td style="text-align: left;">p_k</td>
+<td style="text-align: left;">= 1$ (на колі)**</td>
+</tr>
+<tr>
+<td style="text-align: left;">**Хоча б один $</td>
+<td style="text-align: left;">p_k</td>
+<td style="text-align: left;">&gt; 1$ (поза колом)**</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="43-fir">4.3. Цифрові фільтри зі скінченною імпульсною характеристикою (КІХ / FIR): структура, властивості, лінійність ФЧХ, абсолютна стійкість</h2>
+<h3 id="_3">Основний зміст та теоретичний базис</h3>
+<p><strong>Цифровий фільтр зі скінченною імпульсною характеристикою (КІХ-фільтр)</strong> (в англомовній літературі — <em>Finite Impulse Response, FIR filter</em>) являє собою нерекурсивну дискретну систему, вихідний сигнал якої формується виключно як зважена сума поточного та скінченної кількості <span class="arithmatex">\(M\)</span> попередніх відліків вхідного сигналу:</p>
+<div class="arithmatex">\[y[n] = \sum_{m=0}^{M} b_m x[n - m] = \sum_{m=0}^{M} h[m] x[n - m]\]</div>
+<p>де <span class="arithmatex">\(b_m = h[m]\)</span> — коефіцієнти фільтра, які точно збігаються з відліками його імпульсної характеристики тривалістю <span class="arithmatex">\(N_h = M + 1\)</span>; <span class="arithmatex">\(M\)</span> — порядок КІХ-фільтра.</p>
+<p>Передавальна функція КІХ-фільтра містить виключно поліном за від'ємними степенями <span class="arithmatex">\(z\)</span> без знаменника (за умови <span class="arithmatex">\(a_0 = 1\)</span> та <span class="arithmatex">\(a_k = 0\)</span> при <span class="arithmatex">\(k \ge 1\)</span>):</p>
+<div class="arithmatex">\[H(z) = \sum_{m=0}^{M} h[m] z^{-m} = h[0] + h[1]z^{-1} + h[2]z^{-2} + \dots + h[M]z^{-M} = \frac{\sum_{m=0}^{M} h[m] z^{M-m}}{z^M}\]</div>
+<p>Аналіз факторизованого виразу показує, що передавальна функція КІХ-фільтра має <span class="arithmatex">\(M\)</span> нулів у довільних точках комплексної площини та <span class="arithmatex">\(M\)</span> кратних полюсів, які <strong>завжди строго зафіксовані в початку координат</strong> (<span class="arithmatex">\(z = 0\)</span>). Оскільки точка <span class="arithmatex">\(z = 0\)</span> завжди лежить строго всередині одиничного кола (<span class="arithmatex">\(|z| = 0 &lt; 1\)</span>), КІХ-фільтри володіють <strong>абсолютною (безумовною) стійкістю</strong>. Вони принципово не здатні до самозбудження та генерації паразитної енергії за будь-яких коефіцієнтів <span class="arithmatex">\(h[m]\)</span>.</p>
+<p>Найважливішою унікальною перевагою КІХ-фільтрів, недосяжною в аналогових чи цифрових рекурсивних схемах, є можливість забезпечення <strong>строго лінійної фазочастотної характеристики (ЛФЧХ)</strong> у всій смузі пропускання. Фільтр із лінійною фазою пропускає всі спектральні складові сигналу з абсолютно однаковою часовою затримкою, виключаючи виникнення фазової дисперсії та зберігаючи незмінною просторово-часову форму складних імпульсних сигналів, електрокардіограм (ЕКГ) та растрових зображень.</p>
+<p><pre class="mermaid"><code>flowchart LR
+    subgraph FIR_Structure [Пряма трансверсальна структура КІХ-фільтра порядку M]
+        direction LR
+        x["x[n]"] --&gt; D1["z⁻¹"] --&gt; D2["z⁻¹"] --&gt; Ddots["..."] --&gt; DM["z⁻¹"]
+        x --&gt; h0(("h[0]"))
+        D1 --&gt; h1(("h[1]"))
+        D2 --&gt; h2(("h[2]"))
+        DM --&gt; hM(("h[M]"))
+        h0 --&gt; S((+))
+        h1 --&gt; S
+        h2 --&gt; S
+        hM --&gt; S
+        S --&gt; y["y[n]"]
+    end</code></pre>
+<em>Рисунок 4.3 — Пряма трансверсальна конвеєрна структура цифрового КІХ-фільтра на базі регістрів зсуву, помножувачів та суматора</em></p>
+<p>Необхідною і достатньою умовою забезпечення строго лінійної ФЧХ є наявність дзеркальної симетрії або антисиметрії імпульсної характеристики відносно її геометричного центра <span class="arithmatex">\(n_c = M/2\)</span>:</p>
+<div class="arithmatex">\[h[n] = h[M - n] \quad \text{(симетрична ІХ)} \quad \text{або} \quad h[n] = -h[M - n] \quad \text{(антисиметрична ІХ)}\]</div>
+<p>При виконанні цієї умови групова затримка фільтра <span class="arithmatex">\(\tau_g\)</span> є абсолютно сталою величиною, що дорівнює половині апаратного порядку фільтра в тактах:</p>
+<div class="arithmatex">\[\tau_g(\omega) = -\frac{d\arg\{H(e^{j\omega})\}}{d\omega} = \frac{M}{2} \cdot T = \text{const}\]</div>
+<p>Залежно від типу симетрії та парності порядку <span class="arithmatex">\(M\)</span>, виділяють <strong>чотири класи лінійно-фазових КІХ-фільтрів</strong>:</p>
+<ol>
+<li>
+<p><strong>Тип I (симетрична ІХ, <span class="arithmatex">\(M\)</span> — парне, довжина <span class="arithmatex">\(N_h\)</span> — непарна):</strong> Не має апріорних нулів на граничних частотах. Підходить для проектування фільтрів нижніх частот (ФНЧ), фільтрів верхніх частот (ФВЧ), смугових та режекторних фільтрів.</p>
+</li>
+<li>
+<p><strong>Тип II (симетрична ІХ, <span class="arithmatex">\(M\)</span> — непарне, довжина <span class="arithmatex">\(N_h\)</span> — парна):</strong> Має обов'язковий нуль на частоті Найквіста (<span class="arithmatex">\(H(e^{j\pi}) = 0\)</span>). Придатний лише для ФНЧ та смугових фільтрів; категорично не може використовуватись для ФВЧ та режекторних фільтрів.</p>
+</li>
+<li>
+<p><strong>Тип III (антисиметрична ІХ, <span class="arithmatex">\(M\)</span> — парне, довжина <span class="arithmatex">\(N_h\)</span> — непарна):</strong> Має обов'язкові нулі на нульовій частоті (<span class="arithmatex">\(H(1) = 0\)</span>) та на частоті Найквіста (<span class="arithmatex">\(H(-1) = 0\)</span>). Вносить постійний зсув фази на <span class="arithmatex">\(90^\circ\)</span>. Застосовується для проектування цифрових диференціаторів та перетворювачів Гільберта.</p>
+</li>
+<li>
+<p><strong>Тип IV (антисиметрична ІХ, <span class="arithmatex">\(M\)</span> — непарне, довжина <span class="arithmatex">\(N_h\)</span> — парна):</strong> Має обов'язковий нуль на нульовій частоті (<span class="arithmatex">\(H(1) = 0\)</span>). Застосовується для проектування широкосмугових диференціаторів та ФВЧ із фазовим зсувом на <span class="arithmatex">\(90^\circ\)</span>.</p>
+</li>
+</ol>
+<p>Основними методами синтезу КІХ-фільтрів є <strong>метод зважування ваговими вікнами</strong> (віконний синтез на основі зрізання ряду Фур'є функції <span class="arithmatex">\(\text{sinc}\)</span> вікнами Хеммінга, Блекмана, Кайзера), <strong>метод частотної вибірки</strong> та <strong>оптимальний мінімаксний алгоритм Паркса-Макклеллана</strong> (алгоритм Ремеза), що забезпечує рівнохвильові пульсації (equiripple) в смугах пропускання та затримання.</p>
+<hr />
+<h2 id="44-iir">4.4. Цифрові фільтри з нескінченною імпульсною характеристикою (НІХ / IIR): структури реалізації та метод білінійного перетворення (Тастіна)</h2>
+<h3 id="_4">Основний зміст та теоретичний базис</h3>
+<p><strong>Цифровий фільтр із нескінченною імпульсною характеристикою (НІХ-фільтр)</strong> (в англомовній термінології — <em>Infinite Impulse Response, IIR filter</em>) являє собою рекурсивну дискретну динамічну систему, передавальна функція якої містить як поліном чисельника, так і поліном знаменника, відображаючи наявність внутрішніх контурів зворотного зв'язку:</p>
+<div class="arithmatex">\[H(z) = \frac{\sum_{m=0}^{M} b_m z^{-m}}{1 + \sum_{k=1}^{N} a_k z^{-k}}\]</div>
+<p>Наявність полюсів, відмінних від нуля, дозволяє формувати високоселективні частотні характеристики з дуже крутими схилами спаду АЧХ при відносно низьких порядках фільтра (<span class="arithmatex">\(N = 2 \dots 8\)</span>). Проте фазочастотна характеристика НІХ-фільтрів є суттєво нелінійною, особливо поблизу частоти зрізу, що призводить до фазових спотворень сигналу.</p>
+<p>Основними топологіями апаратної та програмної реалізації НІХ-фільтрів є:</p>
+<ul>
+<li>
+<p><strong>Пряма форма I (Direct Form I):</strong> безпосередньо реалізує різницеве рівняння з роздільними регістрами затримки вхідного та вихідного сигналів, вимагаючи сумарно <span class="arithmatex">\(M + N\)</span> елементів пам'яті <span class="arithmatex">\(z^{-1}\)</span>.</p>
+</li>
+<li>
+<p><strong>Пряма форма II (Direct Form II, канонічна):</strong> використовує спільну центральну лінію затримки для проміжних змінних стану <span class="arithmatex">\(w[n]\)</span>, скорочуючи кількість необхідних комірок пам'яті до канонічного мінімуму <span class="arithmatex">\(\max(M, N)\)</span>.</p>
+</li>
+<li>
+<p><strong>Каскадна форма на основі біквадратних секцій другого порядку (Biquad / Second-Order Sections, SOS):</strong> передавальна функція високого порядку факторизується у послідовний добуток ланок другого порядку:
+   $<span class="arithmatex">\(H(z) = b_0 \prod_{i=1}^{K} \frac{1 + \beta_{1i} z^{-1} + \beta_{2i} z^{-2}}{1 + \alpha_{1i} z^{-1} + \alpha_{2i} z^{-2}}, \quad K = \lceil N/2 \rceil\)</span>$
+   Каскадна форма має вирішальне практичне значення, оскільки вона кардинально знижує чутливість положення полюсів до квантування коефіцієнтів у процесорах із фіксованою комою, запобігаючи втраті стійкості системи.</p>
+</li>
+</ul>
+<p><pre class="mermaid"><code>flowchart LR
+    subgraph Biquad_Cascade [Каскадна реалізація НІХ-фільтра через біквадратні секції другого порядку SOS]
+        direction LR
+        In["x[n]"] --&gt; B1["Секція SOS 1&lt;br&gt;H₁(z)"]
+        B1 --&gt; B2["Секція SOS 2&lt;br&gt;H₂(z)"]
+        B2 --&gt; Bdots["..."]
+        Bdots --&gt; BK["Секція SOS K&lt;br&gt;H_K(z)"]
+        BK --&gt; Out["y[n]"]
+    end</code></pre>
+<em>Рисунок 4.4 — Структурна схема каскадної реалізації цифрового НІХ-фільтра високого порядку на базі послідовно з'єднаних біквадратних ланок другого порядку</em></p>
+<p>Найпоширенішим аналітичним методом синтезу НІХ-фільтрів є <strong>метод білінійного <span class="arithmatex">\(z\)</span>-перетворення (перетворення Тастіна)</strong> (<em>Bilinear Transform, BLT</em>). Метод полягає у перетворенні передавальної функції класичного аналогового прототипу <span class="arithmatex">\(H_a(s)\)</span> (фільтрів Баттерворта, Чебишева I та II роду, еліптичних фільтрів Кауера) у дискретну передавальну функцію <span class="arithmatex">\(H(z)\)</span> шляхом алгебраїчної підстановки:</p>
+<div class="arithmatex">\[s = \frac{2}{T} \frac{1 - z^{-1}}{1 + z^{-1}} = \frac{2}{T} \frac{z - 1}{z + 1}\]</div>
+<p>де <span class="arithmatex">\(s\)</span> — комплексна змінна Лапласа; <span class="arithmatex">\(z\)</span> — комплексна дискретна змінна; <span class="arithmatex">\(T\)</span> — період дискретизації цифрової системи.</p>
+<p>Білінійне перетворення гарантує точне відображення всієї лівої півплощини комплексної площини Лапласа (<span class="arithmatex">\(\text{Re}(s) &lt; 0\)</span>) у внутрішню область одиничного кола (<span class="arithmatex">\(|z| &lt; 1\)</span>), завдяки чому будь-який стійкий аналоговий фільтр гарантовано трансформується у безумовно стійкий цифровий НІХ-фільтр.</p>
+<p>Підстановка <span class="arithmatex">\(s = j\Omega\)</span> та <span class="arithmatex">\(z = e^{j\omega}\)</span> у формулу білінійного перетворення розкриває залежність між аналоговою неперервною частотою <span class="arithmatex">\(\Omega\)</span> (<span class="arithmatex">\(\text{рад/с}\)</span>) та цифровою нормованою частотою <span class="arithmatex">\(\omega\)</span> (<span class="arithmatex">\(\text{рад/відлік}\)</span>):</p>
+<div class="arithmatex">\[j\Omega = \frac{2}{T} \frac{e^{j\omega} - 1}{e^{j\omega} + 1} = \frac{2}{T} \frac{e^{j\omega/2}(e^{j\omega/2} - e^{-j\omega/2})}{e^{j\omega/2}(e^{j\omega/2} + e^{-j\omega/2})} = \frac{2}{T} \frac{2j \sin(\omega/2)}{2 \cos(\omega/2)} = j \frac{2}{T} \tan\left(\frac{\omega}{2}\right)\]</div>
+<p>Звідси випливає фундаментальне нелінійне співвідношення деформації частотної осі (<strong>ефект частотного викривлення</strong>, <em>frequency warping</em>):</p>
+<div class="arithmatex">\[\Omega = \frac{2}{T} \tan\left(\frac{\omega}{2}\right) \iff \omega = 2 \arctan\left(\frac{\Omega T}{2}\right)\]</div>
+<p><pre class="mermaid"><code>flowchart TD
+    A["Вимоги до цифрового фільтра: частоти зрізу ω_p, ω_s"] --&gt; B["Попереднє викривлення частот (Pre-warping):&lt;br&gt;Ω = (2/T) · tan(ω / 2)"]
+    B --&gt; C["Синтез аналогового прототипу H_a(s)&lt;br&gt;(Баттерворт, Чебишев, Кауер)"]
+    C --&gt; D["Білінійне перетворення Тастіна:&lt;br&gt;s = (2/T) · (1 - z⁻¹) / (1 + z⁻¹)"]
+    D --&gt; E["Дискретна передавальна функція H(z)"]
+    E --&gt; F["Факторизація у біквадратні секції SOS"]</code></pre>
+<em>Рисунок 4.5 — Алгоритмічна послідовність проєктування цифрового НІХ-фільтра методом білінійного перетворення з компенсацією частотного викривлення</em></p>
+<p>Внаслідок нелінійного стиснення нескінченна вісь аналогових частот <span class="arithmatex">\(\Omega \in [-\infty; +\infty]\)</span> однозначно та монотонно відображається у скінченний інтервал цифрових частот <span class="arithmatex">\(\omega \in [-\pi; +\pi]\)</span>. Щоб спроєктований цифровий фільтр мав точні задані граничні частоти зрізу <span class="arithmatex">\(\omega_c\)</span>, перед розрахунком аналогового прототипу обов'язково виконують операцію <strong>попереднього викривлення частот (<em>frequency pre-warping</em>)</strong>:</p>
+<div class="arithmatex">\[\Omega_c = \frac{2}{T} \tan\left(\frac{\omega_c}{2}\right)\]</div>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Параметр порівняння</th>
+<th style="text-align: left;">КІХ-фільтри (FIR)</th>
+<th style="text-align: left;">НІХ-фільтри (IIR)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Імпульсна характеристика</strong></td>
+<td style="text-align: left;">Скінченна за часом (<span class="arithmatex">\(h[n] = 0\)</span> при <span class="arithmatex">\(n &gt; M\)</span>)</td>
+<td style="text-align: left;">Нескінченна за часом (експоненціальна/синусна)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Фазочастотна характеристика</strong></td>
+<td style="text-align: left;"><strong>Суворо лінійна</strong> (відсутність фазових спотворень)</td>
+<td style="text-align: left;"><strong>Нелінійна</strong> (виражена дисперсія біля зрізу)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Стійкість системи</strong></td>
+<td style="text-align: left;"><strong>Абсолютно стійкі</strong> (усі полюси в <span class="arithmatex">\(z = 0\)</span>)</td>
+<td style="text-align: left;">Потребують перевірки ($</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Необхідний порядок фільтра</strong></td>
+<td style="text-align: left;"><strong>Високий</strong> (<span class="arithmatex">\(N \sim 50 \dots 1000\)</span> для крутих схилів)</td>
+<td style="text-align: left;"><strong>Низький</strong> (<span class="arithmatex">\(N \sim 2 \dots 8\)</span> для аналогічної крутизни)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Обчислювальні витрати</strong></td>
+<td style="text-align: left;">Високі (велике число операцій множення MAC)</td>
+<td style="text-align: left;">Мінімальні (висока швидкодія та мала затримка)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Чутливість до квантування</strong></td>
+<td style="text-align: left;">Низька (похибка округлення не викликає нестійкості)</td>
+<td style="text-align: left;">Висока (можливість переходу полюсів за одиничне коло)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Аналогові прототипи</strong></td>
+<td style="text-align: left;">Не існують (чисто дискретний синтез)</td>
+<td style="text-align: left;">Прямий перерахунок класичних аналогових фільтрів</td>
+</tr>
+</tbody>
+</table>
+<p>Аналіз порівняльної таблиці визначає інженерні критерії вибору типу фільтра: КІХ-фільтри є безальтернативними в системах обробки біомедичних сигналів, звукових трактах та обробці цифрових зображень, де критично важливим є збереження форми хвильового фронту без фазових спотворень; натомість НІХ-фільтри обирають у вимірювальних мікроконтролерних системах реального часу та телекомунікаціях, де пріоритетом є мінімальне завантаження процесора, мала латентність та висока крутизна смуги затримання при обмежених апаратних ресурсах.</p>
+<hr />
+<h3 id="_5">Питання для самоперевірки та аналітичного осмислення</h3>
+<ol>
+<li>
+<p>Дайте математичне визначення області збіжності (ROC) <span class="arithmatex">\(z\)</span>-перетворення. Чому розташування одиничного кола <span class="arithmatex">\(|z| = 1\)</span> всередині області збіжності є обов'язковою умовою існування дискретного перетворення Фур'є (DTFT) для досліджуваного сигналу?</p>
+</li>
+<li>
+<p>Поясніть геометричний зв'язок між полюсами передавальної функції <span class="arithmatex">\(H(z)\)</span> та стійкістю каузальної ЛСД-системи. Які фізичні процеси виникають у цифровій системі, якщо комплексно-сполучена пара полюсів перетинає одиничне коло (<span class="arithmatex">\(|p_{1,2}| &gt; 1\)</span>)?</p>
+</li>
+<li>
+<p>За допомогою геометричної інтерпретації на комплексній <span class="arithmatex">\(z\)</span>-площині поясніть, чому розміщення нуля передавальної функції безпосередньо на одиничному колі формує нульовий коефіцієнт передачі АЧХ на відповідній частоті.</p>
+</li>
+<li>
+<p>Доведіть, чому КІХ-фільтри є безумовно стійкими за будь-яких значень їхніх вагових коефіцієнтів <span class="arithmatex">\(h[n]\)</span>, та які обмеження накладає властивість лінійності ФЧХ на симетрію імпульсної характеристики.</p>
+</li>
+<li>
+<p>Опишіть математичний апарат та фізичний зміст явища частотного викривлення (frequency warping), що виникає при застосуванні білінійного перетворення Тастіна. Для чого застосовується процедура попереднього викривлення частот (pre-warping)?</p>
+</li>
+<li>
+<p>Проведіть системне порівняння переваг і недоліків КІХ- та НІХ-фільтрів. У яких практичних задачах комп'ютерної інженерії доцільно знехтувати нелінійністю фази заради зниження порядку фільтра, а де збереження лінійної фази є абсолютно критичним?</p>
+</li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Повернутись нагору
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Kyrylo Vadurin &bull; <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "navigation.tracking", "header.autohide", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0456\u0439\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u0421\u043a\u043e\u043f\u0456\u044e\u0432\u0430\u0442\u0438 \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0429\u0435 1 \u0437\u0431\u0456\u0433 \u043d\u0430 \u0446\u0456\u0439 \u0441\u0442\u043e\u0440\u0456\u043d\u0446\u0456", "search.result.more.other": "\u0429\u0435 # \u0437\u0431\u0456\u0433\u0456\u0432 \u043d\u0430 \u0446\u0456\u0439 \u0441\u0442\u043e\u0440\u0456\u043d\u0446\u0456", "search.result.none": "\u0417\u0431\u0456\u0433\u0456\u0432 \u043d\u0435 \u0437\u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u0417\u043d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0437\u0431\u0456\u0433", "search.result.other": "\u0417\u043d\u0430\u0439\u0434\u0435\u043d\u043e # \u0437\u0431\u0456\u0433\u0456\u0432", "search.result.placeholder": "\u0420\u043e\u0437\u043f\u043e\u0447\u043d\u0456\u0442\u044c \u043f\u0438\u0441\u0430\u0442\u0438 \u0434\u043b\u044f \u043f\u043e\u0448\u0443\u043a\u0443", "search.result.term.missing": "\u041d\u0435 \u0437\u043d\u0430\u0439\u0434\u0435\u043d\u043e \u0437\u0430\u043f\u0438\u0442\u0443", "select.version": "\u041e\u0431\u0440\u0430\u0442\u0438 \u0432\u0435\u0440\u0441\u0456\u044e"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,1925 @@
+
+<!doctype html>
+<html lang="uk" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Навчальний портал з дисципліни "Обробка сигналів та зображень"">
+      
+      
+      
+      
+        <link rel="prev" href="../lk7/">
+      
+      
+        <link rel="next" href="../lk9/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Тема 8. Геометричні трансформації та математична морфологія - Обробка сигналів та зображень</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#8" class="md-skip">
+          Перейти до змісту
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Хедер">
+    <a href="../.." title="Обробка сигналів та зображень" class="md-header__button md-logo" aria-label="Обробка сигналів та зображень" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Обробка сигналів та зображень
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Тема 8. Геометричні трансформації та математична морфологія
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="cyan"  aria-label="Переключити на темну тему"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Переключити на темну тему" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="cyan"  aria-label="Переключити на світлу тему"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Переключити на світлу тему" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Пошук" placeholder="Пошук" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Шукати">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистити" aria-label="Очистити" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Пошук розпочато
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Вкладки" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Робоча програма
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../lk1/" class="md-tabs__link">
+          
+  
+  
+  Лекції
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../lb/lb1/" class="md-tabs__link">
+          
+  
+  
+  Лабораторні роботи
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../sr/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Самостійна робота
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../rg/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Розрахунково-графічна робота
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Навігація" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Обробка сигналів та зображень" class="md-nav__button md-logo" aria-label="Обробка сигналів та зображень" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Обробка сигналів та зображень
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Робоча програма
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лекції
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Лекції
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lk1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 1. Математичне представлення, дискретизація та квантування
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lk2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 2. Лінійні стаціонарні дискретні системи
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lk3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 3. Спектральний аналіз дискретних сигналів
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lk4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 4. Z-перетворення та проєктування цифрових фільтрів
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lk5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 5. Цифрове представлення зображень та колориметричні моделі
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lk6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 6. Поелементні амплітудні перетворення
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lk7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 7. Просторова фільтрація зображень
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 8. Геометричні трансформації та математична морфологія
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 8. Геометричні трансформації та математична морфологія
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Зміст">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Зміст
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#81-2d-2-times-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1. Загальна математична модель афінного перетворення у 2D-просторі: однорідні координати, матриця \(2 \times 3\). Елементарні перетворення
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8.1. Загальна математична модель афінного перетворення у 2D-просторі: однорідні координати, матриця \(2 \times 3\). Елементарні перетворення">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Основний зміст та теоретичний базис
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#82-3-times-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.2. Перспективне перетворення (гомографія, матриця \(3 \times 3\)). Визначення матриці проекції за чотирма опорними точками. Методи просторової інтерполяції
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8.2. Перспективне перетворення (гомографія, матриця \(3 \times 3\)). Визначення матриці проекції за чотирма опорними точками. Методи просторової інтерполяції">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Основний зміст та теоретичний базис
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Методи просторової інтерполяції яскравості
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#83" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.3. Основи математичної морфології: поняття структуруючого елемента (ядра). Базові операції над бінарними та напівтоновими зображеннями: ерозія та діляція
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8.3. Основи математичної морфології: поняття структуруючого елемента (ядра). Базові операції над бінарними та напівтоновими зображеннями: ерозія та діляція">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Основний зміст та теоретичний базис
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#84-opening-closing-top-hat-black-hat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.4. Комбіновані морфологічні операції: відкриття (Opening), закриття (Closing), морфологічний градієнт, перетворення Top-Hat та Black-Hat
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8.4. Комбіновані морфологічні операції: відкриття (Opening), закриття (Closing), морфологічний градієнт, перетворення Top-Hat та Black-Hat">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Основний зміст та теоретичний базис
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#morphological-opening" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Морфологічне відкриття (Morphological Opening)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#morphological-closing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Морфологічне закриття (Morphological Closing)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#morphological-gradient" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Морфологічний градієнт (Morphological Gradient)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#top-hat-black-hat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Перетворення Top-Hat та Black-Hat
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Питання для самоперевірки та аналітичного осмислення
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lk9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 9. Двовимірна Фур'є-обробка та детектори контурів
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лабораторні роботи
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Лабораторні роботи
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lb/lb1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 1. Дискретизація, квантування сигналів та ефект аліасингу
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lb/lb2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 2. Лінійні стаціонарні системи та дискретна згортка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lb/lb3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 3. Спектральний аналіз за допомогою ДПФ/ШПФ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lb/lb4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 4. Синтез цифрових КІХ та НІХ фільтрів
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lb/lb5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 5. Статистичний та кореляційний аналіз
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lb/lb6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 6. Базові операції з цифровими зображеннями
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lb/lb7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 7. Амплітудні перетворення та бінаризація
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lb/lb8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 8. Просторова фільтрація зображень
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lb/lb9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 9. Геометричні перетворення зображень
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lb/lb10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 10. Математична морфологія зображень
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lb/lb11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 11. 2D перетворення Фур'є та детектування контурів
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Самостійна робота
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Розрахунково-графічна робота
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Зміст">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Зміст
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#81-2d-2-times-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1. Загальна математична модель афінного перетворення у 2D-просторі: однорідні координати, матриця \(2 \times 3\). Елементарні перетворення
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8.1. Загальна математична модель афінного перетворення у 2D-просторі: однорідні координати, матриця \(2 \times 3\). Елементарні перетворення">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Основний зміст та теоретичний базис
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#82-3-times-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.2. Перспективне перетворення (гомографія, матриця \(3 \times 3\)). Визначення матриці проекції за чотирма опорними точками. Методи просторової інтерполяції
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8.2. Перспективне перетворення (гомографія, матриця \(3 \times 3\)). Визначення матриці проекції за чотирма опорними точками. Методи просторової інтерполяції">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Основний зміст та теоретичний базис
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Методи просторової інтерполяції яскравості
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#83" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.3. Основи математичної морфології: поняття структуруючого елемента (ядра). Базові операції над бінарними та напівтоновими зображеннями: ерозія та діляція
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8.3. Основи математичної морфології: поняття структуруючого елемента (ядра). Базові операції над бінарними та напівтоновими зображеннями: ерозія та діляція">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Основний зміст та теоретичний базис
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#84-opening-closing-top-hat-black-hat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.4. Комбіновані морфологічні операції: відкриття (Opening), закриття (Closing), морфологічний градієнт, перетворення Top-Hat та Black-Hat
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8.4. Комбіновані морфологічні операції: відкриття (Opening), закриття (Closing), морфологічний градієнт, перетворення Top-Hat та Black-Hat">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Основний зміст та теоретичний базис
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#morphological-opening" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Морфологічне відкриття (Morphological Opening)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#morphological-closing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Морфологічне закриття (Morphological Closing)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#morphological-gradient" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Морфологічний градієнт (Morphological Gradient)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#top-hat-black-hat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Перетворення Top-Hat та Black-Hat
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Питання для самоперевірки та аналітичного осмислення
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="8">ТЕМА 8. ГЕОМЕТРИЧНІ ТРАНСФОРМАЦІЇ ТА МАТЕМАТИЧНА МОРФОЛОГІЯ ЗОБРАЖЕНЬ</h1>
+<hr />
+<h2 id="81-2d-2-times-3">8.1. Загальна математична модель афінного перетворення у 2D-просторі: однорідні координати, матриця <span class="arithmatex">\(2 \times 3\)</span>. Елементарні перетворення</h2>
+<h3 id="_1">Основний зміст та теоретичний базис</h3>
+<p><strong>Геометричні перетворення зображень</strong> являють собою клас просторових операцій, які змінюють просторове розташування пікселів, їхні взаємні геометричні зв'язки та форму об'єктів на площині растра відповідно до заданого координатного закону відображення. На відміну від амплітудних поелементних та фільтраційних методів, які змінюють значення яскравості в нерухомій координатній сітці, геометричні трансформації переносять значення яскравості зі старих просторових координат <span class="arithmatex">\((x, y)\)</span> у нові просторові координати <span class="arithmatex">\((x', y')\)</span>.</p>
+<p>Загальне просторове перетворення координат описується парою двовимірних функціональних відображень:</p>
+<div class="arithmatex">\[x' = f_x(x, y), \quad y' = f_y(x, y)\]</div>
+<p>де <span class="arithmatex">\((x, y)\)</span> — вихідні декартові координати пікселя вхідного растра; <span class="arithmatex">\((x', y')\)</span> — розраховані координати пікселя трансформованого зображення.</p>
+<p><strong>Афінним перетворенням</strong> (від латинського <em>affinis</em> — «споріднений», «пов'язаний») називається взаємно однозначне (бієктивне) відображення площини на себе, за якого довільна пряма лінія переходить у пряму лінію. В евклідовому просторі загальна модель афінної трансформації виражається векторно-матричним рівнянням:</p>
+<div class="arithmatex">\[\mathbf{x}' = \mathbf{M} \mathbf{x} + \mathbf{v} \quad \Longleftrightarrow \quad \begin{bmatrix} x' \\ y' \end{bmatrix} = \begin{bmatrix} a_{11} &amp; a_{12} \\ a_{21} &amp; a_{22} \end{bmatrix} \begin{bmatrix} x \\ y \end{bmatrix} + \begin{bmatrix} t_x \\ t_y \end{bmatrix}\]</div>
+<p>де <span class="arithmatex">\(\mathbf{M}\)</span> — невироджена дійснісна квадратна матриця розмірності <span class="arithmatex">\(2 \times 2\)</span> (<span class="arithmatex">\(\det(\mathbf{M}) \neq 0\)</span>), яка визначає масштабування, обертання та зсув осей; <span class="arithmatex">\(\mathbf{v} = [t_x, t_y]^T\)</span> — вектор лінійного паралельного перенесення (трансляції).</p>
+<p>Для представлення лінійних операцій (множення на матрицю <span class="arithmatex">\(\mathbf{M}\)</span>) та нелінійної трансляції (додавання вектора <span class="arithmatex">\(\mathbf{v}\)</span>) у вигляді єдиного уніфікованого матричного добутку в комп'ютерній інженерії та комп'ютерній графіці застосовують апарат <strong>однорідних координат (проективних координат)</strong>. Двовимірна точка <span class="arithmatex">\((x, y)\)</span> розширюється до тривимірного вектора <span class="arithmatex">\([x, y, 1]^T\)</span>, що дозволяє записати довільне афінне перетворення через квадратну матрицю розмірності <span class="arithmatex">\(3 \times 3\)</span>, третій рядок якої завжди фіксований як <span class="arithmatex">\([0, 0, 1]\)</span>:</p>
+<div class="arithmatex">\[\begin{bmatrix} x' \\ y' \\ 1 \end{bmatrix} = \begin{bmatrix} a_{11} &amp; a_{12} &amp; t_x \\ a_{21} &amp; a_{22} &amp; t_y \\ 0 &amp; 0 &amp; 1 \end{bmatrix} \begin{bmatrix} x \\ y \\ 1 \end{bmatrix}\]</div>
+<p>В інженерній практиці бібліотек обробки зображень (зокрема в OpenCV) фіксований нижній рядок опускають і оперують компактною <strong>розширеною матрицею афінного перетворення</strong> <span class="arithmatex">\(\mathbf{A}_{2\times 3}\)</span>:</p>
+<div class="arithmatex">\[\mathbf{A}_{2\times 3} = \begin{bmatrix} a_{11} &amp; a_{12} &amp; t_x \\ a_{21} &amp; a_{22} &amp; t_y \end{bmatrix}\]</div>
+<p><pre class="mermaid"><code>flowchart LR
+    A["Вхідний піксель [x, y, 1]ᵀ"] --&gt; B["Афінна матриця A₂ₓ₃&lt;br&gt;(Масштаб, Поворот, Перекіс, Зсув)"]
+    B --&gt; C["Трансформовані координати [x', y']ᵀ"]
+    C --&gt; D["Зворотне відображення A⁻¹&lt;br&gt;та інтерполяція яскравості"]
+    D --&gt; E["Вихідний растр I_out[x', y']"]</code></pre>
+<em>Рисунок 8.1 — Алгоритмічний конвеєр афінної трансформації просторових координат цифрового зображення</em></p>
+<p>Довільна складна афінна трансформація формується як композиція (добуток матриць) чотирьох елементарних геометричних перетворень:</p>
+<ol>
+<li>
+<p><strong>Паралельне перенесення (зсув, <em>translation</em>):</strong> зміщує зображення на відстань <span class="arithmatex">\(t_x\)</span> вздовж осі <span class="arithmatex">\(X\)</span> та на відстань <span class="arithmatex">\(t_y\)</span> вздовж осі <span class="arithmatex">\(Y\)</span>:
+   $<span class="arithmatex">\(\mathbf{T}_{\text{trans}} = \begin{bmatrix} 1 &amp; 0 &amp; t_x \\ 0 &amp; 1 &amp; t_y \end{bmatrix}\)</span>$</p>
+</li>
+<li>
+<p><strong>Масштабування (<em>scaling</em>):</strong> змінює просторові розміри зображення у <span class="arithmatex">\(c_x\)</span> разів по горизонталі та у <span class="arithmatex">\(c_y\)</span> разів по вертикалі відносно початку координат:
+   $<span class="arithmatex">\(\mathbf{T}_{\text{scale}} = \begin{bmatrix} c_x &amp; 0 &amp; 0 \\ 0 &amp; c_y &amp; 0 \end{bmatrix}\)</span>$</p>
+</li>
+<li>
+<p><strong>Обертання навколо початку координат <span class="arithmatex">\((0, 0)\)</span> на кут <span class="arithmatex">\(\theta\)</span> (<em>rotation</em>):</strong> здійснює поворот просторової площини проти годинникової стрілки:
+   $<span class="arithmatex">\(\mathbf{T}_{\text{rot}} = \begin{bmatrix} \cos\theta &amp; -\sin\theta &amp; 0 \\ \sin\theta &amp; \cos\theta &amp; 0 \end{bmatrix}\)</span>$</p>
+</li>
+</ol>
+<p>У разі обертання навколо довільного центру <span class="arithmatex">\((x_c, y_c)\)</span> з одночасним масштабуванням на коефіцієнт <span class="arithmatex">\(s_{\text{scale}}\)</span>, модифікована матриця перетворення має вигляд:
+   $<span class="arithmatex">\(\mathbf{M}_{\text{rot\_center}} = \begin{bmatrix} \alpha &amp; \beta &amp; (1 - \alpha)x_c - \beta y_c \\ -\beta &amp; \alpha &amp; \beta x_c + (1 - \alpha)y_c \end{bmatrix}\)</span>$
+   де <span class="arithmatex">\(\alpha = s_{\text{scale}} \cdot \cos\theta\)</span>, <span class="arithmatex">\(\beta = s_{\text{scale}} \cdot \sin\theta\)</span>.</p>
+<ol>
+<li><strong>Перекіс (скіс або зсувна деформація, <em>shear</em>):</strong> деформує прямокутну координатну сітку в паралелограм, зміщуючи координати однієї осі пропорційно координатам іншої:
+   $<span class="arithmatex">\(\mathbf{T}_{\text{shear}} = \begin{bmatrix} 1 &amp; s_x &amp; 0 \\ s_y &amp; 1 &amp; 0 \end{bmatrix}\)</span>$
+   де <span class="arithmatex">\(s_x\)</span> — коефіцієнт скосу вздовж осі абсцис; <span class="arithmatex">\(s_y\)</span> — коефіцієнт скосу вздовж осі ординат.</li>
+</ol>
+<p><strong>Фундаментальні інваріанти афінного перетворення:</strong>
+Афінні трансформації мають суворі геометричні властивості збереження:</p>
+<ul>
+<li>
+<p>Колінеарність: точки, що лежать на одній прямій до перетворення, гарантовано залишаються на одній прямій після трансформації.</p>
+</li>
+<li>
+<p><strong>Паралельність прямих:</strong> паралельні лінії за будь-яких параметрів матриці <span class="arithmatex">\(\mathbf{A}_{2\times 3}\)</span> залишаються строго паралельними.</p>
+</li>
+<li>
+<p>Збереження відношення довжин відрізків, що лежать на паралельних прямих.</p>
+</li>
+<li>
+<p>Збереження опуклості геометричних фігур (опукла множина залишається опуклою).</p>
+</li>
+</ul>
+<hr />
+<h2 id="82-3-times-3">8.2. Перспективне перетворення (гомографія, матриця <span class="arithmatex">\(3 \times 3\)</span>). Визначення матриці проекції за чотирма опорними точками. Методи просторової інтерполяції</h2>
+<h3 id="_2">Основний зміст та теоретичний базис</h3>
+<p><strong>Перспективне перетворення (гомографія або проективна трансформація)</strong> являє собою більш загальний клас геометричних операцій, який моделює центральну оптичну проекцію тривимірної площини об'єкта на двовимірну площину матриці фотоприймача камери. </p>
+<p>На відміну від афінних трансформацій, <strong>перспективне перетворення не зберігає паралельність прямих ліній</strong>. Паралельні лінії у просторі сцени (наприклад, краї дороги, рейки або протилежні сторони фасаду будівлі) на проективному зображенні перетинаються в єдиній просторовій точці, яка називається <strong>точкою сходження (<em>vanishing point</em>)</strong>.</p>
+<p>Математично проективне перетворення описується в однорідних координатах за допомогою повної невиродженої матриці гомографії <span class="arithmatex">\(\mathbf{H}\)</span> розмірністю <span class="arithmatex">\(3 \times 3\)</span>:</p>
+<div class="arithmatex">\[\begin{bmatrix} x' \cdot w' \\ y' \cdot w' \\ w' \end{bmatrix} = \begin{bmatrix} h_{11} &amp; h_{12} &amp; h_{13} \\ h_{21} &amp; h_{22} &amp; h_{23} \\ h_{31} &amp; h_{32} &amp; h_{33} \end{bmatrix} \begin{bmatrix} x \\ y \\ 1 \end{bmatrix} = \mathbf{H} \begin{bmatrix} x \\ y \\ 1 \end{bmatrix}\]</div>
+<p>де <span class="arithmatex">\(w'\)</span> — масштабний проективний фактор. Декартові просторові координати результуючого пікселя <span class="arithmatex">\((x', y')\)</span> розраховуються шляхом нелінійного ділення на проективний дільник <span class="arithmatex">\(w'\)</span>:</p>
+<div class="arithmatex">\[x' = \frac{h_{11}x + h_{12}y + h_{13}}{h_{31}x + h_{32}y + h_{33}}, \quad y' = \frac{h_{21}x + h_{22}y + h_{23}}{h_{31}x + h_{32}y + h_{33}}\]</div>
+<p>Нижній рядок матриці <span class="arithmatex">\([h_{31}, h_{32}, h_{33}]\)</span> задає параметри перспективного скорочення вздовж осей кадру. Оскільки матриця гомографії визначена з точністю до довільного скалярного множника, її нормують за умовою <span class="arithmatex">\(h_{33} = 1\)</span>, що залишає <strong>8 незалежних ступенів вільності (Degrees of Freedom, DOF)</strong> порівняно з 6 ступенями вільності афінного перетворення.</p>
+<p><pre class="mermaid"><code>flowchart TD
+    subgraph Transform_Comparison [Порівняння геометрії просторових перетворень]
+        direction LR
+        A["Вихідний прямокутник"] --&gt;|Афінне перетворення (6 DOF)| B["Паралелограм&lt;br&gt;(Паралельність збережена)"]
+        A --&gt;|Перспективне перетворення (8 DOF)| C["Довільний чотирикутник&lt;br&gt;(Паралельність порушена, прямі сходяться)"]
+    end</code></pre>
+<em>Рисунок 8.2 — Порівняльний характер деформації вихідної прямокутної області при афінній та перспективній трансформаціях</em></p>
+<p>Єдиним проективним інваріантом перспективного перетворення для чотирьох колінеарних точок <span class="arithmatex">\(A, B, C, D\)</span>, що лежать на одній прямій, є <strong>подвійне (складне або ангармонічне) відношення</strong>:</p>
+<div class="arithmatex">\[(A, B; C, D) = \frac{c - a}{c - b} \cdot \frac{d - b}{d - a} = \text{const}\]</div>
+<p>Для однозначного розрахунку всіх 8 невідомих коефіцієнтів матриці гомографії <span class="arithmatex">\(\mathbf{H}\)</span> необхідно задати рівно <strong>чотири пари відповідних опорних точок</strong> <span class="arithmatex">\((x_i, y_i) \to (x'_i, y'_i)\)</span> (<span class="arithmatex">\(i = 1, 2, 3, 4\)</span>), жодні три з яких не лежать на одній прямій. Кожна пара точок формує два незалежні лінійні рівняння:</p>
+<div class="arithmatex">\[\begin{cases}
+h_{11}x_i + h_{12}y_i + h_{13} - h_{31}x_i x'_i - h_{32}y_i x'_i = x'_i \\
+h_{21}x_i + h_{22}y_i + h_{23} - h_{31}x_i y'_i - h_{32}y_i y'_i = y'_i
+\end{cases}\]</div>
+<p>Складена система з 8 лінійних алгебраїчних рівнянь розв'язується методом прямого лінійного перетворення (<em>Direct Linear Transformation, DLT</em>) або сингулярного розкладу матриць (SVD).</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Ознака порівняння</th>
+<th style="text-align: left;">Афінне перетворення</th>
+<th style="text-align: left;">Перспективне перетворення (Гомографія)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Розмірність матриці</strong></td>
+<td style="text-align: left;"><span class="arithmatex">\(2 \times 3\)</span> (або <span class="arithmatex">\(3 \times 3\)</span> із фіксованим <span class="arithmatex">\([0, 0, 1]\)</span>)</td>
+<td style="text-align: left;">Повна <span class="arithmatex">\(3 \times 3\)</span> матриця</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Кількість ступенів вільності</strong></td>
+<td style="text-align: left;"><strong>6 DOF</strong></td>
+<td style="text-align: left;"><strong>8 DOF</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Мінімальна кількість точок</strong></td>
+<td style="text-align: left;"><strong>3 точки</strong> (6 рівнянь)</td>
+<td style="text-align: left;"><strong>4 точки</strong> (8 рівнянь)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Збереження паралельності</strong></td>
+<td style="text-align: left;"><strong>Так</strong> (паралельні прямі залишаються паралельними)</td>
+<td style="text-align: left;"><strong>Ні</strong> (прямі сходяться у точці сходження)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Збереження відношення довжин</strong></td>
+<td style="text-align: left;"><strong>Так</strong> (уздовж паралельних прямих)</td>
+<td style="text-align: left;"><strong>Ні</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Збережений інваріант</strong></td>
+<td style="text-align: left;">Колінеарність, паралельність, відношення площ</td>
+<td style="text-align: left;">Колінеарність, подвійне (ангармонічне) відношення</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Основне застосування</strong></td>
+<td style="text-align: left;">Поворот, масштабування, вирівнювання положення</td>
+<td style="text-align: left;">Корекція ракурсу камер, випрямлення документів</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_3">Методи просторової інтерполяції яскравості</h3>
+<p>При прямому відображенні координат цілочислові вузли вхідного растра потрапляють у дробові позиції результуючої сітки, що викликає виникнення незаповнених порожнин або накладання пікселів. Щоб уникнути цього, застосовують <strong>зворотне відображення (зворотне трасування, <em>backward mapping</em>)</strong>: для кожного цілочислового пікселя вихідного растра <span class="arithmatex">\((x', y')\)</span> розраховують відповідні неперервні дійсні координати у вхідному растрі через обернену матрицю <span class="arithmatex">\((x, y) = \mathbf{H}^{-1}(x', y')\)</span>. Оскільки координати <span class="arithmatex">\((x, y)\)</span> виявляються дробовими, значення яскравості розраховують за допомогою методів просторової інтерполяції:</p>
+<p><pre class="mermaid"><code>flowchart LR
+    A["Дробові координати (x, y)"] --&gt; B{"Метод інтерполяції"}
+    B --&gt;|Найближчий сусід: 1 піксель| C["Nearest Neighbor&lt;br&gt;(Швидкий, сходинкові артефакти)"]
+    B --&gt;|2×2 окіл: 4 пікселі| D["Bilinear Interpolation&lt;br&gt;(Гладкі переходи, базова якість)"]
+    B --&gt;|4×4 окіл: 16 пікселів| E["Bicubic Interpolation&lt;br&gt;(Висока різкість і якість деталей)"]
+    B --&gt;|8×8 окіл: 64 пікселі| F["Lanczos Resampling&lt;br&gt;(Прецизійна sinc-апроксимація)"]</code></pre>
+<em>Рисунок 8.3 — Класифікація методів просторової інтерполяції за розміром апертури та якістю реконструкції півтонів</em></p>
+<ul>
+<li>
+<p><strong>Інтерполяція за найближчим сусідом (<em>Nearest Neighbor</em>):</strong> яскравість пікселя прирівнюється до значення найближчого цілочислового вузла <span class="arithmatex">\(I(x, y) = I[\text{round}(x), \text{round}(y)]\)</span>. Метод має мінімальну обчислювальну складність, проте породжує грубі сходинкові артефакти та розриви ліній.</p>
+</li>
+<li>
+<p><strong>Білінійна інтерполяція (<em>Bilinear</em>):</strong> використовує зважене усереднення чотирьох найближчих сусідніх пікселів <span class="arithmatex">\(2 \times 2\)</span>. Інтерполяція виконується спочатку по горизонталі, потім по вертикалі з ваговими коефіцієнтами, пропорційними дробовим зміщенням <span class="arithmatex">\(\Delta x = x - \lfloor x \rfloor\)</span> та <span class="arithmatex">\(\Delta y = y - \lfloor y \rfloor\)</span>:
+   $<span class="arithmatex">\(I(x, y) = (1 - \Delta x)(1 - \Delta y) I_{00} + \Delta x (1 - \Delta y) I_{10} + (1 - \Delta x) \Delta y I_{01} + \Delta x \Delta y I_{11}\)</span>$</p>
+</li>
+<li>
+<p><strong>Бікубічна інтерполяція (<em>Bicubic</em>):</strong> використовує окіл розміром <span class="arithmatex">\(4 \times 4\)</span> (16 пікселів) та кубічні сплайни, забезпечуючи високу візуальну якість, гладкість похідних та збереження гострих контурів без розмиття.</p>
+</li>
+<li>
+<p><strong>Інтерполяція Ланцоша (<em>Lanczos Resampling</em>):</strong> застосовує двовимірне ядро на основі віконної функції <span class="arithmatex">\(\text{sinc}\)</span> в апертурі <span class="arithmatex">\(8 \times 8\)</span> (64 пікселі), що мінімізує аліасинг та забезпечує найкращу математичну реконструкцію при масштабуванні високочастотних растрових структур.</p>
+</li>
+</ul>
+<hr />
+<h2 id="83">8.3. Основи математичної морфології: поняття структуруючого елемента (ядра). Базові операції над бінарними та напівтоновими зображеннями: ерозія та діляція</h2>
+<h3 id="_4">Основний зміст та теоретичний базис</h3>
+<p><strong>Математична морфологія</strong> (створена Ж. Матероном та Ж. Серра у 1960-х рр.) являє собою нелінійну теоретико-множинну методологію аналізу просторових геометричних структур та форм об'єктів на зображенні. У морфологічній парадигмі бінарне зображення <span class="arithmatex">\(A\)</span> розглядається як дискретна підмножина двовимірного простору <span class="arithmatex">\(A \subset \mathbb{Z}^2\)</span>, де пікселі об'єкта належать множині (мають значення 1), а пікселі фону — доповненню множини <span class="arithmatex">\(A^c\)</span> (значення 0).</p>
+<p>Морфологічні перетворення виконуються за допомогою невеликого геометричного зонда відомої форми та розміру, який називається <strong>структуруючим елементом (ядро, <em>structuring element</em>)</strong> <span class="arithmatex">\(B \subset \mathbb{Z}^2\)</span>. Структуруючий елемент має виділену центральну точку прив'язки — <strong>початок координат (anchor point)</strong>. Основними геометричними формами структуруючих елементів є прямокутник, симетричний хрест, ромб та диск:</p>
+<div class="arithmatex">\[B_{\text{cross}, 3\times 3} = \begin{bmatrix} 0 &amp; 1 &amp; 0 \\ 1 &amp; 1 &amp; 1 \\ 0 &amp; 1 &amp; 0 \end{bmatrix}, \quad B_{\text{rect}, 3\times 3} = \begin{bmatrix} 1 &amp; 1 &amp; 1 \\ 1 &amp; 1 &amp; 1 \\ 1 &amp; 1 &amp; 1 \end{bmatrix}, \quad B_{\text{ellipse}, 5\times 5} = \begin{bmatrix} 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 1 &amp; 1 &amp; 0 \\ 1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 \\ 0 &amp; 1 &amp; 1 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 \end{bmatrix}\]</div>
+<p><pre class="mermaid"><code>flowchart TD
+    subgraph Binary_Morphology [Базові операції математичної морфології]
+        direction LR
+        A["Вхідне бінарне зображення A"] --&gt; B["Ерозія A ⊖ B&lt;br&gt;(Звуження: B_z ⊆ A)"]
+        A --&gt; C["Діляція A ⊕ B&lt;br&gt;(Розширення: (B̂)_z ∩ A ≠ ∅)"]
+        B --&gt; D["Зменшення об'єктів, стирання шумів 'salt', розрив тонких містків"]
+        C --&gt; E["Збільшення об'єктів, заповнення отворів 'pepper', злиття контурів"]
+    end</code></pre>
+<em>Рисунок 8.4 — Функціональна протилежність базових морфологічних операцій ерозії та діляції</em></p>
+<p><strong>Ерозія (звуження, <em>erosion</em>)</strong> бінарного зображення <span class="arithmatex">\(A\)</span> структуруючим елементом <span class="arithmatex">\(B\)</span> визначається як множина всіх точок зсуву <span class="arithmatex">\(z\)</span>, при яких зсунутий структуруючий елемент <span class="arithmatex">\((B)_z\)</span> повністю міститься всередині вихідної множини <span class="arithmatex">\(A\)</span>:</p>
+<div class="arithmatex">\[A \ominus B = \{ z \in \mathbb{Z}^2 \mid (B)_z \subseteq A \}\]</div>
+<p>де <span class="arithmatex">\((B)_z = \{ b + z \mid b \in B \}\)</span> позначає трансляцію структуруючого елемента <span class="arithmatex">\(B\)</span> на просторовий вектор <span class="arithmatex">\(z = [x, y]^T\)</span>. </p>
+<p>Ерозія зменшує геометричні розміри об'єктів переднього плану на величину радіуса структуруючого елемента, зрізає тонкі виступи, розриває вузькі перешийки між злиплими тілами та повністю видаляє дрібні ізольовані шумові об'єкти типу «сіль» (<em>salt noise</em>), лінійний розмір яких менший за розмір маски <span class="arithmatex">\(B\)</span>.</p>
+<p><strong>Діляція (розширення, нарощування, <em>dilation</em>)</strong> бінарного зображення <span class="arithmatex">\(A\)</span> структуруючим елементом <span class="arithmatex">\(B\)</span> визначається як множина всіх точок зсуву <span class="arithmatex">\(z\)</span>, при яких дзеркально відбитий відносно свого центру структуруючий елемент <span class="arithmatex">\((\hat{B})_z\)</span> має хоча б одне спільне ненульове перетинання з множиною <span class="arithmatex">\(A\)</span>:</p>
+<div class="arithmatex">\[A \oplus B = \{ z \in \mathbb{Z}^2 \mid (\hat{B})_z \cap A \neq \emptyset \}\]</div>
+<p>де <span class="arithmatex">\(\hat{B} = \{ -b \mid b \in B \}\)</span> — симетричне відображення структуруючого елемента. </p>
+<p>Діляція збільшує площу об'єктів переднього плану, заповнює дрібні внутрішні розриви та чорні отвори типу «перець» (<em>pepper noise</em>), а також об'єднує просторово близькі фрагменти ліній у цілісні геометричні структури.</p>
+<p>Операції ерозії та діляції володіють фундаментальною властивістю <strong>морфологічної дуальності</strong> відносно операції теоретико-множинного доповнення (інверсії бінарного растра <span class="arithmatex">\(A^c\)</span>):</p>
+<div class="arithmatex">\[(A \ominus B)^c = A^c \oplus \hat{B}, \quad (A \oplus B)^c = A^c \ominus \hat{B}\]</div>
+<p>Ерозія об'єктів переднього плану <span class="arithmatex">\(A\)</span> еквівалентна діляції фону <span class="arithmatex">\(A^c\)</span>, і навпаки.</p>
+<p>Для півтонових напівтонових зображень <span class="arithmatex">\(f(x, y)\)</span> операції морфології узагальнюються через використання концепції поверхневих функцій і зводяться до нелінійних операцій локального мінімуму та максимуму з плоским структуруючим елементом <span class="arithmatex">\(B\)</span>:</p>
+<div class="arithmatex">\[(f \ominus B)(x, y) = \min_{(s, t) \in B} f(x + s, y + t)\]</div>
+<div class="arithmatex">\[(f \oplus B)(x, y) = \max_{(s, t) \in B} f(x - s, y - t)\]</div>
+<hr />
+<h2 id="84-opening-closing-top-hat-black-hat">8.4. Комбіновані морфологічні операції: відкриття (Opening), закриття (Closing), морфологічний градієнт, перетворення Top-Hat та Black-Hat</h2>
+<h3 id="_5">Основний зміст та теоретичний базис</h3>
+<p>На базі послідовного застосування елементарних операцій ерозії та діляції з одним і тим самим структуруючим елементом будують складні фільтраційні та сегментаційні конвеєри просторового аналізу форми:</p>
+<p><pre class="mermaid"><code>flowchart TD
+    A["Вхідне зображення A"] --&gt; B["Морфологічне відкриття: (A ⊖ B) ⊕ B&lt;br&gt;(Згладжування зовнішніх контурів, видалення виступів)"]
+    A --&gt; C["Морфологічне закриття: (A ⊕ B) ⊖ B&lt;br&gt;(Згладжування внутрішніх контурів, злиття отворів)"]
+    A --&gt; D["Морфологічний градієнт: (A ⊕ B) - (A ⊖ B)&lt;br&gt;(Виділення замкнених меж та контурів)"]
+    A --&gt; E["Top-Hat: A - (A ∘ B)&lt;br&gt;(Виділення яскравих дрібних деталей на темному тлі)"]
+    A --&gt; F["Black-Hat: (A • B) - A&lt;br&gt;(Виділення темних дрібних западин на світлому тлі)"]</code></pre>
+<em>Рисунок 8.5 — Класифікація комбінованих морфологічних операторів просторового аналізу</em></p>
+<h3 id="morphological-opening">Морфологічне відкриття (<em>Morphological Opening</em>)</h3>
+<p>Морфологічним відкриттям множини <span class="arithmatex">\(A\)</span> структуруючим елементом <span class="arithmatex">\(B\)</span> називається послідовне виконання операції ерозії з наступною діляцією:</p>
+<div class="arithmatex">\[A \circ B = (A \ominus B) \oplus B\]</div>
+<p>Відкриття згладжує контури об'єктів зсередини, зрізає тонкі зовнішні піки та перешийки і повністю усуває дрібні шумові фрагменти, зберігаючи при цьому загальні макроскопічні геометричні розміри та просторову площу великих тіл. Оператор відкриття володіє властивістю <strong>ідемпотентності</strong>: повторне застосування операції відкриття до вже відкритого зображення не викликає жодних додаткових змін:</p>
+<div class="arithmatex">\[(A \circ B) \circ B = A \circ B\]</div>
+<h3 id="morphological-closing">Морфологічне закриття (<em>Morphological Closing</em>)</h3>
+<p>Морфологічним закриттям множини <span class="arithmatex">\(A\)</span> структуруючим елементом <span class="arithmatex">\(B\)</span> називається послідовне виконання операції діляції з наступною ерозією:</p>
+<div class="arithmatex">\[A \bullet B = (A \oplus B) \ominus B\]</div>
+<p>Закриття згладжує зовнішні контури об'єктів, ліквідує вузькі внутрішні западини, склеює тонкі тріщини та розриви ліній, а також заповнює дрібні порожнини без зміни вихідного просторового масштабу об'єктів. Операція закриття є ідемпотентною (<span class="arithmatex">\((A \bullet B) \bullet B = A \bullet B\)</span>) та дуальною до відкриття:</p>
+<div class="arithmatex">\[(A \circ B)^c = A^c \bullet \hat{B}, \quad (A \bullet B)^c = A^c \circ \hat{B}\]</div>
+<h3 id="morphological-gradient">Морфологічний градієнт (<em>Morphological Gradient</em>)</h3>
+<p>Морфологічний градієнт являє собою різницю між результатом діляції та ерозії зображення, що дозволяє отримати чіткі межі та контури об'єктів:</p>
+<div class="arithmatex">\[\text{Grad}(A) = (A \oplus B) - (A \ominus B)\]</div>
+<p>Для тонкого виділення країв застосовують також <strong>внутрішній градієнт</strong> <span class="arithmatex">\(\text{Grad}_{\text{int}}(A) = A - (A \ominus B)\)</span> (контур формується всередині межі об'єкта) та <strong>зовнішній градієнт</strong> <span class="arithmatex">\(\text{Grad}_{\text{ext}}(A) = (A \oplus B) - A\)</span> (контур формується на зовнішній стороні фону).</p>
+<h3 id="top-hat-black-hat">Перетворення Top-Hat та Black-Hat</h3>
+<p>Морфологічні капелюхові фільтри призначені для компенсації значної просторової нерівномірності фонової освітленості та вилучення дрібних об'єктів:</p>
+<ul>
+<li>
+<p><strong>Перетворення «Верхній капелюх» (<em>White Top-Hat</em>):</strong> обчислюється як різниця між вихідним зображенням та результатом його морфологічного відкриття:
+   $<span class="arithmatex">\(\text{TopHat}(A) = A - (A \circ B)\)</span>$
+   Оскільки відкриття <span class="arithmatex">\(A \circ B\)</span> видаляє всі яскраві деталі, розмір яких менший за розмір ядра <span class="arithmatex">\(B\)</span>, різницева операція виділяє виключно локальні яскраві піки, текстові символи та елементи дефектів на нерівномірно освітленому темному фоні.</p>
+</li>
+<li>
+<p><strong>Перетворення «Нижній капелюх» (<em>Black-Hat / Bottom-Hat</em>):</strong> обчислюється як різниця між морфологічним закриттям та вихідним зображенням:
+   $<span class="arithmatex">\(\text{BlackHat}(A) = (A \bullet B) - A\)</span>$
+   Фільтр виділяє локальні темні западини, плями та тріщини, розмір яких менший за геометрію структуруючого елемента <span class="arithmatex">\(B\)</span>, на світлому тлі.</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Морфологічна операція</th>
+<th style="text-align: left;">Математичний вираз</th>
+<th style="text-align: left;">Геометричний ефект на растрі</th>
+<th style="text-align: left;">Основне практичне застосування</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Ерозія (Erosion)</strong></td>
+<td style="text-align: left;"><span class="arithmatex">\(A \ominus B\)</span></td>
+<td style="text-align: left;">Рівномірне стиснення меж об'єкта</td>
+<td style="text-align: left;">Видалення білого імпульсного шуму, розділення об'єктів</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Діляція (Dilation)</strong></td>
+<td style="text-align: left;"><span class="arithmatex">\(A \oplus B\)</span></td>
+<td style="text-align: left;">Рівномірне розширення меж об'єкта</td>
+<td style="text-align: left;">Заповнення чорних отворів, об'єднання розривів ліній</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Відкриття (Opening)</strong></td>
+<td style="text-align: left;"><span class="arithmatex">\((A \ominus B) \oplus B\)</span></td>
+<td style="text-align: left;">Зрізання виступів, видалення шуму</td>
+<td style="text-align: left;">Очищення бінарних масок без зміни масштабу тіл</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Закриття (Closing)</strong></td>
+<td style="text-align: left;"><span class="arithmatex">\((A \oplus B) \ominus B\)</span></td>
+<td style="text-align: left;">Затягування тріщин, закриття пор</td>
+<td style="text-align: left;">Зшивання розривів дорожньої розмітки, скелетизація</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Градієнт (Gradient)</strong></td>
+<td style="text-align: left;"><span class="arithmatex">\((A \oplus B) - (A \ominus B)\)</span></td>
+<td style="text-align: left;">Формування контурного абрису</td>
+<td style="text-align: left;">Детектування границь об'єктів у машинному зорі</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Top-Hat</strong></td>
+<td style="text-align: left;"><span class="arithmatex">\(A - (A \circ B)\)</span></td>
+<td style="text-align: left;">Виділення яскравих мікроструктур</td>
+<td style="text-align: left;">Вирівнювання фону, мікроскопія, читання номерних знаків</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Black-Hat</strong></td>
+<td style="text-align: left;"><span class="arithmatex">\((A \bullet B) - A\)</span></td>
+<td style="text-align: left;">Виділення темних мікроструктур</td>
+<td style="text-align: left;">Дефектоскопія тріщин металу, аналіз відбитків пальців</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="_6">Питання для самоперевірки та аналітичного осмислення</h3>
+<ol>
+<li>
+<p>У чому полягає математичний зміст афінного перетворення у двовимірному просторі? Доведіть, чому використання однорідних координат <span class="arithmatex">\([x, y, 1]^T\)</span> дозволяє представити операцію трансляції у вигляді матричного множення.</p>
+</li>
+<li>
+<p>Проведіть детальне порівняння афінних та перспективних перетворень (гомографії). Чому при перспективній трансформації паралельні прямі перетинаються у точках сходження, і який геометричний інваріант залишається незмінним для 4-х колінеарних точок?</p>
+</li>
+<li>
+<p>Скільки пар відповідних точок необхідно задати для однозначного визначення матриці афінного перетворення (<span class="arithmatex">\(2 \times 3\)</span>) та матриці гомографії (<span class="arithmatex">\(3 \times 3\)</span>)? Наведіть математичну постановку задачі DLT для знаходження коефіцієнтів гомографії.</p>
+</li>
+<li>
+<p>Поясніть алгоритмічний принцип зворотного відображення координат (backward mapping) при геометричних трансформаціях. Чому застосування білінійної або бікубічної інтерполяції є обов'язковим для усунення артефактів просторової дискретизації?</p>
+</li>
+<li>
+<p>Дайте теоретико-множинне визначення операцій ерозії та діляції бінарного зображення за допомогою структуруючого елемента <span class="arithmatex">\(B\)</span>. У чому полягає властивість морфологічної дуальності цих операцій?</p>
+</li>
+<li>
+<p>Опишіть фізичний механізм вирівнювання нерівномірного освітлення за допомогою морфологічного фільтра Top-Hat. Чому операції морфологічного відкриття та закриття є ідемпотентними?</p>
+</li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Повернутись нагору
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Kyrylo Vadurin &bull; <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "navigation.tracking", "header.autohide", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0456\u0439\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u0421\u043a\u043e\u043f\u0456\u044e\u0432\u0430\u0442\u0438 \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0429\u0435 1 \u0437\u0431\u0456\u0433 \u043d\u0430 \u0446\u0456\u0439 \u0441\u0442\u043e\u0440\u0456\u043d\u0446\u0456", "search.result.more.other": "\u0429\u0435 # \u0437\u0431\u0456\u0433\u0456\u0432 \u043d\u0430 \u0446\u0456\u0439 \u0441\u0442\u043e\u0440\u0456\u043d\u0446\u0456", "search.result.none": "\u0417\u0431\u0456\u0433\u0456\u0432 \u043d\u0435 \u0437\u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u0417\u043d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0437\u0431\u0456\u0433", "search.result.other": "\u0417\u043d\u0430\u0439\u0434\u0435\u043d\u043e # \u0437\u0431\u0456\u0433\u0456\u0432", "search.result.placeholder": "\u0420\u043e\u0437\u043f\u043e\u0447\u043d\u0456\u0442\u044c \u043f\u0438\u0441\u0430\u0442\u0438 \u0434\u043b\u044f \u043f\u043e\u0448\u0443\u043a\u0443", "search.result.term.missing": "\u041d\u0435 \u0437\u043d\u0430\u0439\u0434\u0435\u043d\u043e \u0437\u0430\u043f\u0438\u0442\u0443", "select.version": "\u041e\u0431\u0440\u0430\u0442\u0438 \u0432\u0435\u0440\u0441\u0456\u044e"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

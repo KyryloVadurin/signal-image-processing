@@ -1,0 +1,1881 @@
+
+<!doctype html>
+<html lang="uk" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Навчальний портал з дисципліни "Обробка сигналів та зображень"">
+      
+      
+      
+      
+        <link rel="prev" href="../lk4/">
+      
+      
+        <link rel="next" href="../lk6/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Тема 5. Цифрове представлення зображень та колориметричні моделі - Обробка сигналів та зображень</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#5" class="md-skip">
+          Перейти до змісту
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Хедер">
+    <a href="../.." title="Обробка сигналів та зображень" class="md-header__button md-logo" aria-label="Обробка сигналів та зображень" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Обробка сигналів та зображень
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Тема 5. Цифрове представлення зображень та колориметричні моделі
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="cyan"  aria-label="Переключити на темну тему"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Переключити на темну тему" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="cyan"  aria-label="Переключити на світлу тему"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Переключити на світлу тему" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Пошук" placeholder="Пошук" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Шукати">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистити" aria-label="Очистити" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Пошук розпочато
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Вкладки" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Робоча програма
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../lk1/" class="md-tabs__link">
+          
+  
+  
+  Лекції
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../lb/lb1/" class="md-tabs__link">
+          
+  
+  
+  Лабораторні роботи
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../sr/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Самостійна робота
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../rg/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Розрахунково-графічна робота
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Навігація" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Обробка сигналів та зображень" class="md-nav__button md-logo" aria-label="Обробка сигналів та зображень" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Обробка сигналів та зображень
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Робоча програма
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лекції
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Лекції
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lk1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 1. Математичне представлення, дискретизація та квантування
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lk2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 2. Лінійні стаціонарні дискретні системи
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lk3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 3. Спектральний аналіз дискретних сигналів
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lk4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 4. Z-перетворення та проєктування цифрових фільтрів
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 5. Цифрове представлення зображень та колориметричні моделі
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 5. Цифрове представлення зображень та колориметричні моделі
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Зміст">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Зміст
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#51-3d-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1. Цифрове растрове зображення як двовимірна матриця / 3D-тензор. Просторова роздільна здатність та глибина кольору
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.1. Цифрове растрове зображення як двовимірна матриця / 3D-тензор. Просторова роздільна здатність та глибина кольору">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Основний зміст та теоретичний базис
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#52-bayer-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2. Сенсорні структури матричних фотоприймачів (Bayer pattern, кольороподіл)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.2. Сенсорні структури матричних фотоприймачів (Bayer pattern, кольороподіл)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Основний зміст та теоретичний базис
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#53" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3. Фізичні та психофізіологічні основи колориметрії. Закони змішування кольорів Грасмана. Світлота, колірний тон, насиченість
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.3. Фізичні та психофізіологічні основи колориметрії. Закони змішування кольорів Грасмана. Світлота, колірний тон, насиченість">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Основний зміст та теоретичний базис
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#54-rgb-bgr-opencv-hsvhsl-cie-xyz-cielab-lab-cmycmyk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.4. Колірні моделі та простори: адитивна RGB (BGR в OpenCV), циліндрична HSV/HSL, апаратно-незалежні CIE XYZ та CIELab (\(L^*a^*b^*\)), субтрактивні CMY/CMYK. Формули взаємного перерахунку
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.4. Колірні моделі та простори: адитивна RGB (BGR в OpenCV), циліндрична HSV/HSL, апаратно-незалежні CIE XYZ та CIELab (\(L^*a^*b^*\)), субтрактивні CMY/CMYK. Формули взаємного перерахунку">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Основний зміст та теоретичний базис
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rgb-bgr-opencv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Адитивна модель RGB та порядок каналів BGR в OpenCV
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hsv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Циліндрична модель HSV та її особливості при сегментації за кольором
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-cie-xyz-cielab-lab" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Апаратно-незалежні простори CIE XYZ та CIELab (\(L^*a^*b^*\))
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cmy-cmyk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Субтрактивна модель CMY та CMYK
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Питання для самоперевірки та аналітичного осмислення
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lk6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 6. Поелементні амплітудні перетворення
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lk7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 7. Просторова фільтрація зображень
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lk8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 8. Геометричні трансформації та математична морфологія
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lk9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 9. Двовимірна Фур'є-обробка та детектори контурів
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лабораторні роботи
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Лабораторні роботи
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lb/lb1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 1. Дискретизація, квантування сигналів та ефект аліасингу
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lb/lb2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 2. Лінійні стаціонарні системи та дискретна згортка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lb/lb3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 3. Спектральний аналіз за допомогою ДПФ/ШПФ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lb/lb4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 4. Синтез цифрових КІХ та НІХ фільтрів
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lb/lb5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 5. Статистичний та кореляційний аналіз
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lb/lb6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 6. Базові операції з цифровими зображеннями
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lb/lb7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 7. Амплітудні перетворення та бінаризація
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lb/lb8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 8. Просторова фільтрація зображень
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lb/lb9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 9. Геометричні перетворення зображень
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lb/lb10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 10. Математична морфологія зображень
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lb/lb11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 11. 2D перетворення Фур'є та детектування контурів
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Самостійна робота
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Розрахунково-графічна робота
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Зміст">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Зміст
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#51-3d-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1. Цифрове растрове зображення як двовимірна матриця / 3D-тензор. Просторова роздільна здатність та глибина кольору
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.1. Цифрове растрове зображення як двовимірна матриця / 3D-тензор. Просторова роздільна здатність та глибина кольору">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Основний зміст та теоретичний базис
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#52-bayer-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2. Сенсорні структури матричних фотоприймачів (Bayer pattern, кольороподіл)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.2. Сенсорні структури матричних фотоприймачів (Bayer pattern, кольороподіл)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Основний зміст та теоретичний базис
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#53" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3. Фізичні та психофізіологічні основи колориметрії. Закони змішування кольорів Грасмана. Світлота, колірний тон, насиченість
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.3. Фізичні та психофізіологічні основи колориметрії. Закони змішування кольорів Грасмана. Світлота, колірний тон, насиченість">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Основний зміст та теоретичний базис
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#54-rgb-bgr-opencv-hsvhsl-cie-xyz-cielab-lab-cmycmyk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.4. Колірні моделі та простори: адитивна RGB (BGR в OpenCV), циліндрична HSV/HSL, апаратно-незалежні CIE XYZ та CIELab (\(L^*a^*b^*\)), субтрактивні CMY/CMYK. Формули взаємного перерахунку
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.4. Колірні моделі та простори: адитивна RGB (BGR в OpenCV), циліндрична HSV/HSL, апаратно-незалежні CIE XYZ та CIELab (\(L^*a^*b^*\)), субтрактивні CMY/CMYK. Формули взаємного перерахунку">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Основний зміст та теоретичний базис
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rgb-bgr-opencv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Адитивна модель RGB та порядок каналів BGR в OpenCV
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hsv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Циліндрична модель HSV та її особливості при сегментації за кольором
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-cie-xyz-cielab-lab" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Апаратно-незалежні простори CIE XYZ та CIELab (\(L^*a^*b^*\))
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cmy-cmyk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Субтрактивна модель CMY та CMYK
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Питання для самоперевірки та аналітичного осмислення
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="5">ТЕМА 5. ЦИФРОВЕ ПРЕДСТАВЛЕННЯ ЗОБРАЖЕНЬ ТА КОЛОРИМЕТРИЧНІ МОДЕЛІ</h1>
+<hr />
+<h2 id="51-3d-">5.1. Цифрове растрове зображення як двовимірна матриця / 3D-тензор. Просторова роздільна здатність та глибина кольору</h2>
+<h3 id="_1">Основний зміст та теоретичний базис</h3>
+<p>У математичному моделюванні оптичних систем неперервне монохромне півтонове зображення розглядається як двовимірна неперервна функція просторових координат <span class="arithmatex">\(f(x, y)\)</span>, визначена на компактній прямокутній області площини <span class="arithmatex">\(\Omega \subset \mathbb{R}^2\)</span>. Фізично значення функції <span class="arithmatex">\(f(x, y)\)</span> у точці з координатами <span class="arithmatex">\((x, y)\)</span> пропорційне енергетичній яскравості (радіансу) відповідної ділянки сцени або коефіцієнту відбиття світлового потоку. Формування зображення описується класичною моделлю освітлення-відбиття:</p>
+<div class="arithmatex">\[f(x, y) = i(x, y) \cdot r(x, y)\]</div>
+<p>де <span class="arithmatex">\(i(x, y)\)</span> — функція падаючого світлового потоку від первинних джерел випромінювання (<span class="arithmatex">\(0 &lt; i(x, y) &lt; \infty\)</span>), виражена у люксах або <span class="arithmatex">\(\text{Вт/м}^2\)</span>; <span class="arithmatex">\(r(x, y)\)</span> — коефіцієнт відбиття (альбедо) матеріалу поверхні об'єкта (<span class="arithmatex">\(0 \le r(x, y) \le 1\)</span>, де 0 відповідає абсолютному поглинанню, а 1 — повному дифузному відбиттю).</p>
+<p>Перехід від неперервного оптичного зображення <span class="arithmatex">\(f(x, y)\)</span> до цифрової форми вимагає застосування двох фундаментальних операцій: просторової дискретизації неперервних координат <span class="arithmatex">\((x, y)\)</span> та квантування значень амплітуди <span class="arithmatex">\(f(x, y)\)</span> за рівнем яскравості. У результаті дискретизації за прямокутною просторовою сіткою формується двовимірна матриця дискретних відліків, які називаються елементами зображення або <strong>пікселями</strong> (<em>picture elements, pixels</em>):</p>
+<div class="arithmatex">\[\mathbf{I} = \begin{bmatrix}
+I[0, 0] &amp; I[0, 1] &amp; \dots &amp; I[0, N-1] \\
+I[1, 0] &amp; I[1, 1] &amp; \dots &amp; I[1, N-1] \\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+I[M-1, 0] &amp; I[M-1, 1] &amp; \dots &amp; I[M-1, N-1]
+\end{bmatrix}\]</div>
+<p>де <span class="arithmatex">\(M\)</span> — кількість рядків матриці (висота растру у пікселях); <span class="arithmatex">\(N\)</span> — кількість стовпців (ширина растру у пікселях); <span class="arithmatex">\(I[m, n]\)</span> — дискретне значення оптичної густини або рівня сірого в елементі з просторовими дискретними координатами <span class="arithmatex">\((m, n)\)</span>, де <span class="arithmatex">\(m \in [0; M-1]\)</span>, <span class="arithmatex">\(n \in [0; N-1]\)</span>. Початок координат цифрового растра <span class="arithmatex">\((0, 0)\)</span> традиційно розташовується у лівому верхньому кутку матриці, при цьому індекс <span class="arithmatex">\(m\)</span> задає вертикальне зміщення вниз уздовж осі <span class="arithmatex">\(Y\)</span>, а індекс <span class="arithmatex">\(n\)</span> — горизонтальне зміщення вправо уздовж осі <span class="arithmatex">\(X\)</span>.</p>
+<p>Для багатоканальних (кольорових та мультиспектральних) зображень математичною структурою представлення виступає тривимірний <strong>тензор третього рангу</strong> розмірності <span class="arithmatex">\(M \times N \times C\)</span>, де <span class="arithmatex">\(C\)</span> позначає кількість колірних або спектральних каналів (шарів):</p>
+<div class="arithmatex">\[\mathbf{I} \in \mathbb{R}^{M \times N \times C}, \quad I[m, n, c] = f_c(m \Delta y, n \Delta x)\]</div>
+<p>де <span class="arithmatex">\(c \in [0; C-1]\)</span> — індекс спектрального каналу; <span class="arithmatex">\(\Delta x, \Delta y\)</span> — лінійні кроки просторової дискретизації вздовж відповідних осей на поверхні фоточутливого сенсора.</p>
+<p><pre class="mermaid"><code>flowchart TD
+    A["Неперервне оптичне поле f(x, y) = i(x, y) · r(x, y)"] --&gt; B["Просторова дискретизація (Крок Δx, Δy)"]
+    B --&gt; C["Квантування рівнів яскравості (L = 2^b)"]
+    C --&gt; D{"Тип цифрового растру"}
+    D --&gt;|Одноканальний C = 1| E["Двовимірна матриця I[M, N]&lt;br&gt;(Grayscale / Binary)"]
+    D --&gt;|Триканальний C = 3| F["3D-тензор I[M, N, 3]&lt;br&gt;(RGB, BGR, HSV, Lab)"]
+    D --&gt;|Чотириканальний C = 4| G["3D-тензор I[M, N, 4]&lt;br&gt;(RGBA, CMYK)"]</code></pre>
+<em>Рисунок 5.1 — Структурна схема перетворення неперервного оптичного поля у цифрові матричні та тензорні представлення</em></p>
+<p>Якість цифрового представлення зображень визначається двома параметрами: <strong>просторовою роздільною здатністю</strong> та <strong>глибиною кольору (розрядністю квантування)</strong>. Просторова роздільна здатність задає просторову густину дискретизації і вимірюється фізичною кількістю пікселів на одиницю довжини — точок на дюйм (<em>dots per inch, DPI</em>) чи пікселів на дюйм (<em>pixels per inch, PPI</em>). </p>
+<p>Глибина кольору (інформаційна ємність пікселя, <em>color depth</em>) визначає кількість бітів <span class="arithmatex">\(b\)</span>, виділених для цифрового кодування яскравості кожного каналу пікселя, що обумовлює загальне число відтворюваних градацій <span class="arithmatex">\(L = 2^b\)</span>:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Тип даних</th>
+<th style="text-align: center;">Розрядність (<span class="arithmatex">\(b\)</span>)</th>
+<th style="text-align: center;">Діапазон значень</th>
+<th style="text-align: center;">Кількість рівнів</th>
+<th style="text-align: left;">Типове застосування в комп'ютерній інженерії</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong><code>bool / bit</code></strong></td>
+<td style="text-align: center;">1 біт</td>
+<td style="text-align: center;"><span class="arithmatex">\(\{0, 1\}\)</span></td>
+<td style="text-align: center;">2</td>
+<td style="text-align: left;">Бінарні маски сегментації, OCR-розпізнавання тексту, силуети</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>uint8 / CV_8U</code></strong></td>
+<td style="text-align: center;">8 біт</td>
+<td style="text-align: center;"><span class="arithmatex">\(0 \dots 255\)</span></td>
+<td style="text-align: center;">256</td>
+<td style="text-align: left;">Стандартний комп'ютерний зір (sRGB, Grayscale), відеопотоки</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>uint16 / CV_16U</code></strong></td>
+<td style="text-align: center;">16 біт</td>
+<td style="text-align: center;"><span class="arithmatex">\(0 \dots 65535\)</span></td>
+<td style="text-align: center;">65 536</td>
+<td style="text-align: left;">Медична томографія (DICOM), супутникові мультиспектральні знімки, RAW</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>int32 / CV_32S</code></strong></td>
+<td style="text-align: center;">32 біти</td>
+<td style="text-align: center;"><span class="arithmatex">\(-2^{31} \dots 2^{31}-1\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(4.29 \times 10^9\)</span></td>
+<td style="text-align: left;">Маркування зв'язних компонентів (Connected Components Labeling)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>float32 / CV_32F</code></strong></td>
+<td style="text-align: center;">32 біти</td>
+<td style="text-align: center;"><span class="arithmatex">\([0.0; 1.0]\)</span> або <span class="arithmatex">\(\mathbb{R}\)</span></td>
+<td style="text-align: center;">Неперервний</td>
+<td style="text-align: left;">Нормовані градієнти, фільтрація у частотній області 2D-FFT, CNN</td>
+</tr>
+</tbody>
+</table>
+<p>Використання 8-бітного цілочислового формату без знака <code>uint8</code> є загальноприйнятим промисловим стандартом для візуалізації, де рівень 0 відповідає абсолютно чорному кольору, а рівень 255 — максимальній яскравості білого. Під час виконання складних проміжних математичних операцій (диференціювання, розрахунок градієнтів, двовимірне перетворення Фур'є) застосовують тип даних <code>float32</code> з діапазоном <span class="arithmatex">\([0.0; 1.0]\)</span>, що виключає виникнення похибок переповнення розрядної сітки та втрату точності округлення.</p>
+<hr />
+<h2 id="52-bayer-pattern">5.2. Сенсорні структури матричних фотоприймачів (Bayer pattern, кольороподіл)</h2>
+<h3 id="_2">Основний зміст та теоретичний базис</h3>
+<p>Отримання первинних цифрових зображень у сучасних оптико-електронних приладах базується на використанні <strong>матричних фотоприймачів (МФП)</strong>, виготовлених на основі приладів із зарядовим зв'язком (ПЗЗ, <em>CCD</em>) або комплементарних структур метал-оксид-напівпровідник (КМОН, <em>CMOS</em>). Напівпровідниковий кремнієвий фотодіод інтегрує фотони світла за рахунок внутрішнього фотоефекту, накопичуючи електричний заряд, пропорційний сумарній енергетичній освітленості. Кремній володіє власною спектральною чутливістю у широкому діапазоні довжин хвиль від 350 до 1100 нм, тому одиничний фотоелемент є суто монохромним і принципово не здатний розрізняти спектральний склад (довжину хвилі) падаючого випромінювання.</p>
+<p>Для формування кольорового зображення застосовують методи просторово-спектрального кольороподілу. Найпоширенішим апаратним рішенням у масових сенсорних системах є інтеграція на поверхню напівпровідникової матриці <strong>мозаїчного колірного фільтра Байєра (<em>Bayer Color Filter Array, CFA</em>)</strong>.</p>
+<p><pre class="mermaid"><code>flowchart LR
+    A["Світловий потік від сцени"] --&gt; B["Мікролінзовий масив (Фокусування)"]
+    B --&gt; C["Оптичний фільтр низьких частот (OLPF/Anti-aliasing)"]
+    C --&gt; D["Матричний фільтр Байєра (CFA: RGGB 2×2)"]
+    D --&gt; E["Кремнієві фотодіоди КМОН/ПЗЗ"]
+    E --&gt; F["Необроблений сигнал RAW (1 канал/піксель)"]
+    F --&gt; G["Алгоритм демозаїки (Дебайєризація)"]
+    G --&gt; H["Повноколірний 3D-тензор RGB (3 канали/піксель)"]</code></pre>
+<em>Рисунок 5.2 — Оптико-електронний тракт просторового формування кольорового зображення матричним фотоприймачем із фільтром Байєра</em></p>
+<p>Фільтр Байєра являє собою двовимірний періодичний масив мікроскопічних барвних фільтрів, згрупованих у періодичні комірки розміром <span class="arithmatex">\(2 \times 2\)</span> елементи. Класичний шаблон колірної конфігурації містить два зелених (G), один червоний (R) та один синій (B) субпікселі (патерн RGGB або BGGR):</p>
+<div class="arithmatex">\[\mathbf{M}_{\text{Bayer}} = \begin{bmatrix} R &amp; G \\ G &amp; B \end{bmatrix}\]</div>
+<p>Спектральне співвідношення площ фільтрів становить <span class="arithmatex">\(50\%\)</span> для зеленого каналу, <span class="arithmatex">\(25\%\)</span> для червоного та <span class="arithmatex">\(25\%\)</span> для синього. Такий нерівномірний просторовий розподіл зумовлений психофізіологічними особливостями зорової системи людини: крива денної спектральної чутливості людського ока (функція <span class="arithmatex">\(V(\lambda)\)</span>) має різко виражений максимум у зеленій ділянці спектра на довжині хвилі <span class="arithmatex">\(\lambda \approx 555\text{ нм}\)</span>. Зорова система сприймає дрібні просторові деталі, контури та текстури переважно через зелену складову світлового потоку.</p>
+<p>Вихідним результатом експонування МФП є матриця даних у форматі <strong>RAW</strong>, де кожен просторовий піксель містить інформацію лише про одну спектральну компоненту (<span class="arithmatex">\(R\)</span>, <span class="arithmatex">\(G\)</span> або <span class="arithmatex">\(B\)</span>). Відновлення повноколірного трикомпонентного представлення на рівні кожного пікселя здійснюється за допомогою обчислювальної процедури <strong>демозаїки (дебайєризації, <em>demosaicing</em>)</strong>. Найпростішим методом дебайєризації є білінійна просторова інтерполяція, за якої відсутні колірні компоненти розраховуються як середнє арифметичне сусідніх просторових відліків того самого типу:</p>
+<div class="arithmatex">\[G[m, n] = \frac{1}{4} \Big( G[m-1, n] + G[m+1, n] + G[m, n-1] + G[m, n+1] \Big)\]</div>
+<p>Для запобігання втрати різкості та виникненню інтерполяційних дефектів застосовують адаптивні градієнтні алгоритми демозаїки (алгоритм Мальвара-Хе-Катлера, спрямована інтерполяція вздовж границь об'єктів).</p>
+<p>Невідповідність просторової дискретизації колірної мозаїки просторовому спектру сцени викликає просторовий аліасинг, що проявляється у вигляді паразитного муарового забарвлення дрібних періодичних текстур і фальшивих кольорових ореолів вздовж різких контурів. Для пригнічення цього ефекту перед матричним фільтром встановлюють оптичний антиаліасинговий фільтр низьких частот (<em>Optical Low-Pass Filter, OLPF</em>), виготовлений із двозаломлюючих кристалів кварцу, який злегка розмиває просторове зображення до розміру кроку дискретизації субпікселів.</p>
+<hr />
+<h2 id="53">5.3. Фізичні та психофізіологічні основи колориметрії. Закони змішування кольорів Грасмана. Світлота, колірний тон, насиченість</h2>
+<h3 id="_3">Основний зміст та теоретичний базис</h3>
+<p><strong>Колориметрія</strong> — це наука про методи кількісного вимірювання та числового вираження кольору на основі фізичних параметрів оптичного випромінювання та психофізіологічних закономірностей зорового сприйняття. Фізіологічний механізм колірного зору людини базується на трихроматичній теорії Юнга-Гельмгольца. Сітківка людського ока містить фоторецептори двох типів: високочутливі палички (відповідають за сутінковий ахроматичний зір) та три типи колбочок (відповідають за денний хроматичний зір), кожен з яких має індивідуальну криву спектральної чутливості:</p>
+<ul>
+<li>
+<p>Колбочки <span class="arithmatex">\(S\)</span>-типу (<em>Short wavelength</em>): володіють максимумом чутливості в короткохвильовій синьо-фіолетовій зоні спектра (<span class="arithmatex">\(\lambda_{\max} \approx 420\text{ нм}\)</span>).</p>
+</li>
+<li>
+<p>Колбочки <span class="arithmatex">\(M\)</span>-типу (<em>Medium wavelength</em>): мають пік поглинання у середньохвильовій зеленій ділянці (<span class="arithmatex">\(\lambda_{\max} \approx 534\text{ нм}\)</span>).</p>
+</li>
+<li>
+<p>Колбочки <span class="arithmatex">\(L\)</span>-типу (<em>Long wavelength</em>): характеризуються максимумом у довгохвильовій жовто-червоній ділянці (<span class="arithmatex">\(\lambda_{\max} \approx 564\text{ нм}\)</span>).</p>
+</li>
+</ul>
+<p>Будь-який неперервний спектральний розподіл потужності світла <span class="arithmatex">\(S(\lambda)\)</span> сприймається зоровою системою у вигляді трьох інтегральних сигналів збудження сітківки:</p>
+<div class="arithmatex">\[S_{\text{cone}} = \int_{\lambda_{\min}}^{\lambda_{\max}} S(\lambda) s(\lambda) \, d\lambda, \quad M_{\text{cone}} = \int_{\lambda_{\min}}^{\lambda_{\max}} S(\lambda) m(\lambda) \, d\lambda, \quad L_{\text{cone}} = \int_{\lambda_{\min}}^{\lambda_{\max}} S(\lambda) l(\lambda) \, d\lambda\]</div>
+<p>де <span class="arithmatex">\(s(\lambda), m(\lambda), l(\lambda)\)</span> — спектральні функції чутливості відповідних груп колбочок; інтервал інтегрування <span class="arithmatex">\([\lambda_{\min}; \lambda_{\max}]\)</span> охоплює видимий оптичний діапазон від 380 до 780 нм. Внаслідок інтегрального перетворення різні спектральні комбінації <span class="arithmatex">\(S_1(\lambda) \neq S_2(\lambda)\)</span> можуть формувати ідентичні трійки збуджень <span class="arithmatex">\((S, M, L)\)</span>, викликаючи в людини абсолютно однакове зорове відчуття кольору. Це фундаментальне явище називається <strong>метамеризмом</strong>.</p>
+<p>Психофізіологічно відчуття кольору однозначно описується трьома суб'єктивними координатами сприйняття:</p>
+<p><pre class="mermaid"><code>flowchart LR
+    A["Сприйняття кольору"] --&gt; B["Світлота (Lightness) / Яскравість (Value)&lt;br&gt;Суб'єктивна інтенсивність світла"]
+    A --&gt; C["Колірний тон (Hue)&lt;br&gt;Домінуюча довжина хвилі λ_d"]
+    A --&gt; D["Насиченість (Saturation)&lt;br&gt;Чистота спектрального кольору p"]</code></pre>
+<em>Рисунок 5.3 — Триосьова структура суб'єктивного колірного сприйняття людини</em></p>
+<ul>
+<li>
+<p><strong>Світлота (яскравість, <em>Lightness / Value</em>):</strong> визначає рівень сприйманої зорової інтенсивності випромінювання на шкалі від абсолютно темного (чорного) до сліпуче яскравого (білого). Вона є нелінійною функцією енергетичної яскравості, що підпорядковується логарифмічному закону Вебера-Фехнера.</p>
+</li>
+<li>
+<p><strong>Колірний тон (<em>Hue</em>):</strong> якісна характеристика хроматичного відчуття, яка дозволяє класифікувати колір як червоний, жовтий, зелений або синій. Кількісно колірний тон визначається <strong>домінуючою довжиною хвилі</strong> <span class="arithmatex">\(\lambda_d\)</span> спектрально чистого монохроматичного випромінювання.</p>
+</li>
+<li>
+<p><strong>Насиченість (<em>Saturation</em>):</strong> ступінь вираженості та спектральної чистоти колірного тону, що відображає міру його розведення ахроматичним (білим) світлом. <strong>Чистота кольору</strong> <span class="arithmatex">\(p\)</span> формалізується як відношення яскравості спектрально чистої складової <span class="arithmatex">\(L_\lambda\)</span> до повної яскравості світлової суміші <span class="arithmatex">\(L\)</span>:
+   $<span class="arithmatex">\(p = \frac{L_\lambda}{L_\lambda + L_E} = \frac{L_\lambda}{L}\)</span>$
+   де <span class="arithmatex">\(L_E\)</span> — яскравість рівноенергетичного білого світла; для чистого спектрального випромінювання <span class="arithmatex">\(p = 1\)</span>, а для білого світла <span class="arithmatex">\(p = 0\)</span>.</p>
+</li>
+</ul>
+<p>Математичним базисом колориметричних розрахунків виступають <strong>закони змішування кольорів Грасмана (1854 р.)</strong>:</p>
+<ol>
+<li>
+<p><strong>Перший закон (тривимірність кольору):</strong> Будь-який колір <span class="arithmatex">\(\mathbf{C}\)</span> може бути однозначно отриманий змішуванням трьох лінійно незалежних основних кольорів <span class="arithmatex">\(\mathbf{P}_1, \mathbf{P}_2, \mathbf{P}_3\)</span>, жоден із яких не може бути синтезований сумішшю двох інших:
+   $<span class="arithmatex">\(\mathbf{C} = T_1 \mathbf{P}_1 + T_2 \mathbf{P}_2 + T_3 \mathbf{P}_3\)</span>$
+   де <span class="arithmatex">\(T_1, T_2, T_3\)</span> — координати кольору (тристимульні значення), що визначають кількості відповідних основних кольорів у суміші.</p>
+</li>
+<li>
+<p><strong>Другий закон (неперервність колірного простору):</strong> При неперервній зміні спектрального складу оптичного випромінювання відчуття кольору суміші також змінюється неперервно; довільний колірний тон може бути плавно змінений від одного кольору до іншого через послідовність проміжних переходів.</p>
+</li>
+<li>
+<p><strong>Третій закон (адитивність і лінійність змішування):</strong> Колір суміші некогерентних випромінювань залежить виключно від їхніх координат кольору і не залежить від їхнього первинного спектрального складу (еквівалентні кольори дають еквівалентні суміші):
+   $<span class="arithmatex">\(\text{Якщо } \mathbf{C}_1 \equiv \mathbf{C}_2 \text{ та } \mathbf{C}_3 \equiv \mathbf{C}_4, \quad \text{то } \mathbf{C}_1 + \mathbf{C}_3 \equiv \mathbf{C}_2 + \mathbf{C}_4, \quad \text{і } k \mathbf{C}_1 \equiv k \mathbf{C}_2\)</span>$</p>
+</li>
+<li>
+<p><strong>Четвертий закон (адитивність світності):</strong> Повна яскравість складної колірної суміші дорівнює алгебраїчній сумі яскравостей її окремих випромінюваних компонентів:
+   $<span class="arithmatex">\(L(\mathbf{C}) = T_1 L(\mathbf{P}_1) + T_2 L(\mathbf{P}_2) + T_3 L(\mathbf{P}_3)\)</span>$
+   де <span class="arithmatex">\(L(\mathbf{P}_i)\)</span> — коефіцієнти яскравості одиничних кількостей основних кольорів.</p>
+</li>
+</ol>
+<hr />
+<h2 id="54-rgb-bgr-opencv-hsvhsl-cie-xyz-cielab-lab-cmycmyk">5.4. Колірні моделі та простори: адитивна RGB (BGR в OpenCV), циліндрична HSV/HSL, апаратно-незалежні CIE XYZ та CIELab (<span class="arithmatex">\(L^*a^*b^*\)</span>), субтрактивні CMY/CMYK. Формули взаємного перерахунку</h2>
+<h3 id="_4">Основний зміст та теоретичний базис</h3>
+<p><strong>Колірна модель</strong> являє собою абстрактну математичну систему опису кольорів у вигляді впорядкованих числових кортежів (зазвичай тривимірних або чотиривимірних векторів). Разом із правилами фізичної інтерпретації координат та умовами перегляду колірна модель задає певний <strong>колірний простір</strong> (<em>color space</em>), що визначає колірне охоплення (<em>gamut</em>).</p>
+<p><pre class="mermaid"><code>flowchart TD
+    subgraph Color_Spaces [Система зв'язків між колірними моделями]
+        RGB["RGB / BGR&lt;br&gt;(Адитивна / Монітори)"] &lt;--&gt;|Нелінійний перерахунок| HSV["HSV / HSL&lt;br&gt;(Сегментація / Тон)"]
+        RGB &lt;--&gt;|Доповнення 1 - RGB| CMY["CMY / CMYK&lt;br&gt;(Субтрактивна / Друк)"]
+        RGB &lt;--&gt;|Лінійна матриця M| XYZ["CIE XYZ 1931&lt;br&gt;(Апаратно-незалежна)"]
+        XYZ &lt;--&gt;|Нелінійна кубічна нормалізація| LAB["CIELab (L*a*b*) 1976&lt;br&gt;(Рівноконтрастний простір)"]
+    end</code></pre>
+<em>Рисунок 5.4 — Граф топологічних взаємозв'язків та взаємних перетворень між основними колориметричними просторами</em></p>
+<h3 id="rgb-bgr-opencv">Адитивна модель RGB та порядок каналів BGR в OpenCV</h3>
+<p>Колірна модель <strong>RGB</strong> базується на адитивному змішуванні випромінювань трьох первинних монохроматичних кольорів: червоного (<span class="arithmatex">\(R\)</span>, <span class="arithmatex">\(\lambda = 700.0\text{ нм}\)</span>), зеленого (<span class="arithmatex">\(G\)</span>, <span class="arithmatex">\(\lambda = 546.1\text{ нм}\)</span>) та синього (<span class="arithmatex">\(B\)</span>, <span class="arithmatex">\(\lambda = 435.8\text{ нм}\)</span>). Одиничний простір RGB представляється одиничним кубом <span class="arithmatex">\([0; 1]^3\)</span>, вершини якого відповідають основним кольорам, чорному кольору <span class="arithmatex">\((0, 0, 0)\)</span>, білому кольору <span class="arithmatex">\((1, 1, 1)\)</span>, та вторинним кольорам: жовтому <span class="arithmatex">\((1, 1, 0)\)</span>, пурпуровому <span class="arithmatex">\((1, 0, 1)\)</span> та блакитному <span class="arithmatex">\((0, 1, 1)\)</span>.</p>
+<p>Для перетворення повноколірного RGB-зображення в монохромне півтонове (Grayscale) застосовують стандартизовану зважену суму яскравостей відповідно до рекомендації ITU-R BT.601, яка враховує різну спектральну чутливість людського ока:</p>
+<div class="arithmatex">\[Y = 0.299 \cdot R + 0.587 \cdot G + 0.114 \cdot B\]</div>
+<p>де <span class="arithmatex">\(Y\)</span> — результуюча яскравість пікселя; коефіцієнти <span class="arithmatex">\(0.299, 0.587, 0.114\)</span> точно відображають домінантний внесок зеленого каналу у сприйняття загальної світності.</p>
+<p><strong>Критична особливість архітектури OpenCV:</strong> Історично бібліотека комп'ютерного зору OpenCV завантажує, зберігає та обробляє кольорові растри у форматі зі зворотним порядком слідування каналів — <strong>BGR</strong> (Blue, Green, Red). Натомість більшість універсальних бібліотек обробки та візуалізації Python (такі як Matplotlib <code>plt.imshow()</code> та Pillow <code>Image.open()</code>) працюють виключно зі стандартизованим порядком <strong>RGB</strong>. </p>
+<p>Якщо зчитане засобами OpenCV BGR-зображення спробувати безпосередньо відобразити через <code>matplotlib.pyplot.imshow()</code>, виникає апаратний конфлікт інтерпретації пам'яті: червоні та сині канали міняються місцями, що призводить до повного спотворення колірної гами (людські обличчя набувають неприродного синього відтінку, а синє небо стає жовто-червоним). Для коректного суміщення бібліотек обов'язково виконують програмне перетворення порядку каналів:</p>
+<div class="arithmatex">\[\mathbf{I}_{\text{RGB}} = \text{cv2.cvtColor}(\mathbf{I}_{\text{BGR}}, \text{cv2.COLOR\_BGR2RGB})\]</div>
+<h3 id="hsv">Циліндрична модель HSV та її особливості при сегментації за кольором</h3>
+<p>Колірний простір <strong>HSV</strong> (<em>Hue, Saturation, Value</em> — колірний тон, насиченість, яскравість) являє собою нелінійну трансформацію простору RGB у циліндричну систему координат у формі перевернутого шестикутного конуса або циліндра. Він розділяє колірну інформацію на суто хроматичну складову (тон <span class="arithmatex">\(H\)</span> та насиченість <span class="arithmatex">\(S\)</span>) та ахроматичну інтенсивність освітлення (<span class="arithmatex">\(V\)</span>).</p>
+<p>Аналітичні формули перетворення нормованих координат <span class="arithmatex">\(R, G, B \in [0; 1]\)</span> у простір HSV визначаються співвідношеннями:</p>
+<div class="arithmatex">\[V = \max(R, G, B)\]</div>
+<div class="arithmatex">\[S = \begin{cases} 0, &amp; \text{якщо } V = 0 \\ \frac{V - \min(R, G, B)}{V} = \frac{\Delta}{V}, &amp; \text{якщо } V \neq 0 \end{cases}\]</div>
+<div class="arithmatex">\[H = \begin{cases}
+0^\circ, &amp; \text{якщо } \Delta = 0 \\
+60^\circ \cdot \left( \frac{G - B}{\Delta} \bmod 6 \right), &amp; \text{якщо } V = R \\
+60^\circ \cdot \left( \frac{B - R}{\Delta} + 2 \right), &amp; \text{якщо } V = G \\
+60^\circ \cdot \left( \frac{R - G}{\Delta} + 4 \right), &amp; \text{якщо } V = B
+\end{cases}\]</div>
+<p>де <span class="arithmatex">\(\Delta = \max(R, G, B) - \min(R, G, B)\)</span>; значення кута <span class="arithmatex">\(H\)</span> лежить у діапазоні <span class="arithmatex">\([0^\circ; 360^\circ]\)</span>; якщо <span class="arithmatex">\(H &lt; 0^\circ\)</span>, до значення додається <span class="arithmatex">\(360^\circ\)</span>.</p>
+<p>В інженерній практиці реалізації на базі OpenCV для 8-бітного представлення (<code>uint8</code>) кутовий діапазон <span class="arithmatex">\(H \in [0^\circ; 360^\circ]\)</span> масштабується діленням навпіл у діапазон <span class="arithmatex">\(H_{\text{OpenCV}} \in [0; 179]\)</span>, що дозволяє вмістити кут у межі одного байта (оскільки максимальне число в байті становить 255). Канали <span class="arithmatex">\(S\)</span> та <span class="arithmatex">\(V\)</span> масштабуються до інтервалу <span class="arithmatex">\([0; 255]\)</span>.</p>
+<p><strong>Переваги простору HSV у задачах комп'ютерного зору та кольорової сегментації:</strong>
+У класичному просторі RGB зміна умов освітленості сцени (поява тіней, відблисків або зміна потужності джерела світла) призводить до одночасної нелінійної зміни всіх трьох координат <span class="arithmatex">\((R, G, B)\)</span>, що робить сегментацію об'єктів за пороговими значеннями RGB нестабільною і вразливою до завад. </p>
+<p>У просторі HSV координата тону <span class="arithmatex">\(H\)</span> є інваріантною до змін інтенсивності освітлення. Затінення об'єкта або зміна яскравості лампи змінює переважно значення координати <span class="arithmatex">\(V\)</span>, тоді як домінуючий колірний тон <span class="arithmatex">\(H\)</span> залишається незмінним. Завдяки цьому сегментація цільових об'єктів (розпізнавання кольору дорожніх знаків, виділення шкіри людини, детектування дефектів) у просторі HSV реалізується простим бінарним пороговим вікном:</p>
+<div class="arithmatex">\[I_{\text{mask}}[m, n] = \begin{cases} 255, &amp; \text{якщо } H_{\min} \le H[m,n] \le H_{\max} \;\land\; S_{\min} \le S[m,n] \le S_{\max} \;\land\; V_{\min} \le V[m,n] \le V_{\max} \\ 0, &amp; \text{в інших випадках} \end{cases}\]</div>
+<h3 id="-cie-xyz-cielab-lab">Апаратно-незалежні простори CIE XYZ та CIELab (<span class="arithmatex">\(L^*a^*b^*\)</span>)</h3>
+<p>Колориметрична система <strong>CIE XYZ (1931 р.)</strong> розроблена Міжнародною комісією з освітлення (CIE) як універсальний апаратно-незалежний еталон. Основні кольори <span class="arithmatex">\(\mathbf{X}, \mathbf{Y}, \mathbf{Z}\)</span> є математичними абстракціями і розраховані так, щоб усі реальні фізичні випромінювання описувалися строго додатними координатами, а координата <span class="arithmatex">\(Y\)</span> чисельно збігалася з фотометричною яскравістю сцени. Перерахунок лінійного простору sRGB до системи CIE XYZ для стандартного білого джерела D65 здійснюється матричним множенням:</p>
+<div class="arithmatex">\[\begin{bmatrix} X \\ Y \\ Z \end{bmatrix} = \begin{bmatrix}
+0.412456 &amp; 0.357576 &amp; 0.180438 \\
+0.212673 &amp; 0.715152 &amp; 0.072175 \\
+0.019334 &amp; 0.119192 &amp; 0.950304
+\end{bmatrix} \begin{bmatrix} R \\ G \\ B \end{bmatrix}\]</div>
+<p>Колориметричний простір <strong>CIELab (<span class="arithmatex">\(L^*a^*b^*\)</span>, 1976 р.)</strong> є <strong>рівноконтрастним простором</strong>, створеним для усунення нелінійності зорового сприйняття систем RGB та XYZ. У просторі CIELab однаковій евклідовій відстані між точками у будь-якій ділянці колірного тіла відповідає однакова суб'єктивна зорова відмінність між кольорами. Координати системи визначаються формулами:</p>
+<div class="arithmatex">\[L^* = 116 f\left(\frac{Y}{Y_n}\right) - 16, \quad a^* = 500 \left[ f\left(\frac{X}{X_n}\right) - f\left(\frac{Y}{Y_n}\right) \right], \quad b^* = 200 \left[ f\left(\frac{Y}{Y_n}\right) - f\left(\frac{Z}{Z_n}\right) \right]\]</div>
+<p>де <span class="arithmatex">\(X_n, Y_n, Z_n\)</span> — координати опорного білого джерела (для стандартного джерела D65: <span class="arithmatex">\(X_n = 0.95047, Y_n = 1.00000, Z_n = 1.08883\)</span>); <span class="arithmatex">\(L^*\)</span> позначає світлоту від 0 (чорний) до 100 (білий); <span class="arithmatex">\(a^*\)</span> відображає позицію на осі від зеленого (від'ємні значення) до червоного (додатні значення); <span class="arithmatex">\(b^*\)</span> відображає позицію на осі від синього (від'ємні значення) до жовтого (додатні значення). </p>
+<p>Нелінійна кускова функція <span class="arithmatex">\(f(q)\)</span> має вигляд:</p>
+<div class="arithmatex">\[f(q) = \begin{cases} q^{1/3}, &amp; \text{якщо } q &gt; \left(\frac{6}{29}\right)^3 \approx 0.008856 \\ \frac{1}{3}\left(\frac{29}{6}\right)^2 q + \frac{4}{29} \approx 7.787 q + \frac{16}{116}, &amp; \text{якщо } q \le 0.008856 \end{cases}\]</div>
+<p>Кількісна колірна різниця між двома зразками <span class="arithmatex">\((L_1^*, a_1^*, b_1^*)\)</span> та <span class="arithmatex">\((L_2^*, a_2^*, b_2^*)\)</span> обчислюється за формулою Евкліда (<span class="arithmatex">\(\Delta E^*_{ab}\)</span> за стандартом CIE 1976):</p>
+<div class="arithmatex">\[\Delta E^*_{ab} = \sqrt{(L_1^* - L_2^*)^2 + (a_1^* - a_2^*)^2 + (b_1^* - b_2^*)^2}\]</div>
+<p>Якщо <span class="arithmatex">\(\Delta E^*_{ab} &lt; 1.0\)</span>, відмінність між кольорами є нерозрізненною для людського ока; діапазон <span class="arithmatex">\(\Delta E^*_{ab} \in [1.0; 2.0]\)</span> відповідає ледь помітній різниці при ретельному порівнянні.</p>
+<h3 id="cmy-cmyk">Субтрактивна модель CMY та CMYK</h3>
+<p>Моделі <strong>CMY</strong> (<em>Cyan, Magenta, Yellow</em>) та <strong>CMYK</strong> (+ <em>Key/Black</em>) описують процес субтрактивного формування кольору, який базується не на випромінюванні, а на поглинанні (відніманні) певних довжин хвиль білого світла барвниками поліграфічного обладнання або принтерів. Базові координати CMY пов'язані з нормованими координатами RGB відніманням від одиниці:</p>
+<div class="arithmatex">\[C = 1 - R, \quad M = 1 - G, \quad Y = 1 - B\]</div>
+<p>Для зменшення витрат дорогих кольорових чорнил та забезпечення глибокого нейтрального чорного кольору в поліграфії додають чорний пігмент <span class="arithmatex">\(K\)</span>, формуючи модель <strong>CMYK</strong>:</p>
+<div class="arithmatex">\[K = \min(C, M, Y)\]</div>
+<div class="arithmatex">\[C' = \frac{C - K}{1 - K}, \quad M' = \frac{M - K}{1 - K}, \quad Y' = \frac{Y - K}{1 - K}, \quad \text{при } K \lt  1\]</div>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Колірна модель</th>
+<th style="text-align: left;">Тип моделі / Орієнтація</th>
+<th style="text-align: left;">Основні координати</th>
+<th style="text-align: left;">Основне інженерне призначення</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>RGB / BGR</strong></td>
+<td style="text-align: left;">Адитивна / Апаратна</td>
+<td style="text-align: left;">Червоний, Зелений, Синій (<span class="arithmatex">\(0 \dots 255\)</span>)</td>
+<td style="text-align: left;">Монітори, цифрові камери, дисплеї, обробка в OpenCV</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>HSV / HSL</strong></td>
+<td style="text-align: left;">Циліндрична / Сприйняттєва</td>
+<td style="text-align: left;">Тон (<span class="arithmatex">\(0 \dots 179\)</span>), Насиченість, Яскравість</td>
+<td style="text-align: left;">Сегментація за кольором, інваріантність до освітлення</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>CIE XYZ</strong></td>
+<td style="text-align: left;">Лінійна / Апаратно-незалежна</td>
+<td style="text-align: left;">Умовні координати <span class="arithmatex">\(X, Y, Z \ge 0\)</span></td>
+<td style="text-align: left;">Еталонний колориметричний перерахунок між просторами</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>CIELab</strong></td>
+<td style="text-align: left;">Рівноконтрастна / Апаратно-незалежна</td>
+<td style="text-align: left;">Світлота <span class="arithmatex">\(L^*\)</span>, колірні осі <span class="arithmatex">\(a^*, b^*\)</span></td>
+<td style="text-align: left;">Оцінка похибки передачі кольору (<span class="arithmatex">\(\Delta E\)</span>), поліграфія</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>CMYK</strong></td>
+<td style="text-align: left;">Субтрактивна / Поліграфічна</td>
+<td style="text-align: left;">Блакитний, Пурпуровий, Жовтий, Чорний</td>
+<td style="text-align: left;">Кольоровий друк, підготовка макетів до поліграфії</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="_5">Питання для самоперевірки та аналітичного осмислення</h3>
+<ol>
+<li>
+<p>Опишіть математичну структуру представлення монохромного зображення у вигляді двовимірної матриці та кольорового зображення як тривимірного тензора. Поясніть фізичний зміст просторових координат та рівнів квантування яскравості.</p>
+</li>
+<li>
+<p>Які фізичні та оптичні фактори обумовлюють необхідність розміщення колірного фільтра Байєра (CFA) на поверхні матричних фотоприймачів, і чому площа зелених субпікселів удвічі перевищує площу червоних чи синіх елементів?</p>
+</li>
+<li>
+<p>Сформулюйте чотири закони змішування кольорів Грасмана. У чому полягає явище метамеризму, і який фізіологічний механізм людського зору робить його можливим?</p>
+</li>
+<li>
+<p>Поясніть архітектурну причину несумісності відображення колірних каналів між бібліотеками OpenCV (BGR) та Matplotlib/Pillow (RGB). Які візуальні артефакти спостерігаються у разі прямого виведення BGR-масиву через функцію <code>plt.imshow()</code>?</p>
+</li>
+<li>
+<p>Наведіть аналітичні формули перетворення з простору RGB у простір HSV. Чому сегментація цільових об'єктів за пороговими значеннями в просторі HSV є на порядок стійкішою до зміни освітлення та тіней, ніж у просторі RGB?</p>
+</li>
+<li>
+<p>Що таке рівноконтрастний колірний простір, і яким чином координати системи CIELab (<span class="arithmatex">\(L^*a^*b^*\)</span>) пов'язані з евклідовою метрикою розрізнення кольорів <span class="arithmatex">\(\Delta E^*_{ab}\)</span> за стандартом CIE 1976?</p>
+</li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Повернутись нагору
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Kyrylo Vadurin &bull; <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "navigation.tracking", "header.autohide", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0456\u0439\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u0421\u043a\u043e\u043f\u0456\u044e\u0432\u0430\u0442\u0438 \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0429\u0435 1 \u0437\u0431\u0456\u0433 \u043d\u0430 \u0446\u0456\u0439 \u0441\u0442\u043e\u0440\u0456\u043d\u0446\u0456", "search.result.more.other": "\u0429\u0435 # \u0437\u0431\u0456\u0433\u0456\u0432 \u043d\u0430 \u0446\u0456\u0439 \u0441\u0442\u043e\u0440\u0456\u043d\u0446\u0456", "search.result.none": "\u0417\u0431\u0456\u0433\u0456\u0432 \u043d\u0435 \u0437\u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u0417\u043d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0437\u0431\u0456\u0433", "search.result.other": "\u0417\u043d\u0430\u0439\u0434\u0435\u043d\u043e # \u0437\u0431\u0456\u0433\u0456\u0432", "search.result.placeholder": "\u0420\u043e\u0437\u043f\u043e\u0447\u043d\u0456\u0442\u044c \u043f\u0438\u0441\u0430\u0442\u0438 \u0434\u043b\u044f \u043f\u043e\u0448\u0443\u043a\u0443", "search.result.term.missing": "\u041d\u0435 \u0437\u043d\u0430\u0439\u0434\u0435\u043d\u043e \u0437\u0430\u043f\u0438\u0442\u0443", "select.version": "\u041e\u0431\u0440\u0430\u0442\u0438 \u0432\u0435\u0440\u0441\u0456\u044e"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

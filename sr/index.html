@@ -1,0 +1,2642 @@
+
+<!doctype html>
+<html lang="uk" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Навчальний портал з дисципліни "Обробка сигналів та зображень"">
+      
+      
+      
+      
+        <link rel="prev" href="../lb/lb11/">
+      
+      
+        <link rel="next" href="../rg/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Самостійна робота - Обробка сигналів та зображень</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Перейти до змісту
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Хедер">
+    <a href=".." title="Обробка сигналів та зображень" class="md-header__button md-logo" aria-label="Обробка сигналів та зображень" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Обробка сигналів та зображень
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Самостійна робота
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="cyan"  aria-label="Переключити на темну тему"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Переключити на темну тему" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="cyan"  aria-label="Переключити на світлу тему"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Переключити на світлу тему" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Пошук" placeholder="Пошук" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Шукати">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистити" aria-label="Очистити" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Пошук розпочато
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Вкладки" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Робоча програма
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../lk/lk1/" class="md-tabs__link">
+          
+  
+  
+  Лекції
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../lb/lb1/" class="md-tabs__link">
+          
+  
+  
+  Лабораторні роботи
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Самостійна робота
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../rg/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Розрахунково-графічна робота
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Навігація" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Обробка сигналів та зображень" class="md-nav__button md-logo" aria-label="Обробка сигналів та зображень" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Обробка сигналів та зображень
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Робоча програма
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лекції
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Лекції
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lk/lk1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 1. Математичне представлення, дискретизація та квантування
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lk/lk2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 2. Лінійні стаціонарні дискретні системи
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lk/lk3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 3. Спектральний аналіз дискретних сигналів
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lk/lk4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 4. Z-перетворення та проєктування цифрових фільтрів
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lk/lk5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 5. Цифрове представлення зображень та колориметричні моделі
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lk/lk6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 6. Поелементні амплітудні перетворення
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lk/lk7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 7. Просторова фільтрація зображень
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lk/lk8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 8. Геометричні трансформації та математична морфологія
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lk/lk9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 9. Двовимірна Фур'є-обробка та детектори контурів
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лабораторні роботи
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Лабораторні роботи
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lb/lb1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 1. Дискретизація, квантування сигналів та ефект аліасингу
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lb/lb2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 2. Лінійні стаціонарні системи та дискретна згортка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lb/lb3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 3. Спектральний аналіз за допомогою ДПФ/ШПФ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lb/lb4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 4. Синтез цифрових КІХ та НІХ фільтрів
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lb/lb5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 5. Статистичний та кореляційний аналіз
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lb/lb6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 6. Базові операції з цифровими зображеннями
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lb/lb7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 7. Амплітудні перетворення та бінаризація
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lb/lb8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 8. Просторова фільтрація зображень
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lb/lb9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 9. Геометричні перетворення зображень
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lb/lb10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 10. Математична морфологія зображень
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lb/lb11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 11. 2D перетворення Фур'є та детектування контурів
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Самостійна робота
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Самостійна робота
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Зміст">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Зміст
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ВСТУП
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. ТЕМИ ТА ПОГОДИННИЙ РОЗКЛАД ЛЕКЦІЙ І САМОСТІЙНОЇ РОБОТИ
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. ПЕРЕЛІК ТЕМ І ПИТАНЬ ДЛЯ САМОСТІЙНОГО ОПРАЦЮВАННЯ
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. ПЕРЕЛІК ТЕМ І ПИТАНЬ ДЛЯ САМОСТІЙНОГО ОПРАЦЮВАННЯ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-dsp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Змістовий модуль 1. Цифрова обробка сигналів та лінійні дискретні системи (DSP)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Змістовий модуль 1. Цифрова обробка сигналів та лінійні дискретні системи (DSP)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Тема 1. Математичне представлення, дискретизація та квантування сигналів. Теорема Котельникова-Шеннона-Найквіста.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Тема 2. Лінійні стаціонарні дискретні (ЛСД) системи. Імпульсна характеристика та дискретна згортка.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-fft" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Тема 3. Спектральний аналіз дискретних сигналів: Дискретне перетворення Фур'є (ДПФ), ШПФ (FFT) та віконні функції.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-z-z-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Тема 4. Z-перетворення та проектування цифрових фільтрів (КІХ та НІХ). Аналіз стійкості у z-площині.
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-dip-cv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Змістовий модуль 2. Цифрова обробка, фільтрація та аналіз зображень (DIP &amp; CV)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Змістовий модуль 2. Цифрова обробка, фільтрація та аналіз зображень (DIP &amp; CV)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Тема 5. Цифрове представлення зображень та колориметричні моделі.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Тема 6. Поелементні амплітудні перетворення, гістограмний аналіз та методи бінаризації.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Тема 7. Просторова фільтрація зображень: згладжування, шумозаглушення та підкреслення меж.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Тема 8. Геометричні афінні та перспективні трансформації. Математична морфологія.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Тема 9. Двовимірна Фур'є-обробка, детектори контурів та основи розпізнавання об'єктів.
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. ПИТАННЯ ДО МОДУЛЬНОГО ТА ПІДСУМКОВОГО СЕМЕСТРОВОГО КОНТРОЛЮ
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. ПИТАННЯ ДО МОДУЛЬНОГО ТА ПІДСУМКОВОГО СЕМЕСТРОВОГО КОНТРОЛЮ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-dsp_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Змістовий модуль 1. Цифрова обробка сигналів та лінійні дискретні системи (DSP)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-dip-cv_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Змістовий модуль 2. Цифрова обробка, фільтрація та аналіз зображень (DIP &amp; CV)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        СПИСОК РЕКОМЕНДОВАНОЇ ЛІТЕРАТУРИ
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="СПИСОК РЕКОМЕНДОВАНОЇ ЛІТЕРАТУРИ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Основна література:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Додаткова література:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Інформаційні ресурси в Інтернеті:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Розрахунково-графічна робота
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Зміст">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Зміст
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ВСТУП
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. ТЕМИ ТА ПОГОДИННИЙ РОЗКЛАД ЛЕКЦІЙ І САМОСТІЙНОЇ РОБОТИ
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. ПЕРЕЛІК ТЕМ І ПИТАНЬ ДЛЯ САМОСТІЙНОГО ОПРАЦЮВАННЯ
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. ПЕРЕЛІК ТЕМ І ПИТАНЬ ДЛЯ САМОСТІЙНОГО ОПРАЦЮВАННЯ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-dsp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Змістовий модуль 1. Цифрова обробка сигналів та лінійні дискретні системи (DSP)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Змістовий модуль 1. Цифрова обробка сигналів та лінійні дискретні системи (DSP)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Тема 1. Математичне представлення, дискретизація та квантування сигналів. Теорема Котельникова-Шеннона-Найквіста.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Тема 2. Лінійні стаціонарні дискретні (ЛСД) системи. Імпульсна характеристика та дискретна згортка.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-fft" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Тема 3. Спектральний аналіз дискретних сигналів: Дискретне перетворення Фур'є (ДПФ), ШПФ (FFT) та віконні функції.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-z-z-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Тема 4. Z-перетворення та проектування цифрових фільтрів (КІХ та НІХ). Аналіз стійкості у z-площині.
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-dip-cv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Змістовий модуль 2. Цифрова обробка, фільтрація та аналіз зображень (DIP &amp; CV)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Змістовий модуль 2. Цифрова обробка, фільтрація та аналіз зображень (DIP &amp; CV)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Тема 5. Цифрове представлення зображень та колориметричні моделі.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Тема 6. Поелементні амплітудні перетворення, гістограмний аналіз та методи бінаризації.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Тема 7. Просторова фільтрація зображень: згладжування, шумозаглушення та підкреслення меж.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Тема 8. Геометричні афінні та перспективні трансформації. Математична морфологія.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9-" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Тема 9. Двовимірна Фур'є-обробка, детектори контурів та основи розпізнавання об'єктів.
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. ПИТАННЯ ДО МОДУЛЬНОГО ТА ПІДСУМКОВОГО СЕМЕСТРОВОГО КОНТРОЛЮ
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. ПИТАННЯ ДО МОДУЛЬНОГО ТА ПІДСУМКОВОГО СЕМЕСТРОВОГО КОНТРОЛЮ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-dsp_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Змістовий модуль 1. Цифрова обробка сигналів та лінійні дискретні системи (DSP)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-dip-cv_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Змістовий модуль 2. Цифрова обробка, фільтрація та аналіз зображень (DIP &amp; CV)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        СПИСОК РЕКОМЕНДОВАНОЇ ЛІТЕРАТУРИ
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="СПИСОК РЕКОМЕНДОВАНОЇ ЛІТЕРАТУРИ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Основна література:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Додаткова література:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Інформаційні ресурси в Інтернеті:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="_1">МЕТОДИЧНІ ВКАЗІВКИ ЩОДО САМОСТІЙНОЇ РОБОТИ<br>З ОСВІТНЬОГО КОМПОНЕНТА<br>«Обробка сигналів та зображень»</h1>
+<hr />
+<h2 id="_2">ВСТУП</h2>
+<p>Самостійна робота здобувачів вищої освіти є провідною формою навчальної діяльності в кредитно-трансферній системі організації освітнього процесу (ECTS), яка спрямована на поглиблення, закріплення та творче розширення теоретичних знань і практичних умінь, отриманих під час аудиторних занять. У контексті спеціальності 123 «Комп'ютерна інженерія» вивчення освітнього компонента «Обробка сигналів та зображень» вимагає від здобувачів формування стійких аналітичних навичок роботи з абстрактними математичними моделями, матричними структурами даних, алгоритмами спектрального розкладу та спеціалізованими інженерними бібліотеками мови програмування Python.</p>
+<p>Головною метою самостійного опрацювання навчального матеріалу є розвиток інженерної інтуїції, дослідницької ініціативи та здатності до самостійного проєктування програмно-апаратних трактів попередньої фільтрації, стиснення, спектрально-кореляційного аналізу сигналів і комп'ютерного зору. Самостійна робота стимулює критичне осмислення теоретичних положень теореми відліків, стійкості динамічних систем у комплексній <span class="arithmatex">\(z\)</span>-площині, фізичних засад колориметрії та нелінійних морфологічних перетворень цифрового растру.</p>
+<p>Навчально-методичне забезпечення самостійної роботи включає підручники провідних вітчизняних та зарубіжних наукових шкіл, конспекти лекцій, інструктивно-методичні матеріали до лабораторного практикуму, репозиторії еталонних програмних кодів на мові Python, стандарти обробки інформації (ITU-R, CIE, ISO), а також офіційну технічну документацію до бібліотек NumPy, SciPy, OpenCV, Pillow та Matplotlib. Доступ до всіх навчально-інформаційних ресурсів забезпечується через платформу дистанційного навчання університету.</p>
+<p><pre class="mermaid"><code>flowchart TD
+    subgraph Self_Study_Workflow [Технологічний цикл самостійної роботи здобувача]
+        A["Аудиторна лекція / Вступний інструктаж"] --&gt; B["Опрацювання обов'язкової фахової літератури"]
+        B --&gt; C["Аналітичне розв'язання теоретичних моделей"]
+        C --&gt; D["Програмне моделювання алгоритмів у Jupyter Notebook"]
+        D --&gt; E["Виконання індивідуальних завдань лабораторного практикуму"]
+        E --&gt; F["Підготовка звіту та самоконтроль за банком питань"]
+        F --&gt; G["Консультація викладача та публічний захист результатів"]
+        G --&gt; H["Наскрізне виконання етапів Розрахунково-графічної роботи (РГР)"]
+    end</code></pre>
+<em>Рисунок 1 — Структурно-логічна послідовність етапів самостійного опрацювання навчального матеріалу</em></p>
+<p>Методологія самостійної роботи передбачає систематичне опрацювання теоретичного матеріалу після кожної лекції з обов'язковим аналітичним виведенням ключових математичних співвідношень та їхньою комп'ютерною верифікацією. Графік консультацій викладачів кафедри комп'ютерної інженерії та електроніки передбачає щотижневі очні та онлайн-зустрічі для надання індивідуальних методичних роз'яснень, обговорення складних аспектів синтезу цифрових фільтрів і контролю проміжних результатів виконання розрахунково-графічної роботи.</p>
+<p>Предметом вивчення освітнього компонента є алгоритмічні, математичні та програмно-апаратні методи обробки одновимірних часових послідовностей і багатовимірних статичних та динамічних зображень. У результаті успішного виконання запланованих обсягів самостійної роботи здобувач вищої освіти набуває фахових компетентностей щодо вибору оптимальних параметрів дискретизації, розрахунку швидких перетворень Фур'є, синтезу стійких цифрових фільтрів заданої селективності, колірної нормалізації, просторової реставрації та контурного аналізу зображень у прикладних комп'ютерних системах.</p>
+<hr />
+<h2 id="1">1. ТЕМИ ТА ПОГОДИННИЙ РОЗКЛАД ЛЕКЦІЙ І САМОСТІЙНОЇ РОБОТИ</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Назва змістового модуля та теми</th>
+<th style="text-align: center;">Лекції (год)</th>
+<th style="text-align: center;">Самостійна робота (год)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Змістовий модуль 1. Цифрова обробка сигналів та лінійні дискретні системи (DSP)</strong></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">Тема 1. Математичне представлення, дискретизація та квантування сигналів. Теорема Котельникова-Шеннона-Найквіста.</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">8</td>
+</tr>
+<tr>
+<td style="text-align: left;">Тема 2. Лінійні стаціонарні дискретні (ЛСД) системи. Імпульсна характеристика та дискретна згортка.</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">8</td>
+</tr>
+<tr>
+<td style="text-align: left;">Тема 3. Спектральний аналіз дискретних сигналів: Дискретне перетворення Фур'є (ДПФ), ШПФ (FFT) та віконні функції.</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">8</td>
+</tr>
+<tr>
+<td style="text-align: left;">Тема 4. Z-перетворення та проектування цифрових фільтрів (КІХ та НІХ). Аналіз стійкості у z-площині.</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">8</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Усього за змістовим модулем 1</strong></td>
+<td style="text-align: center;"><strong>8</strong></td>
+<td style="text-align: center;"><strong>32</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Змістовий модуль 2. Цифрова обробка, фільтрація та аналіз зображень (DIP &amp; CV)</strong></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">Тема 5. Цифрове представлення зображень та колориметричні моделі.</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">7</td>
+</tr>
+<tr>
+<td style="text-align: left;">Тема 6. Поелементні амплітудні перетворення, гістограмний аналіз та методи бінаризації.</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">7</td>
+</tr>
+<tr>
+<td style="text-align: left;">Тема 7. Просторова фільтрація зображень: згладжування, шумозаглушення та підкреслення меж.</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">8</td>
+</tr>
+<tr>
+<td style="text-align: left;">Тема 8. Геометричні афінні та перспективні трансформації. Математична морфологія.</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">8</td>
+</tr>
+<tr>
+<td style="text-align: left;">Тема 9. Двовимірне перетворення Фур'є, детектори контурів та основи розпізнавання об'єктів.</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">8</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Усього за змістовим модулем 2</strong></td>
+<td style="text-align: center;"><strong>10</strong></td>
+<td style="text-align: center;"><strong>38</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">Виконання індивідуального завдання (Розрахунково-графічна робота)</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">10</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Всього годин з освітнього компонента</strong></td>
+<td style="text-align: center;"><strong>18</strong></td>
+<td style="text-align: center;"><strong>80</strong></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="2">2. ПЕРЕЛІК ТЕМ І ПИТАНЬ ДЛЯ САМОСТІЙНОГО ОПРАЦЮВАННЯ</h2>
+<h3 id="1-dsp">Змістовий модуль 1. Цифрова обробка сигналів та лінійні дискретні системи (DSP)</h3>
+<h4 id="1-">Тема 1. Математичне представлення, дискретизація та квантування сигналів. Теорема Котельникова-Шеннона-Найквіста.</h4>
+<p><strong>Теми для самостійного опрацювання:</strong></p>
+<ol>
+<li>
+<p>Дослідження математичного апарату відновлення неперервних сигналів із дискретних відліків за допомогою інтерполяційного ряду Уіттекера-Шеннона-Котельникова на основі базових функцій <span class="arithmatex">\(\text{sinc}(t)\)</span>.</p>
+</li>
+<li>
+<p>Аналітичне виведення спектра дискретизованого сигналу через згортку спектра первинного сигналу з періодичною граткою дельта-функцій Дірака.</p>
+</li>
+<li>
+<p>Дослідження фізичних причин виникнення стробоскопічного ефекту та розрахунок частот несправжніх гармонік (псевдонімів) за формулою <span class="arithmatex">\(f_{alias} = |f_0 - k \cdot f_s|\)</span> в умовах піддискретизації.</p>
+</li>
+<li>
+<p>Порівняльний аналіз передавальних характеристик аналогових фільтрів захисту від аліасингу (Баттерворта, Чебишева, Кауера) та визначення вимог до крутизни їхнього спаду.</p>
+</li>
+<li>
+<p>Математичне моделювання статистичних властивостей похибки квантування за рівнем та виведення формули середньої потужності шуму квантування <span class="arithmatex">\(P_e = \Delta^2 / 12\)</span> для випадкових процесів.</p>
+</li>
+<li>
+<p>Дослідження методології дизеризації (dithering) з прямокутним та трикутним законами розподілу ймовірностей шуму для лінеаризації передавальної характеристики квантувача.</p>
+</li>
+<li>
+<p>Аналіз принципів функціонування дизеризації з відніманням (subtractive dither) для повної делінеаризації та некорельованого видалення завад із квантованого сигналу.</p>
+</li>
+</ol>
+<p><strong>Питання для самоперевірки:</strong></p>
+<ol>
+<li>
+<p>Яким чином вибір кроку дискретизації за часом <span class="arithmatex">\(T_s\)</span> впливає на періодичну структуру спектральної щільності дискретизованого сигналу у частотній області?</p>
+</li>
+<li>
+<p>Чому гранична частота Найквіста строго дорівнює половині частоти дискретизації, і які спотворення виникають у разі присутності вхідних гармонік із частотами <span class="arithmatex">\(f &gt; f_s / 2\)</span>?</p>
+</li>
+<li>
+<p>У чому полягає математична та фізична сутність апроксимації неперервного сигналу зімкненою послідовністю прямокутних імпульсів при прямуванні їхньої тривалості до нуля?</p>
+</li>
+<li>
+<p>Чому теоретичне співвідношення сигнал/шум квантування збільшується приблизно на <span class="arithmatex">\(6.02\text{ дБ}\)</span> при додаванні кожного додаткового двійкового розряду квантувача?</p>
+</li>
+<li>
+<p>Який механізм дозволяє високочастотному шуму дизеризації усувати паразитні гармонійні спотворення та дискретні піки в спектрі квантованого низькорозрядного сигналу?</p>
+</li>
+<li>
+<p>За яких умов похибка квантування перестає бути статистично незалежною від вхідного сигналу, і до яких негативних наслідків у слуховому або зоровому сприйнятті це призводить?</p>
+</li>
+</ol>
+<p><strong>Література:</strong> [1, с. 7–16, 20–23, 31–37; 4, с. 2–5, 12–14; 6, с. 15–48; 7, с. 22–65].</p>
+<hr />
+<h4 id="2_1">Тема 2. Лінійні стаціонарні дискретні (ЛСД) системи. Імпульсна характеристика та дискретна згортка.</h4>
+<p><strong>Теми для самостійного опрацювання:</strong></p>
+<ol>
+<li>
+<p>Дослідження алгебраїчних та функціональних методів перевірки дискретних систем на лінійність, часову інваріантність (стаціонарність), каузальність та BIBO-стійкість.</p>
+</li>
+<li>
+<p>Аналітичне розв'язання лінійних неоднорідних різницевих рівнянь зі сталими коефіцієнтами методом невизначених коефіцієнтів та через суму загального розв'язку однорідного рівняння і часткового розв'язку.</p>
+</li>
+<li>
+<p>Дослідження часових властивостей дискретної лінійної згортки скінченних послідовностей та оптимізація алгоритму прямого обчислення згортки за методом матриці Тепліца.</p>
+</li>
+<li>
+<p>Математичне обґрунтування властивостей кругової (циклічної) згортки періодичних послідовностей та визначення умов еквівалентності лінійної та кругової згорток за допомогою доповнення нулями (Zero-Padding).</p>
+</li>
+<li>
+<p>Порівняльний аналіз прямих, канонічних, паралельних та каскадних структур реалізації дискретних алгоритмів фільтрації на базі регістрів затримки <span class="arithmatex">\(z^{-1}\)</span>, суматорів і помножувачів.</p>
+</li>
+<li>
+<p>Моделювання перехідних процесів та формування імпульсної характеристики у рекурентних системах другого порядку (генератори гармонічних коливань, резонатори, накопичувачі).</p>
+</li>
+<li>
+<p>Дослідження алгоритмів швидкої блочної лінійної згортки довгих потоків даних на основі методів перекриття з додаванням (Overlap-Add) та перекриття зі збереженням (Overlap-Save).</p>
+</li>
+</ol>
+<p><strong>Питання для самоперевірки:</strong></p>
+<ol>
+<li>
+<p>Чому знання реакції лінійної стаціонарної дискретної системи на одиничний імпульс <span class="arithmatex">\(\delta[n]\)</span> є вичерпною інформацією для визначення відгуку на довільний вхідний сигнал?</p>
+</li>
+<li>
+<p>Яким чином аналітично розраховується результуюча довжина послідовності, отриманої внаслідок лінійної згортки двох сигналів тривалістю <span class="arithmatex">\(N_x\)</span> та <span class="arithmatex">\(N_h\)</span> відліків?</p>
+</li>
+<li>
+<p>У чому полягає принципова фізична та обчислювальна різниця між лінійною аперіодичною згорткою та круговою циклічною згорткою дискретних послідовностей?</p>
+</li>
+<li>
+<p>Чому наявність хоча б одного ненульового коефіцієнта зворотного зв'язку за вихідними відліками у різницевому рівнянні породжує систему з нескінченною імпульсною характеристикою?</p>
+</li>
+<li>
+<p>Які переваги надає канонічна форма реалізації дискретної системи (Direct Form II) щодо мінімізації кількості комірок оперативної пам'яті у порівнянні з прямою формою (Direct Form I)?</p>
+</li>
+<li>
+<p>Як впливає операція ковзного усереднення (Moving Average) на високочастотні флуктуації сигналу та швидкість зміни його монотонного тренду?</p>
+</li>
+</ol>
+<p><strong>Література:</strong> [1, с. 24–27, 115–119, 126–128; 4, с. 28–44; 6, с. 55–98; 8, с. 110–145].</p>
+<hr />
+<h4 id="3-fft">Тема 3. Спектральний аналіз дискретних сигналів: Дискретне перетворення Фур'є (ДПФ), ШПФ (FFT) та віконні функції.</h4>
+<p><strong>Теми для самостійного опрацювання:</strong></p>
+<ol>
+<li>
+<p>Дослідження математичних засад факторизації матриці поворотних множників ДПФ в алгоритмі Кулі-Тьюкі з проріджуванням за часом (DIT) та проріджуванням за частотою (DIF).</p>
+</li>
+<li>
+<p>Аналітичний розрахунок топології графа потоку даних базової операції «метелик» для розрахунку 8-точкового та 16-точкового швидкого перетворення Фур'є за основою 2.</p>
+</li>
+<li>
+<p>Дослідження алгоритмів швидкого перетворення Фур'є для довільних складених розмірностей масивів даних (алгоритм Блуштайна на основі згортки та алгоритм Радера).</p>
+</li>
+<li>
+<p>Аналітичне моделювання спектрального відгуку віконних функцій із регульованими параметрами (параметричне вікно Кайзера на основі модифікованих функцій Бесселя нульового порядку).</p>
+</li>
+<li>
+<p>Дослідження впливу ширини головної пелюстки та рівня бічних пелюсток віконних функцій на похибки вимірювання амплітуди й частоти полігармонічних сигналів.</p>
+</li>
+<li>
+<p>Математичне обґрунтування дискретного аналога рівності Парсеваля та теореми Релея для спектральної густини потужності дискретних послідовностей.</p>
+</li>
+<li>
+<p>Опрацювання методів спектрального аналізу нестаціонарних процесів за допомогою короткочасного перетворення Фур'є (Short-Time Fourier Transform — STFT) та побудова спектрограм.</p>
+</li>
+</ol>
+<p><strong>Питання для самоперевірки:</strong></p>
+<ol>
+<li>
+<p>Чому обчислювальна складність алгоритму ШПФ за основою 2 оцінюється як <span class="arithmatex">\(O(N \log_2 N)\)</span>, і за рахунок яких симетрій досягається прискорення у порівнянні з прямим ДПФ <span class="arithmatex">\(O(N^2)\)</span>?</p>
+</li>
+<li>
+<p>Яка математична залежність пов'язує частоту дискретизації <span class="arithmatex">\(f_s\)</span>, розмір вікна перетворення <span class="arithmatex">\(N\)</span> та частотну роздільну здатність <span class="arithmatex">\(\Delta f\)</span> дискретного спектра?</p>
+</li>
+<li>
+<p>Чому виникає ефект розтікання (витоку) енергії спектра, якщо частота гармонійної складової сигналу не збігається з жодним із дискретних вузлів частотної сітки?</p>
+</li>
+<li>
+<p>Які переваги та обмеження має прямокутне вагове вікно при спектральному аналізі близьких за частотою коливань із суттєво різними амплітудами?</p>
+</li>
+<li>
+<p>Чим зумовлені відмінності у швидкості спадання бічних пелюсток спектральних вікон Ханна (<span class="arithmatex">\(-18\text{ дБ/октава}\)</span>) та Хеммінга (<span class="arithmatex">\(-6\text{ дБ/октава}\)</span>)?</p>
+</li>
+<li>
+<p>Як виконується процедура відновлення точного значення амплітуди гармоніки після застосування вагового вікна з урахуванням коефіцієнта когерентного підсилення (<span class="arithmatex">\(CG\)</span>)?</p>
+</li>
+</ol>
+<p><strong>Література:</strong> [1, с. 38–46, 55–68; 4, с. 113–125; 6, с. 105–160; 7, с. 80–120].</p>
+<hr />
+<h4 id="4-z-z-">Тема 4. Z-перетворення та проектування цифрових фільтрів (КІХ та НІХ). Аналіз стійкості у z-площині.</h4>
+<p><strong>Теми для самостійного опрацювання:</strong></p>
+<ol>
+<li>
+<p>Дослідження властивостей двостороннього та одностороннього <span class="arithmatex">\(z\)</span>-перетворення, визначення областей збіжності (ROC) для правосторонніх, лівосторонніх та двосторонніх сигналів.</p>
+</li>
+<li>
+<p>Методологія розкладання дробово-раціональних передавальних функцій <span class="arithmatex">\(H(z)\)</span> на суму простих дробів для аналітичного знаходження імпульсної характеристики у часовій області.</p>
+</li>
+<li>
+<p>Дослідження алгебраїчних критеріїв стійкості дискретних систем (критерій Шура-Кона та критерій Джурі) без безпосереднього знаходження коренів знаменника передавальної функції.</p>
+</li>
+<li>
+<p>Опанування алгоритму синтезу оптимальних рівнохвильових КІХ-фільтрів Чебишева за допомогою методу Ремеза (алгоритм Паркса-Макклеллана).</p>
+</li>
+<li>
+<p>Математичне обґрунтування процедури попереднього частотного деформування (pre-warping) в алгоритмі білінійного <span class="arithmatex">\(z\)</span>-перетворення Тастіна для НІХ-фільтрів.</p>
+</li>
+<li>
+<p>Дослідження спектрально-кореляційних властивостей випадкових марківських послідовностей першого <span class="arithmatex">\(\text{AR}(1)\)</span> та другого <span class="arithmatex">\(\text{AR}(2)\)</span> порядків (процес Юла).</p>
+</li>
+<li>
+<p>Аналітичне виведення та комп'ютерне моделювання виграшу в обробці (Processing Gain) при оптимальному кореляційному прийомі складних фазоманіпульованих сигналів Баркера у шумах.</p>
+</li>
+</ol>
+<p><strong>Питання для самоперевірки:</strong></p>
+<ol>
+<li>
+<p>Як геометрично пов'язане розташування полюсів передавальної функції <span class="arithmatex">\(H(z)\)</span> відносно одиничного кола <span class="arithmatex">\(|z| = 1\)</span> з характером імпульсної характеристики системи (збіжна, розбіжна, нейтральна)?</p>
+</li>
+<li>
+<p>Чому перетворення Фур'є дискретного сигналу є окремим випадком його <span class="arithmatex">\(z\)</span>-перетворення при підстановці <span class="arithmatex">\(z = e^{j\Omega}\)</span>?</p>
+</li>
+<li>
+<p>Які специфічні симетрії коефіцієнтів імпульсної характеристики <span class="arithmatex">\(h[n]\)</span> є необхідними і достатніми для забезпечення строго лінійної фазочастотної характеристики КІХ-фільтра?</p>
+</li>
+<li>
+<p>Чому НІХ-фільтри забезпечують значно вищу крутизну зрізу АЧХ у перехідній смузі при меншому порядку фільтра, ніж еквівалентні за селективністю КІХ-фільтри?</p>
+</li>
+<li>
+<p>У чому полягає фізичний зміст теореми Вінера-Хінчіна щодо взаємозв'язку між автокореляційною функцією та спектральною щільністю потужності випадкового сигналу?</p>
+</li>
+<li>
+<p>Чому функція взаємної кореляції дозволяє точно оцінити час затримки сигналу в радіолокаційному каналі навіть за умов від'ємного співвідношення сигнал/шум (<span class="arithmatex">\(\text{SNR} &lt; 0\text{ дБ}\)</span>)?</p>
+</li>
+</ol>
+<p><strong>Література:</strong> [1, с. 69–75, 85–114, 127–141; 4, с. 70–112, 126–153; 6, с. 180–250; 8, с. 160–220].</p>
+<hr />
+<h3 id="2-dip-cv">Змістовий модуль 2. Цифрова обробка, фільтрація та аналіз зображень (DIP &amp; CV)</h3>
+<h4 id="5">Тема 5. Цифрове представлення зображень та колориметричні моделі.</h4>
+<p><strong>Теми для самостійного опрацювання:</strong></p>
+<ol>
+<li>
+<p>Дослідження математичних засад просторової дискретизації оптичних полів на двовимірних матрицях фотоприймачів та оцінка функції передачі модуляції (MTF).</p>
+</li>
+<li>
+<p>Аналіз алгоритмів просторової дебайєризації (Demosaicing: білінійна інтерполяція, інтерполяція за градієнтом змінної якості) для відновлення повноколірного RGB-растру.</p>
+</li>
+<li>
+<p>Дослідження стандартів цифрового кодування та компресії растрових зображень: аналіз стиснення без втрат (PNG на основі алгоритму Deflate) та стиснення з втратами (JPEG на основі дискретного косинусного перетворення DCT).</p>
+</li>
+<li>
+<p>Аналітичний вивід формул переходу між адитивним простором RGB та апаратно-незалежним колориметричним простором CIE XYZ з урахуванням матриці білої точки D65.</p>
+</li>
+<li>
+<p>Дослідження нелінійних перетворень колірних координат у рівноконтрастному просторі CIELab (<span class="arithmatex">\(L^*a^*b^*\)</span>) та розрахунок колірних відмінностей за метриками <span class="arithmatex">\(\Delta E_{76}\)</span> та <span class="arithmatex">\(\Delta E_{94}\)</span>.</p>
+</li>
+<li>
+<p>Математичне моделювання циліндричних поверхонь колірного простору HSV та розробка алгоритмів сегментації об'єктів складної насиченості з компенсацією колірних розривів на межі кута <span class="arithmatex">\(0^\circ / 360^\circ\)</span>.</p>
+</li>
+<li>
+<p>Опрацювання стандартів передачі кольорової інформації у телевізійних та відеосистемах високої чіткості на основі колірно-різницевих просторів YCbCr та YUV.</p>
+</li>
+</ol>
+<p><strong>Питання для самоперевірки:</strong></p>
+<ol>
+<li>
+<p>Чим зумовлена необхідність виділення каналу яскравості (<span class="arithmatex">\(Y\)</span> або <span class="arithmatex">\(L^*\)</span>) від хроматичних компонентів при стисненні та аналізі кольорових зображень?</p>
+</li>
+<li>
+<p>Чому пряме відображення зображення у форматі BGR бібліотекою Matplotlib призводить до колірної інверсії, за якої червоні об'єкти візуалізуються синіми?</p>
+</li>
+<li>
+<p>У чому полягає відмінність між адитивним змішуванням кольорів у системі RGB та субтрактивним змішуванням у системі CMYK?</p>
+</li>
+<li>
+<p>Які переваги надає колірний простір CIELab порівняно з RGB під час розрахунку об'єктивної числової міри відмінності двох кольорів <span class="arithmatex">\(\Delta E\)</span>?</p>
+</li>
+<li>
+<p>Чому параметр колірного тону <span class="arithmatex">\(H\)</span> у просторі HSV є інваріантним до рівномірної зміни інтенсивності освітлення сцени, і як це використовується в комп'ютерному зорі?</p>
+</li>
+<li>
+<p>Які артефакти стиснення виникають на контрастних границях об'єктів у форматі JPEG при високих коефіцієнтах квантування коефіцієнтів ДКП?</p>
+</li>
+</ol>
+<p><strong>Література:</strong> [1, с. 156–173; 2, с. 7–21; 3, с. 7–14, 22–23; 5, с. 380–440; 9, с. 120–165].</p>
+<hr />
+<h4 id="6">Тема 6. Поелементні амплітудні перетворення, гістограмний аналіз та методи бінаризації.</h4>
+<p><strong>Теми для самостійного опрацювання:</strong></p>
+<ol>
+<li>
+<p>Дослідження алгоритмів кусково-лінійного контрастування з двома та трьома вузлами апроксимації для вибіркового підсилення динамічного діапазону заданих структур.</p>
+</li>
+<li>
+<p>Математичне обґрунтування алгоритму адаптивної еквалізації гістограми з обмеженням контрасту (Contrast Limited Adaptive Histogram Equalization — CLAHE) для усунення перепідсилення шуму на однорідних ділянках.</p>
+</li>
+<li>
+<p>Аналітичне виведення формули оптимального порогу бінаризації в алгоритмі Оцу на основі мінімізації внутрішньокласової дисперсії <span class="arithmatex">\(\sigma_W^2(T)\)</span> та доведення її еквівалентності максимізації міжкласової дисперсії <span class="arithmatex">\(\sigma_B^2(T)\)</span>.</p>
+</li>
+<li>
+<p>Дослідження багатопорогової бінаризації за розширеним методом Оцу (Multi-Otsu Thresholding) для сегментації зображень на три та більше морфологічні класи.</p>
+</li>
+<li>
+<p>Опанування локальних адаптивних алгоритмів бінаризації документів зі складним фоном за методиками Ніблека (Niblack), Сауволи (Sauvola) та Вольфа (Wolf).</p>
+</li>
+<li>
+<p>Математичне моделювання впливу гамма-корекції на передавальну функцію півтонових рентгенівських знімків і томограм із використанням таблиць Look-Up Table.</p>
+</li>
+<li>
+<p>Дослідження методів бінаризації на основі ентропійних критеріїв (метод максимальної ентропії Капура-Саху-Вонга).</p>
+</li>
+</ol>
+<p><strong>Питання для самоперевірки:</strong></p>
+<ol>
+<li>
+<p>Яким чином вигляд гістограми розподілу яскравості дозволяє діагностувати недоекспонованість, переекспонованість або низький динамічний контраст зображення?</p>
+</li>
+<li>
+<p>Чому математичне очікування кумулятивної функції розподілу (CDF) після процедури глобальної еквалізації набуває строго лінійної форми?</p>
+</li>
+<li>
+<p>У чому полягає алгоритмічна перевага використання таблиць підстановки (LUT) при виконанні нелінійних амплітудних перетворень великих масивів зображень?</p>
+</li>
+<li>
+<p>Чому глобальний метод бінаризації Оцу зазнає збоїв на кадрах із сильним просторовим градієнтом фонового освітлення?</p>
+</li>
+<li>
+<p>Як розмір ковзного вікна <span class="arithmatex">\(S \times S\)</span> та константа зміщення <span class="arithmatex">\(C\)</span> у локальній адаптивній бінаризації впливають на збереження дрібних контурів текстових символів?</p>
+</li>
+<li>
+<p>За яких значень показника гамма-корекції <span class="arithmatex">\(\gamma\)</span> відбувається вибіркове підвищення яскравості глибоких тіней без насичення світлих ділянок кадру?</p>
+</li>
+</ol>
+<p><strong>Література:</strong> [1, с. 161–163, 175–178; 2, с. 22–37; 3, с. 20–22; 5, с. 120–175; 9, с. 180–215].</p>
+<hr />
+<h4 id="7">Тема 7. Просторова фільтрація зображень: згладжування, шумозаглушення та підкреслення меж.</h4>
+<p><strong>Теми для самостійного опрацювання:</strong></p>
+<ol>
+<li>
+<p>Математичне обґрунтування факторизації двовимірного ядра Гаусса на два одновимірні вектори згортки <span class="arithmatex">\(G(x, y) = G(x) \cdot G(y)\)</span> та оцінка зниження обчислювальної складності з <span class="arithmatex">\(O(K^2)\)</span> до <span class="arithmatex">\(O(2K)\)</span>.</p>
+</li>
+<li>
+<p>Дослідження аналітичних властивостей білатерального фільтра та математичне моделювання поведінки вагових коефіцієнтів при наближенні до різкого перепаду яскравості.</p>
+</li>
+<li>
+<p>Опанування алгоритмів адаптивної фільтрації Вінера у просторовій області на основі оцінки локальної дисперсії та середнього значення у ковзному вікні.</p>
+</li>
+<li>
+<p>Дослідження методів нелінійної анізотропної дифузії Перони-Маліка для згладжування шуму вздовж ізофотичних ліній без розмиття границь об'єктів.</p>
+</li>
+<li>
+<p>Аналітичний розрахунок передавальної характеристики комбінованого алгоритму нерізкого маскування (Unsharp Masking / High-Boost Filtering) на основі зваженого Лапласіана.</p>
+</li>
+<li>
+<p>Математичне моделювання та розрахунок об'єктивних метрик структурної подібності зображень (Structural Similarity Index Measure — SSIM) на додаток до MSE та PSNR.</p>
+</li>
+<li>
+<p>Дослідження ефективності рангових порядкових фільтрів (фільтри мінімуму, максимуму, медіани та усіченого середнього) при фільтрації складних сумішей шумів.</p>
+</li>
+</ol>
+<p><strong>Питання для самоперевірки:</strong></p>
+<ol>
+<li>
+<p>Чому двовимірна просторова згортка симетричним Гаусовим ядром не вносить фазових спотворень і не породжує сходинкових артефактів на границях об'єктів?</p>
+</li>
+<li>
+<p>Який математичний механізм забезпечує абсолютну стійкість нелінійного медіанного фільтра до екстремальних викидів імпульсного шуму типу «сіль та перець»?</p>
+</li>
+<li>
+<p>Чому сума всіх коефіцієнтів ядра згладжувального фільтра низьких частот повинна строго дорівнювати одиниці, а ядра Лапласіана — нулю?</p>
+</li>
+<li>
+<p>У чому полягає різниця між просторовим <span class="arithmatex">\(\sigma_s\)</span> та фотометричним <span class="arithmatex">\(\sigma_r\)</span> параметрами білатерального фільтра, і як вони впливають на збереження текстури?</p>
+</li>
+<li>
+<p>Як визначається метрика PSNR, і чому значення <span class="arithmatex">\(\text{PSNR} &gt; 30\text{ дБ}\)</span> вважається показником високої якості візуальної реставрації півтонового кадру?</p>
+</li>
+<li>
+<p>Яким чином застосування дискретного оператора Лапласа другого порядку дозволяє виділяти локальні екстремуми градієнта яскравості для підвищення різкості?</p>
+</li>
+</ol>
+<p><strong>Література:</strong> [1, с. 178; 2, с. 59–75; 3, с. 28–31; 5, с. 185–240; 9, с. 230–280].</p>
+<hr />
+<h4 id="8">Тема 8. Геометричні афінні та перспективні трансформації. Математична морфологія.</h4>
+<p><strong>Теми для самостійного опрацювання:</strong></p>
+<ol>
+<li>
+<p>Дослідження математичного апарату афінних перетворень на основі однорідних координат і матричних добутків <span class="arithmatex">\(M_{all} = M_{trans} \cdot M_{rot} \cdot M_{scale} \cdot M_{shear}\)</span>.</p>
+</li>
+<li>
+<p>Математичне обґрунтування та програмна реалізація методів субпіксельної інтерполяції (бікубічної на основі сплайнів Ерміта та інтерполяції Ланцоша на базі ядра <span class="arithmatex">\(\text{sinc}\)</span>).</p>
+</li>
+<li>
+<p>Аналітичне виведення системи лінійних рівнянь для визначення 8 невідомих коефіцієнтів матриці гомографії <span class="arithmatex">\(H_{3\times 3}\)</span> за чотирма парами опорних точок методом сингулярного розкладу (SVD).</p>
+</li>
+<li>
+<p>Дослідження алгоритмів автоматичного вирівнювання нахилених площин (Perspective Rectification / Bird's Eye View) для задач розпізнавання автомобільних номерів та дорожньої розмітки.</p>
+</li>
+<li>
+<p>Математичне доведення теореми дуальності операцій ерозії та діляції відносно операції теоретико-множинного доповнення: <span class="arithmatex">\((A \ominus B)^c = A^c \oplus \hat{B}\)</span>.</p>
+</li>
+<li>
+<p>Опанування алгоритмів топологічної скелетизації бінарних масок та витончення контурів за методом Зонга-Суня (Zhang-Suen Thinning Algorithm).</p>
+</li>
+<li>
+<p>Дослідження операцій геодезичної морфології, морфологічної реконструкції за маркером та їхнього застосування для фільтрації складних текстурних завад.</p>
+</li>
+</ol>
+<p><strong>Питання для самоперевірки:</strong></p>
+<ol>
+<li>
+<p>Чому при геометричних трансформаціях растру використовується зворотне координатне відображення (Inverse Mapping) замість прямого переносу пікселів?</p>
+</li>
+<li>
+<p>Які геометричні інваріанти зберігаються при афінних перетвореннях, і чому перспективні трансформації порушують паралельність ліній у площині проекції?</p>
+</li>
+<li>
+<p>Скільки незалежних ступенів вільності має матриця гомографії <span class="arithmatex">\(H_{3\times 3}\)</span>, і чому для її знаходження необхідно мінімум чотири неколінеарні точки?</p>
+</li>
+<li>
+<p>У чому полягає властивість ідемпотентності морфологічних операцій відкриття <span class="arithmatex">\((A \circ B)\)</span> та закриття <span class="arithmatex">\((A \bullet B)\)</span>?</p>
+</li>
+<li>
+<p>Яким чином морфологічне відкриття дозволяє розірвати тонкий з'єднувальний перешийок між двома дотичними круглими клітинами без зміни їхньої площі?</p>
+</li>
+<li>
+<p>Як формуються перетворення «білий капелюх» (Top-Hat) та «чорний капелюх» (Black-Hat), і за рахунок чого вони усувають повільні фонові зміни освітленості?</p>
+</li>
+</ol>
+<p><strong>Література:</strong> [1, с. 157, 159; 2, с. 38–58; 3, с. 24–27, 31–35; 5, с. 250–320; 9, с. 300–360].</p>
+<hr />
+<h4 id="9-">Тема 9. Двовимірна Фур'є-обробка, детектори контурів та основи розпізнавання об'єктів.</h4>
+<p><strong>Теми для самостійного опрацювання:</strong></p>
+<ol>
+<li>
+<p>Математичне обґрунтування властивостей сепарабельності та симетрії двовимірного перетворення Фур'є <span class="arithmatex">\(F(u, v) = \mathcal{F}_x\{\mathcal{F}_y\{f(x, y)\}\}\)</span>.</p>
+</li>
+<li>
+<p>Дослідження методів частотної режекції періодичних растрових завад у Фур'є-просторі за допомогою смугово-загороджувальних фільтрів (Notch Filters).</p>
+</li>
+<li>
+<p>Опанування математичного апарату деконволюції Вінера у частотній області <span class="arithmatex">\(H_W(u, v) = \frac{H^*(u, v)}{|H(u, v)|^2 + K}\)</span> для відновлення дефокусованих зображень.</p>
+</li>
+<li>
+<p>Дослідження аналітичних властивостей оператора Шарра та доведення його мінімальної кутової похибки при апроксимації перших похідних у порівнянні з оператором Собеля.</p>
+</li>
+<li>
+<p>Деталізований математичний аналіз кроку пригнічення немаксимумів (Non-Maximum Suppression) та трасування контурів за гістерезисом в оптимальному детекторі Кенні.</p>
+</li>
+<li>
+<p>Опанування методів маркерної сегментації зображень за алгоритмом вододілу (Marker-Controlled Watershed Algorithm) для розділення перекритих об'єктів.</p>
+</li>
+<li>
+<p>Дослідження базових топологій згорткових нейронних мереж (CNN), функціонування згорткових ядер, шарів підвибірки (MaxPooling) та функцій активації (ReLU) для класифікації зображень.</p>
+</li>
+</ol>
+<p><strong>Питання для самоперевірки:</strong></p>
+<ol>
+<li>
+<p>Що відображають просторові частоти <span class="arithmatex">\(u\)</span> та <span class="arithmatex">\(v\)</span> у двовимірному спектрі зображення, і чому нульова частота зміщується в центр матриці операцією <code>fftshift</code>?</p>
+</li>
+<li>
+<p>Яка фізична причина виникнення паразитних осциляцій (явища Гіббса) при фільтрації зображень ідеальним частотним фільтром низьких частот (ILPF)?</p>
+</li>
+<li>
+<p>Чому гаусівський частотний фільтр низьких частот (GLPF) не утворює кілець розмиття навколо контрастних меж об'єктів?</p>
+</li>
+<li>
+<p>Які переваги має оператор Собеля над найпростішими різницевими градієнтними операторами першого порядку?</p>
+</li>
+<li>
+<p>Опишіть призначення подвійного порогу гістерезису (<span class="arithmatex">\(T_{low}, T_{high}\)</span>) в алгоритмі Кенні. Як відсікаються хибні контури, породжені шумом?</p>
+</li>
+<li>
+<p>Чому класичні згорткові фільтри в комп'ютерному зорі розглядаються як прототипи навчальних згорткових шарів сучасних глибоких нейромереж?</p>
+</li>
+</ol>
+<p><strong>Література:</strong> [1, с. 178–180; 2, с. 70–84; 3, с. 31–49; 5, с. 340–375, 450–510; 9, с. 380–430].</p>
+<hr />
+<h2 id="3">3. ПИТАННЯ ДО МОДУЛЬНОГО ТА ПІДСУМКОВОГО СЕМЕСТРОВОГО КОНТРОЛЮ</h2>
+<h3 id="1-dsp_1">Змістовий модуль 1. Цифрова обробка сигналів та лінійні дискретні системи (DSP)</h3>
+<ol>
+<li>
+<p>У чому полягає фундаментальна відмінність між аналоговими, дискретними за часом, квантованими за рівнем та цифровими вимірювальними сигналами?</p>
+</li>
+<li>
+<p>Які математичні властивості має дискретний одиничний імпульс Дірака-Кронекера <span class="arithmatex">\(\delta[n]\)</span>, і як за його допомогою подається довільна послідовність?</p>
+</li>
+<li>
+<p>Сформулюйте та доведіть теорему відліків Котельникова-Шеннона-Найквіста для сигналів з обмеженим спектром.</p>
+</li>
+<li>
+<p>Яка частота називається частотою Найквіста, і яке співвідношення пов'язує її з частотою дискретизації процесу <span class="arithmatex">\(f_s\)</span>?</p>
+</li>
+<li>
+<p>Опишіть фізичний механізм виникнення ефекту аліасингу (стробоскопічного накладання спектрів) в умовах порушення теореми відліків.</p>
+</li>
+<li>
+<p>За якою аналітичною формулою розраховується частота хибної дзеркальної гармоніки <span class="arithmatex">\(f_{alias}\)</span> при частоті аналогового сигналу <span class="arithmatex">\(f_0 &gt; f_s / 2\)</span>?</p>
+</li>
+<li>
+<p>Які функціональні вимоги висуваються до амплітудно-частотної характеристики вхідного аналогового фільтра захисту від аліасингу (Anti-Aliasing Filter)?</p>
+</li>
+<li>
+<p>Як визначається крок рівномірного квантування за рівнем <span class="arithmatex">\(\Delta\)</span> при заданій розрядності АЦП <span class="arithmatex">\(N\)</span> та динамічному діапазоні <span class="arithmatex">\([V_{min}, V_{max}]\)</span>?</p>
+</li>
+<li>
+<p>Чому дисперсія похибки рівномірного квантування випадкового сигналу закругленням дорівнює <span class="arithmatex">\(\sigma_e^2 = \Delta^2 / 12\)</span>?</p>
+</li>
+<li>
+<p>Виведіть аналітичний вираз для теоретичного співвідношення сигнал/шум квантування <span class="arithmatex">\(\text{SNR} \approx 6.02 \cdot N + 1.76\text{ дБ}\)</span> для повномасштабної синусоїди.</p>
+</li>
+<li>
+<p>У чому полягає сутність явища делінеаризації квантувача за допомогою технології дизеризації (додавання псевдовипадкового шуму перед квантуванням)?</p>
+</li>
+<li>
+<p>Сформулюйте математичні умови лінійності (адитивність, однорідність) та стаціонарності дискретних динамічних систем.</p>
+</li>
+<li>
+<p>Що таке імпульсна характеристика <span class="arithmatex">\(h[n]\)</span> ЛСД-системи, і чому вона є вичерпним часовим описом динаміки системи?</p>
+</li>
+<li>
+<p>Запишіть та поясніть математичний вираз лінійної дискретної згортки двох послідовностей <span class="arithmatex">\(y[n] = x[n] * h[n]\)</span>.</p>
+</li>
+<li>
+<p>Яким чином визначається результуюча довжина послідовності, утвореної згорткою двох скінченних сигналів довжиною <span class="arithmatex">\(N_x\)</span> та <span class="arithmatex">\(N_h\)</span>?</p>
+</li>
+<li>
+<p>Опишіть чотири послідовні алгоритмічні кроки обчислення дискретної згортки у часовій області (обертання, зсув, множення, сумування).</p>
+</li>
+<li>
+<p>У чому полягає математична модель та алгоритм реалізації кругової (циклічної) згортки періодичних послідовностей?</p>
+</li>
+<li>
+<p>За якої умови результат кругової згортки стає строго еквівалентним результату лінійної аперіодичної згортки (метод Zero-Padding)?</p>
+</li>
+<li>
+<p>Запишіть загальний вигляд лінійного різницевого рівняння <span class="arithmatex">\(N\)</span>-го порядку з постійними коефіцієнтами, що описує цифрову систему зі зворотним зв'язком.</p>
+</li>
+<li>
+<p>Чим відрізняються системи зі скінченною імпульсною характеристикою (КІХ / FIR) від систем із нескінченною імпульсною характеристикою (НІХ / IIR)?</p>
+</li>
+<li>
+<p>Наведіть структури прямої форми I (Direct Form I) та канонічної форми II (Direct Form II) реалізації дискретного фільтра другого порядку.</p>
+</li>
+<li>
+<p>Дайте математичне визначення прямого та оберненого дискретного перетворення Фур'є (ДПФ / DFT).</p>
+</li>
+<li>
+<p>Що являють собою поворотні множники <span class="arithmatex">\(W_N = \exp(-j 2\pi / N)\)</span> у матричній структурі алгоритму ДПФ?</p>
+</li>
+<li>
+<p>Опишіть базовий принцип побудови швидкого перетворення Фур'є (ШПФ / FFT) Кулі-Тьюкі за основою 2 з проріджуванням за часом.</p>
+</li>
+<li>
+<p>Яка обчислювальна структура операції типу «метелик» (butterfly), і скільки операцій комплексного множення вона містить?</p>
+</li>
+<li>
+<p>Чому оцінка обчислювальної складності ШПФ дорівнює <span class="arithmatex">\(O(N \log_2 N)\)</span>, і який виграш у швидкодії це дає для вибірки розміром <span class="arithmatex">\(N = 1024\)</span> відліки?</p>
+</li>
+<li>
+<p>У чому полягає явище витоку (розтікання) енергії спектра (spectral leakage), і за яких умов воно повністю відсутнє при обчисленні ДПФ?</p>
+</li>
+<li>
+<p>Поясніть компроміс між шириною головної пелюстки та рівнем придушення бічних пелюсток при виборі віконних функцій (Ханна, Хеммінга, Блекмана).</p>
+</li>
+<li>
+<p>Дайте математичне визначення прямого <span class="arithmatex">\(z\)</span>-перетворення дискретної послідовності та вкажіть поняття його області збіжності (ROC).</p>
+</li>
+<li>
+<p>Як пов'язані між собою передавальна функція дискретної системи <span class="arithmatex">\(H(z)\)</span> та коефіцієнти її різницевого рівняння?</p>
+</li>
+<li>
+<p>Сформулюйте точний критерій стійкості каузальної дискретної системи за розташуванням полюсів її передавальної функції на комплексній <span class="arithmatex">\(z\)</span>-площині.</p>
+</li>
+<li>
+<p>Яким чином наближення нуля <span class="arithmatex">\(z_m\)</span> або полюса <span class="arithmatex">\(p_k\)</span> передавальної функції до одиничного кола <span class="arithmatex">\(|z| = 1\)</span> впливає на амплітудно-частотну характеристику системи?</p>
+</li>
+<li>
+<p>Чому цифрові КІХ-фільтри є абсолютно стійкими за будь-яких значень вагових коефіцієнтів імпульсної характеристики?</p>
+</li>
+<li>
+<p>За яких умов симетрії імпульсної характеристики КІХ-фільтр має строго лінійну фазочастотну характеристику та постійну групову затримку?</p>
+</li>
+<li>
+<p>Опишіть метод білінійного <span class="arithmatex">\(z\)</span>-перетворення Тастіна для синтезу цифрових НІХ-фільтрів на основі аналогових прототипів Баттерворта.</p>
+</li>
+<li>
+<p>Що являє собою дискретний білий гаусів шум, і який вигляд має його автокореляційна функція?</p>
+</li>
+<li>
+<p>Запишіть різницеве рівняння авторегресійного марківського процесу першого порядку <span class="arithmatex">\(\text{AR}(1)\)</span> та вираз для його теоретичної автокореляційної функції.</p>
+</li>
+<li>
+<p>Як визначається інтервал кореляції <span class="arithmatex">\(\tau_k\)</span> стаціонарного випадкового процесу за спаданням його нормованої автокореляційної функції?</p>
+</li>
+<li>
+<p>У чому полягає математична сутність використання взаємної кореляційної функції (ВКФ) для виявлення затриманого корисного сигналу на тлі шумів?</p>
+</li>
+<li>
+<p>Сформулюйте зміст теореми Вінера-Хінчіна щодо зв'язку автокореляційної функції та спектральної щільності потужності випадкового процесу.</p>
+</li>
+</ol>
+<hr />
+<h3 id="2-dip-cv_1">Змістовий модуль 2. Цифрова обробка, фільтрація та аналіз зображень (DIP &amp; CV)</h3>
+<ol>
+<li>
+<p>Як математично формалізується цифрове растрове монохромне та кольорове зображення у вигляді матриць і багатовимірних тензорів?</p>
+</li>
+<li>
+<p>Які типи числових даних (<code>uint8</code>, <code>uint16</code>, <code>float32</code>) використовуються для представлення рівнів яскравості пікселів, і які динамічні діапазони вони забезпечують?</p>
+</li>
+<li>
+<p>Опишіть принцип просторової організації колірних масивів фільтрів Баєра (Bayer pattern) у матричних фотоприймачах.</p>
+</li>
+<li>
+<p>Сформулюйте три закони змішування кольорів Грасмана, що є теоретичною основою сучасної колориметрії.</p>
+</li>
+<li>
+<p>За якою стандартизованою формулою ITU-R BT.601 виконується перетворення повноколірного RGB-зображення у напівтонове (Grayscale)?</p>
+</li>
+<li>
+<p>Чому порядок розташування колірних каналів у бібліотеці OpenCV (BGR) відрізняється від стандарту Matplotlib (RGB), і до яких візуальних наслідків це призводить?</p>
+</li>
+<li>
+<p>Опишіть структуру та геометричний зміст циліндричного колірного простору HSV (Hue, Saturation, Value).</p>
+</li>
+<li>
+<p>Чому при сегментації об'єктів за кольором простір HSV є значно ефективнішим та стійкішим до перепадів освітлення, ніж простір RGB?</p>
+</li>
+<li>
+<p>У чому полягає особливість сегментації об'єктів червоного кольору у просторі HSV на межі циклічного переходу кута <span class="arithmatex">\(0^\circ / 180^\circ\)</span> в OpenCV?</p>
+</li>
+<li>
+<p>Опишіть фізичний зміст та властивості рівноконтрастного колірного простору CIELab (<span class="arithmatex">\(L^*a^*b^*\)</span>).</p>
+</li>
+<li>
+<p>Як розраховується колірна відмінність між двома відтінками за стандартом CIE Delta E (<span class="arithmatex">\(\Delta E_{76}\)</span>)?</p>
+</li>
+<li>
+<p>Що являє собою поелементне амплітудне перетворення зображення, і як воно описується оператором <span class="arithmatex">\(s = T(r)\)</span>?</p>
+</li>
+<li>
+<p>Як впливають параметри лінійного перетворення <span class="arithmatex">\(s = k \cdot r + b\)</span> на яскравість і контрастність вихідного кадру?</p>
+</li>
+<li>
+<p>Запишіть формулу степеневого амплітудного перетворення (гамма-корекції) та поясніть поведінку кривої при <span class="arithmatex">\(\gamma &lt; 1\)</span> та <span class="arithmatex">\(\gamma &gt; 1\)</span>.</p>
+</li>
+<li>
+<p>Чому використання таблиць пошуку (Look-Up Table — LUT) дозволяє суттєво оптимізувати швидкодію нелінійних амплітудних перетворень?</p>
+</li>
+<li>
+<p>Дайте визначення гістограми яскравості цифрового зображення та її нормованої статистичної оцінки <span class="arithmatex">\(p(r_k)\)</span>.</p>
+</li>
+<li>
+<p>Опишіть математичний алгоритм глобальної еквалізації гістограми на основі дискретної кумулятивної функції розподілу (CDF).</p>
+</li>
+<li>
+<p>Чому глобальна еквалізація гістограми призводить до лінеаризації CDF та розширення динамічного діапазону контрасту?</p>
+</li>
+<li>
+<p>У чому полягає математичний критерій оптимальності вибору порогу бінаризації в автоматичному алгоритмі Оцу?</p>
+</li>
+<li>
+<p>Які недоліки має глобальна бінаризація Оцу при обробці зображень із неоднорідним градієнтним фоном або тінями?</p>
+</li>
+<li>
+<p>Опишіть принципи функціонування локальної адаптивної бінаризації (Adaptive Mean та Adaptive Gaussian) на блоках <span class="arithmatex">\(S \times S\)</span>.</p>
+</li>
+<li>
+<p>Запишіть вираз двовимірної просторової дискретної згортки матриці кадру з просторовим ядром фільтра <span class="arithmatex">\(h(s, t)\)</span>.</p>
+</li>
+<li>
+<p>Які методи обробки крайових пікселів (padding: zero, reflect, replicate, wrap) застосовуються при виході маски фільтра за межі зображення?</p>
+</li>
+<li>
+<p>Як формується прямокутне ядро лінійного усереднюючого Box-фільтра, і чому воно розмиває різкі межі об'єктів?</p>
+</li>
+<li>
+<p>Запишіть формулу неперервного та дискретного двовимірного ядра Гаусса, і поясніть фізичний зміст параметра <span class="arithmatex">\(\sigma\)</span>.</p>
+</li>
+<li>
+<p>Чому лінійні фільтри згладжування (Box, Gauss) є малоефективними для видалення імпульсного шуму типу «сіль та перець»?</p>
+</li>
+<li>
+<p>Опишіть алгоритм роботи нелінійного медіанного фільтра та поясніть його високу робастність до екстремальних викидів.</p>
+</li>
+<li>
+<p>Яким чином білатеральний фільтр поєднує просторове та фотометричне гаусові зважування для шумозаглушення зі збереженням меж?</p>
+</li>
+<li>
+<p>За якими математичними формулами розраховуються об'єктивні метрики якості реставрації зображень MSE та PSNR?</p>
+</li>
+<li>
+<p>Які властивості має дискретний оператор Лапласа другого порядку, і як він використовується для підвищення різкості контурів?</p>
+</li>
+<li>
+<p>Запишіть загальний матричний вираз афінного перетворення у 2D-просторі з використанням однорідних координат.</p>
+</li>
+<li>
+<p>Чому при зміні геометрії растру використовують алгоритм зворотного координатного відображення (Inverse Mapping) з інтерполяцією?</p>
+</li>
+<li>
+<p>Порівняйте методи інтерполяції найближчого сусіда (<code>INTER_NEAREST</code>), білінійної (<code>INTER_LINEAR</code>) та бікубічної (<code>INTER_CUBIC</code>).</p>
+</li>
+<li>
+<p>Скільки незалежних ступенів вільності має матриця гомографії <span class="arithmatex">\(H_{3\times 3}\)</span>, і як вона використовується для усунення перспективних спотворень?</p>
+</li>
+<li>
+<p>Що таке структуруючий елемент у математичній морфології, і які його стандартні топологічні форми (<code>RECT</code>, <code>CROSS</code>, <code>ELLIPSE</code>)?</p>
+</li>
+<li>
+<p>Дайте точні математичні визначення операцій морфологічної ерозії (<span class="arithmatex">\(A \ominus B\)</span>) та діляції (<span class="arithmatex">\(A \oplus B\)</span>) над бінарними множинами.</p>
+</li>
+<li>
+<p>Чому операції морфологічного відкриття та закриття є ідемпотентними, і які шумові дефекти вони усувають?</p>
+</li>
+<li>
+<p>Як формуються перетворення «білий капелюх» (Top-Hat) та «чорний капелюх» (Black-Hat) для компенсації нерівномірного фону?</p>
+</li>
+<li>
+<p>Опишіть усі п'ять етапів алгоритму оптимального детектора контурів Кенні (Canny Edge Detector).</p>
+</li>
+<li>
+<p>Яка мета операції пригнічення немаксимумів (Non-Maximum Suppression) та трасування подвійним порогом гістерезису в детекторі Кенні?</p>
+</li>
+</ol>
+<hr />
+<h2 id="_3">СПИСОК РЕКОМЕНДОВАНОЇ ЛІТЕРАТУРИ</h2>
+<h3 id="_4">Основна література:</h3>
+<ol>
+<li>
+<p><strong>Микитенко В. І., Тимчик Г. С.</strong> Цифрова обробка сигналів та зображень : навч. посіб. для здобувачів ступеня магістра. — 2-ге вид., переробл. і доповн. — Київ : КПІ ім. Ігоря Сікорського, 2025. — 181 с.</p>
+</li>
+<li>
+<p><strong>Кравченко І. В., Микитенко В. І.</strong> Цифрова обробка сигналів та зображень. Частина 2. Практикум : навч. посіб. для здобувачів ступеня магістра. — Київ : КПІ ім. Ігоря Сікорського, 2025. — 85 с.</p>
+</li>
+<li>
+<p><strong>Лавер В. О., Левчук О. М.</strong> Обробка зображень та мультимедія : навч.-метод. посіб. — Ужгород : Вид-во ПП «АУТДОР-ШАРК», 2021. — 51 с.</p>
+</li>
+<li>
+<p><strong>Мазуренко В. Б.</strong> Основи цифрової обробки сигналів та зображень : конспект лекцій. — Дніпро : ДНУ ім. Олеся Гончара, 2020. — 153 с.</p>
+</li>
+<li>
+<p><strong>Gonzalez R. C., Woods R. E.</strong> Digital Image Processing. — 4th ed. — New York : Pearson, 2018. — 1168 p.</p>
+</li>
+<li>
+<p><strong>Oppenheim A. V., Schafer R. W.</strong> Discrete-Time Signal Processing. — 3rd ed. — Upper Saddle River : Prentice Hall, 2010. — 1120 p.</p>
+</li>
+</ol>
+<h3 id="_5">Додаткова література:</h3>
+<ol>
+<li>
+<p><strong>Lyons R. G.</strong> Understanding Digital Signal Processing. — 3rd ed. — Boston : Prentice Hall / Pearson, 2010. — 994 p.</p>
+</li>
+<li>
+<p><strong>Ушенко Ю. О., Гавриляк М. С., Талах М. В., Дворжак В. В.</strong> Основи та методи цифрової обробки сигналів: від теорії до практики : навч. посіб. — Чернівці : Чернівецький нац. ун-т ім. Ю. Федьковича, 2021. — 308 с.</p>
+</li>
+<li>
+<p><strong>Szeliski R.</strong> Computer Vision: Algorithms and Applications. — 2nd ed. — London : Springer, 2022. — 1232 p.</p>
+</li>
+<li>
+<p><strong>Боровицький В. М.</strong> Розробка програм для цифрової обробки зображень з застосуванням OpenCV : навч. посіб. — Київ : Політехніка, 2022. — 84 с.</p>
+</li>
+<li>
+<p><strong>Mallat S.</strong> A Wavelet Tour of Signal Processing: The Sparse Way. — 3rd ed. — Burlington : Academic Press, 2009. — 832 p.</p>
+</li>
+</ol>
+<h3 id="_6">Інформаційні ресурси в Інтернеті:</h3>
+<ol>
+<li>
+<p>Офіційний портал технічної документації та навчальних посібників бібліотеки OpenCV: <a href="https://docs.opencv.org/4.x/">https://docs.opencv.org/4.x/</a></p>
+</li>
+<li>
+<p>Документація наукового пакету SciPy (модулі <code>scipy.signal</code>, <code>scipy.ndimage</code>, <code>scipy.fft</code>): <a href="https://docs.scipy.org/doc/scipy/reference/">https://docs.scipy.org/doc/scipy/reference/</a></p>
+</li>
+<li>
+<p>Офіційне керівництво користувача з багатовимірної матричної алгебри NumPy: <a href="https://numpy.org/doc/stable/">https://numpy.org/doc/stable/</a></p>
+</li>
+<li>
+<p>Довідкова система бібліотеки візуалізації наукових даних Matplotlib: <a href="https://matplotlib.org/stable/contents.html">https://matplotlib.org/stable/contents.html</a></p>
+</li>
+<li>
+<p>Документація модулів комп'ютерної обробки зображень Pillow (PIL Fork): <a href="https://pillow.readthedocs.io/en/stable/">https://pillow.readthedocs.io/en/stable/</a></p>
+</li>
+<li>
+<p>Система електронного дистанційного навчання КрНУ імені Михайла Остроградського: <a href="https://moodle.kdu.edu.ua/">https://moodle.kdu.edu.ua/</a></p>
+</li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Повернутись нагору
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Kyrylo Vadurin &bull; <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "navigation.tracking", "header.autohide", "search.suggest", "search.highlight", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0456\u0439\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u0421\u043a\u043e\u043f\u0456\u044e\u0432\u0430\u0442\u0438 \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0429\u0435 1 \u0437\u0431\u0456\u0433 \u043d\u0430 \u0446\u0456\u0439 \u0441\u0442\u043e\u0440\u0456\u043d\u0446\u0456", "search.result.more.other": "\u0429\u0435 # \u0437\u0431\u0456\u0433\u0456\u0432 \u043d\u0430 \u0446\u0456\u0439 \u0441\u0442\u043e\u0440\u0456\u043d\u0446\u0456", "search.result.none": "\u0417\u0431\u0456\u0433\u0456\u0432 \u043d\u0435 \u0437\u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u0417\u043d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0437\u0431\u0456\u0433", "search.result.other": "\u0417\u043d\u0430\u0439\u0434\u0435\u043d\u043e # \u0437\u0431\u0456\u0433\u0456\u0432", "search.result.placeholder": "\u0420\u043e\u0437\u043f\u043e\u0447\u043d\u0456\u0442\u044c \u043f\u0438\u0441\u0430\u0442\u0438 \u0434\u043b\u044f \u043f\u043e\u0448\u0443\u043a\u0443", "search.result.term.missing": "\u041d\u0435 \u0437\u043d\u0430\u0439\u0434\u0435\u043d\u043e \u0437\u0430\u043f\u0438\u0442\u0443", "select.version": "\u041e\u0431\u0440\u0430\u0442\u0438 \u0432\u0435\u0440\u0441\u0456\u044e"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

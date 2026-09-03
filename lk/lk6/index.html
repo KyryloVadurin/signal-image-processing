@@ -1,0 +1,1801 @@
+
+<!doctype html>
+<html lang="uk" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Навчальний портал з дисципліни "Обробка сигналів та зображень"">
+      
+      
+      
+      
+        <link rel="prev" href="../lk5/">
+      
+      
+        <link rel="next" href="../lk7/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Тема 6. Поелементні амплітудні перетворення - Обробка сигналів та зображень</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#6" class="md-skip">
+          Перейти до змісту
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Хедер">
+    <a href="../.." title="Обробка сигналів та зображень" class="md-header__button md-logo" aria-label="Обробка сигналів та зображень" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Обробка сигналів та зображень
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Тема 6. Поелементні амплітудні перетворення
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="cyan"  aria-label="Переключити на темну тему"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Переключити на темну тему" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="cyan"  aria-label="Переключити на світлу тему"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Переключити на світлу тему" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Пошук" placeholder="Пошук" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Шукати">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Очистити" aria-label="Очистити" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Пошук розпочато
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Вкладки" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Робоча програма
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../lk1/" class="md-tabs__link">
+          
+  
+  
+  Лекції
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../lb/lb1/" class="md-tabs__link">
+          
+  
+  
+  Лабораторні роботи
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../sr/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Самостійна робота
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../rg/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Розрахунково-графічна робота
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Навігація" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Обробка сигналів та зображень" class="md-nav__button md-logo" aria-label="Обробка сигналів та зображень" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Обробка сигналів та зображень
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Робоча програма
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лекції
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Лекції
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lk1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 1. Математичне представлення, дискретизація та квантування
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lk2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 2. Лінійні стаціонарні дискретні системи
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lk3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 3. Спектральний аналіз дискретних сигналів
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lk4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 4. Z-перетворення та проєктування цифрових фільтрів
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lk5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 5. Цифрове представлення зображень та колориметричні моделі
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 6. Поелементні амплітудні перетворення
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 6. Поелементні амплітудні перетворення
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Зміст">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Зміст
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#61" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1. Математична модель поелементного перетворення яскравості. Перетворення у негатив, лінійне масштабування динамічного діапазону (яскравість/контраст)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6.1. Математична модель поелементного перетворення яскравості. Перетворення у негатив, лінійне масштабування динамічного діапазону (яскравість/контраст)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Основний зміст та теоретичний базис
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#62-look-up-tables-lut" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2. Нелінійна гамма-корекція (степеневе перетворення). Застосування таблиць пошуку (Look-Up Tables / LUT)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6.2. Нелінійна гамма-корекція (степеневе перетворення). Застосування таблиць пошуку (Look-Up Tables / LUT)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Основний зміст та теоретичний базис
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#63-cdf" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3. Гістограма яскравості монохромних та покомпонентних зображень. Алгоритм глобальної еквалізації гістограми на основі кумулятивної функції розподілу (CDF)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6.3. Гістограма яскравості монохромних та покомпонентних зображень. Алгоритм глобальної еквалізації гістограми на основі кумулятивної функції розподілу (CDF)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Основний зміст та теоретичний базис
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#64-thresh_binary-trunc-tozero-otsus-thresholding-adaptive-mean-gaussian" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.4. Методи бінаризації та порогової обробки: фіксований поріг (THRESH_BINARY, TRUNC, TOZERO), метод міжкласової дисперсії Оцу (Otsu's thresholding), локальна адаптивна порогова обробка (Adaptive Mean / Gaussian)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6.4. Методи бінаризації та порогової обробки: фіксований поріг (THRESH_BINARY, TRUNC, TOZERO), метод міжкласової дисперсії Оцу (Otsu&#39;s thresholding), локальна адаптивна порогова обробка (Adaptive Mean / Gaussian)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Основний зміст та теоретичний базис
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Фіксована глобальна порогова обробка
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#otsus-thresholding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Метод міжкласової дисперсії Оцу (Otsu's Thresholding)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Локальна адаптивна порогова обробка
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Питання для самоперевірки та аналітичного осмислення
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lk7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 7. Просторова фільтрація зображень
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lk8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 8. Геометричні трансформації та математична морфологія
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lk9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Тема 9. Двовимірна Фур'є-обробка та детектори контурів
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Лабораторні роботи
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Лабораторні роботи
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lb/lb1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 1. Дискретизація, квантування сигналів та ефект аліасингу
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lb/lb2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 2. Лінійні стаціонарні системи та дискретна згортка
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lb/lb3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 3. Спектральний аналіз за допомогою ДПФ/ШПФ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lb/lb4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 4. Синтез цифрових КІХ та НІХ фільтрів
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lb/lb5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 5. Статистичний та кореляційний аналіз
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lb/lb6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 6. Базові операції з цифровими зображеннями
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lb/lb7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 7. Амплітудні перетворення та бінаризація
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lb/lb8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 8. Просторова фільтрація зображень
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lb/lb9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 9. Геометричні перетворення зображень
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lb/lb10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 10. Математична морфологія зображень
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lb/lb11/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ЛБ 11. 2D перетворення Фур'є та детектування контурів
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Самостійна робота
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Розрахунково-графічна робота
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Зміст">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Зміст
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#61" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1. Математична модель поелементного перетворення яскравості. Перетворення у негатив, лінійне масштабування динамічного діапазону (яскравість/контраст)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6.1. Математична модель поелементного перетворення яскравості. Перетворення у негатив, лінійне масштабування динамічного діапазону (яскравість/контраст)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Основний зміст та теоретичний базис
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#62-look-up-tables-lut" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2. Нелінійна гамма-корекція (степеневе перетворення). Застосування таблиць пошуку (Look-Up Tables / LUT)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6.2. Нелінійна гамма-корекція (степеневе перетворення). Застосування таблиць пошуку (Look-Up Tables / LUT)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Основний зміст та теоретичний базис
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#63-cdf" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3. Гістограма яскравості монохромних та покомпонентних зображень. Алгоритм глобальної еквалізації гістограми на основі кумулятивної функції розподілу (CDF)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6.3. Гістограма яскравості монохромних та покомпонентних зображень. Алгоритм глобальної еквалізації гістограми на основі кумулятивної функції розподілу (CDF)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Основний зміст та теоретичний базис
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#64-thresh_binary-trunc-tozero-otsus-thresholding-adaptive-mean-gaussian" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.4. Методи бінаризації та порогової обробки: фіксований поріг (THRESH_BINARY, TRUNC, TOZERO), метод міжкласової дисперсії Оцу (Otsu's thresholding), локальна адаптивна порогова обробка (Adaptive Mean / Gaussian)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6.4. Методи бінаризації та порогової обробки: фіксований поріг (THRESH_BINARY, TRUNC, TOZERO), метод міжкласової дисперсії Оцу (Otsu&#39;s thresholding), локальна адаптивна порогова обробка (Adaptive Mean / Gaussian)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Основний зміст та теоретичний базис
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Фіксована глобальна порогова обробка
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#otsus-thresholding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Метод міжкласової дисперсії Оцу (Otsu's Thresholding)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Локальна адаптивна порогова обробка
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Питання для самоперевірки та аналітичного осмислення
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="6">ТЕМА 6. ПОЕЛЕМЕНТНІ АМПЛІТУДНІ ПЕРЕТВОРЕННЯ ТА ГІСТОГРАМНИЙ АНАЛІЗ ЗОБРАЖЕНЬ</h1>
+<hr />
+<h2 id="61">6.1. Математична модель поелементного перетворення яскравості. Перетворення у негатив, лінійне масштабування динамічного діапазону (яскравість/контраст)</h2>
+<h3 id="_1">Основний зміст та теоретичний базис</h3>
+<p><strong>Поелементні (точкові або амплітудні) перетворення</strong> є базовим класом низькорівневих операцій цифрової обробки зображень, за яких вихідне значення яскравості кожного окремого пікселя формується виключно на основі його власного початкового значення яскравості та не залежить від оптичних параметрів сусідніх елементів растра. Такі системи є просторовими аналогами безінерційних нелінійних ланок у теорії сигналів.</p>
+<p>Математично точкове перетворення монохромного зображення описується функціональною залежністю:</p>
+<div class="arithmatex">\[s = T(r) \quad \Longleftrightarrow \quad I_{\text{out}}[m, n] = T\big(I_{\text{in}}[m, n]\big)\]</div>
+<p>де <span class="arithmatex">\(r = I_{\text{in}}[m, n]\)</span> позначає яскравість пікселя вхідного зображення з просторовими координатами <span class="arithmatex">\((m, n)\)</span>; <span class="arithmatex">\(s = I_{\text{out}}[m, n]\)</span> є результуючим значенням яскравості відповідного пікселя; <span class="arithmatex">\(T(\cdot)\)</span> виступає оператором (передавальною характеристикою) амплітудного перетворення. Для стандартного 8-бітного кодування без знака (<code>uint8</code>) діапазон зміни аргументів обмежений множиною <span class="arithmatex">\(r, s \in [0; L-1]\)</span>, де <span class="arithmatex">\(L = 256\)</span> є кількістю доступних рівнів квантування.</p>
+<p><pre class="mermaid"><code>flowchart LR
+    A["Вхідне зображення I_in[m, n]"] --&gt; B["Оператор амплітудного перетворення T(r)"]
+    B --&gt; C["Обмеження розрядності Clip[0, 255]"]
+    C --&gt; D["Вихідне зображення I_out[m, n]"]</code></pre>
+<em>Рисунок 6.1 — Функціональна схема поелементного перетворення оптичного растра</em></p>
+<p>Класичним базовим амплітудним перетворенням є <strong>інверсія рівнів сірого (перетворення у негатив)</strong>. Операція інвертує градаційну шкалу яскравості, переводячи темні ділянки у світлі, а світлі — у темні:</p>
+<div class="arithmatex">\[s = (L - 1) - r = 255 - r\]</div>
+<p>де <span class="arithmatex">\(L - 1 = 255\)</span> позначає максимальне значення динамічного діапазону. Перетворення у негатив є високоефективним інструментом при візуальному аналізі медичних рентгенограм, мікроскопічних цитологічних препаратів та мамограм, оскільки людська зорова система здатна розпізнавати малоконтрастні низькоінтенсивні аномалії значно чіткіше, коли вони відображаються високими рівнями світності на темному тлі.</p>
+<p><strong>Лінійне амплітудне перетворення</strong> забезпечує масштабування динамічного діапазону шляхом незалежного регулювання параметрів контрасту (<em>gain / contrast</em>) та яскравості (<em>bias / brightness</em>):</p>
+<div class="arithmatex">\[s = \alpha \cdot r + \beta\]</div>
+<p>де <span class="arithmatex">\(\alpha &gt; 0\)</span> є коефіцієнтом контрастності (кутовим коефіцієнтом нахилу лінійної характеристики); <span class="arithmatex">\(\beta \in [-255; 255]\)</span> є коефіцієнтом яскравості (адитивним зміщенням). </p>
+<p>При значеннях <span class="arithmatex">\(\alpha &gt; 1\)</span> відбувається розширення динамічного діапазону (підвищення контрасту) з одночасним збільшенням крутизни передавальної характеристики, тоді як значення <span class="arithmatex">\(0 &lt; \alpha &lt; 1\)</span> викликають компресію динамічного діапазону (зниження контрасту). Позитивні значення <span class="arithmatex">\(\beta &gt; 0\)</span> зміщують усі відліки в бік насичення білого, висвітлюючи кадр, тоді як від'ємні значення <span class="arithmatex">\(\beta &lt; 0\)</span> затемнюють растр.</p>
+<p>Оскільки результат лінійного розрахунку <span class="arithmatex">\(s\)</span> може виходити за межі фізичної розрядної сітки формату <code>uint8</code>, застосовують операцію насичення (відсікання, <em>clipping</em>):</p>
+<div class="arithmatex">\[I_{\text{out}}[m, n] = \text{clip}(\alpha \cdot I_{\text{in}}[m, n] + \beta, 0, 255) = \begin{cases} 0, &amp; \alpha r + \beta \lt  0 \\ \alpha r + \beta, &amp; 0 \le \alpha r + \beta \le 255 \\ 255, &amp; \alpha r + \beta &gt; 255 \end{cases}\]</div>
+<p>Для максимального використання розрядного діапазону сенсора в умовах слабкої освітленості застосовують <strong>кусково-лінійне розтягування контрасту</strong> (<em>contrast stretching</em>), яке лінійно трансформує фактичний вузький інтервал яскравостей вхідного зображення <span class="arithmatex">\([r_{\min}; r_{\max}]\)</span> у повний апаратний діапазон <span class="arithmatex">\([0; L-1]\)</span>:</p>
+<div class="arithmatex">\[s = \frac{L - 1}{r_{\max} - r_{\min}} (r - r_{\min}) = \frac{255}{r_{\max} - r_{\min}} (r - r_{\min})\]</div>
+<p>де <span class="arithmatex">\(r_{\min} = \min_{m,n} I_{\text{in}}[m, n]\)</span> та <span class="arithmatex">\(r_{\max} = \max_{m,n} I_{\text{in}}[m, n]\)</span> є мінімальним і максимальним рівнями яскравості вхідного масиву.</p>
+<hr />
+<h2 id="62-look-up-tables-lut">6.2. Нелінійна гамма-корекція (степеневе перетворення). Застосування таблиць пошуку (Look-Up Tables / LUT)</h2>
+<h3 id="_2">Основний зміст та теоретичний базис</h3>
+<p>Лінійне амплітудне масштабування не завжди забезпечує якісну візуалізацію через те, що людський зір сприймає яскравість за логарифмічним нелінійним законом, а електрооптичні прилади відображення (монітори, матриці проекторів) володіють власною нелінійною передавальною характеристикою. Для корекції нерівномірності передачі тонів застосовують <strong>степеневе амплітудне перетворення (гамма-корекцію)</strong>:</p>
+<div class="arithmatex">\[s = c \cdot r^\gamma\]</div>
+<p>де <span class="arithmatex">\(c\)</span> — нормуючий масштабний коефіцієнт; <span class="arithmatex">\(\gamma\)</span> (гамма) — дійсний показник степеня, що визначає кривизну функціональної залежності. При роботі з нормованими значеннями <span class="arithmatex">\(r, s \in [0.0; 1.0]\)</span> константа <span class="arithmatex">\(c = 1\)</span>. Для 8-бітного цифрового представлення <span class="arithmatex">\(r \in [0; 255]\)</span> формула набуває вигляду:</p>
+<div class="arithmatex">\[s = (L - 1) \cdot \left( \frac{r}{L - 1} \right)^\gamma = 255 \cdot \left( \frac{r}{255} \right)^\gamma\]</div>
+<p><pre class="mermaid"><code>flowchart TD
+    subgraph Gamma_Logic [Вплив показника гамма на перетворення яскравості]
+        direction TB
+        G1["γ &lt; 1 (Дробова гамма, наприклад γ = 0.4)"] --&gt; R1["Опукла вгору крива:&lt;br&gt;Розтягнення темних тонів, висвітлення тіней"]
+        G2["γ = 1 (Лінійний режим)"] --&gt; R2["Пряма передача без змін"]
+        G3["γ &gt; 1 (Степінь більше 1, наприклад γ = 2.5)"] --&gt; R3["Опукла вниз крива:&lt;br&gt;Компресія темних тонів, затемнення відблисків"]
+    end</code></pre>
+<em>Рисунок 6.2 — Функціональна спрямованість нелінійного гамма-перетворення залежно від значення показника γ</em></p>
+<p>При значеннях <span class="arithmatex">\(\gamma &lt; 1\)</span> передавальна крива є опуклою вгору. Відбувається істотне динамічне розтягування градієнтів у темних ділянках зображення при одночасному стисненні світлих ділянок, що дозволяє виявити деталі у затінених зонах без спотворення загального колірного тону. Навпаки, при <span class="arithmatex">\(\gamma &gt; 1\)</span> крива є опуклою вниз, що стискає темні півтони та розширює світлі, запобігаючи переекспонуванню яскравих ділянок.</p>
+<p>Прямий розрахунок операції піднесення до дробового степеня <span class="arithmatex">\(r^\gamma\)</span> для кожного пікселя зображення високої роздільної здатності (наприклад, <span class="arithmatex">\(1920 \times 1080 = 2.07 \times 10^6\)</span> пікселів) вимагає значних апаратних ресурсів процесора через ресурсомісткість операцій із рухомою комою. Оскільки кількість можливих градацій яскравості вхідного 8-бітного пікселя становить лише 256 дискретних значень (<span class="arithmatex">\(r \in [0; 255]\)</span>), обчислення оптимізують за допомогою <strong>таблиць пошуку (Look-Up Tables, LUT)</strong>.</p>
+<p>Алгоритм LUT передбачає попередній одноразовий розрахунок одновимірного масиву <span class="arithmatex">\(\mathbf{T}_{\text{LUT}}\)</span> довжиною 256 елементів:</p>
+<div class="arithmatex">\[\mathbf{T}_{\text{LUT}}[r] = \text{round}\left( 255 \cdot \left(\frac{r}{255}\right)^\gamma \right), \quad \forall r \in [0; 255]\]</div>
+<p>Під час обробки растра операція зводиться до безпосереднього вилучення значення з попередньо обчисленої таблиці за індексом, що дорівнює яскравості поточного пікселя:</p>
+<div class="arithmatex">\[I_{\text{out}}[m, n] = \mathbf{T}_{\text{LUT}}\big[ I_{\text{in}}[m, n] \big]\]</div>
+<p>Застосування LUT знижує асимптотичну складність операції з <span class="arithmatex">\(M \times N\)</span> складних математичних функцій до <span class="arithmatex">\(M \times N\)</span> елементарних звернень до пам'яті за адресою зі складністю <span class="arithmatex">\(\mathcal{O}(1)\)</span>, забезпечуючи роботу алгоритмів у реальному часі навіть на вбудованих мікропроцесорах із фіксованою комою.</p>
+<hr />
+<h2 id="63-cdf">6.3. Гістограма яскравості монохромних та покомпонентних зображень. Алгоритм глобальної еквалізації гістограми на основі кумулятивної функції розподілу (CDF)</h2>
+<h3 id="_3">Основний зміст та теоретичний базис</h3>
+<p><strong>Гістограмою яскравості</strong> цифрового зображення називається дискретна одновимірна функція <span class="arithmatex">\(h(r_k)\)</span>, яка відображає кількість пікселів <span class="arithmatex">\(n_k\)</span>, що мають точний рівень інтенсивності <span class="arithmatex">\(r_k\)</span>:</p>
+<div class="arithmatex">\[h(r_k) = n_k, \quad k = 0, 1, \dots, L - 1\]</div>
+<p>де <span class="arithmatex">\(r_k\)</span> — <span class="arithmatex">\(k\)</span>-й рівень градації сірого; <span class="arithmatex">\(n_k\)</span> — абсолютна частота появи пікселів з яскравістю <span class="arithmatex">\(r_k\)</span>; <span class="arithmatex">\(L\)</span> — загальна кількість квантованих рівнів (<span class="arithmatex">\(L = 256\)</span>). </p>
+<p><strong>Нормована гістограма</strong> <span class="arithmatex">\(p(r_k)\)</span> являє собою емпіричну статистичну оцінку функції густини розподілу ймовірностей (<em>Probability Mass Function, PMF</em>) випадкової величини яскравості пікселів:</p>
+<div class="arithmatex">\[p(r_k) = \frac{h(r_k)}{M \cdot N} = \frac{n_k}{M \cdot N}, \quad \sum_{k=0}^{L-1} p(r_k) = 1\]</div>
+<p>де <span class="arithmatex">\(M \cdot N\)</span> є повною кількістю пікселів цифрового растра. За формою нормованої гістограми оцінюють глобальний контраст зображення: вузький пік у лівій області свідчить про недоекспонованість (затемненість), зміщення вправо — про переекспонованість, а вузький пік по центру шкали вказує на низьку динамічну контрастність сцени.</p>
+<p><pre class="mermaid"><code>flowchart LR
+    A["Вхідний растр I_in[m, n]"] --&gt; B["Розрахунок гістограми n_k"]
+    B --&gt; C["Нормалізація: p(r_k) = n_k / (M·N)"]
+    C --&gt; D["Розрахунок кумулятивної функції:&lt;br&gt;CDF[k] = ∑ p(r_j)"]
+    D --&gt; E["Формування LUT:&lt;br&gt;s_k = round((L - 1) · CDF[k])"]
+    E --&gt; F["Попіксельне відображення I_out = LUT[I_in]"]</code></pre>
+<em>Рисунок 6.3 — Послідовність виконання алгоритму глобальної еквалізації гістограми на базі дискретної інтегральної функції розподілу</em></p>
+<p><strong>Еквалізація (вирівнювання) гістограми</strong> (<em>Histogram Equalization</em>) — це алгоритм нелінійного амплітудного перетворення, метою якого є формування вихідного зображення з максимально рівномірною щільністю розподілу ймовірностей яскравості (<span class="arithmatex">\(p_s(s) \approx \text{const} = \frac{1}{L-1}\)</span>). Це дозволяє рівномірно розподілити енергію півтонів по всьому доступному динамічному діапазону та максимізувати інформаційну ентропію зображення.</p>
+<p>У неперервному представленні математична модель еквалізації базується на теорії перетворення випадкових величин. Якщо вхідна яскравість <span class="arithmatex">\(r \in [0; 1]\)</span> описується густиною ймовірності <span class="arithmatex">\(p_r(r)\)</span>, то монотонно зростаюче перетворення <span class="arithmatex">\(s = T(r)\)</span> перетворює її у рівномірно розподілену величину <span class="arithmatex">\(s \in [0; 1]\)</span> тоді, коли передавальна функція <span class="arithmatex">\(T(r)\)</span> збігається з <strong>інтегральною кумулятивною функцією розподілу (CDF)</strong>:</p>
+<div class="arithmatex">\[s = T(r) = \int_{0}^{r} p_r(w) \, dw\]</div>
+<p>Диференціюючи інтеграл за правилом Лейбніца, отримуємо:</p>
+<div class="arithmatex">\[\frac{ds}{dr} = \frac{d}{dr} \left[ \int_0^r p_r(w) \, dw \right] = p_r(r)\]</div>
+<p>Підставляючи цей вираз у фундаментальне співвідношення для перетворення густин ймовірностей <span class="arithmatex">\(p_s(s) = p_r(r) \cdot \left| \frac{dr}{ds} \right|\)</span>, маємо:</p>
+<div class="arithmatex">\[p_s(s) = p_r(r) \cdot \frac{1}{p_r(r)} = 1, \quad 0 \le s \le 1\]</div>
+<p>У дискретному просторі цифрових растрових зображень інтегрування замінюється накопичувальним сумуванням. Покроковий <strong>алгоритм дискретної еквалізації гістограми</strong>:</p>
+<ol>
+<li>
+<p>Обчислюють значення гістограми <span class="arithmatex">\(n_k\)</span> та нормованої гістограми <span class="arithmatex">\(p(r_k) = \frac{n_k}{MN}\)</span> для всіх <span class="arithmatex">\(k \in [0; L-1]\)</span>.</p>
+</li>
+<li>
+<p>Розраховують дискретну кумулятивну функцію розподілу <span class="arithmatex">\(\text{CDF}[k]\)</span>:
+   $<span class="arithmatex">\(\text{CDF}[k] = \sum_{j=0}^{k} p(r_j) = \frac{1}{M \cdot N} \sum_{j=0}^{k} n_j\)</span>$</p>
+</li>
+<li>
+<p>Формують значення перетворених рівнів яскравості <span class="arithmatex">\(s_k\)</span> шляхом квантування значень кумулятивної суми на множину цілих чисел <span class="arithmatex">\([0; L-1]\)</span>:
+   $<span class="arithmatex">\(s_k = \text{round}\Big( (L - 1) \cdot \text{CDF}[k] \Big) = \text{round}\left( \frac{L - 1}{M \cdot N} \sum_{j=0}^{k} n_j \right)\)</span>$</p>
+</li>
+<li>
+<p>Здійснюють заміну яскравості кожного пікселя вхідного зображення: якщо <span class="arithmatex">\(I_{\text{in}}[m, n] = r_k\)</span>, то <span class="arithmatex">\(I_{\text{out}}[m, n] = s_k\)</span>.</p>
+</li>
+</ol>
+<p>При обробці повноколірних зображень пряма незалежна еквалізація каналів <span class="arithmatex">\(R\)</span>, <span class="arithmatex">\(G\)</span> та <span class="arithmatex">\(B\)</span> є некоректною, оскільки зміна співвідношення між компонентами викликає грубі артефакти спотворення природного колірного тону (зсув хроматичності). Правильний підхід полягає у попередньому переводі зображення у колірний простір із розділеними координатами світності та хроматичності (HSV, HSL або CIELab), виконанні еквалізації виключно каналу яскравості (<span class="arithmatex">\(V\)</span>, <span class="arithmatex">\(L\)</span> або <span class="arithmatex">\(L^*\)</span>) та подальшому зворотному перетворенні у простір RGB.</p>
+<hr />
+<h2 id="64-thresh_binary-trunc-tozero-otsus-thresholding-adaptive-mean-gaussian">6.4. Методи бінаризації та порогової обробки: фіксований поріг (THRESH_BINARY, TRUNC, TOZERO), метод міжкласової дисперсії Оцу (Otsu's thresholding), локальна адаптивна порогова обробка (Adaptive Mean / Gaussian)</h2>
+<h3 id="_4">Основний зміст та теоретичний базис</h3>
+<p><strong>Порогова обробка (бінаризація)</strong> являє собою нелінійну операцію квантування півтонового зображення на два взаємовиключні класи: пікселі об'єктів переднього плану (<em>foreground</em>) та пікселі фону (<em>background</em>). У результаті формується двійкова бінарна маска, де об'єкти кодуються логічною одиницею (або числом 255), а фонові структури — логічним нулем (0).</p>
+<h3 id="_5">Фіксована глобальна порогова обробка</h3>
+<p>При глобальній пороговій обробці для всього растра застосовується єдиний скалярний поріг <span class="arithmatex">\(T = \text{const}\)</span>. Залежно від передавальної функції порогового детектора виділяють наступні базові режими перетворення:</p>
+<ol>
+<li>
+<p><strong>Пряма бінаризація (<span class="arithmatex">\(\text{THRESH\_BINARY}\)</span>):</strong>
+   $<span class="arithmatex">\(I_{\text{out}}[m, n] = \begin{cases} \text{maxval}, &amp; I_{\text{in}}[m, n] &gt; T \\ 0, &amp; I_{\text{in}}[m, n] \le T \end{cases}\)</span>$</p>
+</li>
+<li>
+<p><strong>Інверсна бінаризація (<span class="arithmatex">\(\text{THRESH\_BINARY\_INV}\)</span>):</strong>
+   $<span class="arithmatex">\(I_{\text{out}}[m, n] = \begin{cases} 0, &amp; I_{\text{in}}[m, n] &gt; T \\ \text{maxval}, &amp; I_{\text{in}}[m, n] \le T \end{cases}\)</span>$</p>
+</li>
+<li>
+<p><strong>Обмеження порогом згори (<span class="arithmatex">\(\text{THRESH\_TRUNC}\)</span>):</strong>
+   $<span class="arithmatex">\(I_{\text{out}}[m, n] = \begin{cases} T, &amp; I_{\text{in}}[m, n] &gt; T \\ I_{\text{in}}[m, n], &amp; I_{\text{in}}[m, n] \le T \end{cases}\)</span>$</p>
+</li>
+<li>
+<p><strong>Обнулення рівнів нижче порога (<span class="arithmatex">\(\text{THRESH\_TOZERO}\)</span>):</strong>
+   $<span class="arithmatex">\(I_{\text{out}}[m, n] = \begin{cases} I_{\text{in}}[m, n], &amp; I_{\text{in}}[m, n] &gt; T \\ 0, &amp; I_{\text{in}}[m, n] \le T \end{cases}\)</span>$</p>
+</li>
+<li>
+<p><strong>Інверсне обнулення рівнів вище порога (<span class="arithmatex">\(\text{THRESH\_TOZERO\_INV}\)</span>):</strong>
+   $<span class="arithmatex">\(I_{\text{out}}[m, n] = \begin{cases} 0, &amp; I_{\text{in}}[m, n] &gt; T \\ I_{\text{in}}[m, n], &amp; I_{\text{in}}[m, n] \le T \end{cases}\)</span>$</p>
+</li>
+</ol>
+<p>де <span class="arithmatex">\(T\)</span> — порогове числове значення; <span class="arithmatex">\(\text{maxval}\)</span> — максимальний рівень заміни (зазвичай 255).</p>
+<h3 id="otsus-thresholding">Метод міжкласової дисперсії Оцу (Otsu's Thresholding)</h3>
+<p><strong>Метод Оцу</strong> (розроблений Нобуюті Оцу у 1979 р.) є оптимальним непараметричним статистичним методом автоматичного визначення глобального порогу бінаризації на основі аналізу гістограми сірого тону без апріорних припущень про розподіл яскравостей. Алгоритм розглядає зображення як бімодальну суміш двох класів: фону <span class="arithmatex">\(C_0\)</span> (пікселі з яскравістю в діапазоні <span class="arithmatex">\([0; t]\)</span>) та переднього плану <span class="arithmatex">\(C_1\)</span> (пікселі з яскравістю в діапазоні <span class="arithmatex">\([t+1; L-1]\)</span>).</p>
+<p><pre class="mermaid"><code>flowchart TD
+    A["Нормована гістограма p_i, i = 0..L-1"] --&gt; B["Розрахунок глобального середнього μ_T = ∑ i · p_i"]
+    B --&gt; C["Ітераційний перебір усіх можливих порогів t ∈ [0, L-2]"]
+    C --&gt; D["Розрахунок ваги класу ω₀(t) = ∑ p_i та середнього μ₀(t)"]
+    D --&gt; E["Розрахунок ваги класу ω₁(t) = 1 - ω₀(t) та середнього μ₁(t)"]
+    E --&gt; F["Обчислення міжкласової дисперсії:&lt;br&gt;σ_B²(t) = ω₀(t) · ω₁(t) · [μ₀(t) - μ₁(t)]²"]
+    F --&gt; G["Пошук максимуму:&lt;br&gt;t* = argmax σ_B²(t)"]
+    G --&gt; H["Оптимальний поріг бінаризації t*"]</code></pre>
+<em>Рисунок 6.4 — Блок-схема статистичного алгоритму оптимізації порогу бінаризації за методом Оцу</em></p>
+<p>Нехай <span class="arithmatex">\(p_i = \frac{n_i}{MN}\)</span> — нормована ймовірність появи яскравості <span class="arithmatex">\(i \in [0; L-1]\)</span>. Для довільно обраного граничного порогу <span class="arithmatex">\(t\)</span> статистичні ваги (ймовірності появи) класів <span class="arithmatex">\(C_0\)</span> та <span class="arithmatex">\(C_1\)</span> визначаються виразами:</p>
+<div class="arithmatex">\[\omega_0(t) = \sum_{i=0}^{t} p_i, \quad \omega_1(t) = \sum_{i=t+1}^{L-1} p_i = 1 - \omega_0(t)\]</div>
+<p>Середні математичні очікування рівнів яскравості для кожного з виділених класів розраховуються як умовні середні:</p>
+<div class="arithmatex">\[\mu_0(t) = \sum_{i=0}^{t} \frac{i \cdot p_i}{\omega_0(t)} = \frac{\mu(t)}{\omega_0(t)}, \quad \mu_1(t) = \sum_{i=t+1}^{L-1} \frac{i \cdot p_i}{\omega_1(t)} = \frac{\mu_T - \mu(t)}{1 - \omega_0(t)}\]</div>
+<p>де <span class="arithmatex">\(\mu(t) = \sum_{i=0}^{t} i \cdot p_i\)</span> — перший початковий кумулятивний момент гістограми до рівня <span class="arithmatex">\(t\)</span>; <span class="arithmatex">\(\mu_T = \sum_{i=0}^{L-1} i \cdot p_i\)</span> — загальне глобальне середнє значення яскравості всього растра.</p>
+<p>Повна дисперсія яскравості зображення <span class="arithmatex">\(\sigma_T^2 = \sum_{i=0}^{L-1} (i - \mu_T)^2 p_i\)</span> строго розкладається на суму двох компонентів — внутрішньокласової дисперсії <span class="arithmatex">\(\sigma_W^2(t)\)</span> та <strong>міжкласової дисперсії</strong> <span class="arithmatex">\(\sigma_B^2(t)\)</span>:</p>
+<div class="arithmatex">\[\sigma_T^2 = \sigma_W^2(t) + \sigma_B^2(t)\]</div>
+<p>де <span class="arithmatex">\(\sigma_W^2(t) = \omega_0(t) \sigma_0^2(t) + \omega_1(t) \sigma_1^2(t)\)</span> характеризує ступінь неоднорідності пікселів всередині кожного класу; <span class="arithmatex">\(\sigma_B^2(t)\)</span> характеризує статистичну контрастну відмінність між класами фону та об'єкта:</p>
+<div class="arithmatex">\[\sigma_B^2(t) = \omega_0(t) \big(\mu_0(t) - \mu_T\big)^2 + \omega_1(t) \big(\mu_1(t) - \mu_T\big)^2 = \omega_0(t) \omega_1(t) \big[\mu_0(t) - \mu_1(t)\big]^2\]</div>
+<p>Шляхом алгебраїчних підстановок вираз для міжкласової дисперсії зводиться до форми, що не вимагає розрахунку дисперсій окремих класів:</p>
+<div class="arithmatex">\[\sigma_B^2(t) = \frac{\big[\mu_T \omega_0(t) - \mu(t)\big]^2}{\omega_0(t) \big(1 - \omega_0(t)\big)}\]</div>
+<p>Оскільки повна дисперсія <span class="arithmatex">\(\sigma_T^2\)</span> не залежить від обраного порогу <span class="arithmatex">\(t\)</span>, мінімізація внутрішньокласової дисперсії <span class="arithmatex">\(\sigma_W^2(t)\)</span> еквівалентна максимізації міжкласової дисперсії <span class="arithmatex">\(\sigma_B^2(t)\)</span>. <strong>Оптимальний поріг Оцу <span class="arithmatex">\(t^*\)</span></strong> знаходиться шляхом повного одновимірного перебору всіх <span class="arithmatex">\(t \in [0; L-1]\)</span>:</p>
+<div class="arithmatex">\[t^* = \arg\max_{0 \le t \lt  L-1} \sigma_B^2(t)\]</div>
+<h3 id="_6">Локальна адаптивна порогова обробка</h3>
+<p>У реальних сценах глобальний метод Оцу втрачає працездатність за наявності суттєво нерівномірного просторового освітлення кадру (наявність градієнтного затемнення, відблисків або спрямованих тіней), коли фон у світлій частині зображення має яскравість вищу, ніж об'єкти у затіненій зоні. У таких умовах застосовують <strong>локальну адаптивну бінаризацію</strong>, за якої індивідуальний поріг <span class="arithmatex">\(T(m, n)\)</span> розраховується окремо для кожного пікселя на основі локального просторового околу розміром <span class="arithmatex">\(B \times B\)</span> елементів:</p>
+<div class="arithmatex">\[I_{\text{out}}[m, n] = \begin{cases} \text{maxval}, &amp; I_{\text{in}}[m, n] &gt; T(m, n) \\ 0, &amp; I_{\text{in}}[m, n] \le T(m, n) \end{cases}\]</div>
+<div class="arithmatex">\[T(m, n) = \mu_{\text{local}}[m, n] - C\]</div>
+<p>де <span class="arithmatex">\(\mu_{\text{local}}[m, n]\)</span> — локальна центральна оцінка яскравості у прямокутному вікні розміром <span class="arithmatex">\(B \times B\)</span> (де <span class="arithmatex">\(B\)</span> є непарним цілим числом); <span class="arithmatex">\(C\)</span> — додатна дійсна константа, що регулює чутливість порогового детектора до дрібних шумових перепадів.</p>
+<p>Залежно від алгоритму розрахунку <span class="arithmatex">\(\mu_{\text{local}}\)</span> виділяють:</p>
+<ul>
+<li>
+<p><strong>Адаптивне середнє (<span class="arithmatex">\(\text{Adaptive Mean}\)</span>):</strong> <span class="arithmatex">\(\mu_{\text{local}}[m, n]\)</span> розраховується як просте середнє арифметичне яскравостей усіх <span class="arithmatex">\(B \times B\)</span> пікселів локального вікна за допомогою фільтра ковзного усереднення.</p>
+</li>
+<li>
+<p><strong>Адаптивне Гаусове зважування (<span class="arithmatex">\(\text{Adaptive Gaussian}\)</span>):</strong> <span class="arithmatex">\(\mu_{\text{local}}[m, n]\)</span> визначається як двовимірна зважена згортка пікселів вікна з нормальним дискретним ядром Гаусса, що надає найбільшої ваги пікселям, розташованим ближче до аналізованого центрального вузла.</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Метод бінаризації</th>
+<th style="text-align: left;">Тип порогу</th>
+<th style="text-align: center;">Обчислювальна складність</th>
+<th style="text-align: center;">Стійкість до перепадів освітлення</th>
+<th style="text-align: left;">Оптимальна сфера застосування</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Фіксований поріг</strong></td>
+<td style="text-align: left;">Глобальний, статичний <span class="arithmatex">\(T\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(\mathcal{O}(MN)\)</span></td>
+<td style="text-align: center;">Вкрай низька</td>
+<td style="text-align: left;">Контрольовані лабораторні умови, студійне освітлення</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Метод Оцу</strong></td>
+<td style="text-align: left;">Глобальний, статистичний <span class="arithmatex">\(t^*\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(\mathcal{O}(MN + L)\)</span></td>
+<td style="text-align: center;">Середня (бімодальні гістограми)</td>
+<td style="text-align: left;">Сканування документів, промислова дефектоскопія деталей</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Adaptive Mean</strong></td>
+<td style="text-align: left;">Локальний, ковзне вікно <span class="arithmatex">\(B \times B\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(\mathcal{O}(MN)\)</span> (через інтегральні зображення)</td>
+<td style="text-align: center;">Висока</td>
+<td style="text-align: left;">Розпізнавання тексту з нерівномірним фоном</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Adaptive Gaussian</strong></td>
+<td style="text-align: left;">Локальний, Гаусове ядро</td>
+<td style="text-align: center;"><span class="arithmatex">\(\mathcal{O}(MN \cdot B)\)</span></td>
+<td style="text-align: center;"><strong>Найвища</strong> (мінімум шумових плям)</td>
+<td style="text-align: left;">Системи технічного зору автономних роботів, дорожня розмітка</td>
+</tr>
+</tbody>
+</table>
+<p>Аналіз порівняльної таблиці показує, що адаптивні алгоритми мають беззаперечну перевагу в складних нестаціонарних оптичних середовищах, дозволяючи виділяти дрібні локальні контури незалежно від глобального рівня перепаду яскравості по полю кадру.</p>
+<hr />
+<h3 id="_7">Питання для самоперевірки та аналітичного осмислення</h3>
+<ol>
+<li>
+<p>Сформулюйте математичну модель поелементного амплітудного перетворення зображення. Чому точкові амплітудні перетворювачі вважаються просторовим аналогом безінерційних нелінійних кіл?</p>
+</li>
+<li>
+<p>Яким чином нелінійна гамма-корекція зі значеннями <span class="arithmatex">\(\gamma &lt; 1\)</span> та <span class="arithmatex">\(\gamma &gt; 1\)</span> змінює динамічний діапазон півтонів цифрового растра, і яким чином застосування таблиць пошуку (LUT) оптимізує швидкодію алгоритму?</p>
+</li>
+<li>
+<p>Наведіть аналітичне обґрунтування процедури еквалізації гістограми. Чому використання інтегральної кумулятивної функції розподілу (CDF) як передавальної функції перетворення теоретично забезпечує рівномірну густину ймовірностей вихідного сигналу?</p>
+</li>
+<li>
+<p>У чому полягає небезпека прямої поелементної еквалізації гістограми кольорового зображення окремо за каналами <span class="arithmatex">\(R\)</span>, <span class="arithmatex">\(G\)</span> та <span class="arithmatex">\(B\)</span>, і як ця проблема вирішується за допомогою колірних просторів HSV або CIELab?</p>
+</li>
+<li>
+<p>Наведіть повне математичне виведення цільової функції максимізації міжкласової дисперсії <span class="arithmatex">\(\sigma_B^2(t)\)</span> в алгоритмі автоматичної бінаризації Оцу. За рахунок чого метод Оцу дозволяє уникнути обчислення внутрішньокласових дисперсій <span class="arithmatex">\(\sigma_0^2(t)\)</span> та <span class="arithmatex">\(\sigma_1^2(t)\)</span>?</p>
+</li>
+<li>
+<p>За яких оптичних умов сцени глобальний метод Оцу втрачає працездатність, і які переваги надають методи локальної адаптивної порогової обробки (Adaptive Mean та Adaptive Gaussian) при фільтрації документів із сильними тінями?</p>
+</li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Повернутись нагору
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Kyrylo Vadurin &bull; <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "navigation.tracking", "header.autohide", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0456\u0439\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u0421\u043a\u043e\u043f\u0456\u044e\u0432\u0430\u0442\u0438 \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0429\u0435 1 \u0437\u0431\u0456\u0433 \u043d\u0430 \u0446\u0456\u0439 \u0441\u0442\u043e\u0440\u0456\u043d\u0446\u0456", "search.result.more.other": "\u0429\u0435 # \u0437\u0431\u0456\u0433\u0456\u0432 \u043d\u0430 \u0446\u0456\u0439 \u0441\u0442\u043e\u0440\u0456\u043d\u0446\u0456", "search.result.none": "\u0417\u0431\u0456\u0433\u0456\u0432 \u043d\u0435 \u0437\u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u0417\u043d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0437\u0431\u0456\u0433", "search.result.other": "\u0417\u043d\u0430\u0439\u0434\u0435\u043d\u043e # \u0437\u0431\u0456\u0433\u0456\u0432", "search.result.placeholder": "\u0420\u043e\u0437\u043f\u043e\u0447\u043d\u0456\u0442\u044c \u043f\u0438\u0441\u0430\u0442\u0438 \u0434\u043b\u044f \u043f\u043e\u0448\u0443\u043a\u0443", "search.result.term.missing": "\u041d\u0435 \u0437\u043d\u0430\u0439\u0434\u0435\u043d\u043e \u0437\u0430\u043f\u0438\u0442\u0443", "select.version": "\u041e\u0431\u0440\u0430\u0442\u0438 \u0432\u0435\u0440\u0441\u0456\u044e"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
